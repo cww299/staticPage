@@ -1,0 +1,269 @@
+<!--
+  原网站地址：
+  http://ym.qianxiyun.com/ykj/recommend
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>推荐域名</title>
+  <link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
+  <link rel="stylesheet" type="text/css" href="./page.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <style>
+    .layui-tab ul li:hover{
+      background: #8080802e;
+    }
+    .layui-tab-item{
+      background: white;
+    }
+    .layui-tab-content{
+      padding: 10px 0px;
+    }
+    .searchDiv{
+
+    }
+    .searchBtn{
+      text-align: center;
+      border-top: 1px dotted gray;
+      padding: 20px;
+    }
+    .quickSearch{
+      color: #fff;
+      padding: 8px 10px;
+      background: #0000008c;
+    }
+    .quickSearch span{
+      font-size: 12px;
+      padding: 3px 5px;
+      border-radius: 10px;
+    }
+    .quickSearch span:hover{
+      background: #ff9800c9;
+      cursor: pointer;
+    }
+    .buyBtn{
+      padding:10px;
+      border-bottom: 1px dotted #80808054
+      border-top: 1px dotted #80808054
+    }
+    .searchResult{
+
+    }
+    .paddingDiv{
+      padding: 10px 0px;
+    }
+
+    .layui-form-label{
+      padding: 9px 0px;
+      width: 60px;
+    }
+    .layui-form-item .layui-input-inline{
+      width: 110px;
+    }
+    .layui-table, .layui-table-view{
+      margin:0px;
+    }
+  </style>
+</head>
+<body style="background: #fdfdfd;">
+<div>
+  <div class="layui-container">
+    <span class="layui-breadcrumb" lay-separator=">">
+      <a href="">首页</a>
+      <a><cite>域名交易一口价</cite></a>
+    </span>
+    <div class="layui-row"> 
+      <div class="layui-col-md12">
+        <div class="layui-tab">
+          <ul class="layui-tab-title">
+            <li class="layui-this">一口价</li>
+            <li>精品域名</li>
+            <li>打包域名</li>
+            <li>推荐域名</li>
+            <li>米店</li>
+            <li>成交记录</li>
+          </ul>
+          <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+              <div class="searchDiv layui-form">
+                <div class="layui-container">
+                  <div class="layui-row"> 
+                    <div class="layui-col-md1">
+                    </div>
+                    <div class="layui-col-md2">
+                      <div class="layui-form-item">
+                        <label class="layui-form-label">关键字：</label>
+                        <div class="layui-input-inline">
+                          <input type="text" name="" class="layui-input">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="layui-col-md2">
+                      <div class="layui-input-inline paddingDiv">
+                        <input type="checkbox" name="" title="开头" lay-skin="primary">
+                        <input type="checkbox" name="" title="结尾" lay-skin="primary">
+                      </div>
+                    </div>
+                    <div class="layui-col-md2">
+                      <div class="layui-form-item">
+                        <label class="layui-form-label">后缀：</label>
+                        <div class="layui-input-inline">
+                          <select name=""><option value="">所有后缀</option></select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="layui-col-md2">
+                      <div class="layui-form-item">
+                        <label class="layui-form-label">长度：</label>
+                        <div class="layui-input-inline" style="width: 40px;">
+                          <input type="text" name="" placeholder="1" class="layui-input">
+                        </div>
+                        <div class="layui-form-mid">到</div>
+                        <div class="layui-input-inline" style="width: 40px;">
+                          <input type="text" name="" class="layui-input">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="layui-col-md2">
+                      <div class="layui-form-item">
+                        <label class="layui-form-label">价格：</label>
+                        <div class="layui-input-inline">
+                          <select name=""><option value="">不限</option></select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="layui-col-md1">
+                    </div>
+                  </div>
+                </div>
+                <div class="layui-container">
+                  <div class="layui-row layui-form">
+                    <div class="layui-col-md2">
+                      <div class="layui-form-item">
+                        <label class="layui-form-label">排除关键字：</label>
+                        <div class="layui-input-inline">
+                          <input type="text" name="" class="layui-input">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="layui-col-md2">
+                      <div class="layui-input-inline paddingDiv">
+                        <input type="checkbox" name="" title="开头" lay-skin="primary">
+                        <input type="checkbox" name="" title="结尾" lay-skin="primary">
+                      </div>
+                    </div>
+                    <div class="layui-col-md2">
+                      <div class="layui-form-item">
+                        <label class="layui-form-label">分类：</label>
+                        <div class="layui-input-inline">
+                          <input type="text" class="layui-input" placeholder="所有域名">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="layui-col-md2">
+                      <div class="layui-form-item">
+                        <label class="layui-form-label">价格：</label>
+                        <div class="layui-input-inline" style="width: 40px;">
+                          <input type="text" name="" placeholder="1" class="layui-input">
+                        </div>
+                        <div class="layui-form-mid">到</div>
+                        <div class="layui-input-inline" style="width: 40px;">
+                          <input type="text" name="" class="layui-input">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="layui-col-md2">
+                      <div class="layui-form-item">
+                        <label class="layui-form-label">时间：</label>
+                        <div class="layui-input-inline">
+                          <select name=""><option value="">不限</option></select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="searchBtn">
+                <span class="layui-btn layui-btn-danger">查询</span>
+                <span class="layui-btn layui-btn-primary">清空</span>
+              </div>
+              <div class="searchResult">
+                <div class="quickSearch">
+                  <i class="layui-icon layui-icon-search"></i>快速查询：
+                  <span>纯数字</span>
+                  <span>单数字</span>
+                  <span>2数字</span>
+                  <span>3数字</span>
+                  <span>4数字</span>
+                  <span>5数字</span>
+                  <span>6数字</span>
+                  <span>7数字</span>
+                  <span>纯字母</span>
+                  <span>单字母</span>
+                  <span>2字母</span>
+                  <span>3字母</span>
+                  <span>4字母</span>
+                  <span>5字母</span>
+                  <span>单拼</span>
+                  <span>双拼</span>
+                  <span>杂米</span>
+                  <span>两杂</span>
+                  <span>三杂</span>
+                  <span>中文</span>
+                </div>
+                <table id="tableData" lay-filter="tableData"></table>
+                <div class="buyBtn">
+                  <span class="layui-btn layui-btn-warm">批量购买</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+<script type="text/javascript" src="./layui/layui.js"></script>
+<script type="text/javascript">
+  layui.use(['jquery','layer','element','form','table'],function(){
+    var $ = layui.jquery
+       ,element = layui.element
+       ,form = layui.form
+       ,table = layui.table
+       ,layer = layui.layer;
+
+    element.render();
+    form.render();
+
+    var dataResult = [
+      { id:'1', name:'test', description:'测试数据', special:'测试',price:'10',time:'2019-09-27',},
+    ];
+
+    table.render({
+      elem: '#tableData',
+      data: dataResult,
+      skin: 'nob',
+      cols: [[
+        { align:'center', type:'checkbox', },
+        { align:'center', title:'域名', field:'name', },
+        { align:'center', title:'简介', field:'description', },
+        { align:'center', title:'特征', field:'special', },
+        { align:'center', title:'价格', field:'price', },
+        { align:'center', title:'剩余时间', field:'time', },
+        { align:'center', title:'操作', templet:getDeleteBtn(), },
+
+      ]]
+    })
+    function getDeleteBtn(){
+      return function(d){
+        return '<span class="layui-btn layui-btn-sm">删除</span>';
+      }
+    }
+    $('.layui-btn').click(function(){
+      layer.msg('点击按钮');
+    })
+  })
+</script>
+</html>

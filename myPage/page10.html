@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
+  	<link rel="stylesheet" type="text/css" href="./page.css">
+  	<meta charset="UTF-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+</head>
+<body>
+<div>
+	<div class="layui-container">
+    	<div class="layui-row bigImgAndFont"> 
+       		<div class="layui-col-md6 andFont">
+          		<h1>云堡垒机</h1>
+          		<p>云堡垒机(Cloud Bastion Host)开箱即用，包含主机管理、权限控制、运维审计、安全合规等功能，支持Chrome等主流浏览器随时随地远程运维，开启高效运维新时代。。</p>
+          		<button class="layui-btn" id="btn_id" type="button">立即咨询</button>
+      		</div>
+      		<div class="layui-col-md6">
+	            <div class="bigImgDiv" >
+	              <img alt="这里存放图片" src="" class="showImgDiv">
+	            </div>
+      		</div>
+    	</div>
+  </div>
+</div>
+<div class="blackBg">
+	<div class="layui-container">
+    	<div class="layui-row smallImgAndFont">
+          <div class="smallImgAndFontTitle">
+              <h1>产品优势</h1>
+          </div>
+          <div class="layui-col-md6 siaf_div">
+            <div class="siaf_imgDiv">
+                <img alt="这里存放图片" src="" class="showImgDiv">
+              </div>
+              <div class="siaf_fontDiv">
+                <h2>高效运维</h2><br>
+                <p>无须安装部署，开箱即用，管理大量云主机，批量管理权限，简化运维和安全操作，提升运维效率</p>
+              </div>
+              <div class="siaf_imgDiv">
+                <img alt="这里存放图片" src="" class="showImgDiv">
+              </div>
+              <div class="siaf_fontDiv">
+                <h2>随时运维</h2><br>
+                <p>无需安装任何插件，即可使用Chrome、IE等 主流浏览器随时随地运维</p>
+              </div>
+          </div>
+          <div class="layui-col-md6 siaf_div">
+            <div class="siaf_imgDiv">
+                <img alt="这里存放图片" src="" class="showImgDiv">
+            </div>
+              <div class="siaf_fontDiv">
+                  <h2>轻松审计</h2><br>
+                  <p>可视化所有操作和行为，并提供实时监控、录屏、回放等功能，保障资产的可控</p>
+              </div>
+              <div class="siaf_imgDiv">
+                <img alt="这里存放图片" src="" class="showImgDiv">
+              </div>
+              <div class="siaf_fontDiv">
+                  <h2>安全合规</h2><br>
+                  <p>符合“网络安全法”等的规定，满足企业必须采取信息系统风险内控与审计措施的合规要求</p>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<div>
+	<div class="layui-container">
+    	<br><br>
+      <h1>应用场景</h1>
+      <br><br>
+  </div>
+</div>
+<div class="blackBg">
+	<div class="layui-container">
+      <div class="layui-row bigImgAndFont"> 
+          <div class="layui-col-md6">
+              <div class="bigImgDiv" >
+                <img alt="这里存放图片" src="" class="showImgDiv">
+              </div>
+          </div>
+          <div class="layui-col-md6 andFont">
+              <h1>资产管理</h1>
+              <p>所有主账号和从账户在一个平台上进行管理，并可权限最小化;运维人员一次登录，便可对其所维护的多台资源进行管理，分角色分账号管控权限，一次登录，对所有资产进行管理。</p>
+          </div>
+      </div>
+  </div>
+</div>
+<div>
+  <div class="layui-container">
+      <div class="layui-row bigImgAndFont"> 
+          <div class="layui-col-md6 andFont">
+              <h1>运维审计</h1>
+              <p>可视化运维行为监控，及时预警发现违规操作;实时记录管理员的资源管理、用户管理和策略管理等所有行为志，以便监控和审计，对操作进行实时监控，拦截恶意指令,对复杂日志进行检索和二次检索。</p>
+          </div>
+          <div class="layui-col-md6">
+              <div class="bigImgDiv" >
+                <img alt="这里存放图片" src="" class="showImgDiv">
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<div class="blackBg">
+  <div class="layui-container">
+      <div class="layui-row bigImgAndFont"> 
+          <div class="layui-col-md6">
+              <div class="bigImgDiv" >
+                <img alt="这里存放图片" src="" class="showImgDiv">
+              </div>
+          </div>
+          <div class="layui-col-md6 andFont">
+              <h1>满足合规</h1>
+              <p>满足“网络安全法”、“信息安全等级保护”等规定的企业必须采取信息系统风险内控与审计措施的要求，满足企业合规需求，支持主流字符、图形协议，支持FTP、SFTP 上传下载文件，对各类操作进行实时监控、记录、回放等多维度审计。</p>
+          </div>
+      </div>
+  </div>
+</div>
+</body>
+<script type="text/javascript" src="./layui/layui.js"></script>
+<script type="text/javascript">
+  layui.use(['jquery','layer'],function(){
+    var $ = layui.jquery
+       ,layer = layui.layer;
+
+    $('#btn_id').click(function(){
+      layer.msg('点击按钮');
+    })
+  })
+</script>
+</html>

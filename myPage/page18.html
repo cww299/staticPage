@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>对象存储服务</title>
+  <link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
+    <link rel="stylesheet" type="text/css" href="./page.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<style type="text/css">
+.bigImgAndFont li{
+  width: 17%;
+}
+</style>
+</head>
+<body>
+<div>
+  <div class="layui-container">
+    <div class="layui-row bigImgAndFont"> 
+      <div class="layui-col-md6 andFont">
+        <h1>对象存储服务 OBS</h1>
+        <p>稳定、安全、高效、易用的云存储服务，具备标准RestfulAPI接口，可存储任意数量和形式的非结构化数据</p><br>
+        <p>标准存储价格下调，低至<font class="bigPriceFont">￥0.099</font> /GB/月 </p>
+        <button class="layui-btn" id="btn_id" type="button">立即咨询</button>
+      </div>
+      <div class="layui-col-md6">
+        <div class="bigImgDiv" >
+          <img alt="这里存放图片" src="" class="showImgDiv">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="blackBg">
+  <div class="layui-container">
+    <br><h1 class="centerH1">产品优势</h1>
+    <div class="layui-row fontImgFont"> 
+      <div class="layui-col-md4 fif_font">
+        <div class="fif_font_div">
+          <h2>稳定可靠</h2>
+          <p>通过多级可靠性架构，保障数据持久性高达99.9999999999%（12个9），业务连续性高达99.995%</p>
+        </div>
+        <div class="fif_font_div">
+          <h2>智能高效</h2>
+          <p>通过智能调度，并结合传输加速、大数据垂直优化，为用户提供高并发（千万级TPS）、大带宽（单流上传2.4Gb/s）、稳定低时延（小对象上传时延小于10ms）的数据访问体验p>
+        </div>
+      </div>
+      <div class="layui-col-md4">
+        <div class="radiusImgDiv" >
+          <img alt="这里存放图片" src="" class="radiusImg showImgDiv">
+        </div>
+      </div>
+      <div class="layui-col-md4 fif_font">
+        <div class="fif_font_div">
+            <h2>安全可信</h2>
+            <p>OBS通过可信云认证，支持服务端加密、防盗链、VPC网络隔离、日志审计、细粒度权限控制，保障数据安全可信</p>
+          </div>
+          <div class="fif_font_div">
+            <h2>友好易用</h2>
+            <p>OBS支持REST API，提供多种语言的SDK，兼容主流的客户端工具，您可以随时随地通过网络上传、下载、管理您的数据</p>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="layui-container">
+    <div class="layui-row bigImgAndFont"> 
+      <br><h1 class="centerH1">应用场景</h1><br>
+      <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+          <li class="layui-this"><h2>在线视频点播</h2></li>
+          <li><h2>静态网站托管</h2></li>
+          <li><h2>大数据分析</h2></li>
+          <li><h2>基因测序</h2></li>
+          <li><h2>智能视频监控</h2></li>
+        </ul><br>
+        <div class="layui-tab-content" style="height: 100px;">
+          <div class="layui-tab-item layui-show">
+            <div class="layui-col-md6">
+              <div class="bigImgDiv" >
+                <img alt="这里存放图片" src="" class="showImgDiv">
+              </div>
+            </div>
+            <div class="layui-col-md6 andFont1"> 
+              <h3>在线视频点播：</h3>
+              <p class="titleChildFont">提供高并发、高可靠、低时延、低成本的海量存储系统。结合媒体转码MPC和CDN服务可快速搭建极速、安全、高可用的点播平台</p><br>
+              <h2>优势</h2>
+              <p class="titleChildFont">高性能<br>能够应对海量的并发连接和突发的高峰流量，无需担心扩容不及时带来问题</p><br>
+              <p class="titleChildFont">低成本<br>资源弹性伸缩，按需付费</p><br>
+              <p class="titleChildFont">高可用<br>设计规格为99.995%可用性，满足业务连续性的要求</p><br>
+            </div>
+          </div>
+          <div class="layui-tab-item">
+            <div class="layui-col-md6">
+              <div class="bigImgDiv" >
+                <img alt="这里存放图片" src="" class="showImgDiv">
+              </div>
+            </div>
+            <div class="layui-col-md6 andFont1"> 
+                <h3>静态网站托管：</h3>
+                <p class="titleChildFont">提供低成本、高可用、可根据流量需求自动扩展的网站托管解决方案。结合CDN和ECS快速构建动静态分离的网站/应用系统</p><br>
+                <h3>优势</h3>
+                <p class="titleChildFont">高性能<br>提供高并发、大带宽、低时延的数据访问体验</p><br>
+                <p class="titleChildFont">安全可靠<br>通过多级可靠性架构，保障数据持久性和业务连续性</p><br>
+                <p class="titleChildFont">低成本<br>资源弹性伸缩，按需付费</p><br>
+            </div>
+          </div>
+          <div class="layui-tab-item">
+            <div class="layui-col-md6">
+              <div class="bigImgDiv" >
+                <img alt="这里存放图片" src="" class="showImgDiv">
+              </div>
+            </div>
+            <div class="layui-col-md6 andFont1"> 
+                <h3>大数据分析：</h3>
+                <p class="titleChildFont">提供高性能、高可靠、低时延、低成本的海量存储系统，与华为云的大数据服务组合使用，能够大幅降低成本，并根据需求调整规模和提高创新速度帮助企业简单便捷的管理大数据</p><br>
+                <h3>优势</h3>
+                <p class="titleChildFont">高性能<br>处理突发的高峰流量，无需担心扩容不及时带来问题</p><br>
+                <p class="titleChildFont">低成本<br>资源弹性伸缩，按需付费</p><br>
+                <p class="titleChildFont">高可用<br>设计规格为99.995%可用性，满足业务连续性的要求</p><br>
+            </div>
+          </div>
+          <div class="layui-tab-item">
+            <div class="layui-col-md6">
+              <div class="bigImgDiv" >
+                <img alt="这里存放图片" src="" class="showImgDiv">
+              </div>
+            </div>
+            <div class="layui-col-md6 andFont1"> 
+                <h3>基因测序：</h3>
+                <p class="titleChildFont">提供高并发、高可靠、低时延、低成本的海量存储系统。结合华为云计算服务可快速搭建高扩展性、低成本、高可用的基因测序平台/p><br>
+                <h3>优势</h3>
+                <p class="titleChildFont">高扩展性<br>提供单桶EB级存储能力，满足基因测序海量数据存储诉求</p><br>
+                <p class="titleChildFont">低成本<br>提供自动生命周期管理，数据转为低成本归档存储</p><br>
+                <p class="titleChildFont">在线分发<br>提供数据在线分发功能，满足客户通过公网交付数据要求</p><br>
+            </div>
+          </div>
+          <div class="layui-tab-item">
+            <div class="layui-col-md6">
+              <div class="bigImgDiv" >
+                <img alt="这里存放图片" src="" class="showImgDiv">
+              </div>
+            </div>
+            <div class="layui-col-md6 andFont1"> 
+                <h3>智能视频监控：</h3>
+                <p class="titleChildFont">提供高性能、高可靠、低时延、低成本的海量存储系统。满足个人/企业等各类视频监控场景需求，提供设备管理，视频监控以及视频处理等多种能力的端到端解决方案</p><br>
+                <h3>优势</h3>
+                <p class="titleChildFont">高性能<br>千万级摄像头接入，低时延，直播及回放视频无卡顿</p><br>
+                <p class="titleChildFont">低成本<br>资源弹性伸缩，按需付费；视频存储运维0成本</p><br>
+                <p class="titleChildFont">稳定可靠<br>数据持久性高达99.9999999999%（12个9），视频数据不丢失</p><br>
+            </div>
+          </div>
+        </div>
+      </div> 
+    </div>
+  </div>
+</div>
+<div class="blackBg">
+  <div class="layui-container newFourImgAndFont">
+    <br><h1>功能描述</h1><br>
+    <div class="layui-row">
+      <div class="layui-col-md2">
+        <div class="imgDiv">
+          <img alt="这里存放图片" src="" class="showImgDiv">
+        </div>
+      </div>
+      <div class="layui-col-md4">
+        <div class="fontDiv">
+          <h2>易用上云</h2><br>
+          <p>提供 REST API 和SDK工具包，丰富的第三方生态</p>
+        </div>
+      </div>
+      <div class="layui-col-md2">
+        <div class="imgDiv">
+          <img alt="这里存放图片" src="" class="showImgDiv">
+        </div>
+      </div>
+      <div class="layui-col-md4">
+        <div class="fontDiv">
+          <h2>成本低廉</h2><br>
+          <p>提供按量计费和包年包月2种支付方式，支持三种存储类型，降低存储成本</p>
+        </div>
+      </div>
+    </div>
+    <div class="layui-row">
+      <div class="layui-col-md2">
+        <div class="imgDiv">
+          <img alt="这里存放图片" src="" class="showImgDiv">
+        </div>
+      </div>
+      <div class="layui-col-md4">
+        <div class="fontDiv">
+          <h2>多媒体数据处理</h2><br>
+          <p>对存储在OBS上的图片提供丰富的图片处理功能，并支持多种常用图片格式的转换</p>
+        </div>
+      </div>
+      <div class="layui-col-md2">
+        <div class="imgDiv">
+          <img alt="这里存放图片" src="" class="showImgDiv">
+        </div>
+      </div>
+      <div class="layui-col-md4">
+        <div class="fontDiv">
+          <h2>可扩展和深度集成</h2><br>
+          <p>无需事先规划存储容量 ，存储资源可线性无限扩展，并与其他服务深度集成</p>
+        </div>
+      </div>
+    </div>
+    <div class="layui-row">
+      <div class="layui-col-md2">
+        <div class="imgDiv">
+          <img alt="这里存放图片" src="" class="showImgDiv">
+        </div>
+      </div>
+      <div class="layui-col-md4">
+        <div class="fontDiv">
+          <h2>安全</h2><br>
+          <p>强大、灵活的安全机制和防护措施，提供灵活细粒度的用户访问控制，有效保障数据安全</p>
+        </div>
+      </div>
+      <div class="layui-col-md2">
+        <div class="imgDiv">
+          <img alt="这里存放图片" src="" class="showImgDiv">
+        </div>
+      </div>
+      <div class="layui-col-md4">
+        <div class="fontDiv">
+          <h2>持久度和可用性</h2><br>
+          <p>提供高可靠的数据中心存储，以及跨数据中心的容灾，确保数据在需要时安全可用</p>
+        </div>
+      </div>
+    </div>
+    <div class="layui-row">
+      <div class="layui-col-md2">
+        <div class="imgDiv">
+          <img alt="这里存放图片" src="" class="showImgDiv">
+        </div>
+      </div>
+      <div class="layui-col-md4">
+        <div class="fontDiv">
+          <h2>易于管理的策略</h2><br>
+          <p>通过OBS存储策略管理，优化存储管理效率，确保数据安全性</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+<script type="text/javascript" src="./layui/layui.js"></script>
+<script type="text/javascript">
+  layui.use(['jquery','layer','element'],function(){
+    var $ = layui.jquery
+       ,element = layui.element
+       ,layer = layui.layer;
+
+    $('#btn_id').click(function(){
+      layer.msg('点击按钮');
+    })
+  })
+</script>
+</html>

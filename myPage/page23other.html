@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
+  	<link rel="stylesheet" type="text/css" href="./page.css">
+  	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"> 
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+<style type="text/css">
+#rightDiv{
+ height: 95%;
+ width: 85%;
+ float:right;
+ margin-left: 3%;
+}
+#content{
+  float: right;
+  width: 100%;
+  margin:auto;
+  height: 95%;
+  border: 1px solid #f2f2f2;
+  overflow-y: scroll;
+  padding:20px;
+  position: fixed;
+}
+#title{
+  padding:5px;
+}
+#navTitle{
+  padding:5px;
+  width: 8%;
+  border-bottom: 2px solid red;
+}
+.layui-nav-tree{vertical-align: top;}
+html,body{height:100%;}
+
+</style>
+</head>
+<body>
+<div class="layui-side layui-bg-black">
+    <div class="layui-side-scroll">
+
+      <ul class="layui-nav layui-nav-tree dynamic-navigation" lay-filter="test" id="leftNavUl">
+        <ul class="layui-nav layui-nav-tree layui-nav-side"> 
+          <li class="layui-nav-item layui-nav-itemed">
+            <a href="javascript:;">域名类</a>
+            <dl class="layui-nav-child">
+              <dd><a href="javascript:;" data-id="1">域名转移</a></dd>
+              <dd><a href="javascript:;" data-id="2">域名过户</a></dd>
+            </dl>
+          </li>
+          <li class="layui-nav-item layui-nav-itemed">
+            <a href="javascript:;">邮局类</a>
+            <dl class="layui-nav-child">
+              <dd><a href="javascript:;" data-id="3">购买</a></dd>
+              <dd><a href="javascript:;" data-id="4">域名解析</a></dd>
+            </dl>
+          </li>
+           <li class="layui-nav-item layui-nav-itemed">
+            <a href="javascript:;">会员类</a>
+            <dl class="layui-nav-child">
+              <dd><a href="javascript:;" data-id="5">会员注册</a></dd>
+              <dd><a href="javascript:;" data-id="6">实名认证</a></dd>
+            </dl>
+          </li>
+           <li class="layui-nav-item layui-nav-itemed">
+            <a href="javascript:;">财务类</a>
+            <dl class="layui-nav-child">
+              <dd><a href="javascript:;" data-id="7">在线支付</a></dd>
+              <dd><a href="javascript:;" data-id="8">线下付款</a></dd>
+            </dl>
+          </li>
+           <li class="layui-nav-item layui-nav-itemed">
+            <a href="javascript:;">网站类</a>
+            <dl class="layui-nav-child">
+              <dd><a href="javascript:;" data-id="9">委托服务</a></dd>
+            </dl>
+          </li>
+        </ul> 
+      </ul>
+  </div>
+</div>
+
+<div id="rightDiv">
+  <div id="navTitle"><h2>域名转移</h2></div>
+  <div id="content"></div>
+</div> 
+
+<script type="text/html" id="showTpl">
+  <div style="padding:10px;line-height: 26px;">
+    <h2 style="color:#6262e9;">{{d.title}}</h2>
+    <p style="color:gray;">日期：{{d.date}}</p>
+    <p>{{d.showFont}}</p>
+  </div>
+</script>
+<script type="text/javascript" src="./layui/layui.js"></script>
+<script type="text/javascript">
+layui.use(['jquery','layer','tree', 'util','laytpl','element'],function(){
+  var $ = layui.jquery
+     ,element = layui.element
+     ,layer = layui.layer
+     ,tree = layui.tree
+     ,laytpl = layui.laytpl
+     ,util = layui.util;
+      
+
+  var dataContent = [  //对应的菜单内容,此处为模拟数据，真正使用时，需要接入正确的数据，并解析自己的数据格式
+    {title:'测试数据标题',date:'2019-7-11',showFont:'测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容',menuId:'3'},
+    {title:'测试数据标题',date:'2019-7-11',showFont:'测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容',menuId:'3'},
+    {title:'测试数据标题',date:'2019-7-11',showFont:'测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容',menuId:'3'},
+    {title:'测试数据标题',date:'2019-7-11',showFont:'测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容',menuId:'3'},
+    {title:'测试数据标题',date:'2019-7-11',showFont:'测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容',menuId:'3'},
+    {title:'测试数据标题',date:'2019-7-11',showFont:'测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容',menuId:'4'},
+    {title:'测试数据标题',date:'2019-7-11',showFont:'测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容',menuId:'4'},
+    {title:'测试数据标题',date:'2019-7-11',showFont:'测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容',menuId:'6'},
+    {title:'测试数据标题',date:'2019-7-11',showFont:'测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容',menuId:'7'},
+    {title:'测试数据标题',date:'2019-7-11',showFont:'测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容',menuId:'6'},
+    {title:'测试数据标题',date:'2019-7-11',showFont:'测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容',menuId:'6'},
+    {title:'测试数据标题',date:'2019-7-11',showFont:'测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容',menuId:'3'},
+  ];
+  var html = '';
+  layui.each(dataContent,function(index,item){
+    if(item.menuId == 3){
+      var tpl=showTpl.innerHTML;
+      laytpl(tpl).render(item,function(h){
+        html+=h;
+      })
+    }
+  })
+  $('#content').html(html);
+  $('#leftNavUl').find('a').on('click',function(obj){
+    var id = $(this).attr('data-id');
+    if(id){
+      $('#navTitle').find('h2').html($(obj).html());
+      var html = '';
+      layui.each(dataContent,function(index,item){
+        if(item.menuId == id){
+          var tpl=showTpl.innerHTML;
+          laytpl(tpl).render(item,function(h){
+            html+=h;
+          })
+        }
+      })
+      $('#content').html(html);
+    }
+  })
+
+  var i=0;
+  $('#animation-left-nav').click(function(){
+    //这里定义一个全局变量来方便判断动画收缩的效果,也就是放在最外面
+    if(i==0){
+      $(".layui-side").animate({width:'toggle'});
+      $(".layui-body").animate({left:'0px'});
+      i++;
+    }else{
+      $(".layui-side").animate({width:'toggle'});
+      $(".layui-body").animate({left:'200px'});
+      i--;
+    }   
+  });
+  //左侧导航栏收缩提示
+  $('#animation-left-nav').hover(function(){
+    layer.tips('收缩左侧导航栏', '#animation-left-nav', {tips:[4,'#FF8000'],time:0});
+  },function(){
+    layer.closeAll('tips'); 
+  });
+
+})
+</script>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
+  	<link rel="stylesheet" type="text/css" href="./page.css">
+  	<meta charset="UTF-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<style type="text/css">
+  html,body{height:100%;}
+</style>
+</head>
+<body>
+<div id="leftDiv">
+  <div id="title"><h2>帮助中心</h2></div>
+  <div id="leftNav"></div>
+</div>
+<div id="rightDiv">
+  <div id="navTitle"><h2>域名转移</h2></div>
+  <div id="content"></div>
+</div>
+</body>
+<script type="text/html" id="showTpl">
+  <div style="padding:10px;line-height: 26px;">
+    <h2 style="color:#6262e9;">{{d.title}}</h2>
+    <p style="color:gray;">日期：{{d.date}}</p>
+    <p>{{d.showFont}}</p>
+  </div>
+</script>
+<script type="text/javascript" src="./layui/layui.js"></script>
+<script type="text/javascript">
+layui.use(['jquery','layer','tree', 'util','laytpl'],function(){
+  var $ = layui.jquery
+     ,layer = layui.layer
+     ,tree = layui.tree
+     ,laytpl = layui.laytpl
+     ,util = layui.util;
+      
+  var data = [{
+    title: '常见问题 '
+    ,id: 0
+    ,spread: true
+    ,children: [ {title: '域名类',id: 0,spread:true,children: [ {title: '域名转移',id: 3 },{title: '域名过户',id: 4} ], } ,
+                 {title: '邮局类',id: 0,spread:true,children: [ {title: '购买',id: 6 },{title: '域名解析',id: 7} ], } ,
+                 {title: '会员类',id: 0,spread:true,children: [ {title: '会员注册',id: 9 },{title: '实名认证',id: 10} ], } , 
+                 {title: '财务类',id: 0,spread:true,children: [ {title: '在线支付',id: 12 },{title: '线下付款',id: 13} ], } ,
+                 {title: '网站类',id: 0,spread:true,children: [ {title: '委托服务',id: 15 }, ], } ,
+              ]
+
+  }];
+  var dataContent = [  //对应的菜单内容,此处为模拟数据，真正使用时，需要接入正确的数据，并解析自己的数据格式
+    {title:'测试数据标题',date:'2019-7-11',showFont:'测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容',menuId:'3'},
+    {title:'测试数据标题',date:'2019-7-11',showFont:'测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容',menuId:'3'},
+    {title:'测试数据标题',date:'2019-7-11',showFont:'测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容',menuId:'3'},
+    {title:'测试数据标题',date:'2019-7-11',showFont:'测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容',menuId:'3'},
+    {title:'测试数据标题',date:'2019-7-11',showFont:'测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容',menuId:'3'},
+    {title:'测试数据标题',date:'2019-7-11',showFont:'测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容',menuId:'4'},
+    {title:'测试数据标题',date:'2019-7-11',showFont:'测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容',menuId:'4'},
+    {title:'测试数据标题',date:'2019-7-11',showFont:'测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容',menuId:'6'},
+    {title:'测试数据标题',date:'2019-7-11',showFont:'测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容',menuId:'7'},
+    {title:'测试数据标题',date:'2019-7-11',showFont:'测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容',menuId:'6'},
+    {title:'测试数据标题',date:'2019-7-11',showFont:'测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容',menuId:'6'},
+    {title:'测试数据标题',date:'2019-7-11',showFont:'测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容',menuId:'3'},
+  ];
+  var html = '';
+  layui.each(dataContent,function(index,item){    //初始化默认渲染id为3的菜单
+    if(item.menuId == 3){
+      var tpl=showTpl.innerHTML;
+      laytpl(tpl).render(item,function(h){
+        html+=h;
+      })
+    }
+  })
+  $('#content').html(html);
+
+  tree.render({
+    elem: '#leftNav'
+    ,data: data
+    ,click: function(obj){
+      var data = obj.data;  //获取当前点击的节点数据
+      if(data.id!=0){                               //如果id不为0，即没有下级菜单，进行内容渲染
+        $('#navTitle').find('h2').html(data.title);
+        var html = '';
+        layui.each(dataContent,function(index,item){
+          if(item.menuId == data.id){
+            var tpl=showTpl.innerHTML;
+            laytpl(tpl).render(item,function(h){
+              html+=h;
+            })
+          }
+        })
+        $('#content').html(html);
+      }
+    }
+  });
+
+})
+</script>
+</html>

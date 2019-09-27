@@ -1,0 +1,196 @@
+<!--
+  原网站地址：
+  http://ym.qianxiyun.com/tgregister
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>托管注册</title>
+  <link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
+  <link rel="stylesheet" type="text/css" href="./page.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <style>
+    .bgImg{
+  	  background: url(img/page31/gpltg.jpg) center;
+	  max-width: 100%;
+	  width:100%;
+	  height: 300px;
+  	}
+  	.registerDiv{
+  		text-align: center;
+  		position: relative;
+	    margin: 0 auto;
+	    margin-top: -110px;
+  	}
+  	.registerDiv h1{
+  		margin:20px 0px;
+  	}
+  	.registerContent{
+  		padding: 16px;
+	    height: auto;
+	    background: #fff;
+	    border: solid 1px #dfdfdf;
+  	}
+  	.registerContent .leftDiv{
+  		padding:10px;
+  		border-right:1px dotted #80808063;
+  	}
+  	.registerContent .leftDiv p{
+  		font-size: 18px;
+    	font-weight: bold;
+    	margin:10px 0;
+    	text-align: left;
+  	}
+  	.registerContent .leftDiv p span{
+  		float:right;
+  	}
+  	.registerContent .leftDiv textarea{
+  		width:90%;
+  		height: 480px;
+  		padding: 20px;
+  		border: solid 1px #d1d1d1;
+    	box-shadow: inset 0 3px 3px #f5f5f5;
+  	}
+  	.layui-card-header{
+  		font-size: 16px;
+	    background: #f5f5f5;
+	    padding: 5px 10px;
+	    margin-top: 0px;
+	    font-weight: bold;
+	    border: solid 1px #dedede;
+	    border-bottom: none;
+	    text-align: left;
+  	}
+  	.layui-card-body{
+  		border: solid 1px #dedede;
+  		padding: 10px 0 0 10px;
+	    overflow-y: auto;
+	    height: 200px;
+  	}
+  	.registerContent .rightDiv{
+  		padding:10px;
+  		margin: 10px 0;
+  		text-align: left;
+  		line-height: 25px;
+  	}
+  	.orange{
+  		color: #ff6600;
+  	}
+  	.registerContent .rightDiv .choosePrice{
+  		border: solid 1px #dedede;
+	    margin-bottom: 20px;
+	    padding: 30px;
+	    background: #f5f5f5;
+	    display : flow-root;
+	}
+  	.registerContent .rightDiv .choosePrice .leftD{
+  		float:left;
+  		width: 65%;
+  	}
+  	.registerContent .rightDiv .choosePrice .rightD{
+  		float:right;
+  	}
+  	.tip{
+  		text-align: left;
+  		margin: 10px auto;
+  		width:58%;
+  		color: #4188cb;
+	    border: solid 1px #6fb4ea;
+	    background: #f1fbff;
+	    padding: 5px 20px;
+	    overflow: hidden;
+	    position: relative;
+  	}
+  	.tip .tipClose{
+  		float:right;
+  		cursor: pointer;
+  	}
+  </style>
+</head>
+<body style="background:#ededed;">
+<div class="bgImg"></div>
+<div class="registerDiv">
+  <div class="layui-container">
+  	<div class="registerContent">
+	  	<div class="layui-row">
+	  	  <h1>托管注册：</h1>
+	      <div class="layui-col-md6 leftDiv">
+	      	<p>托管域名
+	      		<span class="layui-btn layui-btn-sm">导入txt</span>
+	      	</p>
+	      	<textarea placeholder="输入您要注册的域名 一行一个，最多5000个。（带后缀 如千喜云）"></textarea>
+	  	  </div>
+	  	  <div class="layui-col-md6 rightDiv">
+	  	  	<div class="layui-card">
+			  <div class="layui-card-header">共计<span style="color:#f56200;">0</span>个</div>
+			  <div class="layui-card-body">
+			    暂无域名，请在左侧输入框输入将要托管的域名，然后点击计算价格按钮
+			  </div>
+			</div>
+			<h4>域名持有者信息</h4>
+			<p class="orange">按照实名政策要求，域名持有人必须真实有效，否则会导致域名无法解析；必须完成邮箱真实性验证的模板才能正常使用。</p>
+			<div class="choosePrice layui-form">
+				<div class="leftD">
+					<div class="layui-form-item">
+				    	<label class="layui-form-label">选择模板</label>
+				    	<div class="layui-input-block">
+				      		<select name="city" lay-verify="required">
+				        		<option value="">暂无模板，请先添加</option>
+				      		</select>
+				    	</div>
+				  	</div>
+				  	<div class="layui-form-item">
+				    	<label class="layui-form-label">注册年限</label>
+				    	<div class="layui-input-block">
+				      		<select name="city" lay-verify="required">
+				        		<option value="1">1年</option>
+				        		<option value="2">2年</option>
+				        		<option value="3">3年</option>
+				        		<option value="4">4年</option>
+				        		<option value="5">5年</option>
+				        		<option value="6">6年</option>
+				        		<option value="7">7年</option>
+				        		<option value="8">8年</option>
+				        		<option value="9">9年</option>
+				        		<option value="10">10年</option>
+				      		</select>
+				    	</div>
+				  	</div>
+			  	</div>
+			  	<div class="rightD">
+			  		<a>编辑模板信息</a>
+			  	</div>
+			</div>
+			<span class="layui-btn layui-btn-danger">计算价格</span>
+	      </div>
+	  	</div>
+	</div>
+  </div>
+<div class="tip">
+	<span class="tipClose">关闭</span>
+	<p>温馨提示：</p>
+	<p>1.托管注册禁止用来抢注域名</p>
+	<p>2.每个域名只能提交一次，同一个域名只能被一个用户提交，如果存在重复域名，系统将会自动过滤</p>
+	<p>3.提交时不会检查域名是否可以注册，请提前查询好待注册的域名名单。</p>
+	
+</div>
+</div>
+</body>
+<script type="text/javascript" src="./layui/layui.js"></script>
+<script type="text/javascript">
+  layui.use(['jquery','layer','form'],function(){
+    var $ = layui.jquery
+       ,form = layui.form
+       ,layer = layui.layer;
+
+    form.render();
+    $('.tipClose').on('click',function(){
+    	$('.tip').hide();
+    })
+    $('.layui-btn').click(function(){
+      layer.msg('点击按钮');
+    })
+  })
+</script>
+</html>

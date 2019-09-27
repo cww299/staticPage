@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>云虚拟主机</title>
+	<link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
+  	<link rel="stylesheet" type="text/css" href="./page.css">
+  	<meta charset="UTF-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+</head>
+<style type="text/css">
+#fiveImgAndTitleFont{
+	padding:60px 0px;
+}
+#fiveImgAndTitleFont .imgDiv{
+	height:100px;
+	width: 80%;
+	margin: 10px auto;
+}
+#fiveImgAndTitleFont h2{
+	text-align: center;
+}
+#fiveImgAndTitleFont .layui-col-md2{
+	background-color:white;
+	margin:5px;
+}
+.leftPrice{
+    font-size: 22px;
+    color: #005effa8;
+}
+.rightPrice{
+    font-size: 22px;
+    color: #005effa8;
+}
+.imgAndTitleAndFont1{
+	border: 2px solid #c0c4cc
+}
+.centerP{
+	text-align: center !important;
+	line-height: 32px !important;
+}
+.setMeal{
+	height: 50px;
+	padding: 10px;
+	margin: 5px auto;
+	width: 90%;
+}
+.setMeal .bigFont{
+	font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+}
+.minWidthIATAF{
+	width: 60% !important;
+	margin: auto;
+}
+</style>
+<body>
+<div>
+	<div class="layui-container">
+  	<div class="layui-row bigImgAndFont"> 
+   		<div class="layui-col-md6 andFont">
+    		<h1>云虚拟主机</h1>
+    		<p>千喜云虚拟主机，海星集群、性能卓越、安全可靠,按需购买节省开支简单易用。</p>
+    		<button class="layui-btn" id="btn_id" type="button">立即咨询</button>
+  		</div>
+  		<div class="layui-col-md6">
+        <div class="bigImgDiv" >
+          <img alt="这里存放图片" src="" class="showImgDiv">
+        </div>
+  		</div>
+  	</div>
+  </div>
+</div>
+<div class="blackBg">
+	<div class="layui-container newFourImgAndFont">
+    <h1>代码结构</h1><br>
+    <div class="layui-row">
+      <div class="layui-col-md2">
+        <div class="imgDiv">
+          <img alt="这里存放图片" src="" class="showImgDiv">
+        </div>
+      </div>
+      <div class="layui-col-md4">
+        <div class="fontDiv">
+          <h2>管理员操作后台 </h2><br>
+          <h2>PHP Web程序</h2>
+        </div>
+      </div>
+      <div class="layui-col-md2">
+        <div class="imgDiv">
+          <img alt="这里存放图片" src="" class="showImgDiv">
+        </div>
+      </div>
+      <div class="layui-col-md4">
+        <div class="fontDiv">
+          <h2>虚拟主机控制面板</h2><br>
+          <h2>PHP Web程序</h2>
+        </div>
+      </div>
+    </div>
+    <div class="layui-row">
+      <div class="layui-col-md2">
+        <div class="imgDiv">
+          <img alt="这里存放图片" src="" class="showImgDiv">
+        </div>
+      </div>
+      <div class="layui-col-md4">
+        <div class="fontDiv">
+          <h2>虚拟主机</h2><br>
+          <h2>PHP CLI脚本服务程序</h2>
+        </div>
+      </div>
+      <div class="layui-col-md2">
+        <div class="imgDiv">
+          <img alt="这里存放图片" src="" class="showImgDiv">
+        </div>
+      </div>
+      <div class="layui-col-md4">
+        <div class="fontDiv">
+          <h2>虚拟主机</h2><br>
+          <h2>Python Docker 管理脚本服务程序</h2>
+        </div>
+      </div>
+    </div>
+  	</div>
+</div>
+<div>
+  <div class="layui-container newFourImgAndFont">
+    <br><h1>产品优势</h1><br>
+    <div class="layui-row">
+      <div class="layui-col-md2">
+        <div class="imgDiv">
+          <img alt="这里存放图片" src="" class="showImgDiv">
+        </div>
+      </div>
+      <div class="layui-col-md4">
+        <div class="fontDiv">
+          <p>后台有定时器检测物理机状态、虚拟主机服务状态、一旦出现物理机故障能尽快发现问题、解决问题.</p>
+        </div>
+      </div>
+      <div class="layui-col-md2">
+        <div class="imgDiv">
+          <img alt="这里存放图片" src="" class="showImgDiv">
+        </div>
+      </div>
+      <div class="layui-col-md4">
+        <div class="fontDiv">
+          <p>采用docker独立内存占用，不共享，互不影响，有效保障资源的稳定性。</p>
+        </div>
+      </div>
+    </div>
+    <div class="layui-row">
+      <div class="layui-col-md2">
+        <div class="imgDiv">
+          <img alt="这里存放图片" src="" class="showImgDiv">
+        </div>
+      </div>
+      <div class="layui-col-md4">
+        <div class="fontDiv">
+          <p>docker数据文件映射到硬盘上,即使docker服务出现异常如mysql, apache等,也不会丢失数据。</p>
+        </div>
+      </div>
+      <div class="layui-col-md2">
+        <div class="imgDiv">
+          <img alt="这里存放图片" src="" class="showImgDiv">
+        </div>
+      </div>
+      <div class="layui-col-md4">
+        <div class="fontDiv">
+          <p>虚拟主机有pv访问量、uv用户量延迟1分钟的数据统计，可以对虚拟主机的目前访问量快速知晓， 并且通过切割日志统计，不涉及数据库查询,效率高。</p>
+        </div>
+      </div>
+    </div>
+    <div class="layui-row">
+      <div class="layui-col-md2">
+        <div class="imgDiv">
+          <img alt="这里存放图片" src="" class="showImgDiv">
+        </div>
+      </div>
+      <div class="layui-col-md4">
+        <div class="fontDiv">
+          <p>独立的dns服务，有效保障开通虚拟主机后即可产  及域名,用户如有独立域名可以cname到该域名上,也可以a记录到该ip上。</p>
+        </div>
+      </div>
+      <div class="layui-col-md2">
+        <div class="imgDiv">
+          <img alt="这里存放图片" src="" class="showImgDiv">
+        </div>
+      </div>
+      <div class="layui-col-md4">
+        <div class="fontDiv">
+          <p>后台应用程序和脚本程序分开,使用tcp签名验证通信,防止截获篡改,保障通信安全性。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="blackBg">
+	<div class="layui-container">
+  		<div class="layui-row layui-col-space20" id="fiveImgAndTitleFont"> 
+  			<div class="layui-col-md1"></div> 
+   			<div class="layui-col-md2">
+      			<div class="imgDiv">
+		          <img alt="这里存放图片" src="" class="showImgDiv">
+		        </div>
+		        <h2>ASP虚拟主机</h2>
+  			</div>
+  			<div class="layui-col-md2">
+      			<div class="imgDiv">
+		          <img alt="这里存放图片" src="" class="showImgDiv">
+		        </div>
+		        <h2>. NET虚拟主机</h2>
+  			</div>
+  			<div class="layui-col-md2">
+      			<div class="imgDiv">
+		          <img alt="这里存放图片" src="" class="showImgDiv">
+		        </div>
+		        <h2>PHP虚拟主机</h2>
+  			</div>
+  			<div class="layui-col-md2">
+      			<div class="imgDiv">
+		          <img alt="这里存放图片" src="" class="showImgDiv">
+		        </div>
+		        <h2>JSP虚拟主机</h2>
+  			</div>
+  			<div class="layui-col-md2">
+          		<div class="imgDiv">
+		          <img alt="这里存放图片" src="" class="showImgDiv">
+		        </div>
+		        <h2>香港虚拟主机</h2>
+  			</div>
+  		</div>
+  	</div>
+</div>
+<div>
+  <div class="layui-container">
+    <div class="layui-row titleFontAndFourImg"> 
+        <h1>虑拟主机推荐套餐</h1><br>
+        <div class="layui-col-md3">
+          <div class="imgAndTitleAndFont1">
+            <br><h2>经济型</h2><hr><br>
+            <p>适用于个人网站初始阶段并发访问量小，配置省钱适用，购买方便快捷。<br>
+            <div class="blackBg setMeal">
+            	<p class="bigFont">200M&nbsp;&nbsp;&nbsp;&nbsp;30G&nbsp;&nbsp;&nbsp;&nbsp;200个</p>
+            	<p style="text-align: center;">存储空间&nbsp;&nbsp;流量&nbsp;&nbsp;并发连接数</p>
+            </div>
+            <p class="centerP"><span class="leftPrice">200</span>元/年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="rightPrice">800</span>元/5年</p>
+            <p class="centerP"><button class="layui-btn">立即购买</button></p><br>
+          </div>
+        </div>
+        <div class="layui-col-md3">
+          <div class="imgAndTitleAndFont1">
+            <br><h2>企业型</h2><hr><br>
+            <p>适合流量适中的网站应用，或简单开发环境代码存储库等</p><br>
+             <div class="blackBg setMeal">
+            	<p class="bigFont">300M&nbsp;&nbsp;&nbsp;&nbsp;40G&nbsp;&nbsp;&nbsp;&nbsp;300个</p>
+            	<p style="text-align: center;">存储空间&nbsp;&nbsp;流量&nbsp;&nbsp;并发连接数</p>
+            </div>
+            <p class="centerP"><span class="leftPrice">300</span>元/年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="rightPrice">1200</span>元/5年</p>
+            <p class="centerP"><button class="layui-btn">立即购买</button></p><br>
+          </div>
+        </div>
+        <div class="layui-col-md3">
+          <div class="imgAndTitleAndFont1">
+            <br><h2>商务型</h2><hr><br>
+            <p>满足90%使用者需求，适合企业运营活动、并行计算应用</p><br>
+             <div class="blackBg setMeal">
+            	<p class="bigFont">600M&nbsp;&nbsp;&nbsp;&nbsp;50G&nbsp;&nbsp;&nbsp;&nbsp;400个</p>
+            	<p style="text-align: center;">存储空间&nbsp;&nbsp;流量&nbsp;&nbsp;并发连接数</p>
+            </div>
+            <p class="centerP"><span class="leftPrice">400</span>元/年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="rightPrice">1600</span>元/5年</p>
+            <p class="centerP"><button class="layui-btn">立即购买</button></p><br>
+          </div>
+        </div>
+        <div class="layui-col-md3">
+          <div class="imgAndTitleAndFont1">
+            <br><h2>豪华型</h2><hr><br>
+            <p>适合流量适中的网站应用，或简单开发环境代码存储库等</p><br>
+             <div class="blackBg setMeal">
+            	<p class="bigFont">1G&nbsp;&nbsp;&nbsp;&nbsp;100G&nbsp;&nbsp;&nbsp;&nbsp;500个</p>
+            	<p style="text-align: center;">存储空间&nbsp;&nbsp;流量&nbsp;&nbsp;并发连接数</p>
+            </div>
+            <p class="centerP"><span class="leftPrice">600</span>元/年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="rightPrice">2400</span>元/5年</p>
+            <p class="centerP"><button class="layui-btn">立即购买</button></p><br>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+<div class="blackBg">
+  <div class="layui-container">
+    <div class="layui-row titleFontAndFourImg"> 
+        <h1>香港虚拟主机推荐套餐</h1><br>
+        <div class="layui-col-md4">
+          <div class="imgAndTitleAndFont1 minWidthIATAF">
+            <br><h2>香港K1</h2><hr><br>
+            <p>适用于个人网站初始阶段并发访问量小配置省钱适用，购买方便快捷。<br>
+            <div class="blackBg setMeal">
+            	<p class="bigFont">150M&nbsp;&nbsp;&nbsp;&nbsp;30G&nbsp;&nbsp;&nbsp;&nbsp;150个</p>
+            	<p style="text-align: center;">存储空间&nbsp;&nbsp;流量&nbsp;&nbsp;并发连接数</p>
+            </div>
+            <p class="centerP"><span class="leftPrice">300</span>元/年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="rightPrice">1200</span>元/5年</p>
+            <p class="centerP"><button class="layui-btn">立即购买</button></p><br>
+          </div>
+        </div>
+        <div class="layui-col-md4">
+          <div class="imgAndTitleAndFont1 minWidthIATAF">
+            <br><h2>香港K2</h2><hr><br>
+            <p>适合流量适中的网站应用，或简单开发环境、代码存储库等</p><br>
+             <div class="blackBg setMeal">
+            	<p class="bigFont">200M&nbsp;&nbsp;&nbsp;&nbsp;30G&nbsp;&nbsp;&nbsp;&nbsp;150个</p>
+            	<p style="text-align: center;">存储空间&nbsp;&nbsp;流量&nbsp;&nbsp;并发连接数</p>
+            </div>
+            <p class="centerP"><span class="leftPrice">360</span>元/年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="rightPrice">1440</span>元/5年</p>
+            <p class="centerP"><button class="layui-btn">立即购买</button></p><br>
+          </div>
+        </div>
+        <div class="layui-col-md4">
+          <div class="imgAndTitleAndFont1 minWidthIATAF">
+            <br><h2>香港K3</h2><hr><br>
+            <p>满足90%使用者需求，适合企业运营活动、并行计算应用</p><br>
+             <div class="blackBg setMeal">
+            	<p class="bigFont">300M&nbsp;&nbsp;&nbsp;&nbsp;40G&nbsp;&nbsp;&nbsp;&nbsp;300个</p>
+            	<p style="text-align: center;">存储空间&nbsp;&nbsp;流量&nbsp;&nbsp;并发连接数</p>
+            </div>
+            <p class="centerP"><span class="leftPrice">500</span>元/年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="rightPrice">2000</span>元/5年</p>
+            <p class="centerP"><button class="layui-btn">立即购买</button></p><br>
+          </div>
+        </div>
+    </div>
+    <div class="layui-row titleFontAndFourImg">
+        <div class="layui-col-md4">
+          <div class="imgAndTitleAndFont1 minWidthIATAF">
+            <br><h2>香港K4</h2><hr><br>
+            <p>适用于个人网站初始阶段并发访问量小配置省钱适用，购买方便快捷。<br>
+            <div class="blackBg setMeal">
+            	<p class="bigFont">600M&nbsp;&nbsp;&nbsp;&nbsp;50G&nbsp;&nbsp;&nbsp;&nbsp;400个</p>
+            	<p style="text-align: center;">存储空间&nbsp;&nbsp;流量&nbsp;&nbsp;并发连接数</p>
+            </div>
+            <p class="centerP"><span class="leftPrice">800</span>元/年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="rightPrice">3200</span>元/5年</p>
+            <p class="centerP"><button class="layui-btn">立即购买</button></p><br>
+          </div>
+        </div>
+        <div class="layui-col-md4">
+          <div class="imgAndTitleAndFont1 minWidthIATAF">
+            <br><h2>香港K5</h2><hr><br>
+            <p>适合流量适中的网站应用，或简单开发环境、代码存储库等</p><br>
+             <div class="blackBg setMeal">
+            	<p class="bigFont">1G&nbsp;&nbsp;&nbsp;&nbsp;100G&nbsp;&nbsp;&nbsp;&nbsp;500个</p>
+            	<p style="text-align: center;">存储空间&nbsp;&nbsp;流量&nbsp;&nbsp;并发连接数</p>
+            </div>
+            <p class="centerP"><span class="leftPrice">1000</span>元/年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="rightPrice">4000</span>元/5年</p>
+            <p class="centerP"><button class="layui-btn">立即购买</button></p><br>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+</body>
+<script type="text/javascript" src="./layui/layui.js"></script>
+<script type="text/javascript">
+  layui.use(['jquery','layer'],function(){
+    var $ = layui.jquery
+       ,layer = layui.layer;
+
+    $('.layui-btn').click(function(){
+      layer.msg('点击按钮');
+    })
+  })
+</script>
+</html>

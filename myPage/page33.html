@@ -1,0 +1,198 @@
+<!--
+  原网站地址：
+  http://ym.qianxiyun.com/coupon/couponorder_index
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>购物车</title>
+	<link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
+  	<link rel="stylesheet" type="text/css" href="./page.css">
+  	<meta charset="UTF-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  	<style type="text/css">
+  	  .mycart{
+  	  	font-size: 26px;
+  	  	margin: 10px 0px;
+  	  }
+  	  .bgImg{
+  	    background: url(./img/page33/gwc.jpg) center;
+  	    margin: 0;
+        width: 100%;
+        height: 302px;
+        max-width: 100%;
+  	  }
+  	  .cartContent{
+  	  	position: relative;
+	    margin: 0 auto;
+	    width: 100%;
+	    margin-top: -110px;
+	    padding:10px;
+	    background:white;
+  	  }
+  	  .cartContent .tip{
+  	  	color: #ff6600;
+  	  	font-size: 14px;
+  	  	border-bottom: none;
+  	  	border: 1px dotted #e0e0e0;
+	    line-height: 40px;
+	    padding-left: 20px;
+	    margin-top: 20px;
+	    font-weight: bold;
+  	  }
+  	  .cartContent .cartFooter{
+  	  	background-color: #f2f2f2;
+  	  	padding:10px 10px;
+  	  	text-align: right;
+  	  }
+  	  .cartContent .cartFooter .clear{
+  	  	float: left;
+  	  }
+  	  .cartContent .cartFooter .clear:hover{
+  	  	color: #e00000;
+  	  }
+  	  .cartContent .cartFooter .allPrice{
+  	  	font-size: 22px;
+  	  	font-weight: bold;
+  	  }
+  	  .cartContent .cartFooter .allPrice .orange{
+  	  	color: #ff6600;
+  	  	font-size: 24px;
+  	  }
+  	  .cartContent .sumInfoTitle{
+	    height: 45px;
+	    border: 1px solid #E6E6E6;
+	    border-bottom: none;
+	    margin-top: 20px;
+	    padding: 0 20px;
+	    line-height: 45px;
+	    font-size: 18px;
+	    font-weight: bold;	
+  	  }
+  	  .cartContent .sumInfo{
+	    border: 1px solid #E6E6E6;
+	    border-top: 2px solid #FFA722;
+	    background-color: #FFF3E3;
+	    padding: 0px 20px;
+	    text-align: right;
+	    padding:20px;
+  	  }
+  	  .cartContent .sumInfo p{
+  	  	font-size: 16px;
+  	  	color: gray;
+  	  	margin:2px 0px;
+  	  }
+  	  .cartContent .sumInfo p.orange{
+  	  	color:#ff6600;
+  	  }
+  	  .cartContent .sumInfo p .price{
+  	  	color:#ff6600;
+  	  	font-size: 28px;
+  	  	font-weight: bold;
+  	  }
+  	  .cartContent .sumInfo p a{
+  	  	color:blue;
+  	  }
+  	  .cartContent .gotoSum{
+  	  	float: right;
+  	  	margin: 10px 0px;
+  	  }
+  	  .layui-table-view{
+  	  	margin:0px;
+  	  }
+  	  .layui-table tr{
+  	  	background: #FFFCF8;
+  	  }
+  	</style>
+</head>
+<body style="background: #ededed;">
+<div class="bgImg"></div>
+<div>
+  <div class="layui-container">
+  	<div class="layui-row cartContent"> 
+   	  <div class="layui-col-md12">
+   	  	<p class="mycart">我的购物车</p>
+	  	<p class="tip">购买代金券直接抵扣现金消费，优惠看得见！可叠加使用买的越多优惠越多哟~</p>
+		<table id="cartTable" lay-filter="cartTable"></table>
+		<div class="cartFooter">
+			<a href="javascript:;" class="clear">清空购物车</a>
+			<span class="allPrice">所选商品总价：<span class="orange">￥0.0</span></span>
+		</div>
+		<div class="sumInfoTitle">
+			结算信息
+		</div>
+		<div class="sumInfo">
+			<p>应付金额：<span class="price">￥0.0</span></p>
+			<p class="orange">账户可用金额：<span>￥0.0</span></p>
+			<p>不足金额：<span>￥0.0</span></p>
+			<p><a href="javascript:;">在线充值>></a></p>
+		</div>
+		<div class="gotoSum">
+			<table class="layui-form">
+				<tr>
+					<td><input type="checkbox" name="" lay-skin="primary"></td>
+					<td>&nbsp;</td>
+					<td><a href="javascript:;">我已阅读并接受《优惠券使用协议》</a></td>
+					<td>&nbsp;</td>
+					<td>
+						<span class="layui-btn layui-btn-danger">去结算</span>
+					</td>
+				</tr>
+			</table>
+		</div>
+  	  </div>
+    </div>
+  </div>
+</div>
+
+</body>
+<script type="text/javascript" src="./layui/layui.js"></script>
+<script type="text/javascript">
+  layui.use(['jquery','layer','table'],function(){
+    var $ = layui.jquery
+       ,table = layui.table
+       ,layer = layui.layer;
+
+    var data = [
+    	{id:'1',name:'com域名注册券-面值65.00元',area:'用于com后缀域名注册使用',price:'￥40.00',number:'1',date:'2019.08.16 至 2019.12.31',description:'最低购买1张'},
+    	{id:'2',name:'com域名续费券-面值35.00元',area:'用于com后缀域名',price:'￥40.00',number:'1',date:'2019.08.16 至 2019.12.31',description:'最低购买1张'},
+    ];
+    table.render({
+    	elem:'#cartTable',
+    	data: data,  //使用静态数据模拟
+    	//skin: 'line',
+    	cols:[[
+    		{ align:'center', type:'checkbox', },
+    		{ align:'center', minWidth:'150', title:'名称', field:'name',},
+    		{ align:'center', minWidth:'120', title:'适用范围', field:'area', },
+    		{ align:'center', minWidth:'20', title:'单价', field:'price', },
+    		{ align:'center', minWidth:'20', title:'数量', field:'number', },
+    		{ align:'center', minWidth:'100', title:'有效日期', field:'date', },
+    		{ align:'center', minWidth:'100', title:'说明', field:'description', },
+    		{ align:'center', width:'10%', title:'操作', templet:getDelete(), event: 'deleteBtn',},
+    	]],
+    })
+    table.on('tool(cartTable)',function(obj){
+    	var data = obj.data;
+    	if(obj.event=='deleteBtn'){
+    		layer.confirm('是否确认删除？',function(){
+    			layer.msg('删除商品'+data.id);
+    		})
+    	}
+    })
+    $('.clear').click(function(){
+    	layer.confirm('是否确认清空？',function(){
+    		layer.msg('清空商品');
+    	})
+    })
+    function getDelete(){
+    	return function(d){
+    		return '<a href="javascript:;" class="deleteBtn" data-key="'+d.id+'">删除</a>';
+    	}
+    }
+    $('.layui-btn').click(function(){
+      layer.msg('点击按钮');
+    })
+  })
+</script>
+</html>

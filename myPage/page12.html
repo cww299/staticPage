@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>弹性负载均衡</title>
+  <link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
+    <link rel="stylesheet" type="text/css" href="./page.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+</head>
+<style type="text/css">
+.bigImgAndFont li{
+  width: 30%;
+}
+</style>
+<body>
+<div>
+  <div class="layui-container">
+      <div class="layui-row bigImgAndFont"> 
+          <div class="layui-col-md6 andFont smallTopBottomPadding">
+              <h1>弹性负载均衡 ELB</h1>
+              <p>弹性负载均衡（ Elastic Load Balance）将访问流量自动分发到多台云服务器，扩展应用系统对外的服务能力，实现更高水平的应用容错</p><br>
+              <button class="layui-btn" id="btn_id1" type="button">立即咨询</button>
+          </div>
+          <div class="layui-col-md6">
+              <div class="bigImgDiv" >
+                <img alt="这里存放图片" src="" class="showImgDiv">
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<div class="blackBg">
+  <div class="layui-container">
+    <div class="layui-row titleFontAndFourImg"> 
+      <h1>产品优势</h1><br>
+      <div class="layui-col-md3">
+        <div class="imgAndTitleAndFont1">
+          <div class="imgDiv">
+            <img alt="这里存放图片" src="" class="showImgDiv">
+          </div>
+          <h2>性能强悍</h2><br>
+          <p>集群支持1亿并发连接，满足用户的海量业务访问需求<br> <br><br> <br></p>
+        </div>
+      </div>
+      <div class="layui-col-md3">
+        <div class="imgAndTitleAndFont1">
+          <div class="imgDiv">
+            <img alt="这里存放图片" src="" class="showImgDiv">
+          </div>
+          <h2>高可用</h2><br>
+          <p>采用集群化部署，支持多可用区的同城双活容灾，无缝实时切换<br> <br> <br><br></p>
+        </div>
+      </div>
+      <div class="layui-col-md3">
+        <div class="imgAndTitleAndFont1">
+          <div class="imgDiv">
+            <img alt="这里存放图片" src="" class="showImgDiv">
+          </div>
+          <h2>灵活扩展</h2><br>
+          <p>根据应用流量自动完成分发，与弹性伸缩服务无缝集成，灵活扩展用户应用的对外服务能力 <br> <br> <br> </p>
+        </div>
+      </div>
+      <div class="layui-col-md3">
+        <div class="imgAndTitleAndFont1">
+          <div class="imgDiv">
+            <img alt="这里存放图片" src="" class="showImgDiv">
+          </div>
+          <h2>简单易用</h2><br>
+          <p>快速部署，实时生效，支持多种协议、多种调度算法可选，用户可以高效地管理和调整分发策略 <br> <br> <br> </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="layui-container">
+    <div class="layui-row bigImgAndFont"> 
+      <br><h1 class="centerH1">应用场景</h1><br>
+      <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+          <li class="layui-this"><h2>大型门户网站</h2></li>
+          <li><h2>跨可用区同城容灾 </h2></li>
+          <li><h2>电商抢购</h2></li>
+        </ul><br>
+        <div class="layui-tab-content" style="height: 100px;">
+          <div class="layui-tab-item layui-show">
+            <div class="layui-col-md6">
+              <div class="bigImgDiv" >
+                <img alt="这里存放图片" src="" class="showImgDiv">
+              </div>
+            </div>
+            <div class="layui-col-md6 andFont1"> 
+              <h3>大型门户网站</h3>
+              <p class="titleChildFont">针对大型门户网站访问量高的特点，通过弹性负载均衡将用户的访问流量均匀的分发到多个后端云服务器上，确保业务快速平稳的运行</p><br>
+              <h3>优势</h3>
+              <p class="titleChildFont">灵活扩展<br>可根据实际的用户访问量，自动扩展负载分发能力</p><br>
+              <p class="titleChildFont">高性能<br>集群支持1亿并发连接，满足海量访问量诉求</p><br>
+            </div>
+          </div>
+          <div class="layui-tab-item">
+            <div class="layui-col-md6">
+              <div class="bigImgDiv" >
+                <img alt="这里存放图片" src="" class="showImgDiv">
+              </div>
+            </div>
+            <div class="layui-col-md6 andFont1"> 
+              <h3>跨可用区同城容灾 </h3>
+              <p class="titleChildFont">弹性负载均衡可将流量跨可用区进行分发，建立实时的同城容灾机制，满足银行贸易等企业对系统的高可用性要求</p><br>
+              <h3>优势</h3>
+              <p class="titleChildFont">灵活扩展<br>可根据实际的用户访问量，自动扩展负载分发能力</p><br>
+              <p class="titleChildFont">同城容灾<br>支持跨可用区的双活容灾，实现无缝实时切换</p><br>
+            </div>
+          </div>
+          <div class="layui-tab-item">
+            <div class="layui-col-md6">
+              <div class="bigImgDiv" >
+                <img alt="这里存放图片" src="" class="showImgDiv">
+              </div>
+            </div>
+            <div class="layui-col-md6 andFont1"> 
+              <h3>电商抢购</h3>
+              <p class="titleChildFont">电商业务呈现出较强的潮汐效应。ELB通过和弹性伸缩等服务的无缝集成，自动创建后端云服务器，将流量自动分发到新的云服务器，缓解了促销高峰时期的系统压力</p><br>
+              <h3>优势</h3>
+              <p class="titleChildFont">弹性伸缩<br>根据业务流量实时创建或移除云服务器</p><br>
+              <p class="titleChildFont">高可用 <br>通过健康检查快速屏蔽异常云服务器，确保业务高可用</p><br>
+              <p class="titleChildFont">高性能<br>集群支持1亿并发连接，满足海量访问量诉求</p><br>
+            </div>
+          </div>
+        </div>
+      </div> 
+    </div>  
+  </div>
+</div>
+<div class="blackBg">
+  <div class="layui-container newFourImgAndFont">
+    <h1 style="text-align: center;">功能描述</h1><br>
+    <div class="layui-row">
+      <div class="layui-col-md2">
+        <div class="imgDiv">
+          <img alt="这里存放图片" src="" class="showImgDiv">
+        </div>
+      </div>
+      <div class="layui-col-md4">
+        <div class="fontDiv">
+          <h2>多协议支持 </h2><br>
+          <p>四层和七层多种协议可选，满足多样的业务场景</p>
+        </div>
+      </div>
+      <div class="layui-col-md2">
+        <div class="imgDiv">
+          <img alt="这里存放图片" src="" class="showImgDiv">
+        </div>
+      </div>
+      <div class="layui-col-md4">
+        <div class="fontDiv">
+          <h2>会话保持 </h2><br>
+          <p>将一定时间内来自同一用户的访问请求，转发到同一后端云服务器处理，从而保证用户访问的连续性 </p>
+        </div>
+      </div>
+    </div>
+    <div class="layui-row">
+      <div class="layui-col-md2">
+        <div class="imgDiv">
+          <img alt="这里存放图片" src="" class="showImgDiv">
+        </div>
+      </div>
+      <div class="layui-col-md4">
+        <div class="fontDiv">
+          <h2>高可用保障 </h2><br>
+          <p>提供多重的高可用防护策略，保障业务的服务质量</p>
+        </div>
+      </div>
+      <div class="layui-col-md2">
+        <div class="imgDiv">
+          <img alt="这里存放图片" src="" class="showImgDiv">
+        </div>
+      </div>
+      <div class="layui-col-md4">
+        <div class="fontDiv">
+          <h2>弹性伸缩 </h2><br>
+          <p> 与弹性伸缩服务无缝集成，根据业务流量自动扩展负载分发和后端处理能力，保障业务灵活可用 </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+<script type="text/javascript" src="./layui/layui.js"></script>
+<script type="text/javascript">
+  layui.use(['jquery','layer','element'],function(){
+    var $ = layui.jquery
+       ,element = layui.element
+       ,layer = layui.layer;
+
+    $('#btn_id1').click(function(){
+      layer.msg('点击按钮');
+    })
+    $('#btn_id2').click(function(){
+      layer.msg('点击按钮');
+    })
+  })
+</script>
+</html>

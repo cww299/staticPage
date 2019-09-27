@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
+  	<link rel="stylesheet" type="text/css" href="./page.css">
+  	<meta charset="UTF-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+</head>
+<body>
+<div>
+	<div class="layui-container">
+    	<div class="layui-row bigImgAndFont"> 
+       		<div class="layui-col-md6 andFont smallFontBorder">
+          		<h1>风险评估</h1>
+          		<p>风险评估服务是从风险管理角度,依据有关信息安全技术与管理标准，对信息资产所面临的威胁、存在的弱点、造成的影响，以及三者综合作用所带来风险的可能性的评估。</p>
+          		<button class="layui-btn" id="btn_id" type="button">立即咨询</button>
+      		</div>
+      		<div class="layui-col-md6">
+	            <div class="bigImgDiv" >
+	              <img alt="这里存放图片" src="" class="showImgDiv">
+	            </div>
+      		</div>
+    	</div>
+  </div>
+</div>
+<div class="blackBg">
+	<div class="layui-container">
+    	<div class="layui-row"> 
+       		<div class="layui-col-md6">
+          		<div class="twoBigFontOfOne">
+          			<h1>服务内容</h1><br><br>
+          			<p>安全风险评估从风险管理角度,根据相关标准规范，分析资产情况和威胁来源，全面考虑系统所存在的运行风险，评估安全事件发生可能造成的危害程度，并提出有针对性的抵御威胁的防护对策和整改措施。评估主要内容包括：物理环境、网络及系统设备、应用系统、信息安全管理制度、应急响应能力等安全性评估。</p><br>
+          		</div>
+      		</div>
+      		<div class="layui-col-md6">
+	            <div class="twoBigFontOfOne">
+          			<h1>服务价值</h1><br><br>
+          			<p>基于全面的风险评估，能够准确了解企业信息安全现状,明晰信息安全需求。基于风险评估结果，可以针对性的制定信息系统安全策略和风险解决方案。风险评估结合技术与管理，指导客户对未来的信息安全有规划的建设和投入,高效建立适合客户自身的信息安全管理框架。<br><br></p><br>
+          		</div>
+      		</div>
+    	</div>
+  </div>
+</div>
+<div>
+	<div class="layui-container">
+    	<div class="layui-row bigImgAndFont"> 
+    		<div class="layui-col-md6">
+	            <div class="bigImgDiv" >
+	              <img alt="这里存放图片" src="" class="showImgDiv">
+	            </div>
+      		</div>
+       		<div class="layui-col-md6 andFont smallFontBorder">
+          		<h1>漏洞扫描</h1>
+          		<p>漏洞扫描服务是由安全工程师通过对网站、应用系统和工控系统的扫描，了解网络安全设置和运行的应用服务,及时发现安全漏洞，客观评估网络风险等级,做到防患于未然。</p>
+          		<button class="layui-btn" id="btn_id" type="button">立即咨询</button>
+      		</div>
+    	</div>
+  </div>
+</div>
+<div class="blackBg">
+	<div class="layui-container">
+    	<div class="layui-row"> 
+       		<div class="layui-col-md6">
+          		<div class="twoBigFontOfOne">
+          			<h1>服务内容</h1><br><br>
+          			<p>漏洞扫描服务主要通过两种方法来检查目标主机是否存在漏洞：在端口扫描后得知主机开启的端口以及端口上的网络服务，与漏洞扫描系统提供的漏洞库进行匹配，查看是否有满足匹配条件的漏洞存在；通过模拟黑客的攻击手法，对目标主机系统进行攻击性的安全漏洞扫描，若模拟攻击成功，则表明目标主机系统存在安全漏洞。</p><br>
+          		</div>
+      		</div>
+      		<div class="layui-col-md6">
+	            <div class="twoBigFontOfOne">
+          			<h1>服务价值</h1><br><br>
+          			<p>通过漏洞扫描服务使客户了解主机在系统和应用方面存在的漏洞，客户可以通过漏洞扫描生产的专业报告和加固意见对主机进行安全加固，最终达到使客户机拒绝恶意攻击的目的。帮助客户用更专业的方法去发现漏洞，并出具专业的扫描报告和加固意见，有效地阻止入侵事件的发生。<br><br></p><br>
+          		</div>
+      		</div>
+    	</div>
+  </div>
+</div>	
+</body>
+<script type="text/javascript" src="./layui/layui.js"></script>
+<script type="text/javascript">
+  layui.use(['jquery','layer'],function(){
+    var $ = layui.jquery
+       ,layer = layui.layer;
+
+    $('#btn_id').click(function(){
+      layer.msg('点击按钮');
+    })
+  })
+</script>
+</html>

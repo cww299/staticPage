@@ -1,0 +1,229 @@
+<!--
+  原网站地址：
+  http://ym.qianxiyun.com/domain/result
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>查询结果</title>
+	<link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
+	<link rel="stylesheet" type="text/css" href="./page.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <style>
+    .searchDiv{
+      margin:0 auto;
+      padding:20px 50px;
+      text-align:center;
+    }
+    .searchContent{
+      overflow: initial;
+    }
+    .resultDiv{
+      padding:20px;
+    }
+    .resultContent{
+      border:1px solid #dadada;
+    }
+    .resultContent .resultHeader{
+      line-height: 38px;
+      background: #e4ecfc;
+      padding-left: 15px;
+      color: #336699;
+    }
+    .resultContent .resultHeader span{
+      margin: 0 3px;
+      color: #e00000;
+      font-weight: bold;
+    }
+    .resultContent .resultList li{
+      border-top: 1px solid #dadada;
+      height: 65px;
+      overflow-y:auto;
+    }
+    .resultContent .resultList li p{
+      font-size: 22px;
+      line-height: 60px;
+      padding: 0 0 0 45px;
+      word-break: break-all;
+    }
+    .resultContent .resultList li .leftP{
+      float: left;
+    }
+    .resultContent .resultList li .rightP{
+      float: right;
+      padding-left: 0px;
+      padding-right: 15px;
+    }
+    .error_span{
+      color: red;
+      font-size: 12px;
+      padding: 0 10px;
+    }
+    .regis_span{
+      color:#9e9e9e;;
+      font-size: 12px;
+      padding: 0 10px;
+      font-style: normal;
+      font-weight: 400;
+    }
+    .fail_span{
+      color: red;
+      font-size: 12px;
+      padding: 0 10px;
+    }
+    .layui-badge{
+      margin: 0 10px;
+    }
+    .nameOrder{
+      border:1px solid #9e9e9e73;
+      padding:10px;
+      margin-top:20px;
+    }
+    .nameOrder a{
+      color:#006fc4;
+      float:right;
+    }
+    .nameOrder a:hover{
+      color:red;
+    }
+    .nameOrder .myName{
+      border-bottom:1px solid #9e9e9e73;
+      border-top:1px solid #9e9e9e73;
+      margin:20px 0px;
+      padding:10px 0px;
+    }
+    .layui-elem-quote{
+      border-left:0;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+<div class="searchDiv">
+	<div class="layui-container layui-form">
+  	<div class="layui-row layui-form-item searchContent"> 
+   		<div class="layui-col-md7">
+            <input type="text" name="" placeholder="请输入您要注册的域名(支持批量查询，须带后缀，用换行符分割)" class="layui-input">
+  		</div>
+      <div class="layui-col-md1">
+        <div class="layui-input-inline select">
+            <select name="" ><option value="1">中文</option>
+                          <option value="2">英文</option></select>
+        </div>
+      </div>
+      <div class="layui-col-md4">
+        <button type="button" class="layui-btn">
+          <i class="layui-icon layui-icon-search"></i>域名搜索</button>
+      </div>
+  	</div>
+  </div>
+</div>
+<div class="">
+	<div class="layui-container">
+  	<div class="layui-row layui-col-space2"> 
+   		<div class="layui-col-md10">
+      		<div class="resultDiv">
+            <div class="resultContent">
+              <div class="resultHeader">
+                共查询<span>0</span>/<span>0</span>域名，
+                可注册<span>0</span>个，
+                不可注册<span>0</span>个，
+                失败<span>0</span>个，
+              </div>
+              <ul class="resultList">
+              </ul>
+            </div>
+          </div>
+  		</div>
+  		<div class="layui-col-md2">
+          <div class="nameOrder">
+            <p>域名清单<span class="layui-badge">0</span>
+              <span><a href="">清空</a></span>
+            </p>
+            <p class="myName">
+              您还没有任何域名
+            </p>
+          </div>
+  		</div>
+  	</div>
+  </div>
+</div>
+<div>
+	<div class="layui-container">
+  	<div class="layui-row"> 
+   		<div class="layui-col-md12">
+      		<blockquote class="layui-elem-quote">如果查询的域名不满意，请点击<span class="layui-btn layui-btn-primary">重新查找</span></blockquote>
+  		</div>
+  	</div>
+  </div>
+</div>
+
+
+</body>
+<script type="text/javascript" src="./layui/layui.js"></script>
+<script type="text/javascript">
+  layui.use(['jquery','layer','form'],function(){
+    var $ = layui.jquery
+       ,form =layui.form
+       ,layer = layui.layer;
+       form.render();
+
+
+    var resultData = [    //模拟查询结果
+      {id:'1', name:'a.com', isEnglish:true, error:true, newName:true, fail:true,isRegister:true, },
+      {id:'2', name:'b.com', isEnglish:true, error:false, newName:false, fail:false,isRegister:false, },
+      {id:'3', name:'c.com', isEnglish:true, error:false, newName:true, fail:false,isRegister:false, },
+      {id:'4', name:'d.com', isEnglish:true, error:false, newName:false, fail:false,isRegister:false, },
+      {id:'5', name:'e.com', isEnglish:true, error:false, newName:false, fail:false,isRegister:false, },
+      {id:'6', name:'f.com', isEnglish:true, error:true, newName:false, fail:false,isRegister:false, },
+      {id:'7', name:'g.com', isEnglish:true, error:true, newName:false, fail:false,isRegister:false, },
+    ];  //各项数据对应查询结果的各个标签，详情请自行定义
+    var ENG_SPAN = '<span class="layui-badge layui-bg-green">英文域名</span>',
+        NEW_SPAN = '<span class="layui-badge layui-bg-blue">新后缀域名</span>',
+        ERR_SPAN = '<span class="error_span">发生异常</span>',
+        REG_SPAN = '<span class="regis_span">已经被注册</span>',
+        FAI_SPAN = '<span class="fail_span">查询失败</span>';
+
+    renderData(resultData);
+    function renderData(data){
+      var html = '';
+      for(var i=0;i<data.length;i++){
+        var t = data[i];   
+        html += [
+            '<li>',
+              '<p class="leftP">',
+                t.name,
+                t.isEnglish ? ENG_SPAN : '',
+                t.error ? ERR_SPAN : '',
+                t.newName ? NEW_SPAN : '',
+                t.fail ? FAI_SPAN : '',
+                t.isRegister ? REG_SPAN : '',
+              '</p>',
+              '<p class="rightP">',
+                '<span class="layui-btn layui-btn-sm  layui-btn-warm" data-id="'+t.id+'">查看</span>',
+              '</p>',
+            '</li>',
+        ].join('');
+      }
+      html+=[
+        '<li class="layui-form">',
+          '<p class="leftP">',
+            '<input type="checkbox" lay-skin="primary" title="全选">',
+            '<span class="layui-btn  layui-btn">批量加入购物车</span>',
+          '</p>',
+          '<p class="rightP">',
+                '<span class="layui-btn  layui-btn-danger">清空购物车</span>',
+              '</p>',
+        '</li>',
+      ].join('');
+      $('.resultList').append(html);
+      form.render();
+    }
+    $('.layui-btn').click(function(obj){
+      var id = $(obj.target).data('id') || '';
+      layer.msg('点击按钮'+id);
+    })
+  })
+</script>
+</html>

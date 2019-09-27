@@ -1,0 +1,107 @@
+<!--
+  原网站地址：
+  http://ym.qianxiyun.com/jiaoyi/Recommendshop
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>推荐米店</title>
+  <link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
+  <link rel="stylesheet" type="text/css" href="./page.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <style>
+    .layui-tab ul li:hover{
+      background: #8080802e;
+    }
+    .layui-tab-content{
+      padding: 10px 0px;
+    }
+    .searchDiv{
+      padding: 10px 0px;
+      margin-top: 20px;
+      border-bottom: 1px dotted #808080c7;
+    }
+    .searchDiv input{
+      width: 230px;
+    }
+    img{
+      max-width: 100%;
+    }
+    @media screen and (max-width: 960px){
+      #imgCarousel{
+        height: 110px !important
+      }
+    }
+  </style>
+</head>
+<body style="background: #fdfdfd;">
+<div>
+  <div class="layui-carousel" id="imgCarousel">
+    <div carousel-item>
+      <div><img src="./img/page38/cjmd_1.jpg"></div>
+      <div><img src="./img/page38/cjmd_1.jpg"></div>
+      <div><img src="./img/page38/cjmd_1.jpg"></div>
+      <div><img src="./img/page38/cjmd_1.jpg"></div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="layui-container">
+    <div class="layui-row"> 
+      <div class="layui-col-md12">
+        <div class="searchDiv">
+          <div class="layui-container">
+            <div class="layui-row layui-form">
+              <div class="layui-col-md4">
+                <div class="layui-form-item">
+                  <label class="layui-form-label">推荐米店：</label>
+                  <div class="layui-input-inline">
+                    <input type="text" name="" class="layui-input" placeholder="请输入你要查询的米店ID或名称">
+                  </div>
+                </div>
+              </div>
+              <div class="layui-col-md1">
+                <div class="layui-input-inline">
+                  <span class="layui-btn layui-btn-normal">搜索</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="layui-tab">
+          <ul class="layui-tab-title">
+            <li class="layui-this">推荐米店</li>
+            <li>最新加入</li>
+          </ul>
+          <div class="layui-tab-content">
+            暂无记录
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+<script type="text/javascript" src="./layui/layui.js"></script>
+<script type="text/javascript">
+  layui.use(['jquery','layer','carousel','element'],function(){
+    var $ = layui.jquery
+       ,carousel = layui.carousel
+       ,element = layui.element
+       ,layer = layui.layer;
+
+    element.render();
+    carousel.render({
+      elem: '#imgCarousel'
+      ,width: '100%' //设置容器宽度
+      ,arrow: 'always' //始终显示箭头
+      //,anim: 'updown' //切换动画方式
+    });
+
+    $('.layui-btn').click(function(){
+      layer.msg('点击按钮');
+    })
+  })
+</script>
+</html>

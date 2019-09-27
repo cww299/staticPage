@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>云服务器备份</title>
+	<link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
+  	<link rel="stylesheet" type="text/css" href="./page.css">
+  	<meta charset="UTF-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+</head>
+<style type="text/css">
+.bigImgAndFont li{
+  width: 45%;
+}
+</style>
+<body>
+<div>
+  <div class="layui-container">
+    <div class="layui-row bigImgAndFont"> 
+      <div class="layui-col-md6 andFont smallTopBottomPadding">
+        <h1>云服务器备份 CSBS</h1>
+        <p>云服务器备份（Cloud Server Backup Service）为云服务器下所有云硬盘创建一致性在线备份，无需关机。针对病毒入侵、人为误删除、软硬件故障等场景，可将数据恢复到任意备份点</p><br>
+        <p><font class="bigPriceFont">￥0.268</font> /GB/月 </p>
+        <button class="layui-btn" id="btn_id" type="button">立即咨询</button>
+      </div>
+      <div class="layui-col-md6">
+        <div class="bigImgDiv" >
+          <img alt="这里存放图片" src="" class="showImgDiv">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="blackBg">
+   <div class="layui-container">
+    <div class="layui-row bigImgAndFont"> 
+      <br><h1 class="centerH1">应用场景</h1><br>
+      <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+          <li class="layui-this"><h2>数据备份与恢复</h2></li>
+          <li><h2>快速业务部署</h2></li>
+        </ul><br>
+        <div class="layui-tab-content" style="height: 100px;">
+          <div class="layui-tab-item layui-show">
+            <div class="layui-col-md6">
+              <div class="bigImgDiv" >
+                <img alt="这里存放图片" src="" class="showImgDiv">
+              </div>
+            </div>
+            <div class="layui-col-md6 andFont1"> 
+              <h2>数据备份与恢复</h2>
+              <p class="titleChildFont">为云硬盘提供在线备份，通过备份快速恢复数据，保证业务安全可靠</p><br>
+              <h2>优势</h2>
+              <p class="titleChildFont">简单易用<br>自定义策略进行在线备份，配置简单</p><br>
+              <p class="titleChildFont">高效<br>增量备份、增量恢复，备份窗口短，RTO可达分钟级</p><br>
+              <p class="titleChildFont">高持久性<br>对象存储设计规格为99.99999999%（11个9）持久性</p><br>
+            </div>
+          </div>
+          <div class="layui-tab-item">
+            <div class="layui-col-md6">
+              <div class="bigImgDiv" >
+                <img alt="这里存放图片" src="" class="showImgDiv">
+              </div>
+            </div>
+            <div class="layui-col-md6 andFont1"> 
+              <h2>快速业务部署</h2>
+              <p class="titleChildFont">为云服务器创建备份，使用备份创建镜像，可快速创建与现有云服务器相同配置的新云服务器，实现业务的快速部署</p><br>
+              <h2>优势</h2>
+              <p class="titleChildFont">简单易用<br>3个步骤完成云服务器复制</p><br>
+              <p class="titleChildFont">低成本<br>备份存储资源弹性伸缩，按需付费</p><br>
+              <p class="titleChildFont">提高可靠性<br>可跨AZ创建新云服务器，满足可靠性要求</p><br>
+            </div>
+          </div>
+        </div>
+      </div> 
+    </div>  
+  </div>
+</div>
+<div>
+	<div class="layui-container">
+    <div class="layui-container">
+    <div class="layui-row titleFontAndFourImg"> 
+      <h1>产品优势</h1><br>
+      <div class="layui-col-md3">
+        <div class="imgAndTitleAndFont1">
+          <div class="imgDiv">
+            <img alt="这里存放图片" src="" class="showImgDiv">
+          </div>
+          <h2>可靠</h2><br>
+          <p>支持云服务器的一致性备份，云服务器内的多个云硬盘的备份为同一时间点创建的，使您的数据更加安全可靠<br> <br><br> <br></p>
+        </div>
+      </div>
+      <div class="layui-col-md3">
+        <div class="imgAndTitleAndFont1">
+          <div class="imgDiv">
+            <img alt="这里存放图片" src="" class="showImgDiv">
+          </div>
+          <h2>高效</h2><br>
+          <p>永久增量备份，缩短95%备份时长。即时恢复，恢复时间目标（RTO），最高可缩短到秒级<br> <br> <br><br></p>
+        </div>
+      </div>
+      <div class="layui-col-md3">
+        <div class="imgAndTitleAndFont1">
+          <div class="imgDiv">
+            <img alt="这里存放图片" src="" class="showImgDiv">
+          </div>
+          <h2>简单</h2><br>
+          <p>操作简单，3步完成备份配置，无需具备专业的备份软件技能。相比传统备份系统，无需关心备份服务器、备份存储的规划、扩容 <br> <br> <br> </p>
+        </div>
+      </div>
+      <div class="layui-col-md3">
+        <div class="imgAndTitleAndFont1">
+          <div class="imgDiv">
+            <img alt="这里存放图片" src="" class="showImgDiv">
+          </div>
+          <h2>安全</h2><br>
+          <p>加密盘的备份数据自动加密，保证数据安全。备份数据跨数据中心保存，数据持久性高达99.999999999%（11个9），远高于传统备份系统<br> <br> <br> </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+<div class="blackBg">
+	<div class="layui-container sixImgAndFont">
+    <br><br><h1 class="centerH1">功能描述</h1><br><br>
+    <div class="layui-row smallImgAndSix layui-col-space10">
+      <div class="layui-col-md1 ">
+        <div class="imgDv">
+          <img alt="这里存放图片" src="" class="showImgDiv">
+        </div>
+      </div>
+      <div class="layui-col-md3">
+        <div class="fontDv">
+          <h3>使用简单</h3><br>
+          <p>基于策略的自动在线备份，配置简单、对业务无影响</p>
+        </div>
+      </div>
+      <div class="layui-col-md1">
+        <div class="imgDv">
+          <img alt="这里存放图片" src="" class="showImgDiv">
+        </div>
+      </div>
+      <div class="layui-col-md3">
+        <div class="fontDv">
+          <h3>高效备份与恢复</h3><br>
+          <p>增量备份、增量恢复，提高备份/恢复效率</p>
+        </div>
+      </div>
+      <div class="layui-col-md1">
+        <div class="imgDv">
+          <img alt="这里存放图片" src="" class="showImgDiv">
+        </div>
+      </div>
+      <div class="layui-col-md3">
+        <div class="fontDv">
+          <h3>安全可靠的备份</h3><br>
+          <p>保证云服务器备份数据一致性，备份数据加密，跨数据中心保存</p>
+        </div>
+      </div>
+    </div>
+    <br><br><br>
+  </div>
+</div>
+
+</body>
+<script type="text/javascript" src="./layui/layui.js"></script>
+<script type="text/javascript">
+  layui.use(['jquery','layer','element'],function(){
+    var $ = layui.jquery
+       ,element = layui.element
+       ,layer = layui.layer;
+
+    $('#btn_id').click(function(){
+      layer.msg('点击按钮');
+    })
+  })
+</script>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
+  	<link rel="stylesheet" type="text/css" href="./page.css">
+  	<meta charset="UTF-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+</head>
+<body>
+<div>
+	<div class="layui-container">
+  	<div class="layui-row bigImgAndFont"> 
+   		<div class="layui-col-md6 andFont">
+    		<h1>态势感知服务</h1>
+    		<p>网络安全态势感知平台是由专业安全团队，深入研究常见安全漏洞、攻击事件以及攻击手法,完全自主研发的一款集资产实时监测、风险志势感知。风险通报预譬、风险处置建议为一体的平台。</p>
+    		<button class="layui-btn" id="btn_id" type="button">立即咨询</button>
+  		</div>
+  		<div class="layui-col-md6">
+        <div class="bigImgDiv" >
+          <img alt="这里存放图片" src="" class="showImgDiv">
+        </div>
+  		</div>
+  	</div>
+  </div>
+</div>
+<div class="blackBg">
+	<div class="layui-container">
+  	<div class="layui-row"> 
+   		<div class="layui-col-md6">
+      		
+  		</div>
+  		<div class="layui-col-md6">
+          
+  		</div>
+  	</div>
+  </div>
+</div>
+<div>
+	<div class="layui-container">
+  	<div class="layui-row"> 
+   		<div class="layui-col-md6">
+      		
+  		</div>
+  		<div class="layui-col-md6">
+          
+  		</div>
+  	</div>
+  </div>
+</div>
+<div class="blackBg">
+	<div class="layui-container">
+  	<div class="layui-row"> 
+   		<div class="layui-col-md6">
+      		
+  		</div>
+  		<div class="layui-col-md6">
+          
+  		</div>
+  	</div>
+  </div>
+</div>
+
+</body>
+<script type="text/javascript" src="./layui/layui.js"></script>
+<script type="text/javascript">
+  layui.use(['jquery','layer'],function(){
+    var $ = layui.jquery
+       ,layer = layui.layer;
+
+    $('#btn_id').click(function(){
+      layer.msg('点击按钮');
+    })
+  })
+</script>
+</html>

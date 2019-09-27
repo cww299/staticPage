@@ -1,0 +1,175 @@
+<!--
+  原网站地址：
+  http://ym.qianxiyun.com/domain
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>域名注册</title>
+	<link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
+  	<link rel="stylesheet" type="text/css" href="./page.css">
+  	<meta charset="UTF-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  	<style>
+  		@media screen and (max-width: 580px){
+	      .activeImgA img{
+			height: 160px;
+		  }
+	    }
+  	</style>
+</head>
+<body style="background: #ededed;">
+<div class="bg_head"></div>
+<div class="tabContent">
+	<div class="layui-tab" lay-filter="tabFilter">
+	  <ul class="layui-tab-title">
+	    <li class="layui-this">英文域名</li>
+	    <li>中文域名</li>
+	    <li style="color:red;">托管注册
+	    	<img src="./img/new_01.gif"></li>
+	    <li>域名价格</li>
+	    <li>域名转入</li>
+	    <li>域名活动</li>
+	  </ul>
+	  <div class="layui-tab-content">
+	    <div class="layui-tab-item layui-show">
+	    	<div class="layui-form searchContent">
+	    		<textarea class="searchTextarea">- 支持批量查询，同时查询200个域名；
+- 用换行分隔，每个域名占一行；
+- 允许带后缀。</textarea>
+				<button class="layui-btn inputBtn">批量导入txt(含后缀)</button>
+	    		<button class="layui-btn searchBtn"><i class="layui-icon layui-icon-search"></i>域名查询</button>
+	    	</div>
+	    	<div style="margin-top: 40px;">
+	    		<ul class="layui-form checkboxLi">
+	    			<li><input type="checkbox" title="全选" lay-skin="primary" lay-filter="allCheckbox"></li>
+	    			<li><input type="checkbox" title=".com" lay-skin="primary"><img src="./img/hot2.gif"></li>
+	    			<li><input type="checkbox" title=".cloud" lay-skin="primary"><img src="./img/hot2.gif"></li>
+	    			<li><input type="checkbox" title=".shop" lay-skin="primary"><img src="./img/hot2.gif"></li>
+	    			<li><input type="checkbox" title=".co" lay-skin="primary"><img src="./img/hot2.gif"></li>
+	    			<li><input type="checkbox" title=".top" lay-skin="primary"><img src="./img/hot2.gif"></li>
+	    			<li><input type="checkbox" title=".biz" lay-skin="primary"><img src="./img/hot2.gif"></li>
+	    			<li><input type="checkbox" title=".xyz" lay-skin="primary"><img src="./img/hot2.gif"></li>
+	    			<li><input type="checkbox" title=".ltd" lay-skin="primary"><img src="./img/hot2.gif"></li>
+	    			<li><input type="checkbox" title=".center" lay-skin="primary"><img src="./img/hot2.gif"></li>
+	    			<li><input type="checkbox" title=".chat" lay-skin="primary"><img src="./img/hot2.gif"></li>
+	    			<li><input type="checkbox" title=".city" lay-skin="primary"><img src="./img/hot2.gif"></li>
+	    			<li><input type="checkbox" title=".company" lay-skin="primary"><img src="./img/hot2.gif"></li>
+	    			<li><input type="checkbox" title=".cool" lay-skin="primary"><img src="./img/hot2.gif"></li>
+	    			<li><input type="checkbox" title=".email" lay-skin="primary"><img src="./img/hot2.gif"></li>
+	    			<li><input type="checkbox" title=".fund" lay-skin="primary"><img src="./img/hot2.gif"></li>
+	    			<li><input type="checkbox" title=".gold" lay-skin="primary"><img src="./img/hot2.gif"></li>
+	    			<li><input type="checkbox" title=".group" lay-skin="primary"><img src="./img/hot2.gif"></li>
+	    			<li><input type="checkbox" title=".guru" lay-skin="primary"><img src="./img/hot2.gif"></li>
+	    			<li><input type="checkbox" title=".life" lay-skin="primary"><img src="./img/hot2.gif"></li>
+	    			<li><input type="checkbox" title=".live" lay-skin="primary"><img src="./img/hot2.gif"></li>
+	    			<li><input type="checkbox" title=".market" lay-skin="primary"><img src="./img/hot2.gif"></li>
+	    			<li><input type="checkbox" title=".plus" lay-skin="primary"><img src="./img/hot2.gif"></li>
+	    			<li><input type="checkbox" title=".pub" lay-skin="primary"><img src="./img/hot2.gif"></li>
+	    			<li><input type="checkbox" title=".run" lay-skin="primary"><img src="./img/hot2.gif"></li>
+	    			<li><input type="checkbox" title=".sale" lay-skin="primary"><img src="./img/hot2.gif"></li>
+	    			<li><input type="checkbox" title=".show" lay-skin="primary"><img src="./img/hot2.gif"></li>
+	    			<li><input type="checkbox" title=".social" lay-skin="primary"><img src="./img/hot2.gif"></li>
+	    			<li><input type="checkbox" title=".studio" lay-skin="primary"><img src="./img/hot2.gif"></li>
+	    			<li><input type="checkbox" title=".team" lay-skin="primary"><img src="./img/hot2.gif"></li>
+	    			<li><input type="checkbox" title=".today" lay-skin="primary"><img src="./img/hot2.gif"></li>
+	    			<li><input type="checkbox" title=".video" lay-skin="primary"><img src="./img/hot2.gif"></li>
+	    			<li><input type="checkbox" title=".world" lay-skin="primary"><img src="./img/hot2.gif"></li>
+	    			<li><input type="checkbox" title=".zone" lay-skin="primary"><img src="./img/hot2.gif"></li>
+	    			<li><input type="checkbox" title=".fun" lay-skin="primary"><img src="./img/hot2.gif"></li>
+	    			<li><input type="checkbox" title=".online" lay-skin="primary"><img src="./img/hot2.gif"></li>
+	    			<li><input type="checkbox" title=".store" lay-skin="primary"><img src="./img/hot2.gif"></li>
+	    			<li><input type="checkbox" title=".tech" lay-skin="primary"><img src="./img/hot2.gif"></li>
+	    			<li><input type="checkbox" title=".site" lay-skin="primary"><img src="./img/hot2.gif"></li>
+	    			<li><input type="checkbox" title=".space" lay-skin="primary"><img src="./img/hot2.gif"></li>
+	    			<li><input type="checkbox" title=".host" lay-skin="primary"><img src="./img/hot2.gif"></li>
+	    			<li><input type="checkbox" title=".press" lay-skin="primary"><img src="./img/hot2.gif"></li>
+	    			<li><input type="checkbox" title=".website" lay-skin="primary"><img src="./img/hot2.gif"></li>
+	    			<li><input type="checkbox" title=".ink" lay-skin="primary"><img src="./img/hot2.gif"></li>
+	    			<li><input type="checkbox" title=".design" lay-skin="primary"><img src="./img/hot2.gif"></li>
+	    			<li><input type="checkbox" title=".wiki" lay-skin="primary"><img src="./img/hot2.gif"></li>
+	    			<li><input type="checkbox" title=".art" lay-skin="primary"><img src="./img/hot2.gif"></li>
+	    		</ul>
+	    	</div>
+	    </div>
+	    	
+	    <div class="layui-tab-item">
+	    	<div class="layui-form searchContent">
+	    		<textarea class="searchTextarea">- 支持批量查询，同时查询200个域名；
+- 用换行分隔，每个域名占一行；
+- 允许带后缀。</textarea>
+				<button class="layui-btn inputBtn">批量导入txt(含后缀)</button>
+	    		<button class="layui-btn searchBtn"><i class="layui-icon layui-icon-search"></i>域名查询</button>
+	    	</div>
+	    	<div>
+	    		<ul class="layui-form checkboxLi">
+	    			<li><input type="checkbox" title="全选" lay-skin="primary" lay-filter="allCheckbox"></li>
+	    			<li><input type="checkbox" title=".网址" lay-skin="primary"><img src="./img/hot2.gif"></li>
+	    			<li><input type="checkbox" title=".集团" lay-skin="primary"></li>
+	    			<li><input type="checkbox" title=".我爱你" lay-skin="primary"></li>
+	    			<li><input type="checkbox" title=".企业" lay-skin="primary"><img src="./img/hot2.gif"></li>
+	    		</ul>
+	    	</div>
+	    </div>
+	  </div>
+	</div>
+</div>
+<div class="bg_foot">内容填充</div>
+<div class="activeImgA">
+	<div class="layui-container">
+    	<div class="layui-row layui-col-space20"> 
+		      <div class="layui-col-md6">
+		      	<a href="">
+		      		<img src="./img/adv4.jpg">
+		      	</a>
+		      </div>
+		      <div class="layui-col-md6">
+		      	<a href="">
+		      		<img src="./img/adv5.jpg">
+		      	</a>
+		      </div>
+  		</div>
+	</div>
+</div>
+
+</body>
+<script type="text/javascript" src="./layui/layui.js"></script>
+<script type="text/javascript">
+  layui.use(['jquery','layer','element','form'],function(){
+    var $ = layui.jquery
+       ,element = layui.element
+       ,form = layui.form
+       ,layer = layui.layer;
+
+    	$('.searchTextarea').focus(function(){
+    		var color = $(this).css('color');
+    		if(color=='rgb(153, 153, 153)'){
+    			$(this).css('color','black');
+    			$(this).html('');
+    		}
+    	}).blur(function(){
+    		if($(this).val()==''){
+				$(this).css('color','rgb(153, 153, 153)');
+    			$(this).html('- 支持批量查询，同时查询200个域名；\n- 用换行分隔，每个域名占一行；\n- 允许带后缀。');
+    		}
+    	})
+    	form.render();
+    	form.on('checkbox(allCheckbox)', function(data){
+    		var ul = $(data.elem).closest('ul');
+    		var checked = data.elem.checked;
+    		if(checked)
+    			$(data.elem).attr('title','取消全选');
+    		else
+    			$(data.elem).attr('title','全选');
+    		$(ul).find('input').prop('checked',checked)
+  			form.render();
+		}); 
+		element.on('tab(tabFilter)', function(data){	//监听选项卡切换
+		  console.log(this); //当前Tab标题所在的原始DOM元素
+		  console.log(data.index); //得到当前Tab的所在下标
+		  console.log(data.elem); //得到当前的Tab大容器
+		});
+   
+  })
+</script>
+</html>

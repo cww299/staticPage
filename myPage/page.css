@@ -1,0 +1,463 @@
+.bigImgAndFont{
+	margin: 30px 0;
+}
+.blackBg{
+	background-color:#80808012;
+	width:100%;
+}
+.bigImgAndFont h1{
+	line-height: 60px;
+}
+.bigImgAndFont p{
+	line-height: 28px;
+	font-size: 16px;
+}
+.bigImgAndFont button{
+	margin-top: 30px;
+}
+.bigImgAndFont .bigImgDiv{
+	width:80%;
+	height:280px;
+	margin:auto;
+	padding:30px;
+}
+.andFont{
+	padding: 5%;
+}
+.showImgDiv{
+	background-color:gray;width:100%;height:100%;
+}
+.fontImgFont{
+}
+.fontImgFont .fif_font{
+	padding: 30px;
+}
+.fif_font_div{
+	margin:auto;width:90%;padding: 40px 0;
+}
+.fif_font_div h2{
+	line-height: 30px;
+}
+.radiusImg{
+	width:200px;height:100%;border-radius:100px;
+}
+.radiusImgDiv{
+	width:200px;height:200px;margin:auto;padding:70px;
+}
+.smallImgAndFont{
+}
+.smallImgAndFontTitle{
+	width:100%;padding:10px 0px;
+}
+.siaf_div{
+	padding: 20px;
+}
+.siaf_imgDiv{
+	float:left;
+	width: 60px;
+	height: 60px;
+	padding:30px 0px;
+	margin-left: 7%;
+    margin-top: 3%;
+}
+.siaf_imgDiv img{
+	width:100%;height:100%
+}
+.siaf_fontDiv{
+	float:right;
+	width: 70%;  
+	padding: 30px  5%;;
+}
+.siaf_fontDiv p{
+	line-height: 20px;
+}
+.titleDivH1{
+	padding:20px 0px;
+}
+.titleFontAndFont{
+	text-align: center;
+}
+.titleFontAndFont p{
+	line-height: 32px;
+	font-size: 16px;
+}
+.titleFontAndBigImg{
+  	text-align: center;
+  	padding: 20px;
+}
+.titleFontAndBigImg .tfabi_ImgDiv{
+  	width:70%;
+  	margin:0 auto;
+  	height: 300px;
+	padding: 20px 0px;
+}
+.titleFontAndThreeImg{
+ 	text-align: center;
+  	padding: 30px 0px;
+}
+.titleFontAndThreeImg .imgAndTitleAndFont{
+  	padding: 0px 50px;
+}
+.titleFontAndThreeImg .imgAndTitleAndFont p{
+  	text-align: left;
+	line-height: 20px;
+}
+.titleFontAndThreeImg .imgAndTitleAndFont .imgDiv{
+  	margin:0 auto;
+  	width: 30%;
+  	height: 65px;
+  	padding: 10px 0px;
+}
+.titleFontAndFourImg{
+  	text-align: center;
+  	padding: 30px 0px;
+}
+.titleFontAndFourImg .imgAndTitleAndFont{
+      	padding: 0px 50px;
+}
+.titleFontAndFourImg .imgAndTitleAndFont p{
+	text-align: left;
+	line-height: 20px;
+}
+.titleFontAndFourImg .imgAndTitleAndFont .imgDiv{
+  	margin:0 auto;
+  	width: 85%;
+  	height: 80px;
+  	padding: 10px 0px;
+}
+/* page5 */
+.titleFontAndSixImg{
+	text-align: center;
+}
+.titleFontAndSixImg .sixOfOneDiv{
+	padding: 20px 30px;
+	margin: 25px;
+	background-color: #ffffff;
+}
+.titleFontAndSixImg .sixOfOneDiv .imgDiv{
+	width: 60%;
+	margin: 0 auto;
+	padding: 10px 0px;
+	height: 80px;
+}
+.tileFontAndRowFour {
+	text-align: center;
+}
+.tileFontAndRowFour .fourOfOne{
+	padding: 10px 35px;
+}
+.tileFontAndRowFour .fourOfOne .imgDiv{
+	width: 60%;
+	margin: auto;
+	padding: 10px 0px;
+	height: 80px;
+}
+.twoBigFontImg{
+	text-align: center;
+}
+.twoBigFontImg .oneOfTwo{
+	padding: 20px 45px;
+	margin: 10px 10%;
+	background-color: #ffffff;
+}
+.twoBigFontImg .oneOfTwo p{
+	text-align: left; 
+	line-height: 19px;
+}
+.twoBigFontImg .oneOfTwo .imgDiv{
+	margin: auto;
+	height: 100px;
+	width: 40%;
+	padding: 20px 0px;
+}
+/*  page 6 css */
+.twoBigFontOfOne{
+    text-align: center;
+    padding: 30px 10%;
+    background-color: #ffffff;
+    margin: 50px 10%;
+    height: auto;
+}
+.twoBigFontOfOne p{
+	text-align:left;
+	line-height: 22px;
+}
+.smallFontBorder{
+	padding: 5% 8%;
+}
+/*  page 7 css */
+.btnDiv{
+	padding:10px;
+	width:100%;
+}
+.bigMapDiv{
+	width:80%;
+	padding:20px 0px;
+	margin:30px auto;
+	height:350px;
+}
+.bigMapFont{
+	text-align: center;
+	padding: 10px 0px;
+}
+.andFontOfImg{
+	height:200px;
+}
+.moreTopMargin{
+	padding-top:50px;
+	padding-bottom:50px;
+}
+.publicitySlogans{
+	text-align: center;
+	padding: 50px 0px;
+}
+.fourSelectDiv{
+	text-align: center;
+}
+.fourSelectDiv .layui-form-select{
+	width:50%;
+	text-align: center;
+	padding-left: 25%;
+}
+.fourSelectDiv .layui-form-select dl{
+/*	padding-left: 30%;*/
+}
+/* page 9 css*/
+.noMarginTop{
+	margin-top:0px;
+}
+/* page 11 12 css*/
+.smallTopBottomPadding{
+  padding: 1% 5%;
+}
+.bigPriceFont{
+  font-size: 28px;
+  color: red;
+}
+.makeImgDiv{
+
+}
+.imgAndTitleAndFont1{
+  background-color: #ffffff;
+  padding: 2% 5%;
+  margin:5% 7%;
+}
+.imgAndTitleAndFont1 p{
+  text-align: left;
+  line-height: 20px;
+}
+.imgAndTitleAndFont1 .imgDiv{
+    margin:0 auto;
+    width: 70%;
+    height: 110px;
+    padding: 10px 0px;
+}
+.imgAndTitleAndFont1 .priceFont{
+	color:red;
+	font-size:28px;
+}
+.andFont1{
+  padding: 2% 6%;
+}
+.andFont1 h3{
+
+}
+.titleChildFont{
+  padding-left:5%;
+  color: #666a75;
+}
+.noMarginTop .siaf_imgDiv{
+  margin-top: 0px;
+}
+.centerH1{
+	text-align: center;
+}
+.newFourImgAndFont{
+	padding: 40px 0;
+}
+.newFourImgAndFont .imgDiv{
+    width: 50%;
+    margin: 10% auto;
+    height: 70px;
+}
+.newFourImgAndFont .fontDiv{
+	padding: 3% 8%;
+}
+.newFourImgAndFont .fontDiv h2{
+	font-size: 17px;
+}
+
+/* page 13 css */
+.sixImgAndFont{
+
+}
+.sixImgAndFont .imgDv{
+	height: 70px;
+    padding: 8%;
+}
+.sixImgAndFont .fontDv{
+	padding: 0 5%;
+    margin-right: 15%;
+    margin-bottom: 8%;
+}
+/* page 19 css */
+.formAndImgDiv{
+	padding: 2%;
+    border: 1px dotted #80808042;
+}
+.formAndImgDiv .formDiv{
+	padding: 5% 0;
+}
+.formAndImgDiv .bigImgDiv{
+	border-left: 1px solid #8080806b;
+    margin: auto;
+    width: 65%;
+    padding: 1% 10%;
+}
+.formAndImgDiv .bigImgDiv h2{
+	color:#008ff9;
+}
+.formAndImgDiv .bigImgDiv p{
+	color:#999;
+	line-height: 28px;
+}
+.formAndImgDiv .bigImgDiv .imgDiv{
+	height: 200px;
+}
+.titleFormDiv{
+	border-bottom:1px solid #8080803b;;
+	padding-bottom: 1%;
+}
+.titleFormDiv .imgDiv{
+	float: left;
+    height: 40px;
+    width: 6%;
+    margin-right: 1%;
+}
+.titleFormDiv .qulickBtn{
+	float: right;
+}
+.titleFormDiv .titleDiv{
+
+}
+/* page23  css */
+#leftDiv{
+ height: 95%;
+ width: 12%;
+ float:left;
+}
+#rightDiv{
+ height: 95%;
+ width: 85%;
+ float:left;
+ margin-left: 3%;
+}
+#leftNav{
+  border: 1px solid #f2f2f2;
+  border-top: 2px solid red;
+  height: 95%;
+  margin-right: 20px;
+  width: 100%;
+  position:relative;
+  float: left;
+}
+#content{
+  float: right;
+  width: 100%;
+  margin:auto;
+  height: 95%;
+  border: 1px solid #f2f2f2;
+  overflow-y: scroll;
+  padding:20px;
+}
+#title{
+  padding:5px;
+}
+#navTitle{
+  padding:5px;
+  width: 8%;
+  border-bottom: 2px solid red;
+}
+/* page css 27 */
+.tabContent{
+	width: 80%;
+	margin: auto;
+	border: solid 1px #dfdfdf;
+	background: #fff;
+	position: relative;
+	overflow: hidden;
+	margin-top: -217px!important;
+	padding-bottom: 30px;
+}
+.tabContent li{
+	width: 172px;
+	height: 72px;
+}
+.searchContent{
+	overflow: hidden;
+	margin: 10px;
+	padding: 15px;
+	border: solid 13px #d9dadd;
+}
+.searchContent .searchTextarea{
+	float: left;
+	overflow: auto;
+	padding: 3px;
+	padding: 15px;
+	width: 80%;
+	height: 93px;
+	outline: 0;
+	border: dashed 1px #d9dadd;
+	background: 0 0;
+	color: #999;
+	font-size: 14px;
+	resize: none;
+}
+.searchContent .inputBtn{
+	margin-left: 3%;
+	margin-bottom: 20px;
+	margin-top: 18px;
+}
+.searchContent .searchBtn{
+	margin-left: 5%;
+}
+.checkboxLi{
+	text-align: center;
+}
+.checkboxLi{
+	padding-left: 20px;
+}
+.checkboxLi li{
+	float: left;
+	font-size: 18px;
+	display: inline;
+	line-height: 20px;
+	text-align: left;
+	width: 130px;
+	position: relative;
+}
+.bg_head{
+	height: 517px;
+	background: url(./img/ymzc.jpg) center top no-repeat;
+}
+.bg_foot{
+	overflow: hidden;
+	margin-top: -20px;
+	padding: 30px 0 18px;
+	background: #3b3d44;
+	color: #fff;
+	font-size: 36px;
+}
+.activeImgA{
+	margin: auto;
+	width: 80%;
+	padding:60px 0px;
+}
+.activeImgA img{
+	width:100%;
+	height: 240px;
+}
+
+
+
+/* page css  */

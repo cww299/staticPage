@@ -1,0 +1,240 @@
+<!--
+  原网站地址：
+  http://ym.qianxiyun.com/coupon
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>优惠券</title>
+	<link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
+	<link rel="stylesheet" type="text/css" href="./page.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <style type="text/css">
+    .bgImg{
+      background: url(./img/page32/yhq_banner.jpg) center #000b12;
+      height: 480px;
+      width: 100%;
+      text-align: center;
+    }
+    .bgImg a img{
+      max-width: 100%;
+      margin-top: 300px;
+    }
+    .couponContent{
+      margin: 0 auto;
+      clear: both;
+      box-sizing: border-box;
+    }
+    .tabContent{
+      width: 100%; 
+      margin-top: -30px!important;
+    }
+    .tabNav{
+      background: #fffee5;
+      border-bottom: solid 1px #e5e5d8;
+      height: 60px;
+    }
+    .tabNav a{
+      display: inline-block;
+      float: left;
+      width: 150px;
+      line-height: 60px;
+      height: 60px;
+      text-align: center;
+      font-size: 16px;
+      border-right: solid 1px #e5e5d8;
+    }
+    .tabNav a.show-this{
+      color: #fff;
+      background: linear-gradient(50deg, #ff3526, #ff6600);
+    }
+    .tabNav a.show-this:hover{
+      color: #fff;
+      background: linear-gradient(50deg, #ff3526, #ff6600);
+    }
+    .tabNav a:hover{
+      color: red;
+      background: #b9535326;
+    }
+    .tabNav .rules{
+      float: right;
+      border-right: none;
+      width: 120px;
+      margin-right: 25px;
+    }
+    .tip{
+      background-color: #FFFFE1;
+      border: 1px solid #ffc281;
+      color: #666;
+      padding: 10px 20px;
+      margin: 15px;
+      width: 80%;
+      float: left;
+    }
+    .tip .tipWarm{
+      font-weight: bold;
+    }
+    .tip .tipRed{
+      color: #f30;
+      font-weight: bold;
+    }
+    .tabCard{
+
+    }
+    .tabCard div{
+      display: none;
+      float: left;
+      width: 100%;
+    }
+    .tabCard .show-this{
+      display: block;
+    }
+    .tabCard .coupons{
+      width: 345px;
+      height: 250px;
+      background: url(./img/page32/yhq_yhq.png) no-repeat center bottom;
+      position: relative;
+      display: block;
+      margin: 15px;
+    }
+    .tabCard .coupons .info{
+      position: relative;
+      left: 50%;
+      float: left;
+      height: 132px;
+      color: #fff;
+      padding-top: 19px;
+    }
+    .tabCard .coupons .buy{
+      position: absolute;
+      top: 172px;
+      left: 50%;
+      width: 284px;
+      margin-left: -142px;
+      line-height: 34px;
+
+    }
+    .tabCard .coupons .time{
+      text-align: center; 
+      color: #7c7c7c;
+      line-height: 18px;
+      position: absolute;
+      top: 224px;
+      width: 100%;
+    }
+    .tabFooter a{
+      text-align: center;
+      font-size: 22px;
+      color: #3d7ed2;
+      background: #eff4f7;
+      padding: 10px;
+      float: left;
+      width: 100%;
+    }
+  </style>
+</head>
+<body style="background:#ededed;">
+<div>
+	<div class="layui-container bgImg">
+  	<div class="layui-row"> 
+   		<div class="layui-col-md12">
+        <a href="">
+          <img src="./img/page32/yhq_btn.png">
+        </a>
+      </div>
+		</div>
+  </div>
+</div>
+<div class="couponContent">
+	<div class="layui-container">
+  	<div class="layui-row"> 
+   		<div class="layui-col-md12 tabContent">
+      		<div class="tabNav">
+            <a href="javascript:;" data-key="1" class="show-this">全部</a>
+            <a href="javascript:;" data-key="2">优惠推荐</a>
+            <a href="javascript:;" data-key="3">域名注册卷</a>
+            <a href="javascript:;" data-key="4">域名转入卷</a>
+            <a href="javascript:;" data-key="5">域名续费卷</a>
+            <a href="" class="rules">用卷规则</a>
+          </div>
+          <div class="tip">
+            <p><span class="tipWarm">温馨提示： </span>优惠券有使用期限。<span class="tipRed">若优惠券过期失效，千喜云不延期不退还优惠券及购买费用，</span>请注意使用期限，务必在到期前使用完。</p>
+          </div>
+          <div class="tabCard">
+            <div class="card1 show-this"></div>
+            <div class="card2"></div>
+            <div class="card3"></div>
+            <div class="card4"></div>
+            <div class="card5"></div>
+          </div>
+          <div class="tabFooter">
+            <a href="javascript:;">加载更多</a>
+          </div>
+  		</div>
+  	</div>
+  </div>
+</div>
+
+</body>
+<script type="text/javascript" src="./layui/layui.js"></script>
+<script type="text/javascript">
+  layui.use(['jquery','layer'],function(){
+    var $ = layui.jquery
+       ,layer = layui.layer;
+
+    var resultData = [
+      { id:'1',type:'', name:'域名注册卷',price:'40',despriction:'仅用于com后缀域名注册使用',time:'2019.08.16至2019.12.31',
+        other:'价值65元',number:'20',},
+    ];
+
+    
+
+    $('.tabNav a').click(function(obj){
+      var key = $(obj.target).data('key');
+      $(this).attr('class','show-this');
+      $(this).siblings().removeClass('show-this');
+      var card = $('.tabCard').find('.card'+key);
+      card.siblings().removeClass('show-this');
+      card.addClass('show-this');
+
+      //异步获取数据，通过resultData模拟
+      //getData();
+
+/*      render(resultData);
+      function render(data){
+        var html = '';
+        for(var i=0;i<data.length;i++){
+          var d = data[i];
+          html += [
+            '<div class="coupons" style="background-color:#5dabef;">',
+              '<div class="info">',
+              '</div>',
+              '<div class="buy">',
+                '<table>',
+                  '<tr>',
+                    '<td>购买数量</td>',
+                    '<td><input type="layui-input"></td>',
+                    '<td><span class="layui-btn">立即抢购</span></td>',
+                  '</tr>',
+                '</table>',
+              '</div>',
+              '<div class="time">',
+                 '有效期'+d.time,
+              '</div>',
+            '</div>',
+          ].join('');
+        }
+        card.html(html);
+      }*/
+
+    })
+
+
+
+    $('.layui-btn').click(function(){
+      layer.msg('点击按钮');
+    })
+  })
+</script>
+</html>
