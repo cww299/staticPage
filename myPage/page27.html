@@ -210,6 +210,9 @@
     		$(ul).find('input').prop('checked',checked)
   			form.render();
 		}); 
+		$('.layui-btn').click(function(){
+			layer.msg('点击按钮');
+		})
 		element.on('tab(tabFilter)', function(data){	//监听选项卡切换
 		  console.log(this); //当前Tab标题所在的原始DOM元素
 		  console.log(data.index); //得到当前Tab的所在下标
