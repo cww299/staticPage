@@ -392,6 +392,12 @@
 .tabContent li{
 	width: 172px;
 	height: 72px;
+	font-size: 20px;
+	padding-top: 5px;
+}
+.tabContent .layui-tab-title li:hover{
+	margin-top: -2px;
+	border-top: 3px solid red;
 }
 .searchContent{
 	overflow: hidden;

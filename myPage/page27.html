@@ -16,6 +16,14 @@
 			height: 160px;
 		  }
 	    }
+	    .layui-tab-title .layui-this {
+		    color: red !important;
+		    margin-top: -3px;
+    		border-top: 3px solid red;
+		}
+		.layui-tab-title .layui-this:after{
+			border-bottom: 3px solid #fff;
+		}
   	</style>
 </head>
 <body style="background: #ededed;">
@@ -25,7 +33,7 @@
 	  <ul class="layui-tab-title">
 	    <li class="layui-this">英文域名</li>
 	    <li>中文域名</li>
-	    <li style="color:red;">托管注册
+	    <li>托管注册
 	    	<img src="./img/new_01.gif"></li>
 	    <li>域名价格</li>
 	    <li>域名转入</li>
