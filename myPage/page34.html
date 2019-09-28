@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>优惠集合</title>
 	<link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
 	<link rel="stylesheet" type="text/css" href="./page.css">
 	<meta charset="UTF-8">
@@ -109,6 +109,21 @@
       font-weight: bold;
       color: gray;
     }
+    @media screen and (max-width: 960px){
+      .redBackground .tableDataDiv{
+        padding:0px;
+      }
+      .navTable{
+        height: 30px;
+      }
+      .navTable a{
+        line-height: 33px;
+      }
+      .newActive .imgAndP p{
+        width: 280px;
+        margin: 0 auto;
+      }
+    }
   </style>
 </head>
 <body style="background: #efdfc5;">
@@ -125,8 +140,8 @@
   	<div class="layui-row"> 
    		<div class="layui-col-md12 redBackground">
     		<div class="navTable">
-          <a href="" data-key="1" class="active">域名注册优惠集合</a>
-          <a href="" data-key="2" >域名续费优惠集合</a>
+          <a href="javascript:;" data-key="1" class="active">域名注册优惠集合</a>
+          <a href="javascript:;" data-key="2" >域名续费优惠集合</a>
         </div>
         <div class="tableDataDiv">
           <table class="table1">

@@ -33,6 +33,51 @@
         height: 110px !important
       }
     }
+    /* 导航栏样式 */
+    .layui-tab-title {
+      height: 60px;
+      background: #80808040;
+    }
+    .layui-tab-title li {
+      padding-top: 5px;
+      padding-top: 12px;
+      height: 49px !important;
+    }
+    .layui-tab-title .layui-this {
+      color: red !important;
+      margin-top: -3px;
+      border-top: 3px solid red;
+      background: white !important;
+    }
+    .layui-tab-title .layui-this:after{
+      height: 61px;
+      border-width: 2px;
+    }
+    /* --导航栏样式--- */
+    @media screen and (max-width: 450px){ /*低于450宽的css样式*/
+      .layui-form-item .layui-input-inline {
+          width: auto;
+      }
+      .layui-form-item {
+        margin-bottom: 0px;
+      }
+      .paddingDiv{
+        margin-left: 110px;
+      }
+      .layui-form-label {
+          width: 100px;
+      }
+      .daoDiv{
+        position: absolute;
+        left: 50px;
+        top: 1px !important;
+      }
+      .daoInput{
+        position: absolute;
+        left: 70px !important;
+        top: 1px;
+      }
+    }
   </style>
 </head>
 <body style="background: #fdfdfd;">

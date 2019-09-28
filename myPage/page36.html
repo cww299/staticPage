@@ -36,7 +36,9 @@
     .paddingDiv{
       padding: 10px 0px;
     }
-
+    .layui-col-md3 .layui-form-label{
+      width: 100px;
+    }
     .layui-form-label{
       padding: 9px 0px;
       width: 60px;
@@ -46,6 +48,57 @@
     }
     .layui-table, .layui-table-view{
       margin:0px;
+    }
+    /* 导航栏样式 */
+    .layui-tab-title {
+      height: 60px;
+      background: #80808040;
+    }
+    .layui-tab-title li {
+      padding-top: 5px;
+      padding-top: 12px;
+      height: 49px !important;
+    }
+    .layui-tab-title .layui-this {
+      color: red !important;
+      margin-top: -3px;
+      border-top: 3px solid red;
+      background: white !important;
+    }
+    .layui-tab-title .layui-this:after{
+      height: 61px;
+      border-width: 2px;
+    }
+    /* --导航栏样式--- */
+    @media screen and (max-width: 450px){ /*低于450宽的css样式*/
+      .layui-form-item .layui-input-inline {
+          width: auto;
+      }
+      .layui-form-item {
+        margin-bottom: 0px;
+      }
+      .paddingDiv{
+        margin-left: 110px;
+      }
+      .layui-form-label {
+          width: 100px;
+      }
+      .daoDiv{
+        position: absolute;
+        left: 50px;
+        top: 1px !important;
+      }
+      .daoInput{
+        position: absolute;
+        left: 70px !important;
+        top: 1px;
+      }
+    }
+    @media screen and (min-width: 450px) and (max-width: 1200px){
+      /*高于450低于1200宽的css样式*/
+      .layui-form-item {
+        margin-bottom: 0px;
+      }
     }
   </style>
 </head>
@@ -81,9 +134,9 @@
                         </div>
                       </div>
                     </div>
-                    <div class="layui-col-md2">
+                    <div class="layui-col-md3">
                       <div class="layui-form-item">
-                        <label class="layui-form-label">关键字：</label>
+                        <label class="layui-form-label">排除关键字：</label>
                         <div class="layui-input-inline">
                           <input type="text" name="" class="layui-input">
                         </div>
@@ -95,8 +148,8 @@
                         <div class="layui-input-inline" style="width: 40px;">
                           <input type="text" name="" placeholder="1" class="layui-input">
                         </div>
-                        <div class="layui-form-mid">到</div>
-                        <div class="layui-input-inline" style="width: 40px;">
+                        <div class="layui-form-mid daoDiv">到</div>
+                        <div class="layui-input-inline daoInput" style="width: 40px;">
                           <input type="text" name="" class="layui-input">
                         </div>
                       </div>
