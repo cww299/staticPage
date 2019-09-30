@@ -1,74 +1,261 @@
+<!--
+  原网址：http://tm.qianxiyun.com/search
+-->
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>商标查询</title>
 	<link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
-  	<link rel="stylesheet" type="text/css" href="./page.css">
-  	<meta charset="UTF-8">
-  	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<link rel="stylesheet" type="text/css" href="./page.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <style type="text/css">
+    .searchDiv{
+      height: 275px;
+      background: url(./img/page40/banner_sbcx2.jpg) no-repeat center #120c05;
+    }
+    .searchDiv h1{
+      font-size: 66px;
+      padding-top: 10px;
+      text-align: center;
+      color: #fff;
+      font-weight: bold;
+      text-shadow: 0 5px 5px rgba(0,0,0,0.5);
+      margin-bottom: 20px;
+    }
+    .searchDiv .btnA{
+      width: 155px;
+      height: 30px;
+      line-height: 30px;
+      display: block;
+      margin: auto;
+      background-color: rgba(255,255,255,0.2);
+      border: solid 1px #fff;
+      text-align: center;
+      color: #fff;
+      font-size: 16px;
+      text-shadow: 0 2px 5px #000;
+    }
+    .searchDiv .typeA{
+      color: white;
+      position: absolute;
+      top: 78%;
+      left: 85%;
+    }
+    .searchDiv table{
+      border: 4px solid #808080de;
+      margin: 20px auto;
+    }
+    .selectTd{
+      width: 120px;
+    }
+    .inputTd{
+      width: 520px;
+    }
+    .btnTd{
+      width: 120px;
+    }
+    .serverDiv{
+      padding: 10px 40px 40px;
+      background: #fff;
+      box-shadow: 0 2px 2px 2px rgba(0,0,0,0.05);
+    }
+    .serverDiv .titleDiv{
+      height: 1px;
+      border-top: 1px solid #d3d3d3;
+      margin: 62px 0 34px 0;
+      text-align: center;
+      color: #2e2e35;
+    }
+    .serverDiv .titleDiv h1{
+      background: #fff;
+      position: relative;
+      top: -35px;
+      padding: 0 28px;
+      font-size: 40px;
+      display: inline-block;
+    }
+    .serverDiv .titleTip {
+      text-align: center;
+      color: #888;
+      margin-bottom: 25px;
+    }
+    .serverDiv .titleTip i{
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      background: url(./img/page40/icon.png) no-repeat center -6px;
+    }
+    .serverDiv .iconAndF{
+      margin: 30px 25px;
+      width: 168px;
+      height: 170px;
+      text-align: center;
+      color: gray;
+    }
+    .serverDiv .iconAndF i{
+      display: block;
+      width: 101px;
+      height: 102px;
+      background: url(./img/page40/sbfw_icon.png);
+      margin: 0 auto 20px;
+      background-position: 0 0px;
+    }
+    .serverDiv .ulli ul{
+        list-style-type: circle;
+        color: #0071e3;
+        margin: 15px 0;
+        font-size: 16px;
+        width: auto;
+      }
+    .serverDiv ul li {
+      line-height: 36px;
+      height: 36px;
+      padding-left: 20px;
+      background: url(./img/page39/ind_icon.png) no-repeat -666px -398px
+    }
+    @media screen and (max-width: 540px){
+      .serverDiv{
+        padding:10px;
+      }
+      .searchDiv .typeA{
+        top: 110%;
+        left: 40%;
+      }
+      .serverDiv .titleDiv h1 {
+          padding: 0; 
+          font-size: 26px;
+      }
+      .serverDiv .titleDiv{
+        border-top:none;
+        margin-bottom: 10px;
+      }
+      .serverDiv .iconAndF{
+        margin: 5px auto;
+      }
+
+    }
+  </style>
 </head>
 <body>
-<div>
+<div class="searchDiv">
 	<div class="layui-container">
-  	<div class="layui-row bigImgAndFont"> 
-   		<div class="layui-col-md6 andFont">
-    		<h1>态势感知服务</h1>
-    		<p>网络安全态势感知平台是由专业安全团队，深入研究常见安全漏洞、攻击事件以及攻击手法,完全自主研发的一款集资产实时监测、风险志势感知。风险通报预譬、风险处置建议为一体的平台。</p>
-    		<button class="layui-btn" id="btn_id" type="button">立即咨询</button>
+  	<div class="layui-row"> 
+   		<div class="layui-col-md12">
+    	 <h1>商标查询</h1>
+       <a href="javascript:;" class="btnA">去使用近似查询</a>
+       <table class="layui-form">
+         <tr>
+           <td class="selectTd"><select name=""><option value="1">全部</option>
+                              <option value="2">商标名</option>
+                              <option value="3">注册号</option>
+                              <option value="4">申请人</option></select></td>
+           <td class="inputTd">
+             <input type="text" class="layui-input" placeholder="输入商标名/申请人名/注册号关键字">
+           </td>
+           <td>
+             <span class="layui-btn layui-btn-danger btnTd">立即查询</span>
+           </td>
+         </tr>
+       </table>
+       <a href="" class="typeA"><i class="layui-icon layui-icon-app"></i>商标分类</a>
   		</div>
-  		<div class="layui-col-md6">
-        <div class="bigImgDiv" >
-          <img alt="这里存放图片" src="" class="showImgDiv">
+  	</div>
+  </div>
+</div>
+<div>
+	<div class="layui-container serverDiv">
+  	<div class="layui-row"> 
+      <div class="titleDiv">
+        <h1>千喜云商标平台服务宗旨</h1>  
+      </div>
+      <div class="titleTip">
+        免费专业分析服务<i></i>
+        及时申报服务<i></i>
+        办理状态随时通知<i></i>
+        发票、快递正规服务<i></i>
+        免费终身享受售后服务<i></i>
+      </div>
+   		<div class="layui-col-md2 iconAndF">
+      		<i></i><span>信息准确无误，立即提交等级，神一样的效率</span>
+  		</div>
+      <div class="layui-col-md2 iconAndF">
+          <i></i><span>多年行业经验，知识产权专家把关</span>
+      </div>
+      <div class="layui-col-md2 iconAndF">
+          <i></i><span>一对一顾问服务，认真核对各项资料，确保准确无误</span>
+      </div>
+      <div class="layui-col-md2 iconAndF">
+          <i></i><span>全程服务细致真诚，您的满意是我们的追求</span>
+      </div>
+      <div class="layui-col-md2 iconAndF">
+          <i></i><span>价格统一透明，省时、省钱、省力、更省心</span>
+      </div>
+      <div class="layui-col-md12">
+        <div class="titleDiv">
+          <h1>商标知识及常见问题</h1>  
         </div>
-  		</div>
+        <div class="titleTip">
+          解决商标相关问题&nbsp;&nbsp;&nbsp;<a style="color:#0000ffa1;">更多常见问题>></a>
+        </div>
+      </div>
+      <div class="layui-col-md4 ulli">
+        <ul>
+          <li><a>商标的有效期限是多久？</a></li>
+        </ul>
+      </div>
+      <div class="layui-col-md4 ulli">
+        <ul>
+          <li><a>营业执照地址与邮寄地址的区别？…</a></li>
+        </ul>
+      </div>
   	</div>
   </div>
 </div>
-<div class="blackBg">
-	<div class="layui-container">
-  	<div class="layui-row"> 
-   		<div class="layui-col-md6">
-      		
-  		</div>
-  		<div class="layui-col-md6">
-          
-  		</div>
-  	</div>
+<div class="footerDiv">
+  <div class="layui-container">
+    <div class="layui-row"> 
+      <div class="layui-col-md3 ia noneLeft">
+        <i></i>
+        <span>
+          <b>精准分析风险规避</b>提供免费专业分析服务
+        </span>
+      </div>
+      <div class="layui-col-md3 ia">
+        <i></i>
+        <span>
+          <b>精准分析风险规避</b>提供免费专业分析服务
+        </span>
+      </div>
+      <div class="layui-col-md3 ia">
+        <i></i>
+        <span>
+          <b>精准分析风险规避</b>提供免费专业分析服务
+        </span>
+      </div>
+      <div class="layui-col-md3 ia">
+        <i></i>
+        <span>
+          <b>精准分析风险规避</b>提供免费专业分析服务
+        </span>
+      </div>
+    </div>
   </div>
 </div>
-<div>
-	<div class="layui-container">
-  	<div class="layui-row"> 
-   		<div class="layui-col-md6">
-      		
-  		</div>
-  		<div class="layui-col-md6">
-          
-  		</div>
-  	</div>
-  </div>
-</div>
-<div class="blackBg">
-	<div class="layui-container">
-  	<div class="layui-row"> 
-   		<div class="layui-col-md6">
-      		
-  		</div>
-  		<div class="layui-col-md6">
-          
-  		</div>
-  	</div>
-  </div>
-</div>
+	
 
 </body>
 <script type="text/javascript" src="./layui/layui.js"></script>
 <script type="text/javascript">
-  layui.use(['jquery','layer'],function(){
+  layui.use(['jquery','layer','form'],function(){
     var $ = layui.jquery
+       ,form = layui.form
        ,layer = layui.layer;
 
-    $('#btn_id').click(function(){
+    form.render();
+
+
+    $('.layui-btn').click(function(){
       layer.msg('点击按钮');
     })
   })

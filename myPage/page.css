@@ -465,9 +465,7 @@
 
 /* page css  */
 
-
-
-/* 自定义导航栏样式 */
+/* 自定义导航栏样式、通用css*/
 	/*.tabContent{
       width: 100%; 
       margin-top: -30px!important;
@@ -507,5 +505,67 @@
         box-sizing: border-box;
       }
     }
+    /*轮播图样式*/
+    @media screen and (max-width: 960px){
+      .imgCarousel{
+        height: 150px !important
+      }
+    }
+    @media screen and (max-width: 540px){
+      .imgCarousel img{
+    	height: 100%;
+      }
+    }
+    .imgCarousel img{
+    	max-width: 100%;
+      }
+    .imgCarousel{
+    	width: 100%;
+    	height: 280px;
+    }
+    body{
+    	background: #ededed;
+    }
+/*------*/
 
+/*page39\40底部*/
+.footerDiv{
+	background: #fff;
+	height: 75px;
+	padding-top: 15px;
+	margin-top: 30px;
+}
+.footerDiv span{
+	color: gray;
+}
+.footerDiv .ia{
+}
+.footerDiv .noneLeft{
+	border-left: none;
+}
+.footerDiv i{
+	width: 44px;
+	height: 44px;
+	background-image: url(./img/page39/ind_icon.png);
+	margin: 8px 22px;
+	float: left;
+	background-position: -165px -64px;
+	display: inline-block;
+	vertical-align: middle;
+}
+.footerDiv b{
+	font-size: 18px;
+	font-weight: bold;
+	display: block;
+	padding-top: 6px;
+}
+@media screen and (max-width: 540px){
+	.footerDiv .ia {
+    margin-top: 15px;
+    padding-left: 30px;
+	}
+	.footerDiv{
+		height: auto;
+	}
+}
 /*------*/
