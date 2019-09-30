@@ -94,14 +94,11 @@
       display: block;
       text-align: left;
       padding-left: 35px;
-      margin-bottom: 16px;
+      /*margin-bottom: 16px;*/
       font-size: 17px;
       line-height: 45px;
       border: 1px solid #f5fad4;
       background: #f5fad4;
-    }
-    .nameTransFlow span:after{
-      content:'';
     }
     .blueBg{
       border-left:1px solid #8080803b;
@@ -109,6 +106,17 @@
     .blueBg span{
       border: 1px solid #dae9f9;
       background: #dae9f9;
+    }
+    .fx{
+      height: 0px;
+      width: 0px;
+      margin-left: 250px;
+      border-style: solid;
+      border-width: 8px;
+      border-color: #e2ed9a transparent transparent transparent;
+    }
+    .blueBg .fx{
+      border-color: #dae9f9 transparent transparent transparent;
     }
     @media screen and (max-width: 960px){
       .twoImgDiv .transModel{
@@ -118,9 +126,22 @@
         height: 280px;
       }
       .threeOfOneImg{
-        margin-bottom: 10px;
+        margin-bottom: 12px;
+      }
+      .nameTransFlow span{
+        padding-left: 10px;
+      }
+      .fx{
+        margin-left: 150px;
+      }
+      .firstImg{
+        height: 200px;
+      }
+      .bgImg img{
+        height: 100%;
       }
     }
+    
   </style>
 </head>
 <body>
@@ -200,18 +221,26 @@
    		<div class="layui-col-md6">
       	<img src="./img/page29/cv1.gif">
         <span>登录用户中心，找到域名管理，点击域名转入，选择同注册商转入</span>
+        <div class="fx"></div>
         <span>输入转入域名，查看对应域名的注册商代理账户</span>
+        <div class="fx"></div>
         <span>请将对应的代理账户告知转出方要求转入REG</span>
+        <div class="fx"></div>
         <span>提交转入请求，域名状态为“转入中”</span>
+        <div class="fx"></div>
         <span>成功转入，域名状态为“正常”</span>
         <button type="button" class="layui-btn">立即转入</button>
   		</div>
   		<div class="layui-col-md6 blueBg">
         <img src="./img/page29/cv1.gif">
         <span>登录用户中心，找到域名管理，点击域名转入，选择同注册商转入</span>
+        <div class="fx"></div>
         <span>输入转入域名，查看对应域名的注册商代理账户</span>
+        <div class="fx"></div>
         <span>请将对应的代理账户告知转出方要求转入REG</span>
+        <div class="fx"></div>
         <span>提交转入请求，域名状态为“转入中”</span>
+        <div class="fx"></div>
         <span>成功转入，域名状态为“正常”</span>
         <button type="button" class="layui-btn">立即转入</button>
   		</div>

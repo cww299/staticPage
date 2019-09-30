@@ -201,13 +201,6 @@
     var $ = layui.jquery
        ,layer = layui.layer;
 
-    var resultData = [
-      { id:'1',type:'', name:'域名注册卷',price:'40',despriction:'仅用于com后缀域名注册使用',time:'2019.08.16至2019.12.31',
-        other:'价值65元',number:'20',},
-    ];
-
-    
-
     $('.tabNav a').click(function(obj){
       var key = $(obj.target).data('key');
       $(this).attr('class','show-this');
@@ -215,40 +208,7 @@
       var card = $('.tabCard').find('.card'+key);
       card.siblings().removeClass('show-this');
       card.addClass('show-this');
-
-      //异步获取数据，通过resultData模拟
-      //getData();
-
-/*      render(resultData);
-      function render(data){
-        var html = '';
-        for(var i=0;i<data.length;i++){
-          var d = data[i];
-          html += [
-            '<div class="coupons" style="background-color:#5dabef;">',
-              '<div class="info">',
-              '</div>',
-              '<div class="buy">',
-                '<table>',
-                  '<tr>',
-                    '<td>购买数量</td>',
-                    '<td><input type="layui-input"></td>',
-                    '<td><span class="layui-btn">立即抢购</span></td>',
-                  '</tr>',
-                '</table>',
-              '</div>',
-              '<div class="time">',
-                 '有效期'+d.time,
-              '</div>',
-            '</div>',
-          ].join('');
-        }
-        card.html(html);
-      }*/
-
     })
-
-
 
     $('.layui-btn').click(function(){
       layer.msg('点击按钮');

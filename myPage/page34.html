@@ -65,16 +65,7 @@
       height: 18px;
       border-bottom: 5px solid #ffae00;
     }
-    @media screen and (min-width: 960px){
-      .navTable{
-        height: 65px;
-      }
-      .navTable a{
-        line-height: 65px;
-        font-size: 26px;
-
-      }
-    }
+    
     .navTable a{
       display: block;
       float: left;
@@ -123,6 +114,63 @@
       text-align: center;
       color: #2e2e35;
     }
+    .getBtnDiv{
+      float: right;
+      position: relative;
+      right: 50%;
+      margin-top: 190px;
+    }
+    @media screen and (max-width: 1060px){
+      .getBtnDiv{
+        margin-top: -242px;
+        right: 46%;
+      }
+    }
+    @media screen and (max-width: 860px){
+      .getBtnDiv{
+        margin-top: -220px;
+        right: 44%;
+      }
+    }
+    @media screen and (max-width: 790px){
+      .getBtnDiv{
+        margin-top: -185px;
+      }
+    }
+    @media screen and (max-width: 650px){
+      .getBtnDiv{
+        margin-top: -168px;
+        right: 42%;
+      }
+    }
+    @media screen and (max-width: 600px){
+      .getBtnDiv{
+        margin-top: -155px;
+        right: 41%;
+      }
+    }
+    @media screen and (max-width: 520px){
+      .getBtnDiv{
+        margin-top: -140px;
+        right: 41%;
+      }
+    }
+    @media screen and (max-width: 520px){
+      .getBtnDiv{
+        margin-top: -30%;
+        right: 38%;
+      }
+    }
+    @media screen and (min-width: 960px){
+      .navTable{
+        height: 65px;
+      }
+      .navTable a{
+        line-height: 65px;
+        font-size: 26px;
+
+      }
+    }
     @media screen and (max-width: 960px){
       .redBackground .tableDataDiv{
         padding:0px;
@@ -147,7 +195,9 @@
   <div  class="marginTop">
     <div class="bgImgAndBtn">
       <img src="./img/page34/hdzh_4.png">
-      <!-- <a class="layui-btn layui-btn-danger">领取优惠券</a> -->
+      <div class="getBtnDiv">
+        <a class="layui-btn layui-btn-danger " >领取优惠券</a>
+      </div>
     </div>
   </div>
 	<div class="layui-container">

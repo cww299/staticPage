@@ -464,3 +464,48 @@
 
 
 /* page css  */
+
+
+
+/* 自定义导航栏样式 */
+	.tabContent{
+      width: 100%; 
+      margin-top: -30px!important;
+    }
+    .tabNav{
+      background: #fffee5;
+      border-bottom: solid 1px #e5e5d8;
+      height: 60px;
+    }
+    .tabNav a{
+      display: inline-block;
+      float: left;
+      width: 150px;
+      line-height: 60px;
+      height: 60px;
+      text-align: center;
+      font-size: 16px;
+      border-right: solid 1px #e5e5d8;
+    }
+    .tabNav a.show-this{
+      color: #fff;
+      background: linear-gradient(50deg, #ff3526, #ff6600);
+    }
+    .tabNav a.show-this:hover{
+      color: #fff;
+      background: linear-gradient(50deg, #ff3526, #ff6600);
+    }
+    @media screen and (max-width: 980px){
+      .tabNav{
+        background:white;
+        border-bottom:none;
+      }
+      .tabNav a{
+        background:#fffee5;
+        width: 50%;
+        border-bottom: solid 1px #e5e5d8;
+        box-sizing: border-box;
+      }
+    }
+
+/*------*/

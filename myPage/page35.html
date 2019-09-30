@@ -66,27 +66,6 @@
     .layui-table, .layui-table-view{
       margin:0px;
     }
-    /* 导航栏样式 */
-    .layui-tab-title {
-      height: 60px;
-      background: #80808040;
-    }
-    .layui-tab-title li {
-      padding-top: 5px;
-      padding-top: 12px;
-      height: 49px !important;
-    }
-    .layui-tab-title .layui-this {
-      color: red !important;
-      margin-top: -3px;
-      border-top: 3px solid red;
-      background: white !important;
-    }
-    .layui-tab-title .layui-this:after{
-      height: 61px;
-      border-width: 2px;
-    }
-    /* --导航栏样式--- */
     @media screen and (max-width: 450px){ /*低于450宽的css样式*/
       .layui-form-item .layui-input-inline {
           width: auto;
@@ -120,6 +99,22 @@
         margin-bottom: 0px;
       }
     }
+
+    .tabNav {
+      background: #9e9e9ed4;
+      height: 45px;
+    }
+    .tabNav a{
+      line-height: 45px;
+      height: 45px;
+    }
+    @media screen and (max-width: 980px){
+      .tabNav a{
+        background:#9e9e9ed4;
+      }
+    }
+
+
   </style>
 </head>
 <body style="background: #fdfdfd;">
@@ -131,15 +126,15 @@
     </span>
   	<div class="layui-row"> 
    		<div class="layui-col-md12">
+        <div class="tabNav">
+          <a href="javascript:;" data-key="1" class="show-this">一口价</a>
+          <a href="javascript:;" data-key="2">精品域名</a>
+          <a href="javascript:;" data-key="3">打包域名</a>
+          <a href="javascript:;" data-key="4">推荐域名</a>
+          <a href="javascript:;" data-key="5">米店</a>
+          <a href="javascript:;" data-key="6">成交记录</a>
+        </div>
     		<div class="layui-tab">
-          <ul class="layui-tab-title">
-            <li class="layui-this">一口价</li>
-            <li>精品域名</li>
-            <li>打包域名</li>
-            <li>推荐域名</li>
-            <li>米店</li>
-            <li>成交记录</li>
-          </ul>
           <div class="layui-tab-content">
             <div class="layui-tab-item layui-show">
               <div class="searchDiv layui-form">
@@ -313,6 +308,16 @@
         return '<span class="layui-btn layui-btn-sm">删除</span>';
       }
     }
+
+    $('.tabNav a').click(function(obj){
+      var key = $(obj.target).data('key');
+      $(this).attr('class','show-this');
+      $(this).siblings().removeClass('show-this');
+      var card = $('.tabCard').find('.card'+key);
+      card.siblings().removeClass('show-this');
+      card.addClass('show-this');
+    })
+
     $('.layui-btn').click(function(){
       layer.msg('点击按钮');
     })
