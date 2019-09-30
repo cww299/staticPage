@@ -97,6 +97,13 @@
       font-size: 36px;
       font-weight: 400;
       padding: 15px;
+      position: relative;
+      top: -35px;
+      padding: 0 28px;
+      font-size: 36px;
+      display: inline-block;
+      color: #e62941;
+      background: #efdfc5;
     }
     .newActive .imgAndP{
       text-decoration: none;
@@ -108,6 +115,13 @@
       padding: 15px 3px;
       font-weight: bold;
       color: gray;
+    }
+    .line-title{
+      height: 1px;
+      border-top: 3px solid #e62941;
+      margin: 62px 0 30px 0;
+      text-align: center;
+      color: #2e2e35;
     }
     @media screen and (max-width: 960px){
       .redBackground .tableDataDiv{
@@ -170,8 +184,12 @@
   </div>
 </div>
 <div class="newActive">
-  <h1>REG最新优惠活动</h1>
+  
+  
 	<div class="layui-container">
+    <div class="line-title">
+      <h1>REG最新优惠活动</h1>
+    </div>
   	<div class="layui-row layui-col-space10">
    		<div class="layui-col-md3">
         <a class="imgAndP" href="">
@@ -244,7 +262,7 @@
               d.time,
             '</td>',
             '<td>',
-              '<span class="layui-btn" data-id="'+d.id+'">立即注册</span>',
+              '<span class="layui-btn layui-btn-danger" data-id="'+d.id+'">立即注册</span>',
             '</td>',
           '</tr>',
         ].join('');

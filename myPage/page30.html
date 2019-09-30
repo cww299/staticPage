@@ -97,6 +97,13 @@
       border-left:0;
       text-align: center;
     }
+    .priceSpan{
+      font-size: 12px;
+      margin-right: 5px;
+    }
+    .layui-btn-warm{
+      width:95px;
+    }
     @media screen and (max-width: 960px){
       .layui-form-item .layui-input-inline{
         margin: 3px -2px 10px 3px;
@@ -157,7 +164,7 @@
                 不可注册<span>0</span>个，
                 失败<span>0</span>个，
               </div>
-              <ul class="resultList">
+              <ul class="resultList layui-form">
               </ul>
             </div>
           </div>
@@ -179,7 +186,7 @@
 	<div class="layui-container">
   	<div class="layui-row"> 
    		<div class="layui-col-md12">
-      		<blockquote class="layui-elem-quote">如果查询的域名不满意，请点击<span class="layui-btn layui-btn-primary">重新查找</span></blockquote>
+      		<blockquote class="layui-elem-quote">如果查询的域名不满意，请点击&nbsp;&nbsp;<span class="layui-btn layui-btn-primary">重新查找</span></blockquote>
   		</div>
   	</div>
   </div>
@@ -197,19 +204,20 @@
 
 
     var resultData = [    //模拟查询结果
-      {id:'1', name:'a.com', isEnglish:true, error:true, newName:true, fail:true,isRegister:true, },
-      {id:'2', name:'b.com', isEnglish:true, error:false, newName:false, fail:false,isRegister:false, },
-      {id:'3', name:'c.com', isEnglish:true, error:false, newName:true, fail:false,isRegister:false, },
-      {id:'4', name:'d.com', isEnglish:true, error:false, newName:false, fail:false,isRegister:false, },
-      {id:'5', name:'e.com', isEnglish:true, error:false, newName:false, fail:false,isRegister:false, },
-      {id:'6', name:'f.com', isEnglish:true, error:true, newName:false, fail:false,isRegister:false, },
-      {id:'7', name:'g.com', isEnglish:true, error:true, newName:false, fail:false,isRegister:false, },
+      {id:'1', name:'a.com', isEnglish:true, error:true, newName:true, fail:true,isRegister:true, canRegister:true, price:'15', },
+      {id:'2', name:'b.com', isEnglish:true, error:false, newName:false, fail:false,isRegister:false,canRegister:false,price:'',   },
+      {id:'3', name:'c.com', isEnglish:true, error:false, newName:true, fail:false,isRegister:false, canRegister:true, price:'14', },
+      {id:'4', name:'d.com', isEnglish:true, error:false, newName:false, fail:false,isRegister:false,canRegister:false,price:'',   },
+      {id:'5', name:'e.com', isEnglish:true, error:false, newName:false, fail:false,isRegister:false, canRegister:false,price:'',  },
+      {id:'6', name:'f.com', isEnglish:true, error:true, newName:false, fail:false,isRegister:false, canRegister:false, price:'', },
+      {id:'7', name:'g.com', isEnglish:true, error:true, newName:false, fail:false,isRegister:false, canRegister:false, price:'',  },
     ];  //各项数据对应查询结果的各个标签，详情请自行定义
     var ENG_SPAN = '<span class="layui-badge layui-bg-green">英文域名</span>',
         NEW_SPAN = '<span class="layui-badge layui-bg-blue">新后缀域名</span>',
         ERR_SPAN = '<span class="error_span">发生异常</span>',
         REG_SPAN = '<span class="regis_span">已经被注册</span>',
-        FAI_SPAN = '<span class="fail_span">查询失败</span>';
+        FAI_SPAN = '<span class="fail_span">查询失败</span>',
+        CHECKBOX = '<input type="checkbox" lay-skin="primary">&nbsp;';
 
     renderData(resultData);
     function renderData(data){
@@ -219,6 +227,7 @@
         html += [
             '<li>',
               '<p class="leftP">',
+                t.canRegister?CHECKBOX:'',
                 t.name,
                 t.isEnglish ? ENG_SPAN : '',
                 t.error ? ERR_SPAN : '',
@@ -227,7 +236,10 @@
                 t.isRegister ? REG_SPAN : '',
               '</p>',
               '<p class="rightP">',
-                '<span class="layui-btn layui-btn-sm  layui-btn-warm" data-id="'+t.id+'">查看</span>',
+                t.canRegister?'<span class="priceSpan">千喜云价格'+t.price+'元/首年</span>':'',
+                '<span class="layui-btn layui-btn-sm  layui-btn-warm" data-id="'+t.id+'">',
+                t.canRegister?'加入购物车':'查看',
+                '</span>',
               '</p>',
             '</li>',
         ].join('');
@@ -235,16 +247,25 @@
       html+=[
         '<li class="layui-form">',
           '<p class="leftP">',
-            '<input type="checkbox" lay-skin="primary" title="全选">',
+            '<input type="checkbox" lay-skin="primary" title="全选" lay-filter="allCheckbox">',
             '<span class="layui-btn  layui-btn">批量加入购物车</span>',
           '</p>',
           '<p class="rightP">',
-                '<span class="layui-btn  layui-btn-danger">清空购物车</span>',
+                '<span class="layui-btn  layui-btn-danger" >清空购物车</span>',
               '</p>',
         '</li>',
       ].join('');
       $('.resultList').append(html);
       form.render();
+      form.on('checkbox(allCheckbox)', function(data){
+        var checked = data.elem.checked;
+        if(checked)
+          $(data.elem).attr('title','取消全选');
+        else
+          $(data.elem).attr('title','全选');
+        $('.resultList').find('input').prop('checked',checked)
+        form.render();
+      });   
     }
     $('.layui-btn').click(function(obj){
       var id = $(obj.target).data('id') || '';

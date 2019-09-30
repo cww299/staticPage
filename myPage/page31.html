@@ -39,7 +39,7 @@
   	.registerContent .leftDiv p{
   		font-size: 18px;
     	font-weight: bold;
-    	margin:10px 0;
+    	margin:10px 7px;
     	text-align: left;
   	}
   	.registerContent .leftDiv p span{
@@ -120,6 +120,14 @@
         padding: 30px 5px;
       }
     }
+    @media screen and (max-width: 540px){
+      .registerContent .leftDiv textarea{
+        height: 240px;
+      }
+      .exportBtn{
+        margin-right: -16px;
+      }
+    }
   </style>
 </head>
 <body style="background:#ededed;">
@@ -128,10 +136,10 @@
   <div class="layui-container">
   	<div class="registerContent">
 	  	<div class="layui-row">
-	  	  <h1>托管注册：</h1>
+	  	  <h1>托管注册</h1>
 	      <div class="layui-col-md6 leftDiv">
 	      	<p>托管域名
-	      		<span class="layui-btn layui-btn-sm">导入txt</span>
+	      		<span class="layui-btn layui-btn-sm exportBtn">导入txt</span>
 	      	</p>
 	      	<textarea placeholder="输入您要注册的域名 一行一个，最多5000个。（带后缀 如千喜云）"></textarea>
 	  	  </div>

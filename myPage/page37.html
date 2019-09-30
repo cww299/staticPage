@@ -110,6 +110,9 @@
         left: 70px !important;
         top: 1px;
       }
+      .quickSearch span{
+        padding: 8px 8px;
+      }
     }
   </style>
 </head>
@@ -124,10 +127,10 @@
       <div class="layui-col-md12">
         <div class="layui-tab">
           <ul class="layui-tab-title">
-            <li class="layui-this">一口价</li>
+            <li>一口价</li>
             <li>精品域名</li>
             <li>打包域名</li>
-            <li>推荐域名</li>
+            <li class="layui-this">推荐域名</li>
             <li>米店</li>
             <li>成交记录</li>
           </ul>
@@ -290,12 +293,12 @@
       skin: 'nob',
       cols: [[
         { align:'center', type:'checkbox', },
-        { align:'center', title:'域名', field:'name', },
-        { align:'center', title:'简介', field:'description', },
-        { align:'center', title:'特征', field:'special', },
-        { align:'center', title:'价格', field:'price', },
-        { align:'center', title:'剩余时间', field:'time', },
-        { align:'center', title:'操作', templet:getDeleteBtn(), },
+        { align:'center', title:'域名', width:'120', field:'name', },
+        { align:'center', title:'简介', width:'120', field:'description', },
+        { align:'center', title:'特征', width:'120', field:'special', },
+        { align:'center', title:'价格', width:'120', field:'price', },
+        { align:'center', title:'剩余时间',width:'120',  field:'time', },
+        { align:'center', title:'操作', width:'120', templet:getDeleteBtn(), },
 
       ]]
     })
