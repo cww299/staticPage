@@ -3,71 +3,313 @@
 <head>
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
-  	<link rel="stylesheet" type="text/css" href="./page.css">
-  	<meta charset="UTF-8">
-  	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<link rel="stylesheet" type="text/css" href="./page.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <style>
+    .bgImg{
+      text-align: center;
+      margin-bottom: -90px;
+      height: 275px;
+      background: url(./img/page41/banner_sbcx2.jpg) no-repeat center #120c05;
+    }
+    .bgImg h1{
+      font-size: 66px;
+      padding-top: 20px;
+      color: #fff;
+      font-weight: bold;
+      text-shadow: 0 5px 5px rgba(0,0,0,0.5);
+    }
+    .bgImg a{
+      width: 155px;
+      line-height: 30px;
+      display: block;
+      margin: auto;
+      background-color: rgba(255,255,255,0.2);
+      border: solid 1px #fff;
+      color: #fff;
+      font-size: 16px;
+      text-shadow: 0 2px 5px #000;
+      margin-top: 30px;
+    }
+    .searchDiv{
+      background: white;
+      padding: 5px;
+    }
+    .searchDiv .searchTitle{
+      background: #e0e1eb;
+      clear: both;
+      padding: 5px 15px;
+      height: 30px;
+      line-height: 30px;
+    }
+    .searchDiv .searchTitle .similar{
+      color: #4e4e4e;
+      font-size: 16px;
+      width: 120px;
+      display: inline-block;
+    }
+
+    .searchDiv table{
+      width: 100%;
+    }
+
+    .searchDiv table .smallTh{
+      width: 130px;
+    }
+    .searchDiv table td{
+      border-bottom: dotted 1px #dad6d6;
+      padding: 5px 10px;
+      line-height: 2;
+    }
+    .searchDiv table .bgDiv{
+      background: #f5f5f5;
+      color: #333;
+      text-align: right
+    }
+    .searchDiv table .bgCheckbox{
+      background: #eef2f2;
+      padding: 5px 10px 2px 10px;
+    }
+    .searchDiv table ul{
+      border-bottom: solid 1px #d9d9d9;
+      float: left;
+    }
+    .searchDiv table ul li{
+      width: 14%;
+      float: left;
+    }
+    .searchContents{
+      width: 280px;
+    }
+    .searchBtn{
+      margin: 15px auto;
+      text-align: center;
+    }
+    .linka a{
+      border: solid 1px #b3b3b3;
+      font-size: 12px;
+      padding: 3px 5px;
+      white-space: nowrap;
+      text-decoration: none;
+      color: #555;
+    }
+    .linka a:hover{
+      background: #8080804f;
+      text-decoration: underline;
+    }
+    .linka .clicka{
+      color: #fff;
+      background: #737ba4 !important;
+      border-color: #737ba4;
+    }
+    .red{
+      color: red;
+    }
+
+    .layui-form-select{
+      width: 150px;
+    }
+    @media screen and (max-width: 540px){
+      .searchDiv table ul li{
+        width: 45%;
+      }
+      .searchContents {
+          width: 230px;
+      }
+    }
+  </style>
 </head>
 <body>
-<div>
-	<div class="layui-container">
-  	<div class="layui-row bigImgAndFont"> 
-   		<div class="layui-col-md6 andFont">
-    		<h1>态势感知服务</h1>
-    		<p>网络安全态势感知平台是由专业安全团队，深入研究常见安全漏洞、攻击事件以及攻击手法,完全自主研发的一款集资产实时监测、风险志势感知。风险通报预譬、风险处置建议为一体的平台。</p>
-    		<button class="layui-btn" id="btn_id" type="button">立即咨询</button>
-  		</div>
-  		<div class="layui-col-md6">
-        <div class="bigImgDiv" >
-          <img alt="这里存放图片" src="" class="showImgDiv">
-        </div>
-  		</div>
-  	</div>
-  </div>
-</div>
-<div class="blackBg">
-	<div class="layui-container">
-  	<div class="layui-row"> 
-   		<div class="layui-col-md6">
-      		
-  		</div>
-  		<div class="layui-col-md6">
-          
-  		</div>
-  	</div>
-  </div>
+<div class="bgImg">
+  <h1>近似查询</h1>
+  <a>去使用综合查询</a>
 </div>
 <div>
-	<div class="layui-container">
+	<div class="layui-container searchDiv">
   	<div class="layui-row"> 
-   		<div class="layui-col-md6">
-      		
-  		</div>
-  		<div class="layui-col-md6">
-          
+   		<div class="layui-col-md12">
+      		<table class="layui-form">
+            <thead class="searchTitle">
+              <th class="smallTh">
+                <span class="similar">近似查询条件</span></th>
+              <th><a href="javascript:;">商标审查标准(2017版).pdf</a></th>
+              <!-- <th><a href="javascript:;">收缩/展开</a></th> -->
+            </thead>
+            <tbody>
+              <tr>
+                <td class="bgDiv">
+                  <b class="red">*</b>国际分类号
+                </td>
+                <td class="searchType linka">
+                  <a href="javascript:;">01化学原料</a>
+                  <a href="javascript:;">02颜料油漆</a>
+                  <a href="javascript:;">03化妆品</a>
+                  <a href="javascript:;">04燃料油脂</a>
+                  <a href="javascript:;">05医药</a>
+                  <a href="javascript:;">06五金金属</a>
+                  <a href="javascript:;">07机械设备</a>
+                  <a href="javascript:;">08手工器械</a>
+                  <a href="javascript:;">09电子电脑</a>
+                  <a href="javascript:;">10医疗器械</a>
+                  <a href="javascript:;">11家用电器</a>
+                  <a href="javascript:;">12运输工具</a>
+                  <a href="javascript:;">13军火烟花</a>
+                  <a href="javascript:;">14珠宝钟表</a>
+                  <a href="javascript:;">15乐器</a>
+                  <a href="javascript:;">16办公文具</a>
+                  <a href="javascript:;">17橡胶制品</a>
+                  <a href="javascript:;">18皮革箱包</a>
+                  <a href="javascript:;">19建筑材料</a>
+                  <a href="javascript:;">20家具</a>
+                  <a href="javascript:;">21厨房洁具</a>
+                  <a href="javascript:;">22绳网袋蓬</a>
+                  <a href="javascript:;">23纺织纱线</a>
+                  <a href="javascript:;">24布料床单</a>
+                  <a href="javascript:;">25服装鞋帽</a>
+                  <a href="javascript:;">26花边配饰</a>
+                  <a href="javascript:;">27地毯席垫</a>
+                  <a href="javascript:;">28体育玩具</a>
+                  <a href="javascript:;">29食品</a>
+                  <a href="javascript:;">30小食配料</a>
+                  <a href="javascript:;">31水果花木</a>
+                  <a href="javascript:;">32啤酒饮料</a>
+                  <a href="javascript:;">33酒</a>
+                  <a href="javascript:;">34烟草烟具</a>
+                  <a href="javascript:;">35广告贸易</a>
+                  <a href="javascript:;">36金融物管</a>
+                  <a href="javascript:;">37建筑修理</a>
+                  <a href="javascript:;">38通讯传媒</a>
+                  <a href="javascript:;">39运输旅行</a>
+                  <a href="javascript:;">40材料加工</a>
+                  <a href="javascript:;">41教育娱乐</a>
+                  <a href="javascript:;">42技术服务</a>
+                  <a href="javascript:;">43餐饮酒店</a>
+                  <a href="javascript:;">44医疗园艺</a>
+                  <a href="javascript:;">45法律</a>
+                </td>
+              </tr>
+              <tr class="searchTr">
+                <td class="bgDiv">
+                  <b class="red">*</b>查询方式
+                </td>
+                <td class="searchType">
+                  <span  style="width: 120px;"><select><option value="1">中文</option>
+                          <option value="2">英文</option></select></span>
+                </td>
+              </tr>
+              <tr class="searchTr">
+                <td class="bgDiv">
+                  <b class="red">*</b>查询类型
+                </td>
+                <td class="searchType">
+                  <div class="bgCheckbox">
+                    <ul id="allCheckbox">
+                      <li>
+                        <input type="checkbox" title="完全相同" lay-skin="primary">
+                      </li>
+                      <li>
+                        <input type="checkbox" title="部分相同" lay-skin="primary">
+                      </li>
+                      <li>
+                        <input type="checkbox" title="任意位置汉字" lay-skin="primary">
+                      </li>
+                      <li>
+                        <input type="checkbox" title="变汉字" lay-skin="primary">
+                      </li>
+                      <li>
+                        <input type="checkbox" title="减汉字" lay-skin="primary">
+                      </li>
+                      <li>
+                        <input type="checkbox" title="含在其他商标中" lay-skin="primary">
+                      </li>
+                      <li>
+                        <input type="checkbox" title="内含其他商标" lay-skin="primary">
+                      </li>
+                      <li>
+                        <input type="checkbox" title="换序" lay-skin="primary">
+                      </li>
+                      <li>
+                        <input type="checkbox" title="逆序" lay-skin="primary">
+                      </li>
+                      <li>
+                        <input type="checkbox" title="读音相同" lay-skin="primary">
+                      </li>
+                    </ul>
+                    <p>
+                      <input type="checkbox" lay-filter="all" title="全选/全不选" lay-skin="primary">
+                    </p>
+                  </div>
+                </td>
+              </tr>
+              <tr class="searchTr">
+                <td class="bgDiv">
+                  <b class="red">*</b>查询内容
+                </td>
+                <td class="searchType">
+                  <input type="text" name="" placeholder="请输入查找内容" class="layui-input searchContents">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="searchBtn">
+            <span class="layui-btn layui-btn-danger">立即查询</span>
+            <span class="layui-btn layui-btn-danger">重置查询</span>
+          </div>
   		</div>
   	</div>
   </div>
 </div>
-<div class="blackBg">
-	<div class="layui-container">
-  	<div class="layui-row"> 
-   		<div class="layui-col-md6">
-      		
-  		</div>
-  		<div class="layui-col-md6">
-          
-  		</div>
-  	</div>
+<div class="footerDiv">
+  <div class="layui-container">
+    <div class="layui-row"> 
+      <div class="layui-col-md3 ia noneLeft">
+        <i></i>
+        <span>
+          <b>精准分析风险规避</b>提供免费专业分析服务
+        </span>
+      </div>
+      <div class="layui-col-md3 ia">
+        <i></i>
+        <span>
+          <b>精准分析风险规避</b>提供免费专业分析服务
+        </span>
+      </div>
+      <div class="layui-col-md3 ia">
+        <i></i>
+        <span>
+          <b>精准分析风险规避</b>提供免费专业分析服务
+        </span>
+      </div>
+      <div class="layui-col-md3 ia">
+        <i></i>
+        <span>
+          <b>精准分析风险规避</b>提供免费专业分析服务
+        </span>
+      </div>
+    </div>
   </div>
 </div>
 
 </body>
 <script type="text/javascript" src="./layui/layui.js"></script>
 <script type="text/javascript">
-  layui.use(['jquery','layer'],function(){
+  layui.use(['jquery','layer','form'],function(){
     var $ = layui.jquery
+       ,form = layui.form
        ,layer = layui.layer;
 
+    form.render();
+
+
+    form.on('checkbox(all)',function(obj){
+      $('#allCheckbox').find('input').prop('checked',obj.elem.checked);
+      form.render();
+    })
+    $('.linka').find('a').click(function(){
+      $(this).addClass('clicka');
+      $(this).siblings().removeClass('clicka');
+    })
     $('#btn_id').click(function(){
       layer.msg('点击按钮');
     })
