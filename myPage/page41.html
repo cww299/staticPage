@@ -110,6 +110,49 @@
     .layui-form-select{
       width: 150px;
     }
+    .resultTitle{
+      background: #f4f4f4;
+      border-bottom: solid 1px #e6e6e6;
+      height: 40px;
+      line-height: 40px;
+      padding: 0 20px;
+      vertical-align: middle
+    }
+    .resultTitle i{
+      cursor: pointer;
+    }
+    .searchResult{
+      padding: 0px;
+      margin-top: 20px;
+      background: white;
+    }
+    .resultContent{
+
+    }
+    .resultContent p{
+      padding: 50px;
+      text-align: center;
+      color: #878787;
+      font-size: 20px;
+    }
+    .leftIcon{
+      color: red;
+      margin: 0 10px 0 0px;
+    }
+    .resultNumber{
+      float: right;
+    }
+    .numberRed{
+      color:#ff000094;
+    }
+    .showAndHide{
+      float: right;
+      color: gray;
+      margin-right: 10px;
+    }
+    .showAndHide:hover{
+      color: #f14242c7;
+    }
     @media screen and (max-width: 540px){
       .searchDiv table ul li{
         width: 45%;
@@ -124,7 +167,7 @@
 <div class="bgImg">
   <h1>近似查询</h1>
   <a>去使用综合查询</a>
-</div>
+</div> 
 <div>
 	<div class="layui-container searchDiv">
   	<div class="layui-row"> 
@@ -133,8 +176,10 @@
             <thead class="searchTitle">
               <th class="smallTh">
                 <span class="similar">近似查询条件</span></th>
-              <th><a href="javascript:;">商标审查标准(2017版).pdf</a></th>
-              <!-- <th><a href="javascript:;">收缩/展开</a></th> -->
+              <th><a href="javascript:;">商标审查标准(2017版).pdf</a>
+                  <a href="javascript:;" class="showAndHide">收缩/展开
+                    <i class="layui-icon layui-icon-up"></i></a>
+              </th>
             </thead>
             <tbody>
               <tr>
@@ -260,6 +305,22 @@
   	</div>
   </div>
 </div>
+<div>
+  <div class="layui-container searchResult">
+    <div class="layui-row">
+      <div class="layui-col-md12">
+        <div class="resultTitle">
+          <i class="layui-icon layui-icon-align-left leftIcon"></i>  
+          <i class="layui-icon layui-icon-app"></i>
+          <span class="resultNumber">查询结果：<b class="numberRed">0</b>个</span>
+        </div>
+        <div class="resultContent">
+          <p>请输入查询条件！</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 
 <div class="footerDiv">
   <div class="layui-container">
     <div class="layui-row"> 
@@ -301,6 +362,18 @@
 
     form.render();
 
+    var show = true;
+    $('.showAndHide').click(function(obj){
+      show = !show;
+      var class1="layui-icon layui-icon-up";
+      if(!show){
+        class1="layui-icon layui-icon-down";
+        $('.searchDiv').find('tbody').slideUp();
+      }else{
+        $('.searchDiv').find('tbody').slideDown();
+      }
+      $(obj.target).find('i').attr('class',class1);
+    })
 
     form.on('checkbox(all)',function(obj){
       $('#allCheckbox').find('input').prop('checked',obj.elem.checked);

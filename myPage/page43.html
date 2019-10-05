@@ -1,74 +1,237 @@
+<!--原网址：
+  http://tm.qianxiyun.com/jiaoyi/qiugoulist
+-->
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>商标交易</title>
 	<link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
-  	<link rel="stylesheet" type="text/css" href="./page.css">
-  	<meta charset="UTF-8">
-  	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<link rel="stylesheet" type="text/css" href="./page.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <style>
+    .grayb{
+      color:gray;
+    }
+    .buyDiv{
+      padding: 30px;
+      background: #fff;
+      box-shadow: 0 2px 2px 2px rgba(0,0,0,0.05);
+      margin-top: 15px;
+    }
+    .buyTitle{
+      padding-bottom: 15px;
+      overflow: hidden;
+      vertical-align: middle;
+    }
+    .buyTitle a{
+      float: right;
+    }
+    .buyTitle .buyFont{
+      height: 26px;
+      line-height: 1;
+      font-size: 20px;
+      border-left: solid 4px #cc0000;
+      padding-left: 10px;
+      vertical-align: middle;
+      font-weight: bold;
+      color: #0000009c;
+    }
+    .layui-form-pane .layui-form-label {
+      width: 130px;
+    }
+    .layui-form-item{
+      margin-bottom: 2px;
+    }
+    .searchDiv{
+      background: white;
+      margin-top: 20px;
+    }
+    .searchDiv .searchTitle{
+      text-align: center;
+      padding: 10px 0;
+      background: #a2abca;
+      color: #fff;
+      float: left;
+      width: 100%;
+    }
+    .searchResultTable{
+      width: 100%;
+    }
+    .searchResultTable th{
+      text-align: center;
+      background: #f3f3f3;
+      border: solid 1px #e7e7e7;
+      padding: 8px;
+      font-size: 16px;
+      color: gray;
+    }
+    .searchResultTable td{
+      border: solid 1px #e7e7e7;
+      padding: 8px;
+    }
+    .searchDiv .layui-input-block{
+      width: 180px;
+    }
+    @media screen and (max-width: 540px){
+      .buyDiv{
+        padding: 30px 10px;
+      }
+    }
+  </style>
 </head>
 <body>
 <div>
 	<div class="layui-container">
-  	<div class="layui-row bigImgAndFont"> 
-   		<div class="layui-col-md6 andFont">
-    		<h1>态势感知服务</h1>
-    		<p>网络安全态势感知平台是由专业安全团队，深入研究常见安全漏洞、攻击事件以及攻击手法,完全自主研发的一款集资产实时监测、风险志势感知。风险通报预譬、风险处置建议为一体的平台。</p>
-    		<button class="layui-btn" id="btn_id" type="button">立即咨询</button>
-  		</div>
-  		<div class="layui-col-md6">
-        <div class="bigImgDiv" >
-          <img alt="这里存放图片" src="" class="showImgDiv">
+    <span class="grayb"><i class="layui-icon layui-icon-location"></i>当前位置：</span>
+		<span class="layui-breadcrumb" lay-separator=">">
+      <a href="">首页</a>
+      <a><cite>域名交易一口价</cite></a>
+    </span>
+    <div class="layui-row"> 
+      <div class="layui-col-md12 buyDiv">
+        <div class="buyTitle">
+          <span class="buyFont">求购商标</span>
+          <a href="" class="layui-btn layui-btn-normal layui-btn-sm"><i class="layui-icon layui-icon-login-wechat"></i>加群发布求购信息</a>
+        </div>
+        <div class="buyContent layui-form layui-form-pane">
+          <div class="layui-col-md4">
+            <div class="layui-form-item" pane>
+              <label class="layui-form-label">姓名：</label>
+              <div class="layui-input-block">
+                <input type="text" name="" placeholder="姓名" class="layui-input">
+              </div>
+            </div>
+          </div>
+          <div class="layui-col-md4">
+            <div class="layui-form-item" pane>
+              <label class="layui-form-label">手机：</label>
+              <div class="layui-input-block">
+                <input type="text" name="" placeholder="手机" class="layui-input">
+              </div>
+            </div>
+          </div>
+          <div class="layui-col-md4">
+            <div class="layui-form-item" pane>
+              <label class="layui-form-label">求购商标类别：</label>
+              <div class="layui-input-block">
+                <select><option value="1">第1类</option></select>
+              </div>
+            </div>
+          </div>
+          <div class="layui-col-md8">
+            <div class="layui-form-item" pane>
+              <label class="layui-form-label">需求描述：</label>
+              <div class="layui-input-block">
+                <input type="text" name="" placeholder="请简要描述您求购商标的需求" class="layui-input">
+              </div>
+            </div>
+          </div>
+          <div class="layui-col-md4">
+            <div class="layui-form-item" pane>
+              <div class="layui-input-block">
+                <span class="layui-btn layui-btn-danger">提交求购信息</span>
+              </div>
+            </div>
+          </div>
+          
         </div>
   		</div>
   	</div>
   </div>
 </div>
-<div class="blackBg">
-	<div class="layui-container">
-  	<div class="layui-row"> 
-   		<div class="layui-col-md6">
-      		
-  		</div>
-  		<div class="layui-col-md6">
-          
-  		</div>
-  	</div>
-  </div>
-</div>
 <div>
 	<div class="layui-container">
   	<div class="layui-row"> 
-   		<div class="layui-col-md6">
-      		
-  		</div>
-  		<div class="layui-col-md6">
-          
-  		</div>
-  	</div>
-  </div>
-</div>
-<div class="blackBg">
-	<div class="layui-container">
-  	<div class="layui-row"> 
-   		<div class="layui-col-md6">
-      		
-  		</div>
-  		<div class="layui-col-md6">
-          
+   		<div class="layui-col-md12 searchDiv">
+      	<div class="searchTitle layui-form">
+          <div class="layui-col-md2">&nbsp;</div>
+          <div class="layui-col-md3">
+            <div class="layui-form-item">
+              <label class="layui-form-label">类型</label>
+              <div class="layui-input-block">
+                <select><option value="1">不限</option></select>
+              </div>
+            </div>
+          </div>
+          <div class="layui-col-md3">
+            <div class="layui-form-item">
+              <label class="layui-form-label">关键字</label>
+              <div class="layui-input-block">
+                <input type="text" class="layui-input">
+              </div>
+            </div>
+          </div>
+          <div class="layui-col-md2">
+            <span class="layui-btn layui-btn-normal">搜索</span>
+          </div>
+          <div class="layui-col-md2">&nbsp;</div>
+        </div>
+        <table class="searchResultTable">
+          <thead>
+            <tr>
+              <th style="width: 150px;">类别</th>
+              <th>详细需求</th>
+              <th style="width: 150px;">发布人</th>
+              <th style="width: 150px;">手机号</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="6" align="center">
+                <div class="grayb">您的商标还未被购买或您还未发布过商标<a href="javascript:;" style="color: #006fc4;">立即发布</a></div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
   		</div>
   	</div>
   </div>
 </div>
 
+<div class="footerDiv">
+  <div class="layui-container">
+    <div class="layui-row"> 
+      <div class="layui-col-md3 ia noneLeft">
+        <i></i>
+        <span>
+          <b>精准分析风险规避</b>提供免费专业分析服务
+        </span>
+      </div>
+      <div class="layui-col-md3 ia">
+        <i></i>
+        <span>
+          <b>精准分析风险规避</b>提供免费专业分析服务
+        </span>
+      </div>
+      <div class="layui-col-md3 ia">
+        <i></i>
+        <span>
+          <b>精准分析风险规避</b>提供免费专业分析服务
+        </span>
+      </div>
+      <div class="layui-col-md3 ia">
+        <i></i>
+        <span>
+          <b>精准分析风险规避</b>提供免费专业分析服务
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 <script type="text/javascript" src="./layui/layui.js"></script>
 <script type="text/javascript">
-  layui.use(['jquery','layer'],function(){
+  layui.use(['jquery','layer','element','form'],function(){
     var $ = layui.jquery
+       ,element = layui.element
+       ,form = layui.form
        ,layer = layui.layer;
 
-    $('#btn_id').click(function(){
+    element.render();
+    form.render();
+
+    $('.layui-btn').click(function(){
       layer.msg('点击按钮');
     })
   })

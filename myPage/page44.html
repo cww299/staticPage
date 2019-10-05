@@ -1,74 +1,272 @@
+<!--原网址：
+  http://tm.qianxiyun.com/sort
+-->
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>商标工具</title>
 	<link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
-  	<link rel="stylesheet" type="text/css" href="./page.css">
-  	<meta charset="UTF-8">
-  	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<link rel="stylesheet" type="text/css" href="./page.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <style>
+    .search{
+      float: right;
+    }
+    .searchInput{
+      width: 250px;
+    }
+    .searchBtn{
+      width: 100px;
+    }
+    .content{
+      background-color: #fff;
+      padding: 50px 0;
+      margin: 30px 0;
+    }
+    .content .contentTitle{
+      padding: 10px 30px;
+    }
+    .content .contentTitle h3{
+      font-size: 36px;
+      color: #333;
+      text-align: center;
+      font-weight: 400;
+    }
+    .content .contentTitle .typeBtn{
+      margin: 20px auto 0px;
+      width: 720px;
+      position: relative;
+      font-size: 14px;
+      text-align: center;
+    }
+    .content .contentTitle ul{
+      margin: auto;
+      display: block;
+      width: 414px;
+    }
+    .content .contentTitle ul li{
+      border-radius: 4px 0 0 4px;
+      float: left;
+      padding: 0 20px;
+      height: 40px;
+      margin-right: -1px;
+      line-height: 40px;
+      font-size: 16px;
+      border: 1px solid #b9bdc9;
+      text-align: center;
+      background: #f2f2f2;
+    }
+    .content .contentTitle ul li.active{
+      background: #485ea3;
+      border: 1px solid #485ea3;
+    }
+    .content .contentTitle ul li.active a{
+      color: white;
+    }
+    .contentOfCard{
+      margin-top: 50px;
+    }
+    .contentCard:hover{
+      background: #de595924;
+      border-color: #ff000099;
+    }
+    .contentCard{
+      display: block;
+      padding: 5px 20px;
+      border: 1px solid #dedede;
+      cursor: pointer;
+      height: 120px;
+      overflow: hidden;
+      width: 48%;
+      margin: 10px;
+    }
+    .contentCard .title{
+      font-size: 16px;
+      color: #ff4800;
+      line-height: 40px;
+      cursor: pointer;
+    }
+    .contentCard p{
+      color: #666;
+      line-height: 22px;
+      cursor: pointer;
+    }
+    @media screen and (max-width: 540px){
+      .content .contentTitle{
+        padding:10px;
+      }
+      .content .contentTitle h3{
+        font-size: 21px;
+      }
+      .content{
+        padding:20px 0;
+      }
+      .content .contentTitle ul {
+          width: auto;
+      }
+      .content .contentTitle ul li{
+        padding: 5px;
+        line-height: 25px;
+        height: 25px;
+        font-size: 12px;
+      }
+      .content .contentTitle .typeBtn{
+        padding: 0 40px;
+      }
+      .contentCard{
+        width: 95%;
+      }
+      .contentCard p{
+        font-size: 13px;
+        line-height: 18px;
+      }
+
+    }
+  </style>
 </head>
 <body>
 <div>
 	<div class="layui-container">
-  	<div class="layui-row bigImgAndFont"> 
-   		<div class="layui-col-md6 andFont">
-    		<h1>态势感知服务</h1>
-    		<p>网络安全态势感知平台是由专业安全团队，深入研究常见安全漏洞、攻击事件以及攻击手法,完全自主研发的一款集资产实时监测、风险志势感知。风险通报预譬、风险处置建议为一体的平台。</p>
-    		<button class="layui-btn" id="btn_id" type="button">立即咨询</button>
-  		</div>
-  		<div class="layui-col-md6">
-        <div class="bigImgDiv" >
-          <img alt="这里存放图片" src="" class="showImgDiv">
+    <span class="grayb"><i class="layui-icon layui-icon-location"></i>当前位置：</span>
+    <span class="layui-breadcrumb" lay-separator=">">
+      <a href="">首页</a>
+      <a href="">商标工具</a>
+      <a><cite>商标分类（2018）</cite></a>
+    </span>
+    <span class="search">
+      <div class="layui-inline">
+        <div class="layui-input-inline searchInput">
+          <input type="text" class="layui-input" placeholder="输入商标名/申请人名/注册号关键字" name="">
+        </div>
+        <div class="layui-input-inline searchBtn">
+          <span class="layui-btn layui-btn-danger layui-btn-sm">综合查询</span>
+        </div>
+      </div>
+      
+    </span>
+  	<div class="layui-row"> 
+   		<div class="layui-col-md12 content">
+    		<div class="contentTitle">
+          <h3>《2018版类似商品和服务区分表》</h3>
+          <div class="typeBtn">
+            <ul>
+              <li class="active"><a href="">商标分类查询</a></li>
+              <li><a href="">图形要素查询</a></li>
+              <li><a href="">申请书式下载</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="contentOfCard">
         </div>
   		</div>
+  		
   	</div>
   </div>
 </div>
-<div class="blackBg">
-	<div class="layui-container">
-  	<div class="layui-row"> 
-   		<div class="layui-col-md6">
-      		
-  		</div>
-  		<div class="layui-col-md6">
-          
-  		</div>
-  	</div>
-  </div>
-</div>
-<div>
-	<div class="layui-container">
-  	<div class="layui-row"> 
-   		<div class="layui-col-md6">
-      		
-  		</div>
-  		<div class="layui-col-md6">
-          
-  		</div>
-  	</div>
-  </div>
-</div>
-<div class="blackBg">
-	<div class="layui-container">
-  	<div class="layui-row"> 
-   		<div class="layui-col-md6">
-      		
-  		</div>
-  		<div class="layui-col-md6">
-          
-  		</div>
-  	</div>
+<div class="footerDiv">
+  <div class="layui-container">
+    <div class="layui-row"> 
+      <div class="layui-col-md3 ia noneLeft">
+        <i></i>
+        <span>
+          <b>精准分析风险规避</b>提供免费专业分析服务
+        </span>
+      </div>
+      <div class="layui-col-md3 ia">
+        <i></i>
+        <span>
+          <b>精准分析风险规避</b>提供免费专业分析服务
+        </span>
+      </div>
+      <div class="layui-col-md3 ia">
+        <i></i>
+        <span>
+          <b>精准分析风险规避</b>提供免费专业分析服务
+        </span>
+      </div>
+      <div class="layui-col-md3 ia">
+        <i></i>
+        <span>
+          <b>精准分析风险规避</b>提供免费专业分析服务
+        </span>
+      </div>
+    </div>
   </div>
 </div>
 
 </body>
 <script type="text/javascript" src="./layui/layui.js"></script>
 <script type="text/javascript">
-  layui.use(['jquery','layer'],function(){
+  layui.use(['jquery','layer','element'],function(){
     var $ = layui.jquery
+       ,element = layui.element
        ,layer = layui.layer;
+  
+    var contentData = [
+      { id:1, name:'第01类:化学原料', info:'用于工业、科学、摄影、农业、园艺和林业的化学品；未加工人造合成树脂；未加工塑料物质；肥料；灭火用合成物；淬火和焊接用制剂；保存食品用化学品；鞣料；工业用粘合剂。',},
+      { id:2, name:'第02类:颜料油漆', info:'颜料，清漆，漆；防锈剂和木材防腐剂；着色剂；媒染剂；未加工的天然树脂；画家、装饰家、印刷商和艺术家用金属箔及金属粉。',},
+      { id:3, name:'第03类:化妆品', info:'洗衣用漂白剂及其他物料；清洁、擦亮、去渍及研磨用制剂；肥皂；香料，香精油，化妆品，洗发水；牙膏。',},
+      { id:4, name:'第04类:燃料油脂', info:'工业用油和油脂；润滑剂；吸收、润湿和粘结灰尘用合成物；燃料（包括马达用燃料）和照明材料；照明用蜡烛和灯芯。',},
+      { id:5, name:'第05类:医药', info:'药用和兽医用制剂；医用卫生制剂；医用或兽医用营养食物和物质，婴儿食品；人用和动物用膳食补充剂；膏药，绷敷材料；填塞牙孔用料，牙科用蜡；消毒剂；消灭有害动物制剂；杀真菌剂，除莠剂。',},
+      { id:6, name:'第06类:五金金属', info:'普通金属及其合金；金属建筑材料；可移动金属建筑物；铁轨用金属材料；普通金属制非电气用缆线；五金具，金属小五金具；金属管；保险箱；矿石。',},
+      { id:7, name:'第07类:机械设备', info:'机器和机床；马达和引擎（陆地车辆用的除外）；机器联结器和传动机件（陆地车辆用的除外）；非手动农业器具；孵化器；自动售货机。',},
+      { id:8, name:'第08类:手工器械', info:'手工具和器具（手动的）；刀、叉和勺餐具；随身武器；剃刀。',},
+      { id:9, name:'第09类:电子电脑', info:'科学、航海、测量、摄影、电影、光学、衡具、量具、信号、检验（监督）、救护（营救）和教学用装置及仪器；处理、开关、传送、积累、调节或控制电的装置和仪器；录制、通讯、重放声音或影像的装置；磁性数据载体，录音盘；光盘，DVD盘和其他数字存储媒介；投币启动装置的机械结构；收银机，计算机器，数据处理装置，计算机；计算机软件；灭火器械。',},
+      { id:10, name:'第10类:医疗器械', info:'外科、医疗、牙科和兽医用仪器及器械，假肢，假眼和假牙；整形用品；缝合用材料。',},
+      { id:11, name:'第11类:家用电器', info:'照明、加热、蒸汽发生、烹饪、冷藏、干燥、通风、供水以及卫生用装置。',},
+      { id:12, name:'第12类:运输工具', info:'运载工具；陆、空、海用运载装置。',},
+      { id:13, name:'第13类:军火烟花', info:'火器；军火及弹药；爆炸物；烟火。',},
+      { id:14, name:'第14类:珠宝钟表', info:'贵重金属及其合金；珠宝首饰，宝石；钟表和计时仪器。',},
+      { id:15, name:'第15类:乐器', info:'乐器。',},
+      { id:16, name:'第16类:办公文具', info:'纸和纸板，不属别类的纸和纸板制品；印刷品；装订用品；照片；文具；文具或家庭用粘合剂；美术用品；画笔；打字机和办公用品（家具除外）；教育或教学用品（仪器除外）；包装用塑料物品（不属别类的）；印刷铅字；印版。',},
+      { id:17, name:'第17类:橡胶制品', info:'橡胶、古塔胶、树胶、石棉、云母，以及不属别类的这些原材料的制品；生产用成型塑料制品；包装、填充和绝缘用材料；非金属软管。',},
+      { id:18, name:'第18类:皮革箱包', info:'皮革和人造皮革，不属别类的皮革和人造皮革制品；毛皮；箱子和旅行袋；雨伞和阳伞；手杖；鞭和马具。',},
+      { id:19, name:'第19类:建筑材料', info:'非金属的建筑材料；建筑用非金属刚性管；柏油，沥青；可移动非金属建筑物；非金属碑。',},
+      { id:20, name:'第20类:家具', info:'家具，镜子，相框；未加工或半加工的骨、角、象牙、鲸骨或珍珠母；贝壳；海泡石；黄琥珀。',},
+      { id:21, name:'第21类:厨房洁具', info:'家用或厨房用器具和容器；梳子和海绵；刷子（画笔除外）；制刷材料；清洁用具；钢丝绒；未加工或半加工玻璃（建筑用玻璃除外）；不属别类的玻璃器皿、瓷器和陶器。',},
+      { id:22, name:'第22类:绳网袋蓬', info:'缆和绳；网；帐篷，遮篷和防水遮布；帆；袋；衬垫和填充材料（纸或纸板、橡胶、塑料制除外） ；纺织用纤维原料。',},
+      { id:23, name:'第23类:纺织纱线', info:'纺织用纱和线。',},
+      { id:24, name:'第24类:布料床单', info:'布料和不属别类的纺织品；床单；桌布。',},
+      { id:25, name:'第25类:服装鞋帽', info:'服装，鞋，帽。',},
+      { id:26, name:'第26类:花边配饰', info:'花边和刺绣，饰带和编带；纽扣，领钩扣，饰针和缝针；假花。',},
+      { id:27, name:'第27类:地毯席垫', info:'地毯，地席，席类，油毡及其他铺地板材料；非纺织品制墙帷。',},
+      { id:28, name:'第28类:体育玩具', info:'游戏器具和玩具；体育和运动用品；圣诞树用装饰品。',},
+      { id:29, name:'第29类:食品', info:'肉，鱼，家禽和野味；肉汁；腌渍、冷冻、干制及煮熟的水果和蔬菜；果冻，果酱，蜜饯；蛋；奶和奶制品；食用油和油脂。',},
+      { id:30, name:'第30类:小食配料', info:'咖啡，茶，可可和咖啡代用品；米；食用淀粉和西米；面粉和谷类制品；面包、糕点和甜食；冰制食品；糖，蜂蜜，糖浆；鲜酵母，发酵粉；食盐；芥末；醋，沙司（调味品）；辛香料；饮用冰。',},
+      { id:31, name:'第31类:水果花木', info:'谷物和不属别类的农业、园艺、林业产品；活动物；新鲜水果和蔬菜；种籽；草木和花卉；动物饲料；麦芽。',},
+      { id:32, name:'第32类:啤酒饮料', info:'啤酒；矿泉水和汽水以及其他不含酒精的饮料；水果饮料及果汁；糖浆及其他制饮料用的制剂。',},
+      { id:33, name:'第33类:酒', info:'含酒精的饮料（啤酒除外）。',},
+      { id:34, name:'第34类:烟草烟具', info:'烟草；烟具；火柴。',},
+      { id:35, name:'第35类:广告贸易', info:'广告；商业经营；商业管理；办公事务。',},
+      { id:36, name:'第36类:金融物管', info:'保险；金融事务；货币事务；不动产事务。',},
+      { id:37, name:'第37类:建筑修理', info:'房屋建筑；修理；安装服务。',},
+      { id:38, name:'第38类:通讯传媒', info:'电信。',},
+      { id:39, name:'第39类:运输旅行', info:'运输；商品包装和贮藏；旅行安排。',},
+      { id:40, name:'第40类:材料加工', info:'材料处理。',},
+      { id:41, name:'第41类:教育娱乐', info:'教育；提供培训；娱乐；文体活动。',},
+      { id:42, name:'第42类:技术服务', info:'科学技术服务和与之相关的研究与设计服务；工业分析与研究；计算机硬件与软件的设计与开发。',},
+      { id:43, name:'第43类:餐饮酒店', info:'提供食物和饮料服务；临时住宿。',},
+      { id:44, name:'第44类:医疗园艺', info:'医疗服务；兽医服务；人或动物的卫生和美容服务；农业、园艺和林业服务。',},
+      { id:45, name:'第45类:法律', info:'法律服务；由他人提供的为满足个人需要的私人和社会服务；为保护财产和人身安全的服务。',},
+    ];
 
-    $('#btn_id').click(function(){
+    var html = '<div class="layui-row">';
+    for(var k in contentData){
+      html+=['<div class="layui-col-md6 contentCard">',
+                '<div class="title">',
+                  contentData[k].name,
+                '</div>',
+                '<p>',
+                  contentData[k].info,
+                '</p>',
+              '</div>'].join(' ');
+    }
+    html+='</div>';
+    $('.contentOfCard').html(html);
+
+    element.render();
+    $('.layui-btn').click(function(){
       layer.msg('点击按钮');
     })
   })

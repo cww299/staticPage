@@ -1,66 +1,333 @@
+<!--原网址：
+	http://tm.qianxiyun.com/trademarkservice/bhfs
+-->
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>商标服务</title>
 	<link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
   	<link rel="stylesheet" type="text/css" href="./page.css">
   	<meta charset="UTF-8">
   	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  	<style>
+		.bgImg{
+			position: relative;
+		}
+		.bgImg img{
+			max-width: 100%;
+		}
+		.tabNav{
+		    background: rgba(255,255,255,0.8);
+		    position: absolute;
+		    bottom: 0;
+		    width: 100%;
+		    text-align: center;
+		}
+		.tabNav a{
+			width: 122px;
+			float: inherit;
+		}
+		.firstContent{
+			overflow: hidden;
+		    padding: 45px;
+		    background: #fff;
+		    box-shadow: 0 2px 2px 2px rgba(0,0,0,0.05);
+		}
+		.firstContent .leftIcon{
+			width: 209px;
+		    height: 209px;
+		    line-height: 209px;
+		    background: url(./img/page42/sbfw_fw.png);
+		    margin: 50px 90px 50px 50px;
+		    float: left;
+		    vertical-align: middle;
+		    text-align: center;
+		}
+		.firstContent .leftIcon i{
+			width: 160px;
+		    height: 160px;
+		    display: inline-block;
+		    vertical-align: middle;
+		    background: url(./img/page42/sbfw_fw.png) no-repeat;
+		}
+		.firstContent .rightDiv{
+			float: left;
+    		width: 700px;
+		}
+		.firstContent .rightDiv h1{
+			font-size: 36px;
+		    color: #bf881a;
+		    font-weight: bold;
+		}
+		.firstContent .rightDiv td{
+			font-size: 16px;
+    		padding: 10px 0;
+    		color: gray;
+		}
+		.orange{
+			font-size: 36px;
+			color: #ff6600;
+		}
+		.icon1{
+			background-position: 4px -587px !important;
+		}
+		.titleTd{
+			color: #333 !important;
+			width: 92px !important;
+			font-weight: bold;
+		}
+		.martop{
+			margin-top: 10px!important;
+		}
+		.martop span{
+			width: 130px;
+		}
+		.secondImg{
+			margin-top: 40px;
+		    text-align: center;
+		    padding: 25px 0;
+		    background: url(./img/page42/bg_xiexian2.png) 1px 0;
+		}
+		.secondImg img{
+			max-width: 100%;
+		}
+		.serverDiv{
+	      background: #fff;
+	      box-shadow: 0 2px 2px 2px rgba(0,0,0,0.05);
+	      padding: 15px !important;
+	    }
+	    .serverDiv .titleDiv{
+	      height: 1px;
+	      border-top: 1px solid #d3d3d3;
+	      margin: 62px 0 34px 0;
+	      text-align: center;
+	      color: #2e2e35;
+	    }
+	    .serverDiv .titleDiv h1{
+	      background: #fff;
+	      position: relative;
+	      top: -35px;
+	      padding: 0 28px;
+	      font-size: 40px;
+	      display: inline-block;
+	    }
+	    .serverDiv .titleTip {
+	      text-align: center;
+	      color: #888;
+	      margin-bottom: 25px;
+	    }
+	    .serverDiv .titleTip i{
+	      display: inline-block;
+	      width: 15px;
+	      height: 15px;
+	      background: url(./img/page40/icon.png) no-repeat center -6px;
+	    }
+	    .serverDiv .iconAndF{
+	      margin: 30px 25px;
+	      width: 168px;
+	      height: 170px;
+	      text-align: center;
+	      color: gray;
+	    }
+	    .serverDiv .iconAndF i{
+	      display: block;
+	      width: 101px;
+	      height: 102px;
+	      background: url(./img/page40/sbfw_icon.png);
+	      margin: 0 auto 20px;
+	      background-position: 0 0px;
+	    }
+	    .serverDiv .ulli ul{
+	        list-style-type: circle;
+	        color: #0071e3;
+	        margin: 15px 0;
+	        font-size: 16px;
+	        width: auto;
+	      }
+	    .serverDiv ul li {
+	      line-height: 36px;
+	      height: 36px;
+	      padding-left: 20px;
+	      background: url(./img/page39/ind_icon.png) no-repeat -666px -398px
+	    }
+	    .layui-container {
+		    padding:0px;
+		}
+		@media screen and (max-width: 540px){
+			.bgImg img{
+				height: 200px;
+			}
+			.tabNav{
+				height: 180px;
+    			position: inherit;
+			}
+			.serverDiv{
+	          padding:10px;
+	        }
+	      
+	        .serverDiv .titleDiv h1 {
+	          padding: 0; 
+	          font-size: 26px;
+	        }
+	        .serverDiv .titleDiv{
+	          border-top:none;
+	          margin-bottom: 10px;
+	        }
+	        .serverDiv .iconAndF{
+	          margin: 5px auto;
+	        }
+	        .firstContent .rightDiv td {
+			    width: 220px;
+			}
+			.secondImg img {
+			    height: 150px;
+			}
+		}
+  	</style>
 </head>
 <body>
+<div class="bgImg">
+	<div>
+		<img src="./img/page42/banner_sbfw.jpg">
+	</div>
+	<div class="tabNav">
+      <a href="javascript:;" data-key="1" class="show-this">驳回复审</a>
+      <a href="javascript:;" data-key="2">异议答辩</a>
+      <a href="javascript:;" data-key="3">异议申请</a>
+      <a href="javascript:;" data-key="4">无效宣告</a>
+      <a href="javascript:;" data-key="5">撤三申请</a>
+      <a href="javascript:;" data-key="6">商标转让</a>
+      <a href="javascript:;" data-key="7">商标延展</a>
+      <a href="javascript:;" data-key="8">商标变更</a>
+      <a href="javascript:;" data-key="9">商标注销</a>
+    </div>
+</div>
 <div>
 	<div class="layui-container">
-  	<div class="layui-row bigImgAndFont"> 
-   		<div class="layui-col-md6 andFont">
-    		<h1>态势感知服务</h1>
-    		<p>网络安全态势感知平台是由专业安全团队，深入研究常见安全漏洞、攻击事件以及攻击手法,完全自主研发的一款集资产实时监测、风险志势感知。风险通报预譬、风险处置建议为一体的平台。</p>
-    		<button class="layui-btn" id="btn_id" type="button">立即咨询</button>
+  		<div class="layui-row">
+  			<div class="layui-col-md12 firstContent">
+      			<div class="leftIcon">
+      				<i class="icon1"></i>
+      			</div>
+      			<div class="rightDiv">
+					<h1>商标驳回复审</h1>
+					<table>
+						<tr>
+							<td class="titleTd">服务介绍：</td>
+							<td>商标实质审查未通过，在规定时效内向商评委提交复审申请，再次争取。</td>
+						</tr>
+						<tr>
+							<td class="titleTd">申请主体：</td>
+							<td>申请商标注册过程中，被商标局驳回的公司或个体。</td>
+						</tr>
+						<tr>
+							<td class="titleTd">申请须知：</td>
+							<td>时效：收到商标驳回通知书起（邮戳日期为准）5天内提交申请<br>
+							( 复审只有15天限制，其中正常流程耗时需11天)<br>
+							裁决：商评委受理后，九个月左右下发决定书。</td>
+						</tr>
+						<tr>
+							<td class="titleTd">服务价格：</td>
+							<td><b class="orange">￥3000</b>/起</td>
+						</tr>
+					</table>
+					<p class="martop">
+						<span class="layui-btn layui-btn-danger">立即申请</span>
+						<span class="layui-btn layui-btn-warm">咨询顾问</span>
+					</p>
+      			</div>
+  			</div>
   		</div>
-  		<div class="layui-col-md6">
-        <div class="bigImgDiv" >
-          <img alt="这里存放图片" src="" class="showImgDiv">
+  	</div>
+</div>
+<div>
+	<div class="layui-container">
+  	<div class="layui-row"> 
+   		<div class="layui-col-md12 secondImg">
+      		<img src="./img/page42/fwlc.png">
+  		</div>
+  	</div>
+  </div>
+</div>
+<div>
+	<div class="layui-container serverDiv">
+  	<div class="layui-row"> 
+      <div class="titleDiv">
+        <h1>千喜云商标平台服务宗旨</h1>  
+      </div>
+      <div class="titleTip">
+        免费专业分析服务<i></i>
+        及时申报服务<i></i>
+        办理状态随时通知<i></i>
+        发票、快递正规服务<i></i>
+        免费终身享受售后服务<i></i>
+      </div>
+   		<div class="layui-col-md2 iconAndF">
+      		<i></i><span>信息准确无误，立即提交等级，神一样的效率</span>
+  		</div>
+      <div class="layui-col-md2 iconAndF">
+          <i></i><span>多年行业经验，知识产权专家把关</span>
+      </div>
+      <div class="layui-col-md2 iconAndF">
+          <i></i><span>一对一顾问服务，认真核对各项资料，确保准确无误</span>
+      </div>
+      <div class="layui-col-md2 iconAndF">
+          <i></i><span>全程服务细致真诚，您的满意是我们的追求</span>
+      </div>
+      <div class="layui-col-md2 iconAndF">
+          <i></i><span>价格统一透明，省时、省钱、省力、更省心</span>
+      </div>
+      <div class="layui-col-md12">
+        <div class="titleDiv">
+          <h1>商标知识及常见问题</h1>  
         </div>
-  		</div>
+        <div class="titleTip">
+          解决商标相关问题&nbsp;&nbsp;&nbsp;<a style="color:#0000ffa1;">更多常见问题>></a>
+        </div>
+      </div>
+      <div class="layui-col-md4 ulli">
+        <ul>
+          <li><a>商标的有效期限是多久？</a></li>
+        </ul>
+      </div>
+      <div class="layui-col-md4 ulli">
+        <ul>
+          <li><a>营业执照地址与邮寄地址的区别？…</a></li>
+        </ul>
+      </div>
   	</div>
   </div>
 </div>
-<div class="blackBg">
-	<div class="layui-container">
-  	<div class="layui-row"> 
-   		<div class="layui-col-md6">
-      		
-  		</div>
-  		<div class="layui-col-md6">
-          
-  		</div>
-  	</div>
+<div class="footerDiv">
+  <div class="layui-container">
+    <div class="layui-row"> 
+      <div class="layui-col-md3 ia noneLeft">
+        <i></i>
+        <span>
+          <b>精准分析风险规避</b>提供免费专业分析服务
+        </span>
+      </div>
+      <div class="layui-col-md3 ia">
+        <i></i>
+        <span>
+          <b>精准分析风险规避</b>提供免费专业分析服务
+        </span>
+      </div>
+      <div class="layui-col-md3 ia">
+        <i></i>
+        <span>
+          <b>精准分析风险规避</b>提供免费专业分析服务
+        </span>
+      </div>
+      <div class="layui-col-md3 ia">
+        <i></i>
+        <span>
+          <b>精准分析风险规避</b>提供免费专业分析服务
+        </span>
+      </div>
+    </div>
   </div>
 </div>
-<div>
-	<div class="layui-container">
-  	<div class="layui-row"> 
-   		<div class="layui-col-md6">
-      		
-  		</div>
-  		<div class="layui-col-md6">
-          
-  		</div>
-  	</div>
-  </div>
-</div>
-<div class="blackBg">
-	<div class="layui-container">
-  	<div class="layui-row"> 
-   		<div class="layui-col-md6">
-      		
-  		</div>
-  		<div class="layui-col-md6">
-          
-  		</div>
-  	</div>
-  </div>
-</div>
-
 </body>
 <script type="text/javascript" src="./layui/layui.js"></script>
 <script type="text/javascript">
@@ -68,7 +335,14 @@
     var $ = layui.jquery
        ,layer = layui.layer;
 
-    $('#btn_id').click(function(){
+
+    $('.tabNav a').on('click',function(obj){
+      var key = $(obj.target).data('key');
+      $(this).attr('class','show-this');
+      $(this).siblings().removeClass('show-this');
+    })
+
+    $('.layui-btn').click(function(){
       layer.msg('点击按钮');
     })
   })
