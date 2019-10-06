@@ -1,63 +1,164 @@
+<!--原网址：
+  http://tm.qianxiyun.com/tongji
+-->
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
-	<link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
-  	<link rel="stylesheet" type="text/css" href="./page.css">
-  	<meta charset="UTF-8">
-  	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>商标统计</title>
+  <link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
+  <link rel="stylesheet" type="text/css" href="./page.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <style>
+    .bgImg{
+      height: 300px;
+    }
+    .bgImg img{
+      max-width: 100%;
+    }
+    .content{
+      position: relative;
+      margin-top: -110px;
+      background: #fff;
+      overflow: hidden;
+    }
+    .content .leftDiv{
+      background: #fff;
+      padding-bottom: 20px;
+    }
+    .content .leftDiv .tabNav{
+      line-height: 45px;
+      height: 45px;
+      background: #fafafa;
+      border-bottom: solid 1px #e0e0e0;
+    }
+    .content .leftDiv .tabNav li{
+      display: block;
+      float: left;
+      border-right: solid 1px #e0e0e0;
+      border-bottom: solid 1px #e0e0e0;
+      display: block;
+      padding: 0 30px;
+      font-size: 16px;
+    }
+    .content .leftDiv .tabNav li:hover{
+      cursor: pointer;
+      color: #e24848;
+    }
+    .content .leftDiv .tabNav li.active{
+      background: #fff;
+      border-bottom: solid 1px #fff;
+      margin-bottom: -1px;
+      font-weight: bold;
+    }
+    .content .leftDiv .tabContents{
+
+    }
+    .content .rightDiv{
+      padding: 15px;
+      border-left: solid 1px #e0e0e0;
+      margin-bottom: 10px;
+    }
+    .content .rightDiv a{
+      color: gray;
+      line-height: 30px;
+    }
+    .content .rightDiv a:hover{
+      color: red;
+    }
+    .content h1{
+      font-size: 18px;
+      padding: 0 0 10px 10px;
+      color: #000000b5;
+    }
+    @media screen and (max-width: 540px){
+      .bgImg img{
+        height: 200px;
+      }
+      .content .leftDiv .tabNav li {
+        text-align: center;
+        padding: 0px;
+        width: 50%;
+        box-sizing: border-box;
+      }
+      .content .leftDiv .tabNav li.active{
+        background: #6ea4d469;
+        border-bottom: solid 2px #fff;
+      }
+      .content .rightDiv{
+        float: left;
+        width: 100%;
+      }
+      .content .leftDiv .tabNav{
+        height: 136px;
+      }
+      .content{
+        margin-top: -160px;
+      }
+    }
+  </style>
 </head>
 <body>
+<div class="bgImg">
+  <img src="./img/page47/news.jpg">
+</div>
 <div>
-	<div class="layui-container">
-  	<div class="layui-row bigImgAndFont"> 
-   		<div class="layui-col-md6 andFont">
-    		<h1>态势感知服务</h1>
-    		<p>网络安全态势感知平台是由专业安全团队，深入研究常见安全漏洞、攻击事件以及攻击手法,完全自主研发的一款集资产实时监测、风险志势感知。风险通报预譬、风险处置建议为一体的平台。</p>
-    		<button class="layui-btn" id="btn_id" type="button">立即咨询</button>
-  		</div>
-  		<div class="layui-col-md6">
-        <div class="bigImgDiv" >
-          <img alt="这里存放图片" src="" class="showImgDiv">
+  <div class="layui-container">
+    <div class="layui-row content"> 
+      <div class="layui-col-md9 leftDiv">
+        <div class="tabNav">
+          <ul>
+            <li>商标资讯</li>
+            <li>商标通知公告</li>
+            <li>商标政策法规</li>
+            <li class="active">商标统计</li>
+            <li>商标常见问题</li>
+          </ul>
         </div>
-  		</div>
-  	</div>
+        <div class="tabContents">
+          
+        </div>
+      </div>
+      <div class="layui-col-md3 rightDiv">
+        <h1>最新最热资讯</h1>
+        <hr>
+        <ul>
+          <li><a href="">一个商标竟然引起世纪之争！“百…</a></li>
+          <li><a href="">案例分析| 为何迅雷提交了那么多…</a></li>
+          <li><a href="">案例分析| 小肥羊商标被路人甲给…</a></li>
+        </ul>
+      </div>
+    </div>
   </div>
 </div>
-<div class="blackBg">
-	<div class="layui-container">
-  	<div class="layui-row"> 
-   		<div class="layui-col-md6">
-      		
-  		</div>
-  		<div class="layui-col-md6">
-          
-  		</div>
-  	</div>
-  </div>
-</div>
-<div>
-	<div class="layui-container">
-  	<div class="layui-row"> 
-   		<div class="layui-col-md6">
-      		
-  		</div>
-  		<div class="layui-col-md6">
-          
-  		</div>
-  	</div>
-  </div>
-</div>
-<div class="blackBg">
-	<div class="layui-container">
-  	<div class="layui-row"> 
-   		<div class="layui-col-md6">
-      		
-  		</div>
-  		<div class="layui-col-md6">
-          
-  		</div>
-  	</div>
+<div class="footerDiv">
+  <div class="layui-container">
+    <div class="layui-row"> 
+      <div class="layui-col-md3 ia noneLeft">
+        <i></i>
+        <span>
+          <b>精准分析风险规避</b>提供免费专业分析服务
+        </span>
+      </div>
+      <div class="layui-col-md3 ia">
+        <i></i>
+        <span>
+          <b>精准分析风险规避</b>提供免费专业分析服务
+        </span>
+      </div>
+      <div class="layui-col-md3 ia">
+        <i></i>
+        <span>
+          <b>精准分析风险规避</b>提供免费专业分析服务
+        </span>
+      </div>
+      <div class="layui-col-md3 ia">
+        <i></i>
+        <span>
+          <b>精准分析风险规避</b>提供免费专业分析服务
+        </span>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -68,7 +169,7 @@
     var $ = layui.jquery
        ,layer = layui.layer;
 
-    $('#btn_id').click(function(){
+    $('.layui-btn').click(function(){
       layer.msg('点击按钮');
     })
   })

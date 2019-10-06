@@ -1,63 +1,308 @@
+<!--原网址：
+  http://ym.qianxiyun.com/copyright
+-->
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
-	<link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
-  	<link rel="stylesheet" type="text/css" href="./page.css">
-  	<meta charset="UTF-8">
-  	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>版权服务</title>
+  <link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
+  <link rel="stylesheet" type="text/css" href="./page.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <style>
+    .bgImg{
+    }
+    .bgImg img{
+      max-width: 100%;
+    }
+    .copyrightServer{
+      padding: 20px 0;
+      text-align: center;
+    }
+    .copyrightServer h1{
+      font-size: 36px;
+      padding: 10px 0;
+      color: #000a12;
+    }
+    .copyrightServer .tips{
+      color: #999;
+      line-height: 20px;
+    }
+    .copyrightServer .serverCard{
+      margin:10px;
+      width: 487px;
+      height: 212px;
+      background: url(./img/page48/rjdj-box.png) no-repeat;
+      display: inline-block;
+    }
+    .copyrightServer .serverCard .leftIcon{
+      float: left;
+      margin: 45px 30px 0 30px;
+    }
+    .copyrightServer .serverCard .leftIcon img{
+      height:110px;
+      width:110px;
+    }
+    .copyrightServer .serverCard .rightMore{
+      float: left;
+      text-align: left;
+      margin: 30px 0 0 0;
+    }
+    .copyrightServer .serverCard .rightMore .layui-btn{
+      width: 150px;
+    }
+    .copyrightServer .serverCard h1{
+      font-size: 28px;
+      line-height: 40px;
+      padding: 0;
+    }
+    .copyrightServer .serverCard h2{
+      font-size: 18px;
+      color: #999;
+      line-height: 28px;
+    }
+    .red{
+      color: #e00000;
+      font-size: 28px;
+    }
+    .price{
+      text-decoration: line-through;
+      color: #acacac;
+      font-size: 16px;
+      line-height: 35px;
+    }
+    .bgWhite{
+      background:white;
+    }
+    .red{
+      color: red;
+      font-size: 36px;
+    }
+    .copyrightImprot{
+      text-align: center;
+    }
+    .copyrightImprot .title{
+      text-align: center;
+      padding: 40px 0 20px;
+    }
+    .copyrightImprot .title p{
+      color: #999;
+      line-height: 20px;
+    }
+    .copyrightImprot .title h1{
+      font-size: 36px;
+      color: #000a12;
+      margin-bottom: 10px;
+    }
+    .copyrightImprot .content{
+      margin-bottom: 50px;
+    }
+    .copyrightImprot .content img{
+      max-width: 100%;
+    }
+    .bgImg1{
+      background: url(./img/page48/rjdj-bg2.jpg) #b5bac5;
+      padding-bottom: 50px;
+      margin-bottom: -15px;
+    }
+    .youshi{
+      border-left: solid 1px #ccc;
+      padding: 0 40px;
+      height: 200px;
+      text-align: left;
+      color: gray;
+      margin-bottom: 20px;
+    }
+    .youshi h1{
+      margin-bottom: 10px;
+      color: #000000b5;
+    }
+    .bgImg1 .layui-btn{
+      margin: auto;
+      width: 260px;
+      height: 45px;
+      margin-top: 20px;
+      line-height: 45px;
+      text-align: center;
+      color: #fff;
+      font-size: 18px;
+      border-radius: 80px;
+      background: #596197;
+    }
+    .freeTpl{
+      margin: auto;
+      width: 572px;
+      height: 55px;
+      position: relative;
+      font-size: 22px;
+      line-height: 55px;
+      text-indent: 25px;
+      margin-bottom: 50px;
+    }
+    .freePhone{
+      margin-top: -55px;
+      margin-left: -150px;
+    }
+    .freePhone b{
+      color:#ff6600;
+    }
+    @media screen and (max-width: 540px){
+      .copyrightImprot .title h1{
+        font-size: 28px;
+      }
+      .copyrightImprot .title .red{
+        font-size: 28px;
+      }
+      .copyrightImprot .content img{
+        height: 150px;
+      }
+      .bgImg img{
+        height: 180px;
+      }
+      .copyrightServer{
+        padding: 0;
+      }
+      .youshi{
+        height: auto;
+      }
+      .copyrightServer .serverCard{
+        width: 100%;
+        margin: 0;
+      }
+      .copyrightServer .serverCard .leftIcon{
+        margin: 45px 20px 0 10px;
+      }
+      .copyrightServer .serverCard h1{
+        font-size: 21px;
+        line-height: 35px;
+      }
+      .red{
+        font-size: 25px;
+      }
+      .freeTpl{
+        width: 100%;
+        text-indent: 0;
+
+      }
+      .freeTpl img{
+        max-width: 100%;
+      }
+      .freePhone{
+        margin-left: -115px;
+        font-size: 15px;
+      }
+    }
+  </style>
 </head>
 <body>
+<div class="bgImg">
+  <img src="./img/page48/rjzc_banner.jpg">
+</div>
 <div>
-	<div class="layui-container">
-  	<div class="layui-row bigImgAndFont"> 
-   		<div class="layui-col-md6 andFont">
-    		<h1>态势感知服务</h1>
-    		<p>网络安全态势感知平台是由专业安全团队，深入研究常见安全漏洞、攻击事件以及攻击手法,完全自主研发的一款集资产实时监测、风险志势感知。风险通报预譬、风险处置建议为一体的平台。</p>
-    		<button class="layui-btn" id="btn_id" type="button">立即咨询</button>
-  		</div>
-  		<div class="layui-col-md6">
-        <div class="bigImgDiv" >
-          <img alt="这里存放图片" src="" class="showImgDiv">
+  <div class="layui-container">
+    <div class="layui-row"> 
+      <div class="layui-col-md12 copyrightServer">
+        <h1>版权登记服务</h1>
+        <p class="tips">价格透明  专业客服贴心服务  急速办理业务</p>
+        <div class="layui-col-md1">&nbsp;</div>
+        <div class="layui-col-md5 serverCard">
+          <div class="leftIcon">
+            <img src="./img/page48/rjdj-icon01.png">
+          </div>
+          <div class="rightMore">
+            <h1>软件著作权登记</h1>
+            <h2>源代码不再被抄袭</h2>
+            <p><b class="red">¥700</b>/件
+                <span class="price">市场价:1500元</span></p>
+            <p><span class="layui-btn layui-btn-danger">了解详情</span></p>
+          </div>
         </div>
-  		</div>
-  	</div>
+        <div class="layui-col-md5 serverCard">
+          <div class="leftIcon">
+            <img src="./img/page48/rjdj-icon02.png">
+          </div>
+          <div class="rightMore">
+            <h1>美术作品著作权登记</h1>
+            <h2>及时登记，保护原创</h2>
+            <p><b class="red">¥1000</b>/件
+                <span class="price">市场价:1800元</span></p>
+            <p><span class="layui-btn layui-btn-danger">了解详情</span></p>
+          </div>
+            
+        </div>
+        <div class="layui-col-md1">&nbsp;</div>
+        <div class="layui-col-md12">
+          <div class="freeTpl">
+            <a href="">
+              <img src="./img/page48/rjdj-ljbl.png">
+              <p class="freePhone">免费咨询电话:<b>15515559515</b></p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-<div class="blackBg">
-	<div class="layui-container">
-  	<div class="layui-row"> 
-   		<div class="layui-col-md6">
-      		
-  		</div>
-  		<div class="layui-col-md6">
-          
-  		</div>
-  	</div>
+<div class="bgWhite">
+  <div class="layui-container">
+    <div class="layui-row copyrightImprot"> 
+      <div class="layui-col-md12">
+        <div class="title">
+          <h1>进行版权登记的<b class="red">重要性</b></h1>
+          <p>保护你的作品创意 让你的创意独一无二</p>
+        </div>
+        <div class="content">
+          <img src="./img/page48/rjzc_zyx.jpg">          
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 <div>
-	<div class="layui-container">
-  	<div class="layui-row"> 
-   		<div class="layui-col-md6">
-      		
-  		</div>
-  		<div class="layui-col-md6">
-          
-  		</div>
-  	</div>
+  <div class="layui-container copyrightImprot">
+    <div class="layui-row"> 
+      <div class="layui-col-md12">
+        <div class="title">
+          <h1>版权<b class="red">服务流程</b></h1>
+          <p>从申请之日到获得软件著作权登记证书，标准服务需要60个工作日，加急服务需要16个工作日，</p>
+          <p>快速服务需要11个工作日，极速服务需要5个工作日</p>
+        </div>
+        <div class="content">
+          <img src="./img/page48/rjdj1.png">          
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-<div class="blackBg">
-	<div class="layui-container">
-  	<div class="layui-row"> 
-   		<div class="layui-col-md6">
-      		
-  		</div>
-  		<div class="layui-col-md6">
-          
-  		</div>
-  	</div>
+<div class="bgImg1">
+  <div class="layui-container copyrightImprot">
+    <div class="layui-row"> 
+      <div class="layui-col-md12">
+        <div class="title">
+          <h1>我们的<b class="red">优势保障</b></h1>
+          <p>全流程跟踪、多平台支持、一站式服务、权威专家指导</p>
+        </div>
+        <div class="content">
+          <div class="layui-col-md3 youshi" style="border-left: none;">
+            <h1>技术为主导</h1>
+            <p>以技术为向导的互联网+知识产权平台，较强技术门槛，给予用户不可替代的专业感。</p>
+          </div>
+          <div class="layui-col-md3 youshi">
+            <h1>多功能工具</h1>
+            <p>除基础知识产权服务外，还为用户提供商标查询、商标监控等高频刚需工具。通过标天下网站或微信公众号可以随时随地查询商标，更可以随时随地管理自己的商标，监控对手商标。</p>
+          </div>
+          <div class="layui-col-md3 youshi">
+            <h1>价格性价比高</h1>
+            <p>价格优惠，收费透明直观；对比传统商标服务机构性价比更高。</p>
+          </div>
+          <div class="layui-col-md3 youshi">
+            <h1>专业的服务经验</h1>
+            <p>团队深耕知识产权10年，拥有丰厚的行业资源和专业的服务经验。</p>
+          </div>
+        </div>
+        <p><span class="layui-btn">了解更多 咨询客服</span></p>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -68,7 +313,7 @@
     var $ = layui.jquery
        ,layer = layui.layer;
 
-    $('#btn_id').click(function(){
+    $('.layui-btn').click(function(){
       layer.msg('点击按钮');
     })
   })

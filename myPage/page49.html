@@ -1,74 +1,415 @@
+<!--原网址：
+  http://ym.qianxiyun.com/copyright/services/BQ0001
+-->
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
-	<link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
-  	<link rel="stylesheet" type="text/css" href="./page.css">
-  	<meta charset="UTF-8">
-  	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>版权服务</title>
+  <link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
+  <link rel="stylesheet" type="text/css" href="./page.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <style>
+    .bgImg img{
+      max-width: 100%;
+    }
+    .location{
+      color:gray;
+    }
+    .whiteBg{
+      background-color:white;
+      padding:10px 0;
+      margin-bottom: 20px;
+    }
+    .leftTop,.leftBottom,.rightTop,.rightBottom{
+      background:white;
+      padding: 20px;
+      box-shadow: 0 2px 2px 2px rgba(0,0,0,0.05);
+      margin-bottom: 20px;
+    }
+    .leftTop{
+      height: 160px;
+    }
+    .leftTop .title{
+      font-size: 16px;
+      color: #ff6702;
+      margin: 8px 0;
+      font-weight: bold;
+    }
+    .leftTop li{
+      width: 33%;
+      float:left;
+    }
+    .leftBottom .title{ 
+      border-bottom: 1px solid #e9e9e9;
+      text-align: center;
+      padding: 15px 0;
+      margin: -25px;
+      margin-bottom: 10px;
+    }
+    .leftBottom .title h3{
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 40px;
+      height: 40px;
+      color: #000000c7;
+    }
+    .leftBottom .title p{
+      color: #878787;
+    }
+    .leftBottom .content p{
+      margin:5px 0;
+    }
+    .leftBottom .content .layui-btn{
+      height: 35px;
+      line-height: 35px;
+      text-align: center;
+      margin-top: 15px;
+      font-size: 16px;
+      background: #ec2828;
+      color: #fff!important;
+      border: 1px solid #ec2828;
+      display: block;
+    }
+    .leftBottom .content .layui-textarea{
+      height: 60px;
+      min-height: 50px;
+    }
+    .red{
+      color: red;
+    }
+    .rightTop h1{
+      font-size: 36px;
+      color: #333;
+      line-height: 40px;
+      padding: 10px;
+    }
+    .rightTop .infoP{
+      font-size: 14px;
+      color: #808080;
+      margin-bottom: 30px;
+      border-bottom: solid 1px #ddd;
+      padding: 10px;
+    }
+    .priceb{
+      font-size: 25px;
+      color: red;
+    }
+    .serverType a{
+      border: #c8c9cd 1px solid;
+      text-align: center;
+      margin-right: 15px;
+      margin-bottom: 15px;
+      padding: 2px 10px;
+      display: block;
+      white-space: nowrap;
+      color: #000;
+      text-decoration: none;
+      float: left;
+      background: #ffffff;
+      height: 30px;
+      line-height: 30px;
+      transition: none;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .choosed{
+      border: #f52648 1px solid !important;
+      background: url(./img/page49/rjdj_attr_sel_zyh.png) no-repeat bottom right !important;
+      background-color: #ffeae5 !important;
+    }
+    .btnP{
+      margin:20px 0;
+    }
+    .rightBottom{
+      color: gray;
+    }
+    .rightBottom .titleP{
+      margin: 0 auto;
+      text-align: center;
+      color: #333;
+      border-bottom: 2px solid #e63917;
+      line-height: 63px;
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+    .bigTitle{
+      font-size:22px;
+      padding-bottom: 5px;
+    }
+    .smallTitle{
+      font-weight: bold;
+      margin: 5px 0 !important;
+    }
+    .rightBottom p{
+      margin:2px 0;
+    }
+    .paddingB{
+      padding-bottom: 10px;
+    }
+    @media screen and (max-width: 540px){
+      .bgImg img{
+        height: 180px;
+      }
+      .serverType td{
+        min-width: 80px;
+      }
+    }
+  </style>
 </head>
 <body>
-<div>
-	<div class="layui-container">
-  	<div class="layui-row bigImgAndFont"> 
-   		<div class="layui-col-md6 andFont">
-    		<h1>态势感知服务</h1>
-    		<p>网络安全态势感知平台是由专业安全团队，深入研究常见安全漏洞、攻击事件以及攻击手法,完全自主研发的一款集资产实时监测、风险志势感知。风险通报预譬、风险处置建议为一体的平台。</p>
-    		<button class="layui-btn" id="btn_id" type="button">立即咨询</button>
-  		</div>
-  		<div class="layui-col-md6">
-        <div class="bigImgDiv" >
-          <img alt="这里存放图片" src="" class="showImgDiv">
-        </div>
-  		</div>
-  	</div>
-  </div>
+<div class="bgImg">
+  <img src="./img/page48/rjzc_banner.jpg">
 </div>
-<div class="blackBg">
-	<div class="layui-container">
-  	<div class="layui-row"> 
-   		<div class="layui-col-md6">
-      		
-  		</div>
-  		<div class="layui-col-md6">
-          
-  		</div>
-  	</div>
+<div class="whiteBg">
+  <div class="layui-container">
+    <div class="layui-row"> 
+      <div class="layui-col-md12">
+        <span class="location"><i class="layui-icon layui-icon-location"></i>当前位置：</span>
+        <span class="layui-breadcrumb" lay-separator=">">
+          <a href="">首页</a>
+          <a href="">软件登记首页</a>
+          <a><cite>详情</cite></a>
+        </span>
+      </div>
+    </div>
   </div>
 </div>
 <div>
-	<div class="layui-container">
-  	<div class="layui-row"> 
-   		<div class="layui-col-md6">
-      		
-  		</div>
-  		<div class="layui-col-md6">
-          
-  		</div>
-  	</div>
+  <div class="layui-container">
+    <div class="layui-row layui-col-space10"> 
+      <div class="layui-col-md3">
+          <div class="leftTop">
+            <p class="title">商标注册</p>
+            <ul>
+              <li><a href="">普通注册</a></li>
+              <li><a href="">加急注册</a></li>
+              <li><a href="">担保注册</a></li>
+            </ul>
+            <p class="title">商标服务</p>
+            <ul>
+              <li><a href="">驳回复审</a></li>
+              <li><a href="">异议答辩</a></li>
+              <li><a href="">异议申请</a></li>
+              <li><a href="">无效宣告</a></li>
+              <li><a href="">撤三申请</a></li>
+              <li><a href="">商标转让</a></li>
+              <li><a href="">商标续展</a></li>
+              <li><a href="">商标变更</a></li>
+              <li><a href="">商标注销</a></li>
+            </ul>
+          </div>
+          <div class="leftBottom">
+            <div class="title">
+              <h3>— 快速办理 —</h3>
+              <p>信息保护中，请放心填写</p>
+            </div>
+            <div class="content layui-form">
+              <p><b class="red">*</b>联系方式</p>
+              <input type="text" name="" placeholder="便于接受办理进度，仅官方可见" class="layui-input">
+              <p>所属行业</p>
+              <select><option value="">请选择</option></select>
+              <p><b class="red">*</b>服务简述</p>
+              <textarea placeholder="请输入您需要的服务" class="layui-textarea"></textarea>
+              <p style="text-align: center;"><span class="layui-btn">确认办理</span></p>
+            </div>
+          </div>
+      </div>
+      <div class="layui-col-md9">
+          <div class="rightTop">
+            <h1>版权服务</h1>
+            <p class="infoP">简介：30-40个工作日完成审核并发证，知识产权顾问全程专业服务。</p>
+            <table class="serverType">
+              <tr>
+                <td>服务类型：</td>
+                <td>
+                  <a href="javascript:;" class="choosed">计算机软件著作权</a>
+                  <a href="javascript:;">美术作品著作权</a>
+                  <a href="javascript:;">版权变更</a>
+                </td>
+              </tr>
+              <tr>
+                <td>服务类别：</td>
+                <td>
+                  <a href="javascript:;" class="choosed">31-40个工作日</a>
+                  <a href="javascript:;">21-30工作日</a>
+                </td>
+              </tr>
+              <tr>
+                <td>REG价：</td>
+                <td><b class="priceb">700</b>元</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>
+                  <p class="btnP">
+                    <span class="layui-btn layui-btn-danger">立即购买</span>
+                    <span class="layui-btn layui-btn-primary">客服咨询</span>
+                  </p>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div class="rightBottom">
+            <p class="titleP">服务介绍</p>
+            <p class="bigTitle">软件著作权简介</p>
+            <p>软件著作权是指软件的开发者或者其他权利人依据有关著作权法律的规定，对于软件作品所享有的各项专有权利。</p>
+            <p class="bigTitle">软件著作权流程</p>
+            <div>
+              <img src="./img/page49/liuc_01.png">
+            </div>
+            <p class="smallTitle">版权查询</p>
+            <p>免费查询版权能否登记</p>
+            <div>
+              <img src="./img/page49/liuc_01.png">
+            </div>
+            <p class="smallTitle">版权查询</p>
+            <p>免费查询版权能否登记</p>
+            <div>
+              <img src="./img/page49/liuc_01.png">
+            </div>
+            <p class="smallTitle">版权查询</p>
+            <p>免费查询版权能否登记</p>
+            <div>
+              <img src="./img/page49/liuc_01.png">
+            </div>
+            <p class="bigTitle">软件著作权材料<p>
+            <div>
+              <img src="./img/page49/cl_01.png">
+            </div>
+            <p class="smallTitle">申请书</p>
+            <p>(一品代准备)</p>
+            <div>
+              <img src="./img/page49/cl_01.png">
+            </div>
+            <p class="smallTitle">申请书</p>
+            <p>(一品代准备)</p>
+            <div>
+              <img src="./img/page49/cl_01.png">
+            </div>
+            <p class="smallTitle">申请书</p>
+            <p>(一品代准备)</p>
+            <div>
+              <img src="./img/page49/cl_01.png">
+            </div>
+            <p class="smallTitle">申请书</p>
+            <p>(一品代准备)</p>
+            <div>
+              <img src="./img/page49/cl_01.png">
+            </div>
+            <p class="smallTitle">申请书</p>
+            <p>(一品代准备)</p>
+            <div>
+              <img src="./img/page49/cl_01.png">
+            </div>
+            <p class="smallTitle">申请书</p>
+            <p>(一品代准备)</p>
+            <p class="bigTitle">软件著作权作品</p>
+            <div class="paddingB">
+              <img src="./img/page49/rj_zp_01.png">
+            </div>
+            <div class="paddingB">
+              <img src="./img/page49/rj_zp_01.png">
+            </div>
+            <div class="paddingB">
+              <img src="./img/page49/rj_zp_01.png">
+            </div>
+            <div class="paddingB">
+              <img src="./img/page49/rj_zp_01.png">
+            </div>
+            <div class="paddingB">
+              <img src="./img/page49/rj_zp_01.png">
+            </div>
+            <p class="bigTitle">服务优势</p>
+            <div>
+              <img src="./img/page49/yous_01.png">
+            </div>
+            <p>信息确认无误，立即提交登记，神一样的效率</p>
+            <div>
+              <img src="./img/page49/yous_01.png">
+            </div>
+            <p>信息确认无误，立即提交登记，神一样的效率</p>
+            <div>
+              <img src="./img/page49/yous_01.png">
+            </div>
+            <p>信息确认无误，立即提交登记，神一样的效率</p>
+            <div>
+              <img src="./img/page49/yous_01.png">
+            </div>
+            <p>信息确认无误，立即提交登记，神一样的效率</p>
+            <div>
+              <img src="./img/page49/yous_01.png">
+            </div>
+            <p>信息确认无误，立即提交登记，神一样的效率</p>
+            <p class="bigTitle">软件著作权的作用</p>
+            <div>
+              <img src="./img/page49/zy_01.png">
+            </div>
+            <p class="smallTitle">助宣传</p>
+            <p>软件著作权企业软实力的体现，助力企业宣传；</p>
+            <div>
+              <img src="./img/page49/zy_01.png">
+            </div>
+            <p class="smallTitle">助宣传</p>
+            <p>软件著作权企业软实力的体现，助力企业宣传；</p>
+            <div>
+              <img src="./img/page49/zy_01.png">
+            </div>
+            <p class="smallTitle">助宣传</p>
+            <p>软件著作权企业软实力的体现，助力企业宣传；</p>
+            <div>
+              <img src="./img/page49/zy_01.png">
+            </div>
+            <p class="smallTitle">助宣传</p>
+            <p>软件著作权企业软实力的体现，助力企业宣传；</p>
+          </div>
+      </div>
+    </div>
   </div>
 </div>
-<div class="blackBg">
-	<div class="layui-container">
-  	<div class="layui-row"> 
-   		<div class="layui-col-md6">
-      		
-  		</div>
-  		<div class="layui-col-md6">
+<div>
+  <div class="layui-container">
+    <div class="layui-row"> 
+      <div class="layui-col-md6">
           
-  		</div>
-  	</div>
+      </div>
+      <div class="layui-col-md6">
+          
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="layui-container">
+    <div class="layui-row"> 
+      <div class="layui-col-md6">
+          
+      </div>
+      <div class="layui-col-md6">
+          
+      </div>
+    </div>
   </div>
 </div>
 
 </body>
 <script type="text/javascript" src="./layui/layui.js"></script>
 <script type="text/javascript">
-  layui.use(['jquery','layer'],function(){
+  layui.use(['jquery','layer','element','form'],function(){
     var $ = layui.jquery
+       ,element = layui.element
+       ,form = layui.form
        ,layer = layui.layer;
 
-    $('#btn_id').click(function(){
+    element.render();
+    form.render();
+
+    $('.serverType').find('a').click(function(obj){
+      $(obj.target).addClass('choosed');
+      $(obj.target).siblings().removeClass('choosed');
+    })
+
+    $('.layui-btn').click(function(){
       layer.msg('点击按钮');
     })
   })

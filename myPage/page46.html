@@ -1,74 +1,286 @@
+<!--原网址：
+  http://tm.qianxiyun.com/tool/download
+-->
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
-	<link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
-  	<link rel="stylesheet" type="text/css" href="./page.css">
-  	<meta charset="UTF-8">
-  	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>申请书下载</title>
+  <link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
+  <link rel="stylesheet" type="text/css" href="./page.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <style>
+    .search{
+      float: right;
+    }
+    .searchInput{
+      width: 250px;
+    }
+    .searchBtn{
+      width: 100px;
+    }
+    .content{
+      background-color: #fff;
+      padding: 50px 0;
+      margin: 30px 0;
+    }
+    .content .contentTitle{
+      padding: 10px 30px;
+    }
+    .content .contentTitle h3{
+      font-size: 36px;
+      color: #333;
+      text-align: center;
+      font-weight: 400;
+    }
+    .content .contentTitle .typeBtn{
+      margin: 20px auto 0px;
+      width: 720px;
+      position: relative;
+      font-size: 14px;
+      text-align: center;
+    }
+    .content .contentTitle ul{
+      margin: auto;
+      display: block;
+      width: 414px;
+    }
+    .content .contentTitle ul li{
+      border-radius: 4px 0 0 4px;
+      float: left;
+      padding: 0 20px;
+      height: 40px;
+      margin-right: -1px;
+      line-height: 40px;
+      font-size: 16px;
+      border: 1px solid #b9bdc9;
+      text-align: center;
+      background: #f2f2f2;
+      margin-bottom: 10px;
+    }
+    .content .contentTitle ul li.active{
+      background: #485ea3;
+      border: 1px solid #485ea3;
+    }
+    .content .contentTitle ul li.active a{
+      color: white;
+    }
+    .contentOfCard{
+      margin-top: 50px;
+      padding: 20px 30px;
+      font-size: 18px;
+    }
+    .contentOfCard a{
+      color: #275ecf;
+      font-size: 14px;
+      line-height: 27px;
+    }
+    .contentOfCard a:hover{
+      color: red;
+    }
+    .moreInfo{
+      text-align: center;
+      padding: 25px 10px;
+      border-bottom: 1px dashed #ccc;
+      margin:0 50px 20px 20px;
+
+    }
+    .moreInfo h1{
+      color: gray;
+      padding-bottom: 10px;
+    }
+    .moreInfo .fontInfo{
+      text-align: left;
+      line-height: 24px;
+      color: #0000009c;
+    }
+    .moreInfo .layui-btn{
+      width: 230px;
+      height: 40px;
+      background: #c8a33c;
+    }
+    @media screen and (max-width: 540px){
+      .content .contentTitle{
+        padding:10px;
+      }
+      .content .contentTitle h3{
+        font-size: 21px;
+      }
+      .content{
+        padding:20px 0;
+      }
+      .content .contentTitle ul {
+          width: auto;
+      }
+      .content .contentTitle ul li{
+        padding: 5px;
+        line-height: 25px;
+        height: 25px;
+        font-size: 12px;
+      }
+      .content .contentTitle .typeBtn{
+        padding: 0 40px;
+      }
+      .contentOfCard{
+        padding: 0px;
+      }
+      .layui-tree-entry{
+        overflow-y: hidden;
+        overflow-x: overlay;
+      }
+      .location{
+        float: left;
+      }
+      .searchBtn{
+        width: auto;
+      }
+      .search{
+        float: none;
+      }
+      .moreInfo {
+        padding: 10px 0;
+        margin:0 5px 5px 10px;
+      }
+      .moreInfo h1{
+        font-size: 16px;
+      }
+      .moreInfo .fontInfo{
+        line-height: 20px;
+        margin-bottom: 12px;
+        font-size: 10px;  
+      }
+    }
+  </style>
 </head>
 <body>
 <div>
-	<div class="layui-container">
-  	<div class="layui-row bigImgAndFont"> 
-   		<div class="layui-col-md6 andFont">
-    		<h1>态势感知服务</h1>
-    		<p>网络安全态势感知平台是由专业安全团队，深入研究常见安全漏洞、攻击事件以及攻击手法,完全自主研发的一款集资产实时监测、风险志势感知。风险通报预譬、风险处置建议为一体的平台。</p>
-    		<button class="layui-btn" id="btn_id" type="button">立即咨询</button>
-  		</div>
-  		<div class="layui-col-md6">
-        <div class="bigImgDiv" >
-          <img alt="这里存放图片" src="" class="showImgDiv">
+  <div class="layui-container">
+    <span class="grayb location"><i class="layui-icon layui-icon-location"></i>当前位置：</span>
+    <span class="layui-breadcrumb" lay-separator=">">
+      <a href="">首页</a>
+      <a href="">商标工具</a>
+      <a><cite>申请书式下载</cite></a>
+    </span>
+    <span class="search">
+      <div class="layui-inline">
+        <div class="layui-input-inline searchInput">
+          <input type="text" class="layui-input" placeholder="输入商标名/申请人名/注册号关键字" name="">
         </div>
-  		</div>
-  	</div>
+        <div class="layui-input-inline searchBtn">
+          <span class="layui-btn layui-btn-danger layui-btn-sm">综合查询</span>
+        </div>
+      </div>
+      
+    </span>
+    <div class="layui-row"> 
+      <div class="layui-col-md12 content">
+        <div class="contentTitle">
+          <h3>《2018版类似商品和服务区分表》</h3>
+          <div class="typeBtn">
+            <ul>
+              <li><a href="">商标分类查询</a></li>
+              <li><a href="">图形要素查询</a></li>
+              <li class="active"><a href="">申请书式下载</a></li>
+            </ul>
+          </div>
+        </div>
+        <hr>
+        <div class="moreInfo">
+          <h1>关于启用新版商标申请书式的说明</h1>
+          <p class="fontInfo">第十二届全国人民代表大会常务委员会第四次会议审议通过的《关于修改〈中华人民共和国商标法〉的决定》于2014年5月1日起施行。根据《中华人民共和国商标法》、《中华人民共和国商标法实施条例》的规定，申请人申请商标注册或者办理其他商标事宜的，应当按照商标局、商标评审委员会制定公布的文书格式填写申请文件，以纸质方式提交的文件材料，应当打字或者印刷。</p>
+          <p><span class="layui-btn">打包下载</span></p>
+        </div>
+        <div class="contentOfCard">
+
+        </div>
+      </div>
+      
+    </div>
   </div>
 </div>
-<div class="blackBg">
-	<div class="layui-container">
-  	<div class="layui-row"> 
-   		<div class="layui-col-md6">
-      		
-  		</div>
-  		<div class="layui-col-md6">
-          
-  		</div>
-  	</div>
-  </div>
-</div>
-<div>
-	<div class="layui-container">
-  	<div class="layui-row"> 
-   		<div class="layui-col-md6">
-      		
-  		</div>
-  		<div class="layui-col-md6">
-          
-  		</div>
-  	</div>
-  </div>
-</div>
-<div class="blackBg">
-	<div class="layui-container">
-  	<div class="layui-row"> 
-   		<div class="layui-col-md6">
-      		
-  		</div>
-  		<div class="layui-col-md6">
-          
-  		</div>
-  	</div>
+<div class="footerDiv">
+  <div class="layui-container">
+    <div class="layui-row"> 
+      <div class="layui-col-md3 ia noneLeft">
+        <i></i>
+        <span>
+          <b>精准分析风险规避</b>提供免费专业分析服务
+        </span>
+      </div>
+      <div class="layui-col-md3 ia">
+        <i></i>
+        <span>
+          <b>精准分析风险规避</b>提供免费专业分析服务
+        </span>
+      </div>
+      <div class="layui-col-md3 ia">
+        <i></i>
+        <span>
+          <b>精准分析风险规避</b>提供免费专业分析服务
+        </span>
+      </div>
+      <div class="layui-col-md3 ia">
+        <i></i>
+        <span>
+          <b>精准分析风险规避</b>提供免费专业分析服务
+        </span>
+      </div>
+    </div>
   </div>
 </div>
 
 </body>
 <script type="text/javascript" src="./layui/layui.js"></script>
 <script type="text/javascript">
-  layui.use(['jquery','layer'],function(){
+  layui.use(['jquery','layer','element',],function(){
     var $ = layui.jquery
+       ,element = layui.element
        ,layer = layui.layer;
+  
+    var contentData = [
+      { id:'1', name:'商标注册申请书', },
+      { id:'2', name:'商标注册申请书_台湾', },
+      { id:'3', name:'撤回商标注册申请申请书', },
+      { id:'4', name:'出具优先权证明文件申请书', },
+      { id:'5', name:'变更商标申请人注册人名义地址变更集体商标证明商标管理规则集体成员名单申请书', },
+      { id:'6', name:'变更商标代理人文件接收人申请书', },
+      { id:'7', name:'撤回变更商标代理人文件接收人申请书', },
+      { id:'8', name:'删减商品服务项目申请书', },
+      { id:'9', name:'撤回删减商品服务项目申请书', },
+      { id:'1', name:'商标注册申请书', },
+      { id:'2', name:'商标注册申请书_台湾', },
+      { id:'3', name:'撤回商标注册申请申请书', },
+      { id:'4', name:'出具优先权证明文件申请书', },
+      { id:'5', name:'出具优先权证明文件申请书', },
+      { id:'6', name:'变更商标代理人文件接收人申请书', },
+      { id:'7', name:'撤回变更商标代理人文件接收人申请书', },
+      { id:'8', name:'删减商品服务项目申请书', },
+      { id:'9', name:'撤回删减商品服务项目申请书', },
+      { id:'1', name:'商标注册申请书', },
+      { id:'2', name:'商标注册申请书_台湾', },
+      { id:'3', name:'撤回商标注册申请申请书', },
+      { id:'4', name:'出具优先权证明文件申请书', },
+      { id:'5', name:'变更商标申请人注册人名义地址变更集体商标证明商标管理规则集体成员名单申请书', },
+      { id:'6', name:'变更商标代理人文件接收人申请书', },
+      { id:'7', name:'撤回变更商标代理人文件接收人申请书', },
+      { id:'8', name:'删减商品服务项目申请书', },
+      { id:'9', name:'撤回删减商品服务项目申请书', },
 
-    $('#btn_id').click(function(){
+    ];
+
+    var html = '';
+    for(var k in contentData){
+      var width = k%2==0?8:4;
+      html += [
+        '<div class="layui-col-md'+width+'">',
+          '<a href="">'+(k-(-1))+'.  '+contentData[k].name+'</a>',
+        '</div>',
+      ].join(' ');
+    }
+    $('.contentOfCard').html(html);
+
+    element.render();
+    $('.layui-btn').click(function(){
       layer.msg('点击按钮');
     })
   })
