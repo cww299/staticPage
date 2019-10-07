@@ -45,11 +45,12 @@
     .fourMd3{
     	margin-top: 10px;
     }
-    .fourMd3>div{
+    .fourMd3>.layui-col-md3{
     	background: white;
     	border-right: solid 1px #d1d1d1;
     	padding: 10px 0;
     	text-align: center;
+    	border-bottom: solid 1px #d1d1d1;
     }
     .fourMd3>div:hover{
     	background: #fffff5;
@@ -72,7 +73,127 @@
     .control a{
     	color: #337ab7;
     }
+    .buyerInfo{
+    	background: #f4f4f4;
+	    padding: 30px;
+	    border: solid 1px #d1d1d1;
+	    border-top: none;
+    }
+    .buyerInfo h2{
+    	font-size: 16px;
+    	font-weight: bold;
+    	color: gray;
+    	margin-bottom: 10px;
+    }
+    .buyerInfo a{
+	    color: #666;
+	    display: inline-block;
+	    margin-right: 10px;
+	    border-right: 1px dotted gray;
+	    padding-right: 10px;
+    }
+    .buyerInfo a:hover{
+	    color:#337ab7;
+	}
+	.buyerInfo .layui-btn-primary{
+		margin-top: 10px;
+	}
+    .red{
+    	color: red !important;
+    }
+    .riceShop{
+    	background: white;
+    	text-align: center;
+    	margin-top: 10px;
+    }
+    .riceShop .left{
+    	width: 20px;
+	    height: 100%;
+	    float: left;
+	    display: inline-block;
+	    margin-right: -40px;
+	    color: #fff;
+	    vertical-align: middle;
+	    text-align: center;
+    	padding: 15px;
+    	background: #7a88b3;
+    }
+    .riceShop .right{
+    	padding: 20px;
+	    margin-left: 40px;
+	    overflow: hidden;
+    }
+    .riceShop .right p{
+    	font-size: 18px;
+    	color: gray;
+    }
+    .riceShop .right a{
+    	color: #337ab7;
+    }
+    .new{
+    	background: #fff;
+    	margin-top: 10px!important;
+    }
+    .new .newLeft{
+    	padding: 20px 30px;
+    }
+    .new .newRight{
+    	text-align: center;
+    	margin: 30px 0;
+    }
+    .new .newLeft p{
+    	font-weight: bold;
+    	font-size: 20px;
+    	color: gray;
+    	margin-bottom: 10px;
+    }
+    .new .newLeft a:hover{
+    	color: red;
+    }
+    .new .newLeft li{
+    	margin: 8px 0;
+    }
+    .new .newLeft li a{
+    	color: gray;
+    }
+    .new .newLeft li .time{
+    	float: right;
+    	color: #808080a8;
+    }
+
     @media screen and (max-width: 540px){
+    	.new .newLeft li{
+	    	height: 35px;
+    	}
+    	.riceShop .right p{
+    		font-size: 14px;
+    		height: 28px
+    	}
+    	.buyerInfo{
+    		padding: 30px 10px;
+    	}
+    	.buyerInfo h2{
+    		margin-top: 10px;
+    	}
+    	.buyerInfo a{
+    		margin-right: 0;
+    		padding-right: 0;
+    		border-right: none;
+    	}
+    	.vipInfo .leftDiv, .rightDiv{
+    		float: none;
+    		width: auto;
+    	}
+    	.vipInfo .leftDiv{
+    		border-right: none;
+    	}
+    	.fourMd3>.layui-col-md3{
+    		width: 50%;
+    		float: left;
+    	}
+    	.marginR{
+    		    margin-right: 5px
+    	}
 
     }
     @media screen and (min-width: 1200px){
@@ -159,22 +280,45 @@
           	<a href="">管理</a>
           </p>
       </div>
-      <div class="layui-col-md6">
-        <h2>卖家信息</h2>
-        <p class="">
-        	<a href="">(<b class="red">0</b>)</a>
-        	<a href="">(<b class="red">0</b>)</a>
-        	<a href="">(<b class="red">0</b>)</a>
-        	<a href="">(<b class="red">0</b>)</a>
-        </p>
-      </div>
-      <div class="layui-col-md6">
-        <h2>买家信息</h2>
-        <p class="">
-        	<a href="">(<b class="red">0</b>)</a>
-        	<a href="">(<b class="red">0</b>)</a>
-        	<a href="">(<b class="red">0</b>)</a>
-        </p>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="layui-container">
+    <div class="layui-row"> 
+      <div class="layui-col-md12 buyerInfo">
+	      <div class="layui-col-md6">
+	        <h2>卖家信息</h2>
+	        <p class="">
+	        	<a href="">正在出售(<b class="red">0</b>)</a>
+	        	<a href="">等待上架(<b class="red">0</b>)</a>
+	        	<a href="">最近成交(<b class="red">0</b>)</a>
+	        	<a href="">被关注(<b class="red">0</b>)</a>
+	        </p>
+	        <p><span class="layui-btn layui-btn-primary">出售域名</span></p>
+	      </div>
+	      <div class="layui-col-md6">
+	        <h2>买家信息</h2>
+	        <p class="">
+	        	<a href="">我的域名(<b class="red">0</b>)</a>
+	        	<a href="">我注册的域名(<b class="red">0</b>)</a>
+	        	<a href="">我购买的域名(<b class="red">0</b>)</a>
+	        </p>
+	        <p><span class="layui-btn layui-btn-primary">购买域名</span></p>
+	      </div>
+  	  </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="layui-container">
+    <div class="layui-row"> 
+      <div class="layui-col-md12 riceShop">
+          <span class="left">米店</span>
+          <div class="right">
+          	<p>您还没有米店，请点击&nbsp;
+          		<a href="">免费开通米店</a></p>
+          </div>
       </div>
     </div>
   </div>
@@ -182,23 +326,35 @@
 <div>
   <div class="layui-container">
     <div class="layui-row"> 
-      <div class="layui-col-md6">
-          
-      </div>
-      <div class="layui-col-md6">
-          
-      </div>
-    </div>
-  </div>
-</div>
-<div>
-  <div class="layui-container">
-    <div class="layui-row"> 
-      <div class="layui-col-md6">
-          
-      </div>
-      <div class="layui-col-md6">
-          
+      <div class="layui-col-md12 new">
+      	<div class="layui-col-md9 newLeft">
+      		<p><a href="">最新公告</a></p>
+      		<ul>
+      			<li>
+      				<a href="">35000个自然双拼top保留域名开放抢注</a>
+      				<span class="time">2015.06.19</span>
+      			</li>
+      			<li>
+      				<a href="">2015年端午节放假通告</a>
+      				<span class="time">2015.06.19</span>
+      			</li>
+      			<li>
+      				<a href="">【全网最低】域名注册网TOP域名价格下调</a>
+      				<span class="time">2015.06.19</span>
+      			</li>
+      			<li>
+      				<a href="">五一劳动节放假公告</a>
+      				<span class="time">2015.06.19</span>
+      			</li>
+      			<li>
+      				<a href="">清明节放假公告</a>
+      				<span class="time">2015.06.19</span>
+      			</li>
+      		</ul>
+      	</div>
+      	<div class="layui-col-md3 newRight">
+      		<a href=""><img src="./img/page51/adv1.jpg"></a>
+      	</div>
       </div>
     </div>
   </div>
