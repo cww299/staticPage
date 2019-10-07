@@ -42,10 +42,35 @@
 	    margin-top: -50px;
 	    margin-right: 20px;
     }
+    .fourMd3{
+    	margin-top: 10px;
+    }
     .fourMd3>div{
     	background: white;
     	border-right: solid 1px #d1d1d1;
     	padding: 10px 0;
+    	text-align: center;
+    }
+    .fourMd3>div:hover{
+    	background: #fffff5;
+    }
+    .fourMd3>div h3{
+    	font-size: 18px;
+    	color: gray;
+    }
+    .fourMd3>div a.number{
+    	font-size: 26px;
+	    color: #666;
+	    line-height: 1.3;
+    }
+    .fourMd3>div a:hover{
+    	color: #e00000;
+    }
+    .marginR{
+    	margin-right: 10px;
+    }
+    .control a{
+    	color: #337ab7;
     }
     @media screen and (max-width: 540px){
 
@@ -105,16 +130,51 @@
   <div class="layui-container">
     <div class="layui-row fourMd3"> 
       <div class="layui-col-md3">
-          
+          <h3>我的域名</h3>
+          <p><a href="" class="number">0</a></p>
+          <p class="control">
+          	<a href="" class="marginR">管理我的域名</a>
+          	<a href="">注册新域名</a>
+          </p>
       </div>
       <div class="layui-col-md3">
-          
+          <h3>即将过期</h3>
+          <p><a href="" class="number">0</a></p>
+          <p class="control">
+          	<a href="" class="marginR">续费</a>
+          	<a href="">管理</a>
+          </p>
       </div>
       <div class="layui-col-md3">
-          
+          <h3>已经过期</h3>
+          <p><a href="" class="number">0</a></p>
+          <p class="control">
+          	<a href="">管理</a>
+          </p>
       </div>
       <div class="layui-col-md3">
-          
+          <h3>正在转移</h3>
+          <p><a href="" class="number">0</a></p>
+          <p class="control">
+          	<a href="">管理</a>
+          </p>
+      </div>
+      <div class="layui-col-md6">
+        <h2>卖家信息</h2>
+        <p class="">
+        	<a href="">(<b class="red">0</b>)</a>
+        	<a href="">(<b class="red">0</b>)</a>
+        	<a href="">(<b class="red">0</b>)</a>
+        	<a href="">(<b class="red">0</b>)</a>
+        </p>
+      </div>
+      <div class="layui-col-md6">
+        <h2>买家信息</h2>
+        <p class="">
+        	<a href="">(<b class="red">0</b>)</a>
+        	<a href="">(<b class="red">0</b>)</a>
+        	<a href="">(<b class="red">0</b>)</a>
+        </p>
       </div>
     </div>
   </div>
