@@ -10,19 +10,50 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <style>
+  	.lastLogin{
+  		color: gray;
+  		margin-top: 10px;
+  	}
     .vipInfo{
       background: white;
+      border: solid 1px #d1d1d1;
+      margin-top: 10px!important;
+      padding: 20px!important;
     }
     .vipInfo .leftDiv,.rightDiv{
     	float: left;
-    	width: 50%;
+    	padding: 30px;
+    	width: 48%;
     }
-   /* .vipInfo .rightDiv{
-    	float: left;
-    	width: 50%;
-    }*/
+   	.vipInfo .leftDiv{
+   		border-right: dashed 1px #ccc;
+   		box-sizing: border-box;
+   	}
+    .rightDiv .price{
+    	color:#ff6600;
+    	font-size: 20px;
+    }
+    .rightDiv .layui-btn{
+	    width: 100px;
+	    font-size: 16px;
+	    color: #fff;
+	    background: #f79018;
+	    float: right;
+	    margin-top: -50px;
+	    margin-right: 20px;
+    }
+    .fourMd3>div{
+    	background: white;
+    	border-right: solid 1px #d1d1d1;
+    	padding: 10px 0;
+    }
     @media screen and (max-width: 540px){
 
+    }
+    @media screen and (min-width: 1200px){
+    	.layui-container{
+    		width: 95%;
+    	}
     }
   </style>
 </head>
@@ -30,12 +61,8 @@
 <div>
   <div class="layui-container">
     <div class="layui-row"> 
-      <div class="layui-col-md12 vipInfo">
-        <div class="leftDiv">
-        	<h2>会员ID：13091</h2>
-        </div>
-        <div class="rightDiv">
-        </div>
+      <div class="layui-col-md12">
+          <p class="lastLogin">您上次登录时间：2019/10/7 14:10:18，来自IP：120.195.120.55</p>
       </div>
     </div>
   </div>
@@ -43,10 +70,50 @@
 <div>
   <div class="layui-container">
     <div class="layui-row"> 
-      <div class="layui-col-md6">
+      <div class="layui-col-md12 vipInfo">
+        <div class="leftDiv">
+       	  <h2>会员ID：13091</h2>
+          <p>您好,您的会员等级为：普通会员</p>
+          <a>安全设置</a>&nbsp;|&nbsp;<a>安全退出</a>
+        </div>
+        <div class="rightDiv">
+          <table>
+          	<tr>
+          		<td>账户余额：</td>
+          		<td><b class="price">0</b>元</td>
+          	</tr>
+          	<tr>
+          		<td>可提现金额：</td>
+          		<td>0元</td>
+          	</tr>
+          	<tr>
+          		<td>总消费金额：</td>
+          		<td>0元</td>
+          	</tr>
+          	<tr>
+          		<td>冻结金额：</td>
+          		<td>0元</td>
+          	</tr>
+          </table>
+          <span class="layui-btn">充值</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="layui-container">
+    <div class="layui-row fourMd3"> 
+      <div class="layui-col-md3">
           
       </div>
-      <div class="layui-col-md6">
+      <div class="layui-col-md3">
+          
+      </div>
+      <div class="layui-col-md3">
+          
+      </div>
+      <div class="layui-col-md3">
           
       </div>
     </div>
