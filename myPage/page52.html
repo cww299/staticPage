@@ -43,6 +43,7 @@
       background: #f3f3f3;
       font-size: 14px;
       color: #666;
+      float: left;
     }
     .tabContents .tabNavs li>a:hover{
       border-bottom: 1px solid #ddd;
@@ -66,19 +67,46 @@
       padding: 9px 5px;
       width: 100px;
     }
+    #closeImg{
+      position: absolute;
+      top: 30px;
+      right: 30px;
+    }
     @media screen and (max-width: 540px){
-
+      .bgImg img{
+        height: 50px;
+      }
+      .tabContents .tabCards{
+        width: 88%;
+      }
+      .tabContents .tabNavs li{
+        width: 30%;
+      }
+      .tabContents .tabNavs li>a{
+        width: 100%;
+        text-align: center;
+        padding: 10px 5px;
+      }
+      .layui-form-item .layui-input-inline{
+        float: left;
+        margin: 0px;
+      }
+      .layui-form-item .layui-input-inline+.layui-form-mid{
+        margin: 5px;
+      }
     }
     @media screen and (min-width: 1200px){
       .layui-container{
         width: 95%;
       }
+
     }
   </style>
 </head>
 <body>
 <div class="bgImg">
-  <a href=""><img src="./img/page52/adv_gg.png"></a>
+  <a href="" id="guanggao"><img src="./img/page52/adv_gg.png"></a>
+  <a href="javascript:;" id="closeImg"><img src="./img/page52/close.gif"></a>
 </div>
 <div>
   <div class="layui-container">
@@ -284,6 +312,10 @@
     })
     laydate.render({
       elem:'#dateRender3'
+    })
+    $('#closeImg').click(function(){
+      $('#closeImg').hide();
+      $('#guanggao').hide();
     })
     form.render();
     $('.layui-btn').click(function(){
