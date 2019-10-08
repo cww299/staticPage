@@ -6,7 +6,7 @@
 <head>
   <title>我的域名</title>
   <link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
-  <link rel="stylesheet" type="text/css" href="./page.css">
+  <link rel="stylesheet" type="text/css" href="./pageTab.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <style>
@@ -14,78 +14,50 @@
       max-width: 100%;
       width: 100%;
     }
-    .title{
-      min-height: 25px;
-      padding: 10px 0;
-    }
-    .title h5{
-      display: inline-block;
-      text-indent: 8px;
-      border-left: 3px solid #dc3434;
-      margin-left: 3px;
-      font-size: 20px;
-    }
-    .tabContents{
-      margin-top: 10px;
-    }
-    .tabContents .tabNavs{
-      height: 29px;
-    }
-    .tabContents .tabNavs li{
-      float: left;
-      margin-bottom: -1px;
-      margin-right: -3px;
-    }
-    .tabContents .tabNavs li>a{
-      padding: 10px 25px;
-      margin-left: 0;
-      border: 1px solid #d1d1d1;
-      background: #f3f3f3;
-      font-size: 14px;
-      color: #666;
-      float: left;
-    }
-    .tabContents .tabNavs li>a:hover{
-      border-bottom: 1px solid #ddd;
-      background: #fff;
-      color: #333;
-    }
-    .tabContents .tabNavs li.active>a{
-      color: #dc3232;
-      border-bottom-color: transparent;
-      background: #fff;
-    }
-    .tabContents .tabCards{
-      background: #fff;
-      padding: 20px;
-      border: solid 1px #d1d1d1;
-      border-top: none;
-      width: 95%;
-      float: left;
-    }
-    .tabContents .tabCards .layui-form-label{
-      padding: 9px 5px;
-      width: 100px;
-    }
     #closeImg{
       position: absolute;
       top: 30px;
       right: 30px;
     }
+    .frngexian{
+      border-top: 1px dashed #8080808a;
+      margin-bottom: 5px;
+    }
+    .layui-none{
+      font-size: 17px;
+      padding: 150px 0!important;
+    }
+    .layui-none a{
+      color:#006fc4;
+    }
+    .layui-none a:hover{
+      color: #23527c;
+      text-decoration: underline;
+    }
+    .moreAction{
+      background-color: #F8F8F8;
+      border: 1px solid #e1e6eb;
+      padding: 10px;
+    }
+    .tipsTable{
+      background-color: #fcf8e3;
+      border-color: #faebcc;
+      color: #8a6d3b;
+      padding: 15px;
+      margin: 10px 0;
+      border: 1px solid transparent;
+    }
     @media screen and (max-width: 540px){
       .bgImg img{
         height: 50px;
       }
-      .tabContents .tabCards{
-        width: 88%;
+      #closeImg{
+        top: 15px;
+        right: 15px;
       }
-      .tabContents .tabNavs li{
-        width: 30%;
-      }
-      .tabContents .tabNavs li>a{
-        width: 100%;
-        text-align: center;
-        padding: 10px 5px;
+      #closeImg img{
+        height: 20px;
+        width: 20px;
       }
       .layui-form-item .layui-input-inline{
         float: left;
@@ -94,13 +66,14 @@
       .layui-form-item .layui-input-inline+.layui-form-mid{
         margin: 5px;
       }
-    }
-    @media screen and (min-width: 1200px){
-      .layui-container{
-        width: 95%;
+      .layui-form-item .layui-inline{
+        margin-bottom: 0px;
       }
-
+      .layui-none{
+        padding: 50px 0!important;
+      }
     }
+    
   </style>
 </head>
 <body>
@@ -190,11 +163,11 @@
               <div class="layui-form-item">
                 <div class="layui-inline">
                   <label class="layui-form-label">注册时间：</label>
-                  <div class="layui-input-inline" style="width: 100px;">
+                  <div class="layui-input-inline" style="width: 90px;">
                     <input type="text" class="layui-input" id="dateRender0">
                   </div>
                   <div class="layui-form-mid">至</div>
-                  <div class="layui-input-inline" style="width: 100px;">
+                  <div class="layui-input-inline" style="width: 90px;">
                     <input type="text" class="layui-input" id="dateRender1">
                   </div>
                 </div>
@@ -204,11 +177,11 @@
               <div class="layui-form-item">
                 <div class="layui-inline">
                   <label class="layui-form-label">到期时间：</label>
-                  <div class="layui-input-inline" style="width: 100px;">
+                  <div class="layui-input-inline" style="width: 90px;">
                     <input type="text" class="layui-input" id="dateRender2">
                   </div>
                   <div class="layui-form-mid">至</div>
-                  <div class="layui-input-inline" style="width: 100px;">
+                  <div class="layui-input-inline" style="width: 90px;">
                     <input type="text" class="layui-input" id="dateRender3">
                   </div>
                 </div>
@@ -218,11 +191,11 @@
               <div class="layui-form-item">
                 <div class="layui-inline">
                   <label class="layui-form-label">域名长度：</label>
-                  <div class="layui-input-inline" style="width: 100px;">
+                  <div class="layui-input-inline" style="width: 90px;">
                     <input type="text" class="layui-input" value="1">
                   </div>
                   <div class="layui-form-mid">至</div>
-                  <div class="layui-input-inline" style="width: 100px;">
+                  <div class="layui-input-inline" style="width: 90px;">
                     <input type="text" class="layui-input">
                   </div>
                 </div>
@@ -251,7 +224,7 @@
               <div class="layui-form-item">
                 <div class="layui-inline">
                   <label class="layui-form-label">每页</label>
-                  <div class="layui-input-inline" style="width: 100px;">
+                  <div class="layui-input-inline" style="width: 90px;">
                     <select name="" lay-verify="">
                       <option value="1">50</option>
                       <option value="0">60</option>
@@ -260,6 +233,23 @@
                   <div class="layui-form-mid">条数据</div>
                 </div>
               </div>
+            </div>
+            <div class="layui-col-md12 frngexian"></div>
+            <div class="layui-col-md12 resultDiv">
+              <table id="resultTable" lay-filter="resultTable"></table>
+            </div>
+            <div class="layui-col-md12 moreAction">
+              <table class="layui-form">
+                <tr>
+                  <td><select><option value="">请选择</option></select></td>
+                  <td>&nbsp;&nbsp;</td>
+                  <td><span class="layui-btn layui-btn-normal">批量操作</span></td>
+                </tr>
+              </table>
+            </div>
+            <div class="layui-col-md12 tipsTable">
+              <b>温馨提示：</b>
+              <p>国际域名到期30天，会进入高价赎回期。cn域名到期3天，自动删除。请尽量在域名到期前续费，以免影响域名正常使用。</p>
             </div>
 
           </div>
@@ -295,9 +285,10 @@
 </body>
 <script type="text/javascript" src="./layui/layui.js"></script>
 <script type="text/javascript">
-  layui.use(['jquery','layer','form','laydate'],function(){
+  layui.use(['jquery','layer','form','laydate','table'],function(){
     var $ = layui.jquery
        ,form = layui.form
+       ,table = layui.table
        ,laydate = layui.laydate
        ,layer = layui.layer;
 
@@ -313,9 +304,29 @@
     laydate.render({
       elem:'#dateRender3'
     })
+    table.render({
+      elem:'#resultTable',
+      text:{
+        none:'亲，您在<b class="red">千喜云</b>还没有域名，您可以通过<a href="">注册域名</a>、<a href="">转入域名</a>、<a href="">购买二手域名</a>拥有您的域名',
+      },
+      skin:'nob',
+      data:[],
+      cols:[[
+        { type:'checkbox'},
+        { align:'center',title:'域名',field:''},
+        { align:'center',title:'高防DNS',field:''},
+        { align:'center',title:'所有人',field:''},
+        { align:'center',title:'注册时间',field:''},
+        { align:'center',title:'到期时间',field:''},
+        { align:'center',title:'域名状态',field:''},
+        { align:'center',title:'实名状态',field:''},
+        { align:'center',title:'DNS',field:''},
+        { align:'center',title:'分组',field:''},
+        { align:'center',title:'操作',field:''},
+      ]]
+    })
     $('#closeImg').click(function(){
-      $('#closeImg').hide();
-      $('#guanggao').hide();
+      $('.bgImg').hide();
     })
     form.render();
     $('.layui-btn').click(function(){

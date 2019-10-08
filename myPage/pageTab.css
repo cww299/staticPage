@@ -1,0 +1,105 @@
+body {
+  background: #ededed;
+}
+.title{
+  min-height: 25px;
+  padding: 10px 0;
+}
+.title h5{
+  display: inline-block;
+  text-indent: 8px;
+  border-left: 3px solid #dc3434;
+  margin-left: 3px;
+  font-size: 20px;
+}
+.tabContents{
+  margin-top: 10px;
+}
+.tabContents .tabNavs{
+  height: 29px;
+}
+.tabContents .tabNavs li{
+  float: left;
+  margin-right: -3px;
+}
+.tabContents .tabNavs li>a{
+  padding: 10px 25px;
+  margin-left: 0;
+  border: 1px solid #d1d1d1;
+  background: #f3f3f3;
+  font-size: 14px;
+  color: #666;
+  float: left;
+}
+.tabContents .tabNavs li>a:hover{
+  border-bottom: 1px solid #ddd;
+  background: #fff;
+  color: #333;
+}
+.tabContents .tabNavs li.active>a{
+  color: #dc3232;
+  border-bottom-color: transparent;
+  background: #fff;
+}
+.tabContents .tabCards{
+  background: #fff;
+  padding: 20px;
+  border: solid 1px #d1d1d1;
+  border-top: none;
+  width: 95%;
+  float: left;
+}
+.tabContents .tabCards .layui-form-label{
+  padding: 9px 5px;
+  width: 100px;
+}
+.red{
+  color:Red;
+}
+.show-this{
+  display: block;
+}
+@media screen and (max-width: 540px){
+  .tabContents .tabCards{
+    width: 98%;
+    padding: 20px 5px;
+  }
+  .tabContents .tabNavs li{
+    width: 33%;
+    margin-right:0;
+  }
+  .tabContents .tabNavs li>a{
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    box-sizing: border-box;
+  }
+
+}
+@media screen and (min-width: 1200px){
+  .layui-container{
+    width: 95%;
+  }
+
+}
+/*
+导航栏使用
+<div>
+  <div class="layui-container">
+    <div class="layui-row"> 
+      <div class="layui-col-md12 tabContents">
+        <div class="tabNavs">
+          <ul>
+            <li class="active"><a href="">我的域名</a></li>
+            <li class=""><a href="">注册的域名</a></li>
+            <li class=""><a href="">购买的域名</a></li>
+          </ul>
+        </div>
+        <div class="tabCards">
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+ */
