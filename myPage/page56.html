@@ -1,18 +1,161 @@
 <!--原网址：
-  
+  http://ym.qianxiyun.com/member/zhuanru
 -->
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+  <title>域名转入</title>
   <link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
-  <link rel="stylesheet" type="text/css" href="./page.css">
+  <link rel="stylesheet" type="text/css" href="./pageTab.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <style>
-    
+    .changeToContent{
+      padding: 0 15%;
+      text-align: center;
+    }
+    .changeToContent h2{
+      color: #337ab7;
+      font-weight: bold;
+      font-size: 30px;
+    }
+    .changeToContent .tips{
+      margin: 10px 0!important;
+      color: #337ab7;
+    }
+    .changeToContent textarea{
+      height: 190px;
+      width: 100%;
+      border: solid 1px #81a8c8;
+      background: #fcfdfe;
+      padding: 20px;
+    }
+    .changeToContent textarea:focus{
+      border: solid 1px #0a8df5 !important;
+    }
+    .layui-input:hover, .layui-textarea:hover{
+      border: solid 1px #81a8c8 !important;
+    }
+    .changeToContent .leadingIn{
+      border: solid 1px #81a8c8;
+      margin-top: 5px;
+      border-top: none;
+      background: #fdfeff;
+      padding: 3px 10px;
+      position: relative;
+      margin-bottom: 10px;
+    }
+    .changeToContent .leadingIn .tips{
+      float: left;
+      margin: 0 !important;
+      color: gray;
+      line-height: 26px;
+    }
+    .changeToContent .leadingIn .tips a{
+      color: #337ab7;
+    }
+    .minSelect{
+      float: left;
+    }
+    .minSelect .layui-form-select{
+      margin-left: -110px;
+      width: 180px;
+    }
+    .selectTip{
+      line-height: 38px;
+      float: left;
+      color: gray;
+    }
+    .changeToContent .leadingIn #leadingInBtn{
+      top: 1px;
+      display: inline-block;
+      font-family: 'Glyphicons Halflings';
+      font-style: normal;
+      font-weight: normal;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      float: right;
+      padding: 0 30px;
+      background: #4090d5;
+      color: #fff;
+      position: absolute;
+      top: -1px;
+      right: -1px;
+      height: 33px;
+      line-height: 33px;
+    }
+    .anyQuestion{
+      padding: 10px 0;
+      overflow: hidden;
+      text-align: left;
+    }
+    .anyQuestion b{
+      margin-top: 10px!important;
+      color: #e00000;
+      font-size: 12px;
+      text-align: left;
+      font-weight: 500;
+    }
+    .anyQuestion .layui-btn{
+      float: right;
+      width: 200px;
+      height: 48px;
+      line-height: 48px;
+    font-size: 18px;
+    }
+    .tipTab{
+    }
+    .tipTab .tipTabNav{
+      width: 100%;
+      height: 32px;
+      background: #f0f6fc;
+      border: none;
+      overflow: hidden;
+    }
+    .tipTab .tipTabNav li{
+      float: left;
+      margin-right: -3px;
+      height: 100%;
+    }
+    .tipTab .tipTabNav li a{
+      padding: 6px 25px;
+      font-size: 14px;
+      color: #337ab7;
+      line-height: 32px;
+    }
+    .tipTab .tipTabNav li a.active{
+      background: #fff;
+      border-top: 2px solid #337ab7;
+    }
+    .tipTab .tipTabNav li a:hover{
+      background: #d8e0f3;
+      color: #255c8b;
+    }
+    .tipTab .tipTabCard{
+      text-align: left;
+      padding: 18px;
+      line-height: 24px;
+      color: gray;
+    }
     @media screen and (max-width: 540px){
-
+      .tipTab .tipTabNav{
+        overflow: inherit;
+      }
+      .changeToContent{
+        padding: 0 5%;
+      }
+      .anyQuestion{
+        display: -webkit-inline-box;
+      }
+      .anyQuestion .layui-btn{
+        width: auto; 
+        height: 34px;
+        line-height: 34px;
+        font-size: 14px;
+      }
+      .leadingIn{
+        display: none;
+      }
     }
   </style>
 </head>
@@ -20,56 +163,115 @@
 <div>
   <div class="layui-container">
     <div class="layui-row"> 
-      <div class="layui-col-md12">
+      <div class="layui-col-md12 title">
+        <h5>域名转入</h5>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="layui-container">
+    <div class="layui-row"> 
+      <div class="layui-col-md12 tabContents">
+        <div class="tabNavs">
+          <ul>
+            <li class="active"><a href="">域名转入</a></li>
+            <li class=""><a href="">域名转入记录</a></li>
+            <li class=""><a href="">同注册商转入</a></li>
+            <li class=""><a href="">同注册商转入记录</a></li>
+          </ul>
+        </div>
+        <div class="tabCards">
+          <div class="changeToContent layui-form">
+            <h2>一键转入 快捷管理</h2>
+            <p class="tips">免费转入 低价续费 便捷操作 超值体验</p>
+            <textarea class="layui-textarea" placeholder="格式：域名|转移密码；例如：千喜云|123456，每个域名占一行"></textarea>
+            <div class="leadingIn layui-col-md12">
+              <span class="tips">请输入待转入的域名和<a href="">转移密码</a>，以|隔开，多个域名用回车符隔开。转移密码可从原注册商免费索取</span>
+              <a href="" id="leadingInBtn">导入文本</a>
+            </div>
+            <div class="layui-col-md12  ">
+              <div class="layui-form-item minSelect">
+                <div class="layui-input-block">
+                  <select lay-search>
+                    <option value="1">暂无模板,请先添加</option>
+                  </select>
+                </div>
+              </div>
+              <span class="selectTip">.com/.net转入需要选择实名通过的所有人模板</span>
+            </div>
+            <div class="layui-col-md12 anyQuestion">
+              <b>若有任何疑问，请联系域名专员协助解决：</b>
+              <span class="layui-btn layui-btn-normal">立即转入</span>
+            </div>
+            <div class="layui-col-md12 tipTab">
+              <ul class="tipTabNav">
+                <li>
+                  <a href="javascript:;" class="active" lay-id="1">注意事项</a>
+                </li>
+                <li>
+                  <a href="javascript:;" lay-id="2">转入规则</a>
+                </li>
+                <li>
+                  <a href="javascript:;" lay-id="3">常见问题</a>
+                </li>
+              </ul>
+              <div class="tipTabCard">
+                <div lay-id="1">
+                  注意事项:<br>
+                  1、转入条件：域名状态正常，域名持有者身份正常，没有任何争议与纠纷；涉及被盗或对域名有争议的，千喜云会依据原注册商的申诉将域名转回。<br>
+                  2、域名转移密码有效期一般3-5天，获取转移密码需及时操作，以免密码无效；确认whois邮箱可正常收发邮件，并关闭隐私保护。<br>
+                  3、域名转移成功后收取一年续费费用，到期时间往后顺延一年；如果域名续费年限已经达到最大(一般10年)，则不能转移。<br>
+                  4、转入成功后，用户可以登录会员中心，进行域名注册信息修改和密码重置等操作。<br>
+                </div>
+                <div lay-id="2" style="display: none;">
+                  域名转入:<br>
+                  1、域名转入：即将域名从当前的注册商转出，转入到千喜云进行管理； <br>
+                  2、按照ICANN域名转移政策，原注册商不能擅自拒绝或限制域名的转出，也不能以任何名义对域名转出额外收取费用；同样，千喜云也严格遵守以上原则，支持自由、免费的域名转出操作； <br>
+                  3、如果原注册商擅自限制或拒绝域名转出，域名持有者可以按照以下方式进行投诉： 国际域名投诉地址：http://www.icann.org/en/resources/compliance/complaints/transfer/form 国内域名投诉： 邮箱supervise@cnnic.cn；电话010-58813000 <br>
+                  4、但根据上游的域名注册管理机构的政策规定，以下情况的域名无法转移注册商<br>
+                  >域名新注不足60天的；<br>
+                  >域名到期前15天的；<br>
+                  >距最后一次续费日小于60天的；<br>
+                  >域名处在纠纷、仲裁中或法院限制转出的；<br>
+                  注：以上条件包含但不仅限如此<br>
+                </div>
+                <div lay-id="3" style="display: none;">
+                  Q:域名转入需要多长时间？<br>
+                  A:提交转入申请后，一般需要等待5-7天转入周期。<br>
+                  Q:为什么域名转移失败<br>
+                  A:域名转移，转入方会有转入确认邮件发送至whois邮箱，没有回复确认或者转出方拒绝，即会转入失败。<br>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         
       </div>
     </div>
   </div>
 </div>
-<div>
-  <div class="layui-container">
-    <div class="layui-row"> 
-      <div class="layui-col-md6">
-          
-      </div>
-      <div class="layui-col-md6">
-          
-      </div>
-    </div>
-  </div>
-</div>
-<div>
-  <div class="layui-container">
-    <div class="layui-row"> 
-      <div class="layui-col-md6">
-          
-      </div>
-      <div class="layui-col-md6">
-          
-      </div>
-    </div>
-  </div>
-</div>
-<div>
-  <div class="layui-container">
-    <div class="layui-row"> 
-      <div class="layui-col-md6">
-          
-      </div>
-      <div class="layui-col-md6">
-          
-      </div>
-    </div>
-  </div>
-</div>
-
 </body>
 <script type="text/javascript" src="./layui/layui.js"></script>
 <script type="text/javascript">
-  layui.use(['jquery','layer'],function(){
+  layui.use(['jquery','layer','upload','form'],function(){
     var $ = layui.jquery
+       ,upload = layui.upload
+       ,form = layui.form
        ,layer = layui.layer;
 
+    form.render();
+    upload.render({
+      elem:'#leadingInBtn',
+
+    })
+    $(".tipTabNav").find('a').click(function(obj){
+      var id = $(obj.target).attr('lay-id');
+      $(obj.target).closest('ul').find('a').removeClass('active');
+      $(obj.target).addClass('active');
+      $(obj.target).closest('.tipTab').find('.tipTabCard').find('div[lay-id]').hide();
+      $(obj.target).closest('.tipTab').find('.tipTabCard').find('div[lay-id="'+id+'"]').show();
+    })
     $('.layui-btn').click(function(){
       layer.msg('点击按钮');
     })

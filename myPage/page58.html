@@ -1,18 +1,42 @@
 <!--原网址：
-  
+  http://ym.qianxiyun.com/member/templatelist
 -->
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+  <title>域名模板</title>
   <link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
-  <link rel="stylesheet" type="text/css" href="./page.css">
+  <link rel="stylesheet" type="text/css" href="./pageTab.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <style>
-    
+    .tabContents .tabCards .layui-form-label{
+      width: 70px;
+    }
+    .layui-input-block {
+      margin-left: 80px;
+    }
+    .layui-none{
+      font-size: 17px;
+      padding: 150px 0!important;
+    }
     @media screen and (max-width: 540px){
-
+      .layui-form-item .layui-inline{
+        margin-bottom:0px;
+      }
+      .layui-form-item .layui-input-inline {
+          float: left;
+          margin: 0px;
+      }
+      .layui-form-item .layui-input-inline+.layui-form-mid {
+          margin: 5px;
+      }
+      .layui-col-md1{
+        text-align: center;
+      }
+      .layui-none{
+        padding: 50px 0!important;
+      }
     }
   </style>
 </head>
@@ -20,56 +44,89 @@
 <div>
   <div class="layui-container">
     <div class="layui-row"> 
-      <div class="layui-col-md12">
+      <div class="layui-col-md12 title">
+        <h5>域名模板</h5>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="layui-container">
+    <div class="layui-row"> 
+      <div class="layui-col-md12 tabContents">
+        <div class="tabNavs">
+          <ul>
+            <li class="active"><a href="">域名模板</a></li>
+            <li class=""><a href="">添加域名模板</a></li>
+            <li class=""><a href="">模板过户</a></li>
+            <li class=""><a href="">过户状态</a></li>
+          </ul>
+        </div>
+        <div class="tabCards">
+          <div class="layui-form searchDiv">
+            <div class="layui-col-md2">
+               <div class="layui-form-item">
+                <label class="layui-form-label">审核状态：</label>
+                <div class="layui-input-block">
+                  <select name="">
+                    <option value="0">所有</option>
+                    <option value="1">审核中</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="layui-col-md3">
+               <div class="layui-form-item">
+                <label class="layui-form-label">关键字：</label>
+                <div class="layui-input-block">
+                  <input type="text" class="layui-input" placeholder="请输入关键字搜索">
+                </div>
+              </div>
+            </div>
+            <div class="layui-col-md1">
+              <span class="layui-btn layui-btn-danger">搜索</span>
+            </div>
+          </div>
+          <div class="layui-col-md12 resultDiv">
+            <table id="resultTable" lay-filter="resultTable"></table>
+          </div>
+        </div>
         
       </div>
     </div>
   </div>
 </div>
-<div>
-  <div class="layui-container">
-    <div class="layui-row"> 
-      <div class="layui-col-md6">
-          
-      </div>
-      <div class="layui-col-md6">
-          
-      </div>
-    </div>
-  </div>
-</div>
-<div>
-  <div class="layui-container">
-    <div class="layui-row"> 
-      <div class="layui-col-md6">
-          
-      </div>
-      <div class="layui-col-md6">
-          
-      </div>
-    </div>
-  </div>
-</div>
-<div>
-  <div class="layui-container">
-    <div class="layui-row"> 
-      <div class="layui-col-md6">
-          
-      </div>
-      <div class="layui-col-md6">
-          
-      </div>
-    </div>
-  </div>
-</div>
-
 </body>
 <script type="text/javascript" src="./layui/layui.js"></script>
 <script type="text/javascript">
-  layui.use(['jquery','layer'],function(){
+  layui.use(['jquery','layer','form','laydate','table'],function(){
     var $ = layui.jquery
+       ,form = layui.form
+       ,table = layui.table
+       ,laydate = layui.laydate
        ,layer = layui.layer;
-
+    laydate.render({
+      elem:'#dateRender1',
+    })
+    laydate.render({
+      elem:'#dateRender2',
+    })
+    form.render();
+    table.render({
+      elem:'#resultTable',
+      skin:'nob',
+      data:[],
+      cols:[[
+        { type:'checkbox'},
+        { align:'center',title:'模板名称',field:''},
+        { align:'center',title:'类型',field:''},
+        { align:'center',title:'联系人ID',field:''},
+        { align:'center',title:'所有者',field:''},
+        { align:'center',title:'注册邮箱',field:''},
+        { align:'center',title:'审核状态',field:''},
+        { align:'center',title:'操作',field:''},
+      ]]
+    })
     $('.layui-btn').click(function(){
       layer.msg('点击按钮');
     })

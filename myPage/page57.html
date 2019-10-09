@@ -1,18 +1,66 @@
 <!--原网址：
-  
+  http://ym.qianxiyun.com/member/zhuanchu
 -->
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+  <title>域名转出</title>
   <link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
-  <link rel="stylesheet" type="text/css" href="./page.css">
+  <link rel="stylesheet" type="text/css" href="./pageTab.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <style>
-    
+    .topTips{
+      padding: 5px 15px 5px 20px;
+      margin-bottom: 10px;
+      color: #31708f;
+      border: solid 1px #b2d6e0;
+      background: #f7feff;
+    }
+    b{
+      font-weight: bold;
+    }
+    .bottomTips{
+      padding: 15px;
+      margin-bottom: 20px;
+      border: 1px solid transparent;
+      background-color: #fcf8e3;
+      border-color: #faebcc;
+      color: #8a6d3b;
+    }
+    .bottomTips p{
+      margin: 4px 0;
+    }
+    .formDiv{
+      border-bottom: dashed 1px #d1d1d1;
+      padding: 15px!important;
+      margin-bottom: 15px!important;
+      text-align: center;
+    }
+    .formContent{
+      width: 45%;
+      margin: 0 auto;
+      color: gray;
+    }
+    .tabContents .tabCards .layui-form-label{
+      width: 150px;
+    }
+    .layui-input-block{
+      margin-left: 160px;
+    }
     @media screen and (max-width: 540px){
-
+      .formContent {
+        width: auto;
+      }
+      .tabContents .tabCards .layui-form-label{
+        width: 125px;
+      }
+      .layui-input-block {
+        margin-left: 135px;
+      }
+      .layui-form-checkbox[lay-skin=primary] span{
+        padding-right: 0;
+      }
     }
   </style>
 </head>
@@ -20,8 +68,8 @@
 <div>
   <div class="layui-container">
     <div class="layui-row"> 
-      <div class="layui-col-md12">
-        
+      <div class="layui-col-md12 title">
+        <h5>域名转出</h5>
       </div>
     </div>
   </div>
@@ -29,46 +77,66 @@
 <div>
   <div class="layui-container">
     <div class="layui-row"> 
-      <div class="layui-col-md6">
-          
-      </div>
-      <div class="layui-col-md6">
-          
+      <div class="layui-col-md12 tabContents">
+        <div class="tabNavs">
+          <ul>
+            <li class="active"><a href="">域名转出</a></li>
+            <li class=""><a href="">域名转出记录</a></li>
+          </ul>
+        </div>
+        <div class="tabCards">
+          <div class="topTips">
+            <b>温馨提示：</b>请谨慎操作，转出前，请检查域名所有者邮箱是否可用，转移密码是发送到域名所有者邮箱
+          </div>
+          <div class="formDiv">
+            <div class="layui-form formContent">
+              <div class="layui-form-item">
+                <label class="layui-form-label">您要转出的域名： <b class="red">*</b></label>
+                <div class="layui-input-block">
+                  <input type="text" name="" required  lay-verify="required" placeholder="" class="layui-input">
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label">将转入的注册商： <b class="red">*</b></label>
+                <div class="layui-input-block">
+                  <input type="text" name="" required  lay-verify="required" placeholder="" class="layui-input">
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label">转出原因： <b class="red">*</b></label>
+                <div class="layui-input-block">
+                  <input type="checkbox" name="" title="续费价格太高" lay-skin="primary" >
+                  <input type="checkbox" name="" title="解析不稳定" lay-skin="primary"> 
+                  <input type="checkbox" name="" title="功能不够" lay-skin="primary" > 
+                  <input type="checkbox" name="" title="其他" lay-skin="primary" > 
+                  <input type="text" class="layui-input" style="width: 60px;display: inline-block;">
+                </div>
+              </div>
+              <p><span class="layui-btn layui-btn-normal">确定提交</span></p>
+            </div>
+          </div>
+          <div class="bottomTips">
+            <b>温馨提示：</b><br>
+            <p>1、域名注册、续费、过户时间至少满60天，到期时间大于15天；如未达到时间要求，国际域名有可能导致用户损失最近一次续费金额；</p>
+            <p>2、域名处于正常状态，本身无任何争议、纠纷或欠费情况；</p>
+            <p>3、转出前，请检查域名所有者邮箱是否可用，转移密码是发送到域名所有者邮箱；</p>
+            <p>4、域名转移根据转移注册商、代理商等有所不同，具体操作请按照千喜云域名转移流程办理；</p>
+            <p>5、正在交易、PUSH中的域名不能办理转出;</p>
+            <p>6、根据不同域名注册局规定，个别域名转出需要联系REG客服办理。</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
-<div>
-  <div class="layui-container">
-    <div class="layui-row"> 
-      <div class="layui-col-md6">
-          
-      </div>
-      <div class="layui-col-md6">
-          
-      </div>
-    </div>
-  </div>
-</div>
-<div>
-  <div class="layui-container">
-    <div class="layui-row"> 
-      <div class="layui-col-md6">
-          
-      </div>
-      <div class="layui-col-md6">
-          
-      </div>
-    </div>
-  </div>
-</div>
-
 </body>
 <script type="text/javascript" src="./layui/layui.js"></script>
 <script type="text/javascript">
-  layui.use(['jquery','layer'],function(){
+  layui.use(['jquery','layer','form'],function(){
     var $ = layui.jquery
+       ,form = layui.form
        ,layer = layui.layer;
+    form.render();
 
     $('.layui-btn').click(function(){
       layer.msg('点击按钮');
