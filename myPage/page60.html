@@ -1,18 +1,41 @@
 <!--原网址：
-  
+  http://ym.qianxiyun.com/member/domainprice
 -->
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+  <title>域名价格</title>
   <link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
-  <link rel="stylesheet" type="text/css" href="./page.css">
+  <link rel="stylesheet" type="text/css" href="./pageTab.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <style>
     
+    .contentTable{
+      position: relative;
+      margin: 0 auto;
+      width: 60%;
+      margin-top: -110px;
+      padding:20px;
+      background-color: white;
+    }
+    .formDiv {
+      border-bottom: dashed 1px #d1d1d1;
+      padding: 15px!important;
+      margin-bottom: 15px!important;
+      text-align: left;
+    }
+    .organ{
+      color: #f96f00;
+      font-weight: bold;
+    }
+    .myId{
+      font-size: 16px;
+    }
     @media screen and (max-width: 540px){
-
+      .contentTable{
+        width: 80%;
+      }
     }
   </style>
 </head>
@@ -20,59 +43,90 @@
 <div>
   <div class="layui-container">
     <div class="layui-row"> 
-      <div class="layui-col-md12">
+      <div class="layui-col-md12 title">
+        <h5>域名价格</h5>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="layui-container">
+    <div class="layui-row"> 
+      <div class="layui-col-md12 tabContents">
+        <div class="tabNavs">
+          <ul>
+            <li class="active"><a href="">域名价格</a></li>
+          </ul>
+        </div>
+        <div class="tabCards">
+          <div class="formDiv">
+            <span class="myId">ID：10049</span>
+            <div><span class="organ">12345678912</span>您好,您的会员等级为：普通会员</div>
+          </div>
+          <div class="layui-form">
+            <input type="radio" name="DomainName" value="english" title="英文域名" checked lay-filter="transData">
+            <input type="radio" name="DomainName" value="china" title="中文域名" lay-filter="transData">
+          </div>
+          <table id="tableData" lay-filter="tableData"></table>
+        </div>
         
       </div>
     </div>
   </div>
 </div>
-<div>
-  <div class="layui-container">
-    <div class="layui-row"> 
-      <div class="layui-col-md6">
-          
-      </div>
-      <div class="layui-col-md6">
-          
-      </div>
-    </div>
-  </div>
-</div>
-<div>
-  <div class="layui-container">
-    <div class="layui-row"> 
-      <div class="layui-col-md6">
-          
-      </div>
-      <div class="layui-col-md6">
-          
-      </div>
-    </div>
-  </div>
-</div>
-<div>
-  <div class="layui-container">
-    <div class="layui-row"> 
-      <div class="layui-col-md6">
-          
-      </div>
-      <div class="layui-col-md6">
-          
-      </div>
-    </div>
-  </div>
-</div>
-
 </body>
 <script type="text/javascript" src="./layui/layui.js"></script>
 <script type="text/javascript">
-  layui.use(['jquery','layer'],function(){
+  layui.use(['jquery','layer','form','table'],function(){
     var $ = layui.jquery
+       ,form = layui.form
+       ,table = layui.table
        ,layer = layui.layer;
 
     $('.layui-btn').click(function(){
       layer.msg('点击按钮');
     })
+    form.render();
+    var tableDataEnglish = [
+      {name:'.online英文域名',ordinaryVip:{ register:8.00,renew:52.00}, partners:{ register:6.00,renew:50.00,trans:13.00}},
+    ];
+    var tableDataChian = [
+      {name:'.我爱你中文域名',ordinaryVip:{ register:120.00,renew:120.00}, partners:{ register:100.00,renew:100.00,trans:100.00}},
+    ];
+    for(var i=0;i<10;i++){
+      tableDataEnglish.push({
+        name:'测试数据'+i,
+        ordinaryVip:{ register:0.00,renew:0.00 },
+        partners:{ register:0.00,renew:0.00,trans:0.00}
+      })
+    }
+    var sty = 'background-color:#fff4f4;';
+    table.render({
+      elem:'#tableData',
+      data: tableDataEnglish,
+      cols:[[
+        { align:'center', title:'域名', field:'name', rowspan: 2,minWidth:140},
+        { align:'center', title:'普通会员', colspan: 2},
+        { align:'center', title:'合作伙伴', colspan: 3},
+      ],[
+        { align:'center', title:'注册', style:sty, templet:'<span>{{ d.ordinaryVip.register }}</span>'},
+        { align:'center', title:'续费', templet:'<span>{{ d.ordinaryVip.renew }}</span>'},
+        { align:'center', title:'注册', style:sty, templet:'<span>{{ d.partners.register }}</span>'},
+        { align:'center', title:'续费', templet:'<span>{{ d.partners.renew }}</span>'},
+        { align:'center', title:'转入', templet:'<span>{{ d.partners.trans }}</span>'},
+        ]],
+    })
+    
+    form.on('radio(transData)', function(obj){
+      var data = []
+      if(obj.value=='china')
+        data = tableDataChian ;
+      else
+        data = tableDataEnglish;
+      table.reload('tableData',{
+        data:data,
+      })
+    }); 
   })
 </script>
 </html>
