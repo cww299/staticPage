@@ -73,8 +73,8 @@
 		}
 		.titleTd{
 			color: #333 !important;
-			width: 92px !important;
 			font-weight: bold;
+			float: left !important;
 		}
 		.martop{
 			margin-top: 10px!important;
@@ -153,6 +153,18 @@
 	    .layui-container {
 		    padding:0px;
 		}
+		.rightDiv p{
+		   	line-height: 28px;
+		    float: left;
+		    margin: 10px 0;
+		    margin-right: 20%;
+		}
+		.rightDiv p span{
+			float: right;
+		}
+		.martop span{
+			float: inherit !important;
+		}
 		@media screen and (max-width: 540px){
 			.bgImg img{
 				height: 200px;
@@ -181,6 +193,35 @@
 			}
 			.secondImg img {
 			    height: 150px;
+			}
+			.rightDiv p span{
+				width: 290px;
+				float: left;
+			}
+			.titleTd{
+				width: auto !important;
+			}
+			.firstContent{
+				padding:20px;
+			}
+			.rightDiv p{
+				margin: 0;
+				width: 100%;
+				line-height: normal;
+    			margin: 10px 0;
+			}
+			.firstContent .leftIcon{
+				float: inherit;
+				margin: 50px auto;
+			}
+			.firstContent .rightDiv{
+				width: 100%;
+			}
+			.firstContent .rightDiv h1{
+				text-align: center;
+			}
+			.martop span{
+				width: auto !important;
 			}
 		}
   	</style>
@@ -211,28 +252,28 @@
       			</div>
       			<div class="rightDiv">
 					<h1>商标驳回复审</h1>
-					<table>
-						<tr>
-							<td class="titleTd">服务介绍：</td>
-							<td>商标实质审查未通过，在规定时效内向商评委提交复审申请，再次争取。</td>
-						</tr>
-						<tr>
-							<td class="titleTd">申请主体：</td>
-							<td>申请商标注册过程中，被商标局驳回的公司或个体。</td>
-						</tr>
-						<tr>
-							<td class="titleTd">申请须知：</td>
-							<td>时效：收到商标驳回通知书起（邮戳日期为准）5天内提交申请<br>
+					<div >
+						<p>
+							<span class="titleTd">服务介绍：</span>
+							<span>商标实质审查未通过，在规定时效内向商评委提交复审申请，再次争取。</span>
+						</p>
+						<p>
+							<span class="titleTd">申请主体：</span>
+							<span>申请商标注册过程中，被商标局驳回的公司或个体。</span>
+						</p>
+						<p>
+							<span class="titleTd">申请须知：</span>
+							<span>时效：收到商标驳回通知书起（邮戳日期为准）5天内提交申请<br>
 							( 复审只有15天限制，其中正常流程耗时需11天)<br>
-							裁决：商评委受理后，九个月左右下发决定书。</td>
-						</tr>
-						<tr>
-							<td class="titleTd">服务价格：</td>
-							<td><b class="orange">￥3000</b>/起</td>
-						</tr>
-					</table>
+							裁决：商评委受理后，九个月左右下发决定书。</span>
+						</p>
+						<p>
+							<span class="titleTd">服务价格：</span>
+							<span><b class="orange">￥3000</b>/起</span>
+						</p>
+					</div>
 					<p class="martop">
-						<span class="layui-btn layui-btn-danger">立即申请</span>
+						<span class="layui-btn layui-btn-danger">立即申请</span>&nbsp;&nbsp;
 						<span class="layui-btn layui-btn-warm">咨询顾问</span>
 					</p>
       			</div>
