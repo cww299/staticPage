@@ -1,10 +1,10 @@
 <!--原网址：
-  http://tm.qianxiyun.com/tongji
+  http://tm.qianxiyun.com/news
 -->
 <!DOCTYPE html>
 <html>
 <head>
-  <title>商标统计</title>
+  <title>商标咨询</title>
   <link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
   <link rel="stylesheet" type="text/css" href="./page.css">
   <meta charset="UTF-8">
@@ -71,6 +71,55 @@
       padding: 0 0 10px 10px;
       color: #000000b5;
     }
+    .newDiv{
+      border-right: 1px solid #8080806b;
+    }
+    .newsOfOne{
+      border-bottom: dashed 1px #ccc;
+      padding: 15px;
+      overflow: hidden;
+      margin: 0 15px;
+    }
+    .newsOfOne>p{
+      line-height: 25px;
+    }
+    .newsOfOne .title{
+      display: block;
+      font-size: 18px;
+      font-weight: bold;
+      text-decoration: none;
+      color: #555;
+      outline: 0;
+    }
+    .newsOfOne .title:hover{
+      color: #e00000;
+      text-decoration: none;
+    }
+    .newsOfOne .timeFrom{
+      display: block;
+      font-size: 12px;
+      color: #999;
+      padding: 3px 0;
+    }
+    .newsOfOne .timeFrom .borders{
+      border-left: 1px dotted #80808073;
+      margin: 0 10px;
+    }
+    .newsOfOne .contents{
+      font-size: 13px;
+      color: #666;
+    }
+    .newsOfOne a{
+      display: block;
+      color: #006fc4;
+    }
+    .newsOfOne .imgDiv{
+      width: 200px;
+      height: 140px;
+      background: gray;
+      float: left;
+      margin-right: 4px;
+    }
     @media screen and (max-width: 540px){
       .bgImg img{
         height: 200px;
@@ -95,6 +144,13 @@
       .content{
         margin-top: -160px;
       }
+      .newsOfOne{
+        width: 80%;
+      }
+      .newsOfOne .imgDiv{
+        float: inherit;
+        margin: auto;
+      }
     }
   </style>
 </head>
@@ -108,15 +164,35 @@
       <div class="layui-col-md9 leftDiv">
         <div class="tabNav">
           <ul>
-            <li>商标资讯</li>
+            <li class="active">商标资讯</li>
             <li>商标通知公告</li>
             <li>商标政策法规</li>
-            <li class="active">商标统计</li>
+            <li class="">商标统计</li>
             <li>商标常见问题</li>
           </ul>
         </div>
         <div class="tabContents">
-          
+          <div class="newDiv">
+            <div class="newsOfOne">
+              <p><a href="" class="title">一个商标竟然引起世纪之争！“百威”究竟属于谁？</a></p>
+              <p class="timeFrom">发表于：2017-08-17<i class="borders"></i>来自：千喜云</p>
+              <p class="contents">昨日已是秋分，不少城市却依然高温不退。要说在夏天什么能让人畅快，一瓶冰啤酒肯定是许多人的不二之选啦~爱喝酒的朋友们一定对“百威”这个牌子的啤酒不陌生了。“百威”啤酒在美国占据了一半的…</p>
+              <p><a href="">阅读全文</a>
+            </div>
+            <div class="newsOfOne">
+              <p><a href="" class="title">案例分析| 为何迅雷提交了那么多证据，还是被撤三了</a></p>
+              <p class="timeFrom">发表于：2017-08-17<i class="borders"></i>来自：千喜云</p>
+              <p class="contents">前几日，QQ旋风关停的消息让很多人感慨，迅雷终于可以一家独大了。但是小铭总觉得迅雷这几年发展的方向有点跑偏，不好好做下载业务，反而把主界面搞的越来越复杂。但是我们今天要说的“迅雷”并不…</p>
+              <p><a href="">阅读全文</a>
+            </div>
+            <div class="newsOfOne">
+              <div class="imgDiv"></div>
+              <p><a href="" class="title">案例分析| 小肥羊商标被路人甲给告了，理由是损害</a></p>
+              <p class="timeFrom">发表于：2017-08-17<i class="borders"></i>来自：千喜云</p>
+              <p class="contents">我们熟悉的商标纠纷，通常发生在两家企业之间，理由可能是针对商标的各种侵权行为。但《商标法》第8条规定，如果商标“有损社会主义道德风尚或其他不良影响”的情况下，任何人都有权向商标局申请…</p>
+              <p><a href="">阅读全文</a>
+            </div>
+          </div>
         </div>
       </div>
       <div class="layui-col-md3 rightDiv">

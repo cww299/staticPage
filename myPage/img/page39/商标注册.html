@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<!-- saved from url=(0062)file:///C:/Users/lb-by35/Desktop/staticPage/myPage/page39.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>商标注册</title>
+	<link rel="stylesheet" type="text/css" href="file:///C:/Users/lb-by35/Desktop/staticPage/myPage/layui/css/layui.css">
+  	<link rel="stylesheet" type="text/css" href="file:///C:/Users/lb-by35/Desktop/staticPage/myPage/page.css">
+  	
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  	<style type="text/css">
+  		.bgImg img{
+  			max-width: 100%;
+  		}
+  		.titleIcon{
+  			margin: 20px 0px;
+  			text-align: center;
+    		color: #888;
+  		}
+  		.titleIcon span{
+  			margin: 0 8px;
+  		}
+  		.titleIcon i{
+  			width: 23px;
+		    height: 23px;
+		    background-image: url(./img/page39/ind_icon.png);
+		    margin: 2px;
+		    display: inline-block;
+    		vertical-align: middle;
+  		}
+  		.icon01{
+  			background-position: -127px -13px;
+  		}
+  		.icon02{
+  			background-position: -127px -47px;
+  		}
+  		.icon03{
+  			background-position: -127px -81px;
+  		}
+  		.icon04{
+  			background-position: -127px -115px;
+  		}
+  		.icon05{
+  			background-position: -127px -148px;
+  		}
+  		.registerDiv{
+  			width: 100%;
+		    height: 450px;
+		    float: left;
+		    background: #fff;
+		    box-shadow: 0 2px 2px 2px rgba(0,0,0,0.05);
+		    position: relative;
+		    transition: all 0.5s ease 0s;
+		    padding: 30px 5px; 
+  		}
+  		.registerDiv .icon{
+  			display: block;
+		    width: 139px;
+		    height: 139px;
+		    background-image: url(./img/page39/ind_icon.png);
+		    margin: auto;
+  		}
+  		.registerDiv h1{
+  			font-size: 26px;
+		    line-height: 30px;
+		    color: #333;
+		    text-align: center;
+		    margin: 15px 0 10px;
+  		}
+  		.registerDiv .checkI{
+  			text-align: center;
+  			margin: 10px 0;
+  		}
+  		.registerDiv p{
+  			text-align: center;
+  		}
+  		.registerDiv .checkI i{
+  			background: url(./img/page39/ind_icon.png) no-repeat -164px -270px;
+		    display: inline-block;
+		    width: 26px;
+		    height: 22px;
+		    vertical-align: middle;
+  		}
+  		.registerDiv .twoIconAndFont{
+		    color: #a4801e;
+		    border-top: solid 1px #d5c69a;
+		    border-bottom: solid 1px #d5c69a;
+		    line-height: 37px;
+		    height: 37px;
+		    margin: 0 30px;
+  		}
+  		.registerDiv .twoIconAndFont i{
+  			width: 18px;
+		    height: 22px;
+		    display: inline-block;
+		    vertical-align: middle;
+		    margin-right: 5px;
+		    background-image: url(./img/page39/ind_icon.png);
+  		}
+  		.registerDiv .price{
+		    font-size: 16px;
+		    line-height: 1;
+		    margin-top:20px;
+  		}
+  		.registerDiv .price strong{
+  			font-size: 36px;
+    		color: #e00;
+  		}
+  		.registerDiv .smallRed{
+  			color: #e10000;
+  			font-size: 12px;
+  			font-weight: 500;
+  			margin-bottom: 20px;
+  			margin-top: 5px;
+  		}
+  		.registerDiv .tip-hot{
+  			display: block;
+		    width: 87px;
+		    height: 87px;
+		    background: url(./img/page39/ind_icon.png) -195px -340px;
+		    position: absolute;
+		    right: 0;
+		    top: 0;
+  		}
+  		.why{
+  			background: url(./img/page39/sbzc_bg.jpg) no-repeat center 130px #fff;
+		    box-shadow: 0 -3px 8px 1px rgba(0,0,0,0.1);
+		    margin-top: 70px;
+		    overflow: hidden;
+  		}
+  		.why .mean{
+  			text-align: center;
+		    color: #888;
+		    margin-bottom: 25px;
+  		}
+  		.why .whyRegister{
+  			height: 1px;
+		    border-top: 1px solid #d3d3d3;
+		    margin: 62px 0 34px 0;
+		    text-align: center;
+		    color: #2e2e35;
+  		}
+  		.why .whyRegister h1{
+  			background: #fff;
+  			position: relative;
+		    top: -35px;
+		    padding: 0 28px;
+		    font-size: 40px;
+		    display: inline-block;
+  		}
+  		.why .iconAndFont{
+		    margin: 30px 0px;
+		    height: 290px;
+		    text-align: center;
+  		}
+  		.why .iconAndFont i{
+  			display: block;
+		    width: 169px;
+		    height: 169px;
+		    background: url(./img/page39/sbzc_ys.png);
+		    margin: 0 auto 20px;
+  		}
+  		.why .iconAndFont p{
+  			font-size: 26px;
+    		color: #333;
+  		}
+  		.why .iconAndFont span{
+  			font-size: 16px;
+    		color: #999;
+  		}
+  		.why .mean i{
+  			width: 16px;
+		    height: 20px;
+		    background-image: url(./img/page39/sbzc_ys.png);
+		    margin-right: 5px;
+  		}
+  		.why .stepImg{
+  			padding: 10px 0 70px 0;
+  		}
+  		.why .stepImg img{
+  			max-width: 100%;
+  		}
+  		.file{
+  			background: url(./img/page39/bg_xiexian.png);
+    		height: 297px;
+  		}
+  		.file img{
+  			width: 100%;
+  			max-width: 100%;
+  		}
+  		.newsAndQuestion{
+  			padding: 20px 35px;
+		    overflow: hidden;
+		    background: #fff;
+		    box-shadow: 0 2px 2px 2px rgba(0,0,0,0.05);
+		    margin: 0;
+  		}
+  		.newsAndQuestion h3{
+  			height: 80px;
+		    line-height: 80px;
+		    border-bottom: 1px solid #dedede;
+		    font-size: 28px;
+		    color: #444;
+		    font-weight: 400;
+  		}
+  		.newsAndQuestion h3 a{
+  			font-size: 12px;
+		    color: #666;
+		    float: right;
+		    margin: 1px 10px;
+		    text-decoration: none;
+  		}
+  		.newsAndQuestion ul{
+  			list-style-type: circle;
+		    color: #0071e3;
+		    margin: 15px 0;
+		    font-size: 16px;
+		    width: auto;
+  		}
+  		.newsAndQuestion ul li {
+  			line-height: 36px;
+		    height: 36px;
+		    padding-left: 20px;
+		    background: url(./img/page39/ind_icon.png) no-repeat -666px -398px
+  		}
+  		.callCus{
+  			width: 313px;
+  			height: 105px;
+  		}
+  		.bigIcon01{
+  			background-position: -241px -3px;
+  		}
+  		.bigIcon02{
+  			background-position: -388px -3px;
+  		}
+  		.bigIcon03{
+  			background-position: -534px -3px;
+  		}
+  		.smallIcon01{
+  			background-position: -129px -248px;
+  		}
+  		.smallIcon02{
+  			background-position: -129px -276px;
+  		}
+  		.smallIcon03{
+  			background-position: -129px -303px;
+  		}
+  		.smallIcon04{
+  			background-position: -129px -332px;
+  		}
+  		.smallIcon05{
+  			background-position: -129px -248px;
+  		}
+  		.smallIcon06{
+  			background-position: -129px -360px;
+  		}
+  		.radisIcon01{
+  			background-position: -3px -8px !important;
+  		}
+  		.radisIcon02{
+  			background-position: -196px -8px !important;
+  		}
+  		.radisIcon03{
+  			background-position: -384px -8px !important;
+  		}
+  		.radisIcon04{
+  			background-position: -7px -193px !important;
+  		}
+  		.radisIcon05{
+  			background-position: -196px -188px !important;
+  		}
+  		.radisIcon06{
+  			background-position: -387px -184px !important;
+  		}
+  		.grayIcon01{
+  			background-position: -608px -29px;
+  		}
+  		.grayIcon02{
+  			background-position: -607px -75px;
+  		}
+  		.grayIcon03{
+  			background-position: -607px -121px;
+  		}
+  		@media screen and (max-width: 540px){
+  			.titleIcon span{
+  				margin: 0 12px;
+    			float: left;
+  			}
+  			.file{
+    			height: 110px;
+  			}
+  			.registerDiv{
+  				margin-bottom: 10px;
+  				margin-left: -4px;
+  			}
+  			.footerDiv .ia {
+			    margin-top: 15px;
+			    padding-left: 30px;
+			}
+			.footerDiv{
+				height: auto;
+			}
+			.newsAndQuestion{
+				padding: 20px 10px;
+			}
+			.why .whyRegister h1{
+				font-size: 30px;
+			}
+			.bgImg img{
+				height: 150px;
+			}
+  		}
+  		@media screen and (max-width: 330px){
+			.why .whyRegister h1 {
+			    font-size: 22px;
+			}
+		}
+  	</style>
+<link id="layuicss-layer" rel="stylesheet" href="file:///C:/Users/lb-by35/Desktop/staticPage/myPage/layui/css/modules/layer/default/layer.css?v=3.1.1" media="all"></head>
+<body>
+<div>
+  	<div class="layui-carousel bgImg">
+	  	<img src="file:///C:/Users/lb-by35/Desktop/staticPage/myPage/img/page39/banner_sbzc.jpg">
+  	</div>
+</div>
+
+<div>
+  <div class="layui-container">
+  	<div class="titleIcon">
+  		<span>
+  			<i class="icon01"></i>免费专业分析服务
+  		</span>
+  		<span>
+  			<i class="icon02"></i>及时申报服务
+  		</span>
+  		<span>
+  			<i class="icon03"></i>办理状态随时通知
+  		</span>
+  		<span>
+  			<i class="icon04"></i>发票、快递正规服务
+  		</span>
+  		<span>
+  			<i class="icon05"></i>免费终身享受售后服务
+  		</span>
+  	</div>
+  	<div class="layui-row layui-col-space30"> 
+   	  <div class="layui-col-md4">
+    	<div class="registerDiv">
+    		<p><i class="icon bigIcon01"></i></p>
+    		<h1>商标普通注册</h1>
+    		<div class="checkI">
+    			<p><i></i>顾问式服务</p>
+    			<p><i></i>专业式评估</p>
+    			<p><i></i>托管式办理</p>
+    		</div>
+    		<p class="twoIconAndFont">
+    			<i class="smallIcon01"></i>顾问评估注册风险
+    			<i class="smallIcon02"></i>确认风险再付款
+    		</p>
+    		<p class="price">
+    			￥
+    			<strong>300</strong>
+    			/件
+    		</p>
+    		<p class="smallRed">[申报受理成功率90%]</p>
+    		<p class="btn">
+    			<span class="layui-btn layui-btn-danger">立即注册</span>
+    			<span class="layui-btn layui-btn-warm">联系客服</span>
+    		</p>
+    	</div>
+  	  </div>
+  	  <div class="layui-col-md4">
+        <div class="registerDiv">
+    		<p><i class="icon bigIcon02"></i></p>
+    		<h1>VIP级快速注册</h1>
+    		<div class="checkI">
+    			<p><i></i>申请前近似查询</p>
+    			<p><i></i>确认风险再付款</p>
+    			<p><i></i>一对一快速提交</p>
+    		</div>
+    		<p class="twoIconAndFont">
+    			<i class="smallIcon03"></i>专业商标评估意见
+    			<i class="smallIcon04"></i>全程托管式服务
+    		</p>
+    		<p class="price">
+    			￥
+    			<strong>499</strong>
+    			/件
+    		</p>
+    		<p class="smallRed">[申报受理成功率95%]</p>
+    		<p class="btn">
+    			<span class="layui-btn layui-btn-danger">立即注册</span>
+    			<span class="layui-btn layui-btn-warm">联系客服</span>
+    		</p>
+    	</div>
+  	  </div>
+  	  <div class="layui-col-md4">
+       <div class="registerDiv">
+    		<p><i class="icon bigIcon03	"></i></p>
+    		<h1>SVIP级担保注册</h1>
+    		<div class="checkI">
+    			<p><i></i>申请前多方位查询</p>
+    			<p><i></i>专业团队全程服务</p>
+    			<p><i></i>注册不成功退全款</p>
+    		</div>
+    		<p class="twoIconAndFont">
+    			<i class="smallIcon05"></i>顾问评估担保条件
+    			<i class="smallIcon06"></i>专业人士全程护航
+    		</p>
+    		<p class="price">
+    			￥
+    			<strong>999</strong>
+    			/件
+    		</p>
+    		<p class="smallRed">[申报受理成功率99%]</p>
+    		<p class="btn">
+    			<span class="layui-btn layui-btn-danger">立即注册</span>
+    			<span class="layui-btn layui-btn-warm">联系客服</span>
+    		</p>
+    		<span class="tip-hot"></span>
+    	</div>
+  	  </div>
+  	</div>
+  </div>
+</div>
+
+<div class="why">
+	<div class="layui-container">
+	  	<div class="layui-row">
+      		<div class="whyRegister">
+      			<h1>为什么要<span style="color:red;">注册商标</span>?</h1>
+      		</div>
+      		<div class="mean">商标的价值,商标能为你带来什么</div>
+      		<div class="layui-col-md4 iconAndFont">
+      			<i class="radisIcon01"></i>
+      			<p>塑造品牌杜绝山寨</p>
+      			<span>塑造品牌形象<br>避免你的品牌存在被山寨风险</span>
+	  		</div>
+	  		<div class="layui-col-md4 iconAndFont">
+      			<i class="radisIcon02"></i>
+      			<p>利于企业评判宣传推广</p>
+      			<span>提升市场竞争力</span>
+	  		</div>
+	  		<div class="layui-col-md4 iconAndFont">
+      			<i class="radisIcon03"></i>
+      			<p>创立无形资产</p>
+      			<span>实现品牌价值</span>
+	  		</div>
+	  		<div class="layui-col-md4 iconAndFont">
+      			<i class="radisIcon04"></i>
+      			<p>办理官方资质文件</p>
+      			<span>质量检测报告、检验检疫、<br>卫生证、产品条形码</span>
+	  		</div>
+	  		<div class="layui-col-md4 iconAndFont">
+      			<i class="radisIcon05"></i>
+      			<p>申请官方认证</p>
+      			<span>如申请QQ、微博等官方认证</span>
+	  		</div>
+	  		<div class="layui-col-md4 iconAndFont">
+      			<i class="radisIcon06"></i>
+      			<p>入驻知名电商平台</p>
+      			<span>如入驻京东、天猫...</span>
+	  		</div>
+	  		<div class="layui-col-md12">
+      			<div class="whyRegister">
+      				<h1>商标<span style="color:red;">注册流程及周期</span>?</h1>
+      			</div>
+      			<div class="mean">
+      				<div class="titleIcon">
+				  		<span>
+				  			<i class="grayIcon01"></i>免费专业分析服务
+				  		</span>
+				  		<span>
+				  			<i class="grayIcon02"></i>及时申报服务
+				  		</span>
+				  		<span>
+				  			<i class="grayIcon03"></i>办理状态随时通知
+				  		</span>
+				  	</div>
+      			</div>
+	      		<div class="stepImg">
+	      			<img src="file:///C:/Users/lb-by35/Desktop/staticPage/myPage/img/page39/sbzc_lc.png">
+	      		</div>
+	  		</div>
+	  		
+	  	</div>
+  </div>
+</div>
+
+<div class="file">
+	<div class="layui-container">
+  	<div class="layui-row"> 
+   		<div class="layui-col-md12">
+      		<img src="file:///C:/Users/lb-by35/Desktop/staticPage/myPage/img/page39/sbzc_cl.png">
+  		</div>
+  	</div>
+  </div>
+</div>
+<div>
+	<div class="layui-container">
+  	<div class="layui-row newsAndQuestion layui-col-space20"> 
+   		<div class="layui-col-md4">
+   			<h3><a>MORE&gt;&gt;</a>商标资讯</h3>
+   			<ul>
+   				<li><a>一个商标竟然引起世纪之争！“百…</a></li>
+   				<li><a>案例分析| 为何迅雷提交了那么多…</a></li>
+   				<li><a>案例分析| 小肥羊商标被路人甲给…</a></li>
+   			</ul>
+  		</div>
+  		<div class="layui-col-md4">
+  			<h3><a>MORE&gt;&gt;</a>公告通知</h3>
+   			<ul>
+   			</ul>
+  		</div>
+  		<div class="layui-col-md4">
+  			<h3><a>MORE&gt;&gt;</a>常见问题</h3>
+   			<ul>
+   				<li><a>营业执照地址与邮寄地址的区别？…</a></li>
+   				<li><a>商标的有效期限是多久？</a></li>
+   			</ul>
+   				<img src="file:///C:/Users/lb-by35/Desktop/staticPage/myPage/img/page39/zxkf.png" class="callCus">
+  		</div>
+  	</div>
+  </div>
+</div>
+<div class="footerDiv">
+	<div class="layui-container">
+  	<div class="layui-row"> 
+   		<div class="layui-col-md3 ia noneLeft">
+   			<i></i>
+   			<span>
+   				<b>精准分析风险规避</b>提供免费专业分析服务
+   			</span>
+  		</div>
+  		<div class="layui-col-md3 ia">
+   			<i></i>
+   			<span>
+   				<b>精准分析风险规避</b>提供免费专业分析服务
+   			</span>
+  		</div>
+  		<div class="layui-col-md3 ia">
+   			<i></i>
+   			<span>
+   				<b>精准分析风险规避</b>提供免费专业分析服务
+   			</span>
+  		</div>
+  		<div class="layui-col-md3 ia">
+   			<i></i>
+   			<span>
+   				<b>精准分析风险规避</b>提供免费专业分析服务
+   			</span>
+  		</div>
+  	</div>
+  </div>
+</div>
+
+
+
+<script type="text/javascript" src="file:///C:/Users/lb-by35/Desktop/staticPage/myPage/layui/layui.js"></script>
+<script type="text/javascript">
+  layui.use(['jquery','layer',],function(){
+    var $ = layui.jquery
+       ,carousel = layui.carousel
+       ,layer = layui.layer;
+
+    $('.layui-btn').click(function(){
+      layer.msg('点击按钮');
+    })
+  })
+</script>
+</body></html>
