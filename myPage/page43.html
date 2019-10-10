@@ -73,9 +73,24 @@
     .searchDiv .layui-input-block{
       width: 180px;
     }
+    .search{
+      float: right;
+    }
+    .searchInput{
+      width: 250px;
+    }
+    .searchBtn{
+      width: 100px;
+    }
     @media screen and (max-width: 540px){
       .buyDiv{
         padding: 30px 10px;
+      }
+      .searchBtn{
+        width: auto;
+      }
+      .search{
+        float: none;
       }
     }
   </style>
@@ -87,6 +102,16 @@
 		<span class="layui-breadcrumb" lay-separator=">">
       <a href="">首页</a>
       <a><cite>域名交易一口价</cite></a>
+    </span>
+    <span class="search">
+      <div class="layui-inline">
+        <div class="layui-input-inline searchInput">
+          <input type="text" class="layui-input" placeholder="输入商标名/申请人名/注册号关键字" name="">
+        </div>
+        <div class="layui-input-inline searchBtn">
+          <span class="layui-btn layui-btn-danger layui-btn-sm">综合查询</span>
+        </div>
+      </div>
     </span>
     <div class="layui-row"> 
       <div class="layui-col-md12 buyDiv">
