@@ -10,9 +10,75 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <style>
-    
+    .tabContents .tabCards{
+      text-align: center;
+    }
+    .layui-input-block{
+      text-align: left;
+    }
+    .formDiv{
+      width: 50%;
+      margin: 0 auto;
+    }
+    .tabContents .tabCards .layui-form-label{
+      width: 150px;
+    }
+    .layui-form-item{
+      margin-bottom: 5px;
+    }
+    .layui-form-mid{
+      font-size: 12px;
+    }
+    .layui-input-block{
+      margin-left: 160px;
+    }
+    #uploadBtn{
+      color: #ffffff;
+      background-color: #5bc0de;
+      border-color: #46b8da;
+    }
+    .photoUploadDiv{
+      width: 90px !important;
+    }
+    .photoUpload{
+      float: left;
+      width: 80px;
+      height: 80px;
+    }
     @media screen and (max-width: 540px){
-      
+      .formDiv{
+        width: auto;
+      }
+      .tabContents .tabCards .layui-form-label{
+        width: 112px;
+      }
+      .layui-input-block{
+        margin-left: 5px;
+      }
+      .layui-form-item .layui-input-block .layui-input-inline{
+        float: left;
+        margin: 0;
+      }
+      .layui-form-item .layui-input-block .layui-input-inline+.layui-form-mid{
+        margin: 0;
+        float: left;
+        padding-bottom: 0px !important;
+      }
+      .eMailVerify{
+        width: 90px !important;
+      }
+      .marginLeft{
+        margin-left: 118px !important;
+      }
+      .modeName{
+        width: 110px !important;
+      }
+      .tipsLable{
+        display: none;
+      }
+      .locationSelect .layui-form-select{
+        width: 180px;
+      }
     }
   </style>
 </head>
@@ -21,7 +87,7 @@
   <div class="layui-container">
     <div class="layui-row"> 
       <div class="layui-col-md12 title">
-        <h5></h5>
+        <h5>域名模板</h5>
       </div>
     </div>
   </div>
@@ -32,12 +98,256 @@
       <div class="layui-col-md12 tabContents">
         <div class="tabNavs">
           <ul>
-            <li class="active"><a href=""></a></li>
-            <li class=""><a href=""></a></li>
+            <li class=""><a href="">域名模板</a></li>
+            <li class="active"><a href="">添加域名模板</a></li>
+            <li class=""><a href="">模板过户</a></li>
+            <li class=""><a href="">过户状态</a></li>
           </ul>
         </div>
-        <div class="tabCards">
-          
+        <div class="tabCards layui-form">
+          <p class="red">友情提示：系统根据中文信息生成的英文信息有可能不准确，请仔细检查中文姓名和公司对应的英文信息是否正确，以免影响审核结果</p>
+          <div class="layui-col-md12">
+            <div class="formDiv">
+              <div class="layui-form-item">
+                <label class="layui-form-label">模版类型：<b class="red">*</b></label>
+                <div class="layui-input-block">
+                  <input type="radio" name="moban" value="" title="个人" checked>
+                  <input type="radio" name="moban" value="" title="企业">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="layui-col-md12">
+            <div class="formDiv">
+              <div class="layui-form-item">
+                <label class="layui-form-label">模版名称：<b class="red">*</b></label>
+                <div class="layui-input-block">
+                  <div class="layui-input-inline">
+                    <input type="text" name="" class="layui-input modeName">
+                  </div>
+                  <div class="layui-form-mid layui-word-aux">3-20个字符</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="layui-col-md12">
+            <div class="formDiv">
+              <div class="layui-form-item">
+                <label class="layui-form-label">证件上传：<b class="red">*</b></label>
+                <div class="layui-input-block">
+                  <input type="radio" name="zhengjian" value="" title="自主上传" checked>
+                  <input type="radio" name="zhengjian" value="" title="选择已有证件">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="layui-col-md12">
+            <div class="formDiv">
+              <div class="layui-form-item">
+                <label class="layui-form-label">联系人(中文)<b class="red">*</b></label>
+                <div class="layui-input-block">
+                  <div class="layui-input-inline" style="width: 100px;">
+                    <input type="text" name="" placeholder="姓" class="layui-input">
+                  </div>
+                  <div class="layui-form-mid">-</div>
+                  <div class="layui-input-inline" style="width: 100px;">
+                    <input type="text" name="" placeholder="名" class="layui-input">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="layui-col-md12">
+            <div class="formDiv">
+              <div class="layui-form-item">
+                <label class="layui-form-label">联系人(英文)<b class="red">*</b></label>
+                <div class="layui-input-block">
+                  <div class="layui-input-inline" style="width: 100px;">
+                    <input type="text" name="" placeholder="姓" class="layui-input">
+                  </div>
+                  <div class="layui-form-mid">-</div>
+                  <div class="layui-input-inline" style="width: 100px;">
+                    <input type="text" name="" placeholder="名" class="layui-input">
+                  </div>
+                  <div class="layui-form-mid layui-word-aux marginLeft">姓和名要分开写</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="layui-col-md12">
+            <div class="formDiv">
+              <div class="layui-form-item">
+                <label class="layui-form-label">身份证号：<b class="red">*</b></label>
+                <div class="layui-input-block">
+                  <div class="layui-input-inline">
+                    <input type="text" name="" class="layui-input">
+                  </div>
+                  <div class="layui-form-mid layui-word-aux marginLeft">* 请填写有效身份证号</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="layui-col-md12">
+            <div class="formDiv">
+              <div class="layui-form-item">
+                <label class="layui-form-label">身份证正面图：<b class="red">*</b></label>
+                <div class="layui-input-block">
+                  <div class="layui-input-inline photoUploadDiv">
+                    <div class="photoUpload">
+                      <img src="./img/page61/empty2.jpg">
+                    </div>
+                  </div>
+                  <div class="layui-form-mid layui-word-aux marginLeft">
+                    <span id="uploadBtn" class="layui-btn layui-btn-sm">上传照片</span><br>
+                  注：图片要求jpg、jpge格式，大小60KB-700KB，否则会审核不通过哦</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="layui-col-md12">
+            <div class="formDiv">
+              <div class="layui-form-item">
+                <label class="layui-form-label">邮箱：<b class="red">*</b></label>
+                <div class="layui-input-block">
+                  <div class="layui-input-inline">
+                    <input type="text" name="" placeholder=""  class="layui-input">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="layui-col-md12">
+            <div class="formDiv">
+              <div class="layui-form-item">
+                <label class="layui-form-label">邮箱验证码：<b class="red">*</b></label>
+                <div class="layui-input-block">
+                  <div class="layui-input-inline eMailVerify">
+                    <input type="text" name="" placeholder=""  class="layui-input">
+                  </div>
+                  <div class="layui-form-mid layui-word-aux"><span class="layui-btn layui-btn-sm">发送邮箱验证码</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="layui-col-md12">
+            <div class="formDiv">
+              <div class="layui-form-item">
+                <label class="layui-form-label">省份-城市：<b class="red">*</b></label>
+                <div class="layui-input-block locationSelect">
+                  <div class="layui-input-inline">
+                    <select><option value="">请选择</option></select>
+                  </div>
+                  <div class="layui-input-inline marginLeft">
+                    <select><option value="">请选择</option></select>
+                  </div>
+                  <div class="layui-input-inline marginLeft">
+                    <select><option value="">请选择</option></select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="layui-col-md12">
+            <div class="formDiv">
+              <div class="layui-form-item">
+                <label class="layui-form-label">联系地址(中文)<b class="red">*</b></label>
+                <div class="layui-input-block">
+                  <div class="layui-input-inline" >
+                    <input type="text" name="" class="layui-input">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="layui-col-md12">
+            <div class="formDiv">
+              <div class="layui-form-item">
+                <label class="layui-form-label">联系地址(英文)<b class="red">*</b></label>
+                <div class="layui-input-block">
+                  <div class="layui-input-inline">
+                    <input type="text" name="" class="layui-input">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="layui-col-md12">
+            <div class="formDiv">
+              <div class="layui-form-item">
+                <label class="layui-form-label">邮箱编码：<b class="red">*</b></label>
+                <div class="layui-input-block">
+                  <div class="layui-input-inline">
+                    <input type="text" name="" class="layui-input">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="layui-col-md12">
+            <div class="formDiv">
+              <div class="layui-form-item">
+                <label class="layui-form-label">电话号码<b class="red">*</b></label>
+                <div class="layui-input-block">
+                  <div class="layui-input-inline" style="width: 60px;">
+                    <input type="text" name="" value="86" class="layui-input">
+                  </div>
+                  <div class="layui-form-mid">-</div>
+                  <div class="layui-input-inline" style="width: 60px;">
+                    <input type="text" name="" placeholder="区号" class="layui-input">
+                  </div>
+                  <div class="layui-form-mid">-</div>
+                  <div class="layui-input-inline marginLeft" style="width: 150px;">
+                    <input type="text" name="" placeholder="号码" class="layui-input">
+                  </div>
+                  <div class="layui-form-mid layui-word-aux marginLeft">例如：0371-56666365</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="layui-col-md12">
+            <div class="formDiv">
+              <div class="layui-form-item">
+                <label class="layui-form-label">传真号码<b class="red">*</b></label>
+                <div class="layui-input-block">
+                  <div class="layui-input-inline" style="width: 60px;">
+                    <input type="text" name="" value="86" class="layui-input">
+                  </div>
+                  <div class="layui-form-mid">-</div>
+                  <div class="layui-input-inline" style="width: 60px;">
+                    <input type="text" name="" placeholder="区号" class="layui-input">
+                  </div>
+                  <div class="layui-form-mid">-</div>
+                  <div class="layui-input-inline marginLeft" style="width: 150px;">
+                    <input type="text" name="" placeholder="号码" class="layui-input">
+                  </div>
+                  <div class="layui-form-mid layui-word-aux marginLeft">例如：0371-56666365</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="layui-col-md12">
+            <div class="formDiv">
+              <div class="layui-form-item">
+                <label class="layui-form-label tipsLable"></label>
+                <div class="layui-input-block">
+                  <p class="red">* 请按照正确的格式填写电话号码和传真号码，否则注册域名可能会失败哦！</p>
+                  <p class="red">* 没有电话和传真可填写手机号，格式为：0136-11112222</p>
+                  <p class="red">* 证件图片大小60KB-700KB,不能超过1M,否则审核可能不成功</p>
+                  <p class="red">* 系统根据中文信息生成的英文信息有可能不准确，请仔细检查中文姓名和公司对应的英文信息是否正确，以免影响审核结果</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="layui-col-md12">
+            <div class="formDiv">
+              <div class="layui-form-item">
+                <label class="layui-form-label"></label>
+                <div class="layui-input-block">
+                  <span class="layui-btn layui-btn-normal">确定提交</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         
       </div>
@@ -47,11 +357,15 @@
 </body>
 <script type="text/javascript" src="./layui/layui.js"></script>
 <script type="text/javascript">
-  layui.use(['jquery','layer','form',],function(){
+  layui.use(['jquery','layer','form','upload'],function(){
     var $ = layui.jquery
        ,form = layui.form
+       ,upload = layui.upload
        ,layer = layui.layer;
 
+    upload.render({
+      elem:'#uploadBtn'
+    })
     $('.layui-btn').click(function(){
       layer.msg('点击按钮');
     })

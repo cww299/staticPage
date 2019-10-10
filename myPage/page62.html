@@ -1,18 +1,72 @@
 <!--原网址：
-  
+  http://ym.qianxiyun.com/member/domainemail
 -->
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+  <title>免责修改邮箱</title>
   <link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
   <link rel="stylesheet" type="text/css" href="./pageTab.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <style>
-    
+    .topTips{
+      padding: 5px 15px 5px 20px;
+      margin-bottom: 10px;
+      color: #31708f;
+      border: solid 1px #b2d6e0;
+      background: #f7feff;
+    }
+    b{
+      font-weight: bold;
+    }
+    .bottomTips{
+      padding: 15px;
+      margin-bottom: 20px;
+      border: 1px solid transparent;
+      background-color: #fcf8e3;
+      border-color: #faebcc;
+      color: #8a6d3b;
+    }
+    .bottomTips p{
+      margin: 4px 0;
+    }
+    .formDiv{
+      border-bottom: dashed 1px #d1d1d1;
+      padding: 15px!important;
+      margin-bottom: 15px!important;
+      text-align: center;
+    }
+    .formContent{
+      width: 45%;
+      margin: 0 auto;
+      color: gray;
+    }
+    .tabContents .tabCards .layui-form-label{
+      width: 150px;
+    }
+    .layui-input-block{
+      margin-left: 160px;
+    }
+    .layui-form-mid{
+      padding: 2px 0 !important;
+    }
     @media screen and (max-width: 540px){
-      
+      .formContent {
+        width: auto;
+      }
+      .tabContents .tabCards .layui-form-label{
+        width: 125px;
+      }
+      .layui-input-block,.layui-input-inline,.layui-form-mid{
+        margin-left: 135px !important;
+      }
+      .layui-form-checkbox[lay-skin=primary] span{
+        padding-right: 0;
+      }
+      .tabContents .tabNavs li{
+        width: 40%;
+      }
     }
   </style>
 </head>
@@ -21,7 +75,7 @@
   <div class="layui-container">
     <div class="layui-row"> 
       <div class="layui-col-md12 title">
-        <h5></h5>
+        <h5>免责修改邮箱</h5>
       </div>
     </div>
   </div>
@@ -32,14 +86,62 @@
       <div class="layui-col-md12 tabContents">
         <div class="tabNavs">
           <ul>
-            <li class="active"><a href=""></a></li>
-            <li class=""><a href=""></a></li>
+            <li class="active"><a href="">免责修改邮箱</a></li>
+            <li class=""><a href="">免责修改邮箱记录</a></li>
           </ul>
         </div>
         <div class="tabCards">
-          
+          <div class="topTips">
+            <b>请点击下载：</b>域名免责修改注册邮箱声明书
+          </div>
+          <div class="formDiv">
+            <div class="layui-form formContent">
+              <div class="layui-form-item">
+                <label class="layui-form-label">域名： <b class="red">*</b></label>
+                <div class="layui-input-block">
+                  <input type="text" name="" class="layui-input">
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label">原始邮箱： <b class="red">*</b></label>
+                <div class="layui-input-block">
+                  <input type="text" name="" class="layui-input">
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label">新邮箱： <b class="red">*</b></label>
+                <div class="layui-input-block">
+                  <input type="text" name="" class="layui-input">
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label">账户人证件： <b class="red">*</b></label>
+                <div class="layui-input-inline">
+                  <input type="text" name="" class="layui-input">
+                </div>
+                <div class="layui-form-mid layui-word-aux">
+                  <span id="uploadBtn" class="layui-btn layui-btn-sm">上传照片</span>
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label">免责书扫面件： <b class="red">*</b></label>
+                <div class="layui-input-inline">
+                  <input type="text" name="" class="layui-input">
+                </div>
+                <div class="layui-form-mid layui-word-aux">
+                  <span id="uploadBtn1" class="layui-btn layui-btn-sm">上传照片</span>
+                </div>
+              </div>
+              <p><span class="layui-btn layui-btn-normal">立即提交</span></p>
+            </div>
+          </div>
+          <div class="bottomTips">
+            <b>温馨提示：</b><br>
+            <p>1、当原域名注册邮箱无法验证时，可以通过免责功能进行修改；</p>
+            <p>2、请如实填写域名免责修改注册邮箱声明书；</p>
+            <p>3、请上传清晰的域名免责修改注册邮箱声明书扫描件；</p>
+          </div>
         </div>
-        
       </div>
     </div>
   </div>
@@ -47,17 +149,21 @@
 </body>
 <script type="text/javascript" src="./layui/layui.js"></script>
 <script type="text/javascript">
-  layui.use(['jquery','layer','form',],function(){
+  layui.use(['jquery','layer','form','upload'],function(){
     var $ = layui.jquery
        ,form = layui.form
+       ,upload = layui.upload
        ,layer = layui.layer;
-
+    form.render();
+    upload.render({
+      elem:'#uploadBtn'
+    })
+    upload.render({
+      elem:'#uploadBtn1'
+    })
     $('.layui-btn').click(function(){
       layer.msg('点击按钮');
     })
-    form.render();
-
-    
   })
 </script>
 </html>
