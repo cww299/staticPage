@@ -291,6 +291,12 @@
     .smallDivIonAndTitle .tenOfOne:hover{
       background: #cd1f1f;
     }
+    .smallDivIonAndTitle .tenOfOne:hover h1{
+      color: white;
+    }
+    .smallDivIonAndTitle .tenOfOne:hover p{
+      color: white !important;
+    }
     .smallDivIonAndTitle .tenOfOne .iconBox{
       width: 94px;
       height: 94px;
@@ -787,16 +793,6 @@
       //,anim: 'updown' //切换动画方式
     });
     form.render();
-
-    $('.tenOfOne').mouseover(function(obj){
-      $(obj.target).find('h1').css('color','white');
-      $(obj.target).find('.price').css('color','white');
-      $(obj.target).find('.info').css('color','white');
-    }).mouseover(function(obj){
-      $(obj.target).find('h1').css('color','#333');
-      $(obj.target).find('.price').css('color','#ee0003');
-      $(obj.target).find('.info').css('color','#777');
-    })
 
     $('.layui-btn').click(function(){
       layer.msg('点击按钮');
