@@ -10,6 +10,9 @@
   	<meta charset="UTF-8">
   	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   	<style type="text/css">
+  		.bgImg img{
+  			max-width: 100%;
+  		}
   		.titleIcon{
   			margin: 20px 0px;
   			text-align: center;
@@ -304,6 +307,9 @@
 			.why .whyRegister h1{
 				font-size: 30px;
 			}
+			.bgImg img{
+				height: 150px;
+			}
   		}
   		@media screen and (max-width: 330px){
 			.why .whyRegister h1 {
@@ -314,13 +320,8 @@
 </head>
 <body>
 <div>
-  	<div class="layui-carousel imgCarousel" id="imgCarousel">
-	    <div carousel-item>
-	  	  <div><img src="./img/page38/cjmd_1.jpg"></div>
-	  	  <div><img src="./img/page38/cjmd_1.jpg"></div>
-	  	  <div><img src="./img/page38/cjmd_1.jpg"></div>
-	  	  <div><img src="./img/page38/cjmd_1.jpg"></div>
-		</div>
+  	<div class="layui-carousel bgImg">
+	  	<img src="./img/page39/banner_sbzc.jpg">
   	</div>
 </div>
 
@@ -558,17 +559,10 @@
 </body>
 <script type="text/javascript" src="./layui/layui.js"></script>
 <script type="text/javascript">
-  layui.use(['jquery','layer','carousel'],function(){
+  layui.use(['jquery','layer',],function(){
     var $ = layui.jquery
        ,carousel = layui.carousel
        ,layer = layui.layer;
-
-    carousel.render({
-      elem: '#imgCarousel'
-      ,width: '100%' //设置容器宽度
-      ,arrow: 'always' //始终显示箭头
-      //,anim: 'updown' //切换动画方式
-    });
 
     $('.layui-btn').click(function(){
       layer.msg('点击按钮');
