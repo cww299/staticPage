@@ -11,7 +11,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <style>
     .topTips{
-      padding: 15px 15px 30px 70px
+      padding: 15px 15px 30px 70px;
       margin-bottom: 10px;
       background: #fff9e5 url(./img/page64/ym_tips.gif) no-repeat 16px 22px;
       border: 1px solid #f5ead2;
@@ -88,6 +88,9 @@
       .layui-form-item .layui-input-inline+.layui-form-mid{
         text-align: left;
       }
+      .checkboxLable{
+        margin-left: 0 !important
+      }
     }
   </style>
 </head>
@@ -137,7 +140,7 @@
                   <input type="text" placeholder="请输入您的预算" class="layui-input" name="">
                 </div>
                 <div class="layui-form-mid layui-word-aux">
-                  <a id="tipSa"><img src="./img/page64/ym_tips.gif"></a>
+                  <a id="tipsIcon"><img src="./img/page64/ym_tips.gif"></a>
                 </div>
               </div>
               <div class="layui-form-item">
@@ -181,7 +184,7 @@
               </div>
               <div class="layui-form-item">
                 <label class="layui-form-label"></label>
-                <div class="layui-input-block">
+                <div class="layui-input-block checkboxLable">
                   <input type="checkbox" name="" value=""  lay-skin="primary" title="我已阅读并同意 <a href='' class='blue'>《千喜云域名经纪中介服务协议》</a>">
                 </div>
               </div>
@@ -216,6 +219,16 @@
        ,upload = layui.upload
        ,layer = layui.layer;
     form.render();
+
+    var tips;
+    $('#tipsIcon').mouseover(function(obj){
+      tips = layer.tips('域名经纪为有偿服务，若交易成功，我们将收取最终成交价格的<b style="color:#b81a1a">10%</b>作为服务费，最低<b style="color:#b81a1a">200</b>元，买卖双方可协商各自比例。',$(obj.target).parent(), {
+          tips: [3, '#78BA32'],
+        });
+    }).mouseout(function(){
+      layer.close(tips);
+    })
+    
     upload.render({
       elem:'#uploadBtn'
     })
