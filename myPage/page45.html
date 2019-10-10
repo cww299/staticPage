@@ -1677,49 +1677,52 @@
                       29.1.11 一种主要的颜色  
  
 `.split('-  +');
-var contentData = [];
-for(var k in data){
-  var d = data[k].trim();
-  d = d.split(/[\n]/)
-  if(d.length==1 && d[0].split(' ')[0]%1==0){ //如果长度只有1，且标题为正整数。则为第一级目录
-    if(d=='')
-      continue;
-    contentData[contentData.length] = {
-      id:k,
-      title:d,
-      children:[],
-    }
-  }else{
-    for(var j in d){
-      var title = d[j].trim();
-      if(d[j].trim().split(' ')[0].replace(/[\r\n]/g,"")=='')
+  var contentData = [];
+  //以下方法是根据字符串数据解析成相应的树形结构数据。
+  //用于渲染树形菜单的数据。主要根据每个标题前的序号来区分为几级菜单
+  //只有一个数字为一级菜单x.x为二级，x.x.x为三级
+  //以下方法用于解析上述数据，无特殊情况建议不要改动
+  for(var k in data){
+    var d = data[k].trim(); //去除前后空格
+    d = d.split(/[\n]/); //根据换行符分割。可输出d;查看分割后的数据方便理解以下解析
+    if(d.length==1 && d[0].split(' ')[0]%1==0){ //如果长度只有1，且标题为正整数。则为第一级目录
+      if(d=='') //如果为空，则跳过
         continue;
-      if(d[j].trim().split(' ')[0].split('.').length<3){
-        contentData[contentData.length-1].children[contentData[contentData.length-1].children.length] = {
-          id:k*j,
-          title: title,
-          children:[],
-        }
-      }else{
-        contentData[contentData.length-1].children[contentData[contentData.length-1].children.length-1].children[j-2] = {
-          id:k*j,
-          title:title,
-          children:[],
+      contentData[contentData.length] = { //将该一级放到contentData中
+        id:k,
+        title:d,
+        children:[],
+      }
+    }else{  //如果不是一级目录
+      for(var j in d){
+        var title = d[j].trim();
+        if(d[j].trim().split(' ')[0].replace(/[\r\n]/g,"")=='')
+          continue;
+        if(d[j].trim().split(' ')[0].split('.').length<3){//如果分割.后长度小于3.说明为二级。因为只有一个. 即为x.x
+          contentData[contentData.length-1].children[contentData[contentData.length-1].children.length] = {
+            id:k*j,
+            title: title,
+            children:[],
+          }//放到当前contentData下的children
+        }else{  //其他为三级目录
+          contentData[contentData.length-1].children[contentData[contentData.length-1].children.length-1].children[j-2] = {
+            id:k*j,
+            title:title,
+            children:[],
+          }
         }
       }
     }
   }
-    
-}
 
-    tree.render({
-      elem:'.contentOfCard',
-      data: contentData,
-    })
-    element.render();
-    $('.layui-btn').click(function(){
-      layer.msg('点击按钮');
-    })
+  tree.render({
+    elem:'.contentOfCard',
+    data: contentData,
   })
+  element.render();
+  $('.layui-btn').click(function(){
+    layer.msg('点击按钮');
+  })
+})
 </script>
 </html>

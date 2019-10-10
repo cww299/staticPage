@@ -10,9 +10,44 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <style>
-    
+    .safeSetTitle{
+      font-weight: bold;
+      font-size:18px;
+      margin-right: 15px;
+    }
+    .smallTabContent{
+      padding: 15px 25px;
+      margin-top: 20px;
+    }
+    .smallTabNav{
+      width: 100%;
+      height: 32px;
+      background: #f0f6fc;
+      border: none;
+      overflow: hidden;
+      border-left: 1px solid #c9c9c994;
+    }
+    .smallTabNav li{
+      float: left;
+      margin-right: -3px;
+    }
+    .smallTabNav a{
+      padding: 6px 25px;
+      margin-left: 0;
+      font-size: 14px;
+      color: #337ab7;
+      float: left;
+    }
+    .smallTabNav a.active{
+      color: #337ab7;
+      border-bottom-color: transparent;
+      background: #fff;
+      border-top: 2px solid #337ab7;
+    }
     @media screen and (max-width: 540px){
-      
+      .smallTabContent{
+        padding: 0;
+      }
     }
   </style>
 </head>
@@ -37,7 +72,21 @@
           </ul>
         </div>
         <div class="tabCards">
-          
+          <div class="smallTab">
+            <div class="smallTabNav">
+              <ul>
+                <li><a href="" class="active">安全设置</a></li>
+                <li><a href="">默认设置</a></li>
+              </ul>
+            </div>
+            <div class="smallTabContent">
+              <div class="smallTabCard">
+                <span class="safeSetTitle">安全设置</span>
+                <span class="layui-btn layui-btn-sm layui-btn-normal">保存当前设置</span>
+                <table id="tableData" lay-filter="tableData"></table>
+              </div>
+            </div>
+          </div>
         </div>
         
       </div>
@@ -47,15 +96,52 @@
 </body>
 <script type="text/javascript" src="./layui/layui.js"></script>
 <script type="text/javascript">
-  layui.use(['jquery','layer','form',],function(){
+  layui.use(['jquery','layer','form','table'],function(){
     var $ = layui.jquery
        ,form = layui.form
+       ,table = layui.table
        ,layer = layui.layer;
 
     $('.layui-btn').click(function(){
       layer.msg('点击按钮');
     })
     form.render();
+    var data = [
+      { name:'域名注册、续费', email:-1,safe:0,phone:0, },
+      { name:'PUSH发起', email:-1,safe:1,phone:1, },
+      { name:'PUSH接收', email:-1,safe:1,phone:1, },
+      { name:'域名转出', email:-1,safe:1,phone:1, },
+      { name:'域名解析', email:-1,safe:0,phone:0, },
+      { name:'修改DNS', email:-1,safe:0,phone:0, },
+      { name:'修改登录密码', email:-1,safe:1,phone:0, },
+      { name:'修改设置中心', email:0,safe:0,phone:0, },
+      { name:'修改安全码(至少选择一项)', email:0,safe:-1,phone:-1, },
+      { name:'修改账户信息', email:-1,safe:1,phone:1, },
+      { name:'数据下载', email:0,safe:0,phone:0, },
+      { name:'域名过户', email:-1,safe:1,phone:1, },
+      { name:'账户提现', email:-1,safe:0,phone:0, },
+      { name:'域名交易', email:0,safe:0,phone:0, },
+    ];
+    table.render({
+      elem:'#tableData',
+      data:data,
+      limit: data.length,
+      cols:[[
+        { title:'验证方式', field:'name', },
+        { title:'邮箱验证', field:'',  align:'center', templet:getCheckbox('email'), },
+        { title:'安全码验证', field:'', align:'center', templet:getCheckbox('safe'),},
+        { title:'手机短信验证', field:'', align:'center', templet:getCheckbox('phone'),},
+      ]]
+
+    })
+    function getCheckbox(field){
+      return function(d){
+        if(d[field]==-1)
+          return '';
+        var checked = d[field]?'checked':'';
+        return '<input type="checkbox" name="" title="" lay-skin="primary" '+checked+'>';
+      }
+    }
 
     
   })
