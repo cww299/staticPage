@@ -23,6 +23,12 @@
       border-top: 1px dashed #8080808a;
       margin-bottom: 5px;
     }
+    .frngexian>p{
+      padding-top: 10px;
+    }
+    .frngexian>p>.layui-btn-danger{
+      margin-left: 35%;
+    }
     .layui-none{
       font-size: 17px;
       padding: 150px 0!important;
@@ -72,6 +78,9 @@
       .layui-none{
         padding: 50px 0!important;
       }
+      .frngexian>p>.layui-btn-danger{
+        margin-left: 0;
+      }
     }
     
   </style>
@@ -102,7 +111,6 @@
               <li class=""><a href="">即将到期</a></li>
               <li class=""><a href="">已经过期</a></li>
               <li class=""><a href="">注册失败</a></li>
-
             </ul>
           </div>
           <div class="tabCards layui-form">
@@ -234,7 +242,12 @@
                 </div>
               </div>
             </div>
-            <div class="layui-col-md12 frngexian"></div>
+            <div class="layui-col-md12 frngexian">
+              <p>当前条件下，共有<b class="red">(0)</b>个域名
+                <span class="layui-btn layui-btn-danger">搜索</span>
+                <span class="layui-btn layui-btn-warm">导出</span>
+              </p>
+            </div>
             <div class="layui-col-md12 resultDiv">
               <table id="resultTable" lay-filter="resultTable"></table>
             </div>
@@ -251,37 +264,11 @@
               <b>温馨提示：</b>
               <p>国际域名到期30天，会进入高价赎回期。cn域名到期3天，自动删除。请尽量在域名到期前续费，以免影响域名正常使用。</p>
             </div>
-
           </div>
       </div>
     </div>
   </div>
 </div>
-<div>
-  <div class="layui-container">
-    <div class="layui-row"> 
-      <div class="layui-col-md6">
-          
-      </div>
-      <div class="layui-col-md6">
-          
-      </div>
-    </div>
-  </div>
-</div>
-<div>
-  <div class="layui-container">
-    <div class="layui-row"> 
-      <div class="layui-col-md6">
-          
-      </div>
-      <div class="layui-col-md6">
-          
-      </div>
-    </div>
-  </div>
-</div>
-
 </body>
 <script type="text/javascript" src="./layui/layui.js"></script>
 <script type="text/javascript">

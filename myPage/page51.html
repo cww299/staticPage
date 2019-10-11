@@ -14,6 +14,30 @@
   		color: gray;
   		margin-top: 10px;
   	}
+  	.iconA{
+  		width: 16px;
+	    height: 16px;
+	    display: inline-block;
+	    margin: 4px;
+	    background-image: url(./img/page51/center_icon.png);
+	    vertical-align: middle;
+	    background-repeat: no-repeat;
+	    background-position: -59px -30px;
+	    vertical-align: middle;
+	    position: relative;
+	    margin-left: 10px;
+	    line-height: 15px;
+  	}
+  	.infoNumber{
+	    background: #FF5722;
+	    padding: 0 3px;
+	    font-size: 12px;
+	    margin-left: 13px;
+	    margin-top: -6px;
+	    float: left;
+	    border-radius: 6px;
+	    color: white;
+  	}
     .vipInfo{
       background: white;
       border: solid 1px #d1d1d1;
@@ -21,9 +45,16 @@
       padding: 20px!important;
     }
     .vipInfo .leftDiv,.rightDiv{
-    	float: left;
     	padding: 30px;
-    	width: 45%;
+    }
+    .vipInfo .leftDiv>p{
+    	line-height: 28px;
+    }
+    .vipInfo .leftDiv>a{
+    	color: #337ab7;
+    }
+    .vipInfo .rightDiv tr{
+    	line-height: 25px;
     }
    	.vipInfo .leftDiv{
    		border-right: dashed 1px #ccc;
@@ -192,8 +223,17 @@
     		float: left;
     	}
     	.marginR{
-    		    margin-right: 5px
+    		margin-right: 5px
     	}
+    	.newRight{
+    		padding-bottom: 20px;
+    	}
+    	.rightDiv>span{
+
+    	}
+     	.rightDiv,.vipInfo{
+     		padding: 10px !important;
+     	}
 
     }
     @media screen and (min-width: 1200px){
@@ -217,12 +257,12 @@
   <div class="layui-container">
     <div class="layui-row"> 
       <div class="layui-col-md12 vipInfo">
-        <div class="leftDiv">
-       	  <h2>会员ID：13091</h2>
+        <div class="leftDiv layui-col-md6">
+       	  <p>会员ID：13091<a class="iconA"><span class="infoNumber">0</span></a></p>
           <p>您好,您的会员等级为：普通会员</p>
           <a>安全设置</a>&nbsp;|&nbsp;<a>安全退出</a>
         </div>
-        <div class="rightDiv">
+        <div class="rightDiv layui-col-md6">
           <table>
           	<tr>
           		<td>账户余额：</td>
