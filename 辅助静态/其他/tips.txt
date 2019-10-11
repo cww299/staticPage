@@ -1,0 +1,46 @@
+
+1.拦截所有点击事件 $(document).on('mousedown', '.layui-unselect', function (event) { });
+
+2 js数组删元素arr.splice(index,deleteNumber)
+
+3 js分割字符串 str.split(',')
+
+4 jquery判断元素是否存在 $(elem).length>0
+
+5 判断对象是否有某属性 obj.hasOwnProperty('attr') 
+
+6 输入框按钮监听   $('#dataInput').bind('keypress',function(event){  if(event.keyCode == "13")      {   }    });
+
+7 jQuery.siblings() .next()  .prev()           //查找兄弟节点，不分前后
+
+8 鼠标移入移出事件  mouseover mouseout
+
+9 打印
+  function printpage(myDiv){    
+			var printHtml = document.getElementById(myDiv).innerHTML;
+			var wind = window.open("",'newwindow', 'height=800, width=1500, top=100, left=100, toolbar=no,                             menubar=no, scrollbars=no, resizable=no,location=n o, status=no');
+			wind.document.body.innerHTML = printHtml;
+			wind.print();
+			return false;  } 
+
+10 复选框对应值bug，重新打开弹窗，对应值修改后，没有对初始值重新默认造成bug
+
+11 监听键盘按键  document.onkeydown = function(event) {  } 
+
+12 jquery删除属性$('#txt').removeAttr("disabled");
+
+13 对象转json  JSON.stringify()
+
+14 查找父元素第一个 $().closest('tr')， 兄弟siblings
+
+15 数组合并 c = a.concat(b)  // a b本身不改变
+
+16 arr.splice(0,0,elem)   //指定位置插入数组，位置、删除个数、元素
+
+17 失去焦点事件与点击事件冲突
+   给失去焦点事件延迟执行
+	$("").blur(function(event){
+    		setTimeout(function () {
+       	 		....
+    		}, 300);
+	});

@@ -1,0 +1,138 @@
+nginx命令
+进入所在目录
+启动: start nginx
+停止: nginx.exe -s stop
+重启: nginx.exe -s reload
+版本: nginx.exe -v
+
+git fork更新作者代码
+https://blog.csdn.net/zhongzunfa/article/details/80344585
+
+git 上传文件夹
+https://blog.csdn.net/m0_37273490/article/details/80517057
+git push代码
+https://blog.csdn.net/yulijuanxmu/article/details/80525122
+
+前后分离demo
+https://blog.csdn.net/qq_28379809/article/details/87995524
+
+面试
+https://juejin.im/post/5cab0c45f265da2513734390
+
+js类型转换
+https://cnodejs.org/topic/5d499b14697873456c6bb6a3
+
+requery.js跟common.js
+
+正则表达式
+https://www.zhihu.com/question/48219401/answer/742444326
+
+原型模型：所有属性共享。（所有对象共享方法是最佳状态，但不同的对象有不同的属性分别）
+构造函数模型：所有方法属性不共享，每个对象都会复制一份。
+组合模式：原型+构造函数结合
+     属性不共享，方法共享
+动态原型创建对象。判断对象是否有某一方法，没有则对原型对象添加该方法
+https://blog.csdn.net/u012468376/article/details/53121081
+原型链
+http://louiszhai.github.io/2015/12/15/prototypeChain/
+
+
+前后端分离
+https://blog.csdn.net/dream_cat_forever/article/details/80709503
+前端vue框架:
+配置config/index.js
+    设置本地端口 8081，
+    设置代理 proxyTable:{   //设置中间层nginx后可去除该代理
+        '/api':{
+           traget:'http://localhost:8820/', //目标接口
+           pathRewrite: {"^/api":""},  //重写接口
+        }
+    }
+中间层nginx
+配置conf/nginx.conf
+    server{
+       listen 8088; //本地监听端口
+       ......
+       location /{   //监听已/为开头的访问。代理至前端端口
+          proxy_pass http://127.0.0.1:8081,
+       }
+       location /api{  //监听已/api为开头的访问。代理至前端端口
+          proxy_pass http://127.0.0.1:8820,
+          proxy_set_header Host $http_host;
+       }
+    }
+后端springboot
+配置resources/application.properties
+	server.port=8820 
+
+js模块化规范
+1.CommonJS（同步加载模块）
+    服务器端使用，因为模块存放在服务器端
+    客户端使用时如果网速慢会造成阻塞
+2.AMD（异步加载模块）
+    客户端使用（提前执行）
+3.CMD（异步加载模块）
+    依赖就近、延迟执行（什么时候使用什么时候引入）
+4.ES6模块化
+    import
+模块化实现原理：https://www.jb51.net/article/126093.htm
+模块化规范：https://segmentfault.com/a/1190000015420561
+
+
+vuex
+https://baijiahao.baidu.com/s?id=1618794879569468435&wfr=spider&for=pc
+
+后端：
+不使用框架：
+      1.引入http模块
+      2.创建服务器 http.createServer(function(req,res){}).listen(8888);		
+      3.启动服务node server.js
+      路由：1.编写服务器代码server.js。启动函数(start(route))
+	    2.编写入口index.js文件。引入server与router模块。启动server调用router(server.start(router))
+使用express框架：
+	1.引入express模块，并且实例化对象app=express()
+	2.监听地址链接
+	    app.get('/',function(req,res){});(use,get区别：ues可以回调函数也可是是路由，get只能是回调函数）
+	3.监听端口 app.listen(8081,function(){})
+
+前端：
+不使用vue-cli脚手架：
+
+使用vue-cli脚手架：	
+
+
+nodejs+vue-cli+mysql+express：
+	https://segmentfault.com/a/1190000012186439?utm_source=tag-newest
+        https://segmentfault.com/a/1190000009246144?share_user=1030000008125042
+过程：1.使用vue-cli初始化项目 vue init webpack my-blog
+      2.安装项目需要的包
+         element-ui\vuex\axios\mysql\express\body-parser\node-sass\sass\loader
+      3.调用后台接口axios
+         如果js文件引入element
+         编写router\index.js文件，配置前端路由
+	 编写组件（调用axios方法。。。）
+      4.使用express框架编写服务器代码
+      5.设置代理（跨域）
+
+后台模块化：db.js 数据库连接配置
+            api.js 连接数据库，各种方法实现
+            sqlMap.js sql语句
+            router.js 后端 express 路由配置
+            index.js 后端入口文件，启动后端服务
+
+
+------------JAVA---------------------------------------------------
+
+springboot
+
+java代理模式+反射
+https://blog.csdn.net/briblue/article/details/73928350
+
+文件 new File("d:/1.txt")
+流 stream
+字节流     FileInputStream    FileOutStream        new FileInputStream(file)
+数据流     DataInputStream    DataOutStream        new DataInputStream(fis)		//基于字节流
+对象流     ObjectInputStream  //同上
+字符流     FileReader   FileWriter            new FileReader(file)
+缓冲流     BufferedReader    PrintWriter      new BufferedReader( new FileReader(file) ) //基于字符流
+
