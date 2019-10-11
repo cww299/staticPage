@@ -88,6 +88,9 @@
       margin-top: 10px;
     }
     @media screen and (max-width: 540px){
+      .isSmall{
+        display: none;
+      }
       .content .contentTitle{
         padding:10px;
       }
@@ -130,6 +133,7 @@
 </head>
 <body>
 <div>
+  <span class="isSmall"></span>
   <div class="layui-container marginTop">
     <span class="grayb location"><i class="layui-icon layui-icon-location"></i>当前位置：</span>
     <span class="layui-breadcrumb" lay-separator=">">
@@ -1729,6 +1733,7 @@
     }
   }
   var allTips = {};
+  var isSmall = $('.isSmall').css('display')=='none'?1:4;
   tree.render({
     elem:'.contentOfCard',
     data: contentData,
@@ -1736,8 +1741,8 @@
       var tips;
       if(obj.data.tips!=''){
         if(obj.state=='open'){
-          tips = layer.tips(obj.data.tips, $(obj.elem).find('div'),
-            { tips:[1,'#78BA32'],time:0,tipsMore: true});
+          tips = layer.tips(obj.data.tips, $(obj.elem).find('div').find('span.layui-tree-txt'),
+            { tips:[isSmall,'#78BA32'],time:0,tipsMore: true,});
           allTips['id'+obj.data.id] = tips;
         }else{
           layer.close(allTips['id'+obj.data.id]);
