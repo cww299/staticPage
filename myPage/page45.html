@@ -1682,42 +1682,69 @@
   //用于渲染树形菜单的数据。主要根据每个标题前的序号来区分为几级菜单
   //只有一个数字为一级菜单x.x为二级，x.x.x为三级
   //以下方法用于解析上述数据，无特殊情况建议不要改动
+  var id = 1;
   for(var k in data){
     var d = data[k].trim(); //去除前后空格
     d = d.split(/[\n]/); //根据换行符分割。可输出d;查看分割后的数据方便理解以下解析
     if(d.length==1 && d[0].split(' ')[0]%1==0){ //如果长度只有1，且标题为正整数。则为第一级目录
       if(d=='') //如果为空，则跳过
         continue;
+      var tips = '';
+      if(d[0].split('注:').length>1){
+        tips = d[0].split('注:')[1];
+        d = d[0].split('注:')[0];
+      }
       contentData[contentData.length] = { //将该一级放到contentData中
-        id:k,
+        id: id++,
         title:d,
         children:[],
+        tips:tips,
       }
     }else{  //如果不是一级目录
       for(var j in d){
         var title = d[j].trim();
         if(d[j].trim().split(' ')[0].replace(/[\r\n]/g,"")=='')
           continue;
+        var tips = '';
+        if(title.split('注:').length>1){
+          tips = title.split('注:')[1];
+          title = title.split('注:')[0];
+        }
         if(d[j].trim().split(' ')[0].split('.').length<3){//如果分割.后长度小于3.说明为二级。因为只有一个. 即为x.x
           contentData[contentData.length-1].children[contentData[contentData.length-1].children.length] = {
-            id:k*j,
+            id: id++,
             title: title,
             children:[],
+            tips:tips,
           }//放到当前contentData下的children
         }else{  //其他为三级目录
           contentData[contentData.length-1].children[contentData[contentData.length-1].children.length-1].children[j-2] = {
-            id:k*j,
+            id: id++,
             title:title,
             children:[],
+            tips:tips,
           }
         }
       }
     }
   }
-
+  var allTips = {};
   tree.render({
     elem:'.contentOfCard',
     data: contentData,
+    click: function(obj){
+      var tips;
+      if(obj.data.tips!=''){
+        if(obj.state=='open'){
+          tips = layer.tips(obj.data.tips, $(obj.elem).find('div'),
+            { tips:[1,'#78BA32'],time:0,tipsMore: true});
+          allTips['id'+obj.data.id] = tips;
+        }else{
+          layer.close(allTips['id'+obj.data.id]);
+        }
+      }
+      //console.log(obj.elem); 
+    }
   })
   element.render();
   $('.layui-btn').click(function(){
