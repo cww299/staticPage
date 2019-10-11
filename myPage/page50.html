@@ -360,24 +360,33 @@
       background-position: -600px -235px;
     }
     .buyDiv>div{
-      background: white;
-      height: 239px;
+      height: 500px;
       padding: 10px 20px 60px;
       margin-bottom: 20px;
       width: 18% !important;
+    }
+    .buyDiv .leftDiv{
+      padding: 0;
+    }
+    .buyDiv .leftDiv>div{
       box-shadow: 0 2px 2px 2px rgba(0,0,0,0.05);
+      background: white;
+      padding: 15px;
+      margin-bottom: 10px;
+      height: 42%;
     }
-    .buyDiv .leftTop{
+    .buyDiv .leftDiv .leftTop{
       border-top: solid 3px #c8a33c;
-     
     }
-    .buyDiv .leftBottom{
+    .buyDiv .leftDiv .leftBottom{
        border-top: 3px solid red;
     }
     .buyDiv .rightDiv{
+      background: white;
       height: 500px;
       width: 80% !important;
       float: right;
+      box-shadow: 0 2px 2px 2px rgba(0,0,0,0.05);
     }
     .borderTop{
       border-top: 1px solid #80808096;
@@ -698,23 +707,26 @@
         <div class="mean"><i class="menuIcon01"></i>海量商标资源，专业团队服务！&nbsp;&nbsp;&nbsp;&nbsp;<i class="menuIcon02"></i>快速设置买卖，省事省力省钱！</div>
       </div>
       <div class="layui-row layui-col-space10 buyDiv">
-        <div class="layui-col-md2 leftTop">
-          <h1>我要<b class="red">买商标</b></h1>
-          <p class="borderTop">
-            优质商标 海量选择<br>
-            品牌保护 投资首选
-          </p>
-          <span class="layui-btn layui-btn-warm">去购买</span>
+        <div class="layui-col-md2 leftDiv">
+          <div class="leftTop">
+            <h1>我要<b class="red">买商标</b></h1>
+            <p class="borderTop">
+              优质商标 海量选择<br>
+              品牌保护 投资首选
+            </p>
+            <span class="layui-btn layui-btn-warm">去购买</span>
+          </div>
+          <div class="leftBottom">
+            <h1>我要<b class="red">卖商标</b></h1>
+            <p class="borderTop">
+              优质商标 海量选择<br>
+              品牌保护 投资首选
+            </p>
+            <span class="layui-btn layui-btn-danger">去发布</span>
+          </div>
         </div>
         <div class="layui-col-md10 rightDiv"></div>
-        <div class="layui-col-md2 leftBottom">
-          <h1>我要<b class="red">卖商标</b></h1>
-          <p class="borderTop">
-            优质商标 海量选择<br>
-            品牌保护 投资首选
-          </p>
-          <span class="layui-btn layui-btn-danger">去发布</span>
-        </div>
+        
 
       </div>
   </div>
