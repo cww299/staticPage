@@ -47,6 +47,14 @@
     }
     .layui-input-block{
       margin-left: 160px;
+      text-align: left;
+    }
+    .otherInput{
+      width: 100px;
+      display: inline-block;
+    }
+    .checkboxLable{
+      padding: 14px 5px 0px 5px !important;
     }
     @media screen and (max-width: 540px){
       .formContent {
@@ -54,12 +62,22 @@
       }
       .tabContents .tabCards .layui-form-label{
         width: 125px;
+        padding: 9px 0;
       }
       .layui-input-block {
         margin-left: 135px;
       }
       .layui-form-checkbox[lay-skin=primary] span{
         padding-right: 0;
+      }
+      .formDiv{
+        padding: 15px 0!important;
+      }
+      .layui-form-item .layui-form-checkbox{
+        width: 80%;
+      }
+      .smallCheck+div{
+        width: 30% !important;
       }
     }
   </style>
@@ -103,13 +121,13 @@
                 </div>
               </div>
               <div class="layui-form-item">
-                <label class="layui-form-label">转出原因： <b class="red">*</b></label>
+                <label class="layui-form-label checkboxLable">转出原因： <b class="red">*</b></label>
                 <div class="layui-input-block">
                   <input type="checkbox" name="" title="续费价格太高" lay-skin="primary" >
                   <input type="checkbox" name="" title="解析不稳定" lay-skin="primary"> 
                   <input type="checkbox" name="" title="功能不够" lay-skin="primary" > 
-                  <input type="checkbox" name="" title="其他" lay-skin="primary" > 
-                  <input type="text" class="layui-input" style="width: 60px;display: inline-block;">
+                  <input type="checkbox" name="" title="其他" lay-skin="primary" class="smallCheck"> 
+                  <input type="text" class="layui-input otherInput">
                 </div>
               </div>
               <p><span class="layui-btn layui-btn-normal">确定提交</span></p>

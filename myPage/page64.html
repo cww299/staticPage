@@ -63,12 +63,17 @@
     .layui-form-item{
       margin-bottom: 5px;
     }
+    @media screen and (max-width: 1200px){
+      .formContent {
+        width: 65%;
+      }
+    }
     @media screen and (max-width: 540px){
       .formContent {
         width: auto;
       }
       .tabContents .tabCards .layui-form-label{
-        width: 125px;
+        width: 90px;
         overflow: visible;
       }
       .textareaDiv{
@@ -76,7 +81,7 @@
       }
       textarea{
         height: 150px;
-        width: 70%;
+        width: 90%;
         border: 1px solid gray;
       }
       .layui-input-block,.layui-input-inline,.layui-form-mid{
@@ -88,8 +93,26 @@
       .layui-form-item .layui-input-inline+.layui-form-mid{
         text-align: left;
       }
+      .layui-form-item .layui-input-inline,.layui-input-block{
+        margin-left: 100px !important;
+      }
+      .topTips{
+        padding-bottom: 10px;
+      }
+      .smallInput{
+        width: 80%;
+        float: left;
+      }
+      .inputTips{
+        margin-left: 0px !important;
+        float: right;
+        margin-top: 10px;
+      }
       .checkboxLable{
         margin-left: 0 !important
+      }
+      .checkboxLable span{
+        font-size: 12px;
       }
     }
   </style>
@@ -137,9 +160,9 @@
               <div class="layui-form-item">
                 <label class="layui-form-label"><b class="red">*</b>报价：</label>
                 <div class="layui-input-inline">
-                  <input type="text" placeholder="请输入您的预算" class="layui-input" name="">
+                  <input type="text" placeholder="请输入您的预算" class="layui-input smallInput" name="">
                 </div>
-                <div class="layui-form-mid layui-word-aux">
+                <div class="layui-form-mid layui-word-aux inputTips">
                   <a id="tipsIcon"><img src="./img/page64/ym_tips.gif"></a>
                 </div>
               </div>

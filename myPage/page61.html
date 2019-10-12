@@ -45,6 +45,9 @@
       width: 80px;
       height: 80px;
     }
+    .tipsContent>p{
+      width: 150%;
+    }
     @media screen and (max-width: 540px){
       .formDiv{
         width: auto;
@@ -63,6 +66,7 @@
         margin: 0;
         float: left;
         padding-bottom: 0px !important;
+        min-width: 15px;
       }
       .eMailVerify{
         width: 90px !important;
@@ -78,6 +82,12 @@
       }
       .locationSelect .layui-form-select{
         width: 180px;
+      }
+      .tipsContent>p{
+        width: 100%;
+      }
+      .maohao{
+        display: none;
       }
     }
   </style>
@@ -144,7 +154,7 @@
           <div class="layui-col-md12">
             <div class="formDiv">
               <div class="layui-form-item">
-                <label class="layui-form-label">联系人(中文)<b class="red">*</b></label>
+                <label class="layui-form-label">联系人(中文)：<b class="red">*</b></label>
                 <div class="layui-input-block">
                   <div class="layui-input-inline" style="width: 100px;">
                     <input type="text" name="" placeholder="姓" class="layui-input">
@@ -160,7 +170,7 @@
           <div class="layui-col-md12">
             <div class="formDiv">
               <div class="layui-form-item">
-                <label class="layui-form-label">联系人(英文)<b class="red">*</b></label>
+                <label class="layui-form-label">联系人(英文)：<b class="red">*</b></label>
                 <div class="layui-input-block">
                   <div class="layui-input-inline" style="width: 100px;">
                     <input type="text" name="" placeholder="姓" class="layui-input">
@@ -250,7 +260,7 @@
           <div class="layui-col-md12">
             <div class="formDiv">
               <div class="layui-form-item">
-                <label class="layui-form-label">联系地址(中文)<b class="red">*</b></label>
+                <label class="layui-form-label">联系地址(中文)<b class="maohao">：</b><b class="red">*</b></label>
                 <div class="layui-input-block">
                   <div class="layui-input-inline" >
                     <input type="text" name="" class="layui-input">
@@ -262,7 +272,7 @@
           <div class="layui-col-md12">
             <div class="formDiv">
               <div class="layui-form-item">
-                <label class="layui-form-label">联系地址(英文)<b class="red">*</b></label>
+                <label class="layui-form-label">联系地址(英文)<b class="maohao">：</b><b class="red">*</b></label>
                 <div class="layui-input-block">
                   <div class="layui-input-inline">
                     <input type="text" name="" class="layui-input">
@@ -286,7 +296,7 @@
           <div class="layui-col-md12">
             <div class="formDiv">
               <div class="layui-form-item">
-                <label class="layui-form-label">电话号码<b class="red">*</b></label>
+                <label class="layui-form-label">电话号码：<b class="red">*</b></label>
                 <div class="layui-input-block">
                   <div class="layui-input-inline" style="width: 60px;">
                     <input type="text" name="" value="86" class="layui-input">
@@ -307,7 +317,7 @@
           <div class="layui-col-md12">
             <div class="formDiv">
               <div class="layui-form-item">
-                <label class="layui-form-label">传真号码<b class="red">*</b></label>
+                <label class="layui-form-label">传真号码：<b class="red">*</b></label>
                 <div class="layui-input-block">
                   <div class="layui-input-inline" style="width: 60px;">
                     <input type="text" name="" value="86" class="layui-input">
@@ -329,7 +339,7 @@
             <div class="formDiv">
               <div class="layui-form-item">
                 <label class="layui-form-label tipsLable"></label>
-                <div class="layui-input-block">
+                <div class="layui-input-block tipsContent">
                   <p class="red">* 请按照正确的格式填写电话号码和传真号码，否则注册域名可能会失败哦！</p>
                   <p class="red">* 没有电话和传真可填写手机号，格式为：0136-11112222</p>
                   <p class="red">* 证件图片大小60KB-700KB,不能超过1M,否则审核可能不成功</p>

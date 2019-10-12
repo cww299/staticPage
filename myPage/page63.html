@@ -61,6 +61,7 @@
     textarea{
       width: 50%;
       height: 200px;
+      padding: 10px;
     }
     @media screen and (max-width: 540px){
       .formContent {
@@ -75,8 +76,9 @@
       }
       textarea{
         height: 150px;
-        width: 70%;
+        width: 90%;
         border: 1px solid gray;
+        margin-right: 10%;
       }
       .layui-input-block,.layui-input-inline,.layui-form-mid{
         margin-left: 135px !important;
@@ -118,9 +120,9 @@
           <div class="formDiv">
             <div class="layui-form formContent">
               <div class="layui-form-item">
-                <label class="layui-form-label"><b class="red">*</b>您要转移的域名：<br>（每行一个，最多50行）：</label>
+                <label class="layui-form-label">您要转移的域名：<b class="red">*</b></label>
                 <div class="layui-input-block textareaDiv">
-                  <textarea></textarea>
+                  <textarea placeholder="每行一个，最多50行"></textarea>
                 </div>
               </div>
               <div class="layui-form-item">
