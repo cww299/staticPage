@@ -1,18 +1,74 @@
 <!--原网址：
-  
+  http://ym.qianxiyun.com/jiaoyi/jingpin
 -->
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+  <title>精品域名</title>
   <link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
   <link rel="stylesheet" type="text/css" href="./pageTab.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <style>
-    
+    .searchDiv{
+      padding: 20px 0;
+      box-sizing: border-box;
+      background-color: #fff9f3;
+      margin-top: 20px;
+      text-align: center;
+    }
+    .searchDiv h2{
+      display: inline-block;
+      font-size: 28px;
+      font-weight: 700;
+      color: #f60;
+      line-height: 48px;
+    }
+    .searchDiv .smallFont{
+      display: inline-block;
+      font-size: 18px;
+      color: #f60;
+      line-height: 28px;
+      margin-left: 20px;
+    }
+    .labelDiv{
+      line-height: 28px;
+    }
+    .chooseUl li{
+      float: left;
+      margin-left: 0;
+      width: 114px;
+      height: 28px;
+      line-height: 28px;
+      text-align: left;
+    }
+    .chooseUl li a:hover {
+      color: #f60;
+    }
+    .chooseUl li a.choosed {
+      color: #f60;
+    }
+    .chooseUl li a.choosed:after {
+      content:' ×';
+    }
+    .checkDiv{
+      margin-top: 10px;
+    }
+    .btnDiv{
+      text-align: center;
+      margin-top: 5px;
+    }
+    .tabContents .tabCards{
+      width: 98%;
+    }
     @media screen and (max-width: 540px){
-      
+      .chooseUl li{
+        width: 25%;
+        text-align: center;
+      }
+      .searchDiv{
+        padding: 20px;
+      }
     }
   </style>
 </head>
@@ -20,8 +76,98 @@
 <div>
   <div class="layui-container">
     <div class="layui-row"> 
-      <div class="layui-col-md12 title">
-        <h5></h5>
+      <div class="layui-col-md12 searchDiv">
+        <h2>域名快捷搜索<b class="smallFont">致力于打造专业的域名服务平台</b></h2>
+        <div class="layui-row layui-col-space15">
+          <div class="layui-col-md1 labelDiv">行业：</div>
+          <div class="layui-col-md11">
+            <ul class="chooseUl">
+              <li><a href="javascript:;" class="">全部</a></li>
+              <li><a href="javascript:;">区块链</a></li>
+              <li><a href="javascript:;">云计算</a></li>
+              <li><a href="javascript:;">汽车</a></li>
+              <li><a href="javascript:;">二手车</a></li>
+              <li><a href="javascript:;">酒店</a></li>
+              <li><a href="javascript:;">餐饮</a></li>
+              <li><a href="javascript:;">旅游</a></li>
+              <li><a href="javascript:;">信息</a></li>
+              <li><a href="javascript:;">电子商务</a></li>
+              <li><a href="javascript:;">日用品</a></li>
+              <li><a href="javascript:;">服饰</a></li>
+              <li><a href="javascript:;">食品</a></li>
+              <li><a href="javascript:;">广告</a></li>
+              <li><a href="javascript:;">教育</a></li>
+              <li><a href="javascript:;">投资</a></li>
+              <li><a href="javascript:;">智能</a></li>
+              <li><a href="javascript:;">医疗器械</a></li>
+              <li><a href="javascript:;">新能源</a></li>
+              <li><a href="javascript:;">自动化</a></li>
+              <li><a href="javascript:;">生物</a></li>
+              <li><a href="javascript:;">珠宝</a></li>
+              <li><a href="javascript:;">农业</a></li>
+              <li><a href="javascript:;">物流</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="layui-row layui-col-space15">
+          <div class="layui-col-md1 labelDiv">价格：</div>
+          <div class="layui-col-md11">
+            <ul class="chooseUl">
+              <li><a href="javascript:;" class="">全部</a></li>
+              <li><a href="javascript:;">1W以下</a></li>
+              <li><a href="javascript:;">1-5W</a></li>
+              <li><a href="javascript:;">5-10W</a></li>
+              <li><a href="javascript:;">10-50W</a></li>
+              <li><a href="javascript:;">50-100W</a></li>
+              <li><a href="javascript:;">100+W</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="layui-row layui-col-space3 layui-form">
+          <div class="layui-col-md1">&nbsp;</div>
+          <div class="layui-col-md2">
+            <input type="text" placeholder="域名关键字" class="layui-input">
+          </div>
+          <div class="layui-col-md1 checkDiv">
+            <input type="checkbox" name="" title="开头" lay-skin="primary"> 
+            <input type="checkbox" name="" title="结尾" lay-skin="primary"> 
+          </div>
+          <div class="layui-col-md2">
+            <select>
+              <option value="0">域名长度</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
+          </div>
+          <div class="layui-col-md2">
+            <select>
+              <option value="0">域名分类</option>
+              <option value="3">三数字</option>
+              <option value="4">四数字</option>
+            </select>
+          </div>
+          <div class="layui-col-md2">
+            <select>
+              <option value="0">域名后缀</option>
+              <option value="3">.com</option>
+              <option value="4">.cn</option>
+              <option value="5">.com.cn</option>
+              <option value="6">.cn其他</option>
+            </select>
+          </div>
+        </div>
+        <div class="layui-row">
+          <div class="layui-col-md12 btnDiv">
+            <span class="layui-btn layui-btn-danger">搜索</span>
+            <span class="layui-btn layui-btn-danger">重置</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -32,12 +178,12 @@
       <div class="layui-col-md12 tabContents">
         <div class="tabNavs">
           <ul>
-            <li class="active"><a href=""></a></li>
-            <li class=""><a href=""></a></li>
+            <li class="active"><a href="">一口价域名</a></li>
+            <li class=""><a href="">精品域名</a></li>
           </ul>
         </div>
         <div class="tabCards">
-          
+          <table id="tableData" lay-filter="tableData"></table>
         </div>
         
       </div>
@@ -47,13 +193,51 @@
 </body>
 <script type="text/javascript" src="./layui/layui.js"></script>
 <script type="text/javascript">
-  layui.use(['jquery','layer','form',],function(){
+  layui.use(['jquery','layer','form','table'],function(){
     var $ = layui.jquery
+       ,table = layui.table
        ,form = layui.form
        ,layer = layui.layer;
 
     $('.layui-btn').click(function(){
       layer.msg('点击按钮');
+    })
+
+    $('.chooseUl').find('a').click(function(obj){
+      var cls = $(obj.target).attr('class');
+      if(cls=='choosed'){
+        $(obj.target).removeClass('choosed');
+      }else{
+        $(obj.target).addClass('choosed');
+      }
+    })
+    var data = [
+      { name:'zhuoming.com', description:"卓明、卓铭、桌名、卓名、倬名、焯明、卓鸣、焯铭、倬明、卓茗、啄螟、茁茗、倬铭、茁铭、卓佲、捉螟 ",length:'8',price:'45500元' },
+      { name:'yunniao.com', description:"云鸟",length:'7',price:'160000元' },
+      { name:'haoyun.com', description:"好运、好孕、号云、郝云、好晕、豪运、浩云、浩运、好韵、郝运、好熨、豪韵、好云、澔韵、豪云、昊运、浩韵、皓云、浩蕴、昊云、皓韵、皓芸、濠蕴、昊蕴、皓匀、濠运、昊韵、豪芸、好酝、浩芸",length:'6',price:'4488000元' },
+      { name:'xinteng.cn', description:"心疼、新腾、信腾、鑫腾、新藤、信誊、欣腾、信滕、新滕、芯藤、莘滕、莘腾、鑫滕、鑫藤、锌腾、鑫誊、薪腾、芯腾、馨藤、馨腾、昕腾、欣藤、鑫熥",length:'7',price:'66000元' },
+    ];
+    var width = (function(){
+      console.log(window.width)
+      if(window.screen.width>700){
+        return ['10%','70%','10%','10%'];
+      }else
+       return ['40%','70%','30%','30%'];
+    })();
+    console.log(width)
+    table.render({
+      elem:'#tableData',
+      page:true,
+      data:data,
+      even:true,
+      skin:'nob',
+      cols: [[
+        { align:'center',field:'name',title:'域名', width:width[0],},
+        { align:'center',field:'description',title:'域名解释',width:width[1], },
+        { align:'center',field:'length',title:'长度', width:width[2],},
+        { align:'center',field:'price',title:'参考价', width:width[3],},
+      ]],
+
     })
     form.render();
 
