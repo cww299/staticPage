@@ -1,63 +1,276 @@
 <!--原网址：
-  
+  http://tm.qianxiyun.com/sort/second/9
 -->
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+  <title>商标分类（2018）</title>
   <link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
-  <link rel="stylesheet" type="text/css" href="./pageTab.css">
+  <link rel="stylesheet" type="text/css" href="./page.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <style>
-    
+    .search{
+      float: right;
+    }
+    .searchInput{
+      width: 250px;
+    }
+    .searchBtn{
+      width: 100px;
+    }
+    .content{
+      background-color: #fff;
+      padding: 50px 0;
+      margin: 30px 0;
+    }
+    .content .contentTitle{
+      padding: 10px 30px;
+    }
+    .content .contentTitle h3{
+      font-size: 36px;
+      color: #333;
+      text-align: center;
+      font-weight: 400;
+    }
+    .content .contentTitle .typeBtn{
+      margin: 20px auto 0px;
+      width: 720px;
+      position: relative;
+      font-size: 14px;
+      text-align: center;
+    }
+    .content .contentTitle ul{
+      margin: auto;
+      display: block;
+      width: 414px;
+    }
+    .content .contentTitle ul li{
+      border-radius: 4px 0 0 4px;
+      float: left;
+      padding: 0 20px;
+      height: 40px;
+      margin-right: -1px;
+      line-height: 40px;
+      font-size: 16px;
+      border: 1px solid #b9bdc9;
+      text-align: center;
+      background: #f2f2f2;
+    }
+    .content .contentTitle ul li.active{
+      background: #485ea3;
+      border: 1px solid #485ea3;
+    }
+    .content .contentTitle ul li.active a{
+      color: white;
+    }
+    .contentOfCard{
+      margin-top: 50px;
+    }
+    .marginTop{
+      margin-top: 10px;
+    }
+    .locationNow{
+      padding: 10px 40px;
+      border-bottom: 1px solid #8080804f;
+    }
+    .data{
+      margin-top: 20px;
+    }
+    .dataTitle{
+      color: #ff4800;
+      font-size: 16px;
+    }
+    .dataInfo{
+      color: #444;
+      line-height: 30px;
+    }
+    .dataLeftDiv,.dataRightDiv{
+      padding: 30px;
+    }
+    .dataRightDiv{
+      border-left: 1px solid #8080804a;
+    }
+    .dataContentP{
+      line-height: 30px;
+      padding-left:65px; 
+      text-indent:-65px;
+    }
+    .dataContentP a{
+      color: #275ecf;
+    }
+    .dataContentP a:hover{
+      color: #f00;
+    }
     @media screen and (max-width: 540px){
-      
+      .data{
+        margin-top: 0px;
+      }
+      .dataLeftDiv, .dataRightDiv{
+        padding:10px 20px;
+      }
+      .contentOfCard{
+        margin-top: 10px;
+      }
+      .locationNow{
+        margin-top: 30px;
+        padding: 10px;
+      }
+      .content .contentTitle{
+        padding:10px;
+      }
+      .content .contentTitle h3{
+        font-size: 21px;
+      }
+      .content{
+        padding:20px 0;
+      }
+      .content .contentTitle ul {
+          width: auto;
+      }
+      .content .contentTitle ul li{
+        padding: 5px;
+        line-height: 25px;
+        height: 25px;
+        font-size: 12px;
+      }
+      .content .contentTitle .typeBtn{
+        padding: 0 40px;
+      }
+      .location{
+        float: left;
+      }
+      .searchBtn{
+        width: auto;
+      }
+      .search{
+        float: none;
+      }
     }
   </style>
 </head>
 <body>
 <div>
-  <div class="layui-container">
-    <div class="layui-row"> 
-      <div class="layui-col-md12 title">
-        <h5></h5>
-      </div>
-    </div>
-  </div>
-</div>
-<div>
-  <div class="layui-container">
-    <div class="layui-row"> 
-      <div class="layui-col-md12 tabContents">
-        <div class="tabNavs">
-          <ul>
-            <li class="active"><a href=""></a></li>
-            <li class=""><a href=""></a></li>
-          </ul>
+  <div class="layui-container marginTop">
+    <span class="grayb location"><i class="layui-icon layui-icon-location"></i>当前位置：</span>
+    <span class="layui-breadcrumb" lay-separator=">">
+      <a href="">首页</a>
+      <a href="">商标工具</a>
+      <a><cite>商标分类（2018）</cite></a>
+    </span>
+    <span class="search">
+      <div class="layui-inline">
+        <div class="layui-input-inline searchInput">
+          <input type="text" class="layui-input" placeholder="输入商标名/申请人名/注册号关键字" name="">
         </div>
-        <div class="tabCards">
+        <div class="layui-input-inline searchBtn">
+          <span class="layui-btn layui-btn-danger layui-btn-sm">综合查询</span>
+        </div>
+      </div>
+    </span>
+    <div class="layui-row"> 
+      <div class="layui-col-md12 content">
+        <div class="contentTitle">
+          <h3>《2018版类似商品和服务区分表》</h3>
+          <div class="typeBtn">
+            <ul>
+              <li class="active"><a href="">商标分类查询</a></li>
+              <li><a href="">图形要素查询</a></li>
+              <li><a href="">申请书式下载</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="locationNow layui-col-md12">
+          您当前的位置：
+          <span class="layui-breadcrumb" lay-separator=">">
+            <a href="">商标分类</a>
+            <a><cite id="thisLocation">---</cite></a>
+          </span>
+        </div>
+        <div class="contentOfCard">
           
         </div>
-        
       </div>
     </div>
   </div>
 </div>
+<div class="footerDiv">
+  <div class="layui-container">
+    <div class="layui-row"> 
+      <div class="layui-col-md3 ia noneLeft">
+        <i></i>
+        <span>
+          <b>精准分析风险规避</b>提供免费专业分析服务
+        </span>
+      </div>
+      <div class="layui-col-md3 ia">
+        <i></i>
+        <span>
+          <b>精准分析风险规避</b>提供免费专业分析服务
+        </span>
+      </div>
+      <div class="layui-col-md3 ia">
+        <i></i>
+        <span>
+          <b>精准分析风险规避</b>提供免费专业分析服务
+        </span>
+      </div>
+      <div class="layui-col-md3 ia">
+        <i></i>
+        <span>
+          <b>精准分析风险规避</b>提供免费专业分析服务
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
 </body>
 <script type="text/javascript" src="./layui/layui.js"></script>
 <script type="text/javascript">
-  layui.use(['jquery','layer','form',],function(){
+  layui.use(['jquery','layer','element'],function(){
     var $ = layui.jquery
-       ,form = layui.form
+       ,element = layui.element
        ,layer = layui.layer;
-
+  
+    var contentData = {
+      title:'第09类 电子电脑',
+      info:'科学、航海、测量、摄影、电影、光学、衡具、量具、信号、检验（监督）、救护（营救）和教学用装置及仪器；处理、开关、传送、积累、调节或控制电的装置和仪器；录制、通讯、重放声音或影像的装置；磁性数据载体，录音盘；光盘，DVD盘和其他数字存储媒介；投币启动装置的机械结构；收银机，计算机器，数据处理装置，计算机；计算机软件；灭火器械。',
+      content:[
+        { number:"0901", title:'电子计算机及其外部设备'},
+        { number:"0902", title:'记录、自动售货机和其他记数检测器'},
+        { number:"0903", title:'其他办公用机械（不包括打字机、誉写机、油印机）'},
+        { number:"0904", title:'衡器'},
+      ],
+    };
+    $('#thisLocation').html(contentData.title);
+    var html = [
+                '<div class="layui-row layui-col-space10 data layui-col-md12">',
+                  '<div class="layui-col-md6 dataLeftDiv">',
+                    '<p class="dataTitle">',
+                      contentData.title,
+                    '</p>',
+                    '<p class="dataInfo">',
+                      contentData.info,
+                    '</p>',
+                  '</div>',
+                  '<div class="layui-col-md6 dataRightDiv">',
+                    (function(){
+                      var h ='';
+                      for(var i in contentData.content){
+                        var t = contentData.content[i];
+                        h+= '<p class="dataContentP"><a href="">【'+t.number+'】 - '+t.title+'</a></p>';
+                      }
+                      return h;
+                    })(),
+                  '</div>',
+                '</div>',
+                ].join(' ');
+    $('.contentOfCard').html(html);
+    element.render();
     $('.layui-btn').click(function(){
       layer.msg('点击按钮');
     })
-    form.render();
-
-    
   })
 </script>
 </html>
