@@ -1,18 +1,135 @@
 <!--原网址：
-  
+  http://whois.qianxiyun.com/
 -->
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+  <title>whois查询</title>
   <link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
-  <link rel="stylesheet" type="text/css" href="./pageTab.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <style>
-    
+    .title{
+
+    }
+    .title .leftDiv{
+      float: left;
+    }
+    .title .leftDiv .font{
+      line-height: 100%;
+      font-size: 20px;
+      color: #333;
+      display: inline-block;
+      vertical-align: bottom;
+      padding-bottom: 6px;
+      font-style: normal;
+    }
+    .title .rightDiv{
+      float: right;
+      margin-top: 30px;
+    }
+    .title .rightDiv a{
+      color: #555;
+    }
+    .title .searchDiv{
+      height: auto;
+      border: 1px solid #e6e6e6;
+      padding: 20px 10px;
+      background: #fff;
+      overflow: hidden;
+      width: 100%;
+    }
+    .tipSearch{
+      border: 1px solid #e6e6e6;
+      margin: 15px 0 0;
+      padding: 10px;
+      height: auto;
+      line-height: 24px;
+      background: #fafbfe;
+      color: gray;
+      word-break: break-all;
+    }
+    .tipSearch a{
+      margin-right: 15px;
+    }
+    a:hover{
+      color: #e00000 !important;
+      text-decoration: none;
+    }
+    .searchContent{
+      border: 1px solid #e6e6e6;
+      height: auto;
+      margin-top: 10px;
+      background: #fff;
+    }
+    .searchContent h3{
+      display: block;
+      height: 44px;
+      line-height: 44px;
+      background: #fafbfe;
+      color: #5e667d;
+      font-weight: bold;
+      border-bottom: 1px solid #e6e6e6;
+      text-indent: 15px;
+    }
+    .searchContent .contents{
+      padding: 10px 15px;
+      line-height: 24px;
+      font-size: 14px;
+      min-height: 394px;
+      color: #333333d9;
+    }
+    .lookover{
+      color: #006fc4;
+    }
+    .rightRegister{
+      color: #333;
+      margin-top: 20px;
+      table-layout: fixed;
+      background: #fafbfe;
+      padding: 0;
+      text-align: center;
+    }
+    .rightRegister img{
+      margin-top: 15px!important;
+      width: 280px;
+    }
+    .searchRegister{
+      line-height: 40px;
+      border: 1px solid #e6e6e6;
+    }
+    .searchRegister h3{
+      line-height: 40px;
+      font-size: 16px;
+      text-indent: 15px;
+      text-align: left;
+      font-weight: bold;
+      color: #5e667d;
+    }
+    .searchRegister a{
+      float: right;
+      color: gray;
+      font-weight: normal;
+      font-size: 14px;
+      margin-right: 10px;
+    }
+    .searchRegister .content{
+      padding: 10px 0;
+      background: #fff;
+      border: 1px solid #e6e6e6;
+      padding: 10px 2px;
+    }
     @media screen and (max-width: 540px){
-      
+      .searchBtnDiv{
+        text-align: center;
+        margin-top: 5px;
+      }
+      .rightRegister img{
+        width: 100%;
+      }
+      .searchRegister .content{
+        padding: 10px 12px;
+      }
     }
   </style>
 </head>
@@ -21,25 +138,82 @@
   <div class="layui-container">
     <div class="layui-row"> 
       <div class="layui-col-md12 title">
-        <h5></h5>
+        <div class="leftDiv">
+          <span>
+            <a href=""><img src="./img/page67/logo1.png"></a>
+          </span>
+          <b class="font">whois查询</b>
+        </div>
+        <div class="rightDiv">
+          <a href="">返回千喜云</a>
+        </div>
+        <div class="searchDiv">
+          <div class="layui-col-md6">
+            <div class="layui-col-md9">
+              <input type="text" placeholder="请输入您要查询的域名，如千喜云" class="layui-input">
+            </div>
+            <div class="layui-col-md3 searchBtnDiv">
+              &nbsp;&nbsp;
+              <span class="layui-btn layui-btn-danger">查询</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
 <div>
   <div class="layui-container">
-    <div class="layui-row"> 
-      <div class="layui-col-md12 tabContents">
-        <div class="tabNavs">
-          <ul>
-            <li class="active"><a href=""></a></li>
-            <li class=""><a href=""></a></li>
-          </ul>
+    <div class="layui-row layui-col-space10"> 
+      <div class="layui-col-md9">
+        <div class="tipSearch">
+          最近已注册域名查询：
+          <a href="">xaznjf.com</a>
+          <a href="">ipv6.top</a>
+          <a href="">degf.com</a>
+          <a href="">wtsjw.com</a>
         </div>
-        <div class="tabCards">
-          
+        <div class="searchContent">
+          <h3>WHOIS查询简介</h3>
+          <div class="contents">
+            <p>Whois 简单来说，就是一个用来查询域名是否已经被注册，以及注册域名的详细信息的数据库（如域名所有人、域名注册商、域名注册日期和过期日期等）。通过域名Whois服务器查询，可以查询域名归属者联系方式，以及注册和到期时间，可以用whois.千喜云 访问！</p>
+            <p>
+              <strong>关于域名到期删除规则实施的解释：</strong>
+            </p>
+            <p> 国际域名：</p>
+            <p> (1) 到期当天暂停解析，如果在72小时未续费，则修改域名DNS指向广告页面（停放）。域名到期后30-45天为域名保留期（不同注册商政策规定时间不同）</p>
+            <p> (2) 过了保留期域名将进入赎回期（REDEMPTIONPERIOD，为期30天）</p>
+            <p> (3) 过了赎回期域名将进入为期5天左右的删除期，删除期过后域名开放，任何人可注。</p>
+            <p> 关于域名状态的解释：<a href="" class="lookover">点击查看完整信息</a></p>
+          </div>
         </div>
-        
+      </div>
+      <div class="layui-col-md3 rightRegister">
+        <div class="searchRegister">
+          <a href="">更多</a>
+          <h3>域名查询注册</h3>
+          <div class="content layui-col-md12">
+            <div class="layui-col-md9">
+              <input type="text" placeholder="请输入域名" class="layui-input">
+            </div>
+            <div class="layui-col-md3 searchBtnDiv">
+              &nbsp;
+              <span class="layui-btn layui-btn-danger layui-btn-sm">查询</span>
+            </div>
+            <div class="layui-col-md12 layui-form">
+              <input type="checkbox" name="" title=".com" lay-skin="primary" checked>
+              <input type="checkbox" name="" title=".cn" lay-skin="primary" >
+              <input type="checkbox" name="" title=".net" lay-skin="primary" >
+              <input type="checkbox" name="" title=".vip" lay-skin="primary" >
+              <input type="checkbox" name="" title=".top" lay-skin="primary" >
+              <input type="checkbox" name="" title=".cc" lay-skin="primary" >
+              <input type="checkbox" name="" title=".co" lay-skin="primary" >
+              <input type="checkbox" name="" title="更多" lay-skin="primary" >
+            </div>
+          </div>
+        </div>
+        <a href=""><img src="./img/page67/hd_4.jpg"></a>
+        <a href=""><img src="./img/page67/hd_1.jpg"></a>
       </div>
     </div>
   </div>
@@ -56,7 +230,6 @@
       layer.msg('点击按钮');
     })
     form.render();
-
     
   })
 </script>
