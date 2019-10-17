@@ -1,18 +1,83 @@
 <!--原网址：
-  
+  http://ym.qianxiyun.com/weituo/jingji
 -->
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+  <title>委托经纪</title>
   <link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
   <link rel="stylesheet" type="text/css" href="./pageTab.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <style>
-    
+    .topTips{
+      padding: 5px 15px 5px 20px;
+      margin-bottom: 10px;
+      color: #31708f;
+      border: solid 1px #b2d6e0;
+      background: #f7feff;
+    }
+    b{
+      font-weight: bold;
+    }
+    .formDiv{
+      border-bottom: dashed 1px #d1d1d1;
+      padding: 15px!important;
+      margin-bottom: 15px!important;
+      text-align: center;
+    }
+    .formContent{
+      width: 45%;
+      color: gray;
+      margin-left: 26%;
+    }
+    .tabContents .tabCards .layui-form-label{
+      width: 190px;
+    }
+    .layui-form-mid{
+      padding: 2px 0 !important;
+    }
+    textarea{
+      width: 350px;
+      height: 150px;
+    }
+    .blue{
+      color: #006fc4;
+    }
+    .layui-form-item{
+      margin-bottom: 5px;
+    }
+    .layui-form-item .layui-input-inline{
+      width: 220px;
+    }
+    @media screen and (max-width: 1200px){
+      .formContent {
+        width: 65%;
+      }
+    }
     @media screen and (max-width: 540px){
-      
+      .formContent {
+        width: auto;
+        margin-left: -20px;
+      }
+      .tabContents .tabCards .layui-form-label{
+        width: 90px;
+        overflow: visible;
+      }
+      .textareaDiv{
+        text-align: right;
+      }
+      textarea{
+        height: 150px;
+        width: 90%;
+        border: 1px solid gray;
+      }
+      .layui-form-item .layui-input-inline+.layui-form-mid{
+        text-align: left;
+      }
+      .topTips{
+        padding-bottom: 10px;
+      }
     }
   </style>
 </head>
@@ -21,7 +86,7 @@
   <div class="layui-container">
     <div class="layui-row"> 
       <div class="layui-col-md12 title">
-        <h5></h5>
+        <h5>问题及建议</h5>
       </div>
     </div>
   </div>
@@ -32,14 +97,89 @@
       <div class="layui-col-md12 tabContents">
         <div class="tabNavs">
           <ul>
-            <li class="active"><a href=""></a></li>
-            <li class=""><a href=""></a></li>
+            <li class="active"><a href="">委托经纪</a></li>
+            <li class=""><a href="">委托中介</a></li>
+            <li class=""><a href="">委托列表</a></li>
           </ul>
         </div>
         <div class="tabCards">
-          
+          <div class="topTips">
+            <p><strong>温馨提示：</strong>您有任何意见或者建议请通过本页面提交，我们会第一时间为您反馈，感谢您的支持。</p>
+          </div>
+          <div class="formDiv">
+            <div class="layui-form formContent">
+              <div class="layui-form-item">
+                <label class="layui-form-label">主题：</label>
+                <div class="layui-input-inline">
+                  <input type="text" class="layui-input">
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label">域名：</label>
+                <div class="layui-input-inline">
+                  <select>
+                    <option value="0">其他相关问题</option>
+                    <option value="1">域名管理问题</option>
+                    <option value="2">付款相关问题</option>
+                    <option value="3">过期域名代注</option>
+                    <option value="4">域名注册问题</option>
+                    <option value="5">会员升级问题</option>
+                    <option value="6">域名交易问题</option>
+                    <option value="7">中介交易问题</option>
+                  </select>
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label">姓名：</label>
+                <div class="layui-input-inline">
+                  <input type="text" placeholder="" class="layui-input" name="">
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label">联系电话：</label>
+                <div class="layui-input-inline">
+                  <input type="text" name="" class="layui-input" placeholder="">
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label">域名：</label>
+                <div class="layui-input-inline">
+                  <input type="text" name="" class="layui-input" placeholder="">
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label">内容：</label>
+                <div class="layui-input-inline">
+                  <textarea placeholder="" class="layui-textarea"></textarea>
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label">相关附件：</label>
+                <div class="layui-input-inline">
+                  <input type="text" name="" class="layui-input" placeholder="">
+                </div>
+                <div class="layui-form-mid layui-word-aux">
+                  <span class="layui-btn layui-btn-sm" id="uploadBtn">上传附件</span>
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label">验证码：</label>
+                <div class="layui-input-inline">
+                  <input type="text" name="" class="layui-input">
+                </div>
+                <div class="layui-form-mid layui-word-aux">
+                  <a id="tipSa"><img src="./img/page64/GetVerifyCode.gif"></a>
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label"></label>
+                <div class="layui-input-inline">
+                  <p><span class="layui-btn layui-btn-normal">提交</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        
       </div>
     </div>
   </div>
@@ -47,17 +187,21 @@
 </body>
 <script type="text/javascript" src="./layui/layui.js"></script>
 <script type="text/javascript">
-  layui.use(['jquery','layer','form',],function(){
+  layui.use(['jquery','layer','form','upload'],function(){
     var $ = layui.jquery
        ,form = layui.form
+       ,upload = layui.upload
        ,layer = layui.layer;
-
-    $('.layui-btn').click(function(){
-      layer.msg('点击按钮');
-    })
     form.render();
 
     
+    
+    upload.render({
+      elem:'#uploadBtn'
+    })
+    $('.layui-btn').click(function(){
+      layer.msg('点击按钮');
+    })
   })
 </script>
 </html>
