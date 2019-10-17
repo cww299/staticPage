@@ -1,18 +1,88 @@
 <!--原网址：
-  
+  http://ym.qianxiyun.com/batch/jiexi
 -->
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+  <title>批量任务</title>
   <link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
   <link rel="stylesheet" type="text/css" href="./pageTab.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <style>
-    
+    .leftDiv{
+      padding: 10px;
+    }
+    .leftDiv .title{
+      font-size: 16px;
+      font-weight: bold;
+    }
+    .leftDiv textarea{
+      height: 350px;
+    }
+    .rightDiv .title{
+      margin-bottom: 10px!important;
+      font-size: 18px;
+      text-align: center;
+      font-weight: bold;
+      color: gray;
+    }
+    .rightDiv .year{
+      padding: 10px;
+      border: solid 1px #DBE1E2;
+      background: #FDFDFD;
+      text-align: left;
+    }
+    .rightDiv .imgA{
+      background: #1e0d4b;
+      margin-top: 15px;
+    }
+    .rightDiv .imgA a{
+      display: block;
+      text-align: center;
+    }
+    .rightDiv .imgA a img{
+      max-width: 100%;
+    }
+    .rightDiv .tips{
+      text-align: left;
+      font-size: 12px;
+      margin-top: 15px;
+    }
+    .rightDiv .tips .title{
+      font-size: 14px;
+      text-align: left;
+      border-bottom: 1px solid #ddd; 
+    }
+    .rightDiv .tips .title b{
+      border-bottom: 3px solid #e03d3d;
+      display: inline-block;
+      padding: 5px 0;
+      margin-bottom: -2px;
+    }
+    .rightDiv .tips .content{
+      padding: 10px 0;
+      color: gray;
+    }
+    .layui-form-mid{
+      padding:0 !important;
+    }
+    .layui-form-item{
+      margin-bottom: 0 !important;
+    }
+    .noPadding{
+      padding: 0px;
+    }
+    .layui-form-mid{
+      width: 80%;
+      margin-left: 110px;
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
     @media screen and (max-width: 540px){
-      
+      .layui-form-mid{
+        width: 60%;
+      }
     }
   </style>
 </head>
@@ -21,7 +91,7 @@
   <div class="layui-container">
     <div class="layui-row"> 
       <div class="layui-col-md12 title">
-        <h5></h5>
+        <h5>批量任务</h5>
       </div>
     </div>
   </div>
@@ -32,12 +102,84 @@
       <div class="layui-col-md12 tabContents">
         <div class="tabNavs">
           <ul>
-            <li class="active"><a href=""></a></li>
-            <li class=""><a href=""></a></li>
+            <li class="active"><a href="">批量解析</a></li>
+            <li class=""><a href="">高级批量解析</a></li>
+            <li class=""><a href="">批量续费</a></li>
+            <li class=""><a href="">转入续费</a></li>
+            <li class=""><a href="">设置dns</a></li>
+            <li class=""><a href="">修改密码</a></li>
+            <li class=""><a href="">模板管理</a></li>
+            <li class=""><a href="">设置分组</a></li>
           </ul>
         </div>
         <div class="tabCards">
-          
+          <div class="layui-col-md6 leftDiv">
+            <p class="title">批量操作的域名</p>
+            <textarea class="layui-textarea"></textarea>
+          </div>
+          <div class="layui-col-md6 rightDiv layui-form">
+            <p class="title">批量解析域名</p>
+            <div class="year">
+              <div class="layui-form-item">
+                <label class="layui-form-label">主机记录：</label>
+                <div class="layui-input-inline">
+                  <input type="text" name="" class="layui-input">
+                </div>
+                <div class="layui-form-mid layui-word-aux">主机记录就是域名前缀，如www，@</div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label">记录类型：</label>
+                <div class="layui-input-inline">
+                  <select><option value="a">A</option>
+                          <option value="CNAME">CNAME</option>
+                          <option value="MX">MX</option>
+                          <option value="TXT">TXT</option>
+                          <option value="AAAA">AAAA</option>
+                          <option value="NS">NS</option>
+                          <option value="SRV">SRV</option>
+                          <option value="CAA">CAA</option></select>
+                </div>
+                <div class="layui-form-mid layui-word-aux">要指向空间商提供的IP地址，选择「类型A」，要指向一个域名，选择「类型 CNAME」@</div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label">记录值：</label>
+                <div class="layui-input-inline">
+                  <input type="text" name="" class="layui-input">
+                </div>
+                <div class="layui-form-mid layui-word-aux">最常见的是将空间商提供的「IP地址」填写在这里哦 CNAME」</div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label">MX优先级：</label>
+                <div class="layui-input-inline">
+                  <input type="text" name="" class="layui-input" disabled>
+                </div>
+                <div class="layui-form-mid layui-word-aux">用来指定邮件服务器接收邮件的先后顺序（1-50），一般默认设置为5、10、15等</div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label"></label>
+                <div class="layui-input-inline">
+                  <span class="layui-btn layui-btn-sm layui-btn-normal">添加</span>
+                  <span class="layui-btn layui-btn-sm layui-btn-danger">删除</span>
+                  <span class="layui-btn layui-btn-sm layui-btn-danger">清空解析</span>
+                </div>
+              </div>
+            </div>
+            <div class="imgA">
+              <a href="">
+                <img src="./img/page53/plcz-gg1.jpg">
+              </a>
+            </div>
+            <div class="tips">
+              <div class="title noPadding">
+                <b>温馨提示</b>
+              </div>
+              <div class="content">
+                <p>1、批量解析功能暂时支持的dns：qx1.dns.com/qx2.dns.com</p>
+                <p>2、批量解析只支持【添加】、【删除】和【清空解析】操作</p>
+                <p>3、【清空解析】操作只需填写域名即可，执行该操作将会删除所有解析记录，请谨慎操作</p>
+              </div>
+            </div>
+          </div>
         </div>
         
       </div>
@@ -47,17 +189,15 @@
 </body>
 <script type="text/javascript" src="./layui/layui.js"></script>
 <script type="text/javascript">
-  layui.use(['jquery','layer','form',],function(){
+  layui.use(['jquery','layer','form'],function(){
     var $ = layui.jquery
        ,form = layui.form
        ,layer = layui.layer;
+    form.render();
 
     $('.layui-btn').click(function(){
       layer.msg('点击按钮');
     })
-    form.render();
-
-    
   })
 </script>
 </html>
