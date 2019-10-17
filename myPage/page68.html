@@ -1,18 +1,88 @@
 <!--原网址：
-  
+  http://ym.qianxiyun.com/batch/domaintransferrenew
 -->
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+  <title>批量任务</title>
   <link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
   <link rel="stylesheet" type="text/css" href="./pageTab.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <style>
-    
+    .leftDiv{
+      padding: 10px;
+    }
+    .leftDiv .title{
+      font-size: 16px;
+      font-weight: bold;
+    }
+    .leftDiv textarea{
+      height: 350px;
+    }
+    .rightDiv .title{
+      margin-bottom: 10px!important;
+      font-size: 18px;
+      text-align: center;
+      font-weight: bold;
+      color: gray;
+    }
+    .rightDiv .year{
+      padding: 10px;
+      border: solid 1px #DBE1E2;
+      background: #FDFDFD;
+      text-align: left;
+    }
+    .rightDiv .imgA{
+      background: #1e0d4b;
+      margin-top: 15px;
+    }
+    .rightDiv .imgA a{
+      display: block;
+      text-align: center;
+    }
+    .rightDiv .imgA a img{
+      max-width: 100%;
+    }
+    .rightDiv .tips{
+      text-align: left;
+      font-size: 12px;
+      margin-top: 15px;
+    }
+    .rightDiv .tips .title{
+      font-size: 14px;
+      text-align: left;
+      border-bottom: 1px solid #ddd; 
+    }
+    .rightDiv .tips .title b{
+      border-bottom: 3px solid #e03d3d;
+      display: inline-block;
+      padding: 5px 0;
+      margin-bottom: -2px;
+    }
+    .rightDiv .tips .content{
+      padding: 10px 0;
+      color: gray;
+    }
+    .smallWidth .layui-form-select{
+      width: 100px;
+    }
+    .layui-form-mid{
+      padding:0 !important;
+    }
+    .smallWidth{
+      width: auto !important;
+    }
+    .layui-form-item{
+      margin-bottom: 0 !important;
+    }
+    .noPadding{
+      padding: 0px;
+    }
     @media screen and (max-width: 540px){
-      
+      .smallWidth .layui-form-select{
+        width: 150px !important;
+      }
     }
   </style>
 </head>
@@ -21,7 +91,7 @@
   <div class="layui-container">
     <div class="layui-row"> 
       <div class="layui-col-md12 title">
-        <h5></h5>
+        <h5>批量任务</h5>
       </div>
     </div>
   </div>
@@ -32,12 +102,52 @@
       <div class="layui-col-md12 tabContents">
         <div class="tabNavs">
           <ul>
-            <li class="active"><a href=""></a></li>
-            <li class=""><a href=""></a></li>
+            <li class=""><a href="">批量解析</a></li>
+            <li class=""><a href="">批量续费</a></li>
+            <li class="active"><a href="">转入续费</a></li>
+            <li class=""><a href="">设置dns</a></li>
+            <li class=""><a href="">修改密码</a></li>
+            <li class=""><a href="">模板管理</a></li>
+            <li class=""><a href="">设置分组</a></li>
           </ul>
         </div>
         <div class="tabCards">
-          
+          <div class="layui-col-md6 leftDiv">
+            <p class="title">批量操作的域名</p>
+            <textarea class="layui-textarea"></textarea>
+          </div>
+          <div class="layui-col-md6 rightDiv">
+            <p class="title">批量续费</p>
+            <div class="year layui-form">
+              <div class="layui-form-item">
+                <label class="layui-form-label">续费年份：</label>
+                <div class="layui-input-inline smallWidth">
+                  <input type="radio" name="mode" value="1" title="由REG转入" checked>
+                  <input type="radio" name="mode" value="2" title="自行转入" >
+                </div>
+                <div class="layui-form-mid layui-word-aux"><span class="layui-btn layui-btn-normal">下一步</span></div>
+              </div>
+            </div>
+            <div class="imgA">
+              <a href="">
+                <img src="./img/page53/plcz-gg1.jpg">
+              </a>
+            </div>
+            <div class="tips">
+              <div class="title noPadding">
+                <b>操作必读</b>
+              </div>
+              <div class="content">
+                <p>1、转入续费是将现有域名从千喜云其他渠道转入千喜云渠道的一种续费方式，续费价格更低。</p>
+                <p>2、转入续费域名必须是正常状态、距离过期时间15天以上；正在交易、PUSH、转入、转出的域名不能进行此操作。</p>
+                <p>3、转入续费的两种方式说明：</p>
+                <p>&nbsp;&nbsp;（1）自行转入，域名转移密码将会发送到域名whois邮箱，由会员自己将域名转入到千喜云渠道；</p>
+                <p>&nbsp;&nbsp;（2）由REG转入，域名转移密码将会发送到REG邮箱，由REG帮助会员进行转入续费，省时省力。</p>
+                <p>4、如果您输入的转入续费域名在计算价格的列表中不存在，说明该域名不支持转入续费操作，请到【批量续费】中进行续费。</p>
+                <p>5、如有疑问或异常请联系REG客服咨询。</p>
+              </div>
+            </div>
+          </div>
         </div>
         
       </div>
@@ -47,17 +157,15 @@
 </body>
 <script type="text/javascript" src="./layui/layui.js"></script>
 <script type="text/javascript">
-  layui.use(['jquery','layer','form',],function(){
+  layui.use(['jquery','layer','form'],function(){
     var $ = layui.jquery
        ,form = layui.form
        ,layer = layui.layer;
+    form.render();
 
     $('.layui-btn').click(function(){
       layer.msg('点击按钮');
     })
-    form.render();
-
-    
   })
 </script>
 </html>
