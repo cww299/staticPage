@@ -1,16 +1,39 @@
 <!--原网址：
-  
+  http://ym.qianxiyun.com/seller
 -->
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+  <title>我是卖家</title>
   <link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
   <link rel="stylesheet" type="text/css" href="./pageTab.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <style>
-    
+    .btnP{
+      margin: 10px 0;
+      text-align: right;
+    }
+    .centerP{
+      text-align: center;
+    }
+    .allSeller{
+      background-color: #F8F8F8;
+      border: 1px solid #e1e6eb;
+      padding: 10px;
+      overflow: hidden;
+    }
+    .tipsDiv{
+      background-color: #fcf8e3;
+      border-color: #faebcc;
+      color: #8a6d3b;
+      padding: 15px;
+      margin-bottom: 20px;
+      border: 1px solid transparent;
+    }
+    .tipsDiv>p{
+      line-height: 25px;
+    }
     @media screen and (max-width: 540px){
       
     }
@@ -21,7 +44,7 @@
   <div class="layui-container">
     <div class="layui-row"> 
       <div class="layui-col-md12 title">
-        <h5></h5>
+        <h5>我是卖家</h5>
       </div>
     </div>
   </div>
@@ -32,12 +55,31 @@
       <div class="layui-col-md12 tabContents">
         <div class="tabNavs">
           <ul>
-            <li class="active"><a href=""></a></li>
-            <li class=""><a href=""></a></li>
+            <li class="active"><a href="">我要卖域名</a></li>
+            <li class=""><a href="">正在出售</a></li>
+            <li class=""><a href="">等待上架</a></li>
+            <li class=""><a href="">已出售</a></li>
           </ul>
         </div>
-        <div class="tabCards">
-          
+        <div class="tabCards layui-form">
+          <p class="btnP">
+            <span class="layui-btn layui-btn-normal layui-btn-sm">我的域名中添加</span>
+            <span class="layui-btn layui-btn-normal layui-btn-sm">手动添加</span>
+          </p>
+          <table id="tableData" lay-filter="tableData"></table>
+          <div class="allSeller">
+            <input type="checkbox" name="" title="全部可出售" lay-skin="primary">
+            <span class="layui-btn layui-btn-normal layui-btn-sm">认证未认证域名</span> 
+          </div>
+          <p class="btnP centerP">
+            <span class="layui-btn layui-btn-normal">一口价</span>
+            <span class="layui-btn layui-btn-normal">批量打包</span>
+          </p>
+          <div class="tipsDiv">
+            <p><strong>温馨提示：</strong></p>
+            <p>1、目前停靠域名仅支持com、net、cn、com.cn后缀的域名</p>
+            <p>2、目前停靠域名仅支持邮箱验证。</p>
+          </div>
         </div>
         
       </div>
@@ -47,17 +89,28 @@
 </body>
 <script type="text/javascript" src="./layui/layui.js"></script>
 <script type="text/javascript">
-  layui.use(['jquery','layer','form',],function(){
+  layui.use(['jquery','layer','form','table'],function(){
     var $ = layui.jquery
        ,form = layui.form
+       ,table = layui.table
        ,layer = layui.layer;
 
+    var data = [];
+    table.render({
+      elem:'#tableData',
+      data:data,
+      skin:'nob',
+      cols:[[
+        { type:'checkbox',},
+        { field:'name', title:'已经添加域名',width:'90%'},
+        { field:'',title:'操作' },
+      ]],
+
+    })
     $('.layui-btn').click(function(){
       layer.msg('点击按钮');
     })
     form.render();
-
-    
   })
 </script>
 </html>
