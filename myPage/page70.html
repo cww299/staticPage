@@ -1,63 +1,335 @@
 <!--原网址：
-  
+  http://ym.qianxiyun.com/weituoweb/jingji
 -->
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+  <title>委托经纪</title>
   <link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
   <link rel="stylesheet" type="text/css" href="./pageTab.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <style>
-    
+    body{
+      background: white;
+    }
+    .layui-container {
+      width: 1170px;
+    }
+    .topTips{
+      padding: 15px 15px 30px 70px;
+      margin-bottom: 10px;
+      background: #fff9e5 url(./img/page64/ym_tips.gif) no-repeat 16px 22px;
+      border: 1px solid #f5ead2;
+    }
+    .topTips a{
+      color: #337ab7;
+    }
+    b{
+      font-weight: bold;
+    }
+    .formDiv{
+      border-bottom: dashed 1px #d1d1d1;
+      padding: 15px!important;
+      margin-bottom: 15px!important;
+      text-align: left;
+      border: 1px solid #80808038;
+    }
+    .formContent{
+      color: gray;
+    }
+    .tabContents .tabCards .layui-form-label{
+      width: 190px;
+    }
+    .layui-input-block{
+      margin-left: 160px;
+    }
+    .layui-form-mid{
+      padding: 2px 0 !important;
+    }
+    textarea{
+      width: 350px;
+      height: 150px;
+    }
+    .blue{
+      color: #006fc4;
+    }
+    .layui-form-item{
+      margin-bottom: 5px;
+    }
+    #imgDivs{
+      height: 523px !important;
+    }
+    .tabContents .tabNavs{
+      margin: 0 20px;
+      height: 39px;
+      border-bottom: 2px solid red;
+    }
+    .tabContents .tabCards{
+      border: none;
+    }
+    .tabContents .tabNavs li>a{
+      border: none;
+    }
+    .tabContents .tabNavs li.active>a{
+      color:white;
+      background: #de3b3b;
+    }
+    .rightDiv{
+      background: #fff;
+      border: 1px solid #ececec;
+      margin-top: 20px;
+    }
+    .rightDiv .title{
+      padding-left: 15px;
+      display: block;
+      height: 40px;
+      line-height: 40px;
+      background: #7f8599;
+      color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    .rightDiv .spanA{
+      display: block;
+      height: 32px;
+      line-height: 32px;
+      font-size: 15px;
+      color: #666;
+      background: #f1f7fb;
+      color: #7f8599;
+    }
+    .rightDiv .spanA a{
+      display: block;
+      float: left;
+      width: 135px;
+      text-align: center;
+      color: #7f8599;
+    }
+    .navLocation{
+      background: #f3f3f3;
+      border-top: 1px solid #fdfdfd;
+      padding: 5px 20px;
+    }
+    @media screen and (max-width: 1200px){
+      .formContent {
+        width: 65%;
+      }
+    }
     @media screen and (max-width: 540px){
-      
+      .formContent {
+        width: auto;
+      }
+      .tabContents .tabCards .layui-form-label{
+        width: 90px;
+        overflow: visible;
+      }
+      .textareaDiv{
+        text-align: right;
+      }
+      textarea{
+        height: 150px;
+        width: 90%;
+        border: 1px solid gray;
+      }
+      .layui-input-block,.layui-input-inline,.layui-form-mid{
+        margin-left: 135px !important;
+      }
+      .layui-form-checkbox[lay-skin=primary] span{
+        padding-right: 0;
+      }
+      .layui-form-item .layui-input-inline+.layui-form-mid{
+        text-align: left;
+      }
+      .layui-form-item .layui-input-inline,.layui-input-block{
+        margin-left: 100px !important;
+      }
+      .topTips{
+        padding-bottom: 10px;
+      }
+      .smallInput{
+        width: 80%;
+        float: left;
+      }
+      .inputTips{
+        margin-left: 0px !important;
+        float: right;
+        margin-top: 10px;
+      }
+      .checkboxLable{
+        margin-left: 0 !important
+      }
+      .checkboxLable span{
+        font-size: 12px;
+      }
     }
   </style>
 </head>
 <body>
 <div>
+  <div class="layui-carousel" id="imgDivs">
+    <div carousel-item>
+      <div><img src="./img/page70/slider2.jpg"></div>
+      <div><img src="./img/page70/slider2.jpg"></div>
+      <div><img src="./img/page70/slider2.jpg"></div>
+    </div>
+  </div>
+</div>
+<div class="navLocation">
   <div class="layui-container">
-    <div class="layui-row"> 
-      <div class="layui-col-md12 title">
-        <h5></h5>
+    <div class="layui-row">
+      <div class="layui-col-md12">
+        <span class="layui-breadcrumb">
+          <a href="">首页</a>
+          <a href="">国际新闻</a>
+          <a href="">亚太地区</a>
+          <a><cite>正文</cite></a>
+        </span>
       </div>
     </div>
   </div>
 </div>
-<div>
-  <div class="layui-container">
-    <div class="layui-row"> 
-      <div class="layui-col-md12 tabContents">
-        <div class="tabNavs">
-          <ul>
-            <li class="active"><a href=""></a></li>
-            <li class=""><a href=""></a></li>
-          </ul>
+<div class="content layui-container">
+  <div class="layui-row "> 
+    <div class="layui-col-md9">
+      <div class="layui-row"> 
+        <div class="layui-col-md12 tabContents">
+          <div class="tabNavs">
+            <ul>
+              <li class="active"><a href="">委托经纪</a></li>
+              <li class=""><a href="">委托中介</a></li>
+            </ul>
+          </div>
+          <div class="tabCards">
+            <div class="topTips">
+              域名经纪服务是指企业或个人委托千喜云为其提供评估、分析、谈判、收购域名的一体化服务。 请留下您的需求，我们竭尽全力为您效劳!
+            </div>
+            <div class="formDiv">
+              <div class="layui-form formContent">
+                <div class="layui-form-item">
+                  <label class="layui-form-label"><b class="red">*</b>委托类型：</label>
+                  <div class="layui-input-block">
+                    <input type="radio" name="leixing" value="" title="指定域名" checked>
+                    <input type="radio" name="leixing" value="" title="指定域名用途或需求">
+                  </div>
+                </div>
+                <div class="layui-form-item">
+                  <label class="layui-form-label"><b class="red">*</b>域名：</label>
+                  <div class="layui-input-inline">
+                    <input type="text" placeholder="请输入您中意的域名" class="layui-input" name="">
+                  </div>
+                </div>
+                <div class="layui-form-item">
+                  <label class="layui-form-label"><b class="red">*</b>报价(元)：</label>
+                  <div class="layui-input-inline">
+                    <input type="text" placeholder="请输入您的预算" class="layui-input smallInput" name="">
+                  </div>
+                  <div class="layui-form-mid layui-word-aux inputTips">
+                    <a id="tipsIcon"><img src="./img/page64/ym_tips.gif"></a>
+                  </div>
+                </div>
+                <div class="layui-form-item">
+                  <label class="layui-form-label"><b class="red">*</b>联系人：</label>
+                  <div class="layui-input-inline">
+                    <input type="text" name="" class="layui-input" placeholder="请输入真实姓名">
+                  </div>
+                </div>
+                <div class="layui-form-item">
+                  <label class="layui-form-label"><b class="red">*</b>手机：</label>
+                  <div class="layui-input-inline">
+                    <input type="text" name="" class="layui-input" placeholder="请输入真实有效的手机号码">
+                  </div>
+                </div>
+                <div class="layui-form-item">
+                  <label class="layui-form-label"><b class="red">*</b>邮箱：</label>
+                  <div class="layui-input-inline">
+                    <input type="text" name="" class="layui-input" placeholder="请输入真实有效的地址">
+                  </div>
+                </div>
+                <div class="layui-form-item">
+                  <label class="layui-form-label">QQ：</label>
+                  <div class="layui-input-inline">
+                    <input type="text" name="" class="layui-input" placeholder="填写QQ便于交流">
+                  </div>
+                </div>
+                <div class="layui-form-item">
+                  <label class="layui-form-label">补充：</label>
+                  <div class="layui-input-inline">
+                    <textarea placeholder="详细的需求，特别的嘱托"></textarea>
+                  </div>
+                </div>
+                <div class="layui-form-item">
+                  <label class="layui-form-label">验证码：</label>
+                  <div class="layui-input-inline">
+                    <input type="text" name="" class="layui-input">
+                  </div>
+                  <div class="layui-form-mid layui-word-aux">
+                    <a id="tipSa"><img src="./img/page64/GetVerifyCode.gif"></a>
+                  </div>
+                </div>
+                <div class="layui-form-item">
+                  <label class="layui-form-label"></label>
+                  <div class="layui-input-block checkboxLable">
+                    <input type="checkbox" name="" value=""  lay-skin="primary" title="我已阅读并同意 <a href='' class='blue'>《千喜云域名经纪中介服务协议》</a>">
+                  </div>
+                </div>
+                <div class="layui-form-item">
+                  <label class="layui-form-label"></label>
+                  <div class="layui-input-block">
+                    <p><span class="layui-btn layui-btn-normal">确定提交</span></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="tabCards">
-          
-        </div>
-        
       </div>
+    </div>
+    <div class="layui-col-md3 rightDiv">
+      <span class="title">中介成功案例</span>
+      <span class="spanA">
+        <a href="">域名</a>
+        <a href="">成交价</a>
+      </span>
+
     </div>
   </div>
 </div>
 </body>
 <script type="text/javascript" src="./layui/layui.js"></script>
 <script type="text/javascript">
-  layui.use(['jquery','layer','form',],function(){
+  layui.use(['jquery','layer','form','upload','carousel','element'],function(){
     var $ = layui.jquery
        ,form = layui.form
+       ,element = layui.element
+       ,carousel = layui.carousel
+       ,upload = layui.upload
        ,layer = layui.layer;
+    form.render();
+    carousel.render({
+      elem: '#imgDivs'
+      ,width: '100%' //设置容器宽度
+      ,arrow: 'always' //始终显示箭头
+    });
 
+    var tips;
+    $('#tipsIcon').mouseover(function(obj){
+      tips = layer.tips('域名经纪为有偿服务，若交易成功，我们将收取最终成交价格的<b style="color:#b81a1a">10%</b>作为服务费，最低<b style="color:#b81a1a">200</b>元，买卖双方可协商各自比例。',$(obj.target).parent(), {
+          tips: [3, '#78BA32'],
+        });
+    }).mouseout(function(){
+      layer.close(tips);
+    })
+    
+    upload.render({
+      elem:'#uploadBtn'
+    })
+    upload.render({
+      elem:'#uploadBtn1'
+    })
     $('.layui-btn').click(function(){
       layer.msg('点击按钮');
     })
-    form.render();
-
-    
   })
 </script>
 </html>
