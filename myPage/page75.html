@@ -1,19 +1,69 @@
 <!--原网址：
-  
+  http://ym.qianxiyun.com/member/mycoupon
 -->
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+  <title>我的优惠券</title>
   <link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
   <link rel="stylesheet" type="text/css" href="./pageTab.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <style>
-    
-    @media screen and (max-width: 540px){
-      
+    .frngexian{
+      border-top: 1px dashed #8080808a;
+      margin-bottom: 5px;
     }
+    .frngexian>p{
+      padding-top: 10px;
+    }
+    .frngexian>p>.layui-btn-danger{
+      margin-left: 35%;
+    }
+    .noCoupon{
+      color: #337ab7;
+      float: right;
+      margin-right: 20px;
+    }
+    .layui-none{
+      font-size: 17px;
+      padding: 150px 0!important;
+    }
+    .layui-none a{
+      color:#006fc4;
+    }
+    .layui-none a:hover{
+      color: #23527c;
+      text-decoration: underline;
+    }
+    .dateDiv{
+      width: 120px !important;
+    }
+    @media screen and (max-width: 540px){
+      .noCoupon{
+        margin-top: 10px;
+      }
+      .dateDiv{
+        width:90px !important;
+      }
+      .layui-form-item .layui-input-inline{
+        float: left;
+        margin: 0px;
+      }
+      .layui-form-item .layui-input-inline+.layui-form-mid{
+        margin: 5px;
+      }
+      .layui-form-item .layui-inline{
+        margin-bottom: 0px;
+      }
+      .layui-none{
+        padding: 50px 0!important;
+      }
+      .frngexian>p>.layui-btn-danger{
+        margin-left: 0;
+      }
+    }
+    
   </style>
 </head>
 <body>
@@ -21,7 +71,7 @@
   <div class="layui-container">
     <div class="layui-row"> 
       <div class="layui-col-md12 title">
-        <h5></h5>
+        <h5>我的优惠券</h5>
       </div>
     </div>
   </div>
@@ -30,16 +80,63 @@
   <div class="layui-container">
     <div class="layui-row"> 
       <div class="layui-col-md12 tabContents">
-        <div class="tabNavs">
-          <ul>
-            <li class="active"><a href=""></a></li>
-            <li class=""><a href=""></a></li>
-          </ul>
-        </div>
-        <div class="tabCards">
-          
-        </div>
-        
+          <div class="tabNavs">
+            <ul>
+              <li class="active"><a href="">可使用的优惠卷</a></li>
+              <li class=""><a href="">我的优惠卷</a></li>
+              <li class=""><a href="">已过期优惠卷</a></li>
+              <li class=""><a href="">使用记录</a></li>
+            </ul>
+            <a href="" class="noCoupon">没有优惠卷？点我获得</a>
+          </div>
+          <div class="tabCards layui-form">
+            <div class="layui-col-md2">
+               <div class="layui-form-item">
+                <label class="layui-form-label">场景：</label>
+                <div class="layui-input-block">
+                  <select name="" lay-verify="">
+                    <option value="-1">请选择场景</option>
+                    <option value="10">域名注册</option>
+                    <option value="11">域名续费</option>
+                    <option value="12">域名转入</option>
+                    <option value="20">DNS购买</option>
+                    <option value="21">DNS续费</option>
+                    <option value="22">DNS升级</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="layui-col-md4">
+              <div class="layui-form-item">
+                <div class="layui-inline">
+                  <label class="layui-form-label">有效期：</label>
+                  <div class="layui-input-inline dateDiv">
+                    <input type="text" class="layui-input" id="dateRender0">
+                  </div>
+                  <div class="layui-form-mid">至</div>
+                  <div class="layui-input-inline dateDiv">
+                    <input type="text" class="layui-input" id="dateRender1">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="layui-col-md3">
+               <div class="layui-form-item">
+                <label class="layui-form-label">使用后缀:</label>
+                <div class="layui-input-block">
+                  <input type="text" class="layui-input" placeholder="例如：.com">
+                </div>
+              </div>
+            </div>
+            <div class="layui-col-md12 frngexian">
+              <p>当前条件下，共有<b class="red">(0)</b>个优惠卷
+                <span class="layui-btn layui-btn-danger">搜索</span>
+              </p>
+            </div>
+            <div class="layui-col-md12 resultDiv">
+              <table id="resultTable" lay-filter="resultTable"></table>
+            </div>
+          </div>
       </div>
     </div>
   </div>
@@ -47,17 +144,44 @@
 </body>
 <script type="text/javascript" src="./layui/layui.js"></script>
 <script type="text/javascript">
-  layui.use(['jquery','layer','form',],function(){
+  layui.use(['jquery','layer','form','laydate','table'],function(){
     var $ = layui.jquery
        ,form = layui.form
+       ,table = layui.table
+       ,laydate = layui.laydate
        ,layer = layui.layer;
 
+    laydate.render({
+      elem:'#dateRender0'
+    })
+    laydate.render({
+      elem:'#dateRender1'
+    })
+    table.render({
+      elem:'#resultTable',
+      text:{
+        none:'亲，您在<b class="red">千喜云</b>还没有购买此种代金卷，您可以<a href="">购买代金卷</a>',
+      },
+      skin:'nob',
+      data:[],
+      cols:[[
+        { type:'checkbox'},
+        { align:'center',title:'优惠卷',field:''},
+        { align:'center',title:'类型',field:''},
+        { align:'center',title:'使用后缀',field:''},
+        { align:'center',title:'单张面值',field:''},
+        { align:'center',title:'购买数量',field:''},
+        { align:'center',title:'剩余数量',field:''},
+        { align:'center',title:'状态',field:''},
+        { align:'center',title:'有效期',field:''},
+        { align:'center',title:'说明',field:''},
+        { align:'center',title:'操作',field:''},
+      ]]
+    })
+    form.render();
     $('.layui-btn').click(function(){
       layer.msg('点击按钮');
     })
-    form.render();
-
-    
   })
 </script>
 </html>
