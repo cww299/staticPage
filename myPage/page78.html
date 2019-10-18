@@ -1,45 +1,195 @@
 <!--原网址：
-  
+  http://ym.qianxiyun.com/jiaoyi
 -->
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+  <title>域名交易</title>
   <link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
-  <link rel="stylesheet" type="text/css" href="./pageTab.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <style>
-    
-    @media screen and (max-width: 540px){
+    img{
+      max-width: 100%;
+    }
+    #imgDivs{
+      height: 360px;
+    }
+    #imgDivs{
+      background: url(./img/page78/kptjy_2.jpg) #799fec no-repeat center top;
+      text-align: center;
+    }
+    .imgDivA{
+
+    }
+    .imgDivB{
+      margin-top: -50px;
       
+    }
+    .imgDivC{
+      position: relative;
+      left: 10%;
+      top: 60px;
+      width: 90%;
+    }
+    .titalNav{
+      border-bottom: solid 3px #de3b3b;
+      line-height: 40px;
+      height: 40px;
+      margin:10px 0;
+    }
+    .titalContent{
+      padding: 0px 10px;
+      margin-bottom: 50px;
+    }
+    .colorGray{
+      border-color: #80869a;
+    }
+    .colorGray .titalSpan{
+      background: #80869a !important;
+    }
+    .colorGray .titalSpan a{
+      color: #fff;
+    }
+    .titalNav .more{
+      float: right;
+      font-size: 14px;
+      margin: 1px 10px;
+      color: #999;
+    }
+    .titalNav .titalSpan{
+      background: #de3b3b;
+      font-size: 16px;
+      float: left;
+      display: inline-block;
+      color: #fff;
+      font-weight: bold;
+      padding: 0 25px;
+    }
+    .titalNav .tips{
+      color: #666;
+      display: inline-block;
+      margin-left: 20px;
+    }
+    .titalNav .layui-btn{
+      margin-left: 20px;
+      background: -webkit-gradient(linear, 0 0, 0 100%, from(#f9fbff), to(#dce6fa));
+      border: 1px solid #b8c8e5;
+      border-radius: 2px;
+      color: #7590c1;
+    }
+    .ourStrong{
+      margin-top: 150px;
+    }
+    .strong{
+      padding: 20px 3%;
+      border-right: 1px dashed #E3E3E3;
+      text-align: center;
+      width: 20%;
+    }
+    .strong img{
+      display: block;
+      margin: 15px auto 30px;
+    }
+    .strong h4{
+      font-size: 18px;
+      line-height: 25px;
+      margin-bottom: 5px;
+      color: #596898;
+    }
+    .strong p{
+      height: 60px;
+      line-height: 20px;
+      text-align: center;
+      font-size: 12px;
+      color: #999;
+    }
+    @media screen and (max-width: 540px){
+      .strong{
+        width: auto;
+        border-right: none;
+        padding:0px;
+      }
     }
   </style>
 </head>
 <body>
 <div>
-  <div class="layui-container">
-    <div class="layui-row"> 
-      <div class="layui-col-md12 title">
-        <h5></h5>
-      </div>
-    </div>
+  <div class="" id="imgDivs">
+    <div class="imgDivC"><img src="./img/page78/kptjy_2_c.png"></div>
+    <div class="imgDivB"><img src="./img/page78/kptjy_2_b.png"></div>
+    <div class="imgDivA"><img src="./img/page78/kptjy_2_a.png"></div>
   </div>
 </div>
 <div>
   <div class="layui-container">
     <div class="layui-row"> 
-      <div class="layui-col-md12 tabContents">
-        <div class="tabNavs">
-          <ul>
-            <li class="active"><a href=""></a></li>
-            <li class=""><a href=""></a></li>
-          </ul>
+      <div class="layui-col-md12">
+        <div class="titalNav">
+          <a class="more" href="">更多</a>
+          <span class="titalSpan">推荐米店</span>
+          <span class="layui-btn layui-btn-sm">我要开店</span>
+          <span class="tips">REG米店，打破传统交易壁垒，让您的域名轻松实现跨平台交易</span>
         </div>
-        <div class="tabCards">
-          
+        <div class="titalContent">
+          <p style="color:gray;padding: 20px;">暂无记录</p>
         </div>
-        
+        <div class="layui-row layui-col-space10"> 
+          <div class="layui-col-md9">
+            <div class="titalNav">
+              <a class="more" href="">更多</a>
+              <span class="titalSpan">推荐一口价</span>
+            </div>
+            <div class="titalContent"></div>
+            <div class="titalNav">
+              <a class="more" href="">更多</a>
+              <span class="titalSpan">打包一口价</span>
+            </div>
+            <div class="titalContent"></div>
+          </div>
+          <div class="layui-col-md3">
+            <div class="titalNav colorGray">
+              <a class="more" href="">更多</a>
+              <span class="titalSpan"><a href="">交易记录</a></span>
+            </div>
+            <div class="titalContent">
+              <table id="tableData"></table>
+            </div>
+          </div>
+        </div> 
+      </div>
+      <div class="layui-col-md12 ourStrong">
+         <div class="titalNav">
+            <span class="titalSpan">我们的优势</span>
+          </div>
+          <div class="titalContent">
+              <div class="layui-col-md2 strong">
+                <img src="./img/page78/jyicon_01.png">
+                <h4>域名服务商</h4>
+                <p>ICANN、CNNIC双认证，国内专业域名批发注册商</p>
+              </div>
+              <div class="layui-col-md2 strong">
+                <img src="./img/page78/jyicon_02.png">
+                <h4>域名便捷管理</h4>
+                <p>批量过户转移，便捷一键操作，零费用无限制</p>
+              </div>
+              <div class="layui-col-md2 strong">
+                <img src="./img/page78/jyicon_03.png">
+                <h4>多重安全保障</h4>
+                <p>域名隐私保护、安全锁顶级保障，域名转移多重审核</p>
+              </div>
+              <div class="layui-col-md2 strong">
+                <img src="./img/page78/jyicon_04.png">
+                <h4>安全快捷交易</h4>
+                <p>多重展示交易、米店定制服务， 安全交易保障</p>
+              </div>
+              <div class="layui-col-md2 strong" style="border-right: none;">
+                <img src="./img/page78/jyicon_05.png">
+                <h4>贴心管家服务</h4>
+                <p>批发注册、批量管理、多重展示，零等待响应、无延迟处理</p>
+              </div>
+
+          </div>
       </div>
     </div>
   </div>
@@ -47,11 +197,22 @@
 </body>
 <script type="text/javascript" src="./layui/layui.js"></script>
 <script type="text/javascript">
-  layui.use(['jquery','layer','form',],function(){
+  layui.use(['jquery','layer','form','table'],function(){
     var $ = layui.jquery
        ,form = layui.form
+       ,table = layui.table
        ,layer = layui.layer;
 
+    table.render({
+      elem:'#tableData',
+      skin:'nob',
+      data:[],
+      cols:[[
+        { title:'域名',field:'',},
+        { title:'价格',field:'',},
+      ]],
+    })
+     
     $('.layui-btn').click(function(){
       layer.msg('点击按钮');
     })
