@@ -68,10 +68,11 @@
       font-size: 19px;
     }
     .layui-table-header{
-      height: 100px !important;
+      height: 130px !important;
+      border-bottom: none !important;
     }
     .layui-table-header tr{
-      height: 100px !important;
+      height: 130px !important;
     }
     .layui-table-header tr th{
       background: #82858f;
@@ -85,6 +86,32 @@
       white-space: normal;
     }
     .thTitle{
+      font-size: 18px;
+    }
+    .priceTable{
+      margin-right: 17px;
+      width:-webkit-calc(100% - 15px); 
+      width:-moz-calc(100% - 15px); 
+      width:calc(100% - 15px); 
+      background-color:#f2f2f2;
+      margin-left: -1px;
+    }
+    .priceTable tr{
+      border: 1px solid #e6e6e6;
+      background: #f2f2f2;
+      border-left: none;
+      border-right: none;
+      line-height: 39px;
+    }
+    .priceTable tr td{
+      border: 1px solid #e6e6e6;
+      width: 20%
+    }
+    .layui-table-box{
+      background: #f2f2f2;
+    }
+    .titleTr{
+      font-weight: 700;
       font-size: 18px;
     }
     @media screen and (max-width: 540px){
@@ -141,89 +168,106 @@
        ,layer = layui.layer;
 
     var data = [
-      { server:'价格',l1:'',l2:'',l3:'',l4:''},
+      { server:'',l1:'',l2:'title~防护 ',l3:'',l4:'',},
       { server:'DDOS',l1:'20G',l2:'50G ',l3:'100G',l4:'200G'},
       { server:'QPS',l1:'200w Q/S',l2:'500w Q/S',l3:'1000w Q/S',l4:'2000w Q/S'},
-      { server:'DDOS',l1:'20G',l2:'50G ',l3:'100G',l4:'200G'},
-      { server:'QPS',l1:'200w Q/S',l2:'500w Q/S',l3:'1000w Q/S',l4:'2000w Q/S'},
-      { server:'DDOS',l1:'20G',l2:'50G ',l3:'100G',l4:'200G'},
-      { server:'QPS',l1:'200w Q/S',l2:'500w Q/S',l3:'1000w Q/S',l4:'2000w Q/S'},
-      { server:'DDOS',l1:'20G',l2:'50G ',l3:'100G',l4:'200G'},
-      { server:'QPS',l1:'200w Q/S',l2:'500w Q/S',l3:'1000w Q/S',l4:'2000w Q/S'},
-      { server:'DDOS',l1:'20G',l2:'50G ',l3:'100G',l4:'200G'},
-      { server:'QPS',l1:'200w Q/S',l2:'500w Q/S',l3:'1000w Q/S',l4:'2000w Q/S'},
-      { server:'DDOS',l1:'20G',l2:'50G ',l3:'100G',l4:'200G'},
-      { server:'QPS',l1:'200w Q/S',l2:'500w Q/S',l3:'1000w Q/S',l4:'2000w Q/S'},
-      { server:'DDOS',l1:'20G',l2:'50G ',l3:'100G',l4:'200G'},
-      { server:'QPS',l1:'200w Q/S',l2:'500w Q/S',l3:'1000w Q/S',l4:'2000w Q/S'},
-      { server:'DDOS',l1:'20G',l2:'50G ',l3:'100G',l4:'200G'},
-      { server:'QPS',l1:'200w Q/S',l2:'500w Q/S',l3:'1000w Q/S',l4:'2000w Q/S'},
-      { server:'DDOS',l1:'20G',l2:'50G ',l3:'100G',l4:'200G'},
-      { server:'QPS',l1:'200w Q/S',l2:'500w Q/S',l3:'1000w Q/S',l4:'2000w Q/S'},
-      { server:'DDOS',l1:'20G',l2:'50G ',l3:'100G',l4:'200G'},
-      { server:'QPS',l1:'200w Q/S',l2:'500w Q/S',l3:'1000w Q/S',l4:'2000w Q/S'},
-      { server:'DDOS',l1:'20G',l2:'50G ',l3:'100G',l4:'200G'},
-      { server:'QPS',l1:'200w Q/S',l2:'500w Q/S',l3:'1000w Q/S',l4:'2000w Q/S'},
-      { server:'DDOS',l1:'20G',l2:'50G ',l3:'100G',l4:'200G'},
-      { server:'QPS',l1:'200w Q/S',l2:'500w Q/S',l3:'1000w Q/S',l4:'2000w Q/S'},
-      { server:'DDOS',l1:'20G',l2:'50G ',l3:'100G',l4:'200G'},
-      { server:'QPS',l1:'200w Q/S',l2:'500w Q/S',l3:'1000w Q/S',l4:'2000w Q/S'},
-      { server:'DDOS',l1:'20G',l2:'50G ',l3:'100G',l4:'200G'},
-      { server:'QPS',l1:'200w Q/S',l2:'500w Q/S',l3:'1000w Q/S',l4:'2000w Q/S'},
-      { server:'DDOS',l1:'20G',l2:'50G ',l3:'100G',l4:'200G'},
-      { server:'QPS',l1:'200w Q/S',l2:'500w Q/S',l3:'1000w Q/S',l4:'2000w Q/S'},
-      { server:'DDOS',l1:'20G',l2:'50G ',l3:'100G',l4:'200G'},
-      { server:'QPS',l1:'200w Q/S',l2:'500w Q/S',l3:'1000w Q/S',l4:'2000w Q/S'},
-      { server:'DDOS',l1:'20G',l2:'50G ',l3:'100G',l4:'200G'},
-      { server:'QPS',l1:'200w Q/S',l2:'500w Q/S',l3:'1000w Q/S',l4:'2000w Q/S'},
-      { server:'DDOS',l1:'20G',l2:'50G ',l3:'100G',l4:'200G'},
-      { server:'QPS',l1:'200w Q/S',l2:'500w Q/S',l3:'1000w Q/S',l4:'2000w Q/S'},
-      { server:'DDOS',l1:'20G',l2:'50G ',l3:'100G',l4:'200G'},
-      { server:'QPS',l1:'200w Q/S',l2:'500w Q/S',l3:'1000w Q/S',l4:'2000w Q/S'},
-      { server:'DDOS',l1:'20G',l2:'50G ',l3:'100G',l4:'200G'},
-      { server:'QPS',l1:'200w Q/S',l2:'500w Q/S',l3:'1000w Q/S',l4:'2000w Q/S'},
-      { server:'DDOS',l1:'20G',l2:'50G ',l3:'100G',l4:'200G'},
-      { server:'QPS',l1:'200w Q/S',l2:'500w Q/S',l3:'1000w Q/S',l4:'2000w Q/S'},
-      { server:'DDOS',l1:'20G',l2:'50G ',l3:'100G',l4:'200G'},
-      { server:'QPS',l1:'200w Q/S',l2:'500w Q/S',l3:'1000w Q/S',l4:'2000w Q/S'},
-      { server:'DDOS',l1:'20G',l2:'50G ',l3:'100G',l4:'200G'},
-      { server:'QPS',l1:'200w Q/S',l2:'500w Q/S',l3:'1000w Q/S',l4:'2000w Q/S'},
-      { server:'DDOS',l1:'20G',l2:'50G ',l3:'100G',l4:'200G'},
-      { server:'QPS',l1:'200w Q/S',l2:'500w Q/S',l3:'1000w Q/S',l4:'2000w Q/S'},
-      { server:'DDOS',l1:'20G',l2:'50G ',l3:'100G',l4:'200G'},
-      { server:'QPS',l1:'200w Q/S',l2:'500w Q/S',l3:'1000w Q/S',l4:'2000w Q/S'},
-      { server:'DDOS',l1:'20G',l2:'50G ',l3:'100G',l4:'200G'},
-      { server:'QPS',l1:'200w Q/S',l2:'500w Q/S',l3:'1000w Q/S',l4:'2000w Q/S'},
-      { server:'DDOS',l1:'20G',l2:'50G ',l3:'100G',l4:'200G'},
-      { server:'QPS',l1:'200w Q/S',l2:'500w Q/S',l3:'1000w Q/S',l4:'2000w Q/S'},
-      { server:'DDOS',l1:'20G',l2:'50G ',l3:'100G',l4:'200G'},
-      { server:'QPS',l1:'200w Q/S',l2:'500w Q/S',l3:'1000w Q/S',l4:'2000w Q/S'},
-      { server:'QPS',l1:'200w Q/S',l2:'500w Q/S',l3:'1000w Q/S',l4:'2000w Q/S'},
-      { server:'DDOS',l1:'20G',l2:'50G ',l3:'100G',l4:'200G'},
-      { server:'QPS',l1:'200w Q/S',l2:'500w Q/S',l3:'1000w Q/S',l4:'2000w Q/S'},
-      { server:'DDOS',l1:'20G',l2:'50G ',l3:'100G',l4:'200G'},
-      { server:'QPS',l1:'200w Q/S',l2:'500w Q/S',l3:'1000w Q/S',l4:'2000w Q/S'},
-      { server:'DDOS',l1:'20G',l2:'50G ',l3:'100G',l4:'200G'},
-      { server:'QPS',l1:'200w Q/S',l2:'500w Q/S',l3:'1000w Q/S',l4:'2000w Q/S'},
-      { server:'DDOS',l1:'20G',l2:'50G ',l3:'100G',l4:'200G'},
-      { server:'QPS',l1:'200w Q/S',l2:'500w Q/S',l3:'1000w Q/S',l4:'2000w Q/S'},
-      { server:'DDOS',l1:'20G',l2:'50G ',l3:'100G',l4:'200G'},
-      { server:'QPS',l1:'200w Q/S',l2:'500w Q/S',l3:'1000w Q/S',l4:'2000w Q/S'},
+      { server:'实时QPS数据',l1:'img',l2:'img',l3:'img',l4:'img'},
+      { server:'日志分析',l1:'-',l2:'img',l3:'img',l4:'img'},
+      { server:'日志下载',l1:'-',l2:'- ',l3:'-',l4:'-'},
+      { server:'攻击抓包',l1:'-',l2:'- ',l3:'-',l4:'img'},
+      { server:'独享NS',l1:'-',l2:'- ',l3:'-',l4:'可选'},
 
+      { server:'',l1:'',l2:'title~节点 ',l3:'',l4:'',},
+      { server:'电信',l1:'img',l2:'img',l3:'img',l4:'img'},
+      { server:'联通',l1:'img',l2:'img',l3:'img',l4:'img'},
+      { server:'移动',l1:'img',l2:'img',l3:'img',l4:'img'},
+      { server:'BGP',l1:'img',l2:'img',l3:'img',l4:'img'},
+      { server:'北美',l1:'-',l2:'img',l3:'img',l4:'img'},
+      { server:'亚太',l1:'-',l2:'img',l3:'img',l4:'img'},
+      { server:'欧洲',l1:'-',l2:'img',l3:'img',l4:'img'},
+
+      { server:'',l1:'',l2:'title~线路 ',l3:'',l4:'',},
+      { server:'区域(国内)',l1:'区域',l2:'区域、省份 ',l3:'区域、省份 ',l4:'区域、省份 '},
+      { server:'区域(国外)',l1:'大洲',l2:'大洲 ',l3:'大洲 ',l4:'大洲 '},
+      { server:'搜索引擎',l1:'img',l2:'img',l3:'img',l4:'img'},
+      { server:'电信',l1:'img',l2:'img',l3:'img',l4:'img'},
+      { server:'联通',l1:'img',l2:'img',l3:'img',l4:'img'},
+      { server:'移动',l1:'img',l2:'img',l3:'img',l4:'img'},
+      { server:'教育网',l1:'img',l2:'img',l3:'img',l4:'img'},
+      { server:'铁通',l1:'-',l2:'img',l3:'img',l4:'img'},
+      { server:'鹏博士',l1:'-',l2:'img',l3:'img',l4:'img'},
+      { server:'其他',l1:'-',l2:'- ',l3:'-',l4:'img'},
+
+      { server:'',l1:'',l2:'title~解析 ',l3:'',l4:'',},
+      { server:'负载均衡',l1:'20',l2:'无上限',l3:'无上限',l4:'无上限'},
+      { server:'最小TTL',l1:'10',l2:'10',l3:'10',l4:'10'},
+      { server:'URL转发 ',l1:'10',l2:'20',l3:'30',l4:'50'},
+      { server:'显性URL转发',l1:'img',l2:'img',l3:'img',l4:'img'},
+      { server:'隐性URL转发',l1:'img',l2:'img',l3:'img',l4:'img'},
+      { server:'泛解析',l1:'img',l2:'img',l3:'img',l4:'img'},
+
+      { server:'',l1:'',l2:'title~功能 ',l3:'',l4:'',},
+      { server:'云监控',l1:'另购',l2:'另购',l3:'另购',l4:'另购'},
+      { server:'劫持监控',l1:'另购',l2:'另购',l3:'另购',l4:'另购'},
+      { server:'云加速',l1:'另购',l2:'另购',l3:'另购',l4:'另购'},
+      { server:'API',l1:'img',l2:'img',l3:'img',l4:'img'},
+
+      { server:'',l1:'',l2:'title~通知 ',l3:'',l4:'',},
+      { server:'邮件通知',l1:'img',l2:'img',l3:'img',l4:'img'},
+      { server:'短信通知',l1:'img',l2:'img',l3:'img',l4:'img'},
+      { server:'微信通知',l1:'img',l2:'img',l3:'img',l4:'img'},
+      { server:'人工通知',l1:'img',l2:'img',l3:'img',l4:'img'},
+
+      { server:'',l1:'',l2:'title~服务 ',l3:'',l4:'',},
+      { server:'工单系统',l1:'img',l2:'img',l3:'img',l4:'img'},
+      { server:'在线客服',l1:'img',l2:'img',l3:'img',l4:'img'},
+      { server:'400电话',l1:'img',l2:'img',l3:'img',l4:'img'},
+      { server:'专属客服',l1:'7X24',l2:'7X24 ',l3:'7X24',l4:'7X24'},
+
+      { server:'',l1:'',l2:'title~更多功能持续开放中... ',l3:'',l4:'',},
     ];
     table.render({
       elem: '#tableData',
-      height:'800px',
+      height:'600px',
       data:data,
       limit:99999,
       cols:[[
-        { align:'center',field:'server',title:'<b class="thTitle">服务</b><br><p>适用网站群体</p>',},
-        { align:'center',field:'l1',title:'<b class="thTitle">入门版</b><br><p>适合个人中、小型网站，日常流量不大的网站，日IP<5千。</p>',},
-        { align:'center',field:'l2',title:'<b class="thTitle">企业版</b><br><p>适合小型规模网站，地方、行业门户，小型电商网站等。日IP<5万。</p>',},
-        { align:'center',field:'l3',title:'<b class="thTitle">精英版</b><br><p>适合中型规模网站，电商、贸易、娱乐网站等。日IP<10万。</p>',},
-        { align:'center',field:'l4',title:'<b class="thTitle">旗舰版</b><br><p>适合大型规模网站，金融、视频、网游网站等。日IP>10万。</p>',},
-      ]]
+        { align:'center',field:'server',title:'<b class="thTitle">服务</b><br><p>适用网站群体</p><', templet:getTpl('server'),},
+        { align:'center',field:'l1',title:'<b class="thTitle">入门版</b><br><p>适合个人中、小型网站，日常流量不大的网站，日IP<5千。</p>',templet:getTpl('l1'),},
+        { align:'center',field:'l2',title:'<b class="thTitle">企业版</b><br><p>适合小型规模网站，地方、行业门户，小型电商网站等。日IP<5万。</p>',templet:getTpl('l2'),},
+        { align:'center',field:'l3',title:'<b class="thTitle">精英版</b><br><p>适合中型规模网站，电商、贸易、娱乐网站等。日IP<10万。</p>',templet:getTpl('l3'),},
+        { align:'center',field:'l4',title:'<b class="thTitle">旗舰版</b><br><p>适合大型规模网站，金融、视频、网游网站等。日IP>10万。</p>',templet:getTpl('l4'),},
+      ]],
+      done:function(){
+        var html = ['<table class="priceTable">',
+                      '<tr>',
+                        '<td>价格</td>',
+                        '<td>&nbsp;</td>',
+                        '<td>&nbsp;</td>',
+                        '<td>&nbsp;</td>',
+                        '<td>&nbsp;</td>',
+                      '</tr>',
+                    '</table>'].join(' ');
+        $('.layui-table-body').before(html);
+        var width = $('.layui-table-body').find('td').css('width');
+        $('.priceTable').find('td').css('width',width)
+        layui.each($('.titleTr'),function(index,item){
+          console.log($(item).closest('tr'))
+          $(item).closest('tr').find('td').css('border-right','none');
+        })
+      }
     })
+
+    function getTpl(field){
+      return function(d){
+        if(d[field]=='img'){
+          return '<img src="./img/page71/dns_sure.png">';
+        }else if(d[field].split('~').length>1){
+          return '<span class="titleTr">'+d[field].split('~')[1]+'</span>';
+        }
+        return d[field];
+      }
+    }
     $('.layui-btn').click(function(){
       layer.msg('点击按钮');
     })
