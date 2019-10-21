@@ -99,7 +99,7 @@
       border: 1px solid #e6e6e6;
     }
     .searchRegister h3{
-      line-height: 40px;
+      line-height: 44px;
       font-size: 16px;
       text-indent: 15px;
       text-align: left;
@@ -114,14 +114,19 @@
       margin-right: 10px;
     }
     .searchRegister .content{
+      margin-top: 11px;
       padding: 10px 0;
       background: #fff;
-      border: 1px solid #e6e6e6;
+      outline: 1px solid #e6e6e6;
       padding: 10px 2px;
+    }
+    .lookoverAll>p{
+      line-height: 24px;
+      margin-bottom: 10px;
+      font-size: 14px;
     }
     @media screen and (max-width: 540px){
       .searchBtnDiv{
-        text-align: center;
         margin-top: 5px;
       }
       .rightRegister img{
@@ -129,6 +134,15 @@
       }
       .searchRegister .content{
         padding: 10px 12px;
+      }
+      .searchDiv .layui-col-md9{
+        float: left;
+        width: 70%;
+      }
+    }
+    @media screen and (max-width: 380px){
+      .title .rightDiv {
+          margin-top: -25px;
       }
     }
   </style>
@@ -184,7 +198,29 @@
             <p> (1) 到期当天暂停解析，如果在72小时未续费，则修改域名DNS指向广告页面（停放）。域名到期后30-45天为域名保留期（不同注册商政策规定时间不同）</p>
             <p> (2) 过了保留期域名将进入赎回期（REDEMPTIONPERIOD，为期30天）</p>
             <p> (3) 过了赎回期域名将进入为期5天左右的删除期，删除期过后域名开放，任何人可注。</p>
-            <p> 关于域名状态的解释：<a href="" class="lookover">点击查看完整信息</a></p>
+            <p> 关于域名状态的解释：<a href="javascript:;" class="lookover">点击查看完整信息</a></p>
+            <div class="lookoverAll" style="display: none;">
+              <p>cn域名各个状态说明：</p>
+              <p>以client开头的状态表示由客户端(注册商)可以增加的状态</p>
+              <p>以server开头的状态表示服务器端(CNNIC)操作增加的状态</p>
+              <p>既不以client开头也不以server开头的状态由服务器端管理</p>
+              <p>域名的状态解释：</p>
+              <p><strong>ok 正常状态</strong></p>
+              <p>inactive 非激活状态(注册的时候没有填写域名服务器，不能进行解析)</p>
+              <p>clientDeleteProhibited 禁止删除</p>
+              <p>serverDeleteProhibited 禁止删除</p>
+              <p>clientUpdateProhibited 禁止修改</p>
+              <p>serverUpdateProhibited 禁止修改</p>
+              <p>pendingDelete 正在删除过程中</p>
+              <p>pendingTransfer 正在转移过程中</p>
+              <p>clientTransferProhibited 禁止转移</p>
+              <p>serverTransferProhibited 禁止转移</p>
+              <p>clientRenewProhibited 禁止续费</p>
+              <p>serverRenewProhibited 禁止续费</p>
+              <p>clientHold 停止解析</p>
+              <p>serverHold 停止解析</p>
+              <p>pendingVerification 注册信息正在确认过程中</p>
+            </div>
           </div>
         </div>
       </div>
@@ -228,6 +264,12 @@
 
     $('.layui-btn').click(function(){
       layer.msg('点击按钮');
+    })
+    $('.lookover').click(function(obj){
+      if($(obj.target).parent().next().css('display')=='none'){
+        $(obj.target).parent().next().show();
+      }else
+        $(obj.target).parent().next().hide();
     })
     form.render();
     
