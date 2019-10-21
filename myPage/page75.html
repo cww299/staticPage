@@ -61,6 +61,15 @@
       }
       .frngexian>p>.layui-btn-danger{
         margin-left: 0;
+        float: right;
+      }
+      .frngexian>p{
+        padding-top: 10px;
+        line-height: 38px;
+      }
+      .searchDiv{
+        padding-right: 20px;
+        margin-left: -10px;
       }
     }
     
@@ -82,54 +91,56 @@
       <div class="layui-col-md12 tabContents">
           <div class="tabNavs">
             <ul>
-              <li class="active"><a href="">可使用的优惠卷</a></li>
-              <li class=""><a href="">我的优惠卷</a></li>
-              <li class=""><a href="">已过期优惠卷</a></li>
+              <li class="active"><a href="">可使用的优惠券</a></li>
+              <li class=""><a href="">我的优惠券</a></li>
+              <li class=""><a href="">已过期优惠券</a></li>
               <li class=""><a href="">使用记录</a></li>
             </ul>
-            <a href="" class="noCoupon">没有优惠卷？点我获得</a>
+            <a href="" class="noCoupon">没有优惠券？点我获得</a>
           </div>
           <div class="tabCards layui-form">
-            <div class="layui-col-md2">
-               <div class="layui-form-item">
-                <label class="layui-form-label">场景：</label>
-                <div class="layui-input-block">
-                  <select name="" lay-verify="">
-                    <option value="-1">请选择场景</option>
-                    <option value="10">域名注册</option>
-                    <option value="11">域名续费</option>
-                    <option value="12">域名转入</option>
-                    <option value="20">DNS购买</option>
-                    <option value="21">DNS续费</option>
-                    <option value="22">DNS升级</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-            <div class="layui-col-md4">
-              <div class="layui-form-item">
-                <div class="layui-inline">
-                  <label class="layui-form-label">有效期：</label>
-                  <div class="layui-input-inline dateDiv">
-                    <input type="text" class="layui-input" id="dateRender0">
-                  </div>
-                  <div class="layui-form-mid">至</div>
-                  <div class="layui-input-inline dateDiv">
-                    <input type="text" class="layui-input" id="dateRender1">
+            <div class="searchDiv">
+              <div class="layui-col-md2">
+                <div class="layui-form-item">
+                  <label class="layui-form-label">场景：</label>
+                  <div class="layui-input-block">
+                    <select name="" lay-verify="">
+                      <option value="-1">请选择场景</option>
+                      <option value="10">域名注册</option>
+                      <option value="11">域名续费</option>
+                      <option value="12">域名转入</option>
+                      <option value="20">DNS购买</option>
+                      <option value="21">DNS续费</option>
+                      <option value="22">DNS升级</option>
+                    </select>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="layui-col-md3">
-               <div class="layui-form-item">
-                <label class="layui-form-label">使用后缀:</label>
-                <div class="layui-input-block">
-                  <input type="text" class="layui-input" placeholder="例如：.com">
+              <div class="layui-col-md4">
+                <div class="layui-form-item">
+                  <div class="layui-inline">
+                    <label class="layui-form-label">有效期：</label>
+                    <div class="layui-input-inline dateDiv">
+                      <input type="text" class="layui-input" id="dateRender0">
+                    </div>
+                    <div class="layui-form-mid">至</div>
+                    <div class="layui-input-inline dateDiv">
+                      <input type="text" class="layui-input" id="dateRender1">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="layui-col-md3">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">使用后缀:</label>
+                    <div class="layui-input-block">
+                      <input type="text" class="layui-input" placeholder="例如：.com">
+                    </div>
                 </div>
               </div>
             </div>
             <div class="layui-col-md12 frngexian">
-              <p>当前条件下，共有<b class="red">(0)</b>个优惠卷
+              <p>当前条件下，共有<b class="red">(0)</b>个优惠券
                 <span class="layui-btn layui-btn-danger">搜索</span>
               </p>
             </div>
@@ -160,13 +171,13 @@
     table.render({
       elem:'#resultTable',
       text:{
-        none:'亲，您在<b class="red">千喜云</b>还没有购买此种代金卷，您可以<a href="">购买代金卷</a>',
+        none:'亲，您在<b class="red">千喜云</b>还没有购买此种代金券，您可以<a href="">购买代金券</a>',
       },
       skin:'nob',
       data:[],
       cols:[[
         { type:'checkbox'},
-        { align:'center',title:'优惠卷',field:''},
+        { align:'center',title:'优惠券',field:''},
         { align:'center',title:'类型',field:''},
         { align:'center',title:'使用后缀',field:''},
         { align:'center',title:'单张面值',field:''},

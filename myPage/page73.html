@@ -34,7 +34,13 @@
     .tipsDiv>p{
       line-height: 25px;
     }
+    .layerWin{
+      padding:20px;
+    }
     @media screen and (max-width: 540px){
+      .layerWin{
+        padding:0px;
+      }
       .btnP {
         text-align: center;
       }
@@ -68,7 +74,7 @@
         </div>
         <div class="tabCards layui-form">
           <p class="btnP">
-            <span class="layui-btn layui-btn-normal layui-btn-sm">我的域名中添加</span>
+            <span class="layui-btn layui-btn-normal layui-btn-sm" id="addBtn">我的域名中添加</span>
             <span class="layui-btn layui-btn-normal layui-btn-sm">手动添加</span>
           </p>
           <table id="tableData" lay-filter="tableData"></table>
@@ -92,14 +98,50 @@
   </div>
 </div>
 </body>
+<script type="text/html" id="layerTpl">
+  <div class="layerWin">
+    <table class="layui-form">
+      <tr>
+        <td><input type="text" class="layui-input" name=""></td>
+        <td>&nbsp;&nbsp;</td>
+        <td><span class="layui-btn layui-btn-normal ">搜索</span></td>
+        <td>&nbsp;&nbsp;</td>
+        <td><select><option value="1">所有后缀</option></select></td>
+        <td>&nbsp;&nbsp;</td>
+        <td><input type="checkbox" name="" title="全选" lay-skin="primary" checked></td>
+      </tr>
+    </table>
+    <table id="addTable" lay-filter="addTable"></table>
+  </div>
+</script>
+<script type="text/html" id="layerTplSmall">
+  <div class="layerWin">
+    <table class="layui-form">
+      <tr>
+        <td><input type="text" class="layui-input" name=""></td>
+        <td>&nbsp;&nbsp;</td>
+        <td><span class="layui-btn layui-btn-normal ">搜索</span></td>
+        <td>&nbsp;&nbsp;</td>
+      </tr>
+      <tr>
+        <td><select><option value="1">所有后缀</option></select></td>
+        <td>&nbsp;&nbsp;</td>
+        <td><input type="checkbox" name="" title="全选" lay-skin="primary" checked></td>
+      </tr>
+    </table>
+    <table id="addTable" lay-filter="addTable"></table>
+  </div>
+</script>
 <script type="text/javascript" src="./layui/layui.js"></script>
 <script type="text/javascript">
-  layui.use(['jquery','layer','form','table'],function(){
+  layui.use(['jquery','layer','form','table','laytpl'],function(){
     var $ = layui.jquery
        ,form = layui.form
        ,table = layui.table
+       ,laytpl = layui.laytpl
        ,layer = layui.layer;
 
+    var isSmall = window.screen.width<540;
     var data = [];
     table.render({
       elem:'#tableData',
@@ -112,8 +154,29 @@
       ]],
 
     })
-    $('.layui-btn').click(function(){
-      layer.msg('点击按钮');
+    $('#addBtn').click(function(){
+      var area = isSmall?['95%','70%']:['40%','60%'];
+      var content = isSmall?$('#layerTplSmall').html():$('#layerTpl').html();
+      layer.open({
+        title:'添加可操作域名',
+        btnAlign:'c',
+        btn:['确定并添加','取消'],
+        area: area,
+        offset:'100px',
+        content: content,
+        success:function(){
+          table.render({
+            elem:'#addTable',
+            data:[],
+            cols:[[
+              { type:'checkbox', },
+              { field:'field1', title:'域名'},
+              { field:'field2', title:'状态'},
+            ]]
+          })
+          form.render();
+        }
+      })
     })
     form.render();
   })
