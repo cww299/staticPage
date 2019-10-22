@@ -252,8 +252,10 @@
         var width = $('.layui-table-body').find('td').css('width');
         $('.priceTable').find('td').css('width',width)
         layui.each($('.titleTr'),function(index,item){
-          console.log($(item).closest('tr'))
           $(item).closest('tr').find('td').css('border-right','none');
+          $(item).closest('div').css('overflow','inherit');
+          if($(item).html().trim()=='更多功能持续开放中...' && window.screen.width<600)
+            $(item).css('margin-left','-50px');
         })
       }
     })
