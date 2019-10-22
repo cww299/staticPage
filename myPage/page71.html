@@ -27,6 +27,7 @@
       padding: 20px 0;
     }
     .navDiv .navOfOnt{
+      line-height: 26px;
       padding-left: 110px;
       padding-right: 14px;
       font-size: 20px;
@@ -68,18 +69,14 @@
       font-size: 19px;
     }
     .layui-table-header{
-      height: 130px !important;
       border-bottom: none !important;
-    }
-    .layui-table-header tr{
-      height: 130px !important;
     }
     .layui-table-header tr th{
       background: #82858f;
       color: white;
     }
     .layui-table-header tr th>div{
-      height: 80px;
+      height: 35px;
       padding: 0;
     }
     .layui-table-header tr th>div p{
@@ -115,7 +112,14 @@
       font-size: 18px;
     }
     @media screen and (max-width: 540px){
-      
+      .navDiv .navOfOnt{
+        height: 82px;
+        border-right: none;
+      }
+      .priceTable{
+        margin-right: 0;
+        width: auto !important;
+      }
     }
   </style>
 </head>
@@ -176,7 +180,6 @@
       { server:'日志下载',l1:'-',l2:'- ',l3:'-',l4:'-'},
       { server:'攻击抓包',l1:'-',l2:'- ',l3:'-',l4:'img'},
       { server:'独享NS',l1:'-',l2:'- ',l3:'-',l4:'可选'},
-
       { server:'',l1:'',l2:'title~节点 ',l3:'',l4:'',},
       { server:'电信',l1:'img',l2:'img',l3:'img',l4:'img'},
       { server:'联通',l1:'img',l2:'img',l3:'img',l4:'img'},
@@ -185,7 +188,6 @@
       { server:'北美',l1:'-',l2:'img',l3:'img',l4:'img'},
       { server:'亚太',l1:'-',l2:'img',l3:'img',l4:'img'},
       { server:'欧洲',l1:'-',l2:'img',l3:'img',l4:'img'},
-
       { server:'',l1:'',l2:'title~线路 ',l3:'',l4:'',},
       { server:'区域(国内)',l1:'区域',l2:'区域、省份 ',l3:'区域、省份 ',l4:'区域、省份 '},
       { server:'区域(国外)',l1:'大洲',l2:'大洲 ',l3:'大洲 ',l4:'大洲 '},
@@ -197,7 +199,6 @@
       { server:'铁通',l1:'-',l2:'img',l3:'img',l4:'img'},
       { server:'鹏博士',l1:'-',l2:'img',l3:'img',l4:'img'},
       { server:'其他',l1:'-',l2:'- ',l3:'-',l4:'img'},
-
       { server:'',l1:'',l2:'title~解析 ',l3:'',l4:'',},
       { server:'负载均衡',l1:'20',l2:'无上限',l3:'无上限',l4:'无上限'},
       { server:'最小TTL',l1:'10',l2:'10',l3:'10',l4:'10'},
@@ -205,41 +206,47 @@
       { server:'显性URL转发',l1:'img',l2:'img',l3:'img',l4:'img'},
       { server:'隐性URL转发',l1:'img',l2:'img',l3:'img',l4:'img'},
       { server:'泛解析',l1:'img',l2:'img',l3:'img',l4:'img'},
-
       { server:'',l1:'',l2:'title~功能 ',l3:'',l4:'',},
       { server:'云监控',l1:'另购',l2:'另购',l3:'另购',l4:'另购'},
       { server:'劫持监控',l1:'另购',l2:'另购',l3:'另购',l4:'另购'},
       { server:'云加速',l1:'另购',l2:'另购',l3:'另购',l4:'另购'},
       { server:'API',l1:'img',l2:'img',l3:'img',l4:'img'},
-
       { server:'',l1:'',l2:'title~通知 ',l3:'',l4:'',},
       { server:'邮件通知',l1:'img',l2:'img',l3:'img',l4:'img'},
       { server:'短信通知',l1:'img',l2:'img',l3:'img',l4:'img'},
       { server:'微信通知',l1:'img',l2:'img',l3:'img',l4:'img'},
       { server:'人工通知',l1:'img',l2:'img',l3:'img',l4:'img'},
-
       { server:'',l1:'',l2:'title~服务 ',l3:'',l4:'',},
       { server:'工单系统',l1:'img',l2:'img',l3:'img',l4:'img'},
       { server:'在线客服',l1:'img',l2:'img',l3:'img',l4:'img'},
       { server:'400电话',l1:'img',l2:'img',l3:'img',l4:'img'},
       { server:'专属客服',l1:'7X24',l2:'7X24 ',l3:'7X24',l4:'7X24'},
-
       { server:'',l1:'',l2:'title~更多功能持续开放中... ',l3:'',l4:'',},
     ];
+    var isSmall = window.screen.width<600;
     table.render({
       elem: '#tableData',
       height:'600px',
       data:data,
       limit:99999,
+      cellMinWidth:120,
       cols:[[
-        { align:'center',field:'server',title:'<b class="thTitle">服务</b><br><p>适用网站群体</p><', templet:getTpl('server'),},
-        { align:'center',field:'l1',title:'<b class="thTitle">入门版</b><br><p>适合个人中、小型网站，日常流量不大的网站，日IP<5千。</p>',templet:getTpl('l1'),},
-        { align:'center',field:'l2',title:'<b class="thTitle">企业版</b><br><p>适合小型规模网站，地方、行业门户，小型电商网站等。日IP<5万。</p>',templet:getTpl('l2'),},
-        { align:'center',field:'l3',title:'<b class="thTitle">精英版</b><br><p>适合中型规模网站，电商、贸易、娱乐网站等。日IP<10万。</p>',templet:getTpl('l3'),},
-        { align:'center',field:'l4',title:'<b class="thTitle">旗舰版</b><br><p>适合大型规模网站，金融、视频、网游网站等。日IP>10万。</p>',templet:getTpl('l4'),},
+        { align:'center',field:'server',title:'<b class="thTitle">服务</b>', templet:getTpl('server'),},
+        { align:'center',field:'l1',title:'<b class="thTitle">入门版</b>',templet:getTpl('l1'),},
+        { align:'center',field:'l2',title:'<b class="thTitle">企业版</b>',templet:getTpl('l2'),},
+        { align:'center',field:'l3',title:'<b class="thTitle">精英版</b>',templet:getTpl('l3'),},
+        { align:'center',field:'l4',title:'<b class="thTitle">旗舰版</b>',templet:getTpl('l4'),},
       ]],
       done:function(){
-        var html = ['<table class="priceTable">',
+        var html = ['<div style="overflow:auto;" id="myTableDiv">',
+                    '<table class="priceTable">',
+                      '<tr style="background:white;">',
+                        '<td>适用网站群体</td>',
+                        '<td>适合个人中、小型网站，日常流量不大的网站，日IP<5千。</td>',
+                        '<td>适合小型规模网站，地方、行业门户，小型电商网站等。日IP<5万。</td>',
+                        '<td>适合中型规模网站，电商、贸易、娱乐网站等。日IP<10万。</td>',
+                        '<td>适合大型规模网站，金融、视频、网游网站等。日IP>10万。</td>',
+                      '</tr>',
                       '<tr>',
                         '<td>价格</td>',
                         '<td>&nbsp;</td>',
@@ -247,19 +254,28 @@
                         '<td>&nbsp;</td>',
                         '<td>&nbsp;</td>',
                       '</tr>',
-                    '</table>'].join(' ');
+                    '</table>',
+                    '</div>'
+                    ].join(' ');
         $('.layui-table-body').before(html);
         var width = $('.layui-table-body').find('td').css('width');
         $('.priceTable').find('td').css('width',width)
         layui.each($('.titleTr'),function(index,item){
           $(item).closest('tr').find('td').css('border-right','none');
           $(item).closest('div').css('overflow','inherit');
-          if($(item).html().trim()=='更多功能持续开放中...' && window.screen.width<600)
+          if($(item).html().trim()=='更多功能持续开放中...' && isSmall)
             $(item).css('margin-left','-50px');
         })
+        if(isSmall){
+          $('#myTableDiv').css('width',$('.layui-table-header').find('table').css('width'));
+          $(".layui-table-body").scroll(function () {
+              var scrollLeft = $(this).scrollLeft();
+              var t = (-scrollLeft)+'px';
+              $('.priceTable').css('marginLeft',t);
+          });
+        }
       }
     })
-
     function getTpl(field){
       return function(d){
         if(d[field]=='img'){
@@ -274,8 +290,6 @@
       layer.msg('点击按钮');
     })
     form.render();
-
-    
   })
 </script>
 </html>
