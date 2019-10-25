@@ -1,27 +1,287 @@
 <!--原网址：
-  
+  https://www.niaoyun.com/baremetal/
 -->
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+  <title>裸金属服务器</title>
   <link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
-  <link rel="stylesheet" type="text/css" href="./pageTab.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <style>
-    
+    body{
+      background: #f5f5f5;
+    }
+    .bgImg{
+      width: 100%;
+      background: url(./img/page80/banner.jpg) no-repeat center;
+      color:white;
+      padding-top: 25px;
+    }
+    .bgImg h1{
+      line-height: 60px;
+    }
+    .bgImg p{
+      line-height: 28px;
+      font-size: 16px;
+    }
+    .smallNav{
+      margin-top: 50px;
+    }
+    .smallNav ul{
+      width: 60%;
+      margin: auto;
+    }
+    .smallNav li{
+      float: left;
+      width: 25%;
+    }
+    .smallNav li.active a{
+      border-bottom: 3px solid #009fd9;
+      color: #009fd9;
+    }
+    .smallNav li:hover a{
+      border-bottom: 3px solid #009fd9;
+      color: #009fd9;
+    }
+    .smallNav li a{
+      height: 74px;
+      line-height: 74px;
+      display: inline-block;
+      padding: 0px 10px;
+      font-size: 16px;
+      color: #fff;
+    }
+    h1.title{
+      text-align: center;
+      height: 172px;
+      line-height: 182px;
+      font-size: 32px;
+    }
+    .sixOfOne{
+      height: 210px;
+      background-color: #fff;
+    }
+    .sixOfOne:hover{
+      box-shadow: 1px 1px 15px rgba(223, 223, 223, 0.65);
+    }
+    .sixOfOne .imgDiv{
+      float: left;
+      width: 30%;
+      text-align: center;
+      padding-top: 55px;
+    }
+    .sixOfOne .titleAndFont{
+      float: left;
+      width: 70%;
+      padding-top: 65px;
+    }
+    .sixOfOne .titleAndFont .title{
+      display: block;
+      font-size: 22px;
+      padding: 0 15px;
+      color: #333;
+    }
+    .sixOfOne .titleAndFont p{
+      display: block;
+      padding: 0 15px;
+      margin-top: 16px;
+      line-height: 28px;
+      font-size: 16px;
+      color: #666;
+    }
+    .specalBgImg{
+      background: url(./img/page80/product_bg.jpg) no-repeat center;
+      height: 476px;
+      width: 100%;
+    }
+    .specalBgImg h1{
+      color: #fff;
+    }
+    .specalBgImg .fourOfOne{
+      background: #2e3035;
+      text-align: center;
+      margin: 0 10px;
+      padding: 20px 25px;
+    }
+    .specalBgImg .fourOfOne:hover{
+      box-shadow: 0px 15px 20px #4040e7c9
+    }
+    .specalBgImg .fourOfOne .imgDiv{
+      padding: 20px 0;
+    }
+    .specalBgImg .fourOfOne .imgDiv img{
+      width: 45px;
+      height: 45px;
+    }
+    .specalBgImg .fourOfOne .title{
+      color: #fff;
+      font-size: 16px;
+      margin-bottom: 4px;
+    }
+    .specalBgImg .fourOfOne .fonts{
+      color: #999;
+      font-size: 12px;
+      margin-bottom: 10px;
+      line-height: 2em;
+      margin-top: 5px;
+    }
+    .appOfOne{
+      background: #fff no-repeat center 60px;
+      text-align: center;
+      margin:0 10px;
+      padding: 40px 15px;
+    }
+    .appOfOne .imgDiv{
+
+    }
+    .appOfOne .title{
+      font-size: 16px;
+      color: #333;
+      margin-top:20px;
+    }
+    .appOfOne .iconUl{
+      width: 100%;
+      padding: 0 10px;
+    }
+    .appOfOne .iconUl li{
+      float: left;
+      width: 33%;
+      height: 56px;
+      margin-top: 20px;
+      text-align: center;
+      font-size: 12px;
+      color: #555555;
+    }
+    .appOfOne>p{
+      font-size: 12px;
+      color: #999999;
+      line-height: 1.8em;
+      margin-top: 10px;
+    }
+    .productFunction{
+      background: white;
+      padding: 40px 0;
+    }
+    .productFunction ul{
+      text-align: center;
+      border: 1px solid #d3d3d3;
+      width: 13%;
+      float: left;
+    }
+    .productFunction ul li.head{
+      border-bottom: 1px solid #d3d3d3;
+      font-size: 16px;
+      color: #666;
+      line-height: 62px;
+      height: 62px;
+    }
+    .productFunction ul li{
+      height: 39px;
+      font-size: 14px;
+      line-height: 39px;
+      color: #666;
+      background: #fff;
+    }
+    .rowSpan2{
+      height: 78px !important;
+      line-height: 78px !important;
+    }
+    .rowSpan3{
+      height: 117px !important;
+    line-height: 117px !important;
+    }
+    .rowSpan5{
+      height: 195px !important;
+      line-height: 195px !important;
+    }
+    .bigUl{
+      width: 29% !important;
+    }
+    .blueUl{
+      margin-top: -30px;
+      width: 30% !important;
+      position: relative;
+      z-index: 2;
+      border: 2px solid #00aaff !important;
+      border-bottom-width: 6px !important;
+      box-shadow: 0px 0px 6px 2px rgba(0, 170, 255, 0.5);
+    }
+    .blueUl .bgLi{
+      background: #e7f1fc;
+    }
+    .blueUl li.head{
+      height: 93px !important;
+      line-height: 93px !important;
+      bottom: 0;
+      z-index: 10;
+      background: #00aaff;
+    }
+    @media screen and (max-width: 1200px) and (min-width: 940px){
+      .specalBgImg .fourOfOne{
+        height: 200px;
+      }
+    }
     @media screen and (max-width: 540px){
-      
+      .smallNav ul{
+        width: 100%;
+      }
+      .smallNav li a{
+        font-size: 14px;
+        height: 50px;
+        line-height: 50px;
+      }
+      .specalBgImg{
+        height: auto !important;
+        background: url(./img/page80/product_bg.jpg) center;
+        padding-bottom: 10px;
+      }
+      .specalBgImg .fourOfOne{
+        margin: 10px;
+      }
+      .appOfOne{
+        margin: 10px;
+      }
+      h1.title{
+        height: 122px;
+        line-height: 122px;
+      }
+      .funct{
+        padding: 0;
+      }
+      .blueUl{
+        width: 20% !important;
+      }
+      .blueUl li.head{
+        line-height: 45px !important;
+      }
+      .productFunction ul li{
+        overflow-x: scroll;
+      }
+      .productFunction ul{
+        width: 16%;
+      }
     }
   </style>
 </head>
 <body>
-<div>
+<div class="bgImg">
   <div class="layui-container">
     <div class="layui-row"> 
-      <div class="layui-col-md12 title">
-        <h5></h5>
+      <div class="layui-col-md6">
+        <h1 class="title">裸金属服务器</h1>
+        <p>弹性裸金属服务器为您和您的企业提供专属的云上物理服务器，为核心数据库、关键应用系统、高性能计算业务提供卓越的计算性能以及数据安全，结合云中资源的弹性优势，可灵活申请，按需使用，您可以选择立即购买或在专属云中购买专属裸金属服务</p>
+        <br>
+        <span class="layui-btn">立即咨询</span>
+        <span class="layui-btn">立即选购</span>
+      </div>
+      <div class="layui-col-md12 smallNav">
+        <ul>
+          <li class="active"><a href="">特点与优势</a></li>
+          <li><a href="">产品特性</a></li>
+          <li><a href="">产品功能</a></li>
+          <li><a href="">应用场景</a></li>
+        </ul>
       </div>
     </div>
   </div>
@@ -29,17 +289,238 @@
 <div>
   <div class="layui-container">
     <div class="layui-row"> 
-      <div class="layui-col-md12 tabContents">
-        <div class="tabNavs">
-          <ul>
-            <li class="active"><a href=""></a></li>
-            <li class=""><a href=""></a></li>
-          </ul>
+      <div class="layui-col-md12 contentDiv">
+        <h1 class="title">特点与优势</h1>
+        <div class="layui-row layui-col-space20">
+          <div class="layui-col-md6">
+            <div class="sixOfOne">
+              <div class="imgDiv"><img src="./img/page80/youshi_1.png"></div>
+              <div class="titleAndFont">
+                <span class="title">机房品质</span>
+                <p>千喜云数据中心建设标准均采用 T3+ IDC机房评定标准</p>
+              </div>
+            </div>
+          </div>
+          <div class="layui-col-md6">
+            <div class="sixOfOne">
+              <div class="imgDiv"><img src="./img/page80/youshi_2.png"></div>
+              <div class="titleAndFont">
+                <span class="title">纯SSD架构</span>
+                <p>搭载高速Sas3 SSD固态硬盘，随机读写最高达到50000IOPS，吞吐量最高可达800Mb/s</p>
+              </div>
+            </div>
+          </div>
+          <div class="layui-col-md6">
+            <div class="sixOfOne">
+              <div class="imgDiv"><img src="./img/page80/youshi_3.png"></div>
+              <div class="titleAndFont">
+                <span class="title">高级硬件配置</span>
+                <p>千喜云服务器采用高级系统硬件配置信息以确保用户信息和访问</p>
+              </div>
+            </div>
+          </div>
+          <div class="layui-col-md6">
+            <div class="sixOfOne">
+              <div class="imgDiv"><img src="./img/page80/youshi_4.png"></div>
+              <div class="titleAndFont">
+                <span class="title">售后无忧</span>
+                <p>实时监控报警系统、监控中心及维护人员7*24小时，全程专业护航</p>
+              </div>
+            </div>
+          </div>
+          <div class="layui-col-md6">
+            <div class="sixOfOne">
+              <div class="imgDiv"><img src="./img/page80/youshi_5.png"></div>
+              <div class="titleAndFont">
+                <span class="title">一键操作</span>
+                <p>千喜云服务器采用一键自动化操作，一键重启、重装等，响应及时</p>
+              </div>
+            </div>
+          </div>
+          <div class="layui-col-md6">
+            <div class="sixOfOne">
+              <div class="imgDiv"><img src="./img/page80/youshi_6.png"></div>
+              <div class="titleAndFont">
+                <span class="title">资源监控</span>
+                <p>一体化监控实时检测运行状态，及时反馈相应信息，避免遗漏，安全省心</p>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="tabCards">
-          
+      </div>
+    </div>
+  </div>
+</div>
+<div class="specalBgImg">
+  <div class="layui-container">
+    <div class="layui-row"> 
+      <div class="layui-col-md12">
+        <h1 class="title">产品特性</h1>
+        <div class="layui-col-md3">
+          <div class="fourOfOne">
+            <div class="imgDiv">
+              <img src="./img/page80/product_1.png">
+            </div>
+            <div>
+              <p class="title">计算性能</p>
+              <p class="fonts">与普通物理机同样的高计算性能，让您具备最高的性能体验</p>
+            </div>
+          </div>
         </div>
-        
+        <div class="layui-col-md3">
+          <div class="fourOfOne">
+            <div class="imgDiv">
+              <img src="./img/page80/product_2.png">
+            </div>
+            <div>
+              <p class="title">物理隔离</p>
+              <p class="fonts">配备物理机级别的隔离，提供更安全、可靠、稳定的计算资源</p>
+            </div>
+          </div>
+        </div>
+        <div class="layui-col-md3">
+          <div class="fourOfOne">
+            <div class="imgDiv">
+              <img src="./img/page80/product_3.png">
+            </div>
+            <div>
+              <p class="title">分钟交付</p>
+              <p class="fonts">分钟级的交付能力，灵活应变，稳定快速的应对业务需求</p>
+            </div>
+          </div>
+        </div>
+        <div class="layui-col-md3">
+          <div class="fourOfOne">
+            <div class="imgDiv">
+              <img src="./img/page80/product_4.png">
+            </div>
+            <div>
+              <p class="title">云产品兼容</p>
+              <p class="fonts">全线兼容千喜云所有云产品，为您提供更多、更全的云端解决方案</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="productFunction">
+  <div class="layui-container funct">
+    <div class="layui-row"> 
+      <div class="layui-col-md12">
+        <h1 class="title">产品功能</h1>
+        <ul>
+          <li class="head">功能分类</li>
+          <li>运维自动化</li>
+          <li class="rowSpan2">计算</li>
+          <li>内存</li>
+          <li class="rowSpan5">存储</li>
+          <li class="rowSpan3">网络</li>
+          <li class="rowSpan2">管控</li>
+        </ul>
+        <ul class="bigUl">
+          <li class="head">功能</li>
+          <li>分钟级交付</li>
+          <li>无CPU性能损失 </li>
+          <li>无CPU特性损失</li>
+          <li>无内存资源争抢</li>
+          <li>完全兼容云盘系统</li>
+          <li>系统盘快速重置</li>
+          <li>复用VM镜像系统</li>
+          <li>快速系统装机</li>
+          <li>免本地RAID，提供更高云盘数据保护</li>
+          <li>完全兼容VPC网络</li>
+          <li>完全兼容经典网络</li>
+          <li>物理机集群和虚拟机集群间VPC无通信瓶颈</li>
+          <li>VNC等用户体验和虚拟机保持一致</li>
+          <li>带外网络安全监控</li>
+        </ul>
+        <ul class="blueUl">
+          <li class="head">小鸟云裸金属服务器</li>
+          <li><img src="./img/page80/icon_duigou.png"></li>
+          <li class="bgLi rowSpan2"><img src="./img/page80/icon_duigou.png"></li>
+          <li><img src="./img/page80/icon_duigou.png"></li>
+          <li class="bgLi rowSpan5"><img src="./img/page80/icon_duigou.png"></li>
+          <li class="rowSpan3"><img src="./img/page80/icon_duigou.png"></li>
+          <li class="bgLi rowSpan2"><img src="./img/page80/icon_duigou.png"></li>
+          <li></li>
+        </ul>
+        <ul>
+          <li class="head">物理机</li>
+          <li>x</li>
+          <li class="rowSpan2">√</li>
+          <li>√</li>
+          <li class="rowSpan5">x</li>
+          <li class="rowSpan3">x</li>
+          <li class="rowSpan2">x</li>
+        </ul>
+        <ul>
+          <li class="head">虚拟机</li>
+          <li>√</li>
+          <li class="rowSpan2">x</li>
+          <li>x</li>
+          <li class="rowSpan5">√</li>
+          <li class="rowSpan3">√</li>
+          <li class="rowSpan2">√</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div style="margin-bottom: 50px;">
+  <div class="layui-container">
+    <div class="layui-row"> 
+      <div class="layui-col-md12">
+        <h1 class="title">应用场景</h1>
+        <div class="layui-col-md3">
+          <div class="appOfOne">
+            <div class="imgDiv"><img src="./img/page80/bm_scene_1.png"></div>
+            <div class="title">核心数据库</div>
+            <ul class="iconUl">
+              <li><div><img src="./img/page80/scene_icon_1.png"></div>集群部署</li>
+              <li><div><img src="./img/page80/scene_icon_7.png"></div>大容量</li>
+              <li><div><img src="./img/page80/scene_icon_2.png"></div>高可靠</li>
+            </ul>
+            <p>满足核心数据库对性能和安全的要求，千喜云提供多种规格的服务器，支持自动化挂载 共享云硬盘</p>
+          </div>
+        </div>
+        <div class="layui-col-md3">
+          <div class="appOfOne">
+            <div class="imgDiv"><img src="./img/page80/bm_scene_2.png"></div>
+            <div class="title">高性能计算</div>
+            <ul class="iconUl">
+              <li><div><img src="./img/page80/scene_icon_6.png"></div>低延时</li>
+              <li><div><img src="./img/page80/scene_icon_5.png"></div>高性能</li>
+              <li><div><img src="./img/page80/scene_icon_3.png"></div>易扩展</li>
+            </ul>
+            <p>针对高计算，高吞吐的场景特点，支持最新Intel CPU的计算实例，结合100G IB网络，带来低时延的性能体验</p>
+          </div>
+        </div>
+        <div class="layui-col-md3">
+          <div class="appOfOne">
+            <div class="imgDiv"><img src="./img/page80/bm_scene_3.png"></div>
+            <div class="title">大数据</div>
+            <ul class="iconUl">
+              <li><div><img src="./img/page80/scene_icon_4.png"></div>专用实例</li>
+              <li><div><img src="./img/page80/scene_icon_5.png"></div>高性能</li>
+              <li><div><img src="./img/page80/scene_icon_8.png"></div>易用性</li>
+            </ul>
+            <p>满足数据容量大以及快速交换要求，提供128G内存和32T本地盘的大容量计算实例，结合云硬盘实现弹性扩容</p>
+          </div>
+        </div>
+        <div class="layui-col-md3">
+          <div class="appOfOne">
+            <div class="imgDiv"><img src="./img/page80/bm_scene_4.png"></div>
+            <div class="title">虚拟化</div>
+            <ul class="iconUl">
+              <li><div><img src="./img/page80/scene_icon_5.png"></div>高性能</li>
+              <li><div><img src="./img/page80/scene_icon_6.png"></div>低延时</li>
+              <li><div><img src="./img/page80/scene_icon_7.png"></div>大容量</li>
+            </ul>
+            <p>IT基础架构向资源共享方向发展，解决共享资源环境下业务高峰期性能瓶颈问题，提高企业或组织IT基础架构业务支撑灵活度</p>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
@@ -56,8 +537,6 @@
       layer.msg('点击按钮');
     })
     form.render();
-
-    
   })
 </script>
 </html>
