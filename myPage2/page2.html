@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <style>
+    .tips{
+      float: right;
+      color: #808080b0;
+    }
+    .red{
+      color: red;
+    }
+    .layui-card-floot{
+      padding:10px;
+      border-top: 1px solid #f6f6f6; 
+    }
+    .layui-card-header{
+      font-weight: bold;
+    }
+    .leftDiv,.rightDiv{
+      float: left;
+      padding:20px 10px;
+      width: 46%;
+    }
+    .rightDiv{
+    
+    }
+    .layui-form-label{
+      width: 120px;
+    }
+    .layui-input-block{
+      margin-left: 150px;
+    }
+    .treeHead{
+      border: 1px solid #80808085;
+      background: #8080802e;
+      text-align: center;
+    }
+    #treeDiv{
+      height: 500px;
+      border: 1px solid #80808085;
+    }
+  </style>
+</head>
+<body>
+<div class="layui-card">
+  <div class="layui-card-header">
+    <i class="layui-icon layui-icon-table"></i>添加用户
+    <span class="tips"><b class="red">*</b>为必填项</span>
+  </div>
+  <div class="layui-card-body">
+    <div>
+      <div class="leftDiv">
+        <form class="layui-form" action="">
+          <div class="layui-form-item">
+            <label class="layui-form-label"><b class="red">*</b>登陆账号：</label>
+            <div class="layui-input-block">
+              <input type="text" name="" required  lay-verify="required" placeholder="请输入登陆账号" class="layui-input">
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label"><b class="red">*</b>显示用户名：</label>
+            <div class="layui-input-block">
+              <input type="text" name="" required  lay-verify="required" placeholder="输入显示用户名" class="layui-input">
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label"><b class="red">*</b>登陆密码：</label>
+            <div class="layui-input-block">
+              <input type="text" name="" required  lay-verify="required" placeholder="登陆密码" class="layui-input">
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label"><b class="red">*</b>确认密码：</label>
+            <div class="layui-input-block">
+              <input type="text" name="" required  lay-verify="required" placeholder="请再次输入密码" class="layui-input">
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label"><b class="red">*</b>所属项目：</label>
+            <div class="layui-input-block">
+              <input type="text" name="" required  lay-verify="required" placeholder="输入所属项目" class="layui-input">
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label"><b class="red">*</b>所属部门：</label>
+            <div class="layui-input-block">
+              <input type="text" name="" required  lay-verify="required" placeholder="请输入所属部门" class="layui-input">
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label"><b class="red">*</b>所属岗位：</label>
+            <div class="layui-input-block">
+              <input type="text" name="" required  lay-verify="required" placeholder="请输入所属岗位" class="layui-input">
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label"><b class="red">*</b>所属角色：</label>
+            <div class="layui-input-block">
+              <input type="text" name="" required  lay-verify="required" placeholder="请输入所属角色" class="layui-input">
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label"><b class="red">*</b>手机号码：</label>
+            <div class="layui-input-block">
+              <input type="text" name="" required  lay-verify="required" placeholder="请输入手机号码" class="layui-input">
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label">微信号码：</label>
+            <div class="layui-input-block">
+              <input type="text" name="" placeholder="请输入微信号码" class="layui-input">
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label">电子邮箱：</label>
+            <div class="layui-input-block">
+              <input type="text" name="" placeholder="请输入电子邮箱" class="layui-input">
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label">是否启用：</label>
+            <div class="layui-input-block">
+              <input type="checkbox" name="" lay-skin="switch" lay-text="开启|关闭">
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="rightDiv">
+        <div class="layui-card">
+          <div class="layui-card-header treeHead">
+            用户角色选择
+          </div>
+          <div class="layui-card-body" id="treeDiv"></div>
+        </div>
+
+      </div>
+      <div style="clear: both;"></div>
+    </div>
+  </div>
+  <div class="layui-card-floot">
+    <div style="text-align: right;">
+      <button class="layui-btn layui-btn-normal"><i class="layui-icon layui-icon-vercode"></i>保存创建</button>
+      <a class="layui-btn layui-btn-primary" href="./page1.html"><i class="layui-icon layui-icon-refresh"></i>取消返回</a>
+    </div>
+  </div>
+</div>
+</body>
+<script type="text/javascript" src="./layui/layui.js"></script>
+<script type="text/javascript">
+  layui.use(['jquery','layer','form','tree'],function(){
+    var $ = layui.jquery
+       ,tree = layui.tree
+       ,form = layui.form
+       ,layer = layui.layer;
+
+    $('#btn_id').click(function(){
+      layer.msg('点击按钮');
+    })
+
+    var treeData = [
+      { id:1,title:'运营经理',spread:true, children:[
+          { id:2,title:'项目管理', spread:true,children:[
+                { id:3,title:'角色管理'},
+                { id:4,title:'用户管理'},
+              ]},
+        ]
+          
+      }
+
+    ];
+    tree.render({
+      elem:'#treeDiv',
+      data:treeData,
+      showLine:false,
+      showCheckbox:true,
+    })
+    form.render();
+  })
+</script>
+</html>

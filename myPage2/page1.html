@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>用户管理</title>
+  <link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <style>
+    body{
+      background:#8080801f;
+    }
+    .navTab{
+      background:white;
+      padding:12px;
+    }
+    .moreBtn>span{
+      color:gray;
+      margin: 0 10px;
+    }
+    .moreBtn>span:hover{
+      cursor: pointer;
+    }
+    .content{
+      padding: 10px 30px;
+    }
+    .rightDiv{
+      float: right;
+    }
+    .layui-card-header{
+      padding:10px;
+    }
+    .changeBtn{
+      color: blue;
+      padding:5px;
+    }
+  </style>
+</head>
+<body>
+<div class="navTab">
+  <span class="layui-breadcrumb" lay-separator=">">
+    <a href=""><i class="layui-icon layui-icon-home"></i></a>
+    <a href="">一级分类</a>
+    <a><cite>用户管理</cite></a>
+  </span>
+  <div class="rightDiv moreBtn">
+  <span><i class="layui-icon layui-icon-left"></i></span>
+  <span><i class="layui-icon layui-icon-refresh"></i></span>
+  </div>
+</div>
+<div class="content">
+  <div class="layui-card">
+    <div class="layui-card-header">
+      <div class="rightDiv">
+      <a href="./page2.html" class="layui-btn layui-btn-normal" id="addBtn"><i class="layui-icon layui-icon-add-1"></i>添加</a>
+      <button class="layui-btn layui-btn-primary"><i class="layui-icon layui-icon-export"></i>导出</button>
+    </div>
+    <table>
+      <tr>
+        <td><input type="text" placeholder="搜索项目" class="layui-input" name=""></td>
+        <td>&nbsp;&nbsp;</td>
+        <td><input type="text" placeholder="搜索用户" class="layui-input" name=""></td>
+        <td>&nbsp;&nbsp;</td>
+        <td><button class="layui-btn layui-btn-normal"><i class="layui-icon layui-icon-search"></i>搜索</button></td>
+      </tr>
+    </table>
+    
+    </div>
+    <div class="layui-card-body">
+      <table id="tableData" lay-filter="tableData"></table>
+    </div>
+  </div>
+</div>
+
+</body>
+<script type="text/javascript" src="./layui/layui.js"></script>
+<script type="text/javascript">
+  layui.use(['jquery','layer','element','table'],function(){
+    var $ = layui.jquery
+       ,table = layui.table
+       ,element = layui.element
+       ,layer = layui.layer;
+
+    var data = [
+      { number:'1', id:'1001', username:'张三', project:'项目A', department:'运营部', role:'经理', state:'启用', },
+      { number:'2', id:'1002', username:'李四', project:'项目A', department:'运营部', role:'主管', state:'暂停', },
+      { number:'3', id:'1003', username:'王五', project:'项目A', department:'运营部', role:'职员', state:'启用', },
+      { number:'4', id:'1004', username:'赵六', project:'项目A', department:'运营部', role:'职员', state:'启用', },
+    ];
+    table.render({
+        elem:'#tableData',
+        data:data,
+        skin:'',
+        cols:[[
+          { title:'序号',field:'number', },
+          { title:'登陆账号',field:'id', },
+          { title:'用户显示名',field:'username',style:'color:blue;',  },
+          { title:'项目',field:'project', },
+          { title:'部门',field:'department', },
+          { title:'角色',field:'role', },
+          { title:'状态',field:'state', style:'color:gray;', },
+          { title:'操作',field:'', templet:getTpl(), fixed:'right', minWidth:'200',},
+        ]],
+        done:function(){
+          $('.changeBtn').unbind().on('click',function(obj){
+            var index = $(obj.target).closest('tr').data('index');
+            var trData = table.cache["tableData"][index];
+            layer.msg(JSON.stringify(trData));
+          })
+        }
+    })
+
+    function getTpl(){
+      return function(d){
+        return html = [
+          '<a href="javascript:;" class="changeBtn"><i class="layui-icon layui-icon-edit"></i>查看</a>',
+          '<a href="javascript:;" class="changeBtn"><i class="layui-icon layui-icon-edit"></i>编辑</a>',
+          '<a href="javascript:;" class="changeBtn"><i class="layui-icon layui-icon-delete"></i>删除</a>',
+        ].join(' ');
+      }
+    }
+
+
+    $('.layui-btn').click(function(){
+      layer.msg('点击按钮');
+    })
+  })
+</script>
+</html>
