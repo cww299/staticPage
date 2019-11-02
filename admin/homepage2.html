@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>layuiAdmin 主页示例模板二</title>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <link rel="stylesheet" href="./layuiadmin/layui/css/layui.css" media="all">
+  <link rel="stylesheet" href="./layuiadmin/style/admin.css" media="all">
+  <style>
+    .contantTable{
+      width: 100%;
+    }
+    .contantTable td{
+      width: 25%;
+      text-align: left;
+    }
+    .allHeightDiv{
+      height: 100% !important;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+      
+      <div class="layui-col-sm6 layui-col-md3">
+        <div class="layui-card">
+          <div class="layui-card-header">
+            出勤
+            <span class="layui-badge layui-bg-blue layuiadmin-badge">本月</span>
+          </div>
+          <div class="layui-card-body layuiadmin-card-list">
+            <table class="contantTable">
+              <tr><td><b>迟到：</b></td><td>0/分钟</td><td><b>旷工：</b></td><td>0/天</td></tr>
+              <tr><td><b>请假：</b></td><td>0/天</td><td><b>外出：</b></td><td>0/天</td></tr>
+              <tr><td><b>出差：</b></td><td>0/天</td><td><b>纠偏：</b></td><td>0/次</td></tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="layui-col-sm6 layui-col-md3">
+        <div class="layui-card">
+          <div class="layui-card-header">
+            工资金额
+            <span class="layui-badge layui-bg-cyan layuiadmin-badge">上月</span>
+          </div>
+          <div class="layui-card-body layuiadmin-card-list">
+            <p class="layuiadmin-big-font" style="line-height: 57px;">1000元</p>
+          </div>
+        </div>
+      </div>
+      <div class="layui-col-sm6 layui-col-md3">
+        <div class="layui-card">
+          <div class="layui-card-header">
+            日报情况
+            <span class="layui-badge layui-bg-green layuiadmin-badge">本月</span>
+          </div>
+          <div class="layui-card-body layuiadmin-card-list">
+            <table class="contantTable">
+              <tr><td><b>缺少：</b></td><td>0/份</td><td><b>补交：</b></td><td>0/份</td></tr>
+              <tr><td><b>扣罚：</b></td><td>0/元</td><td><b>平均得分：</b></td><td>0/分</td></tr>
+            </table><br>
+          </div>
+        </div>
+      </div>
+      <div class="layui-col-sm6 layui-col-md3">
+        <div class="layui-card">
+          <div class="layui-card-header">
+            客户情况
+            <span class="layui-badge layui-bg-orange layuiadmin-badge">年</span>
+          </div>
+          <div class="layui-card-body layuiadmin-card-list">
+            <table class="contantTable">
+              <tr><td><b>我的客户：</b></td><td>0/个</td><td><b>本月新增：</b></td><td>0/个</td></tr>
+              <tr><td><b>活跃用户：</b></td><td>0/个</td><td><b>静止用户：</b></td><td>0/个</td></tr>
+            </table><br>
+          </div>
+        </div>
+      </div>   
+      <div class="layui-col-sm12">
+        <div class="layui-card">
+          <div class="layui-card-header">
+            用户数
+          </div>
+          <div class="layui-card-body">
+            <div class="layui-row">
+              <div class="layui-col-sm8">
+                  <div class="layui-carousel layadmin-carousel layadmin-dataview" data-anim="fade" lay-filter="LAY-index-pagetwo">
+                    <div carousel-item id="LAY-index-pagetwo">
+                      <div><i class="layui-icon layui-icon-loading1 layadmin-loading"></i></div>
+                    </div>
+                  </div>
+              </div>
+              <div class="layui-col-sm4">
+                <div class="layuiadmin-card-list">
+                  <p class="layuiadmin-normal-font">用户增长数</p>
+                  <span>同上期下降</span>
+                  <div class="layui-progress layui-progress-big" lay-showPercent="yes">
+                    <div class="layui-progress-bar layui-bg-red" lay-percent="30%"></div>
+                  </div>
+                </div>
+                <div class="layuiadmin-card-list">
+                  <p class="layuiadmin-normal-font">静止用户增长数</p>
+                  <span>同上期增长</span>
+                  <div class="layui-progress layui-progress-big" lay-showPercent="yes">
+                    <div class="layui-progress-bar" lay-percent="20%"></div>
+                  </div>
+                </div>
+                <div class="layuiadmin-card-list">
+                  <p class="layuiadmin-normal-font">活跃用户增长数</p>
+                  <span>同上期下降</span>
+                  <div class="layui-progress layui-progress-big" lay-showPercent="yes">
+                    <div class="layui-progress-bar layui-bg-red" lay-percent="25%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="layui-col-md4">
+        <div class="layui-card">
+          <div class="layui-card-header">工单</div>
+          <div class="layui-card-body">
+            <div class="layui-carousel layadmin-carousel layadmin-backlog">
+              <div carousel-item>
+                <ul class="layui-row layui-col-space10">
+                  <li class="layui-col-xs6">
+                    <a lay-href="app/content/comment.html" class="layadmin-backlog-body">
+                      <h3>未处理数</h3>
+                      <p><cite>0</cite></p>
+                    </a>
+                  </li>
+                  <li class="layui-col-xs6">
+                    <a lay-href="app/forum/list.html" class="layadmin-backlog-body">
+                      <h3>已解决数</h3>
+                      <p><cite>0</cite></p>
+                    </a>
+                  </li>
+                  <li class="layui-col-xs6">
+                    <a lay-href="template/goodslist.html" class="layadmin-backlog-body">
+                      <h3>处理中条数</h3>
+                      <p><cite>0</cite></p>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="layui-col-md8">
+        <div class="layui-card">
+          <div class="layui-card-header">备案</div>
+          <div class="layui-card-body">
+            <div class="layui-carousel layadmin-carousel layadmin-backlog">
+              <div carousel-item>
+                <ul class="layui-row layui-col-space10">
+                  <li class="layui-col-xs3">
+                    <a lay-href="app/content/comment.html" class="layadmin-backlog-body">
+                      <h3>主体数</h3>
+                      <p><cite>0</cite></p>
+                    </a>
+                  </li>
+                  <li class="layui-col-xs3">
+                    <a lay-href="app/forum/list.html" class="layadmin-backlog-body">
+                      <h3>网站数</h3>
+                      <p><cite>0</cite></p>
+                    </a>
+                  </li>
+                  <li class="layui-col-xs3">
+                    <a lay-href="template/goodslist.html" class="layadmin-backlog-body">
+                      <h3>取消数</h3>
+                      <p><cite>0</cite></p>
+                    </a>
+                  </li>
+                  <li class="layui-col-xs3">
+                    <a href="javascript:;" onclick="layer.tips('不跳转', this, {tips: 3});" class="layadmin-backlog-body">
+                      <h3>初审数</h3>
+                      <p><cite>0</cite></p>
+                    </a>
+                  </li>
+                  <li class="layui-col-xs3">
+                    <a href="javascript:;" onclick="layer.tips('不跳转', this, {tips: 3});" class="layadmin-backlog-body">
+                      <h3>通过数</h3>
+                      <p><cite>0</cite></p>
+                    </a>
+                  </li>
+                  <li class="layui-col-xs3">
+                    <a href="javascript:;" onclick="layer.tips('不跳转', this, {tips: 3});" class="layadmin-backlog-body">
+                      <h3>失败数</h3>
+                      <p><cite>0</cite></p>
+                    </a>
+                  </li>
+                  <li class="layui-col-xs3">
+                    <a href="javascript:;" onclick="layer.tips('不跳转', this, {tips: 3});" class="layadmin-backlog-body">
+                      <h3>通过率</h3>
+                      <p><cite>0</cite></p>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="layui-col-md8">
+        <div class="layui-row layui-col-space15">
+          <div class="layui-col-md6">
+            <div class="layui-card">
+              <div class="layui-card-header">基础资源</div>
+              <div class="layui-card-body">
+                <div class="layui-carousel layadmin-carousel layadmin-backlog">
+                  <div carousel-item>
+                    <ul class="layui-row layui-col-space10">
+                      <li class="layui-col-xs6">
+                        <a lay-href="app/content/comment.html" class="layadmin-backlog-body">
+                          <h3>机房数</h3>
+                          <p><cite>0</cite></p>
+                        </a>
+                      </li>
+                      <li class="layui-col-xs6">
+                        <a lay-href="app/forum/list.html" class="layadmin-backlog-body">
+                          <h3>机柜数</h3>
+                          <p><cite>0</cite></p>
+                        </a>
+                      </li>
+                      <li class="layui-col-xs6">
+                        <a lay-href="template/goodslist.html" class="layadmin-backlog-body">
+                          <h3>IP数</h3>
+                          <p><cite>0</cite></p>
+                        </a>
+                      </li>
+                      <li class="layui-col-xs6">
+                        <a lay-href="template/goodslist.html" class="layadmin-backlog-body">
+                          <h3>带宽数</h3>
+                          <p><cite>0</cite></p>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="layui-col-md6">
+            <div class="layui-card">
+              <div class="layui-card-header">出勤统计</div>
+              <div class="layui-card-body">
+                <div class="layui-carousel layadmin-carousel layadmin-backlog">
+                  <div carousel-item>
+                    <ul class="layui-row layui-col-space10">
+                      <li class="layui-col-xs6">
+                        <a lay-href="app/content/comment.html" class="layadmin-backlog-body">
+                          <h3>外出人员</h3>
+                          <p><cite>0</cite></p>
+                        </a>
+                      </li>
+                      <li class="layui-col-xs6">
+                        <a lay-href="app/forum/list.html" class="layadmin-backlog-body">
+                          <h3>出差人员</h3>
+                          <p><cite>0</cite></p>
+                        </a>
+                      </li>
+                      <li class="layui-col-xs6">
+                        <a lay-href="template/goodslist.html" class="layadmin-backlog-body">
+                          <h3>请假人员</h3>
+                          <p><cite>0</cite></p>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="layui-col-sm12">
+            <div class="layui-card">
+              <div class="layui-card-header">用户全国分布</div>
+              <div class="layui-card-body">
+                <div class="layui-row layui-col-space15">
+                  <div class="layui-col-sm4">
+                    <table class="layui-table layuiadmin-page-table" lay-skin="line">
+                      <thead>
+                        <tr>
+                          <th>排名</th>
+                          <th>地区</th>
+                          <th>人数</th>
+                        </tr> 
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td>浙江</td>
+                          <td>62310</td>
+                        </tr>
+                        <tr>
+                          <td>2</td>
+                          <td>上海</td>
+                          <td>59190</td>
+                        </tr>
+                        <tr>
+                          <td>3</td>
+                          <td>广东</td>
+                          <td>55891</td>
+                        </tr>
+                        <tr>
+                          <td>4</td>
+                          <td>北京</td>
+                          <td>51919</td>
+                        </tr>  
+                        <tr>
+                          <td>5</td>
+                          <td>山东</td>
+                          <td>39231</td>
+                        </tr>
+                        <tr>
+                          <td>6</td>
+                          <td>湖北</td>
+                          <td>37109</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="layui-col-sm8">
+
+                    <div class="layui-carousel layadmin-carousel layadmin-dataview" data-anim="fade" lay-filter="LAY-index-pagethree">
+                      <div carousel-item id="LAY-index-pagethree">
+                        <div><i class="layui-icon layui-icon-loading1 layadmin-loading"></i></div>
+                      </div>
+                    </div>
+      
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="layui-col-sm12">
+            <div class="layui-card">
+              <div class="layui-card-header">数据概览</div>
+                <div class="layui-card-body">
+                  <div class="layui-carousel layadmin-carousel layadmin-dataview" data-anim="fade" lay-filter="LAY-index-dataview">
+                    <div carousel-item id="LAY-index-dataview">
+                      <div><i class="layui-icon layui-icon-loading1 layadmin-loading"></i></div>
+                      <div></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+      <div class="layui-col-sm4">
+        <div class="layui-row">
+          <div class="layui-col-sm12">
+            <div class="layui-card">
+              <div class="layui-card-header">会员消费排名</div>
+              <div class="layui-card-body" style="height: 380px;">
+                <div class="layui-carousel layadmin-carousel layadmin-backlog allHeightDiv">
+                  <div carousel-item>
+                    <ul class="layui-row layui-col-space10">
+                      <li>
+                        <h2 style="text-align: center;">单笔消费金额排名</h2>
+                        <table class="layui-table layuiadmin-page-table" lay-skin="line">
+                         <thead>
+                           <tr>
+                             <th>用户名</th>
+                             <th>消费时间</th>
+                             <th>消费方式</th>
+                             <th>消费金额</th>
+                           </tr> 
+                         </thead>
+                         <tbody>
+                           <tr>
+                             <td><span class="first">用户1</span></td>
+                             <td><i class="layui-icon layui-icon-log"> 11:20</i></td>
+                             <td><span>续费</span></td>
+                             <td>220</td>
+                           </tr>
+                           <tr>
+                             <td><span class="second">用户2</span></td>
+                             <td><i class="layui-icon layui-icon-log"> 10:40</i></td>
+                             <td><span>购买</span></td>
+                             <td>210</td>
+                           </tr>
+                           <tr>
+                             <td><span class="third">用户3</span></td>
+                             <td><i class="layui-icon layui-icon-log"> 01:30</i></td>
+                             <td><i>购买</i></td>
+                             <td>205</td>
+                           </tr>
+                           <tr>
+                             <td>用户4</td>
+                             <td><i class="layui-icon layui-icon-log"> 21:18</i></td>
+                             <td><i>购买</i></td>
+                             <td>200</td>
+                           </tr>
+                           <tr>
+                             <td>用户5</td>
+                             <td><i class="layui-icon layui-icon-log"> 09:30</i></td>
+                             <td><span>续费</span></td>
+                             <td>200</td>
+                           </tr>
+                           <tr>
+                             <td>用户6</td>
+                             <td><i class="layui-icon layui-icon-log"> 21:18</i></td>
+                             <td><i>续费</i></td>
+                             <td>190</td>
+                           </tr>
+                           <tr>
+                             <td>用户7</td>
+                             <td><i class="layui-icon layui-icon-log"> 09:30</i></td>
+                             <td><span>续费</span></td>
+                             <td>100</td>
+                           </tr>
+                         </tbody>
+                       </table>
+                      </li>
+                    </ul>
+                    <ul class="layui-row layui-col-space10">
+                      <li>
+                        <h2 style="text-align: center;">消费次数排名</h2>
+                        <table class="layui-table layuiadmin-page-table" lay-skin="line">
+                         <thead>
+                           <tr>
+                             <th>用户名</th>
+                             <th>消费次数</th>
+                           </tr> 
+                         </thead>
+                         <tbody>
+                           <tr>
+                             <td><span class="first">用户1</span></td>
+                             <td>220</td>
+                           </tr>
+                           <tr>
+                             <td><span class="second">用户2</span></td>
+                             <td>210</td>
+                           </tr>
+                           <tr>
+                             <td><span class="third">用户3</span></td>
+                             <td>205</td>
+                           </tr>
+                           <tr>
+                             <td>用户4</td>
+                             <td>200</td>
+                           </tr>
+                           <tr>
+                             <td>用户5</td>
+                             <td>200</td>
+                           </tr>
+                           <tr>
+                             <td>用户6</td>
+                             <td>190</td>
+                           </tr>
+                           <tr>
+                             <td>用户7</td>
+                             <td>100</td>
+                           </tr>
+                         </tbody>
+                       </table>
+                      </li>
+                    </ul>
+                    <ul class="layui-row layui-col-space10">
+                      <li>
+                        <h2 style="text-align: center;">合计消费金额排名</h2>
+                        <table class="layui-table layuiadmin-page-table" lay-skin="line">
+                         <thead>
+                           <tr>
+                             <th>用户名</th>
+                             <th>消费金额</th>
+                           </tr> 
+                         </thead>
+                         <tbody>
+                           <tr>
+                             <td><span class="first">用户1</span></td>
+                             <td>220</td>
+                           </tr>
+                           <tr>
+                             <td><span class="second">用户2</span></td>
+                             <td>210</td>
+                           </tr>
+                           <tr>
+                             <td><span class="third">用户3</span></td>
+                             <td>205</td>
+                           </tr>
+                           <tr>
+                             <td>用户4</td>
+                             <td>200</td>
+                           </tr>
+                           <tr>
+                             <td>用户5</td>
+                             <td>200</td>
+                           </tr>
+                           <tr>
+                             <td>用户6</td>
+                             <td>190</td>
+                           </tr>
+                           <tr>
+                             <td>用户7</td>
+                             <td>100</td>
+                           </tr>
+                         </tbody>
+                       </table>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="layui-col-sm12" style="margin-top: 15px;">
+            <div class="layui-card">
+              <div class="layui-card-header">会员充值排名</div>
+              <div class="layui-card-body" style="height: 380px;">
+                <div class="layui-carousel layadmin-carousel layadmin-backlog allHeightDiv">
+                  <div carousel-item>
+                    <ul class="layui-row layui-col-space10">
+                      <li>
+                        <h2 style="text-align: center;">单笔充值金额排名</h2>
+                        <table class="layui-table layuiadmin-page-table" lay-skin="line">
+                         <thead>
+                           <tr>
+                             <th>用户名</th>
+                             <th>充值时间</th>
+                             <th>充值方式</th>
+                             <th>充值金额</th>
+                           </tr> 
+                         </thead>
+                         <tbody>
+                           <tr>
+                             <td><span class="first">用户1</span></td>
+                             <td><i class="layui-icon layui-icon-log"> 11:20</i></td>
+                             <td><span>续费</span></td>
+                             <td>220</td>
+                           </tr>
+                           <tr>
+                             <td><span class="second">用户2</span></td>
+                             <td><i class="layui-icon layui-icon-log"> 10:40</i></td>
+                             <td><span>购买</span></td>
+                             <td>210</td>
+                           </tr>
+                           <tr>
+                             <td><span class="third">用户3</span></td>
+                             <td><i class="layui-icon layui-icon-log"> 01:30</i></td>
+                             <td><i>购买</i></td>
+                             <td>205</td>
+                           </tr>
+                           <tr>
+                             <td>用户4</td>
+                             <td><i class="layui-icon layui-icon-log"> 21:18</i></td>
+                             <td><i>购买</i></td>
+                             <td>200</td>
+                           </tr>
+                           <tr>
+                             <td>用户5</td>
+                             <td><i class="layui-icon layui-icon-log"> 09:30</i></td>
+                             <td><span>续费</span></td>
+                             <td>200</td>
+                           </tr>
+                           <tr>
+                             <td>用户6</td>
+                             <td><i class="layui-icon layui-icon-log"> 21:18</i></td>
+                             <td><i>续费</i></td>
+                             <td>190</td>
+                           </tr>
+                           <tr>
+                             <td>用户7</td>
+                             <td><i class="layui-icon layui-icon-log"> 09:30</i></td>
+                             <td><span>续费</span></td>
+                             <td>100</td>
+                           </tr>
+                         </tbody>
+                       </table>
+                      </li>
+                    </ul>
+                    <ul class="layui-row layui-col-space10">
+                      <li>
+                        <h2 style="text-align: center;">充值次数排名</h2>
+                        <table class="layui-table layuiadmin-page-table" lay-skin="line">
+                         <thead>
+                           <tr>
+                             <th>用户名</th>
+                             <th>充值次数</th>
+                           </tr> 
+                         </thead>
+                         <tbody>
+                           <tr>
+                             <td><span class="first">用户1</span></td>
+                             <td>220</td>
+                           </tr>
+                           <tr>
+                             <td><span class="second">用户2</span></td>
+                             <td>210</td>
+                           </tr>
+                           <tr>
+                             <td><span class="third">用户3</span></td>
+                             <td>205</td>
+                           </tr>
+                           <tr>
+                             <td>用户4</td>
+                             <td>200</td>
+                           </tr>
+                           <tr>
+                             <td>用户5</td>
+                             <td>200</td>
+                           </tr>
+                           <tr>
+                             <td>用户6</td>
+                             <td>190</td>
+                           </tr>
+                           <tr>
+                             <td>用户7</td>
+                             <td>100</td>
+                           </tr>
+                         </tbody>
+                       </table>
+                      </li>
+                    </ul>
+                    <ul class="layui-row layui-col-space10">
+                      <li>
+                        <h2 style="text-align: center;">合计充值金额排名</h2>
+                        <table class="layui-table layuiadmin-page-table" lay-skin="line">
+                         <thead>
+                           <tr>
+                             <th>用户名</th>
+                             <th>充值金额</th>
+                           </tr> 
+                         </thead>
+                         <tbody>
+                           <tr>
+                             <td><span class="first">用户1</span></td>
+                             <td>220</td>
+                           </tr>
+                           <tr>
+                             <td><span class="second">用户2</span></td>
+                             <td>210</td>
+                           </tr>
+                           <tr>
+                             <td><span class="third">用户3</span></td>
+                             <td>205</td>
+                           </tr>
+                           <tr>
+                             <td>用户4</td>
+                             <td>200</td>
+                           </tr>
+                           <tr>
+                             <td>用户5</td>
+                             <td>200</td>
+                           </tr>
+                           <tr>
+                             <td>用户6</td>
+                             <td>190</td>
+                           </tr>
+                           <tr>
+                             <td>用户7</td>
+                             <td>100</td>
+                           </tr>
+                         </tbody>
+                       </table>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        
+      </div>
+    </div>
+  </div>
+  
+  <script src="./layuiadmin/layui/layui.js"></script>  
+  <script>
+  layui.config({
+    base: './layuiadmin/' //静态资源所在路径
+  }).extend({
+    index: 'lib/index' //主入口模块
+  }).use(['index',"sample",'console']); //
+
+  </script>
+
+</body>
+</html>
