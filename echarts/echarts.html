@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>图形</title>
+	<script src="./echarts.min.js"></script>
+	<style type="text/css">
+		body>div{
+			width: 50%;
+			float: left;
+		}
+	</style>
+</head>
+<body>
+	<div id="main" style="height:400px;"></div>
+	<div id="map" style="height:400px;"></div>
+	<div id="leida" style="height:600px;"></div>
+	<div id="main2" style="height:600px;"></div>
+	<div id="zhexian" style="height:400px;"></div>
+	<script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例，柱状图
+        var myChart1 = echarts.init(document.getElementById('main'));
+        // 指定图表的配置项和数据
+        myChart1.setOption(
+	        {
+	            title: {		//标题
+	                text: '产品销售情况'
+	            },
+	            tooltip: {},	//提示信息
+	            legend: {		//数据源
+	                data:['销量','价格']
+	            },
+	            xAxis: {		//横坐标
+	                data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+	            },
+	            yAxis: {},		//纵坐标
+	            series: [
+	            	{
+		                name: '销量',
+		                type: 'bar',
+		                data: [5, 20, 36, 10, 10, 20]
+	        		},
+	        		{
+		        		name:'价格',
+		        		type:'bar',
+		        		data: [5, 2, 3, 12, 15, 9]
+	        		}
+	        	]
+	    });
+	    //横向柱状图
+	    var myChart1 = echarts.init(document.getElementById('main2'));
+        myChart1.setOption(
+	        {
+	            title: {		//标题
+	                text: '产品销售情况'
+	            },
+	            tooltip: {},	//提示信息
+	            legend: {		//数据源
+	                data:['销量','价格']
+	            },
+	            yAxis: {		//横坐标
+	                data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+	            },
+	            xAxis: {},		//纵坐标
+	            series: [
+	            	{
+		                name: '销量',
+		                type: 'bar',
+		                data: [5, 20, 36, 10, 10, 20]
+	        		},
+	        		{
+		        		name:'价格',
+		        		type:'bar',
+		        		data: [5, 2, 3, 12, 15, 9]
+	        		}
+	        	]
+	    });
+        //饼状图
+        var myChart = echarts.init(document.getElementById('map'));
+        myChart.setOption({
+        	title: {		//标题
+                text: '产品销售占比',
+                subtext:'备注信息',
+                x:'left', //水平方向
+            },
+            legend: {		//交互
+		        orient: 'vertical',
+		        x: 'right',
+		        data:['衬衫','羊毛衫','雪纺衫','裤子','高跟鞋','袜子']
+		    },
+            tooltip: {
+            	trigger: 'item',
+        		formatter: "{a} <br/>{b} : {c} ({d}%)",  //提示信息格式化
+            },
+		    series : [
+		        {
+		            name: '产品',
+		            selectedMode: 'single', //选中格式
+		            type: 'pie',
+		            //radius: ['50%', '70%',],	//双圈格式
+		            //roseType: 'radius',			//不同大小
+		            data:[
+		                {value:235, name:'衬衫'},
+		                {value:274, name:'羊毛衫'},
+		                {value:310, name:'雪纺衫'},
+		                {value:335, name:'裤子'},
+		                {value:400, name:'高跟鞋'},
+		                {value:450, name:'袜子'}
+		            ]
+		        }
+		    ]
+		})
+		myChart.on('click',function(obj){	//点击事件
+			console.log('点击:'+obj.data.name+" 数量："+obj.data.value)
+			console.log(obj)
+		})
+		//雷达图
+		var leida = echarts.init(document.getElementById('leida'));
+		leida.setOption({
+		    title: {
+		        text: '产品销售雷达图'
+		    },
+		    tooltip: {},
+		    legend: {
+		        data: ['销售情况', '销售单价']
+		    },
+		    radar: {
+		        //shape: 'circle',	//圆形
+		        name: {
+		            textStyle: {	//显示字体样式
+		                color: '#fff',
+		                backgroundColor: '#999',
+		                borderRadius: 3,
+		                padding: [3, 5]
+		           }
+		        },
+		        indicator: [
+		           { name: '衬衫', max: 6500},
+		           { name: '羊毛衫', max: 16000},
+		           { name: '雪纺衫', max: 30000},
+		           { name: '高跟鞋', max: 38000},
+		           { name: '袜子', max: 52000},
+		        ]
+		    },
+		    series: [{
+		        name: '预算 vs 开销（Budget vs spending）',
+		        type: 'radar',
+		        //areaStyle: {normal: {}}, //区域面积样式
+		        data : [
+		            {
+		                value : [4300, 10000, 28000, 35000, 50000, 19000],
+		                name : '销售情况'
+		            },
+		             {
+		                value : [5000, 1400, 2800, 31000, 4200, 2100],
+		                name : '销售价格'
+		            }
+		        ]
+		    }]
+		});
+		//折线图
+		var zhexian = echarts.init(document.getElementById('zhexian'));
+		zhexian.setOption({
+			title:{
+				text:'产品销售情况',
+				subtext:'备注',
+			},
+		    tooltip:{},	//提示
+		    legend: {	//交互
+		        data:['销售情况','价格']
+		    },
+		    xAxis: {
+		        type: 'category',
+		        boundaryGap: false,
+		        data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子',],
+		    },
+		    yAxis: {
+		        type: 'value'
+		    },
+		    series: [
+		    	{
+		    		name:'销售情况',
+			        data: [820, 932, 901, 934, 1290, 1330, 1320],
+			        type: 'line',
+		    	},
+		    	{
+		    		name:'价格',
+			        data: [520, 332, 201, 434, 290, 330, 320],
+			        type: 'line'
+		    	},
+		    ]
+		})
+    </script>
+</body>
+</html>
