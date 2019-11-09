@@ -1,0 +1,45 @@
+body{
+  background:#8080801f;
+}
+.navTab{
+  background:white;
+  padding:12px;
+  margin-bottom: 20px;
+}
+.moreBtn>span{
+  color:gray;
+  margin: 0 10px;
+}
+.moreBtn>span:hover{
+  cursor: pointer;
+}
+.content{
+  padding: 10px 30px;
+}
+.rightDiv{
+  float: right;
+}
+.layui-card-header{
+  border-bottom: 1px solid #80808054;
+  font-weight: bold;
+  font-size: 15px;
+  color: gray;
+  height: 54px;
+  line-height: 54px;
+  background: #80808030;
+}
+.layui-card-header .head-tool{
+  float: right;
+  padding-top: 9px;
+  padding-right: 5px;
+}
+.layui-card-header .head-toolBtn{
+  float: right;
+  padding: 0;
+}
+.layui-card-header .head-tool .layui-form-select{
+  width: 112px;
+}
+.layui-card-header .head-tool .layui-input{
+  width: 112px;
+}

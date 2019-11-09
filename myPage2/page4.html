@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>首页</title>
+  <link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
+  <link rel="stylesheet" type="text/css" href="./pagecss.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <style>
+    .navIconUl{
+      margin-top: 10px;
+    }
+    .navIconUl li{
+      float: left;
+      width: 16%;
+      padding: 5px 0;
+      margin-bottom: 10px;
+    }
+    .navIconUl li:hover{
+      outline: 1px solid #80808070;
+      cursor: pointer;
+    }
+    .navIconUl li p{
+      text-align: center;
+      color: gray;
+      margin: 8px 0;
+    }
+    .navIconUl li p i{
+      font-size: 50px !important;
+      color: gray;
+    }
+    .dataUl{
+
+    }
+    .dataUl li{
+      width: 50%;
+      padding: 7px 0;
+      float: left;
+    }
+    .dataUl li:hover{
+      outline: 1px solid #80808070;
+      cursor: pointer;
+    }
+    .dataUl li>p{
+      text-align: center;
+      color: gray;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 48px;
+    }
+    .dataUl li>p.number{
+      margin:10px 0;
+      font-size: 28px; 
+      font-weight: bold;
+    }
+    .systemUl li{
+      padding: 10px 0;
+      border-bottom: 1px solid #80808026;
+    }
+    .systemUl li>p{
+      color:gray;
+    }
+    .systemUl li>p.time{
+      float: right;
+    }
+    @media screen and (min-width: 1200px){
+      .layui-container {
+        width: 1450px;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="navTab">
+  <span class="layui-breadcrumb" lay-separator=">">
+    <a href=""><i class="layui-icon layui-icon-home"></i></a>
+    <a href="">一级分类</a>
+    <a><cite>系统首页</cite></a>
+  </span>
+  <div class="rightDiv moreBtn">
+  <span><i class="layui-icon layui-icon-left"></i></span>
+  <span><i class="layui-icon layui-icon-refresh"></i></span>
+  </div>
+</div>
+<div>
+  <div class="layui-container">
+    <div class="layui-row layui-col-space20"> 
+      <div class="layui-col-md8">
+        <div class="layui-card">
+          <div class="layui-card-header">快速新建</div>
+          <div class="layui-card-body" style="overflow: hidden;">
+            <ul class="navIconUl">
+              <li>
+                <p><i class="layui-icon layui-icon-username"></i></p>
+                <p>新建客户</p>
+              </li>
+              <li>
+                <p><i class="layui-icon layui-icon-notice"></i></p>
+                <p>新建线索</p>
+              </li>
+              <li>
+                <p><i class="layui-icon layui-icon-rmb"></i></p>
+                <p>新建商机</p>
+              </li>
+              <li>
+                <p><i class="layui-icon layui-icon-list"></i></p>
+                <p>新建订单</p>
+              </li>
+              <li>
+                <p><i class="layui-icon layui-icon-user"></i></p>
+                <p>新建联系人</p>
+              </li>
+              <li>
+                <p><i class="layui-icon layui-icon-edit"></i></p>
+                <p>写新跟进</p>
+              </li>
+              <li>
+                <p><i class="layui-icon layui-icon-tabs"></i></p>
+                <p>新建任务</p>
+              </li>
+              <li>
+                <p><i class="layui-icon layui-icon-date"></i></p>
+                <p>新建工单</p>
+              </li>
+              <li>
+                <p><i class="layui-icon layui-icon-layer"></i></p>
+                <p>新建回款单</p>
+              </li>
+              <li>
+                <p><i class="layui-icon layui-icon-dollar"></i></p>
+                <p>回款汇集</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="layui-col-md4">
+        <div class="layui-card">
+          <div class="layui-card-header">项目指标</div>
+          <div class="layui-card-body" style="overflow: hidden;">
+            <ul class="dataUl">
+              <li>
+                <p>99.05</p>
+                <p>项目KPL</p>
+              </li>
+              <li>
+                <p>100</p>
+                <p>岗位KPL</p>
+              </li>
+              <li>
+                <p>99.05</p>
+                <p>净利率/月</p>
+              </li>
+              <li>
+                <p>99.05</p>
+                <p>回款率/月</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div style="margin-top: 15px;">
+  <div class="layui-container">
+    <div class="layui-row layui-col-space20"> 
+      <div class="layui-col-md8">
+        <div class="layui-card">
+          <div class="layui-card-header">数据简报
+            <p class="head-tool layui-form">
+              <select>
+                <option value="">客户名称</option>
+              </select>
+            </p>
+            <p class="head-tool layui-form">
+              <select>
+                <option value="">状态</option>
+              </select>
+            </p>
+          </div>
+          <div class="layui-card-body" style="overflow: hidden;">
+            <table id="tableData" lay-filter="tableData"></table>
+          </div>
+        </div>
+      </div>
+      <div class="layui-col-md4">
+        <div class="layui-card">
+          <div class="layui-card-header">待办事项</div>
+          <div class="layui-card-body">
+            <ul class="systemUl">
+              <li>
+                <p class="time"><i class="layui-icon layui-icon-log"></i>2019-11-09 13:00</p>
+                <p><b class="black">【内部分享】</b>如何建立良好的客户关系</p>
+              </li>
+              <li>
+                <p class="time"><i class="layui-icon layui-icon-log"></i>2019-11-09 13:00</p>
+                <p><b class="black">【内部分享】</b>如何建立良好的客户关系</p>
+              </li>
+              <li>
+                <p class="time"><i class="layui-icon layui-icon-log"></i>2019-11-09 13:00</p>
+                <p><b class="black">【内部分享】</b>如何建立良好的客户关系</p>
+              </li>
+              <li>
+                <p class="time"><i class="layui-icon layui-icon-log"></i>2019-11-09 13:00</p>
+                <p><b class="black">【内部分享】</b>如何建立良好的客户关系</p>
+              </li>
+              <li>
+                <p class="time"><i class="layui-icon layui-icon-log"></i>2019-11-09 13:00</p>
+                <p><b class="black">【内部分享】</b>如何建立良好的客户关系</p>
+              </li>
+              <li>
+                <p class="time"><i class="layui-icon layui-icon-log"></i>2019-11-09 13:00</p>
+                <p><b class="black">【内部分享】</b>如何建立良好的客户关系</p>
+              </li>
+              <li>
+                <p class="time"><i class="layui-icon layui-icon-log"></i>2019-11-09 13:00</p>
+                <p><b class="black">【内部分享】</b>如何建立良好的客户关系</p>
+              </li>
+              <li>
+                <p class="time"><i class="layui-icon layui-icon-log"></i>2019-11-09 13:00</p>
+                <p><b class="black">【内部分享】</b>如何建立良好的客户关系</p>
+              </li>
+              <li>
+                <p class="time"><i class="layui-icon layui-icon-log"></i>2019-11-09 13:00</p>
+                <p><b class="black">【内部分享】</b>如何建立良好的客户关系</p>
+              </li>
+              <li>
+                <p class="time"><i class="layui-icon layui-icon-log"></i>2019-11-09 13:00</p>
+                <p><b class="black">【内部分享】</b>如何建立良好的客户关系</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+<script type="text/javascript" src="./layui/layui.js"></script>
+<script type="text/javascript">
+  layui.use(['jquery','layer','element','table'],function(){
+    var $ = layui.jquery
+    ,element = layui.element
+    ,table = layui.table
+    ,layer = layui.layer;
+
+    var data = [
+      {number:1,name:'北京微音软件有限公司',type:'租金',data:'2019-10-10',beginData:'2019-10-10',endData:'2019-10-10',price:'8000',surplus:'800'},
+      {number:2,name:'北京微音软件有限公司',type:'租金',data:'2019-10-10',beginData:'2019-10-10',endData:'2019-10-10',price:'8000',surplus:'800'},
+      {number:3,name:'北京微音软件有限公司',type:'租金',data:'2019-10-10',beginData:'2019-10-10',endData:'2019-10-10',price:'8000',surplus:'800'},
+      {number:4,name:'北京微音软件有限公司',type:'租金',data:'2019-10-10',beginData:'2019-10-10',endData:'2019-10-10',price:'8000',surplus:'800'},
+      {number:5,name:'北京微音软件有限公司',type:'租金',data:'2019-10-10',beginData:'2019-10-10',endData:'2019-10-10',price:'8000',surplus:'800'},
+      {number:6,name:'北京微音软件有限公司',type:'租金',data:'2019-10-10',beginData:'2019-10-10',endData:'2019-10-10',price:'8000',surplus:'800'},
+      {number:7,name:'北京微音软件有限公司',type:'租金',data:'2019-10-10',beginData:'2019-10-10',endData:'2019-10-10',price:'8000',surplus:'800'},
+      {number:8,name:'北京微音软件有限公司',type:'租金',data:'2019-10-10',beginData:'2019-10-10',endData:'2019-10-10',price:'8000',surplus:'800'},
+    ];
+    table.render({
+      elem:'#tableData',
+      data:data,
+      height:'432px',
+      totalRow:true,
+      cols:[[
+        { title:'序号',field:'number', width:'8%',totalRowText:'合计'},
+        { title:'客户名称',field:'name', },
+        { title:'费用科目',field:'type', style:"color:blue;" },
+        { title:'应收日期',field:'data', style:"color:blue;"},
+        { title:'开始日期',field:'beginData',style:"color:blue;" },
+        { title:'结束日期',field:'endData',style:"color:blue;" },
+        { title:'应收金额',field:'price', style:"color:blue;",totalRow:true,},
+        { title:'剩余金额',field:'surplus', style:"color:blue;"},
+        { title:'操作',field:'', style:"color:blue;",templet:getMoreTpl()},
+      ]],
+    })
+    function getMoreTpl(){
+      return '<span><i class="layui-icon layui-icon-about"></i>详情<span>';
+    }
+    $('#btn_id').click(function(){
+      layer.msg('点击按钮');
+    })
+  })
+</script>
+</html>

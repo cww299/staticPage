@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>系统首页</title>
+  <link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
+  <link rel="stylesheet" type="text/css" href="./pagecss.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <style>
+    .navIconUl{
+      margin-top: 10px;
+    }
+    .navIconUl li{
+      float: left;
+      width: 10%;
+      margin-bottom: 10px;
+      padding-top: 15px;
+    }
+    .navIconUl li:hover{
+      outline: 1px solid #80808070;
+      cursor: pointer;
+    }
+    .navIconUl li p{
+      text-align: center;
+      color: gray;
+      margin: 8px 0;
+    }
+    .navIconUl li p i{
+      font-size: 50px !important;
+      color: gray;
+    }
+    .dataUl{
+
+    }
+    .dataUl li{
+      width: 25%;
+      padding: 20px 0;
+      float: left;
+    }
+    .dataUl li:hover{
+      outline: 1px solid #80808070;
+      cursor: pointer;
+    }
+    .dataUl li>p{
+      text-align: center;
+      color: gray;
+      line-height: 48px;
+    }
+    .dataUl li>p.number{
+      margin:10px 0;
+      font-size: 28px; 
+      font-weight: bold;
+    }
+    .systemUl li{
+      padding: 10px 0;
+      border-bottom: 1px solid #80808026;
+    }
+    .systemUl li>p{
+      color:gray;
+    }
+    .systemUl li>p.time{
+      float: right;
+    }
+    .black{
+      color: #000000a1;
+      font-weight: bold;
+    }
+    .echartDiv{
+      height: 400px;
+    }
+    #targetDiv{
+      width: 50%;
+      float: left;
+    }
+    .targetInfo{
+      margin-top:120px;
+      float: right;
+      width: 50%;
+    }
+    .targetInfo>p{
+      color: gray;
+      margin:10px 0;
+      padding-left: 45px;
+      font-size: 16px;
+    }
+    .targetInfo>p.number{
+      font-size: 20px;
+      color: black;
+    }
+    .btnActive{
+      box-shadow: 0px 1px 1px blue;
+      border-color: #3434f9;
+    }
+    #staticDiv .layui-laydate-static{
+      width: 100% !important;
+    }
+    #staticDiv .layui-laydate-main{
+      width: 100% !important;
+    }
+    #staticDiv table{
+      width: 100% !important;
+    }
+  </style>
+</head>
+<body>
+<div class="navTab">
+  <span class="layui-breadcrumb" lay-separator=">">
+    <a href=""><i class="layui-icon layui-icon-home"></i></a>
+    <a href="">一级分类</a>
+    <a><cite>系统首页</cite></a>
+  </span>
+  <div class="rightDiv moreBtn">
+  <span><i class="layui-icon layui-icon-left"></i></span>
+  <span><i class="layui-icon layui-icon-refresh"></i></span>
+  </div>
+</div>
+<div>
+  <div class="layui-container">
+    <div class="layui-row"> 
+      <div class="layui-col-md12">
+        <div class="layui-card">
+          <div class="layui-card-header">快速新建</div>
+          <div class="layui-card-body" style="overflow: hidden;">
+            <ul class="navIconUl">
+              <li>
+                <p><i class="layui-icon layui-icon-username"></i></p>
+                <p>新建客户</p>
+              </li>
+              <li>
+                <p><i class="layui-icon layui-icon-notice"></i></p>
+                <p>新建线索</p>
+              </li>
+              <li>
+                <p><i class="layui-icon layui-icon-rmb"></i></p>
+                <p>新建商机</p>
+              </li>
+              <li>
+                <p><i class="layui-icon layui-icon-list"></i></p>
+                <p>新建订单</p>
+              </li>
+              <li>
+                <p><i class="layui-icon layui-icon-user"></i></p>
+                <p>新建联系人</p>
+              </li>
+              <li>
+                <p><i class="layui-icon layui-icon-edit"></i></p>
+                <p>写新跟进</p>
+              </li>
+              <li>
+                <p><i class="layui-icon layui-icon-tabs"></i></p>
+                <p>新建任务</p>
+              </li>
+              <li>
+                <p><i class="layui-icon layui-icon-date"></i></p>
+                <p>新建工单</p>
+              </li>
+              <li>
+                <p><i class="layui-icon layui-icon-layer"></i></p>
+                <p>新建回款单</p>
+              </li>
+              <li>
+                <p><i class="layui-icon layui-icon-dollar"></i></p>
+                <p>回款汇集</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div style="margin-top: 15px;">
+  <div class="layui-container">
+    <div class="layui-row layui-col-space10"> 
+      <div class="layui-col-md6">
+        <div class="layui-card">
+          <div class="layui-card-header">数据简报
+            <p class="head-tool layui-form">
+              <select>
+                <option value="1">本周</option>
+              </select>
+            </p>
+            <p class="head-tool layui-form">
+              <select>
+                <option value="1">公司简报</option>
+              </select>
+            </p>
+          </div>
+          <div class="layui-card-body" style="overflow: hidden;padding-top: 13px;">
+            <ul class="dataUl">
+              <li>
+                <p>新增客户</p>
+                <p class="number">200</p>
+              </li>
+              <li>
+                <p>新增线索</p>
+                <p class="number">200</p>
+              </li>
+              <li>
+                <p>新增商机</p>
+                <p class="number">200</p>
+              </li>
+              <li>
+                <p>新增订单</p>
+                <p class="number">200</p>
+              </li>
+              <li>
+                <p>新增联系人</p>
+                <p class="number">200</p>
+              </li>
+              <li>
+                <p>跟进次数</p>
+                <p class="number">200</p>
+              </li>
+              <li>
+                <p>处理任务</p>
+                <p class="number">200</p>
+              </li>
+              <li>
+                <p>处理工单</p>
+                <p class="number">200</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="layui-col-md6">
+        <div class="layui-card">
+          <div class="layui-card-header">系统公告
+            <p class="head-toolBtn">
+              <span class="layui-btn layui-btn-primary">查看更多<i class="layui-icon layui-icon-right"></i></span>
+            </p>
+            <p class="head-toolBtn">
+              <span class="layui-btn layui-btn-primary"><i class="layui-icon layui-icon-add-1"></i>发布公告</span>&nbsp;
+            </p>
+          </div>
+          <div class="layui-card-body">
+            <ul class="systemUl">
+              <li>
+                <p class="time"><i class="layui-icon layui-icon-log"></i>2019-11-09 13:00</p>
+                <p><b class="black">【内部分享】</b>如何建立良好的客户关系</p>
+              </li>
+              <li>
+                <p class="time"><i class="layui-icon layui-icon-log"></i>2019-11-09 13:00</p>
+                <p><b class="black">【内部分享】</b>如何建立良好的客户关系</p>
+              </li>
+              <li>
+                <p class="time"><i class="layui-icon layui-icon-log"></i>2019-11-09 13:00</p>
+                <p><b class="black">【内部分享】</b>如何建立良好的客户关系</p>
+              </li>
+              <li>
+                <p class="time"><i class="layui-icon layui-icon-log"></i>2019-11-09 13:00</p>
+                <p><b class="black">【内部分享】</b>如何建立良好的客户关系</p>
+              </li>
+              <li>
+                <p class="time"><i class="layui-icon layui-icon-log"></i>2019-11-09 13:00</p>
+                <p><b class="black">【内部分享】</b>如何建立良好的客户关系</p>
+              </li>
+              <li>
+                <p class="time"><i class="layui-icon layui-icon-log"></i>2019-11-09 13:00</p>
+                <p><b class="black">【内部分享】</b>如何建立良好的客户关系</p>
+              </li>
+              <li>
+                <p class="time"><i class="layui-icon layui-icon-log"></i>2019-11-09 13:00</p>
+                <p><b class="black">【内部分享】</b>如何建立良好的客户关系</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div style="margin-top: 15px;">
+  <div class="layui-container">
+    <div class="layui-row layui-col-space10"> 
+      <div class="layui-col-md6">
+        <div class="layui-card">
+          <div class="layui-card-header">数据简报
+            <p class="head-tool layui-form">
+              <input class="layui-input" id="targetTime">
+            </p>
+            <p class="head-tool layui-form">
+              <select>
+                <option value="1">公司目标</option>
+              </select>
+            </p>
+          </div>
+          <div class="layui-card-body" style="overflow: hidden;">
+            <div class="echartDiv" id="targetDiv"></div>
+            <div class="targetInfo">
+              <p>目标金额</p>
+              <p class="number">¥1,000,000.00</p>
+              <p>完成金额</p>
+              <p class="number">¥400,000.00</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="layui-col-md6">
+        <div class="layui-card">
+          <div class="layui-card-header">业绩排行
+            <p class="head-tool layui-form">
+              <input class="layui-input" id="sortTime">
+            </p>
+            <p class="head-tool layui-form">
+              <select>
+                <option value="1">个人排行</option>
+              </select>
+            </p>
+          </div>
+          <div class="layui-card-body">
+            <div class="echartDiv" id="sortDiv"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div style="margin-top: 15px;">
+  <div class="layui-container">
+    <div class="layui-row layui-col-space10"> 
+      <div class="layui-col-md6">
+        <div class="layui-card">
+          <div class="layui-card-header">销售预测
+            <p class="head-tool layui-form">
+              <select>
+                <option value="1">公司数据</option>
+              </select>
+            </p>
+          </div>
+          <div class="layui-card-body" style="overflow: hidden;">
+            <div class="echartDiv" id="saleDiv"></div>
+          </div>
+        </div>
+      </div>
+      <div class="layui-col-md6">
+        <div class="layui-card">
+          <div class="layui-card-header">销售漏斗
+            <p class="head-tool layui-form">
+              <input class="layui-input" id="loudouTime">
+            </p>
+            <p class="head-tool layui-form">
+              <select>
+                <option value="1">公司数据</option>
+              </select>
+            </p>
+          </div>
+          <div class="layui-card-body">
+            <div class="echartDiv" id="loudouDiv"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div style="margin-top: 15px;">
+  <div class="layui-container">
+    <div class="layui-row layui-col-space10"> 
+      <div class="layui-col-md6">
+        <div class="layui-card">
+          <div class="layui-card-header">工作报告
+            <p class="head-tool layui-form">
+              <select>
+                <option value="1">工作报告</option>
+              </select>
+            </p>
+            <p class="head-toolBtn">
+              <span class="layui-btn layui-btn-primary">查看更多<i class="layui-icon layui-icon-right"></i></span>&nbsp;
+            </p>
+            <p class="head-toolBtn">
+              <span class="layui-btn layui-btn-primary"><i class="layui-icon layui-icon-add-1"></i>发布公告</span>&nbsp;
+            </p>
+          </div>
+          <div class="layui-card-body" style="overflow: hidden;padding: 20px 15px;">
+            <table id="tableData" lay-filter="tableData"></table>
+          </div>
+        </div>
+      </div>
+      <div class="layui-col-md6">
+        <div class="layui-card">
+          <div class="layui-card-header">日程日历
+            <p class="head-toolBtn">
+              <span class="layui-btn layui-btn-primary">日程管理<i class="layui-icon layui-icon-right"></i></span>
+            </p>
+            <p class="head-toolBtn">
+              <span class="layui-btn layui-btn-primary"><i class="layui-icon layui-icon-add-1"></i>新建日程</span>&nbsp;
+            </p>
+            <p class="head-tool layui-form">
+              <select>
+                <option value="1">我的日程</option>
+              </select>
+            </p>
+          </div>
+          <div class="layui-card-body layui-form">
+           <!--  <div style="overflow: hidden;">
+              <table style="float: right;">
+                <tr>
+                  <td style="width: 100px;">
+                    <select>
+                      <option value="1">2019年</option>
+                    </select>
+                  </td>
+                  <td>&nbsp;</td>
+                  <td style="width: 100px;">
+                    <select>
+                      <option value="1">5月</option>
+                    </select>
+                  </td>
+                  <td>&nbsp;</td>
+                  <td>
+                    <span class="layui-btn layui-btn-primary">年</span>
+                    <span class="layui-btn layui-btn-primary btnActive" style="margin-left:0px;">月</span>
+                  </td>
+                </tr>
+              </table>
+            </div> -->
+            <div id="staticDiv"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+<script type="text/javascript" src="./layui/layui.js"></script>
+<script type="text/javascript">
+  layui.use(['jquery','layer','element','form','laydate','echarts','table'],function(){
+    var $ = layui.jquery
+    ,echarts = layui.echarts
+    ,element = layui.element
+    ,laydate = layui.laydate
+    ,form = layui.form
+    ,table = layui.table
+    ,layer = layui.layer;
+
+    form.render();
+    laydate.render({
+      elem:'#targetTime',
+      value:'2019-05',
+      type:'month',
+    })
+    laydate.render({
+      elem:'#sortTime',
+      value:'2019-05',
+      type:'month',
+    })
+    laydate.render({
+      elem:'#loudouTime',
+      value:'2019-05',
+      type:'month',
+    })
+    var targetDiv = echarts.init(document.getElementById('targetDiv'));
+    targetDiv.setOption({
+      title: {    
+        text: '成交金额'
+      },
+      tooltip: {
+          trigger: 'item',
+          formatter: "{a} <br/>{b}: {c} ({d}%)"
+      },
+      series: [
+          {
+              name:'公司目标',
+              type:'pie',
+              radius: ['40%', '55%'],
+              label: { },
+              data:[
+                  {value:40, name:'完成'},
+                  {value:60, name:'未完成'},
+              ]
+          }
+      ]
+    })
+    var sortDiv = echarts.init(document.getElementById('sortDiv'));
+    sortDiv.setOption({
+      tooltip: {},  
+      legend: {   
+        data:['目标金额','成交金额']
+      },
+      xAxis: {    //横坐标
+          data: ["李小刚","王晓红","周小明","张晓刚","郭小涛","张晓伟","周小伟","王小明","赵小刚","李小红"],
+      },
+      yAxis: {},    //纵坐标
+      series: [
+        {
+          name: '目标金额',
+          type: 'bar',
+          data: [160000, 158000, 142000, 152000, 119000, 103000,85000,57000,39000,42000]
+        },
+        {
+          name:'成交金额',
+          type:'bar',
+          data: [252000,265000,233000,184000,183000,145000,95000,70000,69000]
+        }
+      ]
+    });
+    var saleDiv = echarts.init(document.getElementById('saleDiv'));
+    saleDiv.setOption({
+      tooltip: {},  
+      legend: {   
+        data:['预计销售金额','概率金额']
+      },
+      xAxis: {    //横坐标
+        data:["1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],
+      },
+      yAxis: {},    //纵坐标
+      series: [
+        {
+          name: '预计销售金额',
+          type: 'bar',
+          data: [70000, 69000, 95000, 145000,184000, 215000,252000,265000,233000,183000,139000,96000]
+        },
+        {
+          name:'概率金额',
+          type:'bar',
+          data: [39000,42000,57000,85000,119000,152000,170000,166000,142000,103000,66000,48000]
+        }
+      ]
+    });
+    var loudouDiv = echarts.init(document.getElementById('loudouDiv'));
+    loudouDiv.setOption({
+      tooltip: {
+          trigger: 'item',
+          formatter: "{a} <br/>{b} : {c}%"
+      },
+      legend: {
+          data: ['展现','点击','访问','咨询','订单']
+      },
+      calculable: true,
+      series: [
+        {
+          name:'销售漏斗图',
+          type:'funnel',
+          left: '10%',
+          top: 60,
+          bottom: 60,
+          width: '80%',
+          min: 0,
+          max: 40,
+          minSize: '0%',
+          maxSize: '100%',
+          sort: 'descending',
+          gap: 2,
+          label: {
+              show: true,
+              position: 'inside'
+          },
+          labelLine: {
+              length: 10,
+              lineStyle: {
+                  width: 1,
+                  type: 'solid'
+              }
+          },
+          itemStyle: {
+              borderColor: '#fff',
+              borderWidth: 1
+          },
+          emphasis: {
+              label: {
+                  fontSize: 20
+              }
+          },
+          data: [
+              {value: 30, name: '初步洽谈500'},
+              {value: 25, name: '深入沟通350'},
+              {value: 18, name: '产品报价250'},
+              {value: 10, name: '成交商机150'},
+              {value: 8, name: '流失商机120'}
+          ]
+        }
+      ]
+    })
+    var data = [
+      { id:'',date:'2019-04-22 工作日报',name:'赵小刚',state:'未批阅',},
+      { id:'',date:'2019-04-22 工作日报',name:'赵小刚',state:'未批阅',},
+      { id:'',date:'2019-04-22 工作日报',name:'赵小刚',state:'未批阅',},
+      { id:'',date:'2019-04-22 工作日报',name:'赵小刚',state:'未批阅',},
+      { id:'',date:'2019-04-22 工作日报',name:'赵小刚',state:'未批阅',},
+      { id:'',date:'2019-04-22 工作日报',name:'赵小刚',state:'未批阅',},
+      { id:'',date:'2019-04-22 工作日报',name:'赵小刚',state:'未批阅',},
+    ];
+    table.render({
+      elem:'#tableData',
+      data: data,
+      skin: 'line',
+      cols:[[
+        { field:'date', title:'日期', width:'35%'},
+        { field:'name', title:'人员', templet: getNameTpl(),},
+        { field:'state', title:'状态',templet: getStateTpl(),},
+        { field:'', title:'操作', templet: getMore(),},
+      ]],
+    })
+    function getNameTpl(){
+      return function(d){
+        var html = '<i class="layui-icon layui-icon-username"><i>';
+        return html + d.name;
+      }
+    }
+    function getStateTpl(){
+      return function(d){
+        var html = '<span class="layui-badge-dot layui-bg-orange"></span>';
+        return html+d.state;
+      }
+    }
+    function getMore(){
+      return function(d){
+        return '<i class="layui-icon layui-icon-play"></i>更多';
+      }
+    }
+    laydate.render({
+      elem: '#staticDiv',
+      position: 'static',
+      ready:function(){
+        $('#staticDiv').find('td[lay-ymd="2019-11-18"]').html('18<span class="layui-badge-dot"></span>');
+        $('#staticDiv').find('td[lay-ymd="2019-11-19"]').html('19<span class="layui-badge-dot layui-bg-blue"></span>');
+        $('#staticDiv').find('td[lay-ymd="2019-11-20"]').html('20<span class="layui-badge-dot layui-bg-green"></span>');
+        $('#staticDiv').find('.layui-this').removeClass('layui-this');
+      }
+    });
+    $('#btn_id').click(function(){
+      layer.msg('点击按钮');
+    })
+  })
+</script>
+</html>

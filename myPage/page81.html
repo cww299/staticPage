@@ -1,45 +1,256 @@
 <!--原网址：
-  
+  https://www.qianxiyun.com/public/trustee/
 -->
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+  <title>服务器托管</title>
   <link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
-  <link rel="stylesheet" type="text/css" href="./pageTab.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <style>
-    
+    .imgContent{
+      float: left;
+      width: 21%;
+      line-height: 36px;
+      position: absolute;
+      top: 100px;
+      left: 380px;
+      color: white;
+    }
+    img{
+      max-width: 100%;
+    }
+    .firstNav{
+      background: rgba(0,0,0,.3);
+      color: #fff;
+      height: 60px;
+      line-height: 60px;
+      margin-top: -60px;
+    }
+    .firstUl li{
+      float: left;
+      width: 8%;
+      text-align: center;
+      line-height: 60px;
+    }
+    .firstUl li:hover{
+      background: #0000007d;
+      border-top: 2px solid red;
+      margin-top: -2px;
+      cursor: pointer;
+    }
+    .firstUl li.active{
+      background: #0000007d;
+      border-top: 2px solid red;
+      margin-top: -2px;
+      cursor: pointer;
+    }
+    .contentCard,.secondCard{
+      display: none;
+    }
+    .this-card{
+      display: block !important;
+    }
+    .secondNav{
+      border-bottom: 1px solid #8080805e;
+      overflow: hidden; 
+      margin-bottom: 20px;
+    }
+    .secondNav li:hover{
+      color: red;
+      border-bottom: 2px solid red;
+      cursor: pointer;
+    }
+    .secondNav li{
+      width: 15%;
+      float: left;
+      color: gray;
+      text-align: center;
+      line-height: 32px;
+    }
+    .secondNav .thisNav{
+      color: red;
+      border-bottom: 2px solid red;
+    }
+    .titleH1{
+      margin: 50px 0;
+      text-align: center;
+    }
+    .secondCard p{
+      line-height: 26px;
+      font-size: 16px;
+      color: gray;
+    }
+    .imgDiv{
+      padding: 10px;
+    }
+    .imgDiv img{
+      max-width: 100%;
+    }
+    .black{
+      color: black;
+    }
+    .fourOfOne{
+      padding: 0 25px;
+    }
+    .fourOfOne>p{
+      text-align: center;
+      color: #c62323;
+    }
+    .fourOfOne>p.icon i{
+      font-size: 60px;
+    }
+    .fourOfOne>p.title{
+      font-size: 23px;
+      margin: 20px 0px;
+    }
+    .fourOfOne>p.info{
+      color: gray;
+    }
+    #moreImgDiv{
+      width: 45% !important;
+      margin: auto;
+      margin-bottom: 80px;
+    }
+    .ohterTip{
+      text-align: center;
+      margin-top: -30px;
+      margin-bottom: 50px;
+    }
+    .server>p{
+      padding-left: 20px;
+      line-height: 30px;
+    }
     @media screen and (max-width: 540px){
-      
+      .imgContent{
+        top: 85px;
+        left: 35px;
+        width: 80%;
+      }
     }
   </style>
 </head>
 <body>
 <div>
+  <div class="imgContent">
+    <h1>服务器托管</h1>
+    <p> 为用户提供T3+级标准数据中心、安全稳定的网络环境和充足的多线路带宽资源，提供在线远程管理服务器平台，缩短用户的工作流程，提升用户的体验。 </p>
+    <p>
+      <span class="layui-btn">立即购买</span>
+      <span class="layui-btn">查询价格</span>
+    </p>
+  </div>
+  <img src="./img/page81/type02.jpg">
+</div>
+<div class="firstNav">
   <div class="layui-container">
     <div class="layui-row"> 
-      <div class="layui-col-md12 title">
-        <h5></h5>
+      <div class="layui-col-md12">
+        <ul class="firstUl">
+          <li class="active" lay-index="1">西安</li>
+          <li lay-index="2">青海</li>
+        </ul>
       </div>
     </div>
   </div>
 </div>
-<div>
+<div class="navContent">
   <div class="layui-container">
     <div class="layui-row"> 
-      <div class="layui-col-md12 tabContents">
-        <div class="tabNavs">
-          <ul>
-            <li class="active"><a href=""></a></li>
-            <li class=""><a href=""></a></li>
-          </ul>
+      <h1 class="titleH1">服务器托管服务</h1>
+      <div class="layui-col-md12 contentCard this-card" lay-card="1">
+        <ul class="secondNav">
+          <li class="thisNav" lay-index="1">电信数据中心</li>
+          <li lay-index="2">移动云数据中心</li>
+          <li lay-index="3">联通数据中心</li>
+        </ul>
+        <div>
+          <div class="layui-col-md12 secondCard this-card" lay-card="1">
+            <div class="layui-row"> 
+              <div class="layui-col-md7">
+                <p><b class="black">机房简介：</b>陕西电信云基地位于西咸新区沣西新城，是中国电信集团2014年云数据中心重点项目，本项目总占地约为144亩，项目分四期建设。其中一期投资8亿元，按照中国电信集团双A五星级机房要求建设，一期已于2015年4月开园投入使用，一期工程建设2栋IDC机房楼及1栋综合楼，总建筑面积53851㎡， IDC机房楼按照满足5000架IDC机柜。机房采用国际ANSI & TIA-942 Tier4 标准设计建设； 中国电信集团公司双A级数据中心； 采用水冷自然冷却和风冷自然冷却，装有板式换热器，PUE=1.47； 机房净高4.5米，机房承重10KN/m2； 大楼的整体结构抗震设防烈度为9度。</p><br>
+                <p><b  class="black">电源保障：</b>从陈阳变、纺织变、仁义变三向不同局向的变电所分别各引入2条10kV电压等级，每条10000KVA容量的高压电缆。 不间断电源系统配置分为240V直流系统和UPS系统。UPS系统针对不同业务需要，分为 2N和N+1方式配置，240V直流系统供电，采用整流模块的N+1冗余方式供电。两者均满 足系统容量放电30分钟。 采用10套高压油机系统作为备用电源，备用油机通过并机系统接入高配系统，燃油系统所储油量（储油库）可供机房满载运行12小时以上</p>
+              </div>
+              <div  class="layui-col-md5 imgDiv">
+                <img src="./img/page81/idc41.jpg">
+              </div>
+              <div class="layui-col-md12">
+                <h1 class="titleH1">托管流程</h1>
+                <div style="width: 100%;height:100px;background: gray;">
+                  <img src="">
+                </div>
+              </div>
+              <div class="layui-col-md12">
+                <h1 class="titleH1">托管优势</h1>
+                <div class="layui-row layui-col-space15">
+                  <div class="layui-col-md3 fourOfOne">
+                    <p class="icon"><i class="layui-icon layui-icon-auz"></i></p>
+                    <p class="title">快速ICP备案</p>
+                    <p class="info">陕西省首家采用人脸识别和文档扫描技术，实现了备案全程电子化。不需使用传统拍照和核验单过程。</p>
+                  </div>
+                  <div class="layui-col-md3 fourOfOne">
+                    <p class="icon"><i class="layui-icon layui-icon-auz"></i></p>
+                    <p class="title">在线便捷管理</p>
+                    <p class="info">为用户提供在线远程开关机、重启、系统重装等管理功能，缩短用户的工作流程，提升用户的体验。</p>
+                  </div>
+                  <div class="layui-col-md3 fourOfOne">
+                    <p class="icon"><i class="layui-icon layui-icon-auz"></i></p>
+                    <p class="title">多线、BGP等方式接入</p>
+                    <p class="info">可以满足党政军、金融、工业制造、中小互联网以及自有云等客户IDC多线业务的需求。</p>
+                  </div>
+                  <div class="layui-col-md3 fourOfOne">
+                    <p class="icon"><i class="layui-icon layui-icon-auz"></i></p>
+                    <p class="title">安全检测、防御攻击</p>
+                    <p class="info">提供漏洞扫描，检测异常的请求。抵御DDOS攻击，使用户更放心更直观的看到业务的状态。</p>
+                  </div>
+                </div>
+              </div>
+              <div class="layui-col-md12">
+                <h1 class="titleH1">专业的IDC数据中心运维团队</h1>
+                <p class="ohterTip">拥有一支经验丰富，接受过电信IDC管理规范训练，具备8年以上IDC机房运维经验的工程师团队</p>
+                <div class="layui-carousel" id="moreImgDiv">
+                  <div carousel-item>
+                    <div><img src="./img/page81/05.jpg"></div>
+                    <div><img src="./img/page81/05.jpg"></div>
+                    <div><img src="./img/page81/05.jpg"></div>
+                    <div><img src="./img/page81/05.jpg"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="layui-col-md3" style="background: gray;height: 517px;">
+                <img src="">
+              </div>
+              <div class="layui-col-md9 server">
+                <h2>服务出众，真正7*24*365秒级人工服务响应</h2>
+                <p><b>1）60秒响应</b><br>50名工程师7*24小时提供电话、QQ、线上工单服务支持，真正60秒内响应；</p>
+                <p><b>2）驻守机房</b><br>所有精选高品质CN2骨干机房，全部自有工程师7*24小时值守，确保服务请求第一时间得到处理；</p>
+                <p><b>3）按需提供</b><br>按需提供裸柜、机位、带宽、IP等灵活组合方案，也可以根据客户个性需求，提供基础服务、深度代维服务、数据灾备、高可用负载等个性化定制服务方案，防患于未然；</p>
+                <p><b>4）客户定位</b><br>精选高品质骨干机房，我们只做品质客户，主要以政府和企业为主， 通过对接入客户的品质控制，最大限度保障机房的稳定和用户体验；</p>
+                <p><b>5）实力支持</b><br>具有工信部颁发的互联网数据中心业务牌照，与中国电信、联通、移动密切合作，向用户接入各家线路，能做到高效切换线路故障。</p>
+                <div style="background: gray;height: 100px;width: 100%;">
+                  <img src="">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="layui-col-md12 secondCard" lay-card="2">
+            2
+          </div>
+          <div class="layui-col-md12 secondCard" lay-card="3">
+            3
+          </div>
         </div>
-        <div class="tabCards">
-          
+      </div>
+      <div class="layui-col-md12 contentCard" lay-card="2">
+        <ul class="secondNav">
+          <li class="thisNav" lay-index="1">联通国家大数据基地</li>
+        </ul>
+        <div>
+          <div class="layui-col-md12 secondCard this-card" lay-card="1">
+            1
+          </div>
         </div>
-        
       </div>
     </div>
   </div>
@@ -47,13 +258,35 @@
 </body>
 <script type="text/javascript" src="./layui/layui.js"></script>
 <script type="text/javascript">
-  layui.use(['jquery','layer','form',],function(){
+  layui.use(['jquery','layer','form','carousel'],function(){
     var $ = layui.jquery
-       ,form = layui.form
-       ,layer = layui.layer;
+    ,form = layui.form
+    ,carousel = layui.carousel
+    ,layer = layui.layer;
 
     $('.layui-btn').click(function(){
       layer.msg('点击按钮');
+    })
+    carousel.render({
+      elem: '#moreImgDiv'
+      ,width: '100%' //设置容器宽度
+      ,arrow: 'always' //始终显示箭头
+      //,anim: 'updown' //切换动画方式
+    });
+
+    $('.firstUl').find('li').click(function(){
+      var index = $(this).attr('lay-index');
+      $(this).addClass('active');
+      $(this).siblings().removeClass("active");
+      $('.navContent').find('.contentCard').removeClass('this-card');
+      $('.navContent').find('.contentCard[lay-card='+index+']').addClass('this-card');
+    })
+    $('.secondNav').find('li').click(function(obj){
+      var index = $(this).attr('lay-index');
+      $(obj.target).siblings().removeClass('thisNav');
+      $(obj.target).addClass('thisNav');
+      $(obj.target).parent().next().find('div').removeClass('this-card');
+      $(obj.target).parent().next().find('.secondCard[lay-card='+index+']').addClass('this-card');
     })
     form.render();
 
