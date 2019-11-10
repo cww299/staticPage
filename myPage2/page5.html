@@ -7,7 +7,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <style>
+    .navUl{
 
+    }
+    .navUl li{
+      float: left;
+      width: 10%;
+      text-align: center;
+    }
+    .navUl li:hover{
+      cursor: pointer;
+      color: blue;
+    }
+    .navUl li.active{
+      color: blue;
+    }
+    .searchDiv,.cardContent{
+      display: none;
+    }
+    .lay-this{
+      display: block;
+    }
+    .more{
+      color:blue;
+    }
   </style>
 </head>
 <body>
@@ -15,21 +38,82 @@
   <span class="layui-breadcrumb" lay-separator=">">
     <a href=""><i class="layui-icon layui-icon-home"></i></a>
     <a href="">一级分类</a>
-    <a><cite>系统首页</cite></a>
+    <a><cite>项目资源信息</cite></a>
   </span>
   <div class="rightDiv moreBtn">
-  <span><i class="layui-icon layui-icon-left"></i></span>
-  <span><i class="layui-icon layui-icon-refresh"></i></span>
+    <span><i class="layui-icon layui-icon-left"></i></span>
+    <span><i class="layui-icon layui-icon-refresh"></i></span>
   </div>
 </div>
-<div class="">
+<div>
   <div class="layui-container">
-    <div class="layui-row"> 
-      <div class="layui-col-md6">
-          
+    <div class="layui-row">
+      <div class="layui-col-md12">
+        <div class="layui-card">
+          <div class="layui-card-header">
+            <ul class="navUl">
+              <li class="active" lay-index="1">项目信息</li>
+              <li class="" lay-index="2">楼宇信息</li>
+              <li class="" lay-index="3">房源信息</li>
+            </ul>
+          </div>
+          <div class="layui-card-body">
+            <div class="searchDiv lay-this" lay-card="1">
+              <div style="float: right;">
+                <span class="layui-btn layui-btn-normal"><i class="layui-icon layui-icon-add-1"></i>添加</span>
+                <span class="layui-btn layui-btn-primary"><i class="layui-icon layui-icon-upload-drag"></i>导出</span>
+              </div>
+              <table>
+                <tr>
+                  <td><input type="text" placeholder="搜索项目名称" class="layui-input"></td>
+                  <td>&nbsp;&nbsp;</td>
+                  <td><input type="text" placeholder="搜索公司名称" class="layui-input"></td>
+                  <td>&nbsp;&nbsp;</td>
+                  <td><span class="layui-btn layui-btn-normal"><i class="layui-icon layui-icon-search">查询</i></span></td>
+                </tr>
+              </table>
+            </div>
+            <div class="searchDiv" lay-card="2">
+
+            </div>
+            <div class="searchDiv" lay-card="3">
+              <div style="float: right;">
+                <span class="layui-btn layui-btn-normal"><i class="layui-icon layui-icon-add-1"></i>添加</span>
+                <span class="layui-btn layui-btn-primary"><i class="layui-icon layui-icon-upload-drag"></i>导出</span>
+              </div>
+              <table>
+                <tr>
+                  <td><input type="text" placeholder="搜索关键字" class="layui-input"></td>
+                  <td>&nbsp;&nbsp;</td>
+                  <td><span class="layui-btn layui-btn-normal"><i class="layui-icon layui-icon-search"></i>查询</span></td>
+                  <td>&nbsp;&nbsp;</td>
+                  <td><span class="layui-btn layui-btn-normal"><i class="layui-icon layui-icon-search"></i>条件再查询</span></td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="layui-col-md6">
-          
+    </div>
+  </div>
+</div>
+<div style="margin-top:15px;">
+  <div class="layui-container">
+    <div class="layui-row">
+      <div class="layui-col-md12">
+        <div class="layui-card">
+          <div class="layui-card-body">
+            <div class="cardContent lay-this" lay-card="1">
+              <table id="tableData1" lay-filter="tableData1"></table>
+            </div>
+            <div class="cardContent" lay-card="2">
+              2
+            </div>
+            <div class="cardContent" lay-card="3">
+              <table id="tableData3" lay-filter="tableData3"></table>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -37,11 +121,78 @@
 </body>
 <script type="text/javascript" src="./layui/layui.js"></script>
 <script type="text/javascript">
-  layui.use(['jquery','layer','element'],function(){
+  layui.use(['jquery','layer','element','table'],function(){
     var $ = layui.jquery
-      ,element = layui.element
-      ,layer = layui.layer;
+    ,element = layui.element
+    ,table = layui.table
+    ,layer = layui.layer;
 
+    $('.navUl').find('li').on('click',function(obj){
+      var index = $(this).attr('lay-index');
+      $(this).siblings().removeClass('active');
+      $(this).addClass('active');
+      $('.searchDiv').removeClass('lay-this');
+      $('.searchDiv[lay-card='+index+']').addClass('lay-this');
+      $('.cardContent').removeClass('lay-this');
+      $('.cardContent[lay-card='+index+']').addClass('lay-this');
+    })
+    var data1 = [
+      { no:1,number:'DD20190324010001',name:'石景山',companyName:'北京微音软件有限公司',people:'',phone:'',area:'',time:'',hire:'',},
+      { no:2,number:'DD20190324010001',name:'石景山',companyName:'北京微音软件有限公司',people:'',phone:'',area:'',time:'',hire:'',},
+      { no:3,number:'DD20190324010001',name:'石景山',companyName:'北京微音软件有限公司',people:'',phone:'',area:'',time:'',hire:'',},
+      { no:4,number:'DD20190324010001',name:'石景山',companyName:'北京微音软件有限公司',people:'',phone:'',area:'',time:'',hire:'',},
+      { no:5,number:'DD20190324010001',name:'石景山',companyName:'北京微音软件有限公司',people:'',phone:'',area:'',time:'',hire:'',},
+    ];
+    table.render({
+      elem:'#tableData1',
+      data: data1,
+      cols:[[
+        {title:'序号',field:'no', width:'6%',},
+        {title:'项目编号',field:'number', width:'10%',},
+        {title:'项目名称',field:'name', width:'10%',},
+        {title:'公司名称',field:'companyName',},
+        {title:'授权代表人',field:'people',},
+        {title:'联系电话',field:'phone',},
+        {title:'大业主面积',field:'area',},
+        {title:'时点',field:'time',width:'6%',},
+        {title:'出租率',field:'hire',},
+        {title:'操作',field:'',templet: getMoreTpl(), width:'18%',},
+      ]]
+    })
+    var data3 = [
+      { no:1,name:'石景山',floorName:'北京微音软件有限公司',number:'',floorNumber:'',area:'',state:'',type:'',},
+      { no:2,name:'石景山',floorName:'北京微音软件有限公司',number:'',floorNumber:'',area:'',state:'',type:'',},
+      { no:3,name:'石景山',floorName:'北京微音软件有限公司',number:'',floorNumber:'',area:'',state:'',type:'',},
+      { no:4,name:'石景山',floorName:'北京微音软件有限公司',number:'',floorNumber:'',area:'',state:'',type:'',},
+      { no:5,name:'石景山',floorName:'北京微音软件有限公司',number:'',floorNumber:'',area:'',state:'',type:'',},
+    ];
+    table.render({
+      elem:'#tableData3',
+      data: data3,
+      cols:[[
+        {title:'序号',field:'no', width:'6%',},
+        {title:'项目名称',field:'name', width:'10%',},
+        {title:'楼宇名称',field:'floorName',},
+        {title:'房源编号',field:'number', width:'10%',},
+        {title:'楼层',field:'floorNumber',},
+        {title:'面积',field:'area',},
+        {title:'状态',field:'state',},
+        {title:'类型',field:'type',},
+        {title:'操作',field:'',templet: getMoreTpl(), width:'18%',},
+      ]]
+    })
+
+
+
+    function getMoreTpl(){
+      return function(d){
+        return [
+          '<a href="javascript:;" class="more"><i class="layui-icon layui-icon-edit"></i>查看</a>',
+          '<a href="javascript:;" class="more"><i class="layui-icon layui-icon-edit"></i>编辑</a>',
+          '<a href="javascript:;" class="more"><i class="layui-icon layui-icon-delete"></i>删除</a>',
+        ].join(' ');
+      }
+    }
     $('#btn_id').click(function(){
       layer.msg('点击按钮');
     })
