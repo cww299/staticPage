@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+  <title>项目、楼宇、房源信息</title>
   <link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
   <link rel="stylesheet" type="text/css" href="./pagecss.css">
   <meta charset="UTF-8">
@@ -17,19 +17,16 @@
     }
     .navUl li:hover{
       cursor: pointer;
-      color: blue;
+      color: #1e9fff;
     }
     .navUl li.active{
-      color: blue;
+      color: #1e9fff;
     }
     .searchDiv,.cardContent{
       display: none;
     }
     .lay-this{
       display: block;
-    }
-    .more{
-      color:blue;
     }
   </style>
 </head>
@@ -148,7 +145,7 @@
       data: data1,
       cols:[[
         {title:'序号',field:'no', width:'6%',},
-        {title:'项目编号',field:'number', width:'10%',},
+        {title:'项目编号',field:'number', width:'15%',},
         {title:'项目名称',field:'name', width:'10%',},
         {title:'公司名称',field:'companyName',},
         {title:'授权代表人',field:'people',},
@@ -169,6 +166,7 @@
     table.render({
       elem:'#tableData3',
       data: data3,
+      size:'sm',
       cols:[[
         {title:'序号',field:'no', width:'6%',},
         {title:'项目名称',field:'name', width:'10%',},
@@ -181,15 +179,12 @@
         {title:'操作',field:'',templet: getMoreTpl(), width:'18%',},
       ]]
     })
-
-
-
     function getMoreTpl(){
       return function(d){
         return [
-          '<a href="javascript:;" class="more"><i class="layui-icon layui-icon-edit"></i>查看</a>',
-          '<a href="javascript:;" class="more"><i class="layui-icon layui-icon-edit"></i>编辑</a>',
-          '<a href="javascript:;" class="more"><i class="layui-icon layui-icon-delete"></i>删除</a>',
+          '<span class="layui-btn layui-btn-sm layui-btn-normal"><i class="layui-icon layui-icon-edit"></i>查看</span>',
+          '<span class="layui-btn layui-btn-sm layui-btn-normal"><i class="layui-icon layui-icon-edit"></i>编辑</span>',
+          '<span class="layui-btn layui-btn-sm layui-btn-normal"><i class="layui-icon layui-icon-delete"></i>删除</span>',
         ].join(' ');
       }
     }
