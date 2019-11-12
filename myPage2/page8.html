@@ -1,13 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+  <title>客户列表</title>
   <link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
   <link rel="stylesheet" type="text/css" href="./pagecss.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <style>
-
+    .red{
+      color: red;
+    }
+    .addTable table{
+      width: 80%;
+      margin: 10px auto;
+    }
+    .titleTd{
+      text-align: right;
+    }
+    .layui-textarea{
+      height: 180px;
+    }
+    @media screen and (min-width: 1500px){
+      .layui-container {
+          width: 1470px;
+      }
+    }
+      
   </style>
 </head>
 <body>
@@ -15,36 +33,185 @@
   <span class="layui-breadcrumb" lay-separator=">">
     <a href=""><i class="layui-icon layui-icon-home"></i></a>
     <a href="">一级分类</a>
-    <a><cite>系统首页</cite></a>
+    <a><cite>客户列表(招商经理)</cite></a>
   </span>
   <div class="rightDiv moreBtn">
-  <span><i class="layui-icon layui-icon-left"></i></span>
-  <span><i class="layui-icon layui-icon-refresh"></i></span>
+    <span><i class="layui-icon layui-icon-left"></i></span>
+    <span><i class="layui-icon layui-icon-refresh"></i></span>
   </div>
 </div>
-<div class="">
+<div>
   <div class="layui-container">
-    <div class="layui-row"> 
-      <div class="layui-col-md6">
-          
+    <div class="layui-row">
+      <div class="layui-col-md12">
+        <div class="layui-card">
+          <div class="layui-card-body">
+            <div>
+              <div style="float: right;">
+                <span class="layui-btn layui-btn-normal" id="addCustom"><i class="layui-icon layui-icon-add-1"></i>添加</span>
+                <span class="layui-btn layui-btn-normal"><i class="layui-icon layui-icon-add-1"></i>转移客户</span>
+              </div>
+              <table class="layui-form">
+                <tr>
+                  <td><select><option value="">当前</option></select></td>
+                  <td>&nbsp;&nbsp;</td>
+                  <td><select><option value="">招商阶段</option></select></td>
+                  <td>&nbsp;&nbsp;</td>
+                  <td><input type="text" placeholder="客户名称" class="layui-input"></td>
+                  <td>&nbsp;&nbsp;</td>
+                  <td><input type="text" placeholder="联系电话" class="layui-input"></td>
+                  <td><span class="layui-btn layui-btn-normal"><i class="layui-icon layui-icon-search">查询</i></span></td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="layui-col-md6">
-          
+    </div>
+  </div>
+</div>
+<div style="margin-top:15px;">
+  <div class="layui-container">
+    <div class="layui-row">
+      <div class="layui-col-md12">
+        <div class="layui-card">
+          <div class="layui-card-body">
+            <div>
+              <table id="tableData1" lay-filter="tableData1"></table>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
 </body>
+<script type="text/html" id="addCustomTpl">
+  <div class="addTable">
+    <div class="layui-card">
+      <div class="layui-card-header"><i class="layui-icon layui-icon-spread-left"></i>&nbsp;&nbsp;新增客户&nbsp;&nbsp;&nbsp;&nbsp;<b>客户编号：KF2015123123123</b>
+        <p class="head-toolBtn">
+          <b class="red">*</b>为必填项
+        </p>
+      </div>
+      <div class="layui-card-body">
+        <table>
+          <tr>
+            <td class="titleTd"><b class="red">*</b>客户名称：</td>
+            <td colspan="3"><input type="text" class="layui-input" placeholder=""></td>
+            <td class="titleTd">客户来源：</td>
+            <td><input type="text" placeholder="" class="layui-input"></td>
+          </tr>
+          <tr>
+            <td class="titleTd">法定代表：</td>
+            <td><input type="text" class="layui-input"></td>
+            <td class="titleTd">所属行业：</td>
+            <td><input type="text" class="layui-input"></td>
+            <td class="titleTd">来源名称：</td>
+            <td><input type="text" class="layui-input"></td>
+          </tr>
+          <tr>
+            <td class="titleTd">注册地址：</td>
+            <td colspan="3"><input type="text" class="layui-input" placeholder=""></td>
+            <td class="titleTd">税务编码：</td>
+            <td><input type="text" placeholder="" class="layui-input"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="layui-card">
+      <div class="layui-card-header"><i class="layui-icon layui-icon-spread-left"></i>&nbsp;&nbsp;联系人信息&nbsp;&nbsp;&nbsp;&nbsp;<b>注1：联系人与手机号码可以重复修改，但联系人与手机号码一旦被其他人员填写，您将无法重复录入；</b>
+      </div>
+      <div class="layui-card-body">
+        <table>
+          <tr>
+            <td class="titleTd"><b class="red">*</b>联系人：</td>
+            <td><input type="text" class="layui-input" placeholder=""></td>
+            <td class="titleTd">所属部门：</td>
+            <td><input type="text" placeholder="" class="layui-input"></td>
+            <td class="titleTd">所属植物：</td>
+            <td><input type="text" placeholder="" class="layui-input"></td>
+          </tr>
+          <tr>
+            <td class="titleTd"><b class="red">*</b>手机号码：</td>
+            <td><input type="text" class="layui-input" placeholder=""></td>
+            <td class="titleTd">固定电话：</td>
+            <td><input type="text" placeholder="" class="layui-input"></td>
+            <td class="titleTd">电子邮箱：</td>
+            <td><input type="text" placeholder="" class="layui-input"></td>
+          </tr>
+          <tr>
+            <td class="titleTd">备注说明：</td>
+            <td colspan="5"><textarea class="layui-textarea"></textarea></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <p style="text-align: center;">
+      <span class="layui-btn layui-btn-normal">提交保存</span>
+      <span class="layui-btn layui-btn-primary" id="closePage">返回</span>
+    </p>
+  </div>
+</script>
 <script type="text/javascript" src="./layui/layui.js"></script>
 <script type="text/javascript">
-  layui.use(['jquery','layer','element'],function(){
+  layui.use(['jquery','layer','element','table'],function(){
     var $ = layui.jquery
-      ,element = layui.element
-      ,layer = layui.layer;
+    ,element = layui.element
+    ,table = layui.table
+    ,layer = layui.layer;
 
-    $('#btn_id').click(function(){
-      layer.msg('点击按钮');
+    var data1 = [
+      { no:1,name:'北京微音软件有限公司',people:'罗滔',address:'18888888',contacts:'张三',post:'经理',phone:'1888888',licens:'北京微音软件有限公司'},
+      { no:2,name:'北京微音软件有限公司',people:'罗滔',address:'18888888',contacts:'张三',post:'经理',phone:'1888888',licens:'北京微音软件有限公司'},
+      { no:3,name:'北京微音软件有限公司',people:'罗滔',address:'18888888',contacts:'张三',post:'经理',phone:'1888888',licens:'北京微音软件有限公司'},
+      { no:4,name:'北京微音软件有限公司',people:'罗滔',address:'18888888',contacts:'张三',post:'经理',phone:'1888888',licens:'北京微音软件有限公司'},
+      { no:5,name:'北京微音软件有限公司',people:'罗滔',address:'18888888',contacts:'张三',post:'经理',phone:'1888888',licens:'北京微音软件有限公司'},
+    ];
+    table.render({
+      elem:'#tableData1',
+      size:'lg',
+      data: data1,
+      page:true,
+      cols:[[
+        {type:'checkbox',},
+        {title:'招商阶段',field:'bussiness', sort:true, },
+        {title:'客户编号',field:'number', width:'12%',sort:true,},
+        {title:'客户名称',field:'name', width:'10%',sort:true,},
+        {title:'联系人',field:'contacts',width:'14%',sort:true,},
+        {title:'联系电话',field:'phone',},
+        {title:'最后跟进',field:'last',sort:true,},
+        {title:'操作',field:'',templet: getMoreTpl(), width:'30%',},
+      ]]
     })
+    
+    function getMoreTpl(){
+      return function(d){
+        return [
+          '<span class="layui-btn layui-btn-sm layui-btn-normal"><i class="layui-icon layui-icon-edit"></i>编辑</span>',
+          '<span class="layui-btn layui-btn-sm layui-btn-green"><i class="layui-icon layui-icon-edit"></i>临时合同</span>',
+          '<span class="layui-btn layui-btn-sm layui-btn-warm"><i class="layui-icon layui-icon-edit"></i>生成合同</span>',
+          '<span class="layui-btn layui-btn-sm layui-btn-green"><i class="layui-icon layui-icon-edit"></i>发起用印</span>',
+          '<span class="layui-btn layui-btn-sm layui-btn-warm"><i class="layui-icon layui-icon-edit"></i>发起补充协议</span>',
+          '<span class="layui-btn layui-btn-sm layui-btn-danger"><i class="layui-icon layui-icon-delete"></i>删除</span>',
+        ].join(' ');
+      }
+    }
+
+    $('#addCustom').click(function(){
+      var addProjectWin = layer.open({
+        type:1,
+        area:['70%','90%'],
+        title:'添加客户',
+        content:$('#addCustomTpl').html(),
+        success:function(){
+          $('#closePage').unbind().on('click',function(){
+            layer.close(addProjectWin);
+          })
+        }
+      })
+    })
+    
   })
 </script>
 </html>
