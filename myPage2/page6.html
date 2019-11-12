@@ -1,35 +1,110 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+  <title>登录页面</title>
   <link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
-  <link rel="stylesheet" type="text/css" href="./pagecss.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <style>
-
+    body,html,.fullHeight{
+      height: 100% !important;
+    }
+    .loginDiv{
+      text-align: center;
+      padding: 150px 50px;
+    }
+    .loginDiv h2{
+      padding: 30px 0 20px;
+    }
+    .loginDiv>p{
+      margin-bottom: 24px;
+    }
+    .loginDiv input[type=text]{
+      padding-left: 38px;
+    }
+    .loginDiv .inputIcon{
+      position: absolute;
+      left: 61px;
+      z-index: 5;
+      margin-top: 12px;
+      color: gray;
+    }
+    .loginDiv .layui-btn-danger{
+      background-color: #ff7875;
+      border-color: #ff7875;
+      color: #fff;
+    }
+    .loginDiv .layui-btn{
+      width: 100%;
+    }
+    .footerDiv{
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      line-height: 30px;
+      padding: 20px;
+      text-align: center;
+      box-sizing: border-box;
+      color: rgba(0,0,0,.5);
+    }
+    .footerDiv a{
+      color: #1890ff;
+    }
+    .layui-icon-login-wechat {
+      color: #4DAF29;
+    }
+    .otherLogin label{
+      color: gray;
+    }
+    .otherLogin i{
+      font-size: 20px;
+    }
+    .otherLogin a{
+      margin-left: 15px;
+    }
   </style>
 </head>
 <body>
-<div class="navTab">
-  <span class="layui-breadcrumb" lay-separator=">">
-    <a href=""><i class="layui-icon layui-icon-home"></i></a>
-    <a href="">一级分类</a>
-    <a><cite>系统首页</cite></a>
-  </span>
-  <div class="rightDiv moreBtn">
-  <span><i class="layui-icon layui-icon-left"></i></span>
-  <span><i class="layui-icon layui-icon-refresh"></i></span>
-  </div>
-</div>
-<div class="">
-  <div class="layui-container">
-    <div class="layui-row"> 
-      <div class="layui-col-md6">
-          
+<div class="fullHeight">
+    <div class="layui-row fullHeight"> 
+      <div class="layui-col-md8 fullHeight">
+        <div class="layui-carousel fullHeight" id="bgImgDiv">
+          <div carousel-item>
+            <div><img src="./img/page6/login-bg.jpg"></div>
+            <div><img src="./img/page6/login-bg.jpg"></div>
+            <div><img src="./img/page6/login-bg.jpg"></div>
+            <div><img src="./img/page6/login-bg.jpg"></div>
+          </div>
+        </div>
       </div>
-      <div class="layui-col-md6">
-          
+      <div class="layui-col-md4 fullHeight">
+        <div class="loginDiv layui-form">
+          <img src="./img/page6/logo-small.png">
+          <h2>登录</h2>
+          <p><span class="layui-btn layui-btn-sm layui-btn-danger" id="inputCompany">请输入您的企业代码</span></p>
+          <p>
+            <i class="layui-icon layui-icon-username inputIcon"></i>
+            <input type="text" name="" class="layui-input" placeholder="用户名或邮箱地址">
+          </p>
+          <div class="layui-form-item">
+            <i class="layui-icon layui-icon-password inputIcon"></i>
+            <input type="text" name="" class="layui-input" placeholder="密码">
+          </div>
+          <p style="text-align: left;">
+            <input type="checkbox" name="" title="记住我" lay-skin="primary"> 
+          </p>
+          <p><span class="layui-btn layui-btn-nromal">登录</span></p>
+          <div style="text-align: left;" class="otherLogin">
+            <label>其他登录方式</label>
+            <a href="javascript:;"><i class="layui-icon layui-icon-login-wechat"></i></a>
+            <a href="javascript:;"><i class="layui-icon layui-icon-username"></i></a>
+          </div>
+          <div class="footerDiv">
+            <p>Copyright  @2018 <a href="">北京微音</a> 400-018-5101</p>
+            <p>工信部备案号：京ICP备15037145号</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -37,14 +112,39 @@
 </body>
 <script type="text/javascript" src="./layui/layui.js"></script>
 <script type="text/javascript">
-  layui.use(['jquery','layer','element'],function(){
+  layui.use(['jquery','layer','carousel','form'],function(){
     var $ = layui.jquery
-      ,element = layui.element
-      ,layer = layui.layer;
+    ,form = layui.form
+    ,carousel = layui.carousel
+    ,layer = layui.layer;
 
+    form.render();
     $('#btn_id').click(function(){
       layer.msg('点击按钮');
     })
+    $('#inputCompany').click(function(){
+      layer.open({
+        type:1,
+        title:'更改企业',
+        area:['30%','20%'],
+        offset:'180px',
+        content:[
+          '<div class="layui-form-item" style="margin-right: 25px;margin-top: 25px;">',
+            '<label class="layui-form-label">企业名代码</label>',
+            '<div class="layui-input-block">',
+              '<input type="text" name="title" required  lay-verify="required" placeholder="企业名代码" autocomplete="off" class="layui-input">',
+            '</div>',
+          '</div>',
+        ].join(' '),
+        btn:['更改','取消'],
+      })
+    })
+    carousel.render({
+      elem: '#bgImgDiv'
+      ,width: '100%' 
+      ,arrow: 'alway' 
+      ,indicator: 'none'
+    });
   })
 </script>
 </html>

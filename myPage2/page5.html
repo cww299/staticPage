@@ -28,6 +28,22 @@
     .lay-this{
       display: block;
     }
+    .red{
+      color: red;
+    }
+    .addTable table{
+      width: 80%;
+      margin: 10px auto;
+    }
+    .titleTd{
+      text-align: right;
+    }
+    @media screen and (min-width: 1500px){
+      .layui-container {
+          width: 1470px;
+      }
+    }
+      
   </style>
 </head>
 <body>
@@ -57,7 +73,7 @@
           <div class="layui-card-body">
             <div class="searchDiv lay-this" lay-card="1">
               <div style="float: right;">
-                <span class="layui-btn layui-btn-normal"><i class="layui-icon layui-icon-add-1"></i>添加</span>
+                <span class="layui-btn layui-btn-normal" id="addProject"><i class="layui-icon layui-icon-add-1"></i>添加</span>
                 <span class="layui-btn layui-btn-primary"><i class="layui-icon layui-icon-upload-drag"></i>导出</span>
               </div>
               <table>
@@ -71,11 +87,23 @@
               </table>
             </div>
             <div class="searchDiv" lay-card="2">
-
+              <div style="float: right;">
+                <span class="layui-btn layui-btn-normal" id="addFloor"><i class="layui-icon layui-icon-add-1"></i>添加</span>
+                <span class="layui-btn layui-btn-primary"><i class="layui-icon layui-icon-upload-drag"></i>导出</span>
+              </div>
+              <table>
+                <tr>
+                  <td><input type="text" placeholder="搜索关键字" class="layui-input"></td>
+                  <td>&nbsp;&nbsp;</td>
+                  <td><span class="layui-btn layui-btn-normal"><i class="layui-icon layui-icon-search"></i>查询</span></td>
+                  <td>&nbsp;&nbsp;</td>
+                  <td><span class="layui-btn layui-btn-normal"><i class="layui-icon layui-icon-search"></i>条件再查询</span></td>
+                </tr>
+              </table>
             </div>
             <div class="searchDiv" lay-card="3">
               <div style="float: right;">
-                <span class="layui-btn layui-btn-normal"><i class="layui-icon layui-icon-add-1"></i>添加</span>
+                <span class="layui-btn layui-btn-normal" id="addHouse"><i class="layui-icon layui-icon-add-1"></i>添加</span>
                 <span class="layui-btn layui-btn-primary"><i class="layui-icon layui-icon-upload-drag"></i>导出</span>
               </div>
               <table>
@@ -104,7 +132,7 @@
               <table id="tableData1" lay-filter="tableData1"></table>
             </div>
             <div class="cardContent" lay-card="2">
-              2
+              <table id="tableData2" lay-filter="tableData2"></table>
             </div>
             <div class="cardContent" lay-card="3">
               <table id="tableData3" lay-filter="tableData3"></table>
@@ -116,6 +144,355 @@
   </div>
 </div>
 </body>
+<script type="text/html" id="addProjectTpl">
+  <div class="addTable">
+    <div class="layui-card">
+      <div class="layui-card-header"><i class="layui-icon layui-icon-spread-left"></i>&nbsp;&nbsp;添加项目信息
+        <p class="head-toolBtn">
+          <b class="red">*</b>为必填项
+        </p>
+      </div>
+      <div class="layui-card-body">
+        <table>
+          <tr>
+            <td class="titleTd"><b class="red">*</b>项目编号：</td>
+            <td><input type="text" class="layui-input"></td>
+            <td class="titleTd"><b class="red">*</b>项目名称：</td>
+            <td><input type="text" class="layui-input"></td>
+          </tr>
+          <tr>
+            <td class="titleTd">大业主面积：</td>
+            <td><input type="text" class="layui-input"></td>
+            <td class="titleTd"><b class="red">*</b>项目简称：</td>
+            <td><input type="text" class="layui-input"></td>
+          </tr>
+          <tr>
+            <td class="titleTd">项目面积：</td>
+            <td><input type="text" class="layui-input"></td>
+            <td class="titleTd"><b class="red">*</b>项目终止日：</td>
+            <td><input type="text" class="layui-input"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="layui-card">
+      <div class="layui-card-header"><i class="layui-icon layui-icon-spread-left"></i>&nbsp;&nbsp;公司信息</div>
+      <div class="layui-card-body">
+        <table>
+          <tr>
+            <td class="titleTd"><b class="red">*</b>公司名称：</td>
+            <td><input type="text" class="layui-input"></td>
+            <td class="titleTd"><b class="red">*</b>注册地址：</td>
+            <td><input type="text" class="layui-input"></td>
+          </tr>
+          <tr>
+            <td class="titleTd">法人代表：</td>
+            <td><input type="text" class="layui-input"></td>
+            <td class="titleTd"><b class="red">*</b>开户行名称：</td>
+            <td><input type="text" class="layui-input"></td>
+          </tr>
+          <tr>
+            <td class="titleTd"><b class="red">*</b>授权代表人：</td>
+            <td><input type="text" class="layui-input"></td>
+            <td class="titleTd"><b class="red">*</b>开户行：</td>
+            <td><input type="text" class="layui-input"></td>
+          </tr>
+          <tr>
+            <td class="titleTd">授权代表电话：</td>
+            <td><input type="text" class="layui-input"></td>
+            <td class="titleTd"><b class="red">*</b>开户行账号：</td>
+            <td><input type="text" class="layui-input"></td>
+          </tr>
+          <tr>
+            <td class="titleTd"><b class="red">*</b>项目阶段：</td>
+            <td><input type="text" class="layui-input"></td>
+            <td class="titleTd">签署地点：</td>
+            <td><input type="text" class="layui-input"></td>
+          </tr>
+          <tr>
+            <td class="titleTd"><b class="red">*</b>项目时点：</td>
+            <td><input type="text" class="layui-input"></td>
+            <td class="titleTd">项目出租率：</td>
+            <td><input type="text" class="layui-input"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="layui-card">
+      <div class="layui-card-header"><i class="layui-icon layui-icon-spread-left"></i>&nbsp;&nbsp;送达信息</div>
+      <div class="layui-card-body">
+        <table>
+          <tr>
+            <td class="titleTd"><b class="red">*</b>手机号码：</td>
+            <td><input type="text" class="layui-input"></td>
+            <td class="titleTd"><b class="red">*</b>送达信息名称：</td>
+            <td><input type="text" class="layui-input"></td>
+          </tr>
+          <tr>
+            <td class="titleTd">固定电话：</td>
+            <td><input type="text" class="layui-input"></td>
+            <td class="titleTd"><b class="red">*</b>送达地址：</td>
+            <td><input type="text" class="layui-input"></td>
+          </tr>
+          <tr>
+            <td class="titleTd"><b class="red">*</b>电子邮件：</td>
+            <td><input type="text" class="layui-input"></td>
+            <td class="titleTd"><b class="red">*</b>送达地址联系人</td>
+            <td><input type="text" class="layui-input"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="layui-card">
+      <div class="layui-card-header"><i class="layui-icon layui-icon-spread-left"></i>&nbsp;&nbsp;其他信息</div>
+      <div class="layui-card-body">
+        <table>
+          <tr>
+            <td>
+              <textarea class="layui-textarea"></textarea>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <p style="text-align: center;">
+      <span class="layui-btn layui-btn-normal">保存数据</span>
+      <span class="layui-btn layui-btn-green">编辑数据</span>
+      <span class="layui-btn layui-btn-danger">删除数据</span>
+      <span class="layui-btn layui-btn-primary" id="closePage">关闭页面</span>
+    </p>
+  </div>
+</script>
+<script type="text/html" id="addFloorTpl">
+  <div class="addTable">
+    <div class="layui-card">
+      <div class="layui-card-header"><i class="layui-icon layui-icon-spread-left"></i>&nbsp;&nbsp;添加楼宇信息
+        <p class="head-toolBtn">
+          <b class="red">*</b>为必填项
+        </p>
+      </div>
+      <div class="layui-card-body">
+        <table>
+          <tr>
+            <td class="titleTd"><b class="red">*</b>项目编号：</td>
+            <td><input type="text" class="layui-input"></td>
+            <td class="titleTd"><b class="red">*</b>项目名称：</td>
+            <td><input type="text" class="layui-input"></td>
+          </tr>
+          <tr>
+            <td class="titleTd">楼宇编号：</td>
+            <td><input type="text" class="layui-input"></td>
+            <td class="titleTd"><b class="red">*</b>楼宇名称：</td>
+            <td><input type="text" class="layui-input"></td>
+          </tr>
+          <tr>
+            <td class="titleTd">楼宇面积：</td>
+            <td><input type="text" class="layui-input"></td>
+            <td class="titleTd"><b class="red">*</b>物业公司：</td>
+            <td><input type="text" class="layui-input"></td>
+          </tr>
+          <tr>
+            <td class="titleTd"><b class="red">*</b>租赁物地址：</td>
+            <td colspan="3"><input type="text" class="layui-input"></td>
+          </tr>
+          <tr>
+            <td class="titleTd">其他备注：</td>
+            <td td colspan="3"><textarea class="layui-textarea"></textarea></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="layui-card">
+      <div class="layui-card-header"><i class="layui-icon layui-icon-spread-left"></i>&nbsp;&nbsp;财务U8接口设置</div>
+      <div class="layui-card-body">
+        <table>
+          <tr>
+            <td class="titleTd"><b class="red">*</b>项目编号：</td>
+            <td><input type="text" class="layui-input"></td>
+            <td class="titleTd"><b class="red">*</b>账套号：</td>
+            <td><input type="text" class="layui-input"></td>
+          </tr>
+          <tr>
+            <td class="titleTd">人员编号：</td>
+            <td><input type="text" class="layui-input"></td>
+            <td class="titleTd"><b class="red">*</b>部门编号：</td>
+            <td><input type="text" class="layui-input"></td>
+          </tr>
+          <tr>
+            <td class="titleTd">场地税率：</td>
+            <td><input type="text" class="layui-input"></td>
+            <td class="titleTd"><b class="red">*</b>场地税率编码：</td>
+            <td><input type="text" class="layui-input"></td>
+          </tr>
+          <tr>
+            <td class="titleTd">服务费税率：</td>
+            <td><input type="text" class="layui-input"></td>
+            <td class="titleTd"><b class="red">*</b>服务费税率编号：</td>
+            <td><input type="text" class="layui-input"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="layui-card">
+      <div class="layui-card-header"><i class="layui-icon layui-icon-spread-left"></i>&nbsp;&nbsp;楼宇附件资料</div>
+      <div class="layui-card-body">
+        <table>
+          <tr>
+            <td class="titleTd">效果图：</td>
+            <td><input type="text" class="layui-input"></td>
+            <td class="titleTd">平面图：</td>
+            <td><input type="text" class="layui-input"></td>
+          </tr>
+          <tr>
+            <td class="titleTd">电路图：</td>
+            <td><input type="text" class="layui-input"></td>
+            <td class="titleTd">商户落位图：</td>
+            <td><input type="text" class="layui-input"></td>
+          </tr>
+          <tr>
+            <td class="titleTd">施工进度表：</td>
+            <td><input type="text" class="layui-input"></td>
+            <td class="titleTd">联系方式：</td>
+            <td><input type="text" class="layui-input"></td>
+          </tr>
+          <tr>
+            <td class="titleTd">消防安全协议书：</td>
+            <td><input type="text" class="layui-input"></td>
+            <td class="titleTd">通告</td>
+            <td><input type="text" class="layui-input"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <p style="text-align: center;">
+      <span class="layui-btn layui-btn-normal">保存数据</span>
+      <span class="layui-btn layui-btn-green">编辑数据</span>
+      <span class="layui-btn layui-btn-danger">删除数据</span>
+      <span class="layui-btn layui-btn-primary" id="closePage">关闭页面</span>
+    </p>
+  </div>
+</script>
+<script type="text/html" id="addHouseTpl">
+  <div class="addTable">
+    <div class="layui-card">
+      <div class="layui-card-header"><i class="layui-icon layui-icon-spread-left"></i>&nbsp;&nbsp;添加房源信息
+        <p class="head-toolBtn">
+          <b class="red">*</b>为必填项
+        </p>
+      </div>
+      <div class="layui-card-body">
+        <table>
+          <tr>
+            <td class="titleTd"><b class="red">*</b>项目名称：</td>
+            <td><input type="text" class="layui-input"></td>
+            <td class="titleTd"><b class="red">*</b>房源编号：</td>
+            <td><input type="text" class="layui-input"></td>
+          </tr>
+          <tr>
+            <td class="titleTd">楼宇名称：</td>
+            <td><input type="text" class="layui-input"></td>
+            <td class="titleTd"><b class="red">*</b>建筑面积：</td>
+            <td><input type="text" class="layui-input"></td>
+          </tr>
+          <tr>
+            <td class="titleTd"><b class="red">*</b>租赁物用途：</td>
+            <td><input type="text" class="layui-input"></td>
+            <td class="titleTd"><b class="red">*</b>房源单价：</td>
+            <td><input type="text" class="layui-input"></td>
+          </tr>
+          <tr>
+            <td class="titleTd"><b class="red">*</b>房源类型：</td>
+            <td><input type="text" class="layui-input"></td>
+            <td class="titleTd"><b class="red">*</b>房源状态：</td>
+            <td><input type="text" class="layui-input"></td>
+          </tr>
+          <tr>
+            <td class="titleTd">是否开放：</td>
+            <td><input type="text" class="layui-input"></td>
+            <td class="titleTd"><b class="red">*</b>房源楼层：</td>
+            <td><input type="text" class="layui-input"></td>
+          </tr>
+          <tr>
+            <td class="titleTd">租赁物地址：</td>
+            <td colspan="3"><input type="text" class="layui-input"></td>
+          </tr>
+          <tr>
+            <td class="titleTd">备注信息：</td>
+            <td colspan="3"><textarea class="layui-textarea"></textarea></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="layui-card">
+      <div class="layui-card-header"><i class="layui-icon layui-icon-spread-left"></i>&nbsp;&nbsp;财务U8接口设置</div>
+      <div class="layui-card-body">
+        <table>
+          <tr>
+            <td class="titleTd"><b class="red">*</b>项目编号：</td>
+            <td><input type="text" class="layui-input"></td>
+            <td class="titleTd"><b class="red">*</b>账套号：</td>
+            <td><input type="text" class="layui-input"></td>
+          </tr>
+          <tr>
+            <td class="titleTd">人员编号：</td>
+            <td><input type="text" class="layui-input"></td>
+            <td class="titleTd"><b class="red">*</b>部门编号：</td>
+            <td><input type="text" class="layui-input"></td>
+          </tr>
+          <tr>
+            <td class="titleTd">场地税率：</td>
+            <td><input type="text" class="layui-input"></td>
+            <td class="titleTd"><b class="red">*</b>场地税率编码：</td>
+            <td><input type="text" class="layui-input"></td>
+          </tr>
+          <tr>
+            <td class="titleTd">服务费税率：</td>
+            <td><input type="text" class="layui-input"></td>
+            <td class="titleTd"><b class="red">*</b>服务费税率编号：</td>
+            <td><input type="text" class="layui-input"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="layui-card">
+      <div class="layui-card-header"><i class="layui-icon layui-icon-spread-left"></i>&nbsp;&nbsp;楼宇附件资料</div>
+      <div class="layui-card-body">
+        <table>
+          <tr>
+            <td class="titleTd">效果图：</td>
+            <td><input type="text" class="layui-input"></td>
+            <td class="titleTd">平面图：</td>
+            <td><input type="text" class="layui-input"></td>
+          </tr>
+          <tr>
+            <td class="titleTd">电路图：</td>
+            <td><input type="text" class="layui-input"></td>
+            <td class="titleTd">商户落位图：</td>
+            <td><input type="text" class="layui-input"></td>
+          </tr>
+          <tr>
+            <td class="titleTd">施工进度表：</td>
+            <td><input type="text" class="layui-input"></td>
+            <td class="titleTd">联系方式：</td>
+            <td><input type="text" class="layui-input"></td>
+          </tr>
+          <tr>
+            <td class="titleTd">消防安全协议书：</td>
+            <td><input type="text" class="layui-input"></td>
+            <td class="titleTd">通告</td>
+            <td><input type="text" class="layui-input"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <p style="text-align: center;">
+      <span class="layui-btn layui-btn-normal">保存数据</span>
+      <span class="layui-btn layui-btn-green">编辑数据</span>
+      <span class="layui-btn layui-btn-danger">删除数据</span>
+      <span class="layui-btn layui-btn-primary" id="closePage">关闭页面</span>
+    </p>
+  </div>
+</script>
 <script type="text/javascript" src="./layui/layui.js"></script>
 <script type="text/javascript">
   layui.use(['jquery','layer','element','table'],function(){
@@ -142,18 +519,41 @@
     ];
     table.render({
       elem:'#tableData1',
+      size:'lg',
       data: data1,
       cols:[[
         {title:'序号',field:'no', width:'6%',},
-        {title:'项目编号',field:'number', width:'15%',},
+        {title:'项目编号',field:'number', width:'12%',},
         {title:'项目名称',field:'name', width:'10%',},
-        {title:'公司名称',field:'companyName',},
+        {title:'公司名称',field:'companyName',width:'14%',},
         {title:'授权代表人',field:'people',},
         {title:'联系电话',field:'phone',},
         {title:'大业主面积',field:'area',},
         {title:'时点',field:'time',width:'6%',},
         {title:'出租率',field:'hire',},
-        {title:'操作',field:'',templet: getMoreTpl(), width:'18%',},
+        {title:'操作',field:'',templet: getMoreTpl(), width:'20%',},
+      ]]
+    })
+    var data2 = [
+      { no:1,number:'DD20190324010001',name:'石景山',floorNumber:'',floorName:'北京微音软件有限公司',area:'',address:'',},
+      { no:2,number:'DD20190324010001',name:'石景山',floorNumber:'',floorName:'北京微音软件有限公司',area:'',address:'',},
+      { no:3,number:'DD20190324010001',name:'石景山',floorNumber:'',floorName:'北京微音软件有限公司',area:'',address:'',},
+      { no:4,number:'DD20190324010001',name:'石景山',floorNumber:'',floorName:'北京微音软件有限公司',area:'',address:'',},
+      { no:5,number:'DD20190324010001',name:'石景山',floorNumber:'',floorName:'北京微音软件有限公司',area:'',address:'',},
+    ];
+    table.render({
+      elem:'#tableData2',
+      data: data2,
+      size:'lg',
+      cols:[[
+        {title:'序号',field:'no', width:'6%',},
+        {title:'项目编号',field:'number', width:'15%',},
+        {title:'项目名称',field:'name',},
+        {title:'楼宇编号',field:'floorNumber', width:'10%',},
+        {title:'楼宇名称',field:'floorName',},
+        {title:'楼宇面积',field:'area',},
+        {title:'租赁地址',field:'state',},
+        {title:'操作',field:'',templet: getMoreTpl(), width:'20%',},
       ]]
     })
     var data3 = [
@@ -166,30 +566,67 @@
     table.render({
       elem:'#tableData3',
       data: data3,
-      size:'sm',
+      size:'lg',
       cols:[[
         {title:'序号',field:'no', width:'6%',},
         {title:'项目名称',field:'name', width:'10%',},
-        {title:'楼宇名称',field:'floorName',},
-        {title:'房源编号',field:'number', width:'10%',},
+        {title:'楼宇名称',field:'floorName', width:'15%',},
+        {title:'房源编号',field:'number', width:'15%',},
         {title:'楼层',field:'floorNumber',},
         {title:'面积',field:'area',},
         {title:'状态',field:'state',},
         {title:'类型',field:'type',},
-        {title:'操作',field:'',templet: getMoreTpl(), width:'18%',},
+        {title:'操作',field:'',templet: getMoreTpl(), width:'20%',},
       ]]
     })
     function getMoreTpl(){
       return function(d){
         return [
-          '<span class="layui-btn layui-btn-sm layui-btn-normal"><i class="layui-icon layui-icon-edit"></i>查看</span>',
+          '<span class="layui-btn layui-btn-sm layui-btn-primary"><i class="layui-icon layui-icon-edit"></i>查看</span>',
           '<span class="layui-btn layui-btn-sm layui-btn-normal"><i class="layui-icon layui-icon-edit"></i>编辑</span>',
-          '<span class="layui-btn layui-btn-sm layui-btn-normal"><i class="layui-icon layui-icon-delete"></i>删除</span>',
+          '<span class="layui-btn layui-btn-sm layui-btn-danger"><i class="layui-icon layui-icon-delete"></i>删除</span>',
         ].join(' ');
       }
     }
-    $('#btn_id').click(function(){
-      layer.msg('点击按钮');
+
+    $('#addProject').click(function(){
+      var addProjectWin = layer.open({
+        type:1,
+        area:['70%','90%'],
+        title:'添加项目信息',
+        content:$('#addProjectTpl').html(),
+        success:function(){
+          $('#closePage').unbind().on('click',function(){
+            layer.close(addProjectWin);
+          })
+        }
+      })
+    })
+    $('#addFloor').click(function(){
+      var addWin = layer.open({
+        type:1,
+        area:['70%','90%'],
+        title:'添加楼宇信息',
+        content:$('#addFloorTpl').html(),
+        success:function(){
+          $('#closePage').unbind().on('click',function(){
+            layer.close(addWin);
+          })
+        }
+      })
+    })
+    $('#addHouse').click(function(){
+      var addHouseWin = layer.open({
+        type:1,
+        area:['70%','90%'],
+        title:'添加房源楼宇信息',
+        content:$('#addHouseTpl').html(),
+        success:function(){
+          $('#closePage').unbind().on('click',function(){
+            layer.close(addHouseWin);
+          })
+        }
+      })
     })
   })
 </script>
