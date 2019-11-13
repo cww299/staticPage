@@ -3,6 +3,7 @@
 <head>
   <title>登录页面</title>
   <link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
+  <link rel="shortcut icon" href="./img/sys/icon.ico" type="image/x-icon" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <style>
@@ -59,7 +60,7 @@
       color: gray;
     }
     .otherLogin i{
-      font-size: 28px;
+      font-size: 58px;
     }
     .otherLogin a{
       margin-left: 15px;
@@ -96,13 +97,14 @@
             <input type="checkbox" name="" title="记住我" lay-skin="primary"> 
           </p>
           <p><span class="layui-btn layui-btn-nromal">登录</span></p>
-          <div style="text-align: left;" class="otherLogin">
+          <div style="text-align: left;margin-top: 20%;" class="otherLogin">
             <label>其他登录方式</label>
             <a href="javascript:;"><i class="layui-icon layui-icon-login-wechat"></i></a>
             <a href="javascript:;"><i class="layui-icon layui-icon-username"></i></a>
+            <a href="javascript:;"><i class="layui-icon layui-icon-camera-fill"></i></a>
           </div>
           <div class="footerDiv">
-            <p>Copyright  @2018 <a href="">北京微音</a> 400-018-5101</p>
+            <p>Copyright  @<span id="year">2019</span> <a href="">北京微音</a> 400-018-5101</p>
             <p>工信部备案号：京ICP备15037145号</p>
           </div>
         </div>
@@ -119,6 +121,27 @@
     ,carousel = layui.carousel
     ,layer = layui.layer;
 
+    Date.prototype.format = function(fmt) { 
+      var o = { 
+        "M+" : this.getMonth()+1,                 //月份 
+        "d+" : this.getDate(),                    //日 
+        "h+" : this.getHours(),                   //小时 
+        "m+" : this.getMinutes(),                 //分 
+        "s+" : this.getSeconds(),                 //秒 
+        "q+" : Math.floor((this.getMonth()+3)/3), //季度 
+        "S"  : this.getMilliseconds()             //毫秒 
+      }; 
+      if(/(y+)/.test(fmt)) {
+        fmt=fmt.replace(RegExp.$1, (this.getFullYear()+"").substr(4 - RegExp.$1.length)); 
+      }
+      for(var k in o) {
+        if(new RegExp("("+ k +")").test(fmt)){
+          fmt = fmt.replace(RegExp.$1, (RegExp.$1.length==1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length)));
+        }
+      }
+      return fmt; 
+    }
+    $('#year').html(new Date().format('yyyy'));
     form.render();
     $('#btn_id').click(function(){
       layer.msg('点击按钮');
@@ -143,8 +166,9 @@
     carousel.render({
       elem: '#bgImgDiv'
       ,width: '100%' 
-      ,arrow: 'alway' 
-      ,indicator: 'none'
+      ,anim: 'fade'
+      ,arrow: 'none' 
+      ,indicator: 'inside'
     });
   })
 </script>

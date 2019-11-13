@@ -4,9 +4,13 @@
   <title>首页</title>
   <link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
   <link rel="stylesheet" type="text/css" href="./pagecss.css">
+  <link rel="shortcut icon" href="./img/sys/icon.ico" type="image/x-icon" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <style>
+    body{
+      margin-top: 80px;
+    }
     .navIconUl{
       margin-top: 10px;
     }
@@ -66,24 +70,75 @@
     .layui-card-header .head-tool .layui-form-select{
       
     }
-    @media screen and (min-width: 1200px){
+    .rightNav{
+      float: right;
+    }
+    .menuIcon{
+      margin-left: -20px;
+      margin-right: 20px;
+      height: 60px;
+      cursor: pointer;
+    }
+    .navSearch{
+      margin-top: 13px;
+      width: 230px;
+    }
+    .layui-nav-bar{
+      width: 0px !important;
+      opacity: 1 !important;
+    }
+    .navDiv{
+      position: fixed;
+      width: 100%;
+      z-index: 999;
+      top: 0;
+    }
+    @media screen and (min-width: 1270px){
       .layui-container {
-        width: 1450px;
+          width: 1270px;
       }
     }
+    @media screen and (min-width: 1600px){
+      .layui-container {
+       width:1450px;
+      }
+    }
+      
   </style>
 </head>
 <body>
-<div class="navTab">
-  <span class="layui-breadcrumb" lay-separator=">">
-    <a href=""><i class="layui-icon layui-icon-home"></i></a>
-    <a href="">一级分类</a>
-    <a><cite>系统首页</cite></a>
-  </span>
-  <div class="rightDiv moreBtn">
-  <span><i class="layui-icon layui-icon-left"></i></span>
-  <span><i class="layui-icon layui-icon-refresh"></i></span>
-  </div>
+<div class="navDiv">
+  <ul class="layui-nav">
+    <li style="float: left;">
+      <img src="./img/sys/suojin.png" class="menuIcon">
+    </li>
+    <li class="layui-nav-item">
+      <img src="./img/page6/logo-small.png">
+    </li>
+    <li class="layui-nav-item rightNav">
+      <a href=""><i class="layui-icon layui-icon-username"></i>Admin</a>
+      <dl class="layui-nav-child">
+        <dd><a href="javascript:;">修改信息</a></dd>
+        <dd><a href="javascript:;">安全管理</a></dd>
+        <dd><a href="javascript:;">退了</a></dd>
+      </dl>
+    </li>
+    <li class="layui-nav-item rightNav">
+      <a href=""><i class="layui-icon layui-icon-password"></i>锁屏</a>
+    </li>
+    <li class="layui-nav-item rightNav">
+      <a href=""><i class="layui-icon layui-icon-notice"></i>消息<span class="layui-badge">0</span>&nbsp;&nbsp;&nbsp;&nbsp;</a>
+    </li>
+    <li class="layui-nav-item rightNav">
+      <a href=""><i class="layui-icon layui-icon-date">日程</i></a>
+    </li>
+    <li class="layui-nav-item rightNav">
+      <a href=""><i class="layui-icon layui-icon-layouts"></i>事项<span class="layui-badge">0</span>&nbsp;&nbsp;&nbsp;&nbsp;</a>
+    </li>
+    <li class="layui-nav-item rightNav">
+      <input type="text" class="layui-input navSearch" placeholder="请输入客户名称">
+    </li> 
+  </ul>
 </div>
 <div>
   <div class="layui-container">
@@ -165,7 +220,7 @@
     </div>
   </div>
 </div>
-<div style="margin-top: 15px;">
+<div style="margin-top: 10px;">
   <div class="layui-container">
     <div class="layui-row layui-col-space20"> 
       <div class="layui-col-md8">
@@ -175,7 +230,7 @@
               <span class="layui-btn layui-btn-primary">搜索<i class="layui-icon layui-icon-search"></i></span>
             </p>
             <p class="head-tool layui-form">
-              <select>
+              <select lay-search>
                 <option value="">客户名称</option>
               </select>
             </p>
@@ -252,14 +307,14 @@
     ,layer = layui.layer;
 
     var data = [
-      {number:1,name:'北京微音软件有限公司',type:'租金',data:'2019-10-10',beginData:'2019-10-10',endData:'2019-10-10',price:'8000',surplus:'800'},
-      {number:2,name:'北京微音软件有限公司',type:'租金',data:'2019-10-10',beginData:'2019-10-10',endData:'2019-10-10',price:'8000',surplus:'800'},
-      {number:3,name:'北京微音软件有限公司',type:'租金',data:'2019-10-10',beginData:'2019-10-10',endData:'2019-10-10',price:'8000',surplus:'800'},
-      {number:4,name:'北京微音软件有限公司',type:'租金',data:'2019-10-10',beginData:'2019-10-10',endData:'2019-10-10',price:'8000',surplus:'800'},
-      {number:5,name:'北京微音软件有限公司',type:'租金',data:'2019-10-10',beginData:'2019-10-10',endData:'2019-10-10',price:'8000',surplus:'800'},
-      {number:6,name:'北京微音软件有限公司',type:'租金',data:'2019-10-10',beginData:'2019-10-10',endData:'2019-10-10',price:'8000',surplus:'800'},
-      {number:7,name:'北京微音软件有限公司',type:'租金',data:'2019-10-10',beginData:'2019-10-10',endData:'2019-10-10',price:'8000',surplus:'800'},
-      {number:8,name:'北京微音软件有限公司',type:'租金',data:'2019-10-10',beginData:'2019-10-10',endData:'2019-10-10',price:'8000',surplus:'800'},
+      {name:'北京微音软件有限公司',type:'租金',day:'1',price:'8000',},
+      {name:'北京微音软件有限公司',type:'租金',day:'1',price:'8000',},
+      {name:'北京微音软件有限公司',type:'租金',day:'1',price:'8000',},
+      {name:'北京微音软件有限公司',type:'租金',day:'1',price:'8000',},
+      {name:'北京微音软件有限公司',type:'租金',day:'1',price:'8000',},
+      {name:'北京微音软件有限公司',type:'租金',day:'1',price:'8000',},
+      {name:'北京微音软件有限公司',type:'租金',day:'1',price:'8000',},
+      {name:'北京微音软件有限公司',type:'租金',day:'1',price:'8000',},
     ];
     table.render({
       elem:'#tableData',
@@ -268,23 +323,16 @@
       height:'432px',
       totalRow:true,
       cols:[[
-        { title:'序号',field:'number', width:'8%',totalRowText:'合计'},
-        { title:'客户名称',field:'name', },
-        { title:'费用科目',field:'type', style:"color:blue;" },
-        { title:'应收日期',field:'data', style:"color:blue;"},
-        { title:'开始日期',field:'beginData',style:"color:blue;" },
-        { title:'结束日期',field:'endData',style:"color:blue;" },
-        { title:'应收金额',field:'price', style:"color:blue;",totalRow:true,},
-        { title:'剩余金额',field:'surplus', style:"color:blue;"},
-        { title:'操作',field:'', style:"color:blue;",templet:getMoreTpl()},
+        { align:'center', title:'客户名称',field:'name',totalRowText:'合计',width:'35%'},
+        { align:'center', title:'费用科目',field:'type',  },
+        { align:'center', title:'逾期天数',field:'day', width:'15%',},
+        { align:'center', title:'逾期金额',field:'price',totalRow:true, width:'15%', },
+        { align:'center', title:'操作',field:'',templet:getMoreTpl(),width:'16%',},
       ]],
     })
     function getMoreTpl(){
-      return '<span><i class="layui-icon layui-icon-about"></i>详情<span>';
+      return '<p><span class="layui-btn layui-btn-sm"><i class="layui-icon layui-icon-about"></i>详情<span></p>';
     }
-    $('#btn_id').click(function(){
-      layer.msg('点击按钮');
-    })
   })
 </script>
 </html>

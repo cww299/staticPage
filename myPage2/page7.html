@@ -84,6 +84,7 @@
                   <td><input type="text" placeholder="前归属人" class="layui-input"></td>
                   <td>&nbsp;&nbsp;</td>
                   <td><input type="text" placeholder="最后跟进" class="layui-input"></td>
+                  <td>&nbsp;&nbsp;</td>
                   <td><span class="layui-btn layui-btn-normal"><i class="layui-icon layui-icon-search">查询</i></span></td>
                 </tr>
               </table>
@@ -184,13 +185,13 @@
       cols:[[
         {title:'序号',field:'no', width:'6%',},
         {title:'中介名称',field:'name', width:'12%',},
-        {title:'法定代表',field:'people', width:'10%',},
+        {title:'法定代表',field:'people', width:'10%',width:'8%',},
         {title:'办公地址',field:'address',width:'14%',},
-        {title:'联系人',field:'contacts',},
-        {title:'职务',field:'post',},
+        {title:'联系人',field:'contacts', width:'7%',},
+        {title:'职务',field:'post', width:'10%',},
         {title:'联系电话',field:'phone',},
         {title:'营业执照',field:'licens',},
-        {title:'操作',field:'',templet: getMoreTpl(), width:'20%',},
+        {title:'操作',field:'',templet: getMoreTpl(), width:'15%',},
       ]]
     })
     

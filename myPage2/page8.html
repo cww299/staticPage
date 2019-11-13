@@ -53,13 +53,14 @@
               </div>
               <table class="layui-form">
                 <tr>
-                  <td><select><option value="">当前</option></select></td>
+                  <td style="width: 120px;"><select><option value="">当前</option></select></td>
                   <td>&nbsp;&nbsp;</td>
-                  <td><select><option value="">招商阶段</option></select></td>
+                  <td style="width: 120px;"><select><option value="">招商阶段</option></select></td>
                   <td>&nbsp;&nbsp;</td>
                   <td><input type="text" placeholder="客户名称" class="layui-input"></td>
                   <td>&nbsp;&nbsp;</td>
                   <td><input type="text" placeholder="联系电话" class="layui-input"></td>
+                  <td>&nbsp;&nbsp;</td>
                   <td><span class="layui-btn layui-btn-normal"><i class="layui-icon layui-icon-search">查询</i></span></td>
                 </tr>
               </table>
@@ -162,11 +163,9 @@
     ,layer = layui.layer;
 
     var data1 = [
-      { no:1,name:'北京微音软件有限公司',people:'罗滔',address:'18888888',contacts:'张三',post:'经理',phone:'1888888',licens:'北京微音软件有限公司'},
-      { no:2,name:'北京微音软件有限公司',people:'罗滔',address:'18888888',contacts:'张三',post:'经理',phone:'1888888',licens:'北京微音软件有限公司'},
-      { no:3,name:'北京微音软件有限公司',people:'罗滔',address:'18888888',contacts:'张三',post:'经理',phone:'1888888',licens:'北京微音软件有限公司'},
-      { no:4,name:'北京微音软件有限公司',people:'罗滔',address:'18888888',contacts:'张三',post:'经理',phone:'1888888',licens:'北京微音软件有限公司'},
-      { no:5,name:'北京微音软件有限公司',people:'罗滔',address:'18888888',contacts:'张三',post:'经理',phone:'1888888',licens:'北京微音软件有限公司'},
+      { bussiness:'初步洽谈',number:'公司',name:'北京微音软件有限公司',contacts:'罗滔',phone:'1888888',last:'2019-10-25 14:54',},
+      { bussiness:'初步洽谈',number:'公司',name:'北京微音软件有限公司',contacts:'罗滔',phone:'1888888',last:'2019-10-25 14:54',},
+      { bussiness:'初步洽谈',number:'公司',name:'北京微音软件有限公司',contacts:'罗滔',phone:'1888888',last:'2019-10-25 14:54',},
     ];
     table.render({
       elem:'#tableData1',
@@ -176,9 +175,9 @@
       cols:[[
         {type:'checkbox',},
         {title:'招商阶段',field:'bussiness', sort:true, },
-        {title:'客户编号',field:'number', width:'12%',sort:true,},
-        {title:'客户名称',field:'name', width:'10%',sort:true,},
-        {title:'联系人',field:'contacts',width:'14%',sort:true,},
+        {title:'客户编号',field:'number', width:'10%',sort:true,},
+        {title:'客户名称',field:'name', width:'15%',sort:true,},
+        {title:'联系人',field:'contacts',width:'8%',sort:true,},
         {title:'联系电话',field:'phone',},
         {title:'最后跟进',field:'last',sort:true,},
         {title:'操作',field:'',templet: getMoreTpl(), width:'30%',},

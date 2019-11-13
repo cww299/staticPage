@@ -1,5 +1,5 @@
 body{
-  background:#8080801f;
+  background:#F4F4F4;
 }
 .navTab{
   background:white;
@@ -26,7 +26,7 @@ body{
   color: gray;
   height: 54px;
   line-height: 54px;
-  background: #80808030;
+  background: #FaFaFa;
 }
 .layui-card-header .head-tool{
   float: right;
@@ -38,8 +38,18 @@ body{
   padding: 0;
 }
 .layui-card-header .head-tool .layui-form-select{
-  width: 112px;
+  width: 130px;
 }
 .layui-card-header .head-tool .layui-input{
-  width: 112px;
+  width: 130px;
+}
+@media screen and (min-width: 1270px){
+  .layui-container {
+      width: 1270px;
+  }
+}
+@media screen and (min-width: 1600px){
+  .layui-container {
+   width:1450px;
+  }
 }
