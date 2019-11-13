@@ -96,6 +96,42 @@
     .layui-nav .layui-this:after, .layui-nav-bar, .layui-nav-tree .layui-nav-itemed:after{
       background: none;
     }
+    .floorTip{
+    	margin-top: 30px;
+    }
+    .floorTip>p{
+		text-align: center;
+		color: gray;
+    }
+    .moreTips dl{
+		overflow: hidden;
+	    width: 300px;
+	    padding-top: 0;
+    }
+    .moreTips dd{
+    	float: left;
+	    width: 40%;
+	    color: gray;
+	    padding: 0px 5%;
+	    cursor: pointer;
+    }
+    .moreTips dd:hover{
+    	cursor: pointer;
+    	background: #f4f4f4;
+	}
+    .moreTips dd.head{
+		width: 100%;
+	    background: #f4f4f4;
+	    color: gray;
+	    padding-left: 20px;
+	    line-height: 45px;
+    }
+    .numbers{
+    	float: right;
+    }
+    .red{
+    	color: red;
+    }
     @media screen and (min-width: 1270px){
       .layui-container {
           width: 1270px;
@@ -135,12 +171,18 @@
     <li class="layui-nav-item rightNav">
       <a href=""><i class="layui-icon layui-icon-date">日程</i></a>
     </li>
-    <li class="layui-nav-item rightNav">
+    <li class="layui-nav-item rightNav moreTips" style="width: 108px;">
       <a href=""><i class="layui-icon layui-icon-layouts"></i>事项<span class="layui-badge">0</span>&nbsp;&nbsp;&nbsp;&nbsp;</a>
       <dl class="layui-nav-child">
-        <dd><a href="javascript:;">修改信息</a></dd>
-        <dd><a href="javascript:;">安全管理</a></dd>
-        <dd><a href="javascript:;">退了</a></dd>
+      	<dd class="head">待办事项</dd>
+        <dd><span class="numbers">(<b class="red">0</b>)</span>今日待跟进任务</dd>
+        <dd><span class="numbers">(<b class="red">0</b>)</span>今日待回款计划</dd>
+        <dd><span class="numbers">(<b class="red">0</b>)</span>待处理的任务</dd>
+        <dd><span class="numbers">(<b class="red">0</b>)</span>待处理的工单</dd>
+        <dd><span class="numbers">(<b class="red">0</b>)</span>待处理的日程</dd>
+        <dd><span class="numbers">(<b class="red">0</b>)</span>待审批的订单</dd>
+        <dd><span class="numbers">(<b class="red">0</b>)</span>待审批的回款</dd>
+        <dd><span class="numbers">(<b class="red">0</b>)</span>待审批的报销</dd>
       </dl>
     </li>
     <li class="layui-nav-item rightNav">
@@ -304,6 +346,10 @@
       </div>
     </div>
   </div>
+</div>
+<div class="floorTip">
+	<p>公司网址：www.winsoft.cn  咨询电话：400 018 5101</p>
+	<p>Copyright 2019 winsoft 北京微音软件有限公司</p>
 </div>
 </body>
 <script type="text/javascript" src="./layui/layui.js"></script>
