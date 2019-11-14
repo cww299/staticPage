@@ -9,6 +9,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <style>
+    body{
+      background: #f4f4f4;
+    }
     .imgContent{
       float: left;
       width: 21%;
@@ -24,11 +27,13 @@
       max-width: 100%;
     }
     .firstNav{
-      background: rgba(0,0,0,.3);
+      background: black;
+      position: relative;
       color: #fff;
       height: 60px;
       line-height: 60px;
       margin-top: -60px;
+      overflow: hidden;
     }
     .firstUl li{
       float: left;
@@ -37,16 +42,16 @@
       line-height: 60px;
     }
     .firstUl li:hover{
-      background: #0000007d;
-      border-top: 2px solid red;
-      margin-top: -2px;
+      background: #8080804f;
       cursor: pointer;
+      border-bottom: 2px solid red;
+      margin-top: -2px;
     }
     .firstUl li.active{
-      background: #0000007d;
-      border-top: 2px solid red;
-      margin-top: -2px;
+      background: #8080804f;
       cursor: pointer;
+      border-bottom: 2px solid red;
+      margin-top: -2px;
     }
     .contentCard,.secondCard{
       display: none;
@@ -75,6 +80,7 @@
     .secondNav .thisNav{
       color: red;
       border-bottom: 2px solid red;
+      font-weight: bold;
     }
     .titleH1{
       margin: 50px 0;
@@ -84,6 +90,10 @@
       line-height: 26px;
       font-size: 16px;
       color: gray;
+    }
+    .secondCard p.firstInfo{
+      border-bottom: 1px dashed gray;
+      padding-bottom: 16px;
     }
     .imgDiv{
       padding: 10px;
@@ -110,6 +120,10 @@
     }
     .fourOfOne>p.info{
       color: gray;
+      text-align: left;
+    }
+    .navContent{
+      height: 530px;
     }
     #moreImgDiv{
       width: 44% !important;
@@ -132,6 +146,7 @@
       padding-left: 20px;
       line-height: 20px;
       color: gray;
+      padding-bottom: 10px;
     }
     .phoneImgDiv{
       display: none;
@@ -157,6 +172,7 @@
       width: 25%; 
       background: gray;
       height: 280px;
+      overflow: hidden;
     }
     .lastImg{
       float: left;
@@ -168,9 +184,17 @@
     }
     .lastImg img{
       height: 100%;
+      float: left;
+      transition: 0.5s;
+      width: 500px !important;
+      max-width: 500px;
     }
     .nextImg img{
       height: 100%;
+      float: left;
+      transition: 0.5s;
+      width: 500px !important;
+      max-width: 500px;
     }
     .serverImgAndBtn{
       overflow: hidden;
@@ -187,16 +211,33 @@
     }
     .kefudiv{
       background: #f1f1f1;
-      margin-top: 30px;
     }
     .leftDiv{
       float: left;
+      width: 50%;
+    }
+    .leftDiv img{
+      max-width: 80px;
+      max-height: 80px;
+    }
+    .leftDiv img.zixun{
+      margin-top: 7px;
     }
     .rightDiv{
       float: right;
+      width: 50%;
       margin-top: 45px;
     }
+    .phoneContent{
+      display: none;
+    }
     @media screen and (max-width: 540px){
+      .pcContent{
+        display: none;
+      }
+      .phoneContent{
+        display: block;
+      }
       .lastImg,.nextImg{
         display: none;
       }
@@ -213,13 +254,6 @@
         top: 85px;
         left: 35px;
         width: 80%;
-      }
-      .firstUl li{
-        width: 18%;
-      }
-      .secondNav li{
-        width: 33%;
-        font-size: unset;
       }
       .fourOfOne {
         margin: 35px 0;
@@ -239,11 +273,155 @@
         margin-top: 12px;
         margin-right: 10px;
       }
+      .buyImg{
+        width: 90px;
+        position: absolute;
+        top: 140px;
+        left: 30px;
+      }
+      .imgDiv img {
+        height: 235px;
+        width: 100%;
+      }
+      .firstNav{
+        height: 40px;
+        line-height: 40px;
+        margin-top: 0px;
+      }
+      .firstUl li{
+        width: 50%;
+        line-height: 40px;
+        background: black;
+      }
+      .firstUl li.active{
+        color: red;
+      }
+      .phoneNoPadding{
+        padding: 0px;
+      }
+      .titleH1{
+        margin: 20px 0;
+        font-size: 17px;
+      }
+      .secondNav li{
+        width: 33%;
+        font-size: 14px;
+      }
+      .layui-container,.imgDiv{
+        padding: 0;
+      }
+      .infoContent{
+        padding: 20px 10px;
+      }
+      .infoContent>p{
+        line-height: unset;
+        font-size: 12px;
+        color: #808080d1;
+      }
+      .navContent{
+        height: auto;
+      }
+      .black{
+        font-weight: normal;
+      }
+      .liucheng,.strong{
+        padding: 20px 15px;
+      }
+      .liucheng li{
+        padding: 15px 20px;
+        border: 1px solid gray;
+        border-bottom: none;
+      }
+      .liucheng li.borderBottom{
+        border-bottom: 1px solid gray;
+      }
+      .liucheng li img{
+        width: 23px;
+      }
+      .strong li{
+        border: 1px solid gray;
+        height: 80px;
+        color: gray;
+        padding-right: 5px;
+        border-bottom: none;
+      }
+      .strong li.borderBottom{
+        border-bottom: 1px solid gray;
+      }
+      .strong li>p{
+        margin-top: 10px;
+        font-size: 12px;
+      }
+      .strong li .imgDiv{
+        overflow: hidden;
+        height: 100%;
+        float: left;
+      }
+      .strong li .imgDiv img{
+        width: 40px;
+        padding: 18px 10px;
+        height: auto;
+      }
+      .red{
+        color: #ae1a1a;
+        font-size: 13px;
+        line-height: 20px;
+      }
+      .team{
+        padding: 0 15px;
+        overflow: hidden;
+      }
+      .team li{
+        float: left;
+        width: 25%;
+      }
+      .team li div{
+        padding-right: 5px;
+        padding-top: 4px;
+      }
+      .team li div.right{
+        padding-right: 0px;
+      }
+      .team li div img{
+
+      }
+      .zixun{
+        background: #29154d;
+        padding: 15px;
+        text-align: center;
+        color: white;
+        overflow: hidden;
+      }
+      .zixun h2{
+        font-size: 15px;
+        font-style: italic;
+        margin-bottom: 7px;
+      }
+      .zixun>p{
+        font-size: 12px;
+        margin-bottom: 17px;
+        padding-bottom: 11px;
+        border-bottom: 1px solid #80808085;
+      }
+      .zixun li{
+        float: left;
+        width: 33.3%;
+      }
+      .zixun li .zixunInfo{
+        padding: 10px 20px;
+      }
+      .zixun li .zixunInfo>P{
+        color: #ff8400;
+        margin-top: 10px;
+      }
+      .zixun li .zixunInfo .zixunImg{
+        margin-top: 15px;
+      }
     }
   </style>
 </head>
 <body>
-<div style="overflow: hidden;">
+<div style="overflow: hidden;" class="pcContent">
   <div class="imgContent">
     <h1>服务器托管</h1>
     <p> 为用户提供T3+级标准数据中心、安全稳定的网络环境和充足的多线路带宽资源，提供在线远程管理服务器平台，缩短用户的工作流程，提升用户的体验。 </p>
@@ -252,16 +430,22 @@
       <span class="layui-btn">查询价格</span>
     </p>
   </div>
-  <img src="./img/page81/type02.jpg" class="bgImg">
+  <img src="./img/page81/type02.jpg" class="bgImg pcContent">
+</div>
+<div class="phoneContent">
+  <img src="./img/page81/phoneBg.png">
+  <img src="./img/page81/buy.png" class="buyImg">
 </div>
 <div class="firstNav">
-  <div class="layui-container">
-    <div class="layui-row"> 
-      <div class="layui-col-md12">
-        <ul class="firstUl">
-          <li class="active" lay-index="1">西安</li>
-          <li lay-index="2">青海</li>
-        </ul>
+  <div>
+    <div class="layui-container phoneNoPadding">
+      <div class="layui-row"> 
+        <div class="layui-col-md12">
+          <ul class="firstUl">
+            <li class="active" lay-index="1">西安</li>
+            <li lay-index="2">青海</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -278,12 +462,15 @@
         </ul>
         <div>
           <div class="layui-col-md12 secondCard this-card" lay-card="1">
-            <div class="layui-row"> 
-              <div class="layui-col-md7">
-                <p><b class="black">机房简介：</b>陕西电信云基地位于西咸新区沣西新城，是中国电信集团2014年云数据中心重点项目，本项目总占地约为144亩，项目分四期建设。其中一期投资8亿元，按照中国电信集团双A五星级机房要求建设，一期已于2015年4月开园投入使用，一期工程建设2栋IDC机房楼及1栋综合楼，总建筑面积53851㎡， IDC机房楼按照满足5000架IDC机柜。机房采用国际ANSI & TIA-942 Tier4 标准设计建设； 中国电信集团公司双A级数据中心； 采用水冷自然冷却和风冷自然冷却，装有板式换热器，PUE=1.47； 机房净高4.5米，机房承重10KN/m2； 大楼的整体结构抗震设防烈度为9度。</p><br>
-                <p><b  class="black">电源保障：</b>从陈阳变、纺织变、仁义变三向不同局向的变电所分别各引入2条10kV电压等级，每条10000KVA容量的高压电缆。 不间断电源系统配置分为240V直流系统和UPS系统。UPS系统针对不同业务需要，分为 2N和N+1方式配置，240V直流系统供电，采用整流模块的N+1冗余方式供电。两者均满 足系统容量放电30分钟。 采用10套高压油机系统作为备用电源，备用油机通过并机系统接入高配系统，燃油系统所储油量（储油库）可供机房满载运行12小时以上</p>
+            <div class="layui-row">
+              <div  class="layui-col-md5 imgDiv phoneContent">
+                <img src="./img/page81/idc11.jpg">
               </div>
-              <div  class="layui-col-md5 imgDiv">
+              <div class="layui-col-md7 infoContent">
+                <p class="firstInfo"><b class="black">机房简介：</b>陕西电信云基地位于西咸新区沣西新城，是中国电信集团2014年云数据中心重点项目，本项目总占地约为144亩，项目分四期建设。其中一期投资8亿元，按照中国电信集团双A五星级机房要求建设，一期已于2015年4月开园投入使用，一期工程建设2栋IDC机房楼及1栋综合楼，总建筑面积53851㎡， IDC机房楼按照满足5000架IDC机柜。机房采用国际ANSI & TIA-942 Tier4 标准设计建设； 中国电信集团公司双A级数据中心； 采用水冷自然冷却和风冷自然冷却，装有板式换热器，PUE=1.47； 机房净高4.5米，机房承重10KN/m2； 大楼的整体结构抗震设防烈度为9度。</p><br>
+                <p><b  class="black">电源保障：</b>从陈阳变、纺织变、仁义变三向不同局向的变电所分别各引入2条10kV电压等级，每条10000KVA容量的高压电缆。 不间断电源系统配置分为240V直流系统和UPS系统。UPS系统针对不同业务需要，分为 2N和N+1方式配置，240V直流系统供电，采用整流模块的N+1冗余方式供电。两者均满 足系统容量放电30分钟。 采用10套高压油机系统作为备用电源，备用油机通过并机系统接入高配系统，燃油系统所储油量（储油库）可供机房满载运行12小时以上。</p>
+              </div>
+              <div  class="layui-col-md5 imgDiv pcContent">
                 <img src="./img/page81/idc11.jpg">
                 <div class="imgTips">中国电信西咸数据中心</div>
               </div>
@@ -291,10 +478,13 @@
           </div>
           <div class="layui-col-md12 secondCard" lay-card="2">
             <div class="layui-row"> 
-              <div class="layui-col-md7">
-                <p>陕西移动西咸云数据中心项目总用地约172 亩，总建筑面积26.9 万㎡，拟建设5 栋数据中心、3 栋动力中心、1 栋维护支撑楼、3 栋管理用房和一座110KV 变电站。项目一期建筑总面积5.49 万㎡，包括两栋四层机房楼（共40240 ㎡）、一栋动力中心（4660 ㎡）和一栋维护支撑楼（10000 ㎡）。其中1# 机房楼为自有业务机房楼，可装机架数为3019 个，2# 机房楼为IDC 机房楼，可装机架数为2938 个。数据中心一期规划可安装机架数共为5957 架。机房楼一层为制冷站、高低压配电室及辅助用房，二层至四层为通信设备机房和电力电池室，每层分别有5 个通信设备机房、3 个电力电池室。根据业务需求的预估量，西咸数据中心一期一阶段将启用13 个机房（其中1# 楼7 个，2# 楼6 个）、11 个电力电池室（其中1# 楼7 个，2# 楼4 个），可提供2564 个机位（其中1# 楼1323 个，2# 楼1241 个）。按照国家规范《电子信息系统机房设计规范》GB50174-2008 机房要求，数据中心机房可分A、B、C 三级。根据陕西公司业务发展需求，西咸数据中心2# 楼租赁业务中的政企客户按A 类、互联网客户按B 类；结合中国移动IDC 星级标准，西咸数据中心2# 楼按照5 星级标准考虑各项设施要求。</p>
+              <div  class="layui-col-md5 imgDiv phoneContent">
+                <img src="./img/page81/idc11.jpg">
               </div>
-              <div  class="layui-col-md5 imgDiv">
+              <div class="layui-col-md7 infoContent">
+                <p class="firstInfo">陕西移动西咸云数据中心项目总用地约172 亩，总建筑面积26.9 万㎡，拟建设5 栋数据中心、3 栋动力中心、1 栋维护支撑楼、3 栋管理用房和一座110KV 变电站。项目一期建筑总面积5.49 万㎡，包括两栋四层机房楼（共40240 ㎡）、一栋动力中心（4660 ㎡）和一栋维护支撑楼（10000 ㎡）。其中1# 机房楼为自有业务机房楼，可装机架数为3019 个，2# 机房楼为IDC 机房楼，可装机架数为2938 个。数据中心一期规划可安装机架数共为5957 架。机房楼一层为制冷站、高低压配电室及辅助用房，二层至四层为通信设备机房和电力电池室，每层分别有5 个通信设备机房、3 个电力电池室。根据业务需求的预估量，西咸数据中心一期一阶段将启用13 个机房（其中1# 楼7 个，2# 楼6 个）、11 个电力电池室（其中1# 楼7 个，2# 楼4 个），可提供2564 个机位（其中1# 楼1323 个，2# 楼1241 个）。按照国家规范《电子信息系统机房设计规范》GB50174-2008 机房要求，数据中心机房可分A、B、C 三级。根据陕西公司业务发展需求，西咸数据中心2# 楼租赁业务中的政企客户按A 类、互联网客户按B 类；结合中国移动IDC 星级标准，西咸数据中心2# 楼按照5 星级标准考虑各项设施要求。</p>
+              </div>
+              <div  class="layui-col-md5 imgDiv pcContent">
                 <img src="./img/page81/idc31.jpg">
                 <div class="imgTips"></div>
               </div>
@@ -302,11 +492,14 @@
           </div>
           <div class="layui-col-md12 secondCard" lay-card="3">
             <div class="layui-row"> 
-              <div class="layui-col-md7">
-                <p><b class="black">机房简介：</b>中国联通西安数据中心所在地——西咸新区信息产业园，位于陕西省西咸新区沣西新城，规划面积25平方公里，按照国家级新区战略规划，园区定位为“国家大数据处理与服务产业基地”。机房按照国际T4+标准进行设计和建造，每栋楼按照4层设计，最低承重10KN，可提供1万个机架安装能力，每栋楼两个500G出口连接到169骨干网，整体带宽达到T级。机房外墙和窗户均采用节能保温材料，室内布局按照模块化设计，机柜按照功率密度分4KW和6KW标准设计，同时满足弹性定制化需求，最高功率密度可达到15KW以上。”</p><br>
+              <div  class="layui-col-md5 imgDiv phoneContent">
+                <img src="./img/page81/idc11.jpg">
+              </div>
+              <div class="layui-col-md7 infoContent">
+                <p class="firstInfo"><b class="black">机房简介：</b>中国联通西安数据中心所在地——西咸新区信息产业园，位于陕西省西咸新区沣西新城，规划面积25平方公里，按照国家级新区战略规划，园区定位为“国家大数据处理与服务产业基地”。机房按照国际T4+标准进行设计和建造，每栋楼按照4层设计，最低承重10KN，可提供1万个机架安装能力，每栋楼两个500G出口连接到169骨干网，整体带宽达到T级。机房外墙和窗户均采用节能保温材料，室内布局按照模块化设计，机柜按照功率密度分4KW和6KW标准设计，同时满足弹性定制化需求，最高功率密度可达到15KW以上。”</p><br>
                 <p><b  class="black">电源保障：</b>从纺织变电站和陈阳变电站两处双路市电分别引入两条10kV电压等级，每条10000KVA容量的高压电缆，采用双层铝合金走线架，确保电源线信号线分离；设置光纤专用槽道，保障尾纤安全”</p>
               </div>
-              <div  class="layui-col-md5 imgDiv">
+              <div  class="layui-col-md5 imgDiv pcContent">
                 <img src="./img/page81/idc22.jpg">
                 <div class="imgTips"></div>
               </div>
@@ -321,11 +514,14 @@
         <div>
           <div class="layui-col-md12 secondCard this-card" lay-card="1">
             <div class="layui-row"> 
-              <div class="layui-col-md7">
-                <p><b class="black">机房简介：</b>基地位于西宁市南川工业园区锦川大道200号，大数据基地分三期建设完成，占地共计500亩，现已建成一期项目总面积三万多平米，机柜设计功率有5KW、8KW、10KW，安装总数2000个，800公里外配备容灾备份机房，全面保障数据安全。</p><br>
+              <div  class="layui-col-md5 imgDiv phoneContent">
+                <img src="./img/page81/idc11.jpg">
+              </div> 
+              <div class="layui-col-md7 infoContent">
+                <p class="firstInfo"><b class="black">机房简介：</b>基地位于西宁市南川工业园区锦川大道200号，大数据基地分三期建设完成，占地共计500亩，现已建成一期项目总面积三万多平米，机柜设计功率有5KW、8KW、10KW，安装总数2000个，800公里外配备容灾备份机房，全面保障数据安全。</p><br>
                 <p><b  class="black">电源保障：</b>从红湾变电站和徐家寨变电站两处双路市电分别引入两条10kV电压等级，每条10000KVA容量的高压电缆，采用双层铝合金走线架，确保电源线信号线分离；设置光纤专用槽道，保障尾纤安全。 2N配置UPS机组，每个机柜完全双路电源，配备6+1发电机，确保供电稳定。</p>
               </div>
-              <div  class="layui-col-md5 imgDiv">
+              <div  class="layui-col-md5 imgDiv pcContent">
                 <img src="./img/page81/idc41.jpg">
                 <div class="imgTips"></div>
               </div>
@@ -333,119 +529,224 @@
           </div>
         </div>
       </div>
-      <div class="layui-col-md12">
-        <div class="layui-row">
-          <div class="layui-col-md12">
-            <h1 class="titleH1">托管流程</h1>
-            <div class="pcImgDiv">
-              <img src="./img/page81/lct.png">
-            </div>
-            <div class="phoneImgDiv" style="width: 100%;height:200px;background: gray;">
-              <img src="">
-            </div>
+    </div>
+  </div>
+</div>
+<div style="background: white;padding-bottom: 30px;">
+  <div class="layui-container">
+    <div class="layui-row"> 
+      <div class="layui-col-md12 pcContent">
+        <h1 class="titleH1">托管流程</h1>
+        <div class="pcImgDiv">
+          <img src="./img/page81/lct.png">
+        </div>
+        <div class="phoneImgDiv" style="width: 100%;height:200px;background: gray;">
+          <img src="">
+        </div>
+      </div>
+      <div class="liucheng phoneContent">
+        <h1 class="titleH1">托管流程</h1>
+        <ul>
+          <li><img src="./img/page81/11.png">&nbsp;&nbsp;注册账号</li>
+          <li><img src="./img/page81/12.png">&nbsp;&nbsp;在线下单</li>
+          <li><img src="./img/page81/13.png">&nbsp;&nbsp;快递提示</li>
+          <li><img src="./img/page81/14.png">&nbsp;&nbsp;上架进度</li>
+          <li class="borderBottom"><img src="./img/page81/10.png">&nbsp;&nbsp;在线管理</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="layui-container">
+    <div class="layui-row"> 
+      <div class="layui-col-md12 pcContent">
+        <h1 class="titleH1">托管优势</h1>
+        <div class="layui-row layui-col-space15">
+          <div class="layui-col-md3 fourOfOne">
+            <p class="icon"><i class="layui-icon layui-icon-auz"></i></p>
+            <p class="title">快速ICP备案</p>
+            <p class="info">陕西省首家采用人脸识别和文档扫描技术，实现了备案全程电子化。不需使用传统拍照和核验单过程。</p>
           </div>
-          <div class="layui-col-md12">
-            <h1 class="titleH1">托管优势</h1>
-            <div class="layui-row layui-col-space15">
-              <div class="layui-col-md3 fourOfOne">
-                <p class="icon"><i class="layui-icon layui-icon-auz"></i></p>
-                <p class="title">快速ICP备案</p>
-                <p class="info">陕西省首家采用人脸识别和文档扫描技术，实现了备案全程电子化。不需使用传统拍照和核验单过程。</p>
-              </div>
-              <div class="layui-col-md3 fourOfOne">
-                <p class="icon"><i class="layui-icon layui-icon-auz"></i></p>
-                <p class="title">在线便捷管理</p>
-                <p class="info">为用户提供在线远程开关机、重启、系统重装等管理功能，缩短用户的工作流程，提升用户的体验。</p>
-              </div>
-              <div class="layui-col-md3 fourOfOne">
-                <p class="icon"><i class="layui-icon layui-icon-auz"></i></p>
-                <p class="title">多线、BGP等方式接入</p>
-                <p class="info">可以满足党政军、金融、工业制造、中小互联网以及自有云等客户IDC多线业务的需求。</p>
-              </div>
-              <div class="layui-col-md3 fourOfOne">
-                <p class="icon"><i class="layui-icon layui-icon-auz"></i></p>
-                <p class="title">安全检测、防御攻击</p>
-                <p class="info">提供漏洞扫描，检测异常的请求。抵御DDOS攻击，使用户更放心更直观的看到业务的状态。</p>
-              </div>
-            </div>
+          <div class="layui-col-md3 fourOfOne">
+            <p class="icon"><i class="layui-icon layui-icon-auz"></i></p>
+            <p class="title">在线便捷管理</p>
+            <p class="info">为用户提供在线远程开关机、重启、系统重装等管理功能，缩短用户的工作流程，提升用户的体验。</p>
           </div>
-          <div class="layui-col-md12">
-            <h1 class="titleH1">专业的IDC数据中心运维团队</h1>
-            <p class="ohterTip">拥有一支经验丰富，接受过电信IDC管理规范训练，具备8年以上IDC机房运维经验的工程师团队</p>
-            <div class="lastImg" id="lastImgDiv">
-              <img src="./img/page81/05.jpg">
-            </div>
-            <div class="nextImg" id="nextImgDiv">
-              <img src="./img/page81/01.jpg">
-            </div>
-            <div class="layui-carousel" id="moreImgDiv" lay-filter="moreImgDiv">
-              <div carousel-item>
-                <div class="carouselImgDiv" lay-index="0"><img src="./img/page81/07.jpg"></div>
-                <div class="carouselImgDiv" lay-index="1"><img src="./img/page81/01.jpg"></div>
-                <div class="carouselImgDiv" lay-index="2"><img src="./img/page81/04.jpg"></div>
-                <div class="carouselImgDiv" lay-index="3"><img src="./img/page81/05.jpg"></div>
-              </div>
-            </div>
+          <div class="layui-col-md3 fourOfOne">
+            <p class="icon"><i class="layui-icon layui-icon-auz"></i></p>
+            <p class="title">多线、BGP等方式接入</p>
+            <p class="info">可以满足党政军、金融、工业制造、中小互联网以及自有云等客户IDC多线业务的需求。</p>
           </div>
-          <div class="layui-col-md3">
-            <img src="./img/page81/6.png">
-          </div>
-          <div class="layui-col-md9 server">
-            <h2>服务出众，真正7*24*365秒级人工服务响应</h2>
-            <p><b>1）60秒响应</b><br>50名工程师7*24小时提供电话、QQ、线上工单服务支持，真正60秒内响应；</p>
-            <p><b>2）驻守机房</b><br>所有精选高品质CN2骨干机房，全部自有工程师7*24小时值守，确保服务请求第一时间得到处理；</p>
-            <p><b>3）按需提供</b><br>按需提供裸柜、机位、带宽、IP等灵活组合方案，也可以根据客户个性需求，提供基础服务、深度代维服务、数据灾备、高可用负载等个性化定制服务方案，防患于未然；</p>
-            <p><b>4）客户定位</b><br>精选高品质骨干机房，我们只做品质客户，主要以政府和企业为主， 通过对接入客户的品质控制，最大限度保障机房的稳定和用户体验；</p>
-            <p><b>5）实力支持</b><br>具有工信部颁发的互联网数据中心业务牌照，与中国电信、联通、移动密切合作，向用户接入各家线路，能做到高效切换线路故障。</p>
-            <div class="kefudiv">
-              <ul class="serverImgAndBtn">
-                <li>
-                  <div class="leftDiv">
-                    <img src="./img/page81/70.png"><br>
-                    <img src="./img/page81/74.png">
-                  </div>
-                  <div class="rightDiv">
-                    <p>
-                      <b class="serverName">客服：小王</b><br>
-                      <img src="./img/page81/73.png">
-                      <img src="./img/page81/73.png">
-                      <img src="./img/page81/73.png">
-                    </p>
-                  </div>
-                </li>
-                <li>
-                  <div class="leftDiv">
-                    <img src="./img/page81/71.png"><br>
-                    <img src="./img/page81/74.png">
-                  </div>
-                  <div class="rightDiv">
-                    <p>
-                      <b class="serverName">客服：小王</b><br>
-                      <img src="./img/page81/73.png">
-                      <img src="./img/page81/73.png">
-                      <img src="./img/page81/73.png">
-                      <img src="./img/page81/73.png">
-                    </p>
-                  </div>
-                </li>
-                <li>
-                  <div class="leftDiv">
-                    <img src="./img/page81/72.png"><br>
-                    <img src="./img/page81/74.png">
-                  </div>
-                  <div class="rightDiv">
-                    <p>
-                      <b class="serverName">客服：小王</b><br>
-                      <img src="./img/page81/73.png">
-                      <img src="./img/page81/73.png">
-                      <img src="./img/page81/73.png">
-                    </p>
-                  </div>
-                </li>
-              </ul>
-            </div>
+          <div class="layui-col-md3 fourOfOne">
+            <p class="icon"><i class="layui-icon layui-icon-auz"></i></p>
+            <p class="title">安全检测、防御攻击</p>
+            <p class="info">提供漏洞扫描，检测异常的请求。抵御DDOS攻击，使用户更放心更直观的看到业务的状态。</p>
           </div>
         </div>
+      </div>
+      <div class="strong phoneContent">
+        <h1 class="titleH1">托管优势</h1>
+        <ul>
+          <li>
+            <div class="imgDiv"><img src="./img/page81/icon2.png"></div>
+            <p><b class="red">快速ICP备案</b><br>陕西省首家采用人脸识别和文档扫描技术，实现了备案全程电子化。不需使用传统拍照和核验单过程</p></li>
+          <li>
+            <div class="imgDiv"><img src="./img/page81/icon4.png"></div>
+            <p><b class="red">在线便捷管理</b><br>为用户提供在线远程开关机、重启、系统重装等管理功能，缩短用户的工作流程，提升用户体验</p></li>
+          <li>
+            <div class="imgDiv"><img src="./img/page81/icon3.png"></div>
+            <p><b class="red">多线、BGP等方式接入</b><br>可以满足党政军、金融、工业制造、中小互联网以及自有云等客户IDC多线业务的需求。</p></li>
+          <li class="borderBottom">
+            <div class="imgDiv"><img src="./img/page81/icon1.png"></div>
+            <p><b class="red">安全检测、防御攻击</b><br>提供漏洞扫描，检测异常的请求。抵御DDOS攻击，使用户更放心更直观的看到业务的状态。</p></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div style="background: white;">
+  <div class="layui-container">
+    <div class="layui-row"> 
+      <div class="layui-col-md12 pcContent">
+        <h1 class="titleH1">专业的IDC数据中心运维团队</h1>
+        <p class="ohterTip">拥有一支经验丰富，接受过电信IDC管理规范训练，具备8年以上IDC机房运维经验的工程师团队</p>
+        <div class="lastImg" id="lastImgDiv">
+          <img src="./img/page81/05.jpg">
+        </div>
+        <div class="nextImg" id="nextImgDiv">
+          <img src="./img/page81/01.jpg">
+          <img src="./img/page81/01.jpg">
+          <img src="./img/page81/01.jpg">
+          <img src="./img/page81/01.jpg">
+        </div>
+        <div class="layui-carousel" id="moreImgDiv" lay-filter="moreImgDiv">
+          <div carousel-item>
+            <div class="carouselImgDiv" lay-index="0"><img src="./img/page81/07.jpg"></div>
+            <div class="carouselImgDiv" lay-index="1"><img src="./img/page81/01.jpg"></div>
+            <div class="carouselImgDiv" lay-index="2"><img src="./img/page81/04.jpg"></div>
+            <div class="carouselImgDiv" lay-index="3"><img src="./img/page81/05.jpg"></div>
+          </div>
+        </div>
+      </div>
+      <div class="team phoneContent">
+        <h1 class="titleH1">运营团队</h1>
+        <div class="bigImg">
+          <img src="./img/page81/07.jpg">
+        </div>
+        <ul>
+          <li><div><img src="./img/page81/01.jpg"></div></li>
+          <li><div><img src="./img/page81/04.jpg"></div></li>
+          <li><div><img src="./img/page81/05.jpg"></div></li>
+          <li><div class="right"><img src="./img/page81/07.jpg"></div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div style="padding: 50px 0;">
+  <div class="layui-container">
+    <div class="layui-row"> 
+      <div class="layui-col-md3 pcContent">
+        <img src="./img/page81/6.png">
+      </div>
+      <div class="layui-col-md9 server pcContent">
+        <h2>服务出众，真正7*24*365秒级人工服务响应</h2>
+        <p><b>1）60秒响应</b><br>50名工程师7*24小时提供电话、QQ、线上工单服务支持，真正60秒内响应；</p>
+        <p><b>2）驻守机房</b><br>所有精选高品质CN2骨干机房，全部自有工程师7*24小时值守，确保服务请求第一时间得到处理；</p>
+        <p><b>3）按需提供</b><br>按需提供裸柜、机位、带宽、IP等灵活组合方案，也可以根据客户个性需求，提供基础服务、深度代维服务、数据灾备、高可用负载等个性化定制服务方案，防患于未然；</p>
+        <p><b>4）客户定位</b><br>精选高品质骨干机房，我们只做品质客户，主要以政府和企业为主， 通过对接入客户的品质控制，最大限度保障机房的稳定和用户体验；</p>
+        <p><b>5）实力支持</b><br>具有工信部颁发的互联网数据中心业务牌照，与中国电信、联通、移动密切合作，向用户接入各家线路，能做到高效切换线路故障。</p>
+        <div class="kefudiv">
+          <ul class="serverImgAndBtn">
+            <li>
+              <div class="leftDiv">
+                <img src="./img/page81/70.png">
+                <img src="./img/page81/74.png" class="zixun">
+              </div>
+              <div class="rightDiv">
+                <p>
+                  <b class="serverName">客服：小王</b><br>
+                  <img src="./img/page81/73.png">
+                  <img src="./img/page81/73.png">
+                  <img src="./img/page81/73.png">
+                </p>
+              </div>
+            </li>
+            <li>
+              <div class="leftDiv">
+                <img src="./img/page81/71.png"><br>
+                <img src="./img/page81/74.png" class="zixun">
+              </div>
+              <div class="rightDiv">
+                <p>
+                  <b class="serverName">客服：小王</b><br>
+                  <img src="./img/page81/73.png">
+                  <img src="./img/page81/73.png">
+                  <img src="./img/page81/73.png">
+                  <img src="./img/page81/73.png">
+                </p>
+              </div>
+            </li>
+            <li>
+              <div class="leftDiv">
+                <img src="./img/page81/72.png"><br>
+                <img src="./img/page81/74.png" class="zixun">
+              </div>
+              <div class="rightDiv">
+                <p>
+                  <b class="serverName">客服：小王</b><br>
+                  <img src="./img/page81/73.png">
+                  <img src="./img/page81/73.png">
+                  <img src="./img/page81/73.png">
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <h1 class="titleH1 phoneContent">服务出众，真正7*24*365秒级人工服务响应</h1>
+      <div class="zixun phoneContent">
+        <h2>你的满意我们的追求</h2>
+        <p>YOUR SATISFACTION OUR PURSUIT</p>
+        <ul>
+          <li>
+            <div class="zixunInfo">
+              <div><img src="./img/page81/70.png"></div>
+              <p>客服：小王</p>
+              <div>
+                <img src="./img/page81/73.png">
+                <img src="./img/page81/73.png">
+                <img src="./img/page81/73.png">
+              </div>
+              <div class="zixunImg"><img src="./img/page81/zixun.png"></div>
+            </div>
+          </li>
+          <li>
+            <div class="zixunInfo">
+              <div><img src="./img/page81/71.png"></div>
+              <p>客服：小王</p>
+              <div>
+                <img src="./img/page81/73.png">
+                <img src="./img/page81/73.png">
+                <img src="./img/page81/73.png">
+              </div>
+              <div class="zixunImg"><img src="./img/page81/zixun.png"></div>
+            </div>
+          </li>
+          <li>
+            <div class="zixunInfo">
+              <div><img src="./img/page81/72.png"></div>
+              <p>客服：小王</p>
+              <div>
+                <img src="./img/page81/73.png">
+                <img src="./img/page81/73.png">
+                <img src="./img/page81/73.png">
+              </div>
+              <div class="zixunImg"><img src="./img/page81/zixun.png"></div>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
@@ -465,7 +766,7 @@
     var t = carousel.render({
       elem: '#moreImgDiv'
       ,width: '100%' //设置容器宽度
-      ,arrow: 'always' //始终显示箭头
+      ,arrow: 'hover' //始终显示箭头
       ,indicator: 'none',
     });
     carousel.on('change(moreImgDiv)', function(obj){

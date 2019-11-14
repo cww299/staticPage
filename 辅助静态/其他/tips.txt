@@ -44,3 +44,21 @@
        	 		....
     		}, 300);
 	});
+
+18 window.screen.width
+
+19 css动画 transition 旋转 transform:rotate(180deg);
+
+20 css换行缩进
+      text-indent: -70px;
+      margin-left: 70px;
+
+21 监听滚动
+    $("#id").scroll(function () {
+	    var scrollLeft = $(this).scrollLeft();
+	});
+	
+22 输入显示
+    <input type="text" onkeyup="value=value.replace(/[^\d.]/g,'') " 
+	onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" />
+	https://www.cnblogs.com/MaxIE/archive/2006/11/08/554053.html

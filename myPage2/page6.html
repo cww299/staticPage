@@ -18,7 +18,7 @@
     .loginDiv h2{
       padding: 30px 0 20px;
     }
-    .loginDiv>p{
+    .loginDiv .loginLontent>p{
       margin-bottom: 24px;
     }
     .loginDiv input[type=text]{
@@ -66,6 +66,12 @@
     .otherLogin a{
       margin-left: 15px;
     }
+    .faceImg{
+      width: 90px;
+      height: 60px;
+      margin-top: -34px;
+      margin-left: -14px;
+    }
   </style>
 </head>
 <body>
@@ -84,25 +90,32 @@
       <div class="layui-col-md4 fullHeight">
         <div class="loginDiv layui-form">
           <img src="./img/page6/logo-small.png">
-          <h2>登录</h2>
-          <p><span class="layui-btn layui-btn-sm layui-btn-danger" id="inputCompany">请输入您的企业代码</span></p>
-          <p>
-            <i class="layui-icon layui-icon-username inputIcon"></i>
-            <input type="text" name="" class="layui-input" placeholder="用户名或邮箱地址">
-          </p>
-          <div class="layui-form-item">
-            <i class="layui-icon layui-icon-password inputIcon"></i>
-            <input type="text" name="" class="layui-input" placeholder="密码">
+          <div class="loginLontent" id="pwdLogin">
+            <h2>登录</h2>
+            <p><span class="layui-btn layui-btn-sm layui-btn-danger" id="inputCompany">请输入您的企业代码</span></p>
+            <p>
+              <i class="layui-icon layui-icon-username inputIcon"></i>
+              <input type="text" name="" class="layui-input" placeholder="用户名或邮箱地址">
+            </p>
+            <div class="layui-form-item">
+              <i class="layui-icon layui-icon-password inputIcon"></i>
+              <input type="text" name="" class="layui-input" placeholder="密码">
+            </div>
+            <p style="text-align: left;">
+              <input type="checkbox" name="" title="记住我" lay-skin="primary"> 
+            </p>
+            <p><span class="layui-btn layui-btn-nromal">登录</span></p>
           </div>
-          <p style="text-align: left;">
-            <input type="checkbox" name="" title="记住我" lay-skin="primary"> 
-          </p>
-          <p><span class="layui-btn layui-btn-nromal">登录</span></p>
+          <div style="display: none;" id="ewmLogin">
+            <br><br>
+            <img src="./img/page6/ewm.jpg" style="width: 300px;height: 300px;"><br><br><br>
+            <span class="layui-btn" style="width: 280px;" id="back">返回</span>
+          </div>
           <div style="text-align: left;margin-top: 20%;" class="otherLogin">
             <label>其他登录方式</label>
-            <a href="javascript:;"><i class="layui-icon layui-icon-login-wechat"></i></a>
+            <a href="javascript:;" id="wechat"><i class="layui-icon layui-icon-login-wechat"></i></a>
             <a href="javascript:;"><i class="layui-icon layui-icon-username"></i></a>
-            <a href="javascript:;"><i class="layui-icon layui-icon-camera-fill"></i></a>
+            <a href="javascript:;"><img src="./img/page6/face.gif" class="faceImg"></a>
           </div>
           <div class="footerDiv">
             <p>Copyright  @<span id="year">2019</span> <a href="">北京微音</a> 400-018-5101</p>
@@ -171,6 +184,15 @@
       ,arrow: 'none' 
       ,indicator: 'inside'
     });
+
+    $('#wechat').click(function(){
+      $('#ewmLogin').show();
+      $('#pwdLogin').hide();
+    })
+    $('#back').click(function(){
+      $('#ewmLogin').hide();
+      $('#pwdLogin').show();
+    })
   })
 </script>
 </html>

@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <style>
     body{
-      margin-top: 80px;
+      margin-top: 60px;
     }
     .navIconUl{
       margin-top: 10px;
@@ -118,7 +118,7 @@
     .moreTips dd:hover{
     	cursor: pointer;
     	background: #f4f4f4;
-	}
+	  }
     .moreTips dd.head{
 		width: 100%;
 	    background: #f4f4f4;
@@ -131,6 +131,18 @@
     }
     .red{
     	color: red;
+    }
+    body,html{
+      height: 100%;
+      overflow: hidden;
+    }
+    .hiddenScrool{
+      width: 100%;
+      height: 90%;
+      padding-right: 17px;
+      overflow: scroll;
+      overflow-y: scroll;
+      overflow-x: hidden;
     }
     @media screen and (min-width: 1270px){
       .layui-container {
@@ -190,166 +202,168 @@
     </li> 
   </ul>
 </div>
-<div>
-  <div class="layui-container">
-    <div class="layui-row layui-col-space20"> 
-      <div class="layui-col-md8">
-        <div class="layui-card">
-          <div class="layui-card-header">快速菜单</div>
-          <div class="layui-card-body" style="overflow: hidden;">
-            <ul class="navIconUl">
-              <li>
-                <p><i class="layui-icon layui-icon-username"></i></p>
-                <p>新建客户</p>
-              </li>
-              <li>
-                <p><i class="layui-icon layui-icon-notice"></i></p>
-                <p>新建线索</p>
-              </li>
-              <li>
-                <p><i class="layui-icon layui-icon-rmb"></i></p>
-                <p>新建商机</p>
-              </li>
-              <li>
-                <p><i class="layui-icon layui-icon-list"></i></p>
-                <p>新建订单</p>
-              </li>
-              <li>
-                <p><i class="layui-icon layui-icon-user"></i></p>
-                <p>新建联系人</p>
-              </li>
-              <li>
-                <p><i class="layui-icon layui-icon-edit"></i></p>
-                <p>写新跟进</p>
-              </li>
-              <li>
-                <p><i class="layui-icon layui-icon-tabs"></i></p>
-                <p>新建任务</p>
-              </li>
-              <li>
-                <p><i class="layui-icon layui-icon-date"></i></p>
-                <p>新建工单</p>
-              </li>
-              <li>
-                <p><i class="layui-icon layui-icon-layer"></i></p>
-                <p>新建回款单</p>
-              </li>
-              <li>
-                <p><i class="layui-icon layui-icon-dollar"></i></p>
-                <p>回款汇集</p>
-              </li>
-            </ul>
+<div class="hiddenScrool">
+  <div style="margin-top: 15px;">
+    <div class="layui-container">
+      <div class="layui-row layui-col-space20"> 
+        <div class="layui-col-md8">
+          <div class="layui-card">
+            <div class="layui-card-header">快速菜单</div>
+            <div class="layui-card-body" style="overflow: hidden;">
+              <ul class="navIconUl">
+                <li>
+                  <p><i class="layui-icon layui-icon-username"></i></p>
+                  <p>新建客户</p>
+                </li>
+                <li>
+                  <p><i class="layui-icon layui-icon-notice"></i></p>
+                  <p>新建线索</p>
+                </li>
+                <li>
+                  <p><i class="layui-icon layui-icon-rmb"></i></p>
+                  <p>新建商机</p>
+                </li>
+                <li>
+                  <p><i class="layui-icon layui-icon-list"></i></p>
+                  <p>新建订单</p>
+                </li>
+                <li>
+                  <p><i class="layui-icon layui-icon-user"></i></p>
+                  <p>新建联系人</p>
+                </li>
+                <li>
+                  <p><i class="layui-icon layui-icon-edit"></i></p>
+                  <p>写新跟进</p>
+                </li>
+                <li>
+                  <p><i class="layui-icon layui-icon-tabs"></i></p>
+                  <p>新建任务</p>
+                </li>
+                <li>
+                  <p><i class="layui-icon layui-icon-date"></i></p>
+                  <p>新建工单</p>
+                </li>
+                <li>
+                  <p><i class="layui-icon layui-icon-layer"></i></p>
+                  <p>新建回款单</p>
+                </li>
+                <li>
+                  <p><i class="layui-icon layui-icon-dollar"></i></p>
+                  <p>回款汇集</p>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="layui-col-md4">
-        <div class="layui-card">
-          <div class="layui-card-header">项目指标</div>
-          <div class="layui-card-body" style="overflow: hidden;">
-            <ul class="dataUl">
-              <li>
-                <p>99.05</p>
-                <p>项目KPL</p>
-              </li>
-              <li>
-                <p>100</p>
-                <p>岗位KPL</p>
-              </li>
-              <li>
-                <p>99.05</p>
-                <p>净利率/月</p>
-              </li>
-              <li>
-                <p>99.05</p>
-                <p>回款率/月</p>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div style="margin-top: 10px;">
-  <div class="layui-container">
-    <div class="layui-row layui-col-space20"> 
-      <div class="layui-col-md8">
-        <div class="layui-card">
-          <div class="layui-card-header">工作列表
-            <p class="head-toolBtn">
-              <span class="layui-btn layui-btn-primary">搜索<i class="layui-icon layui-icon-search"></i></span>
-            </p>
-            <p class="head-tool layui-form">
-              <select lay-search>
-                <option value="">客户名称</option>
-              </select>
-            </p>
-            <p class="head-tool layui-form">
-              <select>
-                <option value="">状态</option>
-              </select>
-            </p>
-          </div>
-          <div class="layui-card-body" style="overflow: hidden;">
-            <table id="tableData" lay-filter="tableData"></table>
-          </div>
-        </div>
-      </div>
-      <div class="layui-col-md4">
-        <div class="layui-card">
-          <div class="layui-card-header">待办事项</div>
-          <div class="layui-card-body">
-            <ul class="systemUl">
-              <li>
-                <p class="time"><i class="layui-icon layui-icon-log"></i>2019-11-09 13:00</p>
-                <p><b class="black">【内部分享】</b>如何建立良好的客户关系</p>
-              </li>
-              <li>
-                <p class="time"><i class="layui-icon layui-icon-log"></i>2019-11-09 13:00</p>
-                <p><b class="black">【内部分享】</b>如何建立良好的客户关系</p>
-              </li>
-              <li>
-                <p class="time"><i class="layui-icon layui-icon-log"></i>2019-11-09 13:00</p>
-                <p><b class="black">【内部分享】</b>如何建立良好的客户关系</p>
-              </li>
-              <li>
-                <p class="time"><i class="layui-icon layui-icon-log"></i>2019-11-09 13:00</p>
-                <p><b class="black">【内部分享】</b>如何建立良好的客户关系</p>
-              </li>
-              <li>
-                <p class="time"><i class="layui-icon layui-icon-log"></i>2019-11-09 13:00</p>
-                <p><b class="black">【内部分享】</b>如何建立良好的客户关系</p>
-              </li>
-              <li>
-                <p class="time"><i class="layui-icon layui-icon-log"></i>2019-11-09 13:00</p>
-                <p><b class="black">【内部分享】</b>如何建立良好的客户关系</p>
-              </li>
-              <li>
-                <p class="time"><i class="layui-icon layui-icon-log"></i>2019-11-09 13:00</p>
-                <p><b class="black">【内部分享】</b>如何建立良好的客户关系</p>
-              </li>
-              <li>
-                <p class="time"><i class="layui-icon layui-icon-log"></i>2019-11-09 13:00</p>
-                <p><b class="black">【内部分享】</b>如何建立良好的客户关系</p>
-              </li>
-              <li>
-                <p class="time"><i class="layui-icon layui-icon-log"></i>2019-11-09 13:00</p>
-                <p><b class="black">【内部分享】</b>如何建立良好的客户关系</p>
-              </li>
-              <li>
-                <p class="time"><i class="layui-icon layui-icon-log"></i>2019-11-09 13:00</p>
-                <p><b class="black">【内部分享】</b>如何建立良好的客户关系</p>
-              </li>
-            </ul>
+        <div class="layui-col-md4">
+          <div class="layui-card">
+            <div class="layui-card-header">项目指标</div>
+            <div class="layui-card-body" style="overflow: hidden;">
+              <ul class="dataUl">
+                <li>
+                  <p>99.05</p>
+                  <p>项目KPL</p>
+                </li>
+                <li>
+                  <p>100</p>
+                  <p>岗位KPL</p>
+                </li>
+                <li>
+                  <p>99.05</p>
+                  <p>净利率/月</p>
+                </li>
+                <li>
+                  <p>99.05</p>
+                  <p>回款率/月</p>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-<div class="floorTip">
-	<p>公司网址：www.winsoft.cn  咨询电话：400 018 5101</p>
-	<p>Copyright 2019 winsoft 北京微音软件有限公司</p>
+  <div style="margin-top: 10px;">
+    <div class="layui-container">
+      <div class="layui-row layui-col-space20"> 
+        <div class="layui-col-md8">
+          <div class="layui-card">
+            <div class="layui-card-header">工作列表
+              <p class="head-toolBtn">
+                <span class="layui-btn layui-btn-primary">搜索<i class="layui-icon layui-icon-search"></i></span>
+              </p>
+              <p class="head-tool layui-form">
+                <select lay-search>
+                  <option value="">客户名称</option>
+                </select>
+              </p>
+              <p class="head-tool layui-form">
+                <select>
+                  <option value="">状态</option>
+                </select>
+              </p>
+            </div>
+            <div class="layui-card-body" style="overflow: hidden;">
+              <table id="tableData" lay-filter="tableData"></table>
+            </div>
+          </div>
+        </div>
+        <div class="layui-col-md4">
+          <div class="layui-card">
+            <div class="layui-card-header">待办事项</div>
+            <div class="layui-card-body">
+              <ul class="systemUl">
+                <li>
+                  <p class="time"><i class="layui-icon layui-icon-log"></i>2019-11-09 13:00</p>
+                  <p><b class="black">【内部分享】</b>如何建立良好的客户关系</p>
+                </li>
+                <li>
+                  <p class="time"><i class="layui-icon layui-icon-log"></i>2019-11-09 13:00</p>
+                  <p><b class="black">【内部分享】</b>如何建立良好的客户关系</p>
+                </li>
+                <li>
+                  <p class="time"><i class="layui-icon layui-icon-log"></i>2019-11-09 13:00</p>
+                  <p><b class="black">【内部分享】</b>如何建立良好的客户关系</p>
+                </li>
+                <li>
+                  <p class="time"><i class="layui-icon layui-icon-log"></i>2019-11-09 13:00</p>
+                  <p><b class="black">【内部分享】</b>如何建立良好的客户关系</p>
+                </li>
+                <li>
+                  <p class="time"><i class="layui-icon layui-icon-log"></i>2019-11-09 13:00</p>
+                  <p><b class="black">【内部分享】</b>如何建立良好的客户关系</p>
+                </li>
+                <li>
+                  <p class="time"><i class="layui-icon layui-icon-log"></i>2019-11-09 13:00</p>
+                  <p><b class="black">【内部分享】</b>如何建立良好的客户关系</p>
+                </li>
+                <li>
+                  <p class="time"><i class="layui-icon layui-icon-log"></i>2019-11-09 13:00</p>
+                  <p><b class="black">【内部分享】</b>如何建立良好的客户关系</p>
+                </li>
+                <li>
+                  <p class="time"><i class="layui-icon layui-icon-log"></i>2019-11-09 13:00</p>
+                  <p><b class="black">【内部分享】</b>如何建立良好的客户关系</p>
+                </li>
+                <li>
+                  <p class="time"><i class="layui-icon layui-icon-log"></i>2019-11-09 13:00</p>
+                  <p><b class="black">【内部分享】</b>如何建立良好的客户关系</p>
+                </li>
+                <li>
+                  <p class="time"><i class="layui-icon layui-icon-log"></i>2019-11-09 13:00</p>
+                  <p><b class="black">【内部分享】</b>如何建立良好的客户关系</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="floorTip">
+  	<p>公司网址：www.winsoft.cn  咨询电话：400 018 5101</p>
+  	<p>Copyright 2019 winsoft 北京微音软件有限公司</p>
+  </div>
 </div>
 </body>
 <script type="text/javascript" src="./layui/layui.js"></script>
