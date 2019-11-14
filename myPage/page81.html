@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <style>
     body{
-      background: #f4f4f4;
+      background: #fafafa;
     }
     .imgContent{
       float: left;
@@ -23,6 +23,12 @@
     .imgContent>p{
       margin-top: 15px;
     }
+    .contentCard .secondCard{
+      background: #ffffff;
+      padding: 12px 0px;
+      padding-left: 10px;
+      min-height: 385px;
+    }
     img{
       max-width: 100%;
     }
@@ -30,16 +36,16 @@
       background: black;
       position: relative;
       color: #fff;
-      height: 60px;
-      line-height: 60px;
-      margin-top: -60px;
+      height: 40px;
+      line-height: 40px;
+      margin-top: -40px;
       overflow: hidden;
     }
     .firstUl li{
       float: left;
-      width: 8%;
+      width: 50%;
       text-align: center;
-      line-height: 60px;
+      line-height: 40px;
     }
     .firstUl li:hover{
       background: #8080804f;
@@ -52,6 +58,10 @@
       cursor: pointer;
       border-bottom: 2px solid red;
       margin-top: -2px;
+    }
+    .infoContent{
+      padding: 10px;
+      height: 350px;
     }
     .contentCard,.secondCard{
       display: none;
@@ -87,7 +97,7 @@
       text-align: center;
     }
     .secondCard p{
-      line-height: 26px;
+      line-height: 23px;
       font-size: 16px;
       color: gray;
     }
@@ -97,6 +107,7 @@
     }
     .imgDiv{
       padding: 10px;
+      height: 350px;
     }
     .imgDiv img{
       max-width: 100%;
@@ -105,25 +116,32 @@
       color: black;
     }
     .fourOfOne{
-      padding: 60px 25px;
+      padding: 60px 35px;
     }
-    .fourOfOne>p{
+    .fourOfOne>div{
+      background: #ffffff;
+      padding: 15px;
+      height: 250px;
+    }
+    .fourOfOne p{
       text-align: center;
       color: #c62323;
     }
-    .fourOfOne>p.icon i{
+    .fourOfOne p.icon i{
       font-size: 60px;
     }
-    .fourOfOne>p.title{
+    .fourOfOne p.title{
       font-size: 23px;
       margin: 20px 0px;
     }
-    .fourOfOne>p.info{
+    .fourOfOne p.info{
       color: gray;
       text-align: left;
     }
     .navContent{
-      height: 530px;
+      height: 610px;
+      padding: 20px 0;
+      padding-bottom: 40px;
     }
     #moreImgDiv{
       width: 44% !important;
@@ -210,7 +228,7 @@
       font-weight: bold;
     }
     .kefudiv{
-      background: #f1f1f1;
+      background: #eff0f2;
     }
     .leftDiv{
       float: left;
@@ -232,6 +250,9 @@
       display: none;
     }
     @media screen and (max-width: 540px){
+      body{
+        background: #fafafa;
+      }
       .pcContent{
         display: none;
       }
@@ -312,10 +333,12 @@
       }
       .infoContent{
         padding: 20px 10px;
+        background: #ffffff;
       }
       .infoContent>p{
         line-height: unset;
         font-size: 12px;
+        background: #ffffff;
         color: #808080d1;
       }
       .navContent{
@@ -331,6 +354,7 @@
         padding: 15px 20px;
         border: 1px solid gray;
         border-bottom: none;
+        background-color:white;
       }
       .liucheng li.borderBottom{
         border-bottom: 1px solid gray;
@@ -344,6 +368,7 @@
         color: gray;
         padding-right: 5px;
         border-bottom: none;
+        background-color:white;
       }
       .strong li.borderBottom{
         border-bottom: 1px solid gray;
@@ -416,6 +441,12 @@
       }
       .zixun li .zixunInfo .zixunImg{
         margin-top: 15px;
+      }
+      .phoneBg{
+        background-color:#fafafa !important
+      }
+      .imgDiv{
+        height: auto;
       }
     }
   </style>
@@ -532,7 +563,7 @@
     </div>
   </div>
 </div>
-<div style="background: white;padding-bottom: 30px;">
+<div style="background: white;padding-bottom: 60px;" class="phoneBg">
   <div class="layui-container">
     <div class="layui-row"> 
       <div class="layui-col-md12 pcContent">
@@ -564,24 +595,32 @@
         <h1 class="titleH1">托管优势</h1>
         <div class="layui-row layui-col-space15">
           <div class="layui-col-md3 fourOfOne">
-            <p class="icon"><i class="layui-icon layui-icon-auz"></i></p>
-            <p class="title">快速ICP备案</p>
-            <p class="info">陕西省首家采用人脸识别和文档扫描技术，实现了备案全程电子化。不需使用传统拍照和核验单过程。</p>
+            <div>
+              <p class="icon"><i class="layui-icon layui-icon-auz"></i></p>
+              <p class="title">快速ICP备案</p>
+              <p class="info">陕西省首家采用人脸识别和文档扫描技术，实现了备案全程电子化。不需使用传统拍照和核验单过程。</p>
+            </div>
           </div>
           <div class="layui-col-md3 fourOfOne">
-            <p class="icon"><i class="layui-icon layui-icon-auz"></i></p>
-            <p class="title">在线便捷管理</p>
-            <p class="info">为用户提供在线远程开关机、重启、系统重装等管理功能，缩短用户的工作流程，提升用户的体验。</p>
+            <div>
+              <p class="icon"><i class="layui-icon layui-icon-auz"></i></p>
+              <p class="title">在线便捷管理</p>
+              <p class="info">为用户提供在线远程开关机、重启、系统重装等管理功能，缩短用户的工作流程，提升用户的体验。</p>
+            </div>
           </div>
           <div class="layui-col-md3 fourOfOne">
-            <p class="icon"><i class="layui-icon layui-icon-auz"></i></p>
-            <p class="title">多线、BGP等方式接入</p>
-            <p class="info">可以满足党政军、金融、工业制造、中小互联网以及自有云等客户IDC多线业务的需求。</p>
+            <div>
+              <p class="icon"><i class="layui-icon layui-icon-auz"></i></p>
+              <p class="title">多线、BGP等方式接入</p>
+              <p class="info">可以满足党政军、金融、工业制造、中小互联网以及自有云等客户IDC多线业务的需求。</p>
+            </div>
           </div>
           <div class="layui-col-md3 fourOfOne">
-            <p class="icon"><i class="layui-icon layui-icon-auz"></i></p>
-            <p class="title">安全检测、防御攻击</p>
-            <p class="info">提供漏洞扫描，检测异常的请求。抵御DDOS攻击，使用户更放心更直观的看到业务的状态。</p>
+            <div>
+              <p class="icon"><i class="layui-icon layui-icon-auz"></i></p>
+              <p class="title">安全检测、防御攻击</p>
+              <p class="info">提供漏洞扫描，检测异常的请求。抵御DDOS攻击，使用户更放心更直观的看到业务的状态。</p>
+            </div>
           </div>
         </div>
       </div>
@@ -644,13 +683,13 @@
     </div>
   </div>
 </div>
-<div style="padding: 50px 0;">
+<div style="padding: 50px 0;background: #fafafc;">
   <div class="layui-container">
     <div class="layui-row"> 
-      <div class="layui-col-md3 pcContent">
+      <div class="layui-col-md3 pcContent" style="height:455px;background: #fafafa;">
         <img src="./img/page81/6.png">
       </div>
-      <div class="layui-col-md9 server pcContent">
+      <div class="layui-col-md9 server pcContent" style="height:455px;width: 855px;">
         <h2>服务出众，真正7*24*365秒级人工服务响应</h2>
         <p><b>1）60秒响应</b><br>50名工程师7*24小时提供电话、QQ、线上工单服务支持，真正60秒内响应；</p>
         <p><b>2）驻守机房</b><br>所有精选高品质CN2骨干机房，全部自有工程师7*24小时值守，确保服务请求第一时间得到处理；</p>
