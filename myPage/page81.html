@@ -117,21 +117,24 @@
     }
     .fourOfOne{
       padding: 60px 35px;
+      padding-top: 20px;
     }
     .fourOfOne>div{
       background: #ffffff;
       padding: 15px;
-      height: 250px;
+      height: 210px;
+      padding-top: 55px;
     }
     .fourOfOne p{
       text-align: center;
       color: #c62323;
+      line-height: 21px;
     }
     .fourOfOne p.icon i{
       font-size: 60px;
     }
     .fourOfOne p.title{
-      font-size: 23px;
+      font-size: 18px;
       margin: 20px 0px;
     }
     .fourOfOne p.info{
@@ -143,10 +146,24 @@
       padding: 20px 0;
       padding-bottom: 40px;
     }
+    .bigAllImgDiv{
+      overflow: hidden;
+    }
     #moreImgDiv{
-      width: 44% !important;
       margin: auto;
-      margin-bottom: 120px;
+      margin-bottom: 60px;
+      width: 3120px !important;
+      overflow: hidden;
+      transition: 0.3s;
+      -moz-transition: 0.3s; 
+      -webkit-transition: 0.3s; 
+      -o-transition: 0.3s; 
+      margin-left: 0px;
+      margin-left: -260px;
+    }
+    .carouselImgDiv{
+      float: left;
+      margin: 0 10px;
     }
     .ohterTip{
       text-align: center;
@@ -158,13 +175,12 @@
       padding-left: 20px;
       font-size: 26px;
       margin-bottom: 18px;
-      font-weight: bold;
     }
     .server>p{
       padding-left: 20px;
       line-height: 20px;
       color: gray;
-      padding-bottom: 10px;
+      padding-bottom: 6px;
     }
     .phoneImgDiv{
       display: none;
@@ -186,34 +202,6 @@
     .marginLeft2{
       margin-left: 42%;
     }
-    .lastImg,.nextImg{
-      width: 25%; 
-      background: gray;
-      height: 280px;
-      overflow: hidden;
-    }
-    .lastImg{
-      float: left;
-      margin-right: 1%;
-    }
-    .nextImg{
-      float: right;
-      margin-left: 1%;
-    }
-    .lastImg img{
-      height: 100%;
-      float: left;
-      transition: 0.5s;
-      width: 500px !important;
-      max-width: 500px;
-    }
-    .nextImg img{
-      height: 100%;
-      float: left;
-      transition: 0.5s;
-      width: 500px !important;
-      max-width: 500px;
-    }
     .serverImgAndBtn{
       overflow: hidden;
     }
@@ -222,6 +210,7 @@
       float: left;
       text-align: center;
       padding: 0 4%;
+      padding-top: 11px;
     }
     .serverName{
       color: #ff8400;
@@ -229,6 +218,10 @@
     }
     .kefudiv{
       background: #eff0f2;
+      height: 134px;
+      bottom: 0px;
+      position: absolute;
+      width: 100%;
     }
     .leftDiv{
       float: left;
@@ -249,18 +242,36 @@
     .phoneContent{
       display: none;
     }
+    .cIcon{
+      position: absolute;
+      top: 300px;
+      color: #007aff;
+    }
+    .cIcon i{
+      font-size: 40px;
+    }
+    .cIcon i:hover{
+
+    }
+    .nextImg{
+      left: 1100px;
+    }
+    .lastImg:hover,.nextImg:hover{
+      cursor: pointer;
+      color: #54a6ff;
+    }
     @media screen and (max-width: 540px){
       body{
         background: #fafafa;
+      }
+      .contentCard .secondCard{
+        padding: 12px 10px;
       }
       .pcContent{
         display: none;
       }
       .phoneContent{
         display: block;
-      }
-      .lastImg,.nextImg{
-        display: none;
       }
       .bgImg{
         max-width: 550%;
@@ -279,10 +290,6 @@
       .fourOfOne {
         margin: 35px 0;
         padding: 0 25px;
-      }
-      #moreImgDiv{
-        width: 100% !important;
-        height: 240px !important;
       }
       .phoneImgDiv{
         display: block;
@@ -333,6 +340,8 @@
       }
       .infoContent{
         padding: 20px 10px;
+        padding-bottom: 0px;
+        height: 320px;
         background: #ffffff;
       }
       .infoContent>p{
@@ -344,11 +353,15 @@
       .navContent{
         height: auto;
       }
+      .noBottomPhone{
+        padding-bottom: 10px !important;
+      }
       .black{
         font-weight: normal;
       }
       .liucheng,.strong{
         padding: 20px 15px;
+        padding-top: 0px;
       }
       .liucheng li{
         padding: 15px 20px;
@@ -563,7 +576,7 @@
     </div>
   </div>
 </div>
-<div style="background: white;padding-bottom: 60px;" class="phoneBg">
+<div style="background: white;padding-bottom: 60px;" class="phoneBg noBottomPhone">
   <div class="layui-container">
     <div class="layui-row"> 
       <div class="layui-col-md12 pcContent">
@@ -596,28 +609,28 @@
         <div class="layui-row layui-col-space15">
           <div class="layui-col-md3 fourOfOne">
             <div>
-              <p class="icon"><i class="layui-icon layui-icon-auz"></i></p>
+              <p class="icon"><img src="./img/page81/i1.png"></p>
               <p class="title">快速ICP备案</p>
               <p class="info">陕西省首家采用人脸识别和文档扫描技术，实现了备案全程电子化。不需使用传统拍照和核验单过程。</p>
             </div>
           </div>
           <div class="layui-col-md3 fourOfOne">
             <div>
-              <p class="icon"><i class="layui-icon layui-icon-auz"></i></p>
+              <p class="icon"><img src="./img/page81/i2.png"></p>
               <p class="title">在线便捷管理</p>
               <p class="info">为用户提供在线远程开关机、重启、系统重装等管理功能，缩短用户的工作流程，提升用户的体验。</p>
             </div>
           </div>
           <div class="layui-col-md3 fourOfOne">
             <div>
-              <p class="icon"><i class="layui-icon layui-icon-auz"></i></p>
+              <p class="icon"><img src="./img/page81/i3.png"></p>
               <p class="title">多线、BGP等方式接入</p>
               <p class="info">可以满足党政军、金融、工业制造、中小互联网以及自有云等客户IDC多线业务的需求。</p>
             </div>
           </div>
           <div class="layui-col-md3 fourOfOne">
             <div>
-              <p class="icon"><i class="layui-icon layui-icon-auz"></i></p>
+              <p class="icon"><img src="./img/page81/i4.png"></p>
               <p class="title">安全检测、防御攻击</p>
               <p class="info">提供漏洞扫描，检测异常的请求。抵御DDOS攻击，使用户更放心更直观的看到业务的状态。</p>
             </div>
@@ -644,28 +657,22 @@
     </div>
   </div>
 </div>
-<div style="background: white;">
+<div style="background: white;" class="phoneBg">
   <div class="layui-container">
     <div class="layui-row"> 
-      <div class="layui-col-md12 pcContent">
+      <div class="layui-col-md12 pcContent bigAllImgDiv">
         <h1 class="titleH1">专业的IDC数据中心运维团队</h1>
         <p class="ohterTip">拥有一支经验丰富，接受过电信IDC管理规范训练，具备8年以上IDC机房运维经验的工程师团队</p>
-        <div class="lastImg" id="lastImgDiv">
-          <img src="./img/page81/05.jpg">
-        </div>
-        <div class="nextImg" id="nextImgDiv">
-          <img src="./img/page81/01.jpg">
-          <img src="./img/page81/01.jpg">
-          <img src="./img/page81/01.jpg">
-          <img src="./img/page81/01.jpg">
-        </div>
-        <div class="layui-carousel" id="moreImgDiv" lay-filter="moreImgDiv">
-          <div carousel-item>
+        <!-- #moreImgDiv宽度设置为n*520px -1为最后一张图片99为第一张照片。用于无限循环 -->
+        <span class="lastImg cIcon"><i class="layui-icon layui-icon-prev"></i></span>
+        <span class="nextImg cIcon"><i class="layui-icon layui-icon-next"></i></span>
+        <div id="moreImgDiv">
+            <div class="carouselImgDiv" lay-index="-1"><img src="./img/page81/01.jpg"></div>
             <div class="carouselImgDiv" lay-index="0"><img src="./img/page81/07.jpg"></div>
-            <div class="carouselImgDiv" lay-index="1"><img src="./img/page81/01.jpg"></div>
-            <div class="carouselImgDiv" lay-index="2"><img src="./img/page81/04.jpg"></div>
-            <div class="carouselImgDiv" lay-index="3"><img src="./img/page81/05.jpg"></div>
-          </div>
+            <div class="carouselImgDiv" lay-index="1"><img src="./img/page81/04.jpg"></div>
+            <div class="carouselImgDiv" lay-index="2"><img src="./img/page81/05.jpg"></div>
+            <div class="carouselImgDiv" lay-index="3"><img src="./img/page81/01.jpg"></div>
+            <div class="carouselImgDiv" lay-index="99"><img src="./img/page81/07.jpg"></div>
         </div>
       </div>
       <div class="team phoneContent">
@@ -683,7 +690,7 @@
     </div>
   </div>
 </div>
-<div style="padding: 50px 0;background: #fafafc;">
+<div style="padding-bottom: 50px;background: #fafafc;" class="phoneBg">
   <div class="layui-container">
     <div class="layui-row"> 
       <div class="layui-col-md3 pcContent" style="height:455px;background: #fafafa;">
@@ -691,11 +698,11 @@
       </div>
       <div class="layui-col-md9 server pcContent" style="height:455px;width: 855px;">
         <h2>服务出众，真正7*24*365秒级人工服务响应</h2>
-        <p><b>1）60秒响应</b><br>50名工程师7*24小时提供电话、QQ、线上工单服务支持，真正60秒内响应；</p>
-        <p><b>2）驻守机房</b><br>所有精选高品质CN2骨干机房，全部自有工程师7*24小时值守，确保服务请求第一时间得到处理；</p>
-        <p><b>3）按需提供</b><br>按需提供裸柜、机位、带宽、IP等灵活组合方案，也可以根据客户个性需求，提供基础服务、深度代维服务、数据灾备、高可用负载等个性化定制服务方案，防患于未然；</p>
-        <p><b>4）客户定位</b><br>精选高品质骨干机房，我们只做品质客户，主要以政府和企业为主， 通过对接入客户的品质控制，最大限度保障机房的稳定和用户体验；</p>
-        <p><b>5）实力支持</b><br>具有工信部颁发的互联网数据中心业务牌照，与中国电信、联通、移动密切合作，向用户接入各家线路，能做到高效切换线路故障。</p>
+        <p>1）60秒响应<br>50名工程师7*24小时提供电话、QQ、线上工单服务支持，真正60秒内响应；</p>
+        <p>2）驻守机房<br>所有精选高品质CN2骨干机房，全部自有工程师7*24小时值守，确保服务请求第一时间得到处理；</p>
+        <p>3）按需提供<br>按需提供裸柜、机位、带宽、IP等灵活组合方案，也可以根据客户个性需求，提供基础服务、深度代维服务、数据灾备、高可用负载等个性化定制服务方案，防患于未然；</p>
+        <p>4）客户定位<br>精选高品质骨干机房，我们只做品质客户，主要以政府和企业为主， 通过对接入客户的品质控制，最大限度保障机房的稳定和用户体验；</p>
+        <p>5）实力支持<br>具有工信部颁发的互联网数据中心业务牌照，与中国电信、联通、移动密切合作，向用户接入各家线路，能做到高效切换线路故障。</p>
         <div class="kefudiv">
           <ul class="serverImgAndBtn">
             <li>
@@ -802,22 +809,30 @@
     $('.layui-btn').click(function(){
       layer.msg('点击按钮');
     })
-    var t = carousel.render({
-      elem: '#moreImgDiv'
-      ,width: '100%' //设置容器宽度
-      ,arrow: 'hover' //始终显示箭头
-      ,indicator: 'none',
-    });
-    carousel.on('change(moreImgDiv)', function(obj){
-      var all = $('.carouselImgDiv').length-1;
-      var index = obj.item.attr('lay-index');
-      var last = (index-1<0?all:index-1);
-      var next = index-(-1)>all?0:index-(-1);
-      var lastImg = $('.carouselImgDiv[lay-index='+last+']').find('img').attr('src');
-      var nextImg = $('.carouselImgDiv[lay-index='+next+']').find('img').attr('src');
-      $('#lastImgDiv').find('img').attr('src',lastImg);
-      $('#nextImgDiv').find('img').attr('src',nextImg);
-    }); 
+    $('.lastImg').click(function(){
+      var len = $('#moreImgDiv').find('.carouselImgDiv').length;
+      var left = $('#moreImgDiv').css('marginLeft');
+      left = parseInt(left);
+      if(left>=-260){
+        var maxLeft = (-260-(520*(len-2))); //左侧极限距离
+        left = maxLeft;
+        $('#moreImgDiv').css('marginLeft',left+'-px');
+      }
+      left-=(-520);
+      $('#moreImgDiv').css('marginLeft',left+'px');
+    })
+    $('.nextImg').click(function(){
+      var len = $('#moreImgDiv').find('.carouselImgDiv').length;
+      var left = $('#moreImgDiv').css('marginLeft');
+      var maxLeft = (-260-(520*(len-3))); //左侧极限距离
+      left = parseInt(left);
+      if(left<=maxLeft){
+        left = 260;
+        $('#moreImgDiv').css('marginLeft',left+'-px');  //返回第一张图的位置
+      }
+      left-=520;
+      $('#moreImgDiv').css('marginLeft',left+'px');
+    })
     $('.firstUl').find('li').click(function(){
       var index = $(this).attr('lay-index');
       $(this).siblings().removeClass("active");

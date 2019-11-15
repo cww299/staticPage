@@ -183,16 +183,17 @@
       size:'lg',
       data: data1,
       page:true,
+      height:'610px',
       cols:[[
-        {title:'序号',field:'no', width:'6%',},
-        {title:'中介名称',field:'name', width:'12%',},
+        {title:'序号',field:'no', width:'6%',sort:true,fixed:'left',},
+        {title:'中介名称',field:'name', width:'15%',},
         {title:'法定代表',field:'people', width:'10%',width:'8%',},
         {title:'办公地址',field:'address',width:'14%',},
         {title:'联系人',field:'contacts', width:'7%',},
         {title:'职务',field:'post', width:'10%',},
         {title:'联系电话',field:'phone',},
         {title:'营业执照',field:'licens',},
-        {title:'操作',field:'',templet: getMoreTpl(), width:'15%',},
+        {title:'操作',field:'',templet: getMoreTpl(), width:'15%',fixed:'right',},
       ]]
     })
     

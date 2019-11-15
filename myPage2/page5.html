@@ -36,8 +36,24 @@
       width: 80%;
       margin: 10px auto;
     }
+    .addTable table td{
+      padding-top: 8px;
+    }
     .titleTd{
       text-align: right;
+      width: 150px;
+    }
+    .layui-layer-title,.layui-layer-setwin{
+      display: none;
+    }
+    .addTable .layui-card-header{
+      margin: 10px auto;
+      height: 43px;
+      line-height: 43px;
+    }
+    .layui-layer-page .layui-layer-content{
+      height: 95% !important;
+      padding: 10px 50px;
     }
     @media screen and (min-width: 1500px){
       .layui-container {
@@ -238,7 +254,7 @@
           <tr>
             <td class="titleTd"><b class="red">*</b>电子邮件：</td>
             <td><input type="text" class="layui-input"></td>
-            <td class="titleTd"><b class="red">*</b>送达地址联系人</td>
+            <td class="titleTd"><b class="red">*</b>送达地址联系人：</td>
             <td><input type="text" class="layui-input"></td>
           </tr>
         </table>
@@ -359,7 +375,7 @@
           <tr>
             <td class="titleTd">消防安全协议书：</td>
             <td><input type="text" class="layui-input"></td>
-            <td class="titleTd">通告</td>
+            <td class="titleTd">通告：</td>
             <td><input type="text" class="layui-input"></td>
           </tr>
         </table>
@@ -480,7 +496,7 @@
           <tr>
             <td class="titleTd">消防安全协议书：</td>
             <td><input type="text" class="layui-input"></td>
-            <td class="titleTd">通告</td>
+            <td class="titleTd">通告：</td>
             <td><input type="text" class="layui-input"></td>
           </tr>
         </table>
@@ -517,23 +533,29 @@
       { no:3,number:'DD20190324010001',name:'石景山',companyName:'北京微音软件有限公司',people:'',phone:'',area:'',time:'',hire:'',},
       { no:4,number:'DD20190324010001',name:'石景山',companyName:'北京微音软件有限公司',people:'',phone:'',area:'',time:'',hire:'',},
       { no:5,number:'DD20190324010001',name:'石景山',companyName:'北京微音软件有限公司',people:'',phone:'',area:'',time:'',hire:'',},
+      { no:1,number:'DD20190324010001',name:'石景山',companyName:'北京微音软件有限公司',people:'',phone:'',area:'',time:'',hire:'',},
+      { no:2,number:'DD20190324010001',name:'石景山',companyName:'北京微音软件有限公司',people:'',phone:'',area:'',time:'',hire:'',},
+      { no:3,number:'DD20190324010001',name:'石景山',companyName:'北京微音软件有限公司',people:'',phone:'',area:'',time:'',hire:'',},
+      { no:4,number:'DD20190324010001',name:'石景山',companyName:'北京微音软件有限公司',people:'',phone:'',area:'',time:'',hire:'',},
+      { no:5,number:'DD20190324010001',name:'石景山',companyName:'北京微音软件有限公司',people:'',phone:'',area:'',time:'',hire:'',},
     ];
     table.render({
       elem:'#tableData1',
       size:'lg',
       data: data1,
+      height:'610px',
       page:true,
       cols:[[
-        {title:'序号',field:'no', width:'6%',},
-        {title:'项目编号',field:'number', width:'12%',},
-        {title:'项目名称',field:'name', width:'10%',},
-        {title:'公司名称',field:'companyName',width:'14%',},
-        {title:'授权代表人',field:'people',},
-        {title:'联系电话',field:'phone',},
-        {title:'大业主面积',field:'area',},
-        {title:'时点',field:'time',width:'6%',},
-        {title:'出租率',field:'hire',},
-        {title:'操作',field:'',templet: getMoreTpl(), width:'22%',},
+        {title:'序号',field:'no', width:'6%',sort:true,fixed:'left',},
+        {title:'项目编号',field:'number', width:'12%',sort:true,},
+        {title:'项目名称',field:'name', width:'10%',sort:true,},
+        {title:'公司名称',field:'companyName',width:'14%',sort:true,},
+        {title:'授权代表人',field:'people',sort:true,},
+        {title:'联系电话',field:'phone',sort:true,},
+        {title:'大业主面积',field:'area',sort:true,},
+        {title:'时点',field:'time',width:'6%',sort:true,},
+        {title:'出租率',field:'hire',sort:true,},
+        {title:'操作',field:'',templet: getMoreTpl(), width:'22%',fixed:'right',},
       ]]
     })
     var data2 = [
@@ -547,16 +569,17 @@
       elem:'#tableData2',
       data: data2,
       page:true,
+      height:'610px',
       size:'lg',
       cols:[[
-        {title:'序号',field:'no', width:'6%',},
-        {title:'项目编号',field:'number', width:'15%',},
-        {title:'项目名称',field:'name',},
-        {title:'楼宇编号',field:'floorNumber', width:'10%',},
-        {title:'楼宇名称',field:'floorName',},
-        {title:'楼宇面积',field:'area',},
-        {title:'租赁地址',field:'state',},
-        {title:'操作',field:'',templet: getMoreTpl(), width:'22%',},
+        {title:'序号',field:'no', width:'6%',sort:true,fixed:'left',},
+        {title:'项目编号',field:'number', width:'15%',sort:true,},
+        {title:'项目名称',field:'name',sort:true,},
+        {title:'楼宇编号',field:'floorNumber', width:'10%',sort:true,},
+        {title:'楼宇名称',field:'floorName',sort:true,},
+        {title:'楼宇面积',field:'area',sort:true,},
+        {title:'租赁地址',field:'state',sort:true,},
+        {title:'操作',field:'',templet: getMoreTpl(), width:'22%',fixed:'right',},
       ]]
     })
     var data3 = [
@@ -570,17 +593,18 @@
       elem:'#tableData3',
       data: data3,
       page:true,
+      height:'610px',
       size:'lg',
       cols:[[
-        {title:'序号',field:'no', width:'6%',},
-        {title:'项目名称',field:'name', width:'10%',},
-        {title:'楼宇名称',field:'floorName', width:'15%',},
-        {title:'房源编号',field:'number', width:'15%',},
-        {title:'楼层',field:'floorNumber',},
-        {title:'面积',field:'area',},
-        {title:'状态',field:'state',},
-        {title:'类型',field:'type',},
-        {title:'操作',field:'',templet: getMoreTpl(), width:'22%',},
+        {title:'序号',field:'no', width:'6%',sort:true,fixed:'left',},
+        {title:'项目名称',field:'name', width:'10%',sort:true,},
+        {title:'楼宇名称',field:'floorName', width:'15%',sort:true,},
+        {title:'房源编号',field:'number', width:'15%',sort:true,},
+        {title:'楼层',field:'floorNumber',sort:true,},
+        {title:'面积',field:'area',sort:true,},
+        {title:'状态',field:'state',sort:true,},
+        {title:'类型',field:'type',sort:true,},
+        {title:'操作',field:'',templet: getMoreTpl(), width:'22%',fixed:'right',},
       ]]
     })
     function getMoreTpl(){
