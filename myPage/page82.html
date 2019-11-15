@@ -1,62 +1,434 @@
-<!--原网址：
-  
--->
 <!DOCTYPE html>
 <html>
 <head>
   <title></title>
   <link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
-  <link rel="stylesheet" type="text/css" href="./pageTab.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <style>
-    
+  	.nav{
+  		background-color:#c9c9c9;
+  	}
+    .layui-nav{
+		background-color:#c9c9c966;
+		color: black;
+    }
+    .layui-nav .layui-nav-item a{
+    	color:black;
+    }
+    .layui-nav .layui-nav-item a:hover, .layui-nav .layui-this a {
+    	color: gray;
+	}
+    .left{
+    	float: left;
+    }
+    .right{
+    	float:right;
+    }
+    .red{
+    	color: #cc0000;
+	    font-size: 18px;
+	    font-weight: normal;
+    }
+    .bgImg img{
+    	max-width: 100%;
+    }
+    .iconDiv{
+    	background: #80808063;
+    	padding: 30px 0;
+    }
+    .iconDiv li{
+    	float: left;
+	    width: 24%;
+	    text-align: center;
+	    border-left: 1px solid grey;
+    }
+    .iconDiv li.rightBorder{
+    	border-right: 1px solid grey;
+    }
+    .iconDiv p{
+		padding: 3px 10px;
+    }
+    .iconDiv .imgP{
+
+    }
+    .iconDiv .title{
+
+    }
+    .iconDiv .info{
+		color: gray;
+    }
+    .titleH2{
+		color: #ff0000bd;
+    	font-weight: bold;
+    }
+    .titleH2Info{
+		margin:10px 0;
+		font-weight: bold;
+    	color: gray;
+    }
+    .whyDiv{
+		padding: 80px 0;
+		text-align: center;
+    }
+    .whyDiv li{
+		float: left;
+		width: 16%;
+		border: 1px solid #8080804f;
+		border-left: none;
+		padding: 40px 0;
+		margin-top: 40px;
+    }
+    .whyDiv li.isThis{
+		background-color:#8080804f;
+    }
+	.whyDiv li.borderLeft{
+		border-left: 1px solid #8080804f;
+	}
+    .whyDiv li p{
+		padding: 0px 7px;
+    }
+    .whyDiv li p.imgP{
+		margin-bottom: 25px;
+    }
+    .choose{
+    	text-align: center;
+    	padding: 40px 0;
+    	background:url('./img/page82/') no-repeat;
+    }
+
+
+
+
+    .company{
+    	text-align: center;
+    	padding: 40px 0;
+    }
+
+
+
+
+    .primission{
+    	background: #fafafa;
+		text-align: center;
+		padding: 50px 0;
+    }
+    .primission p.info{
+		color: gray;
+	    text-align: left;
+	    margin-top: 40px;
+	    line-height: 28px;
+    }
+    .primission p.imgP{
+		padding: 40px 0;
+    }
+    .primission p.imgP img{
+
+    }
+    .phoneContent{
+    	display: none;
+    }
     @media screen and (max-width: 540px){
-      
+      .pcContent{
+      	display: none;
+      }
+      .phoneContent{
+      	display: block;
+      }
+      .phoneNav{
+      	background-color:white;
+      	padding: 15px 10px;
+      }
+      .phoneNav i{
+      	float: right;
+      	margin-top: 8px;
+      }
+      .phoneNav img{
+      	max-width: 80%;
+      }
+      .layui-layer-title{
+      	display: none;
+      }
+      .otherMenu{
+      	padding:50px 0px;
+      }
+      .otherMenu li{
+      	text-align: center;
+	    padding: 10px 0;
+	    font-size: 19px;
+	    border-bottom: 1px solid #80808054;
+      }
+      .bgImg img{
+      	height: 200px;
+      }
+      .iconDiv li{
+  	    width: 48%;
+  	    border:none !important;
+  	    padding-bottom: 15px;
+      }
+      .whyDiv li{
+  	    width: 49%;
+	    height: 220px;
+	    padding: 10px 0;
+	    margin-top: 0px;
+	    border-left: 1px solid #8080804f;
+      }
+      .toolbar span{
+      	position: fixed;
+	    bottom: 20px;
+	    right: 20px;
+      }
+      .toolbar span.second{
+      	right: 80px;
+      }
+      .toolbar span img{
+  	    width: 40px;
+		height: 40px;
+      }
+      .toolbar span i{
+      	    font-size: 43px;
+    		color: #cc0000;
+      }
     }
   </style>
 </head>
 <body>
-<div>
+<div class="nav">
+	<div class="layui-container pcContent">
+	    <div class="layui-row"> 
+			<div class="layui-col-md12">
+				<ul class="layui-nav">
+				  <li class="layui-nav-item">
+				    <a href="">
+						<img src="./img/page82/logo.png">
+				    </a>
+				  </li>
+				  <li class="layui-nav-item right">
+				    <a href=""><img src="./img/page82/tel.png"><b class="red">&nbsp;&nbsp;029-81023319</b></a>
+				  </li>
+				  <li class="layui-nav-item right">
+				    <a href="#company">经典案例</a>
+				  </li>
+				  <li class="layui-nav-item right">
+				    <a href="#choose">产品价格</a>
+				  </li>
+				  <li class="layui-nav-item right">
+				    <a href="#whyDiv">产品优势</a>
+				  </li>
+				  <li class="layui-nav-item right">
+				    <a href="http://www.qianxinet.com">首页</a>
+				  </li>
+				</ul>
+		    </div>
+		</div>
+	</div>
+	<div class="phoneContent phoneNav">
+		<img src="./img/page82/logo.png">
+		<i id="moreMenu" class="layui-icon layui-icon-more-vertical"></i>
+	</div>
+</div>
+<div class="bgImg">
+	<img src="./img/page82/banner3.jpg">
+</div>
+<div class="iconDiv" >
+	<div class="layui-container">
+	    <div class="layui-row"> 
+	      <div class="layui-col-md12">
+	      	<ul>
+	      		<li>
+	      			<p class="imgP"><img src="./img/page82/1.png"></p>
+					<p class="title">网易优秀经销商</p>
+					<p class="info">连续多年获得网易优秀经销商</p>
+	      		</li>
+	      		<li>
+	      			<p class="imgP"><img src="./img/page82/1-1.png"></p>
+					<p class="title">高品质服务</p>
+					<p class="info">以高品质的企业服务助力客户成功</p>
+	      		</li>
+	      		<li>
+	      			<p class="imgP"><img src="./img/page82/1-2.png"></p>
+					<p class="title">一站式服务</p>
+					<p class="info">满足企业个阶段的不同需求</p>
+	      		</li>
+	      		<li class="rightBorder">
+	      			<p class="imgP"><img src="./img/page82/1-3.png"></p>
+					<p class="title">售后保障</p>
+					<p class="info">一对一专属顾问贴身服务</p>
+	      		</li>
+	      	</ul>
+	      </div>
+    	</div>
+  </div>
+</div>
+<div class="whyDiv" id="whyDiv">
   <div class="layui-container">
     <div class="layui-row"> 
-      <div class="layui-col-md12 title">
-        <h5></h5>
+      <div class="layui-col-md12">
+      	<h2 class="titleH2">为什么选择网易企业邮箱？</h2>
+      	<p class="titleH2Info">网易企业邮箱，最安全稳定，业界第1反垃圾技术，手法速度最快，22年运营经验，1500人专业团队，72万家企业信赖。</p>
+      	<ul>
+      		<li class="isThis borderLeft">
+				<p class="imgP">
+					<img src="./img/page82/3.png">
+				</p>
+				<p class="title">品牌</p>
+				<p class="info">22年邮箱运维经验，10.46亿用户认可支持；超过61万加企业的信赖之选
+				</p>
+      		</li>
+      		<li class="">
+				<p class="imgP">
+					<img src="./img/page82/2-1.png">
+				</p>
+				<p class="title">安全</p>
+				<p class="info">获得邮件领域高级别安全认证--中国信息安全检测中心EAL3+资质
+				</p>
+      		</li>
+      		<li class="">
+				<p class="imgP">
+					<img src="./img/page82/2-2.png">
+				</p>
+				<p class="title">稳定</p>
+				<p class="info">从矩阵服务器架构，到24小时专属运维团队，保障企业客户的稳定使用。
+				</p>
+      		</li>
+      		<li class="">
+				<p class="imgP">
+					<img src="./img/page82/2-3.png">
+				</p>
+				<p class="title">畅游</p>
+				<p class="info">多线介入，10G带宽，优质IP资源库及全球服务器资源，保障畅游无阻。
+				</p>
+      		</li>
+      		<li class="">
+				<p class="imgP">
+					<img src="./img/page82/2-4.png">
+				</p>
+				<p class="title">易用</p>
+				<p class="info">上千项贴心功能；企业易管理，员工易用，随时随地移动办公。
+				</p>
+      		</li>
+      		<li class="">
+				<p class="imgP">
+					<img src="./img/page82/2-5.png">
+				</p>
+				<p class="title">服务</p>
+				<p class="info">前进有方向，服务无止境。300名客服团队，电话接通率90%
+				</p>
+      		</li>
+      	</ul>
       </div>
     </div>
   </div>
 </div>
-<div>
+<div class="choose" id="choose">
   <div class="layui-container">
     <div class="layui-row"> 
-      <div class="layui-col-md12 tabContents">
-        <div class="tabNavs">
-          <ul>
-            <li class="active"><a href=""></a></li>
-            <li class=""><a href=""></a></li>
-          </ul>
-        </div>
-        <div class="tabCards">
-          
-        </div>
+      <div class="layui-col-md12">
+       	<h2 class="titleH2">选择最适合您的网易企业邮箱版本</h2>
+       	<p class="titleH2Info">网易企业邮箱，专注企业邮箱21年，新用户提交开工限时五折</p>
         
       </div>
     </div>
   </div>
 </div>
+<div class="company" id="company">
+  <div class="layui-container">
+    <div class="layui-row"> 
+      <div class="layui-col-md12">
+      	<h2 class="titleH2" style="color: black;">超过4700万用户正在使用网易企业邮箱</h2>
+      	<p class="titleH2Info">我们也在使用网易企业邮箱</p>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<div class="primission" id="primission">
+  <div class="layui-container">
+    <div class="layui-row"> 
+      <div class="layui-col-md12">
+      	<h2 class="titleH2">企业授权</h2>
+        <p class="titleH2Info">西安千喜网络科技有限公司成立于2009年12月，是网易授权的企业产品一级经销商</p>
+        <p class="info">&nbsp;&nbsp;&nbsp;&nbsp;西安千喜网络科技有限公司成立于2009年12月，是网易授权的企业产品一级经销商。此外我公司也是陕西省公安厅公安网升级优化及维护服务商、西安市雪亮工程（即公共安全视频监控建设联网应用）项目市级中心机房及运维调度服务中心的服务商。2019年我司获工信部批准成为陕西省首家顶级域名注册服务机构，负责管理运营”.CN“、”.中国“、”.COM“、”.NET“等顶级域的注册服务系统，此业务填补了陕西省域名注册服务机构的空白。</p>
+        <p class="imgP">
+        	<img src="./img/page82/">
+        	<img src="./img/page82/">
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="toolbar phoneContent">
+	<span>
+		<img src="./img/page82/tel.png">
+	</span>
+	<span class="second">
+		<i class="layui-icon layui-icon-form"></i>
+	</span>
+</div>
 </body>
 <script type="text/javascript" src="./layui/layui.js"></script>
 <script type="text/javascript">
-  layui.use(['jquery','layer','form',],function(){
+  layui.use(['jquery','layer','form','element',],function(){
     var $ = layui.jquery
        ,form = layui.form
+       ,element = layui.element
        ,layer = layui.layer;
 
-    $('.layui-btn').click(function(){
-      layer.msg('点击按钮');
+
+    $('.whyDiv').find('li').mouseover(function(){
+    	var oldImg = $(this).siblings('.isThis').find('img');
+    	var src = $(oldImg).attr('src');
+    	if(src){	//如果存在兄弟元素有isThis类，更换图片为红色
+    		src = src.split('/');
+    		var name = src[src.length-1].split('.')[0];
+    		if(name.split('-').length>1){
+    			name = name.split('-');
+    			src = './img/page82/'+2+'-'+name[1]+'.png';
+    		}else{
+    			src = './img/page82/2.png';
+    		}
+    		$(oldImg).attr('src',src);
+    		//修改当前进入的div图片为灰色
+    		var thisSrc = $(this).find('img').attr('src').split('/');
+    		var thisName = thisSrc[thisSrc.length-1].split('.')[0];
+    		if(thisName.split('-').length>1){
+    			thisName = thisName.split('-');
+    			src = './img/page82/'+3+'-'+thisName[1]+'.png';
+    		}else{
+    			src = './img/page82/3.png';
+    		}
+    		$(this).find('img').attr('src',src);
+    		$(this).siblings().removeClass('isThis');
+    		$(this).addClass('isThis');
+    	}
+    	$(this).css('cursor','pointer');
+    });
+    $('#moreMenu').click(function(obj){
+    	layer.open({
+    		type:1,
+    		shadeClose:true,
+    		content:[
+    			'<div class="otherMenu">',
+    				'<ul>',
+    					'<li><a href="http://www.qianxinet.com">首页</a></li>',
+    					'<li data-menu="whyDiv">产品优势</li>',
+    					'<li data-menu="choose">产品价格</li>',
+    					'<li data-menu="company">经典案例</li>',
+    				'</ul>',
+    			'</div>',
+    		].join(''),
+    		area:['80%','100%'],
+    		offset:'r',
+    		success:function(){
+    			$('.otherMenu').find('li').unbind().on('click',function(){
+    				var menu = $(this).data('menu');
+    				document.getElementById(menu).scrollIntoView();
+    				layer.closeAll();
+    			})
+    		}
+    	})
     })
     form.render();
-
     
   })
 </script>
