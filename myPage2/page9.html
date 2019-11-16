@@ -25,29 +25,49 @@
   </span>
   <div class="rightDiv moreBtn">
     <span><i class="layui-icon layui-icon-left"></i></span>
-    <span><i class="layui-icon layui-icon-refresh"></i></span>
+    <span><i class="layui-icon layui-icon-refresh" id="refreshBtn"></i></span>
   </div>
 </div>
-<div>
-  <div class="layui-container">
-    <div class="layui-row">
-      <div class="layui-col-md12">
-        <div class="layui-card">
-          <div class="layui-card-body">
-            <div>
-              <table class="layui-form">
-                <tr>
-                  <td><input type="text" placeholder="客户名称" class="layui-input"></td>
-                  <td>&nbsp;&nbsp;</td>
-                  <td><select><option value="">客户状态</option></select></td>
-                  <td>&nbsp;&nbsp;</td>
-                  <td><select><option value="">客户类型</option></select></td>
-                  <td>&nbsp;&nbsp;</td>
-                  <td><input type="text" placeholder="最后跟进" class="layui-input"></td>
-                  <td>&nbsp;&nbsp;</td>
-                  <td><span class="layui-btn layui-btn-normal"><i class="layui-icon layui-icon-search">查询</i></span></td>
-                </tr>
-              </table>
+<div class="hiddenScrool">
+  <div>
+    <div class="layui-container">
+      <div class="layui-row">
+        <div class="layui-col-md12">
+          <div class="layui-card">
+            <div class="layui-card-body">
+              <div>
+                <div style="float: right;">
+                  <span class="layui-btn">领取客户</span>
+                </div>
+                <table class="layui-form">
+                  <tr>
+                    <td><input type="text" placeholder="客户名称" class="layui-input"></td>
+                    <td>&nbsp;&nbsp;</td>
+                    <td><select><option value="">客户状态</option></select></td>
+                    <td>&nbsp;&nbsp;</td>
+                    <td><select><option value="">客户类型</option></select></td>
+                    <td>&nbsp;&nbsp;</td>
+                    <td><input type="text" placeholder="最后跟进" class="layui-input"></td>
+                    <td>&nbsp;&nbsp;</td>
+                    <td><span class="layui-btn layui-btn-normal"><i class="layui-icon layui-icon-search">查询</i></span></td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top:15px;">
+    <div class="layui-container">
+      <div class="layui-row">
+        <div class="layui-col-md12">
+          <div class="layui-card">
+            <div class="layui-card-body">
+              <div>
+                <table id="tableData1" lay-filter="tableData1"></table>
+              </div>
             </div>
           </div>
         </div>
@@ -55,27 +75,6 @@
     </div>
   </div>
 </div>
-<div style="margin-top:15px;">
-  <div class="layui-container">
-    <div class="layui-row">
-      <div class="layui-col-md12">
-        <div class="layui-card">
-          <div class="layui-card-body">
-            <div>
-              <table id="tableData1" lay-filter="tableData1"></table>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<script type="text/html" id="toolbarTpl">
-<div>
-  <span class="layui-btn layui-btn-sm layui-btn-primary">导出</span>
-  <span class="layui-btn layui-btn-sm layui-btn-primary">领取客户</span>
-</div>
-</script>
 </body>
 <script type="text/javascript" src="./layui/layui.js"></script>
 <script type="text/javascript">
@@ -92,20 +91,19 @@
     ];
     table.render({
       elem:'#tableData1',
-      size:'lg',
       data: data1,
-      toolbar:$('#toolbarTpl').html(),
+      height:'610px',
       page:true,
       cols:[[
-        {type:'checkbox',},
-        {title:'客户名称',field:'name', width:'10%',sort:true,},
+        {type:'checkbox',fixed:'left',},
+        {title:'客户名称',field:'name', width:'10%',sort:true, },
         {title:'客户类型',field:'type', width:'12%',sort:true,},
         {title:'招商状态',field:'bussiness', sort:true, },
         {title:'首联系人',field:'contacts',width:'14%',sort:true,},
         {title:'手机号码',field:'phone',},
         {title:'最后跟进',field:'last',sort:true,},
         {title:'前归属人',field:'perv',sort:true,},
-        {title:'操作',field:'',templet: getMoreTpl(), width:'10%',},
+        {title:'操作',field:'',templet: getMoreTpl(), width:'10%',fixed:'right', },
       ]]
     })
     
@@ -116,6 +114,9 @@
         ].join(' ');
       }
     }
+    $('#refreshBtn').click(function(){
+      location.reload();
+    })
   })
 </script>
 </html>

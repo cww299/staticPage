@@ -42,12 +42,17 @@
     .layui-textarea{
       height: 180px;
     }
+    .addTable .layui-card-body{
+      width: 100%;
+    }
+    .addTable table {
+      width: 930px;
+    }
     @media screen and (min-width: 1500px){
       .layui-container {
           width: 1470px;
       }
     }
-      
   </style>
 </head>
 <body>
@@ -59,51 +64,68 @@
   </span>
   <div class="rightDiv moreBtn">
     <span><i class="layui-icon layui-icon-left"></i></span>
-    <span><i class="layui-icon layui-icon-refresh"></i></span>
+    <span><i class="layui-icon layui-icon-refresh" id="refreshBtn"></i></span>
   </div>
 </div>
-<div>
-  <div class="layui-container">
-    <div class="layui-row">
-      <div class="layui-col-md12">
-        <div class="layui-card">
-          <div class="layui-card-header">
-            <ul class="navUl">
-              <li class="active" lay-index="1">中介档案</li>
-              <li class="" lay-index="2">内推档案</li>
-            </ul>
-          </div>
-          <div class="layui-card-body">
-            <div class="searchDiv lay-this" lay-card="1">
-              <div style="float: right;">
-                <span class="layui-btn layui-btn-normal" id="addIntermediary"><i class="layui-icon layui-icon-add-1"></i>添加</span>
+<div class="hiddenScrool">
+  <div>
+    <div class="layui-container">
+      <div class="layui-row">
+        <div class="layui-col-md12">
+          <div class="layui-card">
+            <div class="layui-card-header">
+              <ul class="navUl">
+                <li class="active" lay-index="1">中介档案</li>
+                <li class="" lay-index="2">内推档案</li>
+              </ul>
+            </div>
+            <div class="layui-card-body">
+              <div class="searchDiv lay-this" lay-card="1">
+                <div style="float: right;">
+                  <span class="layui-btn layui-btn-normal" id="addIntermediary"><i class="layui-icon layui-icon-add-1"></i>添加</span>
+                </div>
+                <table>
+                  <tr>
+                    <td><input type="text" placeholder="中介名称" class="layui-input"></td>
+                    <td>&nbsp;&nbsp;</td>
+                    <td><input type="text" placeholder="前归属人" class="layui-input"></td>
+                    <td>&nbsp;&nbsp;</td>
+                    <td><input type="text" placeholder="最后跟进" class="layui-input"></td>
+                    <td>&nbsp;&nbsp;</td>
+                    <td><span class="layui-btn layui-btn-normal"><i class="layui-icon layui-icon-search">查询</i></span></td>
+                  </tr>
+                </table>
               </div>
-              <table>
-                <tr>
-                  <td><input type="text" placeholder="中介名称" class="layui-input"></td>
-                  <td>&nbsp;&nbsp;</td>
-                  <td><input type="text" placeholder="前归属人" class="layui-input"></td>
-                  <td>&nbsp;&nbsp;</td>
-                  <td><input type="text" placeholder="最后跟进" class="layui-input"></td>
-                  <td>&nbsp;&nbsp;</td>
-                  <td><span class="layui-btn layui-btn-normal"><i class="layui-icon layui-icon-search">查询</i></span></td>
-                </tr>
-              </table>
+              <div class="searchDiv" lay-card="2">
+                <div style="float: right;">
+                  <span class="layui-btn layui-btn-normal" id="addBtn"><i class="layui-icon layui-icon-add-1"></i>添加</span>
+                </div>
+                <table class="layui-form">
+                  <tr>
+                    <td><input type="text" placeholder="关键字段查询" class="layui-input"></td>
+                    <td>&nbsp;&nbsp;</td>
+                    <td><span class="layui-btn layui-btn-normal"><i class="layui-icon layui-icon-search">查询</i></span></td>
+                  </tr>
+                </table>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-<div style="margin-top:15px;">
-  <div class="layui-container">
-    <div class="layui-row">
-      <div class="layui-col-md12">
-        <div class="layui-card">
-          <div class="layui-card-body">
-            <div class="cardContent lay-this" lay-card="1">
-              <table id="tableData1" lay-filter="tableData1"></table>
+  <div style="margin-top:15px;">
+    <div class="layui-container">
+      <div class="layui-row">
+        <div class="layui-col-md12">
+          <div class="layui-card">
+            <div class="layui-card-body">
+              <div class="cardContent lay-this" lay-card="1">
+                <table id="tableData1" lay-filter="tableData1"></table>
+              </div>
+              <div class="cardContent" lay-card="2">
+                <table id="tableData2" lay-filter="tableData2"></table>
+              </div>
             </div>
           </div>
         </div>
@@ -115,15 +137,10 @@
 <script type="text/html" id="addIntermediaryTpl">
   <div class="addTable">
     <div class="layui-card">
-      <div class="layui-card-header"><i class="layui-icon layui-icon-spread-left"></i>&nbsp;&nbsp;新增中介档案
-        <p class="head-toolBtn">
-          <b class="red">*</b>为必填项
-        </p>
-      </div>
       <div class="layui-card-body">
         <table>
           <tr>
-            <td class="titleTd"><b class="red">*</b>公司名称</td>
+            <td class="titleTd"><b class="red">*</b>公司名称：</td>
             <td colspan="3"><input type="text" class="layui-input" placeholder=""></td>
             <td class="titleTd">备注说明：</td>
             <td rowspan="4"><textarea class="layui-textarea"></textarea></td>
@@ -148,7 +165,46 @@
         </table>
       </div>
     </div>
-    <p style="text-align: center;">
+    <hr>
+    <p class="btnP">
+      <span class="layui-btn layui-btn-normal">提交保存</span>
+      <span class="layui-btn layui-btn-primary" id="closePage">返回</span>
+    </p>
+  </div>
+</script>
+<script type="text/html" id="addTpl">
+  <div class="addTable">
+    <div class="layui-card">
+      <div class="layui-card-body">
+        <table>
+          <tr>
+            <td class="titleTd"><b class="red">*</b>内推名称：</td>
+            <td colspan="3"><input type="text" class="layui-input" placeholder=""></td>
+            <td class="titleTd">备注说明：</td>
+            <td rowspan="4"><textarea class="layui-textarea"></textarea></td>
+          </tr>
+          <tr>
+            <td class="titleTd">联系人：</td>
+            <td><input type="text" class="layui-input"></td>
+            <td class="titleTd">联系电话：</td>
+            <td><input type="text" class="layui-input"></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="titleTd">办公地址：</td>
+            <td colspan="3"><input type="text" class="layui-input" placeholder=""></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="titleTd">附件资料：</td>
+            <td colspan="3"><input type="text" class="layui-input" placeholder=""></td>
+            <td></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <hr>
+    <p class="btnP">
       <span class="layui-btn layui-btn-normal">提交保存</span>
       <span class="layui-btn layui-btn-primary" id="closePage">返回</span>
     </p>
@@ -162,7 +218,7 @@
     ,table = layui.table
     ,layer = layui.layer;
 
-    /*$('.navUl').find('li').on('click',function(obj){
+    $('.navUl').find('li').on('click',function(obj){
       var index = $(this).attr('lay-index');
       $(this).siblings().removeClass('active');
       $(this).addClass('active');
@@ -170,7 +226,7 @@
       $('.searchDiv[lay-card='+index+']').addClass('lay-this');
       $('.cardContent').removeClass('lay-this');
       $('.cardContent[lay-card='+index+']').addClass('lay-this');
-    })*/
+    })
     var data1 = [
       { no:1,name:'北京微音软件有限公司',people:'罗滔',address:'18888888',contacts:'张三',post:'经理',phone:'1888888',licens:'北京微音软件有限公司'},
       { no:2,name:'北京微音软件有限公司',people:'罗滔',address:'18888888',contacts:'张三',post:'经理',phone:'1888888',licens:'北京微音软件有限公司'},
@@ -180,7 +236,6 @@
     ];
     table.render({
       elem:'#tableData1',
-      size:'lg',
       data: data1,
       page:true,
       height:'610px',
@@ -197,6 +252,26 @@
       ]]
     })
     
+    var data2 = [
+      { no:'1',name:'北京微音软件有限公司',contacts:'罗滔',phone:'18888888',address:'张三',},
+      { no:'2',name:'北京微音软件有限公司',contacts:'罗滔',phone:'18888888',address:'张三',},
+      { no:'3',name:'北京微音软件有限公司',contacts:'罗滔',phone:'18888888',address:'张三',},
+    ];
+    table.render({
+      elem:'#tableData2',
+      data: data2,
+      height:'610px',
+      toolbar:$('#toolbarTpl').html(),
+      page:true,
+      cols:[[
+        {title:'序号',field:'no',sort:true,width:'8%',},
+        {title:'内推名称',field:'name', sort:true, },
+        {title:'联系人',field:'contacts',width:'14%',sort:true,},
+        {title:'联系电话',field:'phone',width:'12%',},
+        {title:'客户类型',field:'type', width:'12%',sort:true,},
+        {title:'操作',field:'',templet: getMoreTpl(), width:'15%',fixed:'right', },
+      ]]
+    })
     function getMoreTpl(){
       return function(d){
         return [
@@ -209,8 +284,12 @@
     $('#addIntermediary').click(function(){
       var addProjectWin = layer.open({
         type:1,
-        area:['70%','50%'],
-        title:'添加项目信息',
+        offset:'100px',
+        area:['1000px','340px'],
+        title:['<i class="layui-icon layui-icon-spread-left"></i>&nbsp;&nbsp;添加中介档案',
+                '<span class="headTips">',
+                  '<b class="red">*</b>为必填项',
+                '</span>'].join(''),
         content:$('#addIntermediaryTpl').html(),
         success:function(){
           $('#closePage').unbind().on('click',function(){
@@ -219,7 +298,26 @@
         }
       })
     })
-    
+    $('#addBtn').click(function(){
+      var addWin = layer.open({
+        type:1,
+        offset:'100px',
+        area:['1100px','350px'],
+         title:['<i class="layui-icon layui-icon-spread-left"></i>&nbsp;&nbsp;内推档案',
+                '<span class="headTips">',
+                  '<b class="red">*</b>为必填项',
+                '</span>'].join(''),
+        content:$('#addTpl').html(),
+        success:function(){
+          $('#closePage').unbind().on('click',function(){
+            layer.close(addWin);
+          })
+        }
+      })
+    })
+    $('#refreshBtn').click(function(){
+      location.reload();
+    })
   })
 </script>
 </html>

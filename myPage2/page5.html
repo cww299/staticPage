@@ -29,31 +29,18 @@
     .lay-this{
       display: block;
     }
-    .red{
-      color: red;
-    }
-    .addTable table{
-      width: 80%;
-      margin: 10px auto;
-    }
-    .addTable table td{
-      padding-top: 8px;
-    }
+    
+    
     .titleTd{
       text-align: right;
       width: 150px;
     }
     .layui-layer-title,.layui-layer-setwin{
-      display: none;
+      
     }
-    .addTable .layui-card-header{
-      margin: 10px auto;
-      height: 43px;
-      line-height: 43px;
-    }
-    .layui-layer-page .layui-layer-content{
-      height: 95% !important;
-      padding: 10px 50px;
+    .layui-btn-sm {
+      height: 23px;
+      line-height: 23px;
     }
     @media screen and (min-width: 1500px){
       .layui-container {
@@ -72,87 +59,95 @@
   </span>
   <div class="rightDiv moreBtn">
     <span><i class="layui-icon layui-icon-left"></i></span>
-    <span><i class="layui-icon layui-icon-refresh"></i></span>
+    <span><i class="layui-icon layui-icon-refresh" id="refreshBtn"></i></span>
   </div>
 </div>
-<div>
-  <div class="layui-container">
-    <div class="layui-row">
-      <div class="layui-col-md12">
-        <div class="layui-card">
-          <div class="layui-card-header">
-            <ul class="navUl">
-              <li class="active" lay-index="1">项目信息</li>
-              <li class="" lay-index="2">楼宇信息</li>
-              <li class="" lay-index="3">房源信息</li>
-            </ul>
-          </div>
-          <div class="layui-card-body">
-            <div class="searchDiv lay-this" lay-card="1">
-              <div style="float: right;">
-                <span class="layui-btn layui-btn-normal" id="addProject"><i class="layui-icon layui-icon-add-1"></i>添加</span>
-                <span class="layui-btn layui-btn-primary"><i class="layui-icon layui-icon-upload-drag"></i>导出</span>
-              </div>
-              <table>
-                <tr>
-                  <td><input type="text" placeholder="搜索项目名称" class="layui-input"></td>
-                  <td>&nbsp;&nbsp;</td>
-                  <td><input type="text" placeholder="搜索公司名称" class="layui-input"></td>
-                  <td>&nbsp;&nbsp;</td>
-                  <td><span class="layui-btn layui-btn-normal"><i class="layui-icon layui-icon-search">查询</i></span></td>
-                </tr>
-              </table>
+<div class="hiddenScrool">
+  <div>
+    <div class="layui-container">
+      <div class="layui-row">
+        <div class="layui-col-md12">
+          <div class="layui-card">
+            <div class="layui-card-header">
+              <ul class="navUl">
+                <li class="active" lay-index="1">项目信息</li>
+                <li class="" lay-index="2">楼宇信息</li>
+                <li class="" lay-index="3">房源信息</li>
+              </ul>
             </div>
-            <div class="searchDiv" lay-card="2">
-              <div style="float: right;">
-                <span class="layui-btn layui-btn-normal" id="addFloor"><i class="layui-icon layui-icon-add-1"></i>添加</span>
-                <span class="layui-btn layui-btn-primary"><i class="layui-icon layui-icon-upload-drag"></i>导出</span>
+            <div class="layui-card-body">
+              <div class="searchDiv lay-this" lay-card="1">
+                <div style="float: right;">
+                  <span class="layui-btn layui-btn-normal" id="addProject"><i class="layui-icon layui-icon-add-1"></i>添加</span>
+                  <span class="layui-btn layui-btn-primary"><i class="layui-icon layui-icon-upload-drag"></i>导出</span>
+                </div>
+                <table>
+                  <tr>
+                    <td><input type="text" placeholder="搜索项目名称" class="layui-input"></td>
+                    <td>&nbsp;&nbsp;</td>
+                    <td><input type="text" placeholder="搜索公司名称" class="layui-input"></td>
+                    <td>&nbsp;&nbsp;</td>
+                    <td><span class="layui-btn layui-btn-normal"><i class="layui-icon layui-icon-search">查询</i></span></td>
+                  </tr>
+                </table>
               </div>
-              <table>
-                <tr>
-                  <td><input type="text" placeholder="搜索关键字" class="layui-input"></td>
-                  <td>&nbsp;&nbsp;</td>
-                  <td><span class="layui-btn layui-btn-normal"><i class="layui-icon layui-icon-search"></i>查询</span></td>
-                  <td>&nbsp;&nbsp;</td>
-                  <td><span class="layui-btn layui-btn-normal"><i class="layui-icon layui-icon-search"></i>条件再查询</span></td>
-                </tr>
-              </table>
-            </div>
-            <div class="searchDiv" lay-card="3">
-              <div style="float: right;">
-                <span class="layui-btn layui-btn-normal" id="addHouse"><i class="layui-icon layui-icon-add-1"></i>添加</span>
-                <span class="layui-btn layui-btn-primary"><i class="layui-icon layui-icon-upload-drag"></i>导出</span>
+              <div class="searchDiv" lay-card="2">
+                <div style="float: right;">
+                  <span class="layui-btn layui-btn-normal" id="addFloor"><i class="layui-icon layui-icon-add-1"></i>添加</span>
+                  <span class="layui-btn layui-btn-primary"><i class="layui-icon layui-icon-upload-drag"></i>导出</span>
+                </div>
+                <table>
+                  <tr>
+                    <td><input type="text" placeholder="搜索关键字" class="layui-input"></td>
+                    <td>&nbsp;&nbsp;</td>
+                    <td><input type="text" placeholder="搜索项目名称" class="layui-input"></td>
+                    <td>&nbsp;&nbsp;</td>
+                    <td><span class="layui-btn layui-btn-normal"><i class="layui-icon layui-icon-search"></i>查询</span></td>
+                    <td>&nbsp;&nbsp;</td>
+                    <td><span class="layui-btn layui-btn-normal"><i class="layui-icon layui-icon-search"></i>条件再查询</span></td>
+                  </tr>
+                </table>
               </div>
-              <table>
-                <tr>
-                  <td><input type="text" placeholder="搜索关键字" class="layui-input"></td>
-                  <td>&nbsp;&nbsp;</td>
-                  <td><span class="layui-btn layui-btn-normal"><i class="layui-icon layui-icon-search"></i>查询</span></td>
-                  <td>&nbsp;&nbsp;</td>
-                  <td><span class="layui-btn layui-btn-normal"><i class="layui-icon layui-icon-search"></i>条件再查询</span></td>
-                </tr>
-              </table>
+              <div class="searchDiv" lay-card="3">
+                <div style="float: right;">
+                  <span class="layui-btn layui-btn-normal" id="addHouse"><i class="layui-icon layui-icon-add-1"></i>添加</span>
+                  <span class="layui-btn layui-btn-primary"><i class="layui-icon layui-icon-upload-drag"></i>导出</span>
+                </div>
+                <table class="layui-form">
+                  <tr>
+                    <td><input type="text" placeholder="搜索关键字" class="layui-input"></td>
+                    <td>&nbsp;&nbsp;</td>
+                    <td><input type="text" placeholder="搜索项目名称" class="layui-input"></td>
+                    <td>&nbsp;&nbsp;</td>
+                    <td><select lay-search><option value="">楼宇</option></select></td>
+                    <td>&nbsp;&nbsp;</td>
+                    <td><span class="layui-btn layui-btn-normal"><i class="layui-icon layui-icon-search"></i>查询</span></td>
+                    <td>&nbsp;&nbsp;</td>
+                    <td><span class="layui-btn layui-btn-normal"><i class="layui-icon layui-icon-search"></i>条件再查询</span></td>
+                  </tr>
+                </table>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-<div style="margin-top:15px;">
-  <div class="layui-container">
-    <div class="layui-row">
-      <div class="layui-col-md12">
-        <div class="layui-card">
-          <div class="layui-card-body">
-            <div class="cardContent lay-this" lay-card="1">
-              <table id="tableData1" lay-filter="tableData1"></table>
-            </div>
-            <div class="cardContent" lay-card="2">
-              <table id="tableData2" lay-filter="tableData2"></table>
-            </div>
-            <div class="cardContent" lay-card="3">
-              <table id="tableData3" lay-filter="tableData3"></table>
+  <div style="margin-top:10px;">
+    <div class="layui-container">
+      <div class="layui-row">
+        <div class="layui-col-md12">
+          <div class="layui-card">
+            <div class="layui-card-body">
+              <div class="cardContent lay-this" lay-card="1">
+                <table id="tableData1" lay-filter="tableData1"></table>
+              </div>
+              <div class="cardContent" lay-card="2">
+                <table id="tableData2" lay-filter="tableData2"></table>
+              </div>
+              <div class="cardContent" lay-card="3">
+                <table id="tableData3" lay-filter="tableData3"></table>
+              </div>
             </div>
           </div>
         </div>
@@ -164,11 +159,6 @@
 <script type="text/html" id="addProjectTpl">
   <div class="addTable">
     <div class="layui-card">
-      <div class="layui-card-header"><i class="layui-icon layui-icon-spread-left"></i>&nbsp;&nbsp;添加项目信息
-        <p class="head-toolBtn">
-          <b class="red">*</b>为必填项
-        </p>
-      </div>
       <div class="layui-card-body">
         <table>
           <tr>
@@ -272,7 +262,8 @@
         </table>
       </div>
     </div>
-    <p style="text-align: center;">
+    <hr>
+    <p class="btnP">
       <span class="layui-btn layui-btn-normal">保存数据</span>
       <span class="layui-btn layui-btn-green">编辑数据</span>
       <span class="layui-btn layui-btn-danger">删除数据</span>
@@ -283,11 +274,6 @@
 <script type="text/html" id="addFloorTpl">
   <div class="addTable">
     <div class="layui-card">
-      <div class="layui-card-header"><i class="layui-icon layui-icon-spread-left"></i>&nbsp;&nbsp;添加楼宇信息
-        <p class="head-toolBtn">
-          <b class="red">*</b>为必填项
-        </p>
-      </div>
       <div class="layui-card-body">
         <table>
           <tr>
@@ -381,7 +367,8 @@
         </table>
       </div>
     </div>
-    <p style="text-align: center;">
+    <hr>
+    <p class="btnP">
       <span class="layui-btn layui-btn-normal">保存数据</span>
       <span class="layui-btn layui-btn-green">编辑数据</span>
       <span class="layui-btn layui-btn-danger">删除数据</span>
@@ -392,11 +379,6 @@
 <script type="text/html" id="addHouseTpl">
   <div class="addTable">
     <div class="layui-card">
-      <div class="layui-card-header"><i class="layui-icon layui-icon-spread-left"></i>&nbsp;&nbsp;添加房源信息
-        <p class="head-toolBtn">
-          <b class="red">*</b>为必填项
-        </p>
-      </div>
       <div class="layui-card-body">
         <table>
           <tr>
@@ -502,7 +484,7 @@
         </table>
       </div>
     </div>
-    <p style="text-align: center;">
+    <p class="btnP">
       <span class="layui-btn layui-btn-normal">保存数据</span>
       <span class="layui-btn layui-btn-green">编辑数据</span>
       <span class="layui-btn layui-btn-danger">删除数据</span>
@@ -541,7 +523,6 @@
     ];
     table.render({
       elem:'#tableData1',
-      size:'lg',
       data: data1,
       height:'610px',
       page:true,
@@ -570,7 +551,6 @@
       data: data2,
       page:true,
       height:'610px',
-      size:'lg',
       cols:[[
         {title:'序号',field:'no', width:'6%',sort:true,fixed:'left',},
         {title:'项目编号',field:'number', width:'15%',sort:true,},
@@ -594,7 +574,6 @@
       data: data3,
       page:true,
       height:'610px',
-      size:'lg',
       cols:[[
         {title:'序号',field:'no', width:'6%',sort:true,fixed:'left',},
         {title:'项目名称',field:'name', width:'10%',sort:true,},
@@ -621,7 +600,10 @@
       var addProjectWin = layer.open({
         type:1,
         area:['70%','90%'],
-        title:'添加项目信息',
+        title:['<i class="layui-icon layui-icon-spread-left"></i>&nbsp;&nbsp;添加项目信息',
+                '<span class="headTips">',
+                  '<b class="red">*</b>为必填项',
+                '</span>'].join(''),
         content:$('#addProjectTpl').html(),
         success:function(){
           $('#closePage').unbind().on('click',function(){
@@ -634,7 +616,10 @@
       var addWin = layer.open({
         type:1,
         area:['70%','90%'],
-        title:'添加楼宇信息',
+        title:['<i class="layui-icon layui-icon-spread-left"></i>&nbsp;&nbsp;添加楼宇信息',
+                '<span class="headTips">',
+                  '<b class="red">*</b>为必填项',
+                '</span>'].join(''),
         content:$('#addFloorTpl').html(),
         success:function(){
           $('#closePage').unbind().on('click',function(){
@@ -647,7 +632,10 @@
       var addHouseWin = layer.open({
         type:1,
         area:['70%','90%'],
-        title:'添加房源楼宇信息',
+        title:['<i class="layui-icon layui-icon-spread-left"></i>&nbsp;&nbsp;添加房源楼宇信息',
+                '<span class="headTips">',
+                  '<b class="red">*</b>为必填项',
+                '</span>'].join(''),
         content:$('#addHouseTpl').html(),
         success:function(){
           $('#closePage').unbind().on('click',function(){
@@ -655,6 +643,10 @@
           })
         }
       })
+    })
+
+    $('#refreshBtn').click(function(){
+      location.reload();
     })
   })
 </script>

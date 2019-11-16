@@ -3,14 +3,16 @@
 <head>
   <title></title>
   <link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
+  <meta name="format-detection"  content="telephone=no">
+  <meta  http-equiv="x-rim-auto-match" content="none">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <style>
   	.nav{
-  		background-color:#c9c9c9;
+  		background-color:#f1f2f6;
   	}
     .layui-nav{
-		background-color:#c9c9c966;
+		background-color:#f1f2f6;
 		color: black;
     }
     .layui-nav .layui-nav-item a{
@@ -32,6 +34,7 @@
     }
     .bgImg img{
     	max-width: 100%;
+    	height: 100%;
     }
     .iconDiv{
     	background: #80808063;
@@ -82,6 +85,12 @@
     .whyDiv li.isThis{
 		background-color:#8080804f;
     }
+    .whyDiv li.isThis .reds{
+    	background: none;
+    }
+     .whyDiv li.isThis .blue{
+    	background: none;
+    }
 	.whyDiv li.borderLeft{
 		border-left: 1px solid #8080804f;
 	}
@@ -91,23 +100,99 @@
     .whyDiv li p.imgP{
 		margin-bottom: 25px;
     }
+    .whyDiv li p.bottomBorder{
+    	margin-top: 30px;
+    }
+    .whyDiv li p.bottomBorder span{
+	    width: 20px;
+		height: 2px;
+	    display: inline-block;
+    }
+    .blue{
+    	background: blue;
+    }
+    .reds{
+    	background: red;
+    }
     .choose{
     	text-align: center;
     	padding: 40px 0;
-    	background:url('./img/page82/') no-repeat;
+    	background:url('./img/page82/11.png') no-repeat;
+    }
+    .choose .priceChoose{
+    	padding: 50px 90px;
+    }
+    .choose .priceOfOne{
+    	box-shadow: 0px 0px 5px #8080807d;
+    	background: white;
+    }
+    .choose .head{
+    	background: #a7aeb4;
+	    color: white;
+	    padding: 20px 0;
+    }
+    .choose .head p{
+    	margin-bottom: 20px;
+    	margin-top: 8px;
+    }
+    .choose .head .title{
+    	background: white;
+	    color: red;
+	    border-radius: 15px;
+    }
+    .choose .head .telphone{
+    	padding: 2px 10px;
+    	background: white;
+	    color: red;
+	    border-radius: 10px;
     }
 
-
+    .choose .content{
+    	padding: 40px;
+    	color: gray;
+    }
+    .choose .content li{
+    	width: 50%;
+	    float: left;
+	    text-align: left;
+	    margin-bottom: 5px;
+    }
+    .choose .content li i{
+    	color: red;
+	    font-weight: bold;
+	    font-size: 12px;
+	    margin-right: 10px;
+    }
+    .choose .content .allLi li{
+    	width: 100%;
+    }
+    .choose .content p{
+	    margin: 40px 0;
+	    font-weight: bold;
+    }
+    .choose .content .price{
+    	font-size: 29px;
+	    color: red;
+	    padding-right: 10px;
+	    line-height: 5px;
+    }
 
 
     .company{
     	text-align: center;
     	padding: 40px 0;
     }
-
-
-
-
+    .company ul{
+    	overflow: hidden;
+    	margin-top: 20px;
+    }
+    .company li{
+    	float: left;
+	    width: 172px;
+	    padding-bottom: 10px;
+	    padding-left: 10px;
+	    text-align: center;
+    }
     .primission{
     	background: #fafafa;
 		text-align: center;
@@ -123,12 +208,40 @@
 		padding: 40px 0;
     }
     .primission p.imgP img{
-
+    	margin: 0 50px;
     }
     .phoneContent{
     	display: none;
     }
+    #cursorDiv{
+    	height: 660px !important;
+    }
+    .layui-carousel-arrow{
+        font-size: 60px;
+	    width: 60px;
+	    height: 60px;
+	    background: none;
+	    color: white;
+    }
+    .layui-carousel-ind ul{
+    	background: none;
+    }
+    .layui-carousel-arrow:hover, .layui-carousel-ind ul:hover{
+    	background: none;
+    	color: #808080ed;
+    }
+    .layui-btn-danger{
+    	background: red;
+    }
+    .layui-carousel-ind li{
+    	width: 28px;
+    	border-radius: 8px;
+    	height: 8px;
+    }
     @media screen and (max-width: 540px){
+      #cursorDiv{
+      	height: 200px !important;
+      }
       .pcContent{
       	display: none;
       }
@@ -168,18 +281,32 @@
       }
       .whyDiv li{
   	    width: 49%;
-	    height: 220px;
+	    height: 170px;
 	    padding: 10px 0;
 	    margin-top: 0px;
 	    border-left: 1px solid #8080804f;
       }
+      .whyDiv li p.imgP {
+   	 	margin-bottom: 10px;
+	  }
+      .toolbar{
+      	    position: fixed;
+    		background: black;
+		    height: 60px;
+		    width: 100%;
+		    bottom: 0;
+      }
       .toolbar span{
-      	position: fixed;
-	    bottom: 20px;
-	    right: 20px;
+      	    position: fixed;
+		    bottom: 12px;
       }
       .toolbar span.second{
-      	right: 80px;
+      	left: 60px;
+      	
+      	bottom: 9px;
+      }
+      .toolbar span.second a{
+      	color: white;
       }
       .toolbar span img{
   	    width: 40px;
@@ -187,8 +314,37 @@
       }
       .toolbar span i{
       	    font-size: 43px;
-    		color: #cc0000;
+    		color: white;
       }
+      .choose .priceChoose{
+      	    padding: 50px 30px;
+    		padding-bottom: 0px;
+      }
+      .layui-carousel-ind{
+      	    top: -20px;
+      }
+      .layui-carousel:hover .layui-carousel-arrow[lay-type=add], .layui-carousel[lay-arrow=always] .layui-carousel-arrow[lay-type=add] {
+    		right: -5px;
+	  }
+	  .layui-carousel[lay-arrow=always] .layui-carousel-arrow{
+	  	left: -5px;
+	  }
+    }
+    @media screen and (max-width: 380px){
+    	.company li{
+    		width: 46%;
+    	}
+    	.company li img{
+      		width: 100%;
+		}
+    }
+     @media screen and (max-width: 280px){
+    	.company li{
+    		width: 42%;
+    	}
+    	.company li img{
+      		width: 100%;
+		}
     }
   </style>
 </head>
@@ -216,7 +372,7 @@
 				    <a href="#whyDiv">产品优势</a>
 				  </li>
 				  <li class="layui-nav-item right">
-				    <a href="http://www.qianxinet.com">首页</a>
+				    <a href="https://qianxiyun.com/">首页</a>
 				  </li>
 				</ul>
 		    </div>
@@ -227,10 +383,16 @@
 		<i id="moreMenu" class="layui-icon layui-icon-more-vertical"></i>
 	</div>
 </div>
-<div class="bgImg">
-	<img src="./img/page82/banner3.jpg">
+<div class="bgImg" >
+	<div class="layui-carousel" id="cursorDiv">
+	  <div carousel-item>
+	    <div><img src="./img/page82/banner1.jpg"></div>
+	    <div><a href="https://www.workec.com/form/dynamic/ad97gH5tcOY%3D.html?chan=8829"><img src="./img/page82/banner2.jpg"></a></div>
+	    <div><img src="./img/page82/banner3.jpg"></div>
+	  </div>
+	</div>	
 </div>
-<div class="iconDiv" >
+<div class="iconDiv pcContent" >
 	<div class="layui-container">
 	    <div class="layui-row"> 
 	      <div class="layui-col-md12">
@@ -265,23 +427,23 @@
     <div class="layui-row"> 
       <div class="layui-col-md12">
       	<h2 class="titleH2">为什么选择网易企业邮箱？</h2>
-      	<p class="titleH2Info">网易企业邮箱，最安全稳定，业界第1反垃圾技术，手法速度最快，22年运营经验，1500人专业团队，72万家企业信赖。</p>
+      	<p class="titleH2Info">网易企业邮箱，最安全稳定，业界第一反垃圾技术，手法速度最快，22年运营经验，1500人专业团队，74万家企业信赖。</p>
       	<ul>
       		<li class="isThis borderLeft">
 				<p class="imgP">
 					<img src="./img/page82/3.png">
 				</p>
 				<p class="title">品牌</p>
-				<p class="info">22年邮箱运维经验，10.46亿用户认可支持；超过61万加企业的信赖之选
-				</p>
+				<p class="info">22年邮箱运维经验，10.46亿用户认可支持；超过74万家企业的信赖之选</p>
+				<p class="bottomBorder pcContent"><span class="blue"></span><span class="reds"></span></p>
       		</li>
       		<li class="">
 				<p class="imgP">
 					<img src="./img/page82/2-1.png">
 				</p>
 				<p class="title">安全</p>
-				<p class="info">获得邮件领域高级别安全认证--中国信息安全检测中心EAL3+资质
-				</p>
+				<p class="info">获得邮件领域高级别安全认证--中国信息安全检测中心EAL3+资质</p>
+				<p class="bottomBorder pcContent"><span class="blue"></span><span class="reds"></span></p>
       		</li>
       		<li class="">
 				<p class="imgP">
@@ -290,6 +452,7 @@
 				<p class="title">稳定</p>
 				<p class="info">从矩阵服务器架构，到24小时专属运维团队，保障企业客户的稳定使用。
 				</p>
+				<p class="bottomBorder pcContent"><span class="blue"></span><span class="reds"></span></p>
       		</li>
       		<li class="">
 				<p class="imgP">
@@ -298,6 +461,7 @@
 				<p class="title">畅游</p>
 				<p class="info">多线介入，10G带宽，优质IP资源库及全球服务器资源，保障畅游无阻。
 				</p>
+				<p class="bottomBorder pcContent"><span class="blue"></span><span class="reds"></span></p>
       		</li>
       		<li class="">
 				<p class="imgP">
@@ -306,6 +470,7 @@
 				<p class="title">易用</p>
 				<p class="info">上千项贴心功能；企业易管理，员工易用，随时随地移动办公。
 				</p>
+				<p class="bottomBorder pcContent"><span class="blue"></span><span class="reds"></span></p>
       		</li>
       		<li class="">
 				<p class="imgP">
@@ -314,6 +479,7 @@
 				<p class="title">服务</p>
 				<p class="info">前进有方向，服务无止境。300名客服团队，电话接通率90%
 				</p>
+				<p class="bottomBorder pcContent"><span class="blue"></span><span class="reds"></span></p>
       		</li>
       	</ul>
       </div>
@@ -325,8 +491,55 @@
     <div class="layui-row"> 
       <div class="layui-col-md12">
        	<h2 class="titleH2">选择最适合您的网易企业邮箱版本</h2>
-       	<p class="titleH2Info">网易企业邮箱，专注企业邮箱21年，新用户提交开工限时五折</p>
-        
+       	<p class="titleH2Info">网易企业邮箱，专注企业邮箱22年，新用户提交开通限时五折</p>
+        <div class="layui-row layui-col-space30">
+        	<div class="layui-col-md6 priceChoose">
+        		<div class="priceOfOne">
+	        		<div class="head">
+	        			<h2>网易邮箱企业版</h2>
+	        			<p>安全稳定 无限容量 71万家企业信赖之选</p>
+	        			<span class="telphone">咨询电话：029-81023319</span>
+	        		</div>
+	        		<div class="content">
+	        			<ul style="overflow: hidden;">
+	        				<li><i class="layui-icon layui-icon-ok"></i>不限邮箱容量</li>
+	        				<li><i class="layui-icon layui-icon-ok"></i>5G个人网盘</li>
+	        				<li><i class="layui-icon layui-icon-ok"></i>100M普通附件</li>
+	        				<li><i class="layui-icon layui-icon-ok"></i>马上及时沟通</li>
+	        				<li><i class="layui-icon layui-icon-ok"></i>邮件全文翻译</li>
+	        				<li><i class="layui-icon layui-icon-ok"></i>50G企业网盘</li>
+	        				<li><i class="layui-icon layui-icon-ok"></i>16G云附件</li>
+	        				<li><i class="layui-icon layui-icon-ok"></i>一对一专属客服</li>
+	        				<li><i class="layui-icon layui-icon-ok"></i>邮件传真号码</li>
+	        				<li><i class="layui-icon layui-icon-ok"></i>7*24小时售后服务</li>
+	        			</ul>
+	        			<p>5用户价格：<b class="price">￥900</b><del>￥1500</del></p>
+	        			<a href="https://www.workec.com/form/dynamic/ad97gH5tcOY%3D.html?chan=8829" class="layui-btn layui-btn-danger">立即购买</a>
+	        		</div>
+        		</div>
+        	</div>
+        	<div class="layui-col-md6 priceChoose">
+        		<div class="priceOfOne">
+	        		<div class="head">
+	        			<h2>企业邮箱大客户定制</h2>
+	        			<p>专业团队 快速响应 促进本地化一对一服务</p>
+	        			<a class="telphone">咨询电话：029-81023319</span>
+	        		</div>
+	        		<div class="content">
+	        			<ul style="overflow: hidden;" class="allLi">
+	        				<li><i class="layui-icon layui-icon-ok"></i>专业版全部功能，个性化需求优先支持</li>
+	        				<li><i class="layui-icon layui-icon-ok"></i>技术专家上门服务，运营工程师全程协助开通</li>
+	        				<li><i class="layui-icon layui-icon-ok"></i>售后团队及时响应，7*24小时专属客服专属</li>
+	        				<li><i class="layui-icon layui-icon-ok"></i>大客户定制整合方案，专属邮箱数据分析</li>
+	        				<li><i class="layui-icon layui-icon-ok"></i>
+	        				专属大客户特价支持，邮箱数据无缝迁移</li>
+	        			</ul>
+	        			<p>根据您的需求而定制的专属邮箱</p>
+	        			<a href="https://www.workec.com/form/dynamic/ad97gH5tcOY%3D.html?chan=8829" class="layui-btn layui-btn-danger">我要定制</a>
+	        		</div>
+        		</div>
+        	</div>
+        </div>
       </div>
     </div>
   </div>
@@ -337,7 +550,34 @@
       <div class="layui-col-md12">
       	<h2 class="titleH2" style="color: black;">超过4700万用户正在使用网易企业邮箱</h2>
       	<p class="titleH2Info">我们也在使用网易企业邮箱</p>
-        
+        <div>
+        	<ul>
+        		<li><img src="./img/page82/44.png"></li>
+        		<li><img src="./img/page82/55.png"></li>
+        		<li><img src="./img/page82/77.png"></li>
+        		<li><img src="./img/page82/88.png"></li>
+        		<li><img src="./img/page82/99.png"></li>
+        		<li><img src="./img/page82/111.png"></li>
+        		<li><img src="./img/page82/33333.png"></li>
+        		<li><img src="./img/page82/7777.png"></li>
+        		<li><img src="./img/page82/6666.png"></li>
+        		<li><img src="./img/page82/888.png"></li>
+        		<li><img src="./img/page82/777.png"></li>
+        		<li><img src="./img/page82/222.png"></li>
+        		<li><img src="./img/page82/22222.png"></li>
+        		<li><img src="./img/page82/8888.png"></li>
+        		<li><img src="./img/page82/5555.png"></li>
+        		<li><img src="./img/page82/999.png"></li>
+        		<li><img src="./img/page82/666.png"></li>
+        		<li><img src="./img/page82/333.png"></li>
+        		<li><img src="./img/page82/11111.png"></li>
+        		<li><img src="./img/page82/9999.png"></li>
+        		<li><img src="./img/page82/4444.png"></li>
+        		<li><img src="./img/page82/2222.png"></li>
+        		<li><img src="./img/page82/555.png"></li>
+        		<li><img src="./img/page82/444.png"></li>
+        	</ul>
+        </div>
       </div>
     </div>
   </div>
@@ -350,30 +590,44 @@
         <p class="titleH2Info">西安千喜网络科技有限公司成立于2009年12月，是网易授权的企业产品一级经销商</p>
         <p class="info">&nbsp;&nbsp;&nbsp;&nbsp;西安千喜网络科技有限公司成立于2009年12月，是网易授权的企业产品一级经销商。此外我公司也是陕西省公安厅公安网升级优化及维护服务商、西安市雪亮工程（即公共安全视频监控建设联网应用）项目市级中心机房及运维调度服务中心的服务商。2019年我司获工信部批准成为陕西省首家顶级域名注册服务机构，负责管理运营”.CN“、”.中国“、”.COM“、”.NET“等顶级域的注册服务系统，此业务填补了陕西省域名注册服务机构的空白。</p>
         <p class="imgP">
-        	<img src="./img/page82/">
-        	<img src="./img/page82/">
+        	<img src="./img/page82/22.png">
+        	<img src="./img/page82/33.png">
         </p>
       </div>
     </div>
   </div>
 </div>
 <div class="toolbar phoneContent">
-	<span>
-		<img src="./img/page82/tel.png">
+	<span style="right: 20%;">
+		<a href="tel:029-81023319"><img src="./img/page82/tel.png"></a>
 	</span>
 	<span class="second">
-		<i class="layui-icon layui-icon-form"></i>
+		<a href="https://www.workec.com/form/dynamic/ad97gH5tcOY%3D.html?chan=8829"><i class="layui-icon layui-icon-form"></i>申请使用</a>
 	</span>
+</div>
+<div class="pcContent">
+	<img src="./img/page82/floor.jpg">
+</div>
+<div class="phoneContent">
+	<img src="./img/page82/floor2.jpg" style="width: 100%;">
 </div>
 </body>
 <script type="text/javascript" src="./layui/layui.js"></script>
 <script type="text/javascript">
-  layui.use(['jquery','layer','form','element',],function(){
+  layui.use(['jquery','layer','form','element','carousel'],function(){
     var $ = layui.jquery
-       ,form = layui.form
-       ,element = layui.element
-       ,layer = layui.layer;
+    ,form = layui.form
+    ,element = layui.element
+    ,carousel = layui.carousel
+    ,layer = layui.layer;
 
+	carousel.render({
+	    elem: '#cursorDiv'
+	    ,width: '100%'
+	    ,arrow: 'always' 
+	    ,indicator:'inside'
+	    ,interval:5000
+    });
 
     $('.whyDiv').find('li').mouseover(function(){
     	var oldImg = $(this).siblings('.isThis').find('img');
@@ -410,7 +664,7 @@
     		content:[
     			'<div class="otherMenu">',
     				'<ul>',
-    					'<li><a href="http://www.qianxinet.com">首页</a></li>',
+    					'<li><a href="https://qianxiyun.com/">首页</a></li>',
     					'<li data-menu="whyDiv">产品优势</li>',
     					'<li data-menu="choose">产品价格</li>',
     					'<li data-menu="company">经典案例</li>',

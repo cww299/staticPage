@@ -12,14 +12,20 @@
       color: red;
     }
     .addTable table{
-      width: 80%;
+      width: 100%;
       margin: 10px auto;
     }
-    .titleTd{
+    .addTable table .titleTd{
       text-align: right;
     }
     .layui-textarea{
       height: 180px;
+    }
+    .addTable .layui-card-body{
+      width: 90%;
+    }
+    .addTable table td {
+      font-weight: normal;
     }
     @media screen and (min-width: 1500px){
       .layui-container {
@@ -38,48 +44,50 @@
   </span>
   <div class="rightDiv moreBtn">
     <span><i class="layui-icon layui-icon-left"></i></span>
-    <span><i class="layui-icon layui-icon-refresh"></i></span>
+    <span><i class="layui-icon layui-icon-refresh" id="refreshBtn"></i></span>
   </div>
 </div>
-<div>
-  <div class="layui-container">
-    <div class="layui-row">
-      <div class="layui-col-md12">
-        <div class="layui-card">
-          <div class="layui-card-body">
-            <div>
-              <div style="float: right;">
-                <span class="layui-btn layui-btn-normal" id="addCustom"><i class="layui-icon layui-icon-add-1"></i>添加</span>
-                <span class="layui-btn layui-btn-normal"><i class="layui-icon layui-icon-add-1"></i>转移客户</span>
+<div class="hiddenScrool">
+  <div>
+    <div class="layui-container">
+      <div class="layui-row">
+        <div class="layui-col-md12">
+          <div class="layui-card">
+            <div class="layui-card-body">
+              <div>
+                <div style="float: right;">
+                  <span class="layui-btn layui-btn-normal" id="addCustom"><i class="layui-icon layui-icon-add-1"></i>添加</span>
+                  <span class="layui-btn layui-btn-normal"><i class="layui-icon layui-icon-add-1"></i>转移客户</span>
+                </div>
+                <table class="layui-form">
+                  <tr>
+                    <td style="width: 120px;"><select><option value="">当前</option></select></td>
+                    <td>&nbsp;&nbsp;</td>
+                    <td style="width: 120px;"><select><option value="">招商阶段</option></select></td>
+                    <td>&nbsp;&nbsp;</td>
+                    <td><input type="text" placeholder="客户名称" class="layui-input"></td>
+                    <td>&nbsp;&nbsp;</td>
+                    <td><input type="text" placeholder="联系电话" class="layui-input"></td>
+                    <td>&nbsp;&nbsp;</td>
+                    <td><span class="layui-btn layui-btn-normal"><i class="layui-icon layui-icon-search">查询</i></span></td>
+                  </tr>
+                </table>
               </div>
-              <table class="layui-form">
-                <tr>
-                  <td style="width: 120px;"><select><option value="">当前</option></select></td>
-                  <td>&nbsp;&nbsp;</td>
-                  <td style="width: 120px;"><select><option value="">招商阶段</option></select></td>
-                  <td>&nbsp;&nbsp;</td>
-                  <td><input type="text" placeholder="客户名称" class="layui-input"></td>
-                  <td>&nbsp;&nbsp;</td>
-                  <td><input type="text" placeholder="联系电话" class="layui-input"></td>
-                  <td>&nbsp;&nbsp;</td>
-                  <td><span class="layui-btn layui-btn-normal"><i class="layui-icon layui-icon-search">查询</i></span></td>
-                </tr>
-              </table>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-<div style="margin-top:15px;">
-  <div class="layui-container">
-    <div class="layui-row">
-      <div class="layui-col-md12">
-        <div class="layui-card">
-          <div class="layui-card-body">
-            <div>
-              <table id="tableData1" lay-filter="tableData1"></table>
+  <div style="margin-top:15px;">
+    <div class="layui-container">
+      <div class="layui-row">
+        <div class="layui-col-md12">
+          <div class="layui-card">
+            <div class="layui-card-body">
+              <div>
+                <table id="tableData1" lay-filter="tableData1"></table>
+              </div>
             </div>
           </div>
         </div>
@@ -91,11 +99,6 @@
 <script type="text/html" id="addCustomTpl">
   <div class="addTable">
     <div class="layui-card">
-      <div class="layui-card-header"><i class="layui-icon layui-icon-spread-left"></i>&nbsp;&nbsp;新增客户&nbsp;&nbsp;&nbsp;&nbsp;<b>客户编号：KF2015123123123</b>
-        <p class="head-toolBtn">
-          <b class="red">*</b>为必填项
-        </p>
-      </div>
       <div class="layui-card-body">
         <table>
           <tr>
@@ -149,7 +152,8 @@
         </table>
       </div>
     </div>
-    <p style="text-align: center;">
+    <hr>
+    <p class="btnP">
       <span class="layui-btn layui-btn-normal">提交保存</span>
       <span class="layui-btn layui-btn-primary" id="closePage">返回</span>
     </p>
@@ -170,18 +174,18 @@
     ];
     table.render({
       elem:'#tableData1',
-      size:'lg',
       data: data1,
       page:true,
+      height:'610px',
       cols:[[
-        {type:'checkbox',},
+        {type:'checkbox',fixed:'left',},
         {title:'招商阶段',field:'bussiness', sort:true, },
         {title:'客户编号',field:'number', width:'10%',sort:true,},
         {title:'客户名称',field:'name', width:'15%',sort:true,},
         {title:'联系人',field:'contacts',width:'8%',sort:true,},
         {title:'联系电话',field:'phone',},
         {title:'最后跟进',field:'last',sort:true,},
-        {title:'操作',field:'',templet: getMoreTpl(), width:'30%',},
+        {title:'操作',field:'',templet: getMoreTpl(), width:'30%',fixed:'right', },
       ]]
     })
     
@@ -201,8 +205,13 @@
     $('#addCustom').click(function(){
       var addProjectWin = layer.open({
         type:1,
-        area:['70%','90%'],
-        title:'添加客户',
+        offset:'100px',
+        area:['1100px','650px'],
+         title:['<i class="layui-icon layui-icon-spread-left"></i>&nbsp;&nbsp;新增客户&nbsp;&nbsp;&nbsp;&nbsp;<b>',
+         '客户编号：KF2015123123123',
+                '<span class="headTips">',
+                  '<b class="red">*</b>为必填项',
+                '</span>'].join(''),
         content:$('#addCustomTpl').html(),
         success:function(){
           $('#closePage').unbind().on('click',function(){
@@ -211,7 +220,9 @@
         }
       })
     })
-    
+    $('#refreshBtn').click(function(){
+      location.reload();
+    })
   })
 </script>
 </html>
