@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>内推档案</title>
+  <title>回款管理(手动)</title>
   <link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
   <link rel="stylesheet" type="text/css" href="./pagecss.css">
   <link rel="shortcut icon" href="./img/sys/icon.ico" type="image/x-icon" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <style>
-    .layui-textarea{
-      height: 180px;
+    .allData td{
+      padding: 10px 10px;
     }
   </style>
 </head>
@@ -18,7 +18,7 @@
   <span class="layui-breadcrumb" lay-separator=">">
     <a href=""><i class="layui-icon layui-icon-home"></i></a>
     <a href="">一级分类</a>
-    <a><cite>内推档案</cite></a>
+    <a><cite>回款管理(手动)</cite></a>
   </span>
   <div class="rightDiv moreBtn">
   <span><i class="layui-icon layui-icon-left"></i></span>
@@ -33,7 +33,23 @@
           <div class="layui-card">
             <div class="layui-card-body">
               <div>
-                
+                <table class="layui-form">
+                  <tr>
+                    <td><select lay-search><option value="">选择楼名称</option></select></td>
+                    <td>&nbsp;&nbsp;</td>
+                    <td><input type="text" class="layui-input" placeholder="搜索客户关键字"></td>
+                    <td>&nbsp;&nbsp;</td>
+                    <td><input type="text" class="layui-input" placeholder=""></td>
+                    <td>&nbsp;&nbsp;</td>
+                    <td><select lay-search><option value="">当前(含历史欠款)</option></select></td>
+                    <td>&nbsp;&nbsp;</td>
+                    <td><select lay-search><option value="">未缴费</option></select></td>
+                    <td>&nbsp;&nbsp;</td>
+                    <td><select lay-search><option value="">科目名称</option></select></td>
+                    <td>&nbsp;&nbsp;</td>
+                    <td><span class="layui-btn layui-btn-normal"><i class="layui-icon layui-icon-search">查询</i></span></td>
+                  </tr>
+                </table>
               </div>
             </div>
           </div>
@@ -48,6 +64,19 @@
           <div class="layui-card">
             <div class="layui-card-body">
               <div>
+                <p style="float: right;">
+                  <span class="layui-btn layui-btn-danger" id="addBtn">手动核销</span>
+                  <span class="layui-btn layui-btn-green" id="addBtnTemp">临时费用</span>
+                  <span class="layui-btn layui-btn-normal">取消核销单</span>
+                </p>
+                <table class="allData">
+                  <tr>
+                    <td>回款笔数：30笔</td>
+                    <td>剩余小计：30,000 元</td>
+                    <td>本次缴费：30,000 元</td>
+                    <td>税额小计：30,000 元</td>
+                  </tr>
+                </table>
                 <table id="tableData" lay-filter="tableData"></table>
               </div>
             </div>
@@ -64,27 +93,90 @@
       <div class="layui-card-body">
         <table>
           <tr>
-            <td class="titleTd"><b class="red">*</b>内推名称：</td>
-            <td colspan="3"><input type="text" class="layui-input" placeholder=""></td>
-            <td class="titleTd">备注说明：</td>
-            <td rowspan="4"><textarea class="layui-textarea"></textarea></td>
+            <td class="titleTd">合同编号：</td>
+            <td>HX-201919195123123</td>
+            <td class="titleTd">核销编号：</td>
+            <td>HX-201919195123123</td>
+            <td class="titleTd">核销日期：</td>
+            <td>2019-10-10</td>
           </tr>
           <tr>
-            <td class="titleTd">联系人：</td>
-            <td><input type="text" class="layui-input"></td>
-            <td class="titleTd">联系电话：</td>
-            <td><input type="text" class="layui-input"></td>
-            <td></td>
+            <td class="titleTd">客户名称：</td>
+            <td>北京微音软件有限公司</td>
+            <td class="titleTd">核销人员：</td>
+            <td colspan="3">罗滔</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="layui-card">
+      <div class="layui-card-header">
+        <div class="layui-card-header"><i class="layui-icon layui-icon-spread-left"></i>&nbsp;&nbsp;核销费用明细<p style="padding-left: 20px;display: inline;">核销笔数：11笔&nbsp;&nbsp;&nbsp;&nbsp;核销金额小计：812312元</p></div>
+      </div>
+      <div class="layui-card-body">
+        <table id="addTable1" lay-filter="addTable1"></table>
+      </div>
+    </div>
+    <div class="layui-card">
+      <div class="layui-card-header"><i class="layui-icon layui-icon-spread-left"></i>&nbsp;&nbsp;银行流水核销明细<p style="padding-left: 20px;display: inline;">核销金额小计：812312元</p><p class="headTips"><span class="layui-btn layui-btn-normal layui-btn-sm"><i class="layui-icon layui-icon-add-1"></i>添加</span></p>
+      </div>
+      <div class="layui-card-body">
+        <table id="addTable2" lay-filter="addTable2"></table>
+      </div>
+    </div>
+    <hr>
+    <p class="btnP">
+      <span class="layui-btn layui-btn-normal">确认核销</span>
+      <span class="layui-btn layui-btn-normal">核销并打印</span>
+      <span class="layui-btn layui-btn-primary" id="closePage">取消</span>
+    </p>
+  </div>
+</script>
+<script type="text/html" id="addTempTpl">
+  <div class="addTable">
+    <div class="layui-card">
+      <div class="layui-card-body">
+        <table class="layui-form">
+          <tr>
+            <td class="titleTd">费用科目：</td>
+            <td><select lay-search><option value="">选择费用科目</option></select></td>
+            <td class="titleTd"><b class="red">*</b>应收日期：</td>
+            <td><input type="text" class="layui-input" placeholder="选择日期" id="data1"></td>
           </tr>
           <tr>
-            <td class="titleTd">办公地址：</td>
-            <td colspan="3"><input type="text" class="layui-input" placeholder=""></td>
-            <td></td>
+            <td class="titleTd">费用单价：</td>
+            <td><input type="text" class="layui-input" placeholder="输入单价"></td>
+            <td class="titleTd"><b class="red">*</b>开始日期：</td>
+            <td><input type="text" class="layui-input" placeholder="选择日期" id="data2"></td>
           </tr>
           <tr>
+            <td class="titleTd">费用数量：</td>
+            <td><input type="text" class="layui-input" placeholder="输入数量"></td>
+            <td class="titleTd"><b class="red">*</b>结束日期：</td>
+            <td><input type="text" class="layui-input" placeholder="选择日期" id="data3"></td>
+          </tr>
+          <tr>
+            <td class="titleTd">金额合计：</td>
+            <td><input type="text" class="layui-input" placeholder="自动合计（单价*数量）"></td>
             <td class="titleTd">附件资料：</td>
+            <td><input type="text" class="layui-input" placeholder=""></td>
+          </tr>
+          <tr>
+            <td class="titleTd">税率：</td>
+            <td><input type="text" class="layui-input" placeholder="输入税率"></td>
+            <td class="titleTd"><b class="red">*</b>税额：</td>
+            <td><input type="text" class="layui-input" placeholder="自动合计"></td>
+          </tr>
+          <tr>
+            <td class="titleTd">备注信息：</td>
             <td colspan="3"><input type="text" class="layui-input" placeholder=""></td>
             <td></td>
+          </tr>
+          <tr>
+            <td class="titleTd">创建人：</td>
+            <td><input type="text" class="layui-input" placeholder=""></td>
+            <td class="titleTd">创建日期：</td>
+            <td><input type="text" class="layui-input" placeholder="" id="data4"></td>
           </tr>
         </table>
       </div>
@@ -98,46 +190,52 @@
 </script>
 <script type="text/javascript" src="./layui/layui.js"></script>
 <script type="text/javascript">
-  layui.use(['jquery','layer','element','table'],function(){
+  layui.use(['jquery','layer','element','table','laydate','form'],function(){
     var $ = layui.jquery
     ,table = layui.table
+    ,form = layui.form
+    ,laydate = layui.laydate
     ,element = layui.element
     ,layer = layui.layer;
-
-    var data2 = [
-      { no:'1',name:'北京微音软件有限公司',contacts:'罗滔',phone:'18888888',address:'张三',},
-      { no:'2',name:'北京微音软件有限公司',contacts:'罗滔',phone:'18888888',address:'张三',},
-      { no:'3',name:'北京微音软件有限公司',contacts:'罗滔',phone:'18888888',address:'张三',},
+    form.render();
+    var data = [
+      { name:'北京微音软件有限公司',type:'物业费',date:'201901',startTime:'2019-01-01',endTime:'2019-01-31',price:'1000',surplus:'1000',thisPrice:'0',tax:'6',taxPrice:'60',description:'',},
+      { name:'北京微音软件有限公司',type:'物业费',date:'201901',startTime:'2019-01-01',endTime:'2019-01-31',price:'1000',surplus:'1000',thisPrice:'0',tax:'6',taxPrice:'60',description:'',},
+      { name:'北京微音软件有限公司',type:'物业费',date:'201901',startTime:'2019-01-01',endTime:'2019-01-31',price:'1000',surplus:'1000',thisPrice:'0',tax:'6',taxPrice:'60',description:'',},
     ];
     table.render({
-      elem:'#tableData2',
-      data: data2,
+      elem:'#tableData',
+      data: data,
       height:'610px',
-      toolbar:$('#toolbarTpl').html(),
       page:true,
       cols:[[
-        {title:'序号',field:'no',sort:true,width:'8%',},
-        {title:'内推名称',field:'name', sort:true, },
-        {title:'联系人',field:'contacts',width:'14%',sort:true,},
-        {title:'联系电话',field:'phone',width:'12%',},
-        {title:'客户类型',field:'type', width:'12%',sort:true,},
-        {title:'操作',field:'',templet: getMoreTpl(), width:'15%',fixed:'right', },
+        {type:'checkbox',fixed:'left'},
+        {title:'客户名称',field:'name', sort:true, },
+        {title:'费用科目',field:'type',width:'14%',sort:true,},
+        {title:'应交期间',field:'date',sort:true,},
+        {title:'开始日期',field:'startTime',sort:true,},
+        {title:'结束日期',field:'endTime',sort:true,},
+        {title:'应缴金额',field:'price',sort:true,},
+        {title:'剩余金额',field:'surplus',sort:true,},
+        {title:'本次缴费',field:'thisPrice',sort:true,},
+        {title:'税率%',field:'tax',sort:true,},
+        {title:'税额',field:'taxPrice',sort:true,},
+        {title:'说明',field:'description',sort:true,},
       ]]
     })
     
-    function getMoreTpl(){
-      return function(d){
-        return [
-          '<span class="layui-btn layui-btn-sm layui-btn-normal"><i class="layui-icon layui-icon-edit"></i>编辑</span>',
-          '<span class="layui-btn layui-btn-sm layui-btn-danger"><i class="layui-icon layui-icon-delete"></i>删除</span>',
-        ].join(' ');
-      }
-    }
+    var addData = [
+      { type:'物业费',date:'201901',startTime:'2019-01-01',endTime:'2019-01-31',price:'1000',surplus:'1000',},
+      { type:'物业费',date:'201901',startTime:'2019-01-01',endTime:'2019-01-31',price:'1000',surplus:'1000',},
+    ];
+    var addData2 = [
+      {no:'15123123',date:'2019-04-01',bank:'',price:'￥1,1000.00',thisPrice:'1000'},
+      {no:'15123123',date:'2019-04-01',bank:'',price:'￥1,1000.00',thisPrice:'1000'},
+    ];
     $('#addBtn').click(function(){
       var addWin = layer.open({
         type:1,
-        offset:'100px',
-        area:['1100px','350px'],
+        area:['1100px','700px'],
          title:['<i class="layui-icon layui-icon-spread-left"></i>&nbsp;&nbsp;内推档案',
                 '<span class="headTips">',
                   '<b class="red">*</b>为必填项',
@@ -147,9 +245,74 @@
           $('#closePage').unbind().on('click',function(){
             layer.close(addWin);
           })
+          table.render({
+            elem:'#addTable1',
+            height:'300px',
+            page:true,
+            data:addData,
+            cols:[[
+            {title:'费用科目',field:'type',width:'14%',sort:true,},
+            {title:'应交期间',field:'date',sort:true,},
+            {title:'开始日期',field:'startTime',sort:true,},
+            {title:'结束日期',field:'endTime',sort:true,},
+            {title:'应收金额',field:'price',sort:true,},
+            {title:'剩余欠款',field:'surplus',sort:true,},
+            {title:'操作',templet:getTpl()},
+            ]],
+          })
+          table.render({
+            elem:'#addTable2',
+            height:'300px',
+            page:true,
+            data:addData2,
+            cols:[[
+            {title:'流水号',field:'no',sort:true,},
+            {title:'日期',field:'date',sort:true,},
+            {title:'开户行',field:'bank',sort:true,},
+            {title:'金额',field:'price',sort:true,},
+            {title:'本次冲抵金额(可调整)',field:'thisPrice',sort:true,},
+            {title:'操作',templet:getTpl()},
+            ]],
+          })
         }
       })
     })
+    $('#addBtnTemp').click(function(){
+      var addWin = layer.open({
+        type:1,
+        offset:'100px',
+        area:['1100px','500px'],
+         title:['<i class="layui-icon layui-icon-spread-left"></i>&nbsp;&nbsp;添加临时费用',
+                '<p style="display:inline">合同编号：HT512132512    客户名称：北京微音软件有限哦那公司</p>',
+                '<span class="headTips">',
+                  '<b class="red">*</b>为必填项',
+                '</span>'].join(''),
+        content:$('#addTempTpl').html(),
+        success:function(){
+          $('#closePage').unbind().on('click',function(){
+            layer.close(addWin);
+          })
+          laydate.render({
+            elem:'#data1'
+          })
+          laydate.render({
+            elem:'#data2'
+          })
+          laydate.render({
+            elem:'#data3'
+          })
+          laydate.render({
+            elem:'#data4'
+          })
+          form.render();
+        }
+      })
+    })
+    function getTpl(){
+      return function(d){
+        return '<span class="layui-btn layui-btn-sm layui-btn-danger">删除</span>';
+      }
+    }
     $('#refreshBtn').click(function(){
       location.reload();
     })

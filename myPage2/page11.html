@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+  <title>银行流水</title>
   <link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
   <link rel="stylesheet" type="text/css" href="./pagecss.css">
   <link rel="shortcut icon" href="./img/sys/icon.ico" type="image/x-icon" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <style>
-    
+    .allData td{
+      padding: 10px 10px;
+    }
   </style>
 </head>
 <body>
@@ -16,7 +18,7 @@
   <span class="layui-breadcrumb" lay-separator=">">
     <a href=""><i class="layui-icon layui-icon-home"></i></a>
     <a href="">一级分类</a>
-    <a><cite></cite></a>
+    <a><cite>银行流水</cite></a>
   </span>
   <div class="rightDiv moreBtn">
   <span><i class="layui-icon layui-icon-left"></i></span>
@@ -31,12 +33,19 @@
           <div class="layui-card">
             <div class="layui-card-body">
               <div>
-                <div style="float: right;">
-                  <span class="layui-btn layui-btn-normal" id="addBtn"><i class="layui-icon layui-icon-add-1"></i>添加</span>
-                </div>
                 <table class="layui-form">
                   <tr>
-                    <td><input type="text" placeholder="关键字段查询" class="layui-input"></td>
+                    <td><select lay-search><option value="">选择状态</option></select></td>
+                    <td>&nbsp;&nbsp;</td>
+                    <td><input type="text" placeholder="搜索客户关键词" class="layui-input"></td>
+                    <td>&nbsp;&nbsp;</td>
+                    <td><select lay-search><option value="">核销人</option></select></td>
+                    <td>&nbsp;&nbsp;</td>
+                    <td><select lay-search><option value="">流水号</option></select></td>
+                    <td>&nbsp;&nbsp;</td>
+                    <td><select lay-search><option value="">检索交易日期起</option></select></td>
+                    <td>&nbsp;&nbsp;</td>
+                    <td><select lay-search><option value="">检索交易日期止</option></select></td>
                     <td>&nbsp;&nbsp;</td>
                     <td><span class="layui-btn layui-btn-normal"><i class="layui-icon layui-icon-search">查询</i></span></td>
                   </tr>
@@ -55,6 +64,18 @@
           <div class="layui-card">
             <div class="layui-card-body">
               <div>
+                <p style="float: right;">
+                  <span class="layui-btn layui-btn-danger" id="">自动匹配核销</span>
+                  <span class="layui-btn layui-btn-green" id="">添加流水</span>
+                  <span class="layui-btn layui-btn-normal">批量导入流水</span>
+                </p>
+                <table class="allData">
+                  <tr>
+                    <td>选择笔数：30笔</td>
+                    <td>交易金额小计：30,000 元</td>
+                    <td>核销金额小计：30,000 元</td>
+                  </tr>
+                </table>
                 <table id="tableData" lay-filter="tableData"></table>
               </div>
             </div>
@@ -65,44 +86,6 @@
   </div>
 </div>
 </body>
-<script type="text/html" id="addTpl">
-  <div class="addTable">
-    <div class="layui-card">
-      <div class="layui-card-body">
-        <table>
-          <tr>
-            <td class="titleTd"><b class="red">*</b>内推名称：</td>
-            <td colspan="3"><input type="text" class="layui-input" placeholder=""></td>
-            <td class="titleTd">备注说明：</td>
-            <td rowspan="4"><textarea class="layui-textarea"></textarea></td>
-          </tr>
-          <tr>
-            <td class="titleTd">联系人：</td>
-            <td><input type="text" class="layui-input"></td>
-            <td class="titleTd">联系电话：</td>
-            <td><input type="text" class="layui-input"></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td class="titleTd">办公地址：</td>
-            <td colspan="3"><input type="text" class="layui-input" placeholder=""></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td class="titleTd">附件资料：</td>
-            <td colspan="3"><input type="text" class="layui-input" placeholder=""></td>
-            <td></td>
-          </tr>
-        </table>
-      </div>
-    </div>
-    <hr>
-    <p class="btnP">
-      <span class="layui-btn layui-btn-normal">提交保存</span>
-      <span class="layui-btn layui-btn-primary" id="closePage">返回</span>
-    </p>
-  </div>
-</script>
 <script type="text/javascript" src="./layui/layui.js"></script>
 <script type="text/javascript">
   layui.use(['jquery','layer','element','table'],function(){
@@ -112,9 +95,10 @@
     ,layer = layui.layer;
 
     var data1 = [
-      { no:'1',name:'北京微音软件有限公司',contacts:'罗滔',phone:'18888888',address:'张三',},
-      { no:'2',name:'北京微音软件有限公司',contacts:'罗滔',phone:'18888888',address:'张三',},
-      { no:'3',name:'北京微音软件有限公司',contacts:'罗滔',phone:'18888888',address:'张三',},
+      { state:'已核销',number:'',customer:'',serial:'61231232312',date:'2019-01-01',bank:'招商银行北京石景山支行',bankcard:'51231231231231231',price:'1000',surePirce:'100',user:'罗滔',auditDate:'2019-01-01',people:'',inputDate:'', },
+      { state:'已核销',number:'',customer:'',serial:'61231232312',date:'2019-01-01',bank:'招商银行北京石景山支行',bankcard:'51231231231231231',price:'1000',surePirce:'100',user:'罗滔',auditDate:'2019-01-01',people:'',inputDate:'', },
+      { state:'已核销',number:'',customer:'',serial:'61231232312',date:'2019-01-01',bank:'招商银行北京石景山支行',bankcard:'51231231231231231',price:'1000',surePirce:'100',user:'罗滔',auditDate:'2019-01-01',people:'',inputDate:'', },
+      { state:'已核销',number:'',customer:'',serial:'61231232312',date:'2019-01-01',bank:'招商银行北京石景山支行',bankcard:'51231231231231231',price:'1000',surePirce:'100',user:'罗滔',auditDate:'2019-01-01',people:'',inputDate:'', },
     ];
     table.render({
       elem:'#tableData',
@@ -123,11 +107,20 @@
       toolbar:$('#toolbarTpl').html(),
       page:true,
       cols:[[
-        {title:'序号',field:'no',sort:true,width:'8%',},
-        {title:'内推名称',field:'name', sort:true, },
-        {title:'联系人',field:'contacts',width:'14%',sort:true,},
-        {title:'联系电话',field:'phone',width:'12%',},
-        {title:'客户类型',field:'type', width:'12%',sort:true,},
+        {type:'checkbox',fixed:'left'},
+        {title:'状态',field:'state',sort:true,},
+        {title:'合同编号',field:'number',sort:true,},
+        {title:'客户名称',field:'customer',sort:true,},
+        {title:'流水号',field:'serial',sort:true,},
+        {title:'交易日期',field:'date',sort:true,},
+        {title:'交易银行',field:'bank',sort:true,},
+        {title:'交易银行账号',field:'bankcard',sort:true,},
+        {title:'交易金额',field:'price',sort:true,},
+        {title:'核销金额',field:'surePirce',sort:true,},
+        {title:'核销人',field:'user',sort:true,},
+        {title:'核销日期',field:'auditDate',sort:true,},
+        {title:'导入人',field:'people',sort:true,},
+        {title:'导入日期',field:'inputDate',sort:true,},
         {title:'操作',field:'',templet: getMoreTpl(), width:'15%',fixed:'right', },
       ]]
     })
@@ -135,7 +128,8 @@
     function getMoreTpl(){
       return function(d){
         return [
-          '<span class="layui-btn layui-btn-sm layui-btn-normal"><i class="layui-icon layui-icon-edit"></i>编辑</span>',
+          '<span class="layui-btn layui-btn-sm layui-btn-normal"><i class="layui-icon layui-icon-edit"></i>设置</span>',
+          '<span class="layui-btn layui-btn-sm layui-btn-"><i class="layui-icon layui-icon-edit"></i>核销</span>',
           '<span class="layui-btn layui-btn-sm layui-btn-danger"><i class="layui-icon layui-icon-delete"></i>删除</span>',
         ].join(' ');
       }
