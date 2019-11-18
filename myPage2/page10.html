@@ -11,6 +11,13 @@
     .allData td{
       padding: 10px 10px;
     }
+    .addTable .layui-table-view{
+      margin-top: -10px;
+    }
+    .titleNumber{
+      font-size: 15px;
+      color: red;
+    }
   </style>
 </head>
 <body>
@@ -94,24 +101,26 @@
         <table>
           <tr>
             <td class="titleTd">合同编号：</td>
-            <td>HX-201919195123123</td>
+            <td><input type="text" class="layui-input"></td>
             <td class="titleTd">核销编号：</td>
-            <td>HX-201919195123123</td>
-            <td class="titleTd">核销日期：</td>
-            <td>2019-10-10</td>
+            <td><input type="text" class="layui-input"></td>
           </tr>
           <tr>
-            <td class="titleTd">客户名称：</td>
-            <td>北京微音软件有限公司</td>
-            <td class="titleTd">核销人员：</td>
-            <td colspan="3">罗滔</td>
+            <td class="titleTd"></td>
+            <td><input type="text" class="layui-input"></td>
+            <td class="titleTd">核销编号：</td>
+            <td><input type="text" class="layui-input"></td>
+          </tr>
+          <tr>
+            <td class="titleTd">备注说明：</td>
+            <td colspan="3"><input type="text" class="layui-input"></td>
           </tr>
         </table>
       </div>
     </div>
     <div class="layui-card">
       <div class="layui-card-header">
-        <div class="layui-card-header"><i class="layui-icon layui-icon-spread-left"></i>&nbsp;&nbsp;核销费用明细<p style="padding-left: 20px;display: inline;">核销笔数：11笔&nbsp;&nbsp;&nbsp;&nbsp;核销金额小计：812312元</p></div>
+        <i class="layui-icon layui-icon-spread-left"></i>&nbsp;&nbsp;核销费用明细<p style="padding-left: 20px;display: inline;">核销笔数：11笔&nbsp;&nbsp;&nbsp;&nbsp;核销金额小计：812312元</p>
       </div>
       <div class="layui-card-body">
         <table id="addTable1" lay-filter="addTable1"></table>
@@ -137,6 +146,12 @@
     <div class="layui-card">
       <div class="layui-card-body">
         <table class="layui-form">
+          <tr>
+            <td class="titleTd"><b class="red">*</b>合同编号：</td>
+            <td><input type="text" class="layui-input" placeholder=""></td>
+            <td class="titleTd"><b class="red">*</b>客户名称：</td>
+            <td><input type="text" class="layui-input" placeholder=""></td>
+          </tr>
           <tr>
             <td class="titleTd">费用科目：</td>
             <td><select lay-search><option value="">选择费用科目</option></select></td>
@@ -236,7 +251,7 @@
       var addWin = layer.open({
         type:1,
         area:['1100px','700px'],
-         title:['<i class="layui-icon layui-icon-spread-left"></i>&nbsp;&nbsp;内推档案',
+         title:['<i class="layui-icon layui-icon-spread-left"></i>&nbsp;&nbsp;手动核销明细',
                 '<span class="headTips">',
                   '<b class="red">*</b>为必填项',
                 '</span>'].join(''),
@@ -281,9 +296,8 @@
       var addWin = layer.open({
         type:1,
         offset:'100px',
-        area:['1100px','500px'],
-         title:['<i class="layui-icon layui-icon-spread-left"></i>&nbsp;&nbsp;添加临时费用',
-                '<p style="display:inline">合同编号：HT512132512    客户名称：北京微音软件有限哦那公司</p>',
+        area:['1100px','520px'],
+         title:['<i class="layui-icon layui-icon-spread-left"></i>&nbsp;&nbsp;添加临时费用&nbsp;<b class="titleNumber">HX-201910105123123</b>',
                 '<span class="headTips">',
                   '<b class="red">*</b>为必填项',
                 '</span>'].join(''),

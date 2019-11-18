@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>收款确认单</title>
+  <title></title>
   <link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
   <link rel="stylesheet" type="text/css" href="./pagecss.css">
   <link rel="shortcut icon" href="./img/sys/icon.ico" type="image/x-icon" />
@@ -16,11 +16,11 @@
   <span class="layui-breadcrumb" lay-separator=">">
     <a href=""><i class="layui-icon layui-icon-home"></i></a>
     <a href="">一级分类</a>
-    <a><cite>收款确认单</cite></a>
+    <a><cite></cite></a>
   </span>
   <div class="rightDiv moreBtn">
-    <span><i class="layui-icon layui-icon-left"></i></span>
-    <span><i class="layui-icon layui-icon-refresh" id="refreshBtn"></i></span>
+  <span><i class="layui-icon layui-icon-left"></i></span>
+  <span><i class="layui-icon layui-icon-refresh" id="refreshBtn"></i></span>
   </div>
 </div>
 <div class="hiddenScrool">
@@ -31,19 +31,12 @@
           <div class="layui-card">
             <div class="layui-card-body">
               <div>
+                <div style="float: right;">
+                  <span class="layui-btn layui-btn-normal" id="addBtn"><i class="layui-icon layui-icon-add-1"></i>添加</span>
+                </div>
                 <table class="layui-form">
                   <tr>
-                    <td><input type="text" placeholder="客户名称" class="layui-input"></td>
-                    <td>&nbsp;&nbsp;</td>
-                    <td><input type="text" placeholder="核销单号" class="layui-input"></td>
-                    <td>&nbsp;&nbsp;</td>
-                    <td><input type="text" placeholder="银行流水" class="layui-input"></td>
-                    <td>&nbsp;&nbsp;</td>
-                    <td><input type="text" placeholder="核销日期起" class="layui-input"></td>
-                    <td>&nbsp;&nbsp;</td>
-                    <td><input type="text" placeholder="核销日期止" class="layui-input"></td>
-                    <td>&nbsp;&nbsp;</td>
-                    <td><input type="text" placeholder="核销人" class="layui-input"></td>
+                    <td><input type="text" placeholder="关键字段查询" class="layui-input"></td>
                     <td>&nbsp;&nbsp;</td>
                     <td><span class="layui-btn layui-btn-normal"><i class="layui-icon layui-icon-search">查询</i></span></td>
                   </tr>
@@ -72,14 +65,6 @@
   </div>
 </div>
 </body>
-<script type="text/html" id="toolbarTpl">
-<div>
-  <span class="layui-btn layui-btn-danger layui-btn-sm"><i class="layui-icon layui-icon-add-1"></i>撤销核销单</span>
-  <span class="layui-btn layui-btn-primary layui-btn-sm" style="margin-right: 40px;"><i class="layui-icon layui-icon-add-1"></i>打印核销单</span>
-  <input type="checkbox" name="" title="已打印" lay-skin="primary">
-  <input type="checkbox" name="" title="未打印" lay-skin="primary">
-</div>
-</script>
 <script type="text/html" id="addTpl">
   <div class="addTable">
     <div class="layui-card">
@@ -126,31 +111,35 @@
     ,element = layui.element
     ,layer = layui.layer;
 
-    var data = [
-      { state:'已打印',name:'北京微音软件有限公司',auditNumber:'',number:'',date:'2019-04-01',price:'￥1,1000.00',auditPrice:'',people:'',description:'',},
-      { state:'已打印',name:'北京微音软件有限公司',auditNumber:'',number:'',date:'2019-04-01',price:'￥1,1000.00',auditPrice:'',people:'',description:'',},
-      { state:'已打印',name:'北京微音软件有限公司',auditNumber:'',number:'',date:'2019-04-01',price:'￥1,1000.00',auditPrice:'',people:'',description:'',},
+    var data1 = [
+      { no:'1',name:'北京微音软件有限公司',contacts:'罗滔',phone:'18888888',address:'张三',},
+      { no:'2',name:'北京微音软件有限公司',contacts:'罗滔',phone:'18888888',address:'张三',},
+      { no:'3',name:'北京微音软件有限公司',contacts:'罗滔',phone:'18888888',address:'张三',},
     ];
     table.render({
       elem:'#tableData',
-      data: data,
+      data: data1,
       height:'610px',
       toolbar:$('#toolbarTpl').html(),
       page:true,
       cols:[[
-        {type:'checkbox',fixed:'left',},
-        {title:'状态',field:'state',sort:true,width:'8%',},
-        {title:'客户名称',field:'name', sort:true, },
-        {title:'核销单号',field:'auditNumber',sort:true,},
-        {title:'银行流水号',field:'number',sort:true,},
-        {title:'核销日期',field:'date', sort:true,},
-        {title:'应收金额',field:'price', sort:true,},
-        {title:'核销金额',field:'auditPrice', sort:true,},
-        {title:'核销人',field:'people', sort:true,},
-        {title:'说明',field:'description', sort:true,},
+        {title:'序号',field:'no',sort:true,width:'8%',},
+        {title:'内推名称',field:'name', sort:true, },
+        {title:'联系人',field:'contacts',width:'14%',sort:true,},
+        {title:'联系电话',field:'phone',width:'12%',},
+        {title:'客户类型',field:'type', width:'12%',sort:true,},
+        {title:'操作',field:'',templet: getMoreTpl(), width:'15%',fixed:'right', },
       ]]
     })
     
+    function getMoreTpl(){
+      return function(d){
+        return [
+          '<span class="layui-btn layui-btn-sm layui-btn-normal"><i class="layui-icon layui-icon-edit"></i>编辑</span>',
+          '<span class="layui-btn layui-btn-sm layui-btn-danger"><i class="layui-icon layui-icon-delete"></i>删除</span>',
+        ].join(' ');
+      }
+    }
     $('#addBtn').click(function(){
       var addWin = layer.open({
         type:1,

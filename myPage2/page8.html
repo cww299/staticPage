@@ -27,6 +27,17 @@
     .addTable table td {
       font-weight: normal;
     }
+    .customNumber{
+      font-size: 15px;
+      color: red;
+    }
+    .numberPeople{
+      font-size: 47px;
+      color: white;
+      position: absolute;
+      top: 50px;
+      right: 141px;
+    }
     @media screen and (min-width: 1500px){
       .layui-container {
           width: 1470px;
@@ -104,28 +115,32 @@
           <tr>
             <td class="titleTd"><b class="red">*</b>客户名称：</td>
             <td colspan="3"><input type="text" class="layui-input" placeholder=""></td>
-            <td class="titleTd">客户来源：</td>
-            <td><input type="text" placeholder="" class="layui-input"></td>
+            <td rowspan="4" style="padding: 8px 15px;text-align: center;width: 284px;">
+              <img src="./img/page8/tag-bg.png">
+              <span class="numberPeople">0</span>
+            </td>
           </tr>
           <tr>
             <td class="titleTd">法定代表：</td>
             <td><input type="text" class="layui-input"></td>
             <td class="titleTd">所属行业：</td>
             <td><input type="text" class="layui-input"></td>
-            <td class="titleTd">来源名称：</td>
-            <td><input type="text" class="layui-input"></td>
           </tr>
           <tr>
             <td class="titleTd">注册地址：</td>
             <td colspan="3"><input type="text" class="layui-input" placeholder=""></td>
-            <td class="titleTd">税务编码：</td>
+          </tr>
+           <tr>
+            <td class="titleTd">客户来源：</td>
             <td><input type="text" placeholder="" class="layui-input"></td>
+            <td class="titleTd">来源名称：</td>
+            <td><input type="text" class="layui-input"></td>
           </tr>
         </table>
       </div>
     </div>
     <div class="layui-card">
-      <div class="layui-card-header"><i class="layui-icon layui-icon-spread-left"></i>&nbsp;&nbsp;联系人信息&nbsp;&nbsp;&nbsp;&nbsp;<b>注1：联系人与手机号码可以重复修改，但联系人与手机号码一旦被其他人员填写，您将无法重复录入；</b>
+      <div class="layui-card-header"><i class="layui-icon layui-icon-spread-left"></i>&nbsp;&nbsp;联系人信息&nbsp;&nbsp;&nbsp;&nbsp;<b style="font-weight: normal;font-size: 13px;">注1：联系人与手机号码可以重复修改，但联系人与手机号码一旦被其他人员填写，您将无法重复录入；</b>
       </div>
       <div class="layui-card-body">
         <table>
@@ -146,7 +161,7 @@
             <td><input type="text" placeholder="" class="layui-input"></td>
           </tr>
           <tr>
-            <td class="titleTd">备注说明：</td>
+            <td class="titleTd" style="vertical-align: top;">备注说明：</td>
             <td colspan="5"><textarea class="layui-textarea"></textarea></td>
           </tr>
         </table>
@@ -206,9 +221,8 @@
       var addProjectWin = layer.open({
         type:1,
         offset:'100px',
-        area:['1100px','650px'],
-         title:['<i class="layui-icon layui-icon-spread-left"></i>&nbsp;&nbsp;新增客户&nbsp;&nbsp;&nbsp;&nbsp;<b>',
-         '客户编号：KF2015123123123',
+        area:['1100px','680px'],
+        title:['<i class="layui-icon layui-icon-spread-left"></i>&nbsp;&nbsp;新增客户&nbsp;&nbsp;&nbsp;&nbsp;<b class="customNumber">KF2015123123123</b>',
                 '<span class="headTips">',
                   '<b class="red">*</b>为必填项',
                 '</span>'].join(''),

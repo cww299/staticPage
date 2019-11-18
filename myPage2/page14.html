@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+  <title>转三方协议</title>
   <link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
   <link rel="stylesheet" type="text/css" href="./pagecss.css">
   <link rel="shortcut icon" href="./img/sys/icon.ico" type="image/x-icon" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <style>
-    
+    .layui-textarea{
+      height: 200px;
+    }
   </style>
 </head>
 <body>
@@ -16,7 +18,7 @@
   <span class="layui-breadcrumb" lay-separator=">">
     <a href=""><i class="layui-icon layui-icon-home"></i></a>
     <a href="">一级分类</a>
-    <a><cite></cite></a>
+    <a><cite>转三方协议</cite></a>
   </span>
   <div class="rightDiv moreBtn">
   <span><i class="layui-icon layui-icon-left"></i></span>
@@ -37,6 +39,8 @@
                 <table class="layui-form">
                   <tr>
                     <td><input type="text" placeholder="关键字段查询" class="layui-input"></td>
+                    <td>&nbsp;&nbsp;</td>
+                    <td><input type="text" placeholder="客户名称" class="layui-input"></td>
                     <td>&nbsp;&nbsp;</td>
                     <td><span class="layui-btn layui-btn-normal"><i class="layui-icon layui-icon-search">查询</i></span></td>
                   </tr>
@@ -68,37 +72,109 @@
 <script type="text/html" id="addTpl">
   <div class="addTable">
     <div class="layui-card">
+      <div class="layui-card-header"><i class="layui-icon layui-icon-spread-left"></i>&nbsp;&nbsp;甲方.出租方信息</div>
       <div class="layui-card-body">
         <table>
           <tr>
-            <td class="titleTd"><b class="red">*</b>内推名称：</td>
-            <td colspan="3"><input type="text" class="layui-input" placeholder=""></td>
-            <td class="titleTd">备注说明：</td>
-            <td rowspan="4"><textarea class="layui-textarea"></textarea></td>
+            <td class="titleTd"><b class="red">*</b>出租方：</td>
+            <td colspan=""><input type="text" class="layui-input" placeholder=""></td>
+            <td class="titleTd"><b class="red">*</b>项目名称：</td>
+            <td rowspan=""><input type="text" class="layui-input" placeholder=""></td>
           </tr>
           <tr>
-            <td class="titleTd">联系人：</td>
+            <td class="titleTd">法定代表：</td>
+            <td><input type="text" class="layui-input"></td>
+            <td class="titleTd">授权代表：</td>
+            <td><input type="text" class="layui-input"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="layui-card">
+      <div class="layui-card-header"><i class="layui-icon layui-icon-spread-left"></i>&nbsp;&nbsp;乙方.承租方/转让方</div>
+      <div class="layui-card-body">
+        <table>
+          <tr>
+            <td class="titleTd"><b class="red">*</b>客户编号：</td>
+            <td><input type="text" class="layui-input" placeholder=""></td>
+            <td class="titleTd"><b class="red">*</b>客户名称：</td>
+            <td><input type="text" class="layui-input" placeholder=""></td>
+          </tr>
+          <tr>
+            <td class="titleTd">合同编号：</td>
+            <td><input type="text" class="layui-input"></td>
+            <td class="titleTd">法定代表：</td>
+            <td><input type="text" class="layui-input"></td>
+          </tr>
+          <tr>
+            <td class="titleTd"><b class="red">*</b>合同日起：</td>
+            <td><input type="text" class="layui-input"></td>
+            <td class="titleTd">授权代表：</td>
+            <td><input type="text" class="layui-input"></td>
+          </tr>
+          <tr>
+            <td class="titleTd"><b class="red">*</b>合同日止：</td>
             <td><input type="text" class="layui-input"></td>
             <td class="titleTd">联系电话：</td>
             <td><input type="text" class="layui-input"></td>
-            <td></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="layui-card">
+      <div class="layui-card-header"><i class="layui-icon layui-icon-spread-left"></i>&nbsp;&nbsp;丙方.承租租方信息</div>
+      <div class="layui-card-body">
+        <table>
+          <tr>
+            <td class="titleTd"><b class="red">*</b>客户编号：</td>
+            <td><input type="text" class="layui-input" placeholder=""></td>
+            <td class="titleTd"><b class="red">*</b>客户名称：</td>
+            <td><input type="text" class="layui-input" placeholder=""></td>
           </tr>
           <tr>
-            <td class="titleTd">办公地址：</td>
-            <td colspan="3"><input type="text" class="layui-input" placeholder=""></td>
-            <td></td>
+            <td class="titleTd">合同编号：</td>
+            <td><input type="text" class="layui-input"></td>
+            <td class="titleTd">法定代表：</td>
+            <td><input type="text" class="layui-input"></td>
           </tr>
           <tr>
-            <td class="titleTd">附件资料：</td>
-            <td colspan="3"><input type="text" class="layui-input" placeholder=""></td>
-            <td></td>
+            <td class="titleTd">送达人：</td>
+            <td><input type="text" class="layui-input"></td>
+            <td class="titleTd">授权代表：</td>
+            <td><input type="text" class="layui-input"></td>
+          </tr>
+          <tr>
+            <td class="titleTd">联系电话：</td>
+            <td><input type="text" class="layui-input"></td>
+            <td class="titleTd">联系电话：</td>
+            <td><input type="text" class="layui-input"></td>
+          </tr>
+          <tr>
+            <td class="titleTd">送达地址：</td>
+            <td colspan="3"><input type="text" class="layui-input"></td>
+          </tr>
+          <tr>
+            <td class="titleTd"><b class="red">*</b>转三方附件资料：</td>
+            <td colspan="3"><input type="text" class="layui-input"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="layui-card">
+      <div class="layui-card-header"><i class="layui-icon layui-icon-spread-left"></i>&nbsp;&nbsp;其他信息</div>
+      <div class="layui-card-body">
+        <table>
+          <tr>
+            <td rowspan=""><textarea class="layui-textarea" placeholder="请输入备注信息"></textarea></td>
           </tr>
         </table>
       </div>
     </div>
     <hr>
     <p class="btnP">
-      <span class="layui-btn layui-btn-normal">提交保存</span>
+      <span class="layui-btn layui-btn-normal">保存数据</span>
+      <span class="layui-btn layui-btn-green">编辑数据</span>
+      <span class="layui-btn layui-btn-danger">删除数据</span>
       <span class="layui-btn layui-btn-primary" id="closePage">返回</span>
     </p>
   </div>
@@ -112,40 +188,44 @@
     ,layer = layui.layer;
 
     var data1 = [
-      { no:'1',name:'北京微音软件有限公司',contacts:'罗滔',phone:'18888888',address:'张三',},
-      { no:'2',name:'北京微音软件有限公司',contacts:'罗滔',phone:'18888888',address:'张三',},
-      { no:'3',name:'北京微音软件有限公司',contacts:'罗滔',phone:'18888888',address:'张三',},
+      { number:'XT20191423123',title:'',A:'北京微音AAA',B:'北京微音BBB',C:'北京微音CCC',user:'罗滔',date:'2019-10-01'},
+      { number:'XT20191423123',title:'',A:'北京微音AAA',B:'北京微音BBB',C:'北京微音CCC',user:'罗滔',date:'2019-10-01'},
+      { number:'XT20191423123',title:'',A:'北京微音AAA',B:'北京微音BBB',C:'北京微音CCC',user:'罗滔',date:'2019-10-01'},
     ];
     table.render({
       elem:'#tableData',
       data: data1,
       height:'610px',
-      toolbar:$('#toolbarTpl').html(),
       page:true,
       cols:[[
-        {title:'序号',field:'no',sort:true,width:'8%',},
-        {title:'内推名称',field:'name', sort:true, },
-        {title:'联系人',field:'contacts',width:'14%',sort:true,},
-        {title:'联系电话',field:'phone',width:'12%',},
-        {title:'客户类型',field:'type', width:'12%',sort:true,},
-        {title:'操作',field:'',templet: getMoreTpl(), width:'15%',fixed:'right', },
+        {type:'checkbox',fixed:'left',},
+        {title:'系统编号',field:'number', sort:true, width:'12%',},
+        {title:'转三方标题',field:'title', sort:true, },
+        {title:'甲方',field:'A', sort:true, },
+        {title:'乙方',field:'B', sort:true, },
+        {title:'丙方',field:'C', sort:true, },
+        {title:'创建人',field:'user', sort:true, },
+        {title:'创建日期',field:'date', sort:true, },
+        {title:'操作',field:'',templet: getMoreTpl(), width:'12%',fixed:'right', },
       ]]
     })
     
     function getMoreTpl(){
       return function(d){
         return [
-          '<span class="layui-btn layui-btn-sm layui-btn-normal"><i class="layui-icon layui-icon-edit"></i>编辑</span>',
-          '<span class="layui-btn layui-btn-sm layui-btn-danger"><i class="layui-icon layui-icon-delete"></i>删除</span>',
+          '<span class="layui-btn layui-btn-sm layui-btn-normal">详细</span>',
+          '<span class="layui-btn layui-btn-sm layui-btn-green">编辑</span>',
+          '<span class="layui-btn layui-btn-sm layui-btn-danger">提交申请</span>',
+          '<span class="layui-btn layui-btn-sm layui-btn-primary">审批</span>',
         ].join(' ');
       }
     }
     $('#addBtn').click(function(){
       var addWin = layer.open({
         type:1,
-        offset:'100px',
-        area:['1100px','350px'],
-         title:['<i class="layui-icon layui-icon-spread-left"></i>&nbsp;&nbsp;内推档案',
+        offset:'10px',
+        area:['1100px','800px'],
+         title:['<i class="layui-icon layui-icon-spread-left"></i>&nbsp;&nbsp;转三方协议：TK2019032401001',
                 '<span class="headTips">',
                   '<b class="red">*</b>为必填项',
                 '</span>'].join(''),
