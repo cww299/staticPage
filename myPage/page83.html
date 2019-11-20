@@ -6,17 +6,231 @@
 <head>
   <title></title>
   <link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
-  <link rel="stylesheet" type="text/css" href="./pageTab.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <style>
-    
-    @media screen and (max-width: 540px){
+    body{
+      background: #f4f4f4;
+    }
+    img{
+      max-width: 100%;
+    }
+    .phoneNav{
+      background-color:white;
+      padding: 15px 10px;
+    }
+    .phoneNav i{
+      float: right;
+      margin-top: 8px;
+    }
+    .phoneNav img{
+      max-width: 80%;
+    }
+    .whyDiv{
+      text-align: center;
+      padding-top: 20px;
+      background: white;
+    }
+    .titleH2{
+      color: #ff0000bd;
+      font-weight: bold;
+    }
+    .titleH2Info{
+      font-weight: bold;
+      color: gray;
+      margin-bottom: 20px;
+    }
+    .whyDiv ul li{
+      border: 1px solid #80808066;
+      padding: 25px 10px;
+      margin: 10px 0;
+    }
+    .whyDiv ul li .imgP{
+      float: left;
+      width: 60px;
+      text-align: center;
+      margin-top: -5px;
+    }
+    .whyDiv ul li .imgP img{
+      width: 25px;
+    }
+    .whyDiv ul li .title{
+      float: left;
+      font-size: 15px;
+      color: #ff4242;
+      margin-top: 24px;
+      margin-left: -46px;
+    }
+    .whyDiv ul li .info{
+      margin-left: 70px;
+      text-align: left;
+      padding-left: 12px;
+      border-left: 1px solid #8080804a;
+      color: gray;
+    }
+    .company,.primission{
+      text-align: center;
+      padding: 20px 0;
+      background: white;
+      margin-top: 20px;
+    }
+    .primission p.info{
+      color: gray;
+      text-align: left;
+      line-height: 28px;
+      text-indent: 30px;
+    }
+    .primission p.imgP{
+      margin-top: 10px;
+      margin-bottom: 50px;
+    }
+    .toolbar{
+      position: fixed;
+      background: black;
+      height: 60px;
+      width: 100%;
+      bottom: 0;
+    }
+    .toolbar span{
+      position: fixed;
+      bottom: 12px;
+    }
+    .toolbar span.second{
+      left: 60px;
       
+      bottom: 9px;
+    }
+    .toolbar span.second a{
+      color: white;
+    }
+    .toolbar span img{
+      width: 40px;
+      height: 40px;
+    }
+    .toolbar span i{
+      font-size: 43px;
+      color: white;
+    }
+    #cursorDiv img{
+      max-width: 100%;
+      width: 100%;
+      height: 100%;
+    }
+    .layui-carousel-ind li{
+      width: 5px;
+      height: 5px;
+    }
+    .layui-carousel-ind ul {
+      background-color: #ffffff00;
+    }
+    .layui-carousel-arrow{
+      display: none;
+    }
+    #cursorDiv{
+      height: 265px !important;
     }
   </style>
 </head>
 <body>
+<div class="nav">
+  <div class="phoneNav">
+    <img src="./img/page82/logo.png">
+  </div>
+</div>
+<div class="bgImg" >
+  <div class="layui-carousel" id="cursorDiv">
+    <div carousel-item>
+      <div><img src="./img/page83/banner1.jpg"></div>
+      <div><img src="./img/page83/banner2.jpg"></div>
+      <div><img src="./img/page83/banner3.jpg"></div>
+    </div>
+  </div>  
+</div>
+<div class="whyDiv">
+  <div class="layui-container">
+    <div class="layui-row"> 
+      <div class="layui-col-md12">
+        <h2 class="titleH2">为什么选择网易企业邮箱？</h2>
+        <p class="titleH2Info">22年运营经验,1500人专业团队,74万家企业信赖</p>
+        <ul>
+          <li class="isThis borderLeft">
+            <p class="imgP">
+              <img src="./img/page83/2.png">
+            </p>
+            <p class="title">品牌</p>
+            <p class="info">22年邮箱运维经验，10.46亿用户认可支持；超过74万家企业的信赖之选</p>
+          </li>
+          <li class="">
+            <p class="imgP">
+              <img src="./img/page83/2-1.png">
+            </p>
+            <p class="title">安全</p>
+            <p class="info">获得邮件领域高级别安全认证--中国信息安全检测中心EAL3+资质</p>
+          </li>
+          <li class="">
+            <p class="imgP">
+              <img src="./img/page83/2-2.png">
+            </p>
+            <p class="title">稳定</p>
+            <p class="info">从矩阵服务器架构，到24小时专属运维团队，保障企业客户的稳定使用。
+            </p>
+          </li>
+          <li class="">
+            <p class="imgP">
+              <img src="./img/page83/2-3.png">
+            </p>
+            <p class="title">畅游</p>
+            <p class="info">多线介入，10G带宽，优质IP资源库及全球服务器资源，保障畅游无阻。
+            </p>
+          </li>
+          <li class="">
+            <p class="imgP">
+              <img src="./img/page83/2-4.png">
+            </p>
+            <p class="title">易用</p>
+            <p class="info">上千项贴心功能；企业易管理，员工易用，随时随地移动办公。
+            </p>
+          </li>
+          <li class="">
+            <p class="imgP">
+              <img src="./img/page83/2-5.png">
+            </p>
+            <p class="title">服务</p>
+            <p class="info">前进有方向，服务无止境。300名客服团队，电话接通率90%
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="company">
+  <div class="layui-container">
+    <div class="layui-row"> 
+      <div class="layui-col-md12">
+        <h2 class="titleH2">超过4700万家用户正在使用网易企业邮箱</h2>
+        <p class="titleH2Info">他们也在使用网易企业邮箱</p>
+        <div>
+          <img src="./img/page83/3.jpg">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="primission">
+  <div class="layui-container">
+    <div class="layui-row"> 
+      <div class="layui-col-md12">
+        <h2 class="titleH2">企业授权</h2>
+        <p class="titleH2Info">西安千喜网络科技有限公司成立于2009年12月，是网易授权的企业产品一级经销商</p>
+        <p class="info">西安千喜网络科技有限公司成立于2009年12月，是网易授权的企业产品一级经销商。此外我公司也是陕西省公安厅公安网升级优化及维护服务商、西安市雪亮工程（即公共安全视频监控建设联网应用）项目市级中心机房及运维调度服务中心的服务商。2019年我司获工信部批准成为陕西省首家顶级域名注册服务机构，负责管理运营”.CN“、”.中国 “、”.COM“、”.NET“等顶级域的注册服务系统，此业务填补了陕西省域名注册服务机构的空白。</p>
+        <p class="imgP">
+          <img src="./img/page83/1.jpg">
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
 <div>
   <div class="layui-container">
     <div class="layui-row"> 
@@ -44,20 +258,58 @@
     </div>
   </div>
 </div>
+<div class="toolbar">
+  <span style="right: 20%;">
+    <a href="tel:029-81023319"><img src="./img/page83/tel.png"></a>
+  </span>
+  <span class="second">
+    <a href="https://www.workec.com/form/dynamic/ad97gH5tcOY%3D.html?chan=8829"><i class="layui-icon layui-icon-form"></i>申请使用</a>
+  </span>
+</div>
 </body>
 <script type="text/javascript" src="./layui/layui.js"></script>
 <script type="text/javascript">
-  layui.use(['jquery','layer','form',],function(){
+  layui.use(['jquery','layer','form','carousel'],function(){
     var $ = layui.jquery
-       ,form = layui.form
-       ,layer = layui.layer;
+    ,form = layui.form
+    ,carousel = layui.carousel
+    ,layer = layui.layer;
 
     $('.layui-btn').click(function(){
       layer.msg('点击按钮');
     })
     form.render();
-
+    carousel.render({
+      elem: '#cursorDiv'
+      ,width: '100%'
+      ,arrow: 'hover' 
+      ,indicator:'inside'
+      ,interval:3000
+    });
     
+
+    var wrap = document.querySelector('#cursorDiv')
+    var startPoint = 0;
+    var disX = 0;
+    //手指按下
+    wrap.addEventListener("touchstart",function(e){
+        startPoint = e.changedTouches[0].pageX;
+    });
+    //手指滑动
+    wrap.addEventListener("touchmove",function(e){
+        var currPoint = e.changedTouches[0].pageX;
+        disX = currPoint - startPoint;
+    });
+    //当手指抬起的时候，判断图片滚动离左右的距离，当
+    wrap.addEventListener("touchend",function(e){
+      // 判断正在滚动的图片距离左右图片的远近，以及是否为最后一张或者第一张
+      if(disX>0){
+        $('.layui-carousel-arrow[lay-type="sub"]').click();
+      }else{
+        $('.layui-carousel-arrow[lay-type="add"]').click();
+      }
+
+    })
   })
 </script>
 </html>

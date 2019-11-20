@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>商务条款审批</title>
+  <title></title>
   <link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
   <link rel="stylesheet" type="text/css" href="./pagecss.css">
   <link rel="shortcut icon" href="./img/sys/icon.ico" type="image/x-icon" />
@@ -16,7 +16,7 @@
   <span class="layui-breadcrumb" lay-separator=">">
     <a href=""><i class="layui-icon layui-icon-home"></i></a>
     <a href="">一级分类</a>
-    <a><cite>条款审批列表</cite></a>
+    <a><cite></cite></a>
   </span>
   <div class="rightDiv moreBtn">
   <span><i class="layui-icon layui-icon-left"></i></span>
@@ -32,13 +32,11 @@
             <div class="layui-card-body">
               <div>
                 <div style="float: right;">
-                  <span class="layui-btn layui-btn-normal" id=""><i class="layui-icon"></i>导出</span>
+                  <span class="layui-btn layui-btn-normal" id="addBtn"><i class="layui-icon layui-icon-add-1"></i>添加</span>
                 </div>
                 <table class="layui-form">
                   <tr>
-                    <td><input type="text" placeholder="检索归属项目" class="layui-input"></td>
-                    <td>&nbsp;&nbsp;</td>
-                    <td><input type="text" placeholder="检索客户名称" class="layui-input"></td>
+                    <td><input type="text" placeholder="关键字段查询" class="layui-input"></td>
                     <td>&nbsp;&nbsp;</td>
                     <td><span class="layui-btn layui-btn-normal"><i class="layui-icon layui-icon-search">查询</i></span></td>
                   </tr>
@@ -114,25 +112,22 @@
     ,layer = layui.layer;
 
     var data1 = [
-      { no:'1',state:'待审批',project:'',number:'北京微音软件有限公司',custome:'罗滔',start:'2018-08-25',end:'2019-08-05',area:'1000',price:10000},
-      { no:'2',state:'待审批',project:'',number:'北京微音软件有限公司',custome:'罗滔',start:'2018-08-25',end:'2019-08-05',area:'1000',price:10000},
-      { no:'3',state:'待审批',project:'',number:'北京微音软件有限公司',custome:'罗滔',start:'2018-08-25',end:'2019-08-05',area:'1000',price:10000},
+      { no:'1',name:'北京微音软件有限公司',contacts:'罗滔',phone:'18888888',address:'张三',},
+      { no:'2',name:'北京微音软件有限公司',contacts:'罗滔',phone:'18888888',address:'张三',},
+      { no:'3',name:'北京微音软件有限公司',contacts:'罗滔',phone:'18888888',address:'张三',},
     ];
     table.render({
       elem:'#tableData',
       data: data1,
       height:'610px',
+      toolbar:$('#toolbarTpl').html(),
       page:true,
       cols:[[
         {title:'序号',field:'no',sort:true,width:'8%',},
-        {title:'当前状态',field:'state',sort:true,},
-        {title:'所属项目',field:'project',sort:true,},
-        {title:'合同编号',field:'number',sort:true,},
-        {title:'客户名称',field:'custome',sort:true,},
-        {title:'合同开始日',field:'start',sort:true,},
-        {title:'合同截止日',field:'end',sort:true,},
-        {title:'合同面积',field:'area',sort:true,},
-        {title:'合同金额',field:'price',sort:true,},
+        {title:'内推名称',field:'name', sort:true, },
+        {title:'联系人',field:'contacts',width:'14%',sort:true,},
+        {title:'联系电话',field:'phone',width:'12%',},
+        {title:'客户类型',field:'type', width:'12%',sort:true,},
         {title:'操作',field:'',templet: getMoreTpl(), width:'15%',fixed:'right', },
       ]]
     })
@@ -140,11 +135,28 @@
     function getMoreTpl(){
       return function(d){
         return [
-          '<span class="layui-btn layui-btn-xs layui-btn-normal"><i class="layui-icon layui-icon-edit"></i>查看</span>',
-          '<span class="layui-btn layui-btn-xs layui-btn-danger"><i class="layui-icon layui-icon-delete"></i>审批</span>',
+          '<span class="layui-btn layui-btn-sm layui-btn-normal"><i class="layui-icon layui-icon-edit"></i>编辑</span>',
+          '<span class="layui-btn layui-btn-sm layui-btn-danger"><i class="layui-icon layui-icon-delete"></i>删除</span>',
         ].join(' ');
       }
     }
+    $('#addBtn').click(function(){
+      var addWin = layer.open({
+        type:1,
+        offset:'100px',
+        area:['1100px','350px'],
+         title:['<i class="layui-icon layui-icon-spread-left"></i>&nbsp;&nbsp;内推档案',
+                '<span class="headTips">',
+                  '<b class="red">*</b>为必填项',
+                '</span>'].join(''),
+        content:$('#addTpl').html(),
+        success:function(){
+          $('#closePage').unbind().on('click',function(){
+            layer.close(addWin);
+          })
+        }
+      })
+    })
     $('#refreshBtn').click(function(){
       location.reload();
     })

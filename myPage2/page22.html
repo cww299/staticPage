@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>商务条款审批</title>
+  <title>合同佣金列表</title>
   <link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
   <link rel="stylesheet" type="text/css" href="./pagecss.css">
   <link rel="shortcut icon" href="./img/sys/icon.ico" type="image/x-icon" />
@@ -16,7 +16,7 @@
   <span class="layui-breadcrumb" lay-separator=">">
     <a href=""><i class="layui-icon layui-icon-home"></i></a>
     <a href="">一级分类</a>
-    <a><cite>条款审批列表</cite></a>
+    <a><cite>合同佣金列表</cite></a>
   </span>
   <div class="rightDiv moreBtn">
   <span><i class="layui-icon layui-icon-left"></i></span>
@@ -36,9 +36,9 @@
                 </div>
                 <table class="layui-form">
                   <tr>
-                    <td><input type="text" placeholder="检索归属项目" class="layui-input"></td>
+                    <td><input type="text" placeholder="客户名称" class="layui-input"></td>
                     <td>&nbsp;&nbsp;</td>
-                    <td><input type="text" placeholder="检索客户名称" class="layui-input"></td>
+                    <td><input type="text" placeholder="项目名称" class="layui-input"></td>
                     <td>&nbsp;&nbsp;</td>
                     <td><span class="layui-btn layui-btn-normal"><i class="layui-icon layui-icon-search">查询</i></span></td>
                   </tr>
@@ -67,44 +67,6 @@
   </div>
 </div>
 </body>
-<script type="text/html" id="addTpl">
-  <div class="addTable">
-    <div class="layui-card">
-      <div class="layui-card-body">
-        <table>
-          <tr>
-            <td class="titleTd"><b class="red">*</b>内推名称：</td>
-            <td colspan="3"><input type="text" class="layui-input" placeholder=""></td>
-            <td class="titleTd">备注说明：</td>
-            <td rowspan="4"><textarea class="layui-textarea"></textarea></td>
-          </tr>
-          <tr>
-            <td class="titleTd">联系人：</td>
-            <td><input type="text" class="layui-input"></td>
-            <td class="titleTd">联系电话：</td>
-            <td><input type="text" class="layui-input"></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td class="titleTd">办公地址：</td>
-            <td colspan="3"><input type="text" class="layui-input" placeholder=""></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td class="titleTd">附件资料：</td>
-            <td colspan="3"><input type="text" class="layui-input" placeholder=""></td>
-            <td></td>
-          </tr>
-        </table>
-      </div>
-    </div>
-    <hr>
-    <p class="btnP">
-      <span class="layui-btn layui-btn-normal">提交保存</span>
-      <span class="layui-btn layui-btn-primary" id="closePage">返回</span>
-    </p>
-  </div>
-</script>
 <script type="text/javascript" src="./layui/layui.js"></script>
 <script type="text/javascript">
   layui.use(['jquery','layer','element','table'],function(){
@@ -114,9 +76,9 @@
     ,layer = layui.layer;
 
     var data1 = [
-      { no:'1',state:'待审批',project:'',number:'北京微音软件有限公司',custome:'罗滔',start:'2018-08-25',end:'2019-08-05',area:'1000',price:10000},
-      { no:'2',state:'待审批',project:'',number:'北京微音软件有限公司',custome:'罗滔',start:'2018-08-25',end:'2019-08-05',area:'1000',price:10000},
-      { no:'3',state:'待审批',project:'',number:'北京微音软件有限公司',custome:'罗滔',start:'2018-08-25',end:'2019-08-05',area:'1000',price:10000},
+      { no:'1',state:'项目总审批中',project:'北京微音软件有限公司',number:'HT5123123123',custome:'京微音软件有限公司',price:'100',price1:'100',price2:'100'},
+      { no:'2',state:'项目总审批中',project:'北京微音软件有限公司',number:'HT5123123123',custome:'京微音软件有限公司',price:'100',price1:'100',price2:'100'},
+      { no:'3',state:'项目总审批中',project:'北京微音软件有限公司',number:'HT5123123123',custome:'京微音软件有限公司',price:'100',price1:'100',price2:'100'},
     ];
     table.render({
       elem:'#tableData',
@@ -129,10 +91,9 @@
         {title:'所属项目',field:'project',sort:true,},
         {title:'合同编号',field:'number',sort:true,},
         {title:'客户名称',field:'custome',sort:true,},
-        {title:'合同开始日',field:'start',sort:true,},
-        {title:'合同截止日',field:'end',sort:true,},
-        {title:'合同面积',field:'area',sort:true,},
         {title:'合同金额',field:'price',sort:true,},
+        {title:'我的佣金',field:'price1',sort:true,},
+        {title:'已支出佣金',field:'price2',sort:true,},
         {title:'操作',field:'',templet: getMoreTpl(), width:'15%',fixed:'right', },
       ]]
     })
@@ -140,7 +101,8 @@
     function getMoreTpl(){
       return function(d){
         return [
-          '<span class="layui-btn layui-btn-xs layui-btn-normal"><i class="layui-icon layui-icon-edit"></i>查看</span>',
+          '<span class="layui-btn layui-btn-xs layui-btn-normal"><i class="layui-icon layui-icon-edit"></i>编辑</span>',
+          '<span class="layui-btn layui-btn-xs layui-btn-green"><i class="layui-icon layui-icon-edit"></i>申请</span>',
           '<span class="layui-btn layui-btn-xs layui-btn-danger"><i class="layui-icon layui-icon-delete"></i>审批</span>',
         ].join(' ');
       }

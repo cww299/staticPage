@@ -38,6 +38,14 @@
       top: 50px;
       right: 141px;
     }
+    .smallTitle{
+
+    }
+    .blueBlock{
+      width:3px;
+      height: 5px;
+      background: blue;
+    }
     @media screen and (min-width: 1500px){
       .layui-container {
           width: 1470px;
@@ -69,6 +77,7 @@
                 <div style="float: right;">
                   <span class="layui-btn layui-btn-normal" id="addCustom"><i class="layui-icon layui-icon-add-1"></i>添加</span>
                   <span class="layui-btn layui-btn-normal"><i class="layui-icon layui-icon-add-1"></i>转移客户</span>
+                  <span class="layui-btn layui-btn-normal" id="addBill"><i class="layui-icon layui-icon-add-1"></i>报价单</span>
                 </div>
                 <table class="layui-form">
                   <tr>
@@ -111,6 +120,74 @@
   <div class="addTable">
     <div class="layui-card">
       <div class="layui-card-body">
+        <table>
+          <tr>
+            <td class="titleTd"><b class="red">*</b>客户名称：</td>
+            <td colspan="3"><input type="text" class="layui-input" placeholder=""></td>
+            <td rowspan="4" style="padding: 8px 15px;text-align: center;width: 284px;">
+              <img src="./img/page8/tag-bg.png">
+              <span class="numberPeople">0</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="titleTd">法定代表：</td>
+            <td><input type="text" class="layui-input"></td>
+            <td class="titleTd">所属行业：</td>
+            <td><input type="text" class="layui-input"></td>
+          </tr>
+          <tr>
+            <td class="titleTd">注册地址：</td>
+            <td colspan="3"><input type="text" class="layui-input" placeholder=""></td>
+          </tr>
+           <tr>
+            <td class="titleTd">客户来源：</td>
+            <td><input type="text" placeholder="" class="layui-input"></td>
+            <td class="titleTd">来源名称：</td>
+            <td><input type="text" class="layui-input"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="layui-card">
+      <div class="layui-card-header"><i class="layui-icon layui-icon-spread-left"></i>&nbsp;&nbsp;联系人信息&nbsp;&nbsp;&nbsp;&nbsp;<b style="font-weight: normal;font-size: 13px;">注1：联系人与手机号码可以重复修改，但联系人与手机号码一旦被其他人员填写，您将无法重复录入；</b>
+      </div>
+      <div class="layui-card-body">
+        <table>
+          <tr>
+            <td class="titleTd"><b class="red">*</b>联系人：</td>
+            <td><input type="text" class="layui-input" placeholder=""></td>
+            <td class="titleTd">所属部门：</td>
+            <td><input type="text" placeholder="" class="layui-input"></td>
+            <td class="titleTd">所属植物：</td>
+            <td><input type="text" placeholder="" class="layui-input"></td>
+          </tr>
+          <tr>
+            <td class="titleTd"><b class="red">*</b>手机号码：</td>
+            <td><input type="text" class="layui-input" placeholder=""></td>
+            <td class="titleTd">固定电话：</td>
+            <td><input type="text" placeholder="" class="layui-input"></td>
+            <td class="titleTd">电子邮箱：</td>
+            <td><input type="text" placeholder="" class="layui-input"></td>
+          </tr>
+          <tr>
+            <td class="titleTd" style="vertical-align: top;">备注说明：</td>
+            <td colspan="5"><textarea class="layui-textarea"></textarea></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <hr>
+    <p class="btnP">
+      <span class="layui-btn layui-btn-normal">提交保存</span>
+      <span class="layui-btn layui-btn-primary" id="closePage">返回</span>
+    </p>
+  </div>
+</script>
+<script type="text/html" id="addBillTpl">
+  <div class="addTable">
+    <div class="layui-card">
+      <div class="layui-card-body">
+        <p class="smallTitle"><span class="blueBlock"></span>客户基础信息</p>
         <table>
           <tr>
             <td class="titleTd"><b class="red">*</b>客户名称：</td>
@@ -227,6 +304,22 @@
                   '<b class="red">*</b>为必填项',
                 '</span>'].join(''),
         content:$('#addCustomTpl').html(),
+        success:function(){
+          $('#closePage').unbind().on('click',function(){
+            layer.close(addProjectWin);
+          })
+        }
+      })
+    })
+    $('#addBill').click(function(){
+      var addProjectWin = layer.open({
+        type:1,
+        area:['1100px','100%'],
+        title:['<i class="layui-icon layui-icon-spread-left"></i>&nbsp;&nbsp;客户报价单&nbsp;&nbsp;&nbsp;&nbsp;<b class="customNumber">KF2015123123123</b>',
+                '<span class="headTips">',
+                  '<b class="red">*</b>为必填项',
+                '</span>'].join(''),
+        content:$('#addBillTpl').html(),
         success:function(){
           $('#closePage').unbind().on('click',function(){
             layer.close(addProjectWin);
