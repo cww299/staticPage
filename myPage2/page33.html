@@ -20,10 +20,12 @@
     .navNl li{
       float: left;
       padding: 0 15px;
-      font-size: 14px;
+      font-size: 15px;
       height: 35px;
       line-height: 35px;
       cursor: pointer;
+      color: gray;
+      padding-top: 8px;
     }
     .navNl li.lay-this{
       color: #0000ffba;
@@ -40,6 +42,12 @@
     table.content td.title{
       text-align: right;
       width: 150px;
+    }
+    .contentLi{
+      display: none;
+    }
+    .lay-this{
+      display: block;
     }
   </style>
 </head>
@@ -95,15 +103,15 @@
             <div class="layui-card-body" style="padding: 0 15px;">
               <div style="overflow: hidden;">
                 <ul class="navNl">
-                  <li class="lay-this">商务条款</li>
-                  <li>联系人</li>
-                  <li>客户开票设置</li>
-                  <li>银行账号设置</li>
-                  <li>银行流水信息</li>
-                  <li>关联审批</li>
-                  <li>合同费用明细</li>
-                  <li>退款明细</li>
-                  <li>相关附件</li>
+                  <li lay-index="1" class="lay-this">商务条款</li>
+                  <li lay-index="2">联系人</li>
+                  <li lay-index="3">客户开票设置</li>
+                  <li lay-index="4">银行账号设置</li>
+                  <li lay-index="5">银行流水信息</li>
+                  <li lay-index="6">关联审批</li>
+                  <li lay-index="7">合同费用明细</li>
+                  <li lay-index="8">退款明细</li>
+                  <li lay-index="9">相关附件</li>
                 </ul>
               </div>
             </div>
@@ -117,7 +125,7 @@
       <div class="layui-row">
         <div class="layui-col-md12">
           <div class="layui-card">
-            <div class="layui-card-body">
+            <div class="layui-card-body contentLi lay-this" lay-index="1">
               <div class="layui-form">
                 <table class="content">
                   <tr>
@@ -174,7 +182,59 @@
                     <td><input type="text" class="layui-input"></td>
                   </tr>
                 </table>
+                <div class="layui-card-header"><i class="layui-icon layui-icon-spread-left"></i>&nbsp;&nbsp;房源信息</div>
+                <table id="tableHouse" lay-filter="tableHouse">
+                <p class="allCheck">
+                  <span>租金包含：</span>
+                  <input type="checkbox" name="" title="房屋租金税" lay-skin="primary" checked>
+                  <input type="checkbox" name="" title="供暖费" lay-skin="primary">
+                  <input type="checkbox" name="" title="制冷费" lay-skin="primary">
+                  <input type="checkbox" name="" title="物业管理费" lay-skin="primary">
+                  <input type="checkbox" name="" title="其他" lay-skin="primary">
+                  <input type="text" placeholder="其他描述">
+                </p>
+                <div class="layui-card-header"><i class="layui-icon layui-icon-spread-left"></i>&nbsp;&nbsp;免租期间/其他费用</div>
+                <table id="tableOther" lay-filter="tableOther">
+                <div class="layui-card-header"><i class="layui-icon layui-icon-spread-left"></i>&nbsp;&nbsp;收发信息</div>
+                <table class="content">
+                  <tr>
+                    <td class="title" class="title"><b class="red">*</b>收件人：</td>
+                    <td><input type="text" class="layui-input"></td>
+                    <td class="title"><b class="red">*</b>收件联系电话：</td>
+                    <td><input type="text" class="layui-input"></td>
+                    <td class="title"><b class="red">*</b>电子邮件</td>
+                    <td><input type="text" class="layui-input"></td>
+                  </tr>
+                  <tr>
+                    <td class="title"><b class="red">*</b>收件地址</td>
+                    <td colspan="5"><input type="text" class="layui-input"></td>
+                  </tr>
+                </table>
               </div>
+            </div>
+            <div class="layui-card-body contentLi" lay-index="2">
+              2
+            </div>
+            <div class="layui-card-body contentLi" lay-index="3">
+              3
+            </div>
+            <div class="layui-card-body contentLi" lay-index="4">
+              4
+            </div>
+            <div class="layui-card-body contentLi" lay-index="5">
+              5
+            </div>
+            <div class="layui-card-body contentLi" lay-index="6">
+              6
+            </div>
+            <div class="layui-card-body contentLi" lay-index="7">
+              7
+            </div>
+            <div class="layui-card-body contentLi" lay-index="8">
+              8
+            </div>
+            <div class="layui-card-body contentLi" lay-index="9">
+              9
             </div>
           </div>
         </div>
@@ -193,6 +253,52 @@
 
     $('#refreshBtn').click(function(){
       location.reload();
+    })
+
+    $('.navNl').find('li').click(function(){
+      $(this).siblings().removeClass('lay-this');
+      $(this).addClass('lay-this');
+      var index = $(this).attr('lay-index');
+      $('.contentLi').removeClass('lay-this');
+      $('.contentLi[lay-index='+index+']').addClass('lay-this');
+
+    })
+
+    var tableHouse = [
+      {no:'1',number:'1001',floor:'1',area:100,address:'-'},
+      {no:'2',number:'1001',floor:'1',area:100,address:'-'},
+    ];
+    table.render({
+      elem:'#tableHouse',
+      data: tableHouse,
+      page:true,
+      height:'500px',
+      cols: [[
+        {title:'序号',field:'no', },
+        {title:'房源编号',field:'number', },
+        {title:'楼层',field:'floor', },
+        {title:'面积',field:'area', },
+        {title:'项目地址',field:'address', },
+      ]]
+    })
+    var tableOther = [
+      {no:'1',type:'免租期租金',start:'2019-01-01',end:'2019-01-01',price:'-',remark:''},
+      {no:'2',type:'免租期租金',start:'2019-01-01',end:'2019-01-01',price:'-',remark:''},
+    ];
+    table.render({
+      elem:'#tableOther',
+      data: tableOther,
+      page:true,
+      height:'500px',
+      cols: [[
+        {title:'序号',field:'no', },
+        {title:'费用科目',field:'type', },
+        {title:'开始日期',field:'start', },
+        {title:'结束日期',field:'end', },
+        {title:'天数',field:'day', },
+        {title:'单价',field:'price', },
+        {title:'备注信息',field:'remark', },
+      ]]
     })
   })
 </script>
