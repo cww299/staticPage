@@ -34,6 +34,7 @@
     }
     table.content{
       width:100%;
+      margin-top: 20px;
     }
     table.content td{
       text-align: left;
@@ -48,6 +49,15 @@
     }
     .lay-this{
       display: block;
+    }
+    .searchTable td{
+      padding-right: 10px;
+    }
+    .layui-card-header{
+      margin-top: 30px;
+    }
+    .allCheck{
+      color: gray;
     }
   </style>
 </head>
@@ -183,18 +193,24 @@
                   </tr>
                 </table>
                 <div class="layui-card-header"><i class="layui-icon layui-icon-spread-left"></i>&nbsp;&nbsp;房源信息</div>
-                <table id="tableHouse" lay-filter="tableHouse">
-                <p class="allCheck">
-                  <span>租金包含：</span>
-                  <input type="checkbox" name="" title="房屋租金税" lay-skin="primary" checked>
-                  <input type="checkbox" name="" title="供暖费" lay-skin="primary">
-                  <input type="checkbox" name="" title="制冷费" lay-skin="primary">
-                  <input type="checkbox" name="" title="物业管理费" lay-skin="primary">
-                  <input type="checkbox" name="" title="其他" lay-skin="primary">
-                  <input type="text" placeholder="其他描述">
-                </p>
+                <table id="tableHouse" lay-filter="tableHouse"></table>
+                <div class="allCheck">
+                  <table>
+                    <tr>
+                      <td>租金包含：</td>
+                      <td>
+                        <input type="checkbox" name="" title="房屋租金税" lay-skin="primary" checked>
+                        <input type="checkbox" name="" title="供暖费" lay-skin="primary">
+                        <input type="checkbox" name="" title="制冷费" lay-skin="primary">
+                        <input type="checkbox" name="" title="物业管理费" lay-skin="primary">
+                        <input type="checkbox" name="" title="其他" lay-skin="primary">
+                      </td>
+                      <td><span><input type="text" class="layui-input" placeholder="其他描述"></span></td>
+                    </tr>
+                  </table>
+                </div>
                 <div class="layui-card-header"><i class="layui-icon layui-icon-spread-left"></i>&nbsp;&nbsp;免租期间/其他费用</div>
-                <table id="tableOther" lay-filter="tableOther">
+                <table id="tableOther" lay-filter="tableOther"></table>
                 <div class="layui-card-header"><i class="layui-icon layui-icon-spread-left"></i>&nbsp;&nbsp;收发信息</div>
                 <table class="content">
                   <tr>
@@ -213,28 +229,96 @@
               </div>
             </div>
             <div class="layui-card-body contentLi" lay-index="2">
-              2
+              <p style="float: right;"><span class="layui-btn layui-btn-nromal">添加</span><span class="layui-btn layui-btn-nromal">导出</span></p>
+              <p class="smallTitle"><span class="blueBlock">&nbsp;</span>联系人</p>
+              <table id="contactTable" lay-filter="contactTable"></table>
             </div>
             <div class="layui-card-body contentLi" lay-index="3">
-              3
+              <p style="float: right;"><span class="layui-btn layui-btn-nromal">添加</span><span class="layui-btn layui-btn-nromal">导出</span></p>
+              <p class="smallTitle"><span class="blueBlock">&nbsp;</span>开票信息设置</p>
+              <table id="openSet" lay-filter="openSet"></table>
             </div>
             <div class="layui-card-body contentLi" lay-index="4">
-              4
+              <p style="float: right;"><span class="layui-btn layui-btn-nromal">添加</span><span class="layui-btn layui-btn-nromal">导出</span></p>
+              <p class="smallTitle"><span class="blueBlock">&nbsp;</span>银行信息</p>
+              <table id="bankSet" lay-filter="bankSet"></table>
             </div>
             <div class="layui-card-body contentLi" lay-index="5">
-              5
+              <p class="smallTitle"><span class="blueBlock">&nbsp;</span>银行信息</p>
+              <p style="float: right;">
+                <span class="layui-btn layui-btn-normal">添加</span>
+                <span class="layui-btn layui-btn-green">导出</span>
+                <span class="layui-btn layui-btn-primary">导出</span></p>
+              <table class="searchTable">
+                <tr>
+                  <td><input type="text" class="layui-input" placeholder="检索开始日期"></td>
+                  <td><input type="text" class="layui-input" placeholder="检索结束日期"></td>
+                  <td><input type="text" class="layui-input" placeholder="检索账号"></td>
+                  <td><input type="text" class="layui-input" placeholder="输入流水号"></td>
+                  <td><span class="layui-btn">搜索</span></td>
+                </tr>
+              </table>
+              <table id="bankInfo" lay-filter="bankInfo"></table>
             </div>
             <div class="layui-card-body contentLi" lay-index="6">
-              6
+              <p class="smallTitle"><span class="blueBlock">&nbsp;</span>关联审批</p>
+              <p style="float: right;">
+                <span class="layui-btn layui-btn-primary">导出</span></p>
+              <table class="searchTable">
+                <tr>
+                  <td><input type="text" class="layui-input" placeholder="系统编号"></td>
+                  <td><input type="text" class="layui-input" placeholder="关联审批"></td>
+                  <td><input type="text" class="layui-input" placeholder="标题"></td>
+                  <td><input type="text" class="layui-input" placeholder="发起人"></td>
+                  <td><span class="layui-btn">搜索</span></td>
+                </tr>
+              </table>
+              <table id="audit" lay-filter="audit"></table>
             </div>
             <div class="layui-card-body contentLi" lay-index="7">
-              7
+              <p class="smallTitle"><span class="blueBlock">&nbsp;</span>合同费用明细</p>
+              <p style="float: right;">
+                <span class="layui-btn layui-btn-primary">导出</span></p>
+              <table class="searchTable">
+                <tr>
+                  <td><input type="text" class="layui-input" placeholder="检索开始日期"></td>
+                  <td><input type="text" class="layui-input" placeholder="检索结束日期"></td>
+                  <td><input type="text" class="layui-input" placeholder="费用科目"></td>
+                  <td><input type="text" class="layui-input" placeholder="收款人"></td>
+                  <td><span class="layui-btn">搜索</span></td>
+                </tr>
+              </table>
+              <table id="priceInfo" lay-filter="priceInfo"></table>
             </div>
             <div class="layui-card-body contentLi" lay-index="8">
-              8
+              <p class="smallTitle"><span class="blueBlock">&nbsp;</span>退款明细</p>
+              <p style="float: right;">
+                <span class="layui-btn layui-btn-primary">导出</span></p>
+              <table class="searchTable">
+                <tr>
+                  <td><input type="text" class="layui-input" placeholder="检索开始日期"></td>
+                  <td><input type="text" class="layui-input" placeholder="检索结束日期"></td>
+                  <td><input type="text" class="layui-input" placeholder="费用科目"></td>
+                  <td><input type="text" class="layui-input" placeholder="收款人"></td>
+                  <td><span class="layui-btn">搜索</span></td>
+                </tr>
+              </table>
+              <table id="backInfo" lay-filter="backInfo"></table>
             </div>
             <div class="layui-card-body contentLi" lay-index="9">
-              9
+              <p class="smallTitle"><span class="blueBlock">&nbsp;</span>相关附件</p>
+              <p style="float: right;">
+                <span class="layui-btn layui-btn-primary">导出</span></p>
+              <table class="searchTable">
+                <tr>
+                  <td><input type="text" class="layui-input" placeholder="检索开始日期"></td>
+                  <td><input type="text" class="layui-input" placeholder="检索结束日期"></td>
+                  <td><input type="text" class="layui-input" placeholder="费用科目"></td>
+                  <td><input type="text" class="layui-input" placeholder="收款人"></td>
+                  <td><span class="layui-btn">搜索</span></td>
+                </tr>
+              </table>
+              <table id="other" lay-filter="other"></table>
             </div>
           </div>
         </div>
@@ -261,7 +345,10 @@
       var index = $(this).attr('lay-index');
       $('.contentLi').removeClass('lay-this');
       $('.contentLi[lay-index='+index+']').addClass('lay-this');
-
+      var allTable = $('.contentLi[lay-index='+index+']').find('table[lay-filter]');
+      for(var i=0;i<allTable.length;i++){
+        table.resize($(allTable[i]).attr('id'));
+      }
     })
 
     var tableHouse = [
@@ -274,11 +361,11 @@
       page:true,
       height:'500px',
       cols: [[
-        {title:'序号',field:'no', },
-        {title:'房源编号',field:'number', },
-        {title:'楼层',field:'floor', },
-        {title:'面积',field:'area', },
-        {title:'项目地址',field:'address', },
+        {title:'序号',field:'no',sort:true,},
+        {title:'房源编号',field:'number', sort:true,},
+        {title:'楼层',field:'floor', sort:true,},
+        {title:'面积',field:'area', sort:true,},
+        {title:'项目地址',field:'address', sort:true,},
       ]]
     })
     var tableOther = [
@@ -291,13 +378,223 @@
       page:true,
       height:'500px',
       cols: [[
-        {title:'序号',field:'no', },
-        {title:'费用科目',field:'type', },
-        {title:'开始日期',field:'start', },
-        {title:'结束日期',field:'end', },
-        {title:'天数',field:'day', },
-        {title:'单价',field:'price', },
-        {title:'备注信息',field:'remark', },
+        {title:'序号',field:'no', sort:true,},
+        {title:'费用科目',field:'type',sort:true,},
+        {title:'开始日期',field:'start', sort:true,},
+        {title:'结束日期',field:'end', sort:true,},
+        {title:'天数',field:'day', sort:true,},
+        {title:'单价',field:'price', sort:true,},
+        {title:'备注信息',field:'remark', sort:true,},
+      ]]
+    })
+    var contactTable = [
+      {no:'1',name:'张三',phone:'21888888',role:'决策人',part:'部门经理',birth:'1996-01-01',address:'',},
+      {no:'2',name:'张三',phone:'21888888',role:'决策人',part:'部门经理',birth:'1996-01-01',address:'',},
+    ];
+    table.render({
+      elem:'#contactTable',
+      data: contactTable,
+      page:true,
+      height:'500px',
+      cols: [[
+        {title:'序号',field:'no',width:'8%', sort:true,},
+        {title:'联系人姓名',field:'name',sort:true,},
+        {title:'手机号码',field:'phone', sort:true,},
+        {title:'角色',field:'role', sort:true,},
+        {title:'部门职位',field:'part', sort:true,},
+        {title:'生日',field:'birth', sort:true,},
+        {title:'联系地址',field:'address', sort:true,},
+        {title:'操作',field:'',templet: getMoreBtn(), },
+      ]]
+    })
+    function getMoreBtn(){
+      return function(d){
+        return [
+          '<span class="layui-btn layui-btn-xs layui-btn-normal">激活</span>',
+          '<span class="layui-btn layui-btn-xs layui-btn-normal">暂停</span>',
+        ].join('');
+      }
+    }
+    var openSet = [
+      {no:'1',pan:'百旺',type:'增值税专业发票',head:'北京微音软件有限公司',number:'9110232108230123',address:'北京市石景区',username:'中国建设银行西山枫林支行',email:'1923yy@qq.com',three:''},
+      {no:'2',pan:'百旺',type:'增值税专业发票',head:'北京微音软件有限公司',number:'9110232108230123',address:'北京市石景区',username:'中国建设银行西山枫林支行',email:'1923yy@qq.com',three:''},
+      {no:'3',pan:'百旺',type:'增值税专业发票',head:'北京微音软件有限公司',number:'9110232108230123',address:'北京市石景区',username:'中国建设银行西山枫林支行',email:'1923yy@qq.com',three:''},
+    ];
+    table.render({
+      elem:'#openSet',
+      data: openSet,
+      page:true,
+      height:'500px',
+      cols: [[
+        {title:'序号',field:'no',width:'8%', sort:true,},
+        {title:'税控盘',field:'pan', sort:true,},
+        {title:'发票类型',field:'type', sort:true,},
+        {title:'开票抬头',field:'head', sort:true,},
+        {title:'税号',field:'number', sort:true,},
+        {title:'地址/电话',field:'address', sort:true,},
+        {title:'开户行/账号',field:'username', sort:true,},
+        {title:'电子邮箱',field:'email', sort:true,},
+        {title:'三方协议',field:'three', sort:true,},
+        {title:'操作',field:'',templet: getMoreBtn2(), },
+      ]]
+    })
+    function getMoreBtn2(){
+      return function(d){
+        return [
+          '<span class="layui-btn layui-btn-xs layui-btn-normal">默认</span>',
+          '<span class="layui-btn layui-btn-xs layui-btn-normal">编辑</span>',
+          '<span class="layui-btn layui-btn-xs layui-btn-normal layui-btn-danger">删除</span>',
+        ].join('');
+      }
+    }
+    var bankSet = [
+      {no:'1',name:'北京微音软件有限公司',bankName:'国建设银行',username:'100123020101000',other:'某某打款附件',remark:'',},
+      {no:'2',name:'北京微音软件有限公司',bankName:'国建设银行',username:'100123020101000',other:'某某打款附件',remark:'',},
+    ];
+    table.render({
+      elem:'#bankSet',
+      data: bankSet,
+      page:true,
+      height:'500px',
+      cols: [[
+        {title:'序号',field:'no',width:'8%', sort:true,},
+        {title:'开户名称',field:'name', sort:true,},
+        {title:'开户行名称',field:'bankName', sort:true,},
+        {title:'银行账号',field:'username', sort:true,},
+        {title:'委托打款协议附件',field:'other', sort:true,},
+        {title:'备注说明',field:'remark', sort:true,},
+        {title:'操作',field:'',templet: getMoreBtn3(), },
+      ]]
+    })
+    function getMoreBtn3(){
+      return function(d){
+        return [
+          '<span class="layui-btn layui-btn-xs layui-btn-normal">编辑</span>',
+          '<span class="layui-btn layui-btn-xs layui-btn-normal layui-btn-danger">删除</span>',
+        ].join('');
+      }
+    }
+    var bankInfo = [
+      {no:'1',number:'北京微音软件有限公司',name:'国建设银行',username:'100123020101000',date:'',price:'',auditPrice:'',auditDate:'',auditPeople:'',xieyi:'',},
+      {no:'2',number:'北京微音软件有限公司',name:'国建设银行',username:'100123020101000',date:'',price:'',auditPrice:'',auditDate:'',auditPeople:'',xieyi:'',},
+    ];
+    table.render({
+      elem:'#bankInfo',
+      data: bankInfo,
+      page:true,
+      height:'500px',
+      cols: [[
+        {title:'序号',field:'no',width:'8%', sort:true,},
+        {title:'流水号',field:'number', sort:true,},
+        {title:'户名',field:'name', sort:true,},
+        {title:'银行账号',field:'username', sort:true,},
+        {title:'交易日期',field:'date', sort:true,},
+        {title:'交易金额',field:'price', sort:true,},
+        {title:'核销金额',field:'auditPrice', sort:true,},
+        {title:'核销日期',field:'auditDate', sort:true,},
+        {title:'核销人',field:'auditPeople', sort:true,},
+        {title:'委托打款协议',field:'xieyi', sort:true,},
+        {title:'操作',field:'',templet: getMoreBtn4(), },
+      ]]
+    })
+    function getMoreBtn4(){
+      return function(d){
+        return [
+          '<span class="layui-btn layui-btn-xs layui-btn-normal">详细</span>',
+          '<span class="layui-btn layui-btn-xs layui-btn-normal">编辑</span>',
+          '<span class="layui-btn layui-btn-xs layui-btn-normal layui-btn-danger">删除</span>',
+        ].join('');
+      }
+    }
+    var audit = [
+      {no:'1',number:'100031293130',audit:'招商银行',title:'',state:'',date:'',user:'',},
+      {no:'1',number:'100031293130',audit:'招商银行',title:'',state:'',date:'',user:'',},
+    ];
+    table.render({
+      elem:'#audit',
+      data: audit,
+      page:true,
+      height:'500px',
+      cols: [[
+        {title:'序号',field:'no',width:'8%', sort:true,},
+        {title:'系统编号',field:'number', sort:true,},
+        {title:'关联审批',field:'audit', sort:true,},
+        {title:'标题',field:'title', sort:true,},
+        {title:'当前状态',field:'state', sort:true,},
+        {title:'创建日期',field:'date', sort:true,},
+        {title:'发起人',field:'user', sort:true,},
+        {title:'操作',field:'',templet: getMoreBtn5(), },
+      ]]
+    })
+    function getMoreBtn5(){
+      return function(d){
+        return [
+          '<span class="layui-btn layui-btn-xs layui-btn-normal">详细</span>'
+        ].join('');
+      }
+    }
+    var priceInfo = [
+      
+    ];
+    table.render({
+      elem:'#priceInfo',
+      data: priceInfo,
+      page:true,
+      height:'500px',
+      cols: [[
+        {title:'序号',field:'no',width:'8%', sort:true,},
+        {title:'合同编号',field:'number', sort:true,},
+        {title:'费用科目',field:'audit', sort:true,},
+        {title:'费用期间',field:'title', sort:true,},
+        {title:'应收金额',field:'state', sort:true,},
+        {title:'剩余金额',field:'date', sort:true,},
+        {title:'剩余开票金额',field:'user', sort:true,},
+        {title:'开始日期',field:'user', sort:true,},
+        {title:'结束日期',field:'user', sort:true,},
+        {title:'收款编号',field:'user', sort:true,},
+        {title:'收款人',field:'user', sort:true,},
+        {title:'收款日期',field:'user', sort:true,},
+        {title:'操作',field:'',templet: getMoreBtn5(), },
+      ]]
+    })
+    var backInfo = [
+      
+    ];
+    table.render({
+      elem:'#backInfo',
+      data: backInfo,
+      page:true,
+      height:'500px',
+      cols: [[
+        {title:'序号',field:'no',width:'8%', sort:true,},
+        {title:'费用科目',field:'audit', sort:true,},
+        {title:'应退金额',field:'title', sort:true,},
+        {title:'实退金额',field:'state', sort:true,},
+        {title:'已退金额',field:'date', sort:true,},
+        {title:'关联合同编号',field:'user', sort:true,},
+        {title:'关联审批',field:'user', sort:true,},
+        {title:'退款人',field:'user', sort:true,},
+        {title:'退款日期',field:'user', sort:true,},
+        {title:'操作',field:'',templet: getMoreBtn5(), },
+      ]]
+    })
+    var other = [
+      
+    ];
+    table.render({
+      elem:'#other',
+      data: other,
+      page:true,
+      height:'500px',
+      cols: [[
+        {title:'序号',field:'no',width:'8%', sort:true,},
+        {title:'附件来源',field:'audit', sort:true,},
+        {title:'系统编号',field:'title', sort:true,},
+        {title:'标题',field:'state', sort:true,},
+        {title:'附件名称',field:'date', sort:true,},
+        {title:'附件格式',field:'user', sort:true,},
+        {title:'上传人',field:'user', sort:true,},
+        {title:'操作',field:'',templet: getMoreBtn5(), },
       ]]
     })
   })
