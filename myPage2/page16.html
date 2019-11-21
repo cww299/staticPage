@@ -8,7 +8,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <style>
-    
+	
   </style>
 </head>
 <body>
@@ -61,6 +61,77 @@
                     <li class="finally lay-this"><a><span>直属领导审批</span><i></i></a></li>
                     <li class=""><a><span>园区总经理审批</span><i></i></a></li>
                     <li class=""><a><span>审批完成</span></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top:5px;">
+    <div class="layui-container">
+      <div class="layui-row">
+        <div class="layui-col-md12">
+          <div class="layui-card">
+            <div class="layui-card-body">
+           	  <p class="smallTitle"><span class="blueBlock">&nbsp;</span>处理进度组件</p>
+              <div class="pointsRule2">
+                <ul>
+                    <li class="">
+                    	<div class="left">
+                    		<p class="state"><span class="create">创建</span></p>
+                    		<p class="icon"><i class="layui-icon layui-icon-username"></i></p>
+                    		<p class="name">李小明</p>
+                    		<p class="time">2019-03-15</p>
+                    	</div>
+                    	<div class="loading">
+                    		<span class="info">已等待12小时30分钟</span>
+                    		<span class="loads"><b class="full full50"></b></span>
+                    	</div>
+                    	<div class="right">
+                    		<p class="state"><span class="end">完结</span></p>
+                    		<p class="icon"><i class="layui-icon layui-icon-username"></i></p>
+                    		<p class="name">李小明</p>
+                    		<p class="time">待处理</p>
+                    	</div>
+                    </li>
+                    <li class="">
+                    	<div class="left">
+                    		<p class="state"><span class="create">创建</span></p>
+                    		<p class="icon"><i class="layui-icon layui-icon-username"></i></p>
+                    		<p class="name">李小明</p>
+                    		<p class="time">2019-03-15</p>
+                    	</div>
+                    	<div class="loading">
+                    		<span class="info">共耗时12小时30分钟</span>
+                    		<span class="loads"><b class="full full100"></b></span>
+                    	</div>
+                    	<div class="right">
+                    		<p class="state"><span class="">完结</span></p>
+                    		<p class="icon"><i class="layui-icon layui-icon-username"></i></p>
+                    		<p class="name">李小明</p>
+                    		<p class="time">2019-03-15</p>
+                    	</div>
+                    </li>
+                    <li class="">
+                    	<div class="left">
+                    		<p class="state"><span class="create">创建</span></p>
+                    		<p class="icon"><i class="layui-icon layui-icon-username"></i></p>
+                    		<p class="name">李小明</p>
+                    		<p class="time">2019-03-15</p>
+                    	</div>
+                    	<div class="loading">
+                    		<span class="info">已等待12小时30分钟</span>
+                    		<span class="loads"><b class="full"></b></span>
+                    	</div>
+                    	<div class="right">
+                    		<p class="state"><span class="red">返回</span></p>
+                    		<p class="icon"><i class="layui-icon layui-icon-username"></i></p>
+                    		<p class="name">李小明</p>
+                    		<p class="time">2019-03-15</p>
+                    	</div>
+                    </li>
                 </ul>
               </div>
             </div>
@@ -213,7 +284,7 @@
     ,element = layui.element
     ,layer = layui.layer;
 
-  
+  	
     $('#successBtn').click(function(){
       layer.msg('审批通过',{icon:1});
     })

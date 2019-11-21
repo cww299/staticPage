@@ -297,6 +297,119 @@ table.infoTable td.title{
 a{
   color: blue;
 }
+/*进程图样式2*/
+.pointsRule2{
+  overflow: hidden;
+}
+.pointsRule2 ul li{
+  margin-top: 10px;
+  overflow: hidden;
+}
+.pointsRule2 ul li>div{
+  float: left;
+  width: 20%;
+}
+.pointsRule2 ul li>div p{
+  text-align: center;
+  color: gray;
+}
+.pointsRule2 ul li>div p.state{
+  overflow: hidden;
+}
+.pointsRule2 ul li>div p.state span{
+  background: #5aa1d6ad;
+  color: white;
+  padding: 10px 25px;
+}
+.pointsRule2 ul li>div p.state span.end{
+  background:#8080804a;
+}
+.pointsRule2 ul li>div p.state span.red{
+  background:red;
+}
+.pointsRule2 ul li>div p.state span:after{
+  position: absolute;
+  width: 0;
+  height: 0;
+  margin-left: -24px;
+  margin-top: 24px;
+  content: " ";
+  border-top: 10px solid #8fbfe3;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+}
+.pointsRule2 ul li>div p.state span.end:after{
+  border-top: 10px solid #8080804a;
+}
+.pointsRule2 ul li>div p.state span.red:after{
+  border-top: 10px solid red;
+}
+.pointsRule2 ul li>div p.icon{
+  margin-top: 15px;
+}
+.pointsRule2 ul li>div p.icon i{
+  background: #8080805e;
+  color: white;
+  font-size: 25px;
+  border-radius: 12px;
+}
+.pointsRule2 ul li .loading{
+  width: 58%;
+  margin:0 1%;
+  text-align: center;
+}
+.pointsRule2 ul li .loading span.info{
+    margin-top: 25px;
+  display: block;
+  margin-bottom: 5px;
+  color: gray;
+}
+.pointsRule2 ul li .loading span.loads{
+  background: #dadada;
+  width: 100%;
+  display: block;
+  height: 5px;
+}
+.full{
+  background: #8fbfe3;
+  height: 100%;
+  display: block;
+  width: 0%;
+}
+.full0{
+  width: 0%;
+}
+.full10{
+  width: 10%;
+}
+.full20{
+  width: 20%;
+}
+.full30{
+  width: 30%;
+}
+.full40{
+  width: 40%;
+}
+.full50{
+  width: 50%;
+}
+.full60{
+  width: 60%;
+}
+.full70{
+  width: 70%;
+}
+.full80{
+  width: 80%;
+}
+.full90{
+  width: 90%;
+}
+.full100{
+  width: 100%;
+}
+/*进程图样式2结束*/
 @media screen and (min-width: 1270px){
   .layui-container {
       width: 1270px;
