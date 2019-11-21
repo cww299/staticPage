@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+  <title>合同终止</title>
   <link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
   <link rel="stylesheet" type="text/css" href="./pagecss.css">
   <link rel="shortcut icon" href="./img/sys/icon.ico" type="image/x-icon" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <style>
-    
+    .pointsRule ul li i {
+      margin-top: -21px;
+    }
   </style>
 </head>
 <body>
@@ -16,7 +18,7 @@
   <span class="layui-breadcrumb" lay-separator=">">
     <a href=""><i class="layui-icon layui-icon-home"></i></a>
     <a href="">一级分类</a>
-    <a><cite></cite></a>
+    <a><cite>合同终止</cite></a>
   </span>
   <div class="rightDiv moreBtn">
   <span><i class="layui-icon layui-icon-left"></i></span>
@@ -32,11 +34,17 @@
             <div class="layui-card-body">
               <div>
                 <div style="float: right;">
-                  <span class="layui-btn layui-btn-normal" id="addBtn"><i class="layui-icon layui-icon-add-1"></i>添加</span>
+                  <span class="layui-btn layui-btn-normal" id=""><i class="layui-icon"></i>导出</span>
                 </div>
                 <table class="layui-form">
                   <tr>
-                    <td><input type="text" placeholder="关键字段查询" class="layui-input"></td>
+                    <td><input type="text" placeholder="客户名称" class="layui-input"></td>
+                    <td>&nbsp;&nbsp;</td>
+                    <td><input type="text" placeholder="核销单号" class="layui-input"></td>
+                    <td>&nbsp;&nbsp;</td>
+                    <td><select lay-search><option value="">银行流水</option></select></td>
+                    <td>&nbsp;&nbsp;</td>
+                    <td><input type="text" placeholder="经手人员" class="layui-input"></td>
                     <td>&nbsp;&nbsp;</td>
                     <td><span class="layui-btn layui-btn-normal"><i class="layui-icon layui-icon-search">查询</i></span></td>
                   </tr>
@@ -65,98 +73,238 @@
   </div>
 </div>
 </body>
-<script type="text/html" id="addTpl">
+<script type="text/html" id="zhongzhiTpl">
+  <div class="addTable">
+    <div class="layui-card">
+      <div class="layui-card-body">
+        <div class="pointsRule">
+          <ul>
+              <li class="finally"><a><span>提交审批</span><i></i></a></li>
+              <li class="finally"><a><span>直属领导审批</span><i></i></a></li>
+              <li class=""><a><span>园区总经理审批</span><i></i></a></li>
+              <li class=""><a><span>审批完成</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="layui-card">
+      <div class="layui-card-body">
+        <p class="smallTitle"><span class="blueBlock">&nbsp;</span>基础信息</p>
+        <table class="layui-form">
+          <tr>
+            <td class="titleTd">合同编号：</td>
+            <td><input type="text" class="layui-input" placeholder=""></td>
+            <td class="titleTd">客户名称：</td>
+            <td colspan="3"><input type="text" class="layui-input" placeholder=""></td>
+          </tr>
+          <tr>
+            <td class="titleTd"><b class="red">*</b>终止日期：</td>
+            <td><input type="text" class="layui-input"></td>
+            <td class="titleTd">合同开始日：</td>
+            <td><input type="text" class="layui-input"></td>
+            <td class="titleTd">合同结束日：</td>
+            <td><input type="text" class="layui-input" placeholder=""></td>
+          </tr>
+          <tr>
+            <td class="titleTd"><b class="red">*</b>终止状态：</td>
+            <td><select lay-search><option value="">正常终止/提前终止/违约终止</option></select></td>
+            <td class="titleTd">备注说明：</td>
+            <td colspan="3"><input type="text" class="layui-input" placeholder=""></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+     <hr>
+    <div class="layui-card">
+      <div class="layui-card-body">
+        <p class="smallTitle"><span class="blueBlock">&nbsp;</span>合同欠费明细</p>
+        <table id="zzTable" lay-filter="zzTable"></table>
+         <p class="description">审核说明</p>
+          <p>
+            <textarea style="height: 120px" class="layui-textarea"></textarea>
+          </p>
+      </div>
+    </div>
+    <div class="layui-card">
+      <div class="layui-card-body">
+        <p class="contentTitle"><i class="layui-icon layui-icon-component"></i>&nbsp;&nbsp;审批动态</p>
+        <ul class="layui-timeline">
+          <li class="layui-timeline-item">
+            <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+            <div class="layui-timeline-content layui-text">
+              <span></span>
+             <!--  border-width: 8px;
+              border-style: solid;
+              border-color: transparent #56a3e1 transparent transparent; -->
+              <h3 class="layui-timeline-title">2019-03-23 11:18</h3>
+              <div class="timeContent">
+                <p>
+                  <span><i class="layui-icon layui-icon-username lineIcon"></i>李小明</span>
+                  <span class="project">所属项目：北京石景山</span>
+                  <span class="time"><i class="layui-icon layui-icon-log"></i>2019-03-11 22:31</span>
+                </p>
+                <p class="info">提交第一期回款 审批</p>
+              </div>
+            </div>
+          </li>
+          <li class="layui-timeline-item">
+            <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+            <div class="layui-timeline-content layui-text">
+              <div class="timeContent">
+                <p>
+                  <span><i class="layui-icon layui-icon-username lineIcon"></i>李小明</span>
+                  <span class="project">所属项目：北京石景山</span>
+                  <span class="time"><i class="layui-icon layui-icon-log"></i>2019-03-11 22:31</span>
+                </p>
+                <p class="info">提交第一期回款 审批</p>
+              </div>
+            </div>
+          </li>
+          <li class="layui-timeline-item">
+            <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+            <div class="layui-timeline-content layui-text">
+              <div class="timeContent">
+                <p>
+                  <span><i class="layui-icon layui-icon-username lineIcon"></i>李小明</span>
+                  <span class="project">所属项目：北京石景山</span>
+                  <span class="time"><i class="layui-icon layui-icon-log"></i>2019-03-11 22:31</span>
+                </p>
+                <p class="info">提交第一期回款 审批</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+    <p class="btnP">
+      <span class="layui-btn layui-btn-normal">保存信息</span>
+      <span class="layui-btn layui-btn-normal">提交审核</span>
+      <span class="layui-btn layui-btn-primary" id="closePage">返回</span>
+    </p>
+  </div>
+</script>
+<script type="text/html" id="failTpl">
   <div class="addTable">
     <div class="layui-card">
       <div class="layui-card-body">
         <table>
           <tr>
-            <td class="titleTd"><b class="red">*</b>内推名称：</td>
-            <td colspan="3"><input type="text" class="layui-input" placeholder=""></td>
-            <td class="titleTd">备注说明：</td>
-            <td rowspan="4"><textarea class="layui-textarea"></textarea></td>
+            <td><p style="color: gray;">撤销审批，需要填写撤销原因</p></td>
           </tr>
           <tr>
-            <td class="titleTd">联系人：</td>
-            <td><input type="text" class="layui-input"></td>
-            <td class="titleTd">联系电话：</td>
-            <td><input type="text" class="layui-input"></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td class="titleTd">办公地址：</td>
-            <td colspan="3"><input type="text" class="layui-input" placeholder=""></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td class="titleTd">附件资料：</td>
-            <td colspan="3"><input type="text" class="layui-input" placeholder=""></td>
-            <td></td>
+            <td rowspan=""><textarea style="height: 220px" class="layui-textarea" placeholder="请填写撤销审批原因"></textarea></td>
           </tr>
         </table>
       </div>
     </div>
     <hr>
     <p class="btnP">
-      <span class="layui-btn layui-btn-normal">提交保存</span>
-      <span class="layui-btn layui-btn-primary" id="closePage">返回</span>
+      <span class="layui-btn layui-btn-primary" id="closePage2">取消</span>
+      <span class="layui-btn layui-btn-normal">确定</span>
     </p>
   </div>
 </script>
 <script type="text/javascript" src="./layui/layui.js"></script>
 <script type="text/javascript">
-  layui.use(['jquery','layer','element','table'],function(){
+  layui.use(['jquery','layer','element','table','form'],function(){
     var $ = layui.jquery
     ,table = layui.table
+    ,form = layui.form
     ,element = layui.element
     ,layer = layui.layer;
 
     var data1 = [
-      { no:'1',name:'北京微音软件有限公司',contacts:'罗滔',phone:'18888888',address:'张三',},
-      { no:'2',name:'北京微音软件有限公司',contacts:'罗滔',phone:'18888888',address:'张三',},
-      { no:'3',name:'北京微音软件有限公司',contacts:'罗滔',phone:'18888888',address:'张三',},
+      { state:'审批中',number:'',custome:'京微音软件有限公司',start:'2019-08-01',end:'2019-08-01',price:'100',surplusPrice:'100'},
+      { state:'审批中',number:'',custome:'京微音软件有限公司',start:'2019-08-01',end:'2019-08-01',price:'100',surplusPrice:'100'},
+      { state:'审批中',number:'',custome:'京微音软件有限公司',start:'2019-08-01',end:'2019-08-01',price:'100',surplusPrice:'100'},
     ];
     table.render({
       elem:'#tableData',
       data: data1,
       height:'610px',
-      toolbar:$('#toolbarTpl').html(),
       page:true,
       cols:[[
-        {title:'序号',field:'no',sort:true,width:'8%',},
-        {title:'内推名称',field:'name', sort:true, },
-        {title:'联系人',field:'contacts',width:'14%',sort:true,},
-        {title:'联系电话',field:'phone',width:'12%',},
-        {title:'客户类型',field:'type', width:'12%',sort:true,},
-        {title:'操作',field:'',templet: getMoreTpl(), width:'15%',fixed:'right', },
-      ]]
+        {type:'checkbox',fixed:'left',},
+        {title:'状态',field:'state',sort:true,},
+        {title:'合同编号',field:'number',sort:true,},
+        {title:'客户名称',field:'custome',sort:true,},
+        {title:'开始日期',field:'start',sort:true,},
+        {title:'终止日期',field:'end',sort:true,},
+        {title:'合同金额',field:'price',sort:true,},
+        {title:'剩余金额',field:'surplusPrice',sort:true,},
+        {title:'操作',field:'',templet: getMoreTpl(), width:'25%',fixed:'right', },
+      ]],
+      done:function(){
+        $('.audit').unbind().on('click',function(){
+          var addProjectWin = layer.open({
+            type:1,
+            area:['1100px','100%'],
+            move: false,
+            title:['<i class="layui-icon layui-icon-spread-left"></i>&nbsp;&nbsp;合同中止：TK2019102022',
+                    '<span class="headTips">',
+                      '<span class="layui-btn layui-btn-sm layui-btn-primary" id="successBtn"><iclass="layui-icon layui-icon-ok-circle"></i>审批通过</span>',
+                      '<span class="layui-btn layui-btn-sm layui-btn-primary" id="failBtn"><i class="layui-icon layui-icon-close-fill"></i>驳回审批</span>',
+                      '&nbsp;&nbsp;<b class="red">*</b>为必填项',
+                    '</span>'].join(''),
+            content:$('#zhongzhiTpl').html(),
+            success:function(){
+              form.render();
+              var zzData = [
+                { no:1,number:'HT15123',customer:'北京维音软件有限公司',type:'租金',start:'',end:'',price:'',price2:'',},
+                { no:2,number:'HT15123',customer:'北京维音软件有限公司',type:'租金',start:'',end:'',price:'',price2:'',},
+              ];
+              table.render({
+                elem:'#zzTable',
+                data: zzData,
+                height:'300px',
+                page:true,
+                cols:[[
+                  { field:'no',title:'序号',},
+                  { field:'number',title:'编号', },
+                  { field:'customer',title:'客户名称', },
+                  { field:'type',title:'费用科目', },
+                  { field:'start',title:'开始日期', },
+                  { field:'end',title:'结束日期', },
+                  { field:'price',title:'应缴金额', },
+                  { field:'price2',title:'剩余金额', },
+                ]]
+              })
+              $('#closePage').on('click',function(){
+                layer.close(addProjectWin);
+              })
+              $('#failBtn').click(function(){
+                console.log(2)
+                var win = layer.open({
+                  type:1,
+                  offset:'100px',
+                  area:['500px','400px'],
+                  title:['撤销审批'].join(''),
+                  content:$('#failTpl').html(),
+                  success:function(){
+                    $('#closePage2').unbind().on('click',function(){
+                      console.log(1);
+                      layer.close(win);
+                    })
+                  }
+                })
+              })
+            }
+          })
+        })
+      }
     })
     
     function getMoreTpl(){
       return function(d){
         return [
-          '<span class="layui-btn layui-btn-sm layui-btn-normal"><i class="layui-icon layui-icon-edit"></i>编辑</span>',
-          '<span class="layui-btn layui-btn-sm layui-btn-danger"><i class="layui-icon layui-icon-delete"></i>删除</span>',
+          '<span class="layui-btn layui-btn-xs layui-btn-normal"><i class="layui-icon layui-icon-about"></i>详细</span>',
+          '<span class="layui-btn layui-btn-xs layui-btn-green"><i class="layui-icon layui-icon-edit"></i>发起终止</span>',
+          '<span class="layui-btn layui-btn-xs layui-btn-danger audit"><i class="layui-icon layui-icon-delete audit" ></i>审批</span>',
+          '<span class="layui-btn layui-btn-xs layui-btn-green"><i class="layui-icon layui-icon-edit"></i>生成PDF</span>',
         ].join(' ');
       }
     }
-    $('#addBtn').click(function(){
-      var addWin = layer.open({
-        type:1,
-        offset:'100px',
-        area:['1100px','350px'],
-         title:['<i class="layui-icon layui-icon-spread-left"></i>&nbsp;&nbsp;内推档案',
-                '<span class="headTips">',
-                  '<b class="red">*</b>为必填项',
-                '</span>'].join(''),
-        content:$('#addTpl').html(),
-        success:function(){
-          $('#closePage').unbind().on('click',function(){
-            layer.close(addWin);
-          })
-        }
-      })
-    })
     $('#refreshBtn').click(function(){
       location.reload();
     })

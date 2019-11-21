@@ -12,11 +12,15 @@
       color: red;
     }
     .addTable table{
-      width: 100%;
+      width: 95%;
       margin: 10px auto;
     }
     .addTable table .titleTd{
       text-align: right;
+    }
+    .addTable table td.title{
+      text-align: right;
+      min-width: 95px;
     }
     .layui-textarea{
       height: 180px;
@@ -38,13 +42,45 @@
       top: 50px;
       right: 141px;
     }
-    .smallTitle{
-
+    .layerContentDiv{
+      overflow: hidden;
+      margin: 0;
+      width: 100% !important;
     }
-    .blueBlock{
-      width:3px;
-      height: 5px;
-      background: blue;
+    .layerContent{
+      overflow: hidden;
+      margin: 0;
+      width: 100% !important;
+    }
+    .layerContent table .titleTd{
+      width: 80px;
+    }
+    .imgTd>div{
+      background: #1394ce;
+      width: 100px;
+      height: 100px;
+      margin-right: 45px;
+      float: left;
+      margin: 0 30px;
+      color: white;
+      font-size: 40px;
+      text-align: center;
+      line-height: 65px;
+      cursor: pointer;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .imgTd>div>p{
+      font-size: 12px !important;
+      background: orange;
+      text-align: center;
+      line-height: 35px;
+    }
+    .twoDiv{
+      width: 48.5% !important;
+      float: left;
+      padding: 0.5%;
+      margin-top: 10px !important;
     }
     @media screen and (min-width: 1500px){
       .layui-container {
@@ -184,71 +220,79 @@
   </div>
 </script>
 <script type="text/html" id="addBillTpl">
-  <div class="addTable">
-    <div class="layui-card">
-      <div class="layui-card-body">
-        <p class="smallTitle"><span class="blueBlock"></span>客户基础信息</p>
-        <table>
-          <tr>
-            <td class="titleTd"><b class="red">*</b>客户名称：</td>
-            <td colspan="3"><input type="text" class="layui-input" placeholder=""></td>
-            <td rowspan="4" style="padding: 8px 15px;text-align: center;width: 284px;">
-              <img src="./img/page8/tag-bg.png">
-              <span class="numberPeople">0</span>
-            </td>
-          </tr>
-          <tr>
-            <td class="titleTd">法定代表：</td>
-            <td><input type="text" class="layui-input"></td>
-            <td class="titleTd">所属行业：</td>
-            <td><input type="text" class="layui-input"></td>
-          </tr>
-          <tr>
-            <td class="titleTd">注册地址：</td>
-            <td colspan="3"><input type="text" class="layui-input" placeholder=""></td>
-          </tr>
-           <tr>
-            <td class="titleTd">客户来源：</td>
-            <td><input type="text" placeholder="" class="layui-input"></td>
-            <td class="titleTd">来源名称：</td>
-            <td><input type="text" class="layui-input"></td>
-          </tr>
-        </table>
+  <div class="addTable" style="background: #f4f4f4;overflow: hidden;">
+    <div class="layui-card layerContentDiv">
+      <div class="layui-card-body layerContent">
+        <div style="width: 48%;float: left;padding: 0 5px;">
+          <p class="smallTitle"><span class="blueBlock">&nbsp;</span>客户基础信息</p>
+          <table>
+            <tr>
+              <td class="titleTd"><b class="red">*</b>客户名称：</td>
+              <td colspan="3"><input type="text" class="layui-input" placeholder=""></td>
+            </tr>
+            <tr>
+              <td class="titleTd">租赁日起：</td>
+              <td><input type="text" class="layui-input"></td>
+              <td class="titleTd">租赁日止：</td>
+              <td><input type="text" class="layui-input"></td>
+            </tr>
+            <tr>
+              <td class="titleTd">首年单价：</td>
+              <td><input type="text" class="layui-input"></td>
+              <td class="titleTd">租赁时长：</td>
+              <td><input type="text" class="layui-input"></td>
+            </tr>
+             <tr>
+              <td class="titleTd">付款方式：</td>
+              <td><input type="text" placeholder="" class="layui-input"></td>
+              <td class="titleTd">递增方式：</td>
+              <td><input type="text" class="layui-input"></td>
+            </tr>
+            <tr>
+              <td class="imgTd" colspan="4">
+                <div>6.6<p>首年Revpar</p></div>
+                <div>6.6<p>时点Revpar</p></div>
+                <div style="line-height: 100px;">计算</div>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div style="width: 48%;float: right;padding: 0 5px;">
+          <p class="smallTitle"><span class="blueBlock">&nbsp;</span>免租期/物业费
+            <span class="layui-btn layui-btn-sm layui-btn-normal" style=" float: right;">添加</span></p>
+          <table id="freeTable" lay-filter="freeTable"></table>
+        </div>
       </div>
     </div>
-    <div class="layui-card">
-      <div class="layui-card-header"><i class="layui-icon layui-icon-spread-left"></i>&nbsp;&nbsp;联系人信息&nbsp;&nbsp;&nbsp;&nbsp;<b style="font-weight: normal;font-size: 13px;">注1：联系人与手机号码可以重复修改，但联系人与手机号码一旦被其他人员填写，您将无法重复录入；</b>
-      </div>
-      <div class="layui-card-body">
-        <table>
-          <tr>
-            <td class="titleTd"><b class="red">*</b>联系人：</td>
-            <td><input type="text" class="layui-input" placeholder=""></td>
-            <td class="titleTd">所属部门：</td>
-            <td><input type="text" placeholder="" class="layui-input"></td>
-            <td class="titleTd">所属植物：</td>
-            <td><input type="text" placeholder="" class="layui-input"></td>
-          </tr>
-          <tr>
-            <td class="titleTd"><b class="red">*</b>手机号码：</td>
-            <td><input type="text" class="layui-input" placeholder=""></td>
-            <td class="titleTd">固定电话：</td>
-            <td><input type="text" placeholder="" class="layui-input"></td>
-            <td class="titleTd">电子邮箱：</td>
-            <td><input type="text" placeholder="" class="layui-input"></td>
-          </tr>
-          <tr>
-            <td class="titleTd" style="vertical-align: top;">备注说明：</td>
-            <td colspan="5"><textarea class="layui-textarea"></textarea></td>
-          </tr>
-        </table>
-      </div>
+    <div class="layui-card twoDiv">
+      <p class="smallTitle"><span class="blueBlock">&nbsp;</span>费用明细列表&nbsp;&nbsp;&nbsp;<span class="blueBlock">&nbsp;</span>合同保证金：&nbsp;&nbsp;&nbsp;租金：&nbsp;&nbsp;&nbsp;物业费：</p>
+      <table id="primissionTable" lay-filter="primissionTable"></table>
     </div>
-    <hr>
-    <p class="btnP">
-      <span class="layui-btn layui-btn-normal">提交保存</span>
-      <span class="layui-btn layui-btn-primary" id="closePage">返回</span>
-    </p>
+    <div class="layui-card twoDiv" style="float: right;">
+      <p class="smallTitle"><span class="blueBlock">&nbsp;</span>房源信息&nbsp;&nbsp;&nbsp;面积小计：
+            <span class="layui-btn layui-btn-sm layui-btn-normal" style=" float: right;">添加</span></p>
+      <table id="houseTable" lay-filter="houseTable"></table>
+      <table>
+        <tr>
+          <td class="title" style="vertical-align: top;">备注信息：</td>
+          <td colspan="3"><textarea class="layui-textarea"></textarea></td>
+        </tr>
+        <tr>
+          <td class="title">创建人：</td>
+          <td><input type="text" class="layui-input"></td>
+          <td class="title">创建日期：</td>
+          <td><input type="text" class="layui-input"></td>
+        </tr>
+      </table>
+      <hr>
+      <p class="btnP">
+        <span class="layui-btn layui-btn-normal">保存</span>
+        <span class="layui-btn layui-btn-normal">保存并打印</span>
+        <span class="layui-btn layui-btn-normal">保存生成合同</span>
+        <span class="layui-btn layui-btn-primary" id="closePage">返回</span>
+      </p>
+    </div>
+    
   </div>
 </script>
 <script type="text/javascript" src="./layui/layui.js"></script>
@@ -298,7 +342,7 @@
       var addProjectWin = layer.open({
         type:1,
         offset:'100px',
-        area:['1100px','680px'],
+        area:['1200px','680px'],
         title:['<i class="layui-icon layui-icon-spread-left"></i>&nbsp;&nbsp;新增客户&nbsp;&nbsp;&nbsp;&nbsp;<b class="customNumber">KF2015123123123</b>',
                 '<span class="headTips">',
                   '<b class="red">*</b>为必填项',
@@ -315,12 +359,78 @@
       var addProjectWin = layer.open({
         type:1,
         area:['1100px','100%'],
-        title:['<i class="layui-icon layui-icon-spread-left"></i>&nbsp;&nbsp;客户报价单&nbsp;&nbsp;&nbsp;&nbsp;<b class="customNumber">KF2015123123123</b>',
+        title:['<i class="layui-icon layui-icon-spread-left"></i>&nbsp;&nbsp;客户报价单',
                 '<span class="headTips">',
                   '<b class="red">*</b>为必填项',
                 '</span>'].join(''),
         content:$('#addBillTpl').html(),
         success:function(){
+          var d = [
+            {name:'免租期租金',start:'',end:'',price:'',},
+            {name:'免租期租金',start:'',end:'',price:'',},
+          ];
+          table.render({
+            elem:'#freeTable',
+            data:d,
+            height:'300px',
+            page:true,
+            cols:[[
+              {type:'checkbox',fixed:'left',},
+              {title:'科目名称',field:'name',},
+              {title:'开始日期',field:'start',},
+              {title:'结束日期',field:'end',},
+              {title:'单价',field:'price',},
+              {title:'操作', templet: getTableBtns(),},
+            ]],
+          })
+          var d2 = [
+            {name:'石景山',date:'',start:'',end:'',price:'',},
+            {name:'石景山',date:'',start:'',end:'',price:'',},
+            {name:'石景山',date:'',start:'',end:'',price:'',},
+            {name:'石景山',date:'',start:'',end:'',price:'',},
+            {name:'石景山',date:'',start:'',end:'',price:'',},
+            {name:'石景山',date:'',start:'',end:'',price:'',},
+            {name:'石景山',date:'',start:'',end:'',price:'',},
+            {name:'石景山',date:'',start:'',end:'',price:'',},
+          ];
+          table.render({
+            elem:'#primissionTable',
+            data:d2,
+            height:'629px',
+            page:true,
+            cols:[[
+              {type:'checkbox',fixed:'left',},
+              {title:'费用科目',field:'name',},
+              {title:'缴费日期',field:'date',},
+              {title:'开始日期',field:'start',},
+              {title:'结束日期',field:'end',},
+              {title:'缴费金额',field:'price',},
+            ]],
+          })
+          var d3 = [
+            {number:'石景山',floor:'',area:'',address:'点石商务6号楼'},
+            {number:'石景山',floor:'',area:'',address:'点石商务6号楼'},
+            {number:'石景山',floor:'',area:'',address:'点石商务6号楼'},
+          ];
+          table.render({
+            elem:'#houseTable',
+            data:d3,
+            height:'300px',
+            page:true,
+            cols:[[
+              {type:'checkbox',fixed:'left',},
+              {title:'房源编号',field:'number',},
+              {title:'楼层',field:'floor',},
+              {title:'面积',field:'area',},
+              {title:'地址',field:'address',},
+            ]],
+          })
+          function getTableBtns(){
+            return [
+              '<span class="layui-btn layui-btn-xs">编辑</span>',
+              '<span class="layui-btn layui-btn-xs layui-btn-danger">删除</span>',
+            ].join('');
+          }
           $('#closePage').unbind().on('click',function(){
             layer.close(addProjectWin);
           })

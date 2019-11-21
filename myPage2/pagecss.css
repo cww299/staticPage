@@ -194,6 +194,12 @@ table .layui-btn-sm {
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
 }
+.pointsRule ul li.lay-this{
+  background: orange !important;
+}
+.pointsRule ul li.lay-this i{
+  background: orange !important;
+}
 /*流程图结束*/
 /*时间线样式*/
 .layui-timeline-content .timeContent{
@@ -227,7 +233,70 @@ h3.layui-timeline-title{
   padding: 5px;
   display: inline-block;
 }
+.blueBlock{
+  width:3px;
+  height: 5px;
+  background:#2196F3;
+  margin-right: 5px;
+}
+.smallTitle{
+  color: #000000ba;
+  margin-top: 8px;
+}
 /*时间线样式结束*/
+table.infoTable td {
+    padding: 7px 5px !important;
+}
+.layui-btn-primary:hover{
+  background-color: #1E9FFF;
+  color: #fff;
+}
+.number{
+  font-size: 15px;
+  font-weight: bold;
+  color: gray;
+}
+.stateTip{
+  color: gray;
+  font-size: xx-small;
+}
+.contentTitle{
+  font-weight: bold;
+  color: gray;
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+table.infoTable{
+  width: 100%;
+  color: gray;
+}
+table.infoTable td{
+  border: 1px solid #80808054;
+  padding: 5px;
+  padding-left: 20px;
+  text-align: left;
+}
+table.infoTable td.title{
+  text-align: right;
+  background: #f4f4f4;
+  width: 130px;
+  padding-right: 20px;
+}
+.description{
+  color: gray;
+  margin: 10px 0;
+}
+.peopleDate{
+  text-align: right;
+  margin-top: 10px;
+  color: gray
+}
+.peopleDate span{
+  margin-left: 55px;
+}
+a{
+  color: blue;
+}
 @media screen and (min-width: 1270px){
   .layui-container {
       width: 1270px;
