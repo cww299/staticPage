@@ -1,14 +1,93 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+  <title>客户续租（客户经理）</title>
   <link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
   <link rel="stylesheet" type="text/css" href="./pagecss.css">
   <link rel="shortcut icon" href="./img/sys/icon.ico" type="image/x-icon" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <style>
-    
+    .red{
+      color: red;
+    }
+    .addTable table{
+      width: 95%;
+      margin: 10px auto;
+    }
+    .addTable table .titleTd{
+      text-align: right;
+    }
+    .addTable table td.title{
+      text-align: right;
+      min-width: 95px;
+    }
+    .layui-textarea{
+      height: 180px;
+    }
+    .addTable .layui-card-body{
+      width: 90%;
+    }
+    .addTable table td {
+      font-weight: normal;
+    }
+    .customNumber{
+      font-size: 15px;
+      color: red;
+    }
+    .numberPeople{
+      font-size: 47px;
+      color: white;
+      position: absolute;
+      top: 50px;
+      right: 141px;
+    }
+    .layerContentDiv{
+      overflow: hidden;
+      margin: 0;
+      width: 100% !important;
+    }
+    .layerContent{
+      overflow: hidden;
+      margin: 0;
+      width: 100% !important;
+    }
+    .layerContent table .titleTd{
+      width: 80px;
+    }
+    .imgTd>div{
+      background: #1394ce;
+      width: 100px;
+      height: 100px;
+      margin-right: 45px;
+      float: left;
+      margin: 0 30px;
+      color: white;
+      font-size: 40px;
+      text-align: center;
+      line-height: 65px;
+      cursor: pointer;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .imgTd>div>p{
+      font-size: 12px !important;
+      background: orange;
+      text-align: center;
+      line-height: 35px;
+    }
+    .twoDiv{
+      width: 48.5% !important;
+      float: left;
+      padding: 0.5%;
+      margin-top: 10px !important;
+    }
+    @media screen and (min-width: 1500px){
+      .layui-container {
+          width: 1470px;
+      }
+    }
+      
   </style>
 </head>
 <body>
@@ -16,11 +95,11 @@
   <span class="layui-breadcrumb" lay-separator=">">
     <a href=""><i class="layui-icon layui-icon-home"></i></a>
     <a href="">一级分类</a>
-    <a><cite></cite></a>
+    <a><cite>客户续租（客户经理）</cite></a>
   </span>
   <div class="rightDiv moreBtn">
-  <span><i class="layui-icon layui-icon-left"></i></span>
-  <span><i class="layui-icon layui-icon-refresh" id="refreshBtn"></i></span>
+    <span><i class="layui-icon layui-icon-left"></i></span>
+    <span><i class="layui-icon layui-icon-refresh" id="refreshBtn"></i></span>
   </div>
 </div>
 <div class="hiddenScrool">
@@ -32,11 +111,17 @@
             <div class="layui-card-body">
               <div>
                 <div style="float: right;">
-                  <span class="layui-btn layui-btn-normal" id="addBtn"><i class="layui-icon layui-icon-add-1"></i>添加</span>
+                  <span class="layui-btn layui-btn-primary"><i class="layui-icon"></i>导出</span>
                 </div>
                 <table class="layui-form">
                   <tr>
-                    <td><input type="text" placeholder="关键字段查询" class="layui-input"></td>
+                    <td style="width: 120px;"><select><option value="">到期范围</option></select></td>
+                    <td>&nbsp;&nbsp;</td>
+                    <td style="width: 120px;"><select><option value="">检索状态</option></select></td>
+                    <td>&nbsp;&nbsp;</td>
+                    <td><input type="text" placeholder="检索客户名称" class="layui-input"></td>
+                    <td>&nbsp;&nbsp;</td>
+                    <td><input type="text" placeholder="检索合同编号" class="layui-input"></td>
                     <td>&nbsp;&nbsp;</td>
                     <td><span class="layui-btn layui-btn-normal"><i class="layui-icon layui-icon-search">查询</i></span></td>
                   </tr>
@@ -55,7 +140,7 @@
           <div class="layui-card">
             <div class="layui-card-body">
               <div>
-                <table id="tableData" lay-filter="tableData"></table>
+                <table id="tableData1" lay-filter="tableData1"></table>
               </div>
             </div>
           </div>
@@ -65,98 +150,226 @@
   </div>
 </div>
 </body>
-<script type="text/html" id="addTpl">
-  <div class="addTable">
-    <div class="layui-card">
-      <div class="layui-card-body">
-        <table>
-          <tr>
-            <td class="titleTd"><b class="red">*</b>内推名称：</td>
-            <td colspan="3"><input type="text" class="layui-input" placeholder=""></td>
-            <td class="titleTd">备注说明：</td>
-            <td rowspan="4"><textarea class="layui-textarea"></textarea></td>
-          </tr>
-          <tr>
-            <td class="titleTd">联系人：</td>
-            <td><input type="text" class="layui-input"></td>
-            <td class="titleTd">联系电话：</td>
-            <td><input type="text" class="layui-input"></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td class="titleTd">办公地址：</td>
-            <td colspan="3"><input type="text" class="layui-input" placeholder=""></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td class="titleTd">附件资料：</td>
-            <td colspan="3"><input type="text" class="layui-input" placeholder=""></td>
-            <td></td>
-          </tr>
-        </table>
+<script type="text/html" id="xuzuTpl">
+  <div class="addTable" style="background: #f4f4f4;overflow: hidden;">
+    <div class="layui-card layerContentDiv">
+      <div class="layui-card-body layerContent">
+        <div style="width: 48%;float: left;padding: 0 5px;">
+          <p class="smallTitle"><span class="blueBlock">&nbsp;</span>基本信息</p>
+          <table>
+            <tr>
+              <td class="titleTd"><b class="red">*</b>客户名称：</td>
+              <td colspan="3"><input type="text" class="layui-input" placeholder=""></td>
+            </tr>
+            <tr>
+              <td class="titleTd">租赁日起：</td>
+              <td><input type="text" class="layui-input"></td>
+              <td class="titleTd">租赁日止：</td>
+              <td><input type="text" class="layui-input"></td>
+            </tr>
+            <tr>
+              <td class="titleTd">首年单价：</td>
+              <td><input type="text" class="layui-input"></td>
+              <td class="titleTd">租赁时长：</td>
+              <td><input type="text" class="layui-input"></td>
+            </tr>
+             <tr>
+              <td class="titleTd">付款方式：</td>
+              <td><input type="text" placeholder="" class="layui-input"></td>
+              <td class="titleTd">递增方式：</td>
+              <td><input type="text" class="layui-input"></td>
+            </tr>
+            <tr>
+              <td class="imgTd" colspan="4">
+                <div>6.6<p>首年Revpar</p></div>
+                <div>6.6<p>时点Revpar</p></div>
+                <div style="line-height: 100px;">计算</div>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div style="width: 48%;float: right;padding: 0 5px;">
+          <div id="feiyongDiv" style="height: 344px;"></div>
+        </div>
       </div>
     </div>
-    <hr>
-    <p class="btnP">
-      <span class="layui-btn layui-btn-normal">提交保存</span>
-      <span class="layui-btn layui-btn-primary" id="closePage">返回</span>
-    </p>
+    <div class="layui-card twoDiv">
+      <p class="smallTitle"><span class="blueBlock">&nbsp;</span>费用明细列表&nbsp;&nbsp;&nbsp;<span class="blueBlock">&nbsp;</span>合同保证金：&nbsp;&nbsp;&nbsp;租金：&nbsp;&nbsp;&nbsp;物业费：</p>
+      <table id="primissionTable" lay-filter="primissionTable"></table>
+    </div>
+    <div class="layui-card twoDiv" style="float: right;">
+      <p class="smallTitle"><span class="blueBlock">&nbsp;</span>房源信息&nbsp;&nbsp;&nbsp;面积小计：
+            <span class="layui-btn layui-btn-sm layui-btn-normal" style=" float: right;">添加</span></p>
+      <table id="houseTable" lay-filter="houseTable"></table>
+      <p class="smallTitle"><span class="blueBlock">&nbsp;</span>免租期/物业费<span class="layui-btn layui-btn-sm layui-btn-normal" style=" float: right;">添加</span></p>
+      <table id="freeTable" lay-filter="freeTable"></table>
+      <hr>
+      <p class="btnP">
+        <span class="layui-btn layui-btn-normal">保存</span>
+        <span class="layui-btn layui-btn-normal">保存并打印</span>
+        <span class="layui-btn layui-btn-normal">保存生成合同</span>
+        <span class="layui-btn layui-btn-primary" id="closePage">返回</span>
+      </p>
+    </div>
+    
   </div>
 </script>
 <script type="text/javascript" src="./layui/layui.js"></script>
 <script type="text/javascript">
-  layui.use(['jquery','layer','element','table'],function(){
+  layui.use(['jquery','layer','element','table','echarts'],function(){
     var $ = layui.jquery
-    ,table = layui.table
     ,element = layui.element
+    ,table = layui.table
+    ,echarts = layui.echarts
     ,layer = layui.layer;
 
     var data1 = [
-      { no:'1',name:'北京微音软件有限公司',contacts:'罗滔',phone:'18888888',address:'张三',},
-      { no:'2',name:'北京微音软件有限公司',contacts:'罗滔',phone:'18888888',address:'张三',},
-      { no:'3',name:'北京微音软件有限公司',contacts:'罗滔',phone:'18888888',address:'张三',},
+      { state:'',day:'31',number:'HT15123123',name:'北京微音软件有限公司',start:'2019-01-01',end:'2019-01-02',contacts:'罗滔',phone:'1888888',},
+      { state:'',day:'31',number:'HT15123123',name:'北京微音软件有限公司',start:'2019-01-01',end:'2019-01-02',contacts:'罗滔',phone:'1888888',},
     ];
     table.render({
-      elem:'#tableData',
+      elem:'#tableData1',
       data: data1,
-      height:'610px',
-      toolbar:$('#toolbarTpl').html(),
       page:true,
+      height:'610px',
       cols:[[
-        {title:'序号',field:'no',sort:true,width:'8%',},
-        {title:'内推名称',field:'name', sort:true, },
-        {title:'联系人',field:'contacts',width:'14%',sort:true,},
-        {title:'联系电话',field:'phone',width:'12%',},
-        {title:'客户类型',field:'type', width:'12%',sort:true,},
-        {title:'操作',field:'',templet: getMoreTpl(), width:'15%',fixed:'right', },
-      ]]
+        {type:'checkbox',fixed:'left',},
+        {title:'当前状态',field:'state', sort:true, },
+        {title:'距离到期',field:'day', width:'10%',sort:true,},
+        {title:'合同编号',field:'number', width:'15%',sort:true,},
+        {title:'客户名称',field:'name',width:'8%',sort:true,},
+        {title:'合同日起',field:'start',},
+        {title:'合同日止',field:'end',sort:true,},
+        {title:'联系人',field:'contacts',sort:true,},
+        {title:'联系电话',field:'phone',sort:true,},
+        {title:'操作',field:'',templet: getMoreTpl(), width:'30%',fixed:'right', },
+      ]],
+      done:function(){
+        dones();
+      }
     })
     
     function getMoreTpl(){
       return function(d){
         return [
-          '<span class="layui-btn layui-btn-sm layui-btn-normal"><i class="layui-icon layui-icon-edit"></i>编辑</span>',
-          '<span class="layui-btn layui-btn-sm layui-btn-danger"><i class="layui-icon layui-icon-delete"></i>删除</span>',
+          '<span class="layui-btn layui-btn-sm layui-btn-normal"><i class="layui-icon layui-icon-about"></i>详细</span>',
+          '<span class="layui-btn layui-btn-sm layui-btn-green xuzu"><i class="layui-icon layui-icon-edit"></i>续租申请</span>',
+          '<span class="layui-btn layui-btn-sm layui-btn-warm"><i class="layui-icon layui-icon-edit"></i>审批</span>',
+          '<span class="layui-btn layui-btn-sm layui-btn-green"><i class="layui-icon layui-icon-edit"></i>生成PDF</span>',
         ].join(' ');
       }
     }
-    $('#addBtn').click(function(){
-      var addWin = layer.open({
-        type:1,
-        offset:'100px',
-        area:['1100px','350px'],
-         title:['<i class="layui-icon layui-icon-spread-left"></i>&nbsp;&nbsp;内推档案',
-                '<span class="headTips">',
-                  '<b class="red">*</b>为必填项',
-                '</span>'].join(''),
-        content:$('#addTpl').html(),
-        success:function(){
-          $('#closePage').unbind().on('click',function(){
-            layer.close(addWin);
-          })
-        }
+    function dones(){
+      $('.xuzu').click(function(){
+        var addProjectWin = layer.open({
+          type:1,
+          area:['1100px','100%'],
+          title:['<i class="layui-icon layui-icon-spread-left"></i>&nbsp;&nbsp;客户续签报价',
+                  '<span class="headTips">',
+                    '<b class="red">*</b>为必填项',
+                  '</span>'].join(''),
+          content:$('#xuzuTpl').html(),
+          success:function(){
+            var feiyongDiv = echarts.init(document.getElementById('feiyongDiv'));
+            feiyongDiv.setOption({
+              title: {    
+                text: '合同费用汇总'
+              },
+              legend: {   
+                data:['免租期费用','合同保证金','租金'],
+                bottom: 10,
+              },
+              tooltip: {
+                  trigger: 'item',
+                  formatter: "{a} <br/>{b}: {c} ({d}%)"
+              },
+              series: [
+                  {
+                      name:'合同费用汇总',
+                      type:'pie',
+                      radius: ['30%', '60%','10%',],
+                      label: { },
+                      data:[
+                          {value:30, name:'免租期费用'},
+                          {value:60, name:'合同保证金'},
+                          {value:10, name:'租金'},
+                      ]
+                  }
+              ]
+            })
+            var d = [
+              {name:'免租期租金',start:'',end:'',price:'',},
+              {name:'免租期租金',start:'',end:'',price:'',},
+            ];
+            table.render({
+              elem:'#freeTable',
+              data:d,
+              height:'300px',
+              page:true,
+              cols:[[
+                {type:'checkbox',fixed:'left',},
+                {title:'科目名称',field:'name',},
+                {title:'开始日期',field:'start',},
+                {title:'结束日期',field:'end',},
+                {title:'单价',field:'price',},
+                {title:'操作', templet: getTableBtns(),},
+              ]],
+            })
+            var d2 = [
+              {name:'石景山',date:'',start:'',end:'',price:'',},
+              {name:'石景山',date:'',start:'',end:'',price:'',},
+              {name:'石景山',date:'',start:'',end:'',price:'',},
+              {name:'石景山',date:'',start:'',end:'',price:'',},
+              {name:'石景山',date:'',start:'',end:'',price:'',},
+              {name:'石景山',date:'',start:'',end:'',price:'',},
+              {name:'石景山',date:'',start:'',end:'',price:'',},
+              {name:'石景山',date:'',start:'',end:'',price:'',},
+            ];
+            table.render({
+              elem:'#primissionTable',
+              data:d2,
+              height:'731px',
+              page:true,
+              cols:[[
+                {type:'checkbox',fixed:'left',},
+                {title:'费用科目',field:'name',},
+                {title:'缴费日期',field:'date',},
+                {title:'开始日期',field:'start',},
+                {title:'结束日期',field:'end',},
+                {title:'缴费金额',field:'price',},
+              ]],
+            })
+            var d3 = [
+              {number:'石景山',floor:'',area:'',address:'点石商务6号楼'},
+              {number:'石景山',floor:'',area:'',address:'点石商务6号楼'},
+              {number:'石景山',floor:'',area:'',address:'点石商务6号楼'},
+            ];
+            table.render({
+              elem:'#houseTable',
+              data:d3,
+              height:'300px',
+              page:true,
+              cols:[[
+                {type:'checkbox',fixed:'left',},
+                {title:'房源编号',field:'number',},
+                {title:'楼层',field:'floor',},
+                {title:'面积',field:'area',},
+                {title:'地址',field:'address',},
+              ]],
+            })
+            function getTableBtns(){
+              return [
+                '<span class="layui-btn layui-btn-xs">编辑</span>',
+                '<span class="layui-btn layui-btn-xs layui-btn-danger">删除</span>',
+              ].join('');
+            }
+            $('#closePage').unbind().on('click',function(){
+              layer.close(addProjectWin);
+            })
+          }
+        })
       })
-    })
+    }
     $('#refreshBtn').click(function(){
       location.reload();
     })
