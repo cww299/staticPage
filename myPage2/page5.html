@@ -25,27 +25,51 @@
     }
     .searchDiv,.cardContent{
       display: none;
+      overflow: hidden;
     }
     .lay-this{
       display: block;
-    }
-    
-    
+    }    
     .titleTd{
       text-align: right;
       width: 150px;
     }
-    .layui-layer-title,.layui-layer-setwin{
-      
+    .treeDiv{
+      float: left;
+      border: 1px solid #8080803b;
+      height: 400px;
+      width: 20%;
+      overflow-y: scroll;
+      margin-top: 10px;
     }
-    .layui-btn-sm {
-      height: 23px;
-      line-height: 23px;
+    .treeTableDiv{
+      float: right;
+      width: 79%;
     }
     @media screen and (min-width: 1500px){
       .layui-container {
           width: 1470px;
       }
+    }
+
+    div::-webkit-scrollbar{
+      width:10px;
+      height:10px;
+      /**/
+    }
+    div::-webkit-scrollbar-track{
+      background: rgb(239, 239, 239);
+      border-radius:2px;
+    }
+    div::-webkit-scrollbar-thumb{
+      background: #bfbfbf42;
+      border-radius:10px;
+    }
+    div::-webkit-scrollbar-thumb:hover{
+      background: #bfbfbf;
+    }
+    div::-webkit-scrollbar-corner{
+      background: #179a16;
     }
       
   </style>
@@ -73,6 +97,7 @@
                 <li class="active" lay-index="1">项目信息</li>
                 <li class="" lay-index="2">楼宇信息</li>
                 <li class="" lay-index="3">房源信息</li>
+                <li class="" lay-index="4">房源资料</li>
               </ul>
             </div>
             <div class="layui-card-body">
@@ -127,6 +152,19 @@
                   </tr>
                 </table>
               </div>
+              <div class="searchDiv" lay-card="4">
+                <div style="float: right;">
+                  <span class="layui-btn layui-btn-normal" id="addFloor"><i class="layui-icon layui-icon-add-1"></i>添加</span>
+                  <span class="layui-btn layui-btn-primary"><i class="layui-icon layui-icon-upload-drag"></i>导出</span>
+                </div>
+                <table>
+                  <tr>
+                    <td><input type="text" placeholder="搜索关键字" class="layui-input"></td>
+                    <td>&nbsp;&nbsp;</td>
+                    <td><span class="layui-btn layui-btn-normal"><i class="layui-icon layui-icon-search"></i>查询</span></td>
+                  </tr>
+                </table>
+              </div>
             </div>
           </div>
         </div>
@@ -147,6 +185,12 @@
               </div>
               <div class="cardContent" lay-card="3">
                 <table id="tableData3" lay-filter="tableData3"></table>
+              </div>
+              <div class="cardContent" lay-card="4">
+                <div id="treeDiv" class="treeDiv"></div>
+                <div class="treeTableDiv">
+                  <table id="treeTable" lay-filter="treeTable"></table>
+                </div>
               </div>
             </div>
           </div>
@@ -494,10 +538,11 @@
 </script>
 <script type="text/javascript" src="./layui/layui.js"></script>
 <script type="text/javascript">
-  layui.use(['jquery','layer','element','table'],function(){
+  layui.use(['jquery','layer','element','table','tree'],function(){
     var $ = layui.jquery
     ,element = layui.element
     ,table = layui.table
+    ,tree = layui.tree
     ,layer = layui.layer;
 
     $('.navUl').find('li').on('click',function(obj){
@@ -508,6 +553,7 @@
       $('.searchDiv[lay-card='+index+']').addClass('lay-this');
       $('.cardContent').removeClass('lay-this');
       $('.cardContent[lay-card='+index+']').addClass('lay-this');
+      table.resize();
     })
     var data1 = [
       { no:1,number:'DD20190324010001',name:'石景山',companyName:'北京微音软件有限公司',people:'',phone:'',area:'',time:'',hire:'',},
@@ -589,13 +635,12 @@
     function getMoreTpl(){
       return function(d){
         return [
-          '<span class="layui-btn layui-btn-sm layui-btn-primary"><i class="layui-icon layui-icon-edit"></i>查看</span>',
-          '<span class="layui-btn layui-btn-sm layui-btn-normal"><i class="layui-icon layui-icon-edit"></i>编辑</span>',
-          '<span class="layui-btn layui-btn-sm layui-btn-danger"><i class="layui-icon layui-icon-delete"></i>删除</span>',
+          '<span class="layui-btn layui-btn-xs layui-btn-primary"><i class="layui-icon layui-icon-edit"></i>查看</span>',
+          '<span class="layui-btn layui-btn-xs layui-btn-normal"><i class="layui-icon layui-icon-edit"></i>编辑</span>',
+          '<span class="layui-btn layui-btn-xs layui-btn-danger"><i class="layui-icon layui-icon-delete"></i>删除</span>',
         ].join(' ');
       }
     }
-
     $('#addProject').click(function(){
       var addProjectWin = layer.open({
         type:1,
@@ -644,7 +689,82 @@
         }
       })
     })
-
+    var treeData = [
+      {
+        title: '一级1',id: 1,
+        children: [
+          {
+            title: '二级1-1',id: 3,
+            children: [
+              {
+                title: '三级1-1-3',id: 23,
+                children: [{
+                  title: '四级1-1-3-1',id: 24
+                }]
+              },
+              {
+                title: '三级1-1-1',id: 7,
+                children: [
+                  { title: '四级1-1-1-1',id: 15 }
+                ]
+              },
+              { title: '三级1-1-2',id: 8 }
+            ]
+          },
+          {
+            title: '二级1-2' ,id: 4,
+            children: [
+              {title: '三级1-2-1',id: 9},
+              {title: '三级1-2-2',id: 10}
+            ]
+          },
+          {
+            title: '二级1-3',id: 20,
+            children: [
+              { title: '三级1-3-1',id: 21},
+              { title: '三级1-3-2',id: 22}
+            ]
+          }
+        ]
+      },
+      {
+        title: '一级2',id: 2,
+        children: [
+          {
+            title: '二级2-1',id: 5,
+            children: [
+              { title: '三级2-1-1',id: 11 },
+              { title: '三级2-1-2',id: 12 }
+            ]
+          },
+          {
+            title: '二级2-2',id: 6,
+            children: [
+              { title: '三级2-2-1',id: 13 },
+              { title: '三级2-2-2',id: 14 }
+            ]
+          }
+        ]
+      }
+    ]
+    tree.render({
+      elem:'#treeDiv',
+      data:treeData
+    })
+    table.render({
+      elem:'#treeTable',
+      page:true,
+      data:data3,
+      height:'400px',
+      cols:[[
+        {type:'checkbox',fixed:'left'},
+        {title:'楼宇名称',field:'floorName', width:'15%',sort:true,},
+        {title:'房源编号',field:'number', width:'15%',sort:true,},
+        {title:'楼层',field:'floorNumber',sort:true,},
+        {title:'面积',field:'area',sort:true,},
+        {title:'操作',field:'',templet: getMoreTpl(), width:'30%',fixed:'right',},
+      ]]
+    })
     $('#refreshBtn').click(function(){
       location.reload();
     })
