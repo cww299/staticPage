@@ -55,6 +55,9 @@
     .layerContent table .titleTd{
       width: 80px;
     }
+    .imgTd{
+      padding-top: 20px !important;
+    }
     .imgTd>div{
       background: #1394ce;
       width: 100px;
@@ -81,6 +84,16 @@
       float: left;
       padding: 0.5%;
       margin-top: 10px !important;
+    }
+    .smallTitle{
+      background: #f8f8f8;
+      padding: 10px;
+      margin-bottom: -15px;
+    }
+    .addTable .btnP {
+      padding-bottom: 15px;
+      margin-bottom: 0px;
+      margin-top: -5px;
     }
     @media screen and (min-width: 1500px){
       .layui-container {
@@ -151,7 +164,7 @@
 </div>
 </body>
 <script type="text/html" id="xuzuTpl">
-  <div class="addTable" style="background: #f4f4f4;overflow: hidden;">
+  <div class="addTable" style="background: #f4f4f4;overflow: hidden;width: calc(100% + 17px)!important;">
     <div class="layui-card layerContentDiv">
       <div class="layui-card-body layerContent">
         <div style="width: 48%;float: left;padding: 0 5px;">
@@ -199,10 +212,12 @@
     </div>
     <div class="layui-card twoDiv" style="float: right;">
       <p class="smallTitle"><span class="blueBlock">&nbsp;</span>房源信息&nbsp;&nbsp;&nbsp;面积小计：
-            <span class="layui-btn layui-btn-sm layui-btn-normal" style=" float: right;">添加</span></p>
+            <span class="layui-btn layui-btn-sm layui-btn-normal" style=" float: right;margin-top: -5px;">添加</span></p>
       <table id="houseTable" lay-filter="houseTable"></table>
-      <p class="smallTitle"><span class="blueBlock">&nbsp;</span>免租期/物业费<span class="layui-btn layui-btn-sm layui-btn-normal" style=" float: right;">添加</span></p>
+      <p class="smallTitle"><span class="blueBlock">&nbsp;</span>免租期/物业费<span class="layui-btn layui-btn-sm layui-btn-normal" style=" float: right;margin-top: -5px;">添加</span></p>
       <table id="freeTable" lay-filter="freeTable"></table>
+    </div>
+    <div style="background: white;">
       <hr>
       <p class="btnP">
         <span class="layui-btn layui-btn-normal">保存</span>
@@ -211,7 +226,6 @@
         <span class="layui-btn layui-btn-primary" id="closePage">返回</span>
       </p>
     </div>
-    
   </div>
 </script>
 <script type="text/javascript" src="./layui/layui.js"></script>
@@ -273,7 +287,8 @@
             var feiyongDiv = echarts.init(document.getElementById('feiyongDiv'));
             feiyongDiv.setOption({
               title: {    
-                text: '合同费用汇总'
+                text: '合同费用汇总',
+                top:'10px',
               },
               legend: {   
                 data:['免租期费用','合同保证金','租金'],
@@ -304,7 +319,7 @@
             table.render({
               elem:'#freeTable',
               data:d,
-              height:'300px',
+              height:'320px',
               page:true,
               cols:[[
                 {type:'checkbox',fixed:'left',},
@@ -328,7 +343,7 @@
             table.render({
               elem:'#primissionTable',
               data:d2,
-              height:'731px',
+              height:'672px',
               page:true,
               cols:[[
                 {type:'checkbox',fixed:'left',},

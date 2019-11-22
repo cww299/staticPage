@@ -8,7 +8,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <style>
-	
+	 .layui-card-body{
+    padding: 10px 25px;
+   }
   </style>
 </head>
 <body>
@@ -78,55 +80,51 @@
            	  <p class="smallTitle"><span class="blueBlock">&nbsp;</span>处理进度组件</p>
               <div class="pointsRule2">
                 <ul>
-                    <li class="">
-                    	<div class="left">
+                    <li class="state">
+                    	<div>
                     		<p class="state"><span class="create">创建</span></p>
                     		<p class="icon"><i class="layui-icon layui-icon-username"></i></p>
                     		<p class="name">李小明</p>
                     		<p class="time">2019-03-15</p>
                     	</div>
-                    	<div class="loading">
+                    </li>
+                    <li class="loading">
+                    	<div>
                     		<span class="info">已等待12小时30分钟</span>
                     		<span class="loads"><b class="full full50"></b></span>
                     	</div>
-                    	<div class="right">
-                    		<p class="state"><span class="end">完结</span></p>
-                    		<p class="icon"><i class="layui-icon layui-icon-username"></i></p>
-                    		<p class="name">李小明</p>
-                    		<p class="time">待处理</p>
-                    	</div>
                     </li>
-                    <li class="">
-                    	<div class="left">
-                    		<p class="state"><span class="create">创建</span></p>
-                    		<p class="icon"><i class="layui-icon layui-icon-username"></i></p>
-                    		<p class="name">李小明</p>
-                    		<p class="time">2019-03-15</p>
-                    	</div>
-                    	<div class="loading">
+                    <li class="state">
+                      <div>
+                        <p class="state"><span class="end">完结</span></p>
+                        <p class="icon"><i class="layui-icon layui-icon-username"></i></p>
+                        <p class="name">李小明</p>
+                        <p class="time">待处理</p>
+                      </div>
+                    </li>
+                    <li class="loading">
+                    	<div>
                     		<span class="info">共耗时12小时30分钟</span>
                     		<span class="loads"><b class="full full100"></b></span>
                     	</div>
-                    	<div class="right">
+                    </li>
+                    <li class="state">
+                    	<div>
                     		<p class="state"><span class="">完结</span></p>
                     		<p class="icon"><i class="layui-icon layui-icon-username"></i></p>
                     		<p class="name">李小明</p>
                     		<p class="time">2019-03-15</p>
                     	</div>
                     </li>
-                    <li class="">
-                    	<div class="left">
-                    		<p class="state"><span class="create">创建</span></p>
-                    		<p class="icon"><i class="layui-icon layui-icon-username"></i></p>
-                    		<p class="name">李小明</p>
-                    		<p class="time">2019-03-15</p>
-                    	</div>
-                    	<div class="loading">
+                    <li class="loading">
+                    	<div>
                     		<span class="info">已等待12小时30分钟</span>
                     		<span class="loads"><b class="full"></b></span>
                     	</div>
-                    	<div class="right">
-                    		<p class="state"><span class="red">返回</span></p>
+                    </li>
+                    <li class="state">
+                    	<div>
+                    		<p class="state"><span class="red">归档</span></p>
                     		<p class="icon"><i class="layui-icon layui-icon-username"></i></p>
                     		<p class="name">李小明</p>
                     		<p class="time">2019-03-15</p>

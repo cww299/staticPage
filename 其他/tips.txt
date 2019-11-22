@@ -62,3 +62,5 @@
     <input type="text" onkeyup="value=value.replace(/[^\d.]/g,'') " 
 	onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" />
 	https://www.cnblogs.com/MaxIE/archive/2006/11/08/554053.html
+	
+23 js获取设备信息navigator.appVersion

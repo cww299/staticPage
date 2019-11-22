@@ -82,6 +82,20 @@
       padding: 0.5%;
       margin-top: 10px !important;
     }
+    .imgTd{
+      padding-top: 20px !important;
+    }
+    .smallTitle{
+      background: #f8f8f8;
+      padding: 10px;
+      margin-bottom: -15px;
+      font-weight: bold;
+    }
+    .addTable .btnP {
+      padding-bottom: 15px;
+      margin-bottom: 0px;
+      margin-top: -5px;
+    }
     @media screen and (min-width: 1500px){
       .layui-container {
           width: 1470px;
@@ -259,7 +273,7 @@
         </div>
         <div style="width: 48%;float: right;padding: 0 5px;">
           <p class="smallTitle"><span class="blueBlock">&nbsp;</span>免租期/物业费
-            <span class="layui-btn layui-btn-sm layui-btn-normal" style=" float: right;">添加</span></p>
+            <span class="layui-btn layui-btn-sm layui-btn-normal" style=" float: right;margin-top: -5px;">添加</span></p>
           <table id="freeTable" lay-filter="freeTable"></table>
         </div>
       </div>
@@ -270,20 +284,11 @@
     </div>
     <div class="layui-card twoDiv" style="float: right;">
       <p class="smallTitle"><span class="blueBlock">&nbsp;</span>房源信息&nbsp;&nbsp;&nbsp;面积小计：
-            <span class="layui-btn layui-btn-sm layui-btn-normal" style=" float: right;">添加</span></p>
+            <span class="layui-btn layui-btn-sm layui-btn-normal" style=" float: right;margin-top: -5px;">添加</span></p>
       <table id="houseTable" lay-filter="houseTable"></table>
-      <table>
-        <tr>
-          <td class="title" style="vertical-align: top;">备注信息：</td>
-          <td colspan="3"><textarea class="layui-textarea"></textarea></td>
-        </tr>
-        <tr>
-          <td class="title">创建人：</td>
-          <td><input type="text" class="layui-input"></td>
-          <td class="title">创建日期：</td>
-          <td><input type="text" class="layui-input"></td>
-        </tr>
-      </table>
+      <textarea class="layui-textarea" placeholder="备注信息"></textarea>
+    </div>
+    <div style="background: white;">
       <hr>
       <p class="btnP">
         <span class="layui-btn layui-btn-normal">保存</span>
@@ -396,7 +401,7 @@
           table.render({
             elem:'#primissionTable',
             data:d2,
-            height:'629px',
+            height:'490px',
             page:true,
             cols:[[
               {type:'checkbox',fixed:'left',},

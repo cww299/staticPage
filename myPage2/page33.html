@@ -8,6 +8,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <style>
+    html{
+      color: gray;
+      font-weight: bold;
+    }
+    table.titleTable tr:first-child td{
+      padding-top: 20px;
+      padding-bottom: 10px;
+    }
     table.titleTable td{
       min-width: 150px;
       font-size: 20px;
@@ -20,17 +28,19 @@
     .navNl li{
       float: left;
       padding: 0 15px;
-      font-size: 15px;
+      font-size: 16px;
+      font-weight: bold;
       height: 35px;
       line-height: 35px;
       cursor: pointer;
       color: gray;
+      margin: 0 11px;
       padding-top: 8px;
     }
     .navNl li.lay-this{
-      color: #0000ffba;
+      color: #1E9FFF;
       font-weight: bold;
-      border-bottom: 2px solid #0000ffba;
+      border-bottom: 2px solid #1E9FFF;
     }
     table.content{
       width:100%;
@@ -59,6 +69,28 @@
     .allCheck{
       color: gray;
     }
+    .smallTitle {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .ewmImg{
+      float: right;
+      padding: 0 30px;
+    }
+    .ewmImg img{
+      width: 80px;
+      height: 80px;
+      background: gray;
+      display: block;
+      margin: auto;
+      max-width: 100%;
+    }
+    .ewmImg span{
+      font-size: 16px;
+      display: block;
+      margin: 10px;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
@@ -81,8 +113,9 @@
           <div class="layui-card">
             <div class="layui-card-body" style="height: 120px;">
               <div>
-                <div style="float: right;">
-                  <img src="" style="width: 100px;height: 100px;background: gray;">
+                <div class="ewmImg">
+                  <img src="">
+                  <span>合同编码：44564646</span>
                 </div>
                 <table class="layui-form titleTable">
                   <tr>
@@ -147,7 +180,7 @@
                     <td><input type="text" class="layui-input"></td>
                   </tr>
                   <tr>
-                    <td class="title"><b class="red">*</b>客户名称</td>
+                    <td class="title"><b class="red">*</b>客户名称：</td>
                     <td colspan="3"><input type="text" class="layui-input"></td>
                     <td class="title">公司类型：</td>
                     <td><input type="text" class="layui-input"></td>

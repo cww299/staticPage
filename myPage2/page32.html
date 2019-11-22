@@ -11,6 +11,16 @@
     .pointsRule ul li i {
       margin-top: -21px;
     }
+    .smallTitle{
+      background: #f8f8f8;
+      padding: 10px;
+      margin-bottom: -15px;
+      font-weight: bold;
+    }
+    table.inputTable tr td:first-child{
+      text-align: left;
+      width: 100px;
+    }
   </style>
 </head>
 <body>
@@ -76,19 +86,7 @@
   <div class="addTable">
     <div class="layui-card">
       <div class="layui-card-body">
-        <div class="pointsRule">
-          <ul>
-              <li class="finally"><a><span>提交审批</span><i></i></a></li>
-              <li class="finally"><a><span>直属领导审批</span><i></i></a></li>
-              <li class=""><a><span>园区总经理审批</span><i></i></a></li>
-              <li class=""><a><span>审批完成</span></a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="layui-card">
-      <div class="layui-card-body">
-        <table class="layui-form">
+        <table class="layui-form inputTable">
           <tr>
             <td class="titleTd">合同编号：</td>
             <td><input type="text" class="layui-input" placeholder=""></td>

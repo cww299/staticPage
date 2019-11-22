@@ -11,6 +11,16 @@
     .pointsRule ul li i {
       margin-top: -21px;
     }
+    .smallTitle{
+      background: #f8f8f8;
+      padding: 10px;
+      margin-bottom: -15px;
+      font-weight: bold;
+    }
+    table.inputTable tr td:first-child{
+      text-align: left;
+      width: 100px;
+    }
   </style>
 </head>
 <body>
@@ -88,7 +98,7 @@
     <div class="layui-card">
       <div class="layui-card-body">
         <p class="smallTitle"><span class="blueBlock">&nbsp;</span>终止基础信息</p>
-        <table class="layui-form">
+        <table class="layui-form inputTable">
           <tr>
             <td class="titleTd">合同编号：</td>
             <td><input type="text" class="layui-input" placeholder=""></td>
@@ -122,7 +132,7 @@
     <div class="layui-card">
       <div class="layui-card-body">
         <p class="smallTitle"><span class="blueBlock">&nbsp;</span>退款信息</p>
-        <table class="layui-form">
+        <table class="layui-form inputTable">
           <tr>
             <td class="titleTd"><b class="red">*</b>退款编号：</td>
             <td><input type="text" class="layui-input" placeholder=""></td>

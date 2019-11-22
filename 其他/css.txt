@@ -1,0 +1,45 @@
+放大（只能放大块级元素）
+    transform: scale(1.5);
+旋转
+	transform: rotate(45deg);
+过度时间：
+    transition: all .4s;
+背景图
+    background:url() no-repeat center(水平px) top(垂直px);
+背景大小
+	background-size: contain;
+三角标
+	:after{	/* 向左三角标 */
+		content: " ";
+		position: absolute;
+		margin-top: -4px;
+		margin-left: -20px;
+		width: 0;
+		height: 0;
+		/*重点：*/
+		border-right: 15px solid #56a3e1;
+		border-bottom: 15px solid transparent;
+		border-top: 15px solid transparent;
+	}
+百分比宽度减去指定值
+	width: -webkit-calc(25% - 30px);
+    width: -moz-calc(25% - 30px);
+    width: calc(25% - 30px);
+文字缩进
+	text-indent: 10px;
+透明度
+	opacity: 0.5;  /* 数值越大越不透明 */
+隐藏滚动条
+	主页面隐藏：body、html设置高度100%。超出隐藏
+				主容器设置右边距17px、垂直超出滚动
+全屏遮罩
+	:after{
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: black;
+		opacity: 0.4;
+	}
