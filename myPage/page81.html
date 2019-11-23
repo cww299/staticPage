@@ -260,7 +260,51 @@
       cursor: pointer;
       color: #54a6ff;
     }
-    @media screen and (max-width: 540px){
+    @media screen and (max-width: 1600px){
+    	.imgContent{
+	    	top: 50px;
+    		left: 250px;
+    		width: 28%;
+    	}
+    }
+    @media screen and (max-width: 1300px){
+    	.imgContent{
+	    	top: 15px;
+    		left: 150px;
+    		width: 35%;
+    	}
+    }
+    @media screen and (max-width: 1200px){
+    	.fourOfOne{
+    		padding: 60px 15px;
+    	}
+    	.secondCard p{
+    		line-height: 20px;
+    		font-size: 15px;
+    	}
+    	#moreImgDiv{
+    		margin-left: -320px;
+    	}
+    	.nextImg {
+    		left: 900px;
+		}
+		.server{
+			width: 75% !important;
+		}
+		.server>p{
+		    font-size: 15px;
+    		line-height: 18px;
+		}
+		.peopleImg img{
+			height: 100%;
+		}
+    }
+    @media screen and (max-width: 1120px){
+    	.imgContent{
+	    	font-size: 9px;
+    	}
+    }
+    @media screen and (max-width: 1000px){
       body{
         background: #fafafa;
       }
@@ -462,6 +506,19 @@
         height: auto;
       }
     }
+    @media screen and (min-width: 540px){
+    	.team .bigImg img{
+    		width: 100%;
+    	}
+    	.buyImg{
+		    top: 220px;
+    		left: 120px;
+    	}
+    	.bgImgDiv{
+		    height: 300px;
+    		overflow: hidden;
+    	}
+    }
   </style>
 </head>
 <body>
@@ -476,7 +533,7 @@
   </div>
   <img src="./img/page81/type02.jpg" class="bgImg pcContent">
 </div>
-<div class="phoneContent">
+<div class="phoneContent bgImgDiv">
   <img src="./img/page81/phoneBg.png">
   <img src="./img/page81/buy.png" class="buyImg">
 </div>
@@ -693,7 +750,7 @@
 <div style="padding-bottom: 50px;background: #fafafc;" class="phoneBg">
   <div class="layui-container">
     <div class="layui-row"> 
-      <div class="layui-col-md3 pcContent" style="height:455px;background: #fafafa;">
+      <div class="layui-col-md3 pcContent peopleImg" style="height:455px;background: #fafafa;">
         <img src="./img/page81/6.png">
       </div>
       <div class="layui-col-md9 server pcContent" style="height:455px;width: 855px;">
@@ -809,13 +866,17 @@
     $('.layui-btn').click(function(){
       layer.msg('点击按钮');
     })
+
+    var disWidth = $(window).width()<1200;
     $('.lastImg').click(function(){
       var len = $('#moreImgDiv').find('.carouselImgDiv').length;
       var left = $('#moreImgDiv').css('marginLeft');
       left = parseInt(left);
-      if(left>=-260){
+      if(left>=-260 || (disWidth && left>=-320)){
         var maxLeft = (-260-(520*(len-2))); //左侧极限距离
         left = maxLeft;
+        if(disWidth)
+        	left-=60;
         $('#moreImgDiv').css('marginLeft',left+'-px');
       }
       left-=(-520);
@@ -828,6 +889,8 @@
       left = parseInt(left);
       if(left<=maxLeft){
         left = 260;
+        if(disWidth)
+        	left-=60;
         $('#moreImgDiv').css('marginLeft',left+'-px');  //返回第一张图的位置
       }
       left-=520;
