@@ -4,157 +4,11 @@
   <title>首页</title>
   <link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
   <link rel="stylesheet" type="text/css" href="./pagecss.css">
+  <link rel="stylesheet" type="text/css" href="./css/index.css">
   <link rel="shortcut icon" href="./img/sys/icon.ico" type="image/x-icon" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <style>
-    body{
-      margin-top: 60px;
-    }
-    .navIconUl{
-      margin-top: 10px;
-    }
-    .navIconUl li{
-      float: left;
-      width: 16%;
-      padding: 5px 0;
-      margin-bottom: 10px;
-    }
-    .navIconUl li:hover{
-      outline: 1px solid #80808070;
-      cursor: pointer;
-    }
-    .navIconUl li p{
-      text-align: center;
-      color: gray;
-      margin: 8px 0;
-    }
-    .navIconUl li p i{
-      font-size: 50px !important;
-      color: gray;
-    }
-    .dataUl{
-
-    }
-    .dataUl li{
-      width: 50%;
-      padding: 7px 0;
-      float: left;
-    }
-    .dataUl li:hover{
-      outline: 1px solid #80808070;
-      cursor: pointer;
-    }
-    .dataUl li>p{
-      text-align: center;
-      color: gray;
-      font-weight: bold;
-      font-size: 18px;
-      line-height: 48px;
-    }
-    .dataUl li>p.number{
-      margin:10px 0;
-      font-size: 28px; 
-      font-weight: bold;
-    }
-    .systemUl li{
-      padding: 10px 0;
-      border-bottom: 1px solid #80808026;
-    }
-    .systemUl li>p{
-      color:gray;
-    }
-    .systemUl li>p.time{
-      float: right;
-    }
-    .layui-card-header .head-tool .layui-form-select{
-      
-    }
-    .rightNav{
-      float: right;
-    }
-    .menuIcon{
-      margin-left: -20px;
-      margin-right: 20px;
-      height: 60px;
-      cursor: pointer;
-    }
-    .navSearch{
-      margin-top: 13px;
-      width: 230px;
-    }
-    .layui-nav-bar{
-      width: 0px !important;
-      opacity: 1 !important;
-    }
-    .navDiv{
-      position: fixed;
-      width: 100%;
-      z-index: 999;
-      top: 0;
-    }
-    .layui-nav .layui-this:after, .layui-nav-bar, .layui-nav-tree .layui-nav-itemed:after{
-      background: none;
-    }
-    .floorTip{
-    	margin-top: 30px;
-    }
-    .floorTip>p{
-		text-align: center;
-		color: gray;
-    }
-    .moreTips dl{
-		overflow: hidden;
-	    width: 300px;
-	    padding-top: 0;
-    }
-    .moreTips dd{
-    	float: left;
-	    width: 40%;
-	    color: gray;
-	    padding: 0px 5%;
-	    cursor: pointer;
-    }
-    .moreTips dd:hover{
-    	cursor: pointer;
-    	background: #f4f4f4;
-	  }
-    .moreTips dd.head{
-		width: 100%;
-	    background: #f4f4f4;
-	    color: gray;
-	    padding-left: 20px;
-	    line-height: 45px;
-    }
-    .numbers{
-    	float: right;
-    }
-    .red{
-    	color: red;
-    }
-    body,html{
-      height: 100%;
-      overflow: hidden;
-    }
-    .hiddenScrool{
-      width: 100%;
-      height: 90%;
-      padding-right: 17px;
-      overflow: scroll;
-      overflow-y: scroll;
-      overflow-x: hidden;
-    }
-    @media screen and (min-width: 1270px){
-      .layui-container {
-          width: 1270px;
-      }
-    }
-    @media screen and (min-width: 1600px){
-      .layui-container {
-       width:1450px;
-      }
-    }
-      
   </style>
 </head>
 <body>
@@ -212,50 +66,79 @@
               快速菜单
               <span class="headTips">
                 <span class="layui-btn layui-btn-sm layui-btn-primary">返回首页</span>
-                <span class="layui-btn layui-btn-sm layui-btn-primary">下一页</span>
+                <span class="layui-btn layui-btn-sm layui-btn-primary" id="changePage">下一页</span>
+                <span class="layui-btn layui-btn-sm layui-btn-primary" id="sortMenu">排序</span>
               </span>
             </div>
-            <div class="layui-card-body" style="overflow: hidden;">
-              <ul class="navIconUl">
+            <div class="layui-card-body" style="overflow: hidden;height: 222px;">
+              <ul class="navIconUl layui-anim-up layui-anim lay-this" lay-page="1" >
                 <li>
                   <p><i class="layui-icon layui-icon-username"></i></p>
                   <p>新建客户</p>
+                  <i class="layui-badge"><b id="">5</b></i>
                 </li>
                 <li>
                   <p><i class="layui-icon layui-icon-notice"></i></p>
                   <p>新建线索</p>
+                  <i class="layui-badge"><b id="">8</b></i>
                 </li>
                 <li>
                   <p><i class="layui-icon layui-icon-rmb"></i></p>
                   <p>新建商机</p>
+                  <i class="layui-badge"><b id="">2</b></i>
                 </li>
                 <li>
                   <p><i class="layui-icon layui-icon-list"></i></p>
                   <p>新建订单</p>
+                  <i class="layui-badge"><b id="">1</b></i>
                 </li>
                 <li>
                   <p><i class="layui-icon layui-icon-user"></i></p>
                   <p>新建联系人</p>
+                  <i class="layui-badge"><b id="">3</b></i>
                 </li>
                 <li>
                   <p><i class="layui-icon layui-icon-edit"></i></p>
                   <p>写新跟进</p>
+                  <i class="layui-badge"><b id="">9</b></i>
                 </li>
                 <li>
                   <p><i class="layui-icon layui-icon-tabs"></i></p>
                   <p>新建任务</p>
+                  <i class="layui-badge"><b id="">11</b></i>
                 </li>
                 <li>
                   <p><i class="layui-icon layui-icon-date"></i></p>
                   <p>新建工单</p>
+                  <i class="layui-badge"><b id="">0</b></i>
                 </li>
                 <li>
                   <p><i class="layui-icon layui-icon-layer"></i></p>
                   <p>新建回款单</p>
+                  <i class="layui-badge"><b id="">2</b></i>
                 </li>
                 <li>
                   <p><i class="layui-icon layui-icon-dollar"></i></p>
                   <p>回款汇集</p>
+                  <i class="layui-badge"><b id="">4</b></i>
+                </li>
+              </ul>
+              <ul class="navIconUl layui-anim-up layui-anim" lay-page="2" >
+                <li>
+                  <p><i class="layui-icon layui-icon-username"></i></p>
+                  <p>新建客户</p>
+                  <i class="layui-badge"><b id="">3</b></i>
+                </li>
+                <li>
+                  <p><i class="layui-icon layui-icon-notice"></i></p>
+                  <p>新建线索</p>
+                  <i class="layui-badge"><b id="">5</b></i>
+                </li>
+                <li>
+                  <p><i class="layui-icon layui-icon-rmb"></i></p>
+                  <p>新建商机</p>
+                  <i class="layui-badge"><b id="">0</b></i>
+                </li>
                 </li>
               </ul>
             </div>
@@ -407,6 +290,34 @@
     function getMoreTpl(){
       return '<p><span class="layui-btn layui-btn-sm"><i class="layui-icon layui-icon-about"></i>详情<span></p>';
     }
+    $('#changePage').on('click',function(){
+      var page = $('.navIconUl.lay-this').attr('lay-page');
+      if(page==1){
+        $('.navIconUl.lay-this').removeClass('lay-this');
+        $(this).html('上一页');
+        $('.navIconUl[lay-page=2]').addClass('lay-this');
+      }else{
+        $('.navIconUl.lay-this').removeClass('lay-this');
+        $(this).html('下一页');
+        $('.navIconUl[lay-page=1]').addClass('lay-this');
+      }
+    })
+    $('#sortMenu').on('click',function(){
+      var thisMenu = $('.navIconUl.lay-this').find('.layui-badge');
+      for(var i=0;i<thisMenu.length;i++){
+        for(var j=0;j<thisMenu.length;j++){
+          if(-thisMenu[i].innerText<-thisMenu[j].innerText){    //强转数字排序
+            var t = thisMenu[i];
+            thisMenu[i] = thisMenu[j];
+            thisMenu[j] = t;
+          }
+        }
+      }
+      $('.navIconUl.lay-this').empty();
+      layui.each(thisMenu,function(index,item){
+        $('.navIconUl.lay-this').append($(item).closest('li').clone());
+      })
+    })
   })
 </script>
 </html>

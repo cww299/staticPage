@@ -1,0 +1,167 @@
+body{
+  margin-top: 60px;
+}
+.navIconUl{
+  margin-top: 10px;
+  display: none;
+}
+.navIconUl.lay-this{
+  display: block;
+}
+.navIconUl li{
+  float: left;
+  width: 16%;
+  padding: 5px 0;
+  margin-bottom: 10px;
+  position: relative;
+  padding-top: 10px;
+}
+.navIconUl li .layui-badge{
+  position: absolute;
+  top: 5px;
+  right: 24px;
+}
+.navIconUl li:hover{
+  outline: 1px solid #80808070;
+  cursor: pointer;
+}
+.navIconUl li p{
+  text-align: center;
+  color: gray;
+  margin: 8px 0;
+}
+.navIconUl li p i{
+  font-size: 50px !important;
+  color: gray;
+}
+.dataUl{
+  overflow: hidden;
+  padding: 15px 10px;
+}
+.dataUl li{
+  width: 50%;
+  padding: 7px 0;
+  float: left;
+}
+.dataUl li:hover{
+  outline: 1px solid #80808070;
+  cursor: pointer;
+}
+.dataUl li>p{
+  text-align: center;
+  color: gray;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 41px;
+}
+.dataUl li>p.number{
+  margin:10px 0;
+  font-size: 28px; 
+  font-weight: bold;
+}
+.systemUl li{
+  padding: 10px 0;
+  border-bottom: 1px solid #80808026;
+}
+.systemUl li>p{
+  color: gray;
+  min-width: 225px;
+  text-overflow: ellipsis;
+  height: 24px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.systemUl li>p.time{
+  float: right;
+  min-width: 130px;
+}
+.layui-card-header .head-tool .layui-form-select{
+  
+}
+.rightNav{
+  float: right;
+}
+.menuIcon{
+  margin-left: -20px;
+  margin-right: 20px;
+  height: 60px;
+  cursor: pointer;
+}
+.navSearch{
+  margin-top: 13px;
+  width: 230px;
+}
+.layui-nav-bar{
+  width: 0px !important;
+  opacity: 1 !important;
+}
+.navDiv{
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  top: 0;
+}
+.layui-nav .layui-this:after, .layui-nav-bar, .layui-nav-tree .layui-nav-itemed:after{
+  background: none;
+}
+.floorTip{
+  margin-top: 30px;
+}
+.floorTip>p{
+text-align: center;
+color: gray;
+}
+.moreTips dl{
+overflow: hidden;
+  width: 300px;
+  padding-top: 0;
+}
+.moreTips dd{
+  float: left;
+  width: 40%;
+  color: gray;
+  padding: 0px 5%;
+  cursor: pointer;
+}
+.moreTips dd:hover{
+  cursor: pointer;
+  background: #f4f4f4;
+}
+.moreTips dd.head{
+width: 100%;
+  background: #f4f4f4;
+  color: gray;
+  padding-left: 20px;
+  line-height: 45px;
+}
+.numbers{
+  float: right;
+}
+.red{
+  color: red;
+}
+body,html{
+  height: 100%;
+  overflow: hidden;
+}
+.hiddenScrool{
+  width: 100%;
+  height: 90%;
+  padding-right: 17px;
+  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.layui-card-body {
+  padding: 0 15px !important;
+}
+@media screen and (min-width: 1270px){
+  .layui-container {
+      width: 1270px;
+  }
+}
+@media screen and (min-width: 1600px){
+  .layui-container {
+   width:1450px;
+  }
+}
