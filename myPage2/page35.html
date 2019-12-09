@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+  <title>续租合同</title>
   <link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
   <link rel="stylesheet" type="text/css" href="./pagecss.css">
   <link rel="shortcut icon" href="./img/sys/icon.ico" type="image/x-icon" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <style>
-    
+    div[lay-id="tableData"] tbody tr:hover, .layui-table-hover {
+       background-color: transparent; 
+    }
   </style>
 </head>
 <body>
@@ -16,7 +18,7 @@
   <span class="layui-breadcrumb" lay-separator=">">
     <a href=""><i class="layui-icon layui-icon-home"></i></a>
     <a href="">一级分类</a>
-    <a><cite></cite></a>
+    <a><cite>项目预算（续租）</cite></a>
   </span>
   <div class="rightDiv moreBtn">
   <span><i class="layui-icon layui-icon-left"></i></span>
@@ -29,19 +31,29 @@
       <div class="layui-row">
         <div class="layui-col-md12">
           <div class="layui-card">
-            <div class="layui-card-body">
+            <div class="layui-card-header tabsUlNavHeader">
               <div>
-                <div style="float: right;">
-                  <span class="layui-btn layui-btn-normal" id="addBtn"><i class="layui-icon layui-icon-add-1"></i>添加</span>
-                </div>
-                <table class="layui-form">
-                  <tr>
-                    <td><input type="text" placeholder="关键字段查询" class="layui-input"></td>
-                    <td>&nbsp;&nbsp;</td>
-                    <td><span class="layui-btn layui-btn-normal"><i class="layui-icon layui-icon-search">查询</i></span></td>
-                  </tr>
-                </table>
+                <ul class="tabsUlNav">
+                  <li class=""><a href="./page34.html">在执行合同</a></li>
+                  <li class="active"><a href="./page35.html">续租合同</a></li>
+                  <li class=""><a href="./page36.html">空置面积预算</a></li>
+                  <li class=""><a href="./page37.html">经营费用预算</a></li>
+                  <li class=""><a href="">出租率统计</a></li>
+                  <li class=""><a href="">现金流统计</a></li>
+                  <li class=""><a href="">损益统计</a></li>
+                </ul>
               </div>
+            </div>
+            <div class="layui-card-body">
+              <span class="layui-btn layui-btn-primary" style="float: right;">导出预算表</span>
+              <table class="searchTable layui-form">
+                <tr>
+                  <td><select><option value="">所属项目</option></select></td>
+                  <td><select><option value="">预算年度</option></select></td>
+                  <td><input type="text" placeholder="预算类别" class="layui-input"></td>
+                  <td><span class="layui-btn layui-btn-normal"><i class="layui-icon layui-icon-search"></i>搜索</span></td>
+                </tr>
+              </table>
             </div>
           </div>
         </div>
@@ -54,9 +66,29 @@
         <div class="layui-col-md12">
           <div class="layui-card">
             <div class="layui-card-body">
-              <div>
-                <table id="tableData" lay-filter="tableData"></table>
+              <div class="tableTitleInfo">
+                <div class="infoDiv">
+                  <div class="top">
+                    <p class="title">正常</p>
+                    <p class="number">5,789,123.22</p>
+                  </div>
+                  <div class="top2">
+                    <p class="title">续租</p>
+                    <p class="number">5,789,123.22</p>
+                  </div>
+                  <div class="left">
+                    <p class="title">风险</p>
+                    <p class="number">5,789,123.22</p>
+                  </div>
+                  <div class="right">
+                    <p class="title">占比</p>
+                    <p class="number">57%</p>
+                  </div>
+                </div>
+                <div class="echartDiv big" id="echartDiv">
+                </div>
               </div>
+              <table id="tableData" lay-filter="tableData"></table>
             </div>
           </div>
         </div>
@@ -65,97 +97,132 @@
   </div>
 </div>
 </body>
-<script type="text/html" id="addTpl">
-  <div class="addTable">
-    <div class="layui-card">
-      <div class="layui-card-body">
-        <table>
-          <tr>
-            <td class="titleTd"><b class="red">*</b>内推名称：</td>
-            <td colspan="3"><input type="text" class="layui-input" placeholder=""></td>
-            <td class="titleTd">备注说明：</td>
-            <td rowspan="4"><textarea class="layui-textarea"></textarea></td>
-          </tr>
-          <tr>
-            <td class="titleTd">联系人：</td>
-            <td><input type="text" class="layui-input"></td>
-            <td class="titleTd">联系电话：</td>
-            <td><input type="text" class="layui-input"></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td class="titleTd">办公地址：</td>
-            <td colspan="3"><input type="text" class="layui-input" placeholder=""></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td class="titleTd">附件资料：</td>
-            <td colspan="3"><input type="text" class="layui-input" placeholder=""></td>
-            <td></td>
-          </tr>
-        </table>
-      </div>
-    </div>
-    <hr>
-    <p class="btnP">
-      <span class="layui-btn layui-btn-normal">提交保存</span>
-      <span class="layui-btn layui-btn-primary" id="closePage">返回</span>
-    </p>
-  </div>
-</script>
+
 <script type="text/javascript" src="./layui/layui.js"></script>
 <script type="text/javascript">
-  layui.use(['jquery','layer','element','table'],function(){
+  layui.use(['jquery','layer','element','table','echarts'],function(){
     var $ = layui.jquery
     ,table = layui.table
+    ,echarts = layui.echarts
     ,element = layui.element
     ,layer = layui.layer;
 
     var data1 = [
-      { no:'1',name:'北京微音软件有限公司',contacts:'罗滔',phone:'18888888',address:'张三',},
-      { no:'2',name:'北京微音软件有限公司',contacts:'罗滔',phone:'18888888',address:'张三',},
-      { no:'3',name:'北京微音软件有限公司',contacts:'罗滔',phone:'18888888',address:'张三',},
+      { no:'1',number:'HT10012',name:'北京微音软件有限公司',source:'1001',area:'500',total:'300',jan:10,feb:30,mar:31,apr:50,may:60,jun:60,jul:33,aug:22,sep:35,oct:20,nov:25,dec:22},
+      { no:'1',number:'HT10012',name:'北京微音软件有限公司',source:'1001',area:'500',total:'300',jan:10,feb:30,mar:31,apr:50,may:60,jun:60,jul:33,aug:22,sep:35,oct:20,nov:25,dec:22},
+      { no:'1',number:'HT10012',name:'北京微音软件有限公司',source:'1001',area:'500',total:'300',jan:10,feb:30,mar:31,apr:50,may:60,jun:60,jul:33,aug:22,sep:35,oct:20,nov:25,dec:22},
+      { no:'2',number:'HT10012',name:'北京微音软件有限公司',source:'1001',area:'500',total:'300',jan:10,feb:30,mar:31,apr:50,may:60,jun:60,jul:33,aug:22,sep:35,oct:20,nov:25,dec:22},
+      { no:'2',number:'HT10012',name:'北京微音软件有限公司',source:'1001',area:'500',total:'300',jan:10,feb:30,mar:31,apr:50,may:60,jun:60,jul:33,aug:22,sep:35,oct:20,nov:25,dec:22},
+      { no:'2',number:'HT10012',name:'北京微音软件有限公司',source:'1001',area:'500',total:'300',jan:10,feb:30,mar:31,apr:50,may:60,jun:60,jul:33,aug:22,sep:35,oct:20,nov:25,dec:22},
+      { no:'3',number:'HT10012',name:'北京微音软件有限公司',source:'1001',area:'500',total:'300',jan:10,feb:30,mar:31,apr:50,may:60,jun:60,jul:33,aug:22,sep:35,oct:20,nov:25,dec:22},
+      { no:'4',number:'HT10012',name:'北京微音软件有限公司',source:'1001',area:'500',total:'300',jan:10,feb:30,mar:31,apr:50,may:60,jun:60,jul:33,aug:22,sep:35,oct:20,nov:25,dec:22},
+      { no:'4',number:'HT10012',name:'北京微音软件有限公司',source:'1001',area:'500',total:'300',jan:10,feb:30,mar:31,apr:50,may:60,jun:60,jul:33,aug:22,sep:35,oct:20,nov:25,dec:22},
     ];
     table.render({
       elem:'#tableData',
       data: data1,
       height:'610px',
+      size:'sm',
+      cellMinWidth:80,
       toolbar:$('#toolbarTpl').html(),
       page:true,
       cols:[[
-        {title:'序号',field:'no',sort:true,width:'8%',},
-        {title:'内推名称',field:'name', sort:true, },
-        {title:'联系人',field:'contacts',width:'14%',sort:true,},
-        {title:'联系电话',field:'phone',width:'12%',},
-        {title:'客户类型',field:'type', width:'12%',sort:true,},
-        {title:'操作',field:'',templet: getMoreTpl(), width:'15%',fixed:'right', },
-      ]]
+        {type:'checkbox',fixed:'left',},
+        {title:'合同编号',field:'number',width:'8%',fixed:'left',},
+        {title:'客户名称',field:'name', fixed:'left', },
+        {title:'房源',field:'source',fixed:'left',},
+        {title:'面积',field:'area',fixed:'left',},
+        {title:'合计',field:'total',fixed:'left',},
+        {title:'一月',field:'jan'},
+        {title:'二月',field:'feb'},
+        {title:'三月',field:'mar'},
+        {title:'四月',field:'apr'},
+        {title:'五月',field:'may'},
+        {title:'六月',field:'jun'},
+        {title:'七月',field:'jul'},
+        {title:'八月',field:'aug'},
+        {title:'九月',field:'sep'},
+        {title:'十月',field:'oct'},
+        {title:'十一月',field:'nov'},
+        {title:'十二月',field:'dec'},
+        {title:'操作',field:'',templet: getMoreTpl(), width:'12%',fixed:'right', },
+      ]],
+      done:function(){
+        //merge('0');
+        merge('number');
+        merge('name');
+        function merge(field){
+          var rowspan = 1,mainCols=0;
+          var cache = table.cache['tableData'];
+          var allCol = $('#tableData').next().find('.layui-table-fixed td[data-field="'+field+'"]');
+          layui.each(allCol,function(index,item){
+            if(index!=0){
+              var thisData = cache[index],lastData = index!=0?cache[index-1]:{id:-1};
+              if(!thisData)
+                return;
+              if(thisData.no!=lastData.no){ //根据no来合并。no相同值的进行合并
+                $(allCol[mainCols]).attr('rowspan',rowspan)
+                mainCols = index;
+                rowspan = 1;
+              }else{  //与上一列相同
+                rowspan++;
+                $(item).remove();
+              }
+            }
+          })
+          $(allCol[mainCols]).attr('rowspan',rowspan)
+        }
+      },
     })
     
     function getMoreTpl(){
       return function(d){
         return [
-          '<span class="layui-btn layui-btn-sm layui-btn-normal"><i class="layui-icon layui-icon-edit"></i>编辑</span>',
-          '<span class="layui-btn layui-btn-sm layui-btn-danger"><i class="layui-icon layui-icon-delete"></i>删除</span>',
+          '<span class="layui-btn layui-btn-xs layui-btn-normal"><i class="layui-icon layui-icon-edit"></i>编辑</span>',
+          '<span class="layui-btn layui-btn-xs layui-btn-"><i class="layui-icon layui-icon-edit"></i>确认</span>',
         ].join(' ');
       }
     }
-    $('#addBtn').click(function(){
-      var addWin = layer.open({
-        type:1,
-        offset:'100px',
-        area:['1100px','350px'],
-         title:['<i class="layui-icon layui-icon-spread-left"></i>&nbsp;&nbsp;内推档案',
-                '<span class="headTips">',
-                  '<b class="red">*</b>为必填项',
-                '</span>'].join(''),
-        content:$('#addTpl').html(),
-        success:function(){
-          $('#closePage').unbind().on('click',function(){
-            layer.close(addWin);
-          })
-        }
-      })
+   
+    var echartDiv = echarts.init(document.getElementById('echartDiv'));
+    echartDiv.setOption({
+      title:{
+        text:'预算出租率',
+        x:'100px',
+      },
+      tooltip:{ 
+        trigger: 'axis',
+      },  
+      legend: { 
+          data:['正常','风险',],
+          x:'center',
+      },
+      xAxis: {
+          type: 'category',
+          boundaryGap: false,
+          data: ['1月', '2月', '3月', '4月','5月', '6月','7月', '8月','9月', '10月','11月', '12月',],
+      },
+      yAxis: {
+          show: false
+          /*type: 'value',
+          axisLabel: {
+              formatter: '{value}%'
+          }*/
+      },
+      series: [
+        {
+          name:'正常',
+            data: ['100','80','70','90','60','80','70','50','60','40','60','30'],
+            type: 'line',
+             itemStyle : { normal: {label : {show: true}}},
+        },
+        {
+          name:'风险',
+            data: ['70','90','60','70','80','80','30','20','40','20','10','20'],
+            type: 'line',
+            itemStyle : { normal: {label : {show: true}}}
+        },
+      ]
     })
     $('#refreshBtn').click(function(){
       location.reload();
