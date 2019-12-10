@@ -538,6 +538,32 @@ a{
   margin-top: 15px;
 
 }
+.billTopBottomInfo{
+  border: 1px solid #80808085;
+}
+.billTopBottomInfo td{
+  padding: 0 10px !important;
+  text-align: right;
+}
+.billTopBottomInfo .titleTd{
+  width: 27px !important;
+  text-align: center !important;
+  
+  border-right: 1px solid #80808085;
+  border-left: 1px solid #80808085;
+}
+.billTopBottomInfo .smallTd{
+  width: 100px;
+}
+.billTopBottomInfo .layui-input{
+  border: none;
+  height: 30px;
+  line-height: 30px;
+}
+.billTopBottomInfo .layui-textarea{
+  border: none;
+  height: 120px;
+}
 /* 滚动条样式 */
 ::-webkit-scrollbar 
 { 

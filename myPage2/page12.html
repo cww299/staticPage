@@ -80,7 +80,7 @@
       </div>
     </div>
   </div>
-  <div style="margin-top:15px;">
+  <div style="margin-top:5px;">
     <div class="layui-container">
       <div class="layui-row">
         <div class="layui-col-md12">
@@ -97,6 +97,59 @@
   </div>
 </div>
 </body>
+
+<!--  
+   <div class="layui-card">
+     <div class="layui-card-header">
+       <i class="layui-icon layui-icon-spread-left"></i>&nbsp;&nbsp;开票费用信息<p class="headTips"><span class="layui-btn layui-btn-normal layui-btn-sm"><i class="layui-icon layui-icon-add-1"></i>添加开票信息</span></p>
+     </div>
+     <div class="layui-card-body">
+       <table id="addTable" lay-filter="addTable"></table>
+     </div>
+   </div>
+   <div class="layui-card">
+     <div class="layui-card-header"><i class="layui-icon layui-icon-spread-left"></i>&nbsp;&nbsp;开票信息</div>
+     <div class="layui-card-body">
+       <table>
+         <tr>
+           <td class="titleTd"><b class="red">*</b>开票类型：</td>
+           <td colspan=""><input type="text" class="layui-input" placeholder=""></td>
+           <td class="titleTd">开票公司：</td>
+           <td rowspan=""><input type="text" class="layui-input" placeholder=""></td>
+         </tr>
+         <tr>
+           <td class="titleTd"><b class="red">*</b>发票抬头：</td>
+           <td><input type="text" class="layui-input"></td>
+           <td class="titleTd">电子发票邮箱：</td>
+           <td><input type="text" class="layui-input"></td>
+           <td></td>
+         </tr>
+         <tr>
+           <td class="titleTd"><b class="red">*</b>税号：</td>
+           <td colspan=""><input type="text" class="layui-input" placeholder=""></td>
+           <td class="titleTd">备注信息：</td>
+           <td rowspan="4"><textarea class="layui-textarea" placeholder="请输入备注信息"></textarea></td>
+         </tr>
+         <tr>
+           <td class="titleTd">开户行及账号：</td>
+           <td><input type="text" class="layui-input" placeholder=""></td>
+           <td></td>
+         </tr>
+         <tr>
+           <td class="titleTd">地址/电话：</td>
+           <td><input type="text" class="layui-input" placeholder=""></td>
+           <td></td>
+         </tr>
+         <tr>
+           <td class="titleTd">三方协议：</td>
+           <td><input type="text" class="layui-input" placeholder=""></td>
+           <td></td>
+         </tr>
+       </table>
+     </div>
+   </div> 
+-->
+
 <script type="text/html" id="addTpl">
   <div class="addTable">
     <div class="layui-card">
@@ -105,61 +158,70 @@
           <tr>
             <td class="titleTd">合同编号：</td>
             <td colspan=""><input type="text" class="layui-input" placeholder="请输入科目编号"></td>
-            <td class="titleTd">客户名称：</td>
+            <td class="titleTd">开票类型：</td>
             <td rowspan=""><input type="text" class="layui-input" placeholder=""></td>
           </tr>
-        </table>
-      </div>
-    </div>
-    <div class="layui-card">
-      <div class="layui-card-header">
-        <i class="layui-icon layui-icon-spread-left"></i>&nbsp;&nbsp;开票费用信息<p class="headTips"><span class="layui-btn layui-btn-normal layui-btn-sm"><i class="layui-icon layui-icon-add-1"></i>添加开票信息</span></p>
-      </div>
-      <div class="layui-card-body">
-        <table id="addTable" lay-filter="addTable"></table>
-      </div>
-    </div>
-    <div class="layui-card">
-      <div class="layui-card-header"><i class="layui-icon layui-icon-spread-left"></i>&nbsp;&nbsp;开票信息</div>
-      <div class="layui-card-body">
-        <table>
           <tr>
-            <td class="titleTd"><b class="red">*</b>开票类型：</td>
-            <td colspan=""><input type="text" class="layui-input" placeholder=""></td>
+            <td class="titleTd">客户名称：</td>
+            <td colspan=""><input type="text" class="layui-input" placeholder="请输入科目编号"></td>
             <td class="titleTd">开票公司：</td>
             <td rowspan=""><input type="text" class="layui-input" placeholder=""></td>
           </tr>
           <tr>
-            <td class="titleTd"><b class="red">*</b>发票抬头：</td>
-            <td><input type="text" class="layui-input"></td>
-            <td class="titleTd">电子发票邮箱：</td>
-            <td><input type="text" class="layui-input"></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td class="titleTd"><b class="red">*</b>税号：</td>
-            <td colspan=""><input type="text" class="layui-input" placeholder=""></td>
-            <td class="titleTd">备注信息：</td>
-            <td rowspan="4"><textarea class="layui-textarea" placeholder="请输入备注信息"></textarea></td>
-          </tr>
-          <tr>
-            <td class="titleTd">开户行及账号：</td>
-            <td><input type="text" class="layui-input" placeholder=""></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td class="titleTd">地址/电话：</td>
-            <td><input type="text" class="layui-input" placeholder=""></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td class="titleTd">三方协议：</td>
-            <td><input type="text" class="layui-input" placeholder=""></td>
-            <td></td>
+            <td class="titleTd">电子邮件：</td>
+            <td colspan=""><input type="text" class="layui-input" placeholder="请输入科目编号"></td>
+            <td class="titleTd">开票公司：</td>
+            <td rowspan=""><input type="text" class="layui-input" placeholder=""></td>
           </tr>
         </table>
+        <div>
+          <table class="billTopBottomInfo">
+            <tr>
+              <td rowspan="4" class="titleTd">购货单位</td>
+              <td class="smallTd">名称：</td>
+              <td><input type="text" class="layui-input" name=""></td>
+              <td rowspan="4" class="titleTd">密码区</td>
+              <td rowspan="4"><textarea class="layui-textarea"></textarea></td>
+            </tr>
+            <tr>
+              <td class="smallTd">纳税人识别号：</td>
+              <td><input type="text" class="layui-input" name=""></td>
+            </tr>
+            <tr>
+              <td class="smallTd">地址、电话：</td>
+              <td><input type="text" class="layui-input" name=""></td>
+            </tr>
+            <tr>
+              <td class="smallTd">开户行及账号：</td>
+              <td><input type="text" class="layui-input" name=""></td>
+            </tr>
+          </table>
+          <table id="billContentTable" lay-filter="billContentTable"></table>
+          <table class="billTopBottomInfo">
+            <tr>
+              <td rowspan="4" class="titleTd">销货单位</td>
+              <td class="smallTd">名称：</td>
+              <td><input type="text" class="layui-input" name=""></td>
+              <td rowspan="4" class="titleTd">备注</td>
+              <td rowspan="4"><textarea class="layui-textarea"></textarea></td>
+            </tr>
+            <tr>
+              <td class="smallTd">纳税人识别号：</td>
+              <td><input type="text" class="layui-input" name=""></td>
+            </tr>
+            <tr>
+              <td class="smallTd">地址、电话：</td>
+              <td><input type="text" class="layui-input" name=""></td>
+            </tr>
+            <tr>
+              <td>开户行及账号：</td>
+              <td><input type="text" class="layui-input" name=""></td>
+            </tr>
+          </table>
+        </div>
       </div>
     </div>
+    
     <hr>
     <p class="btnP">
       <span class="layui-btn layui-btn-normal">提交开票</span>
@@ -200,7 +262,7 @@
         {title:'应开金额',field:'price', sort:true,},
         {title:'已开金额',field:'price2', sort:true,},
         {title:'剩余开票',field:'surplus', sort:true,},
-        {title:'操作',field:'',templet: getMoreTpl(), width:'15%',fixed:'right', },
+        {title:'操作',field:'',templet: getMoreTplAdd(), width:'15%',fixed:'right', },
       ]]
     })
     
@@ -217,25 +279,30 @@
         content:$('#addTpl').html(),
         success:function(){
           var dataAdd = [
-          {name:'北京微音软件有限公司',model:'初步洽谈',date:'2019-01-01',start:'201901',end:'201901',price:'',price2:'',thisPrice:'',},
-          {name:'北京微音软件有限公司',model:'初步洽谈',date:'2019-01-01',start:'201901',end:'201901',price:'',price2:'',thisPrice:'',},
+          {name:'',model:'',date:'',start:'',end:'',price:'',price2:'',thisPrice:'',},
+          {name:'',model:'',date:'',start:'',end:'',price:'',price2:'',thisPrice:'',},
+          {name:'',model:'',date:'',start:'',end:'',price:'',price2:'',thisPrice:'',},
+          {name:'',model:'',date:'',start:'',end:'',price:'',price2:'',thisPrice:'',},
+          {name:'',model:'',date:'',start:'',end:'',price:'',price2:'',thisPrice:'',},
+          {name:'',model:'',date:'',start:'',end:'',price:'',price2:'',thisPrice:'',},
+          {name:'',model:'',date:'',start:'',end:'',price:'',price2:'',thisPrice:'',},
           ];
           table.render({
-            elem:'#addTable',
-            page:true,
+            elem:'#billContentTable',
             data: dataAdd,
-            height:'300px',
+            size:'sm',
+            height:'283px',
+            totalRow:true,
             cols:[[
-              {type:'checkbox',fixed:'left',},
-              {title:'客户名称',field:'name',},
-              {title:'费用科目',field:'model', sort:true,},
-              {title:'应收日期',field:'date', sort:true,},
-              {title:'开始日期',field:'start', sort:true,},
-              {title:'结束日期',field:'end', sort:true,},
-              {title:'应开金额',field:'price', sort:true,},
-              {title:'已开金额',field:'price2', sort:true,},
-              {title:'本次开票金额',field:'thisPrice', sort:true,},
-              {title:'操作',field:'',templet: getMoreTpl(), width:'15%',fixed:'right', },
+              {title:'货物或应税劳务名称',field:'name',edit:true,totalRowText:'合计',},
+              {title:'规格型号',field:'model', edit:true,},
+              {title:'单位',field:'date', edit:true,width:60,},
+              {title:'数量',field:'start', edit:true,width:80,},
+              {title:'单价',field:'end', edit:true,width:80,},
+              {title:'金额',field:'price', edit:true, width:80,totalRow:true,},
+              {title:'税率',field:'price2', edit:true,width:60,},
+              {title:'税额',field:'thisPrice', edit:true,totalRow:true,},
+              {title:'操作',field:'',templet: getMoreTpl(), width:'10%',fixed:'right', },
             ]]
           })
           $('#closePage').unbind().on('click',function(){
@@ -250,10 +317,12 @@
 
     function getMoreTpl(){
       return function(d){
+        if(d.id)
         return [
-          '<span class="layui-btn layui-btn-sm layui-btn-green"><i class="layui-icon layui-icon-about"></i>详细</span>',
-          '<span class="layui-btn layui-btn-sm layui-btn-normal"><i class="layui-icon layui-icon-edit"></i>编辑</span>',
+          '<span class="layui-btn layui-btn-sm layui-btn-danger"><i class="layui-icon layui-icon-edit"></i>删除</span>',
         ].join(' ');
+        else
+          return '';
       }
     }
     function getMoreTplAdd(){
