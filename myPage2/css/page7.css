@@ -1,0 +1,44 @@
+.navUl{
+}
+.navUl li{
+  float: left;
+  width: 10%;
+  text-align: center;
+}
+.navUl li:hover{
+  cursor: pointer;
+  color: #1e9fff;
+}
+.navUl li.active{
+  color: #1e9fff;
+}
+.searchDiv,.cardContent{
+  display: none;
+}
+.lay-this{
+  display: block;
+}
+.red{
+  color: red;
+}
+.addTable table{
+  width: 80%;
+  margin: 10px auto;
+}
+.titleTd{
+  text-align: right;
+}
+.layui-textarea{
+  height: 180px;
+}
+.addTable .layui-card-body{
+  width: 100%;
+}
+.addTable table {
+  width: 930px;
+}
+@media screen and (min-width: 1500px){
+  .layui-container {
+      width: 1470px;
+  }
+}

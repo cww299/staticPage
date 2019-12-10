@@ -1,0 +1,83 @@
+html{
+  color: gray;
+  font-weight: bold;
+}
+table.titleTable tr:first-child td{
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+table.titleTable td{
+  min-width: 150px;
+  font-size: 20px;
+  padding-top: 10px;
+  text-align: right;
+}
+table.titleTable td.info{
+  text-align: left;
+}
+.navNl li{
+  float: left;
+  padding: 0 15px;
+  font-size: 16px;
+  font-weight: bold;
+  height: 35px;
+  line-height: 35px;
+  cursor: pointer;
+  color: gray;
+  margin: 0 11px;
+  padding-top: 8px;
+}
+.navNl li.lay-this{
+  color: #1E9FFF;
+  font-weight: bold;
+  border-bottom: 2px solid #1E9FFF;
+}
+table.content{
+  width:100%;
+  margin-top: 20px;
+}
+table.content td{
+  text-align: left;
+  padding: 5px 10px;
+}
+table.content td.title{
+  text-align: right;
+  width: 150px;
+}
+.contentLi{
+  display: none;
+}
+.lay-this{
+  display: block;
+}
+.searchTable td{
+  padding-right: 10px;
+}
+.layui-card-header{
+  margin-top: 30px;
+}
+.allCheck{
+  color: gray;
+}
+.smallTitle {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.ewmImg{
+  float: right;
+  padding: 0 30px;
+}
+.ewmImg img{
+  width: 80px;
+  height: 80px;
+  background: gray;
+  display: block;
+  margin: auto;
+  max-width: 100%;
+}
+.ewmImg span{
+  font-size: 16px;
+  display: block;
+  margin: 10px;
+  font-weight: bold;
+}

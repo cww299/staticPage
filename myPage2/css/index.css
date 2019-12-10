@@ -4,6 +4,8 @@ body{
 .navIconUl{
   margin-top: 10px;
   display: none;
+  overflow: hidden;
+  padding: 10px;
 }
 .navIconUl.lay-this{
   display: block;
@@ -52,7 +54,7 @@ body{
   color: gray;
   font-weight: bold;
   font-size: 18px;
-  line-height: 41px;
+  line-height: 48px;
 }
 .dataUl li>p.number{
   margin:10px 0;
@@ -154,6 +156,10 @@ body,html{
 }
 .layui-card-body {
   padding: 0 15px !important;
+}
+.equalHeight{
+  height: 250px;
+  overflow: hidden;
 }
 @media screen and (min-width: 1270px){
   .layui-container {

@@ -1,0 +1,43 @@
+.navUl{
+
+}
+.navUl li{
+  float: left;
+  width: 10%;
+  text-align: center;
+}
+.navUl li:hover{
+  cursor: pointer;
+  color: #1e9fff;
+}
+.navUl li.active{
+  color: #1e9fff;
+}
+.searchDiv,.cardContent{
+  display: none;
+  overflow: hidden;
+}
+.lay-this{
+  display: block;
+}    
+.titleTd{
+  text-align: right;
+  width: 150px;
+}
+.treeDiv{
+  float: left;
+  border: 1px solid #8080803b;
+  height: 400px;
+  width: 20%;
+  overflow-y: scroll;
+  margin-top: 10px;
+}
+.treeTableDiv{
+  float: right;
+  width: 79%;
+}
+@media screen and (min-width: 1500px){
+  .layui-container {
+      width: 1470px;
+  }
+}
