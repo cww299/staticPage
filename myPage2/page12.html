@@ -144,6 +144,14 @@
             </tr>
           </table>
           <table id="billContentTable" lay-filter="billContentTable"></table>
+          <table class="sumPriceTable">
+            <tr>
+              <td class="borderTd">价税合计（大写）</td>
+              <td id="allPriceBigTd"></td>
+              <td>（小写）</td>
+              <td id="allPriceSmallTd"></td>
+            </tr>
+          </table>
           <table class="billTopBottomInfo">
             <tr>
               <td rowspan="4" class="titleTd">销货单位</td>
@@ -213,7 +221,7 @@
       ]]
     })
     
-    
+
     $('#addBtn').click(function(){
       var addWin = layer.open({
         type:1,
@@ -226,13 +234,13 @@
         content:$('#addTpl').html(),
         success:function(){
           var dataAdd = [
-          {name:'',model:'',date:'',start:'',end:'',price:'',price2:'',thisPrice:'',},
-          {name:'',model:'',date:'',start:'',end:'',price:'',price2:'',thisPrice:'',},
-          {name:'',model:'',date:'',start:'',end:'',price:'',price2:'',thisPrice:'',},
-          {name:'',model:'',date:'',start:'',end:'',price:'',price2:'',thisPrice:'',},
-          {name:'',model:'',date:'',start:'',end:'',price:'',price2:'',thisPrice:'',},
-          {name:'',model:'',date:'',start:'',end:'',price:'',price2:'',thisPrice:'',},
-          {name:'',model:'',date:'',start:'',end:'',price:'',price2:'',thisPrice:'',},
+          {name:'',model:'',unit:'',number:'',price:'',sumPrice:'',taxRate:'',taxPrice:'',},
+          {name:'',model:'',unit:'',number:'',price:'',sumPrice:'',taxRate:'',taxPrice:'',},
+          {name:'',model:'',unit:'',number:'',price:'',sumPrice:'',taxRate:'',taxPrice:'',},
+          {name:'',model:'',unit:'',number:'',price:'',sumPrice:'',taxRate:'',taxPrice:'',},
+          {name:'',model:'',unit:'',number:'',price:'',sumPrice:'',taxRate:'',taxPrice:'',},
+          {name:'',model:'',unit:'',number:'',price:'',sumPrice:'',taxRate:'',taxPrice:'',},
+          {name:'',model:'',unit:'',number:'',price:'',sumPrice:'',taxRate:'',taxPrice:'',},
           ];
           table.render({
             elem:'#billContentTable',
@@ -243,14 +251,52 @@
             cols:[[
               {title:'货物或应税劳务名称',field:'name',edit:true,totalRowText:'合计',},
               {title:'规格型号',field:'model', edit:true,},
-              {title:'单位',field:'date', edit:true,width:60,},
-              {title:'数量',field:'start', edit:true,width:80,},
-              {title:'单价',field:'end', edit:true,width:80,},
-              {title:'金额',field:'price', edit:true, width:80,totalRow:true,},
-              {title:'税率',field:'price2', edit:true,width:60,},
-              {title:'税额',field:'thisPrice', edit:true,totalRow:true,},
-              {title:'操作',field:'',templet: getMoreTpl(), width:'10%',fixed:'right', },
-            ]]
+              {title:'单位',field:'unit', edit:true,width:60,},
+              {title:'数量',field:'number', edit:true,width:80,},
+              {title:'单价',field:'price', edit:true,width:80,},
+              {title:'金额',field:'sumPrice', width:120,totalRow:true,},
+              {title:'税率',field:'taxRate', edit:true,width:60,},
+              {title:'税额',field:'taxPrice', edit:true,totalRow:true,},
+              {title:'操作',field:'',templet: getMoreTpl(), width:'10%',fixed:'right', event:"deleteTr",},
+            ]],
+            done:function(){
+                var sum = $('div.layui-table-total td[data-field="sumPrice"] div').html() || 0;
+                var sum1 = $('div.layui-table-total td[data-field="taxPrice"] div').html() || 0;
+                var allSum = sum-(-sum1);
+                $('#allPriceBigTd').html('￥'+number_chinese(allSum));
+                $('#allPriceSmallTd').html('￥'+allSum);
+            }
+          })
+          table.on('edit(billContentTable)',function(obj){
+            var trData = table.cache['billContentTable'][$(obj.tr).data('index')];
+            if(obj.field=='price' && trData.number){
+              trData.sumPrice = trData.number * trData.price;
+            }else if(obj.field=='number' && trData.price){
+              trData.sumPrice = trData.number * trData.price;
+            }else if(obj.field=='taxRate'){
+              var rate=trData.taxRate.replace("%","");
+              rate= rate/100;
+              trData.taxPrice = rate * trData.sumPrice;
+            }
+            table.reload('billContentTable',{
+              data: table.cache['billContentTable'],
+            })
+          })
+          table.on('tool(billContentTable)',function(obj){
+            var trData = table.cache['billContentTable'][$(obj.tr).data('index')];
+            if(obj.event=='deleteTr'){
+              trData.name = '';
+              trData.model = '';
+              trData.unit = '';
+              trData.number = '';
+              trData.price = '';
+              trData.sumPrice = '';
+              trData.taxRate = '';
+              trData.taxPrice = '';
+            }
+            table.reload('billContentTable',{
+              data: table.cache['billContentTable'],
+            })
           })
           $('#closePage').unbind().on('click',function(){
             layer.close(addWin);
@@ -264,10 +310,10 @@
 
     function getMoreTpl(){
       return function(d){
-        if(d.id)
-        return [
-          '<span class="layui-btn layui-btn-sm layui-btn-danger"><i class="layui-icon layui-icon-edit"></i>删除</span>',
-        ].join(' ');
+        if(d.id || d.name || d.model || d.unit || d.number || d.price || d.taxRate)
+          return [
+            '<span class="layui-btn layui-btn-sm layui-btn-danger"><i class="layui-icon layui-icon-edit"></i>删除</span>',
+          ].join(' ');
         else
           return '';
       }
@@ -279,6 +325,21 @@
           '<span class="layui-btn layui-btn-sm layui-btn-green"><i class="layui-icon layui-icon-delete"></i>删除</span>',
         ].join(' ');
       }
+    }
+    function number_chinese(str) {
+      var num = parseFloat(str);
+      var strOutput = "",
+          strUnit = '仟佰拾亿仟佰拾万仟佰拾元角分';
+      num += "00";
+      var intPos = num.indexOf('.');  
+      if (intPos >= 0){
+          num = num.substring(0, intPos) + num.substr(intPos + 1, 2);
+      }
+      strUnit = strUnit.substr(strUnit.length - num.length);
+      for (var i=0; i < num.length; i++){
+          strOutput += '零壹贰叁肆伍陆柒捌玖'.substr(num.substr(i,1),1) + strUnit.substr(i,1);
+      }
+      return strOutput.replace(/零角零分$/, '整').replace(/零[仟佰拾]/g, '零').replace(/零{2,}/g, '零').replace(/零([亿|万])/g, '$1').replace(/零+元/, '元').replace(/亿零{0,3}万/, '亿').replace(/^元/, "零元")
     }
   })
 </script>

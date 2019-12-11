@@ -571,6 +571,24 @@ a{
   border: none;
   height: 120px;
 }
+.sumPriceTable{
+  margin-top: -11px !important;
+  border: 1px solid #e6e6e6;
+}
+.sumPriceTable td{
+  padding: 5px 5px !important;
+}
+.sumPriceTable td.borderTd{
+  border: 1px solid #e6e6e6;
+  width: 145px;
+  text-align: center;
+}
+#allPriceBigTd{
+  width: 400px;
+}
+#allPriceSmallTd{
+  width: 280px;
+}
 /* 滚动条样式 */
 ::-webkit-scrollbar 
 { 
