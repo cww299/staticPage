@@ -538,6 +538,7 @@ a{
   margin-top: 15px;
 
 }
+<<<<<<< HEAD
 .fixedNavDiv{
   position: fixed;
   margin: auto;
@@ -545,6 +546,33 @@ a{
   width: -moz-calc(100% - 17px);
   width: calc(100% - 12px);
   z-index: 99999;
+=======
+.billTopBottomInfo{
+  border: 1px solid #80808085;
+}
+.billTopBottomInfo td{
+  padding: 0 10px !important;
+  text-align: right;
+}
+.billTopBottomInfo .titleTd{
+  width: 27px !important;
+  text-align: center !important;
+  
+  border-right: 1px solid #80808085;
+  border-left: 1px solid #80808085;
+}
+.billTopBottomInfo .smallTd{
+  width: 100px;
+}
+.billTopBottomInfo .layui-input{
+  border: none;
+  height: 30px;
+  line-height: 30px;
+}
+.billTopBottomInfo .layui-textarea{
+  border: none;
+  height: 120px;
+>>>>>>> 797981749c5ff0d176dc1dab0ac9a8d248d60b9f
 }
 /* 滚动条样式 */
 ::-webkit-scrollbar 
