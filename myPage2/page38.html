@@ -139,7 +139,9 @@
                   <td><select><option value="">预算年度</option></select></td>
                   <td><input type="text" placeholder="预算类别" class="layui-input"></td>
                   <td><input type="text" placeholder="预算子类别" class="layui-input"></td>
-                  <td><span class="layui-btn layui-btn-normal"><i class="layui-icon layui-icon-search"></i>搜索</span></td>
+                  <td><input type="text" placeholder="当年预算总额" class="layui-input"></td>
+                  <td><input type="text" placeholder="当年剩余预算总额" class="layui-input"></td>
+                  <td><input type="text" placeholder="当月剩余预算" class="layui-input"></td>
                 </tr>
               </table>
               <table id="tableData" lay-filter="tableData"></table>
@@ -203,7 +205,7 @@
     ,layer = layui.layer;
 
     var data = [
-    {month:'年度预算：',yearBudget:'1000',surplusBudget:500,adjustBudget:200,adjustAfterBudget:100,description:''},
+    {month:'一月：',yearBudget:'1000',surplusBudget:500,adjustBudget:200,adjustAfterBudget:100,description:''},
     {month:'二月：',yearBudget:'1000',surplusBudget:500,adjustBudget:200,adjustAfterBudget:100,description:''},
     {month:'三月：',yearBudget:'1000',surplusBudget:500,adjustBudget:200,adjustAfterBudget:100,description:''},
     {month:'四月：',yearBudget:'1000',surplusBudget:500,adjustBudget:200,adjustAfterBudget:100,description:''},
