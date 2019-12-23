@@ -5,6 +5,24 @@ nginx命令
 重启: nginx.exe -s reload
 版本: nginx.exe -v
 
+https://cnodejs.org/topic/5c46759e3b948a2b4ab70483
+
+数据库自动备份
+https://www.cnblogs.com/mmzs/p/10063176.html
+
+权限管理
+https://blog.csdn.net/qq_36125138/article/details/83046844
+
+shiro
+https://www.cnblogs.com/iflytek/p/9847809.html
+
+阿里云配置项目
+https://www.cnblogs.com/zeroingToOne/p/8886446.html
+
+前后分离加权限控制
+https://juejin.im/post/59097cd7a22b9d0065fb61d2
+
+
 git fork更新作者代码
 https://blog.csdn.net/zhongzunfa/article/details/80344585
 
@@ -140,4 +158,5 @@ https://blog.csdn.net/briblue/article/details/73928350
 对象流     ObjectInputStream  //同上
 字符流     FileReader   FileWriter            new FileReader(file)
 缓冲流     BufferedReader    PrintWriter      new BufferedReader( new FileReader(file) ) //基于字符流
+
 
