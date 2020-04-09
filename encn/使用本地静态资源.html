@@ -1,0 +1,125 @@
+<html>
+<style type="text/css">
+/*自定义按钮样式*/
+.trans { 
+	width: 40px; 
+	height: 40px; 
+	display: block; 
+	background: url(js/trans.png) no-repeat center #000; 
+	right: 20px; 
+	position: fixed 
+}
+/*覆盖原有按钮样式*/
+.goog-te-gadget-simple {
+    background-color: transparent !important;
+    border-left: 0px !important;
+    border-top: 0px !important;
+    border-bottom: 0px !important;
+    border-right: 0px !important;
+    font-size: 10pt !important;
+    display: inline-block !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    cursor: pointer !important;
+    zoom: 1 !important;
+    *display: inline !important;
+    width: 40px;
+    height: 40px;
+}
+/*去除翻译后鼠标移到正文的hover显示*/
+.goog-text-highlight{
+	background-color: transparent!important;
+	-webkit-box-shadow: 0 0px 0px rgba(0, 0, 0, 0)!important;
+	-moz-box-shadow: 0 0px 0px rgba(0, 0, 0, 0)!important;
+	box-shadow: 0 0px 0px rgba(0, 0, 0, 0)!important;
+}
+.skiptranslate{
+	display: none !important;
+}
+/*解决底部拉伸的问题，注意需要同时一起移除顶部的翻译状态栏，否则状态栏会把第一行内容遮住*/
+
+
+/*去除顶部的当前翻译状态栏，建议不要移出，或者通过dom+属性覆盖+cookie的方式自行实现翻译状态的管理*/
+/**/
+body{
+	top:0px!important; 
+    min-height: 0px!important;
+}
+.goog-te-banner-frame{
+	display:none
+}
+</style>
+<body>
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+<div class="shadow">
+	<span id="test">切换语言</span><br>
+	我爱你差点拿开了坚实的大蛇兜阿善动大一岁电网
+	单独静安寺
+	单独静安寺
+	大师当年就爱上的地位
+	大山东爱上
+</div>
+<!--把button放在右下角，这个是可以随意修改的，你可以改成一个链接一个图片之类的-->
+<div class="trans" id="trans"></div>
+<script>
+
+	//原文链接
+	//https://blog.csdn.net/wokuailewozihao/article/details/82021709
+
+
+	//资源请求路径
+	var resourcesUrl = 'file:///C:/Users/Administrator/Desktop/encn';
+	//var resourcesUrl = ctx+"js/plugins/googleTrans";//这里应该写你的服务器资源地址
+	//这里设置翻译面板的语言，这里通过浏览器获取本地语言，你也可以自己设置
+	//支持以下80种语言翻译
+	var allLanguage = 'de,hi,lt,hr,lv,ht,hu,zh-CN,hy,uk,mg,id,ur,mk,ml,mn,af,mr,uz,ms,el,mt,is,it,my,es,et,eu,ar,pt-PT,ja,ne,az,fa,ro,nl,en-GB,no,be,fi,ru,bg,fr,bs,sd,se,si,sk,sl,ga,sn,so,gd,ca,sq,sr,kk,st,km,kn,sv,ko,sw,gl,zh-TW,pt-BR,co,ta,gu,ky,cs,pa,te,tg,th,la,cy,pl,da,tr'.split(',');
+	var localLanguage;
+	if (navigator.language) {
+		localLanguage = navigator.language;
+	}
+	else {
+		localLanguage = navigator.browserLanguage;
+	}
+	//检查是否支持此语言翻译，不支持就把面板设为中文，或你想要的语言，只能是以上80种语言之一
+	if($.inArray(localLanguage,allLanguage)==-1){
+		localLanguage = "zh-CN";
+	}
+	console.log("当前语言环境"+localLanguage);
+	
+	function googleTranslateElementInit() {
+	 
+		new google.translate.TranslateElement(
+			{
+				//这参数没用，请忽略
+				//pageLanguage: 'zh-CN',
+				//一共80种语言选择，这个是你需要翻译的语言，比如你只需要翻译成越南和英语，这里就只写en,vi
+				//includedLanguages: 'de,hi,lt,hr,lv,ht,hu,zh-CN,hy,uk,mg,id,ur,mk,ml,mn,af,mr,uz,ms,el,mt,is,it,my,es,et,eu,ar,pt-PT,ja,ne,az,fa,ro,nl,en-GB,no,be,fi,ru,bg,fr,bs,sd,se,si,sk,sl,ga,sn,so,gd,ca,sq,sr,kk,st,km,kn,sv,ko,sw,gl,zh-TW,pt-BR,co,ta,gu,ky,cs,pa,te,tg,th,la,cy,pl,da,tr',
+				includedLanguages:'zh-CN,en',
+				//选择语言的样式，这个是面板，还有下拉框的样式，具体的记不到了，找不到api~~
+				layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+				//自动显示翻译横幅，就是翻译后顶部出现的那个，有点丑，设置这个属性不起作用的话，请看文章底部的其他方法
+				autoDisplay: true, 
+				//还有些其他参数，由于原插件不再维护，找不到详细api了，将就了，实在不行直接上dom操作
+			}, 
+			'trans'//触发按钮的id
+		);
+		
+		//自定义按钮样式，因为没有api，通过dom+覆盖样式的方法实现，请查看顶部的style部分
+		$(".goog-te-gadget-icon").remove();
+		$(".goog-te-menu-value").remove();
+		
+	}
+</script>
+<script src="js/element.js?cb=googleTranslateElementInit"></script>
+<script type="text/javascript">
+	var index = 0;
+	$("#test").click(function(){
+		index = ++index%2;
+		var a = $('.goog-te-menu-frame.skiptranslate').contents().find('.goog-te-menu2-item')[index];
+		$(a).find('div').click();
+	})
+
+</script>
+</body>
+</html>
