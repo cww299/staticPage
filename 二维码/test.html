@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<script type="text/javascript" src="jquery.qrcode.min.js"></script>
+</head>
+<body>
+<div id="qrcode"></div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div id="qrcode1"></div>
+<script type="text/javascript">
+	$('#qrcode').qrcode({render:'canvas',text:"http://192.168.1.199:8080/bluewhite/twoDimensionalCode/scanSendOrder?id=143",width:160,height:160});	
+	$('#qrcode1').qrcode({render:'canvas',text:"http://www.baidu.com",width:160,height:160});	
+</script>
+</body>
+</html>
